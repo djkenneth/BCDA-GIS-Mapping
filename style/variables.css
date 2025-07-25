@@ -1,0 +1,21 @@
+/* style/variables.css */
+
+:root {
+    --primary: rgba(13, 26, 70, 0.85);
+    --primary-2: rgba(14, 21, 79, 0.85);
+    --primary-3: rgba(18, 16, 82, 0.85);
+    --primary-4: rgba(13, 26, 70, 0.85);
+    --primary-5: rgba(16, 58, 82, 0.85);
+    --primary-6: rgba(84, 138, 152, 0.85);
+    --primary-7: rgba(17, 80, 85, 0.85);
+    --primary-8: rgba(14, 30, 82, 0.85);
+    --primary-9: rgba(14, 30, 82, 0.85);
+
+    --border: #548A98;
+
+    --active: #4CAF50;
+    --maintenance: #ead353;
+    --inactive: #F44336;
+
+    --accent: #FAD754;
+}

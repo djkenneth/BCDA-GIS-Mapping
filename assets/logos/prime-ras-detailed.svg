@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background Triangle -->
+  <path d="M50 10 L90 80 L10 80 Z" fill="#FCD116" stroke="#0038A8" stroke-width="2">
+    <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Stacked Reports with Breathing Animation -->
+  <g>
+    <rect x="38" y="52" width="24" height="20" fill="#0038A8" stroke="#CE1126" stroke-width="1.5">
+      <animate attributeName="width" values="24;24.5;24" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="20;20.5;20" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="38;37.75;38" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="52;51.75;52" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <g>
+    <rect x="36" y="48" width="24" height="20" fill="#0038A8" stroke="#CE1126" stroke-width="1.5">
+      <animate attributeName="width" values="24;24.5;24" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="20;20.5;20" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="36;35.75;36" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="48;47.75;48" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <g>
+    <rect x="34" y="44" width="24" height="20" fill="#0038A8" stroke="#CE1126" stroke-width="1.5">
+      <animate attributeName="width" values="24;24.5;24" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="20;20.5;20" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="34;33.75;34" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="44;43.75;44" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Static Horizontal Dashboard Lines -->
+  <line x1="38" y1="49" x2="48" y2="49" stroke="#CE1126" stroke-width="1.5"/>
+  <line x1="38" y1="53" x2="46" y2="53" stroke="#CE1126" stroke-width="1.5"/>
+  <line x1="38" y1="57" x2="50" y2="57" stroke="#CE1126" stroke-width="1.5"/>
+  
+  <!-- Paper Corner Fold -->
+  <path d="M52 44 L58 44 L58 50" fill="none" stroke="#CE1126" stroke-width="1"/>
+</svg>

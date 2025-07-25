@@ -1,0 +1,9 @@
+/* style/footer.css */
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: rgba(28, 33, 48, 0.75);
+    backdrop-filter: blur(5px);
+}

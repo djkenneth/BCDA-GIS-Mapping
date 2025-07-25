@@ -1,0 +1,39 @@
+/* style/main.css */
+
+@import url('variables.css');
+@import url('fonts.css');
+@import url('utilities.css');
+
+@import url('header.css');
+@import url('footer.css');
+@import url('filter-sidebar-v2.css');
+
+
+@import url('components/drawer.css');
+@import url('components/menu.css');
+@import url('components/card.css');
+@import url('components/notification-menu.css');
+
+@import url('custom.css');
+
+/* .sidebar-v2, .header {
+  border-right: none !important;
+  box-shadow: none !important;
+}
+.filter-sidebar, .header {
+  border-right: 1px solid rgba(84, 138, 152, 0.3) !important; 
+  box-shadow: none !important;
+}
+.map-container, .header {
+  left: 60px !important; 
+  border-left: none !important;
+  margin-left: 0 !important;
+}
+html, body {
+  background-color: none !important; 
+}
+#map, .header,
+.leaflet-container {
+  border-left: none !important;
+  margin-left: 0 !important;
+} */
