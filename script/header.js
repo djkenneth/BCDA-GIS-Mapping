@@ -98,22 +98,17 @@ document.addEventListener('DOMContentLoaded', function() {
     mapContainer.style.overflow = 'hidden';
     
     // Force map to stay in place during resize
-    if (window.map && window.map.invalidateSize) {
+    if (window.map && window.map.resize) {
       // Get current center before resize
       const currentCenter = window.map.getCenter();
       const currentZoom = window.map.getZoom();
       
       // Resize the map container
       setTimeout(() => {
-        window.map.invalidateSize({
-          animate: false, // Disable animation to prevent movement
-          pan: false      // Disable panning during resize
-        });
+        window.map.resize();
         
-        // Restore the exact same view
-        window.map.setView(currentCenter, currentZoom, {
-          animate: false // No animation to prevent movement
-        });
+        window.map.setCenter(currentCenter);
+        window.map.setZoom(currentZoom);
       }, 50);
     }
   }
@@ -134,12 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Adjust leaflet container if it exists
-  const leafletContainer = document.querySelector('.leaflet-container');
-  if (leafletContainer) {
-    leafletContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
-    leafletContainer.style.width = '100%';
-    leafletContainer.style.position = 'relative';
-  }
+  // const leafletContainer = document.querySelector('.leaflet-container');
+  // if (leafletContainer) {
+  //   leafletContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
+  //   leafletContainer.style.width = '100%';
+  //   leafletContainer.style.position = 'relative';
+  // }
 }
   
   // Get accurate header height
@@ -206,8 +201,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Additional map resize
-      if (window.map && window.map.invalidateSize) {
-        window.map.invalidateSize();
+      if (window.map && window.map.resize) {
+        window.map.resize();
       }
     }, 300);
   });
@@ -292,12 +287,12 @@ function adjustStreamsLayout() {
   }
   
   // Resize map without movement
-  if (window.map && window.map.invalidateSize) {
+  if (window.map && window.map.resize) {
     const currentCenter = window.map.getCenter();
     const currentZoom = window.map.getZoom();
     
     setTimeout(() => {
-      window.map.invalidateSize({
+      window.map.resize({
         animate: false,
         pan: false
       });
@@ -1602,8 +1597,8 @@ window.addEventListener('resize', function() {
     
     // Force map invalidation after resize
     setTimeout(() => {
-      if (window.map && window.map.invalidateSize) {
-        window.map.invalidateSize();
+      if (window.map && window.map.resize) {
+        window.map.resize();
       }
     }, 100);
   }
@@ -1680,8 +1675,8 @@ function adjustAllContainers(isCollapsed) {
     
     // Ensure the map fills its container properly
     setTimeout(() => {
-      if (window.map && window.map.invalidateSize) {
-        window.map.invalidateSize(true);
+      if (window.map && window.map.resize) {
+        window.map.resize();
         
         // Force a repaint to ensure proper rendering
         window.map.getContainer().style.visibility = 'hidden';
@@ -1705,24 +1700,24 @@ function adjustAllContainers(isCollapsed) {
   }
   
   // Adjust leaflet container if it exists
-  const leafletContainer = document.querySelector('.leaflet-container');
-  if (leafletContainer) {
-    leafletContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
-    leafletContainer.style.width = '100%';
-  }
+  // const leafletContainer = document.querySelector('.leaflet-container');
+  // if (leafletContainer) {
+  //   leafletContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
+  //   leafletContainer.style.width = '100%';
+  // }
   
   // Additional adjustments for map tiles
   setTimeout(() => {
-    if (window.map) {
+    if (window.map && window.map.resize) {
       // Trigger map resize and redraw
-      window.map.invalidateSize(true);
+      window.map.resize();
       
       // Force tile layer refresh
-      window.map.eachLayer(function(layer) {
-        if (layer._url) { // This is likely a tile layer
-          layer.redraw();
-        }
-      });
+      // window.map.eachLayer(function(layer) {
+      //   if (layer._url) { // This is likely a tile layer
+      //     layer.redraw();
+      //   }
+      // });
     }
   }, 200);
 }
@@ -1743,13 +1738,15 @@ function handleMapResize() {
     
     // Force Leaflet to recognize the size change
     setTimeout(() => {
-      window.map.invalidateSize(true);
+      if(window.map.resize) {
+        window.map.resize();
+      }
       
       // Additional force refresh for stubborn cases
       const mapElement = window.map.getContainer();
       if (mapElement) {
         mapElement.style.height = `calc(100vh - ${offset}px)`;
-        window.map._resetView(window.map.getCenter(), window.map.getZoom(), true);
+        // window.map._resetView(window.map.getCenter(), window.map.getZoom(), true);
       }
     }, 100);
   }

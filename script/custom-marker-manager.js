@@ -1,238 +1,238 @@
 const markerIcons = {
   // Default markers (used when no specific type is available)
   default: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-active.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-maintenance.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-inactive.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-warning.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-critical.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   
   // Hospital markers
   hospital: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-hosp/marker-active-hosp.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-hosp/marker-maintenance-hosp.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-hosp/marker-inactive-hosp.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-hosp/marker-warning-hosp.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-hosp/marker-critical-hosp.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   
   // School markers
   school: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-school/marker-active-school.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-school/marker-maintenance-school.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-school/marker-inactive-school.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-school/marker-warning-school.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-school/marker-critical-school.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   
   // Government office markers
   government: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-gov/marker-active-gov.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-gov/marker-maintenance-gov.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-gov/marker-inactive-gov.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-gov/marker-warning-gov.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-gov/marker-critical-gov.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   
   // Police station markers
   police: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-pol/marker-active-pol.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-pol/marker-maintenance-pol.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-pol/marker-inactive-pol.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-pol/marker-warning-pol.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-pol/marker-critical-pol.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   waste: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-waste/marker-active-waste.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-waste/marker-maintenance-waste.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-waste/marker-inactive-waste.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-waste/marker-warning-waste.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-waste/marker-critical-waste.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   },
   
   // Fire department markers
   fire: {
-    active: L.icon({
+    active: {
       iconUrl: "assets/marker/marker-fire/marker-active-fire.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    maintenance: L.icon({
+    },
+    maintenance: {
       iconUrl: "assets/marker/marker-fire/marker-maintenance-fire.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    inactive: L.icon({
+    },
+    inactive: {
       iconUrl: "assets/marker/marker-fire/marker-inactive-fire.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    warning: L.icon({
+    },
+    warning: {
       iconUrl: "assets/marker/marker-fire/marker-warning-fire.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    }),
-    critical: L.icon({
+    },
+    critical: {
       iconUrl: "assets/marker/marker-fire/marker-critical-fire.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
-    })
+    }
   }
 };
 
@@ -283,14 +283,34 @@ function getMarkerIcon(subcategory, status) {
  * @param {string} subcategory - The subcategory of the site
  * @param {string} status - The status of the site
  * @param {Object} options - Additional options for the marker
- * @returns {L.Marker} - The Leaflet marker
+ * @returns {maplibregl.Marker} - The MapLibre GL JS marker
  */
+// function createSiteMarker(location, subcategory, status, options = {}) {
+//   const icon = getMarkerIcon(subcategory, status);
+//   return L.marker(location, { 
+//     icon: icon,
+//     ...options
+//   });
+// }
+
 function createSiteMarker(location, subcategory, status, options = {}) {
-  const icon = getMarkerIcon(subcategory, status);
-  return L.marker(location, { 
-    icon: icon,
-    ...options
-  });
+  const iconUrl = getMarkerIcon(subcategory, status);
+  
+  // Create marker element
+  const el = document.createElement('div');
+  el.className = 'maplibre-marker';
+  el.style.backgroundImage = `url(${iconUrl})`;
+  el.style.width = '32px';
+  el.style.height = '32px';
+  el.style.backgroundSize = 'contain';
+  el.style.backgroundRepeat = 'no-repeat';
+  el.style.cursor = 'pointer';
+  
+  // Create MapLibre marker
+  const marker = new maplibregl.Marker(el)
+    .setLngLat([location[1], location[0]]); // MapLibre uses [lng, lat]
+  
+  return marker;
 }
 
 // Export the marker management functions

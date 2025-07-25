@@ -411,13 +411,20 @@ function zoomToSiteByName(siteName) {
     console.log('Zooming to site by name:', site.name);
     
     const location = site.location;
-    const bounds = L.latLngBounds([location]);
-    const paddedBounds = bounds.pad(0.2);
+    // const bounds = L.latLngBounds([location]);
+    // const paddedBounds = bounds.pad(0.2);
     
-    window.map.flyToBounds(paddedBounds, {
-      padding: [50, 50],
-      maxZoom: 16,
-      duration: 2
+    // window.map.flyToBounds(paddedBounds, {
+    //   padding: [50, 50],
+    //   maxZoom: 16,
+    //   duration: 2
+    // });
+
+    window.map.flyTo({
+      center: [location[1], location[0]], // MapLibre uses [lng, lat]
+      zoom: 16,
+      essential: true,
+      duration: 2000
     });
     
     setTimeout(() => {

@@ -1,65 +1,195 @@
 document.addEventListener("DOMContentLoaded", function () {
   let map;
-  let markersLayer = L.layerGroup();
+  let markersLayer = [];
   let markersByCategory = {};
   let visibleMarkers = new Set();
+  let mapSourcesAdded = false;
+
+  // function initializeMap() {
+  //   map = L.map("map", {
+  //     center: [10.3157, 123.8854],
+  //     zoom: 12,
+  //     zoomControl: false,
+  //     attributionControl: false,
+  //   });
+
+  //   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //     maxZoom: 19,
+  //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  //   }).addTo(map);
+
+  //   markersLayer.addTo(map);
+  //   L.control.attribution({ position: "bottomright" }).addTo(map);
+    
+  //   window.map = map;
+  // }
 
   function initializeMap() {
-    map = L.map("map", {
-      center: [10.3157, 123.8854],
-      zoom: 12,
-      zoomControl: false,
-      attributionControl: false,
+    // Initialize MapLibre GL map
+    map = new maplibregl.Map({
+      container: 'map',
+      style: {
+        version: 8,
+        sources: {
+          'osm': {
+            type: 'raster',
+            tiles: [
+              'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            ],
+            tileSize: 256,
+            attribution: '© OpenStreetMap contributors'
+          }
+        },
+        layers: [
+          {
+            id: 'osm-tiles',
+            type: 'raster',
+            source: 'osm',
+            minzoom: 0,
+            maxzoom: 19
+          }
+        ]
+      },
+      center: [123.8854, 10.3157], // Cebu City coordinates [lng, lat]
+      zoom: 7,
+      pitch: 0,
+      bearing: 0
     });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-    markersLayer.addTo(map);
-    L.control.attribution({ position: "bottomright" }).addTo(map);
+    // Add navigation controls
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
     
+    // Add scale control
+    map.addControl(new maplibregl.ScaleControl({
+      maxWidth: 80,
+      unit: 'metric'
+    }), 'bottom-left');
+
+    // Store map globally
     window.map = map;
+
+    map.on('load', function() {
+      console.log('MapLibre map loaded successfully');
+      mapSourcesAdded = true;
+      createMarkers();
+    });
+
+    // Handle map resize for header toggle
+    map.on('resize', function() {
+      setTimeout(() => {
+        map.resize();
+      }, 100);
+    });
   }
 
   function createMarkers() {
-    if (!window.cebuCityMarkers || !window.markerManager) {
-      console.error('Required data not loaded');
-      return;
-    }
+    if (!window.cebuCityMarkers || !mapSourcesAdded) return;
 
-    window.cebuCityMarkers.forEach((category) => {
-      markersByCategory[category.id] = {};
-      
-      category.sites.forEach((site) => {
-        const marker = window.markerManager.createSiteMarker(
-          site.location,
-          site.subcategory,
-          site.status,
-          { title: site.name }
-        );
+    console.log('Creating markers with MapLibre GL JS');
 
-        marker.bindTooltip(site.name);
+    window.cebuCityMarkers.forEach(category => {
+      const categoryId = category.id;
+      markersByCategory[categoryId] = {};
+
+      category.sites.forEach(site => {
+        const subcategory = getSubcategoryKey(site.subcategory);
         
-        marker.on("click", function(e) {
-          console.log("Marker clicked:", site.name);
-          
+        if (!markersByCategory[categoryId][subcategory]) {
+          markersByCategory[categoryId][subcategory] = [];
+        }
+
+        // Create marker element
+        const markerElement = document.createElement('div');
+        markerElement.className = 'marker-custom';
+        markerElement.innerHTML = getMarkerIcon(site.subcategory, site.status);
+        markerElement.style.width = '30px';
+        markerElement.style.height = '30px';
+        markerElement.style.cursor = 'pointer';
+
+        // Create MapLibre marker
+        const marker = new maplibregl.Marker({
+          element: markerElement,
+          anchor: 'bottom'
+        })
+        .setLngLat([site.location[1], site.location[0]]) // [lng, lat] format
+        .addTo(map);
+
+        // Add click event
+        markerElement.addEventListener('click', function(e) {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
-          
+
           setTimeout(() => {
             showLiveFeedCardForSite(site, e);
           }, 300);
         });
 
-        const subcategory = getSubcategoryKey(site.subcategory);
-        if (!markersByCategory[category.id][subcategory]) {
-          markersByCategory[category.id][subcategory] = [];
-        }
-        markersByCategory[category.id][subcategory].push(marker);
+        // Store marker reference
+        marker._siteData = { site, category };
+        markersByCategory[categoryId][subcategory].push(marker);
+        visibleMarkers.add(marker);
       });
     });
+
+    // console.log('Markers created:', markersByCategory);
+  }
+
+  function getMarkerIcon(subcategory, status) {
+    const iconColor = getStatusColor(status);
+    const iconType = getIconType(subcategory);
+    
+    return `
+      <div style="
+        width: 30px; 
+        height: 30px; 
+        background: ${iconColor}; 
+        border: 2px solid white; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        font-size: 14px;
+        color: white;
+      ">
+        ${iconType}
+      </div>
+    `;
+  }
+
+  function getStatusColor(status) {
+    const colors = {
+      'active': '#10B981',
+      'maintenance': '#F59E0B', 
+      'inactive': '#EF4444',
+      'warning': '#F97316',
+      'construction': '#8B5CF6',
+      'default': '#6B7280'
+    };
+    return colors[status] || colors.default;
+  }
+
+  function getIconType(subcategory) {
+    const icons = {
+      'hospitals': '🏥',
+      'schools': '🏫',
+      'govt': '🏛️',
+      'police': '👮',
+      'fire': '🚒',
+      'water': '💧',
+      'electricity': '⚡',
+      'roads': '🛣️',
+      'transport': '🚌',
+      'wifi': '📶',
+      'parks': '🌳',
+      'businesses': '🏢',
+      'default': '📍'
+    };
+    
+    const key = Object.keys(icons).find(k => subcategory.toLowerCase().includes(k));
+    return icons[key] || icons.default;
   }
 
   function showLiveFeedCardForSite(site, event) {
@@ -203,15 +333,89 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // function zoomToMarker(location) {
+  //   const bounds = L.latLngBounds([location]);
+  //   const paddedBounds = bounds.pad(0.2);
+  //   map.flyToBounds(paddedBounds, {
+  //     padding: [50, 50],
+  //     maxZoom: 15,
+  //     duration: 1,
+  //   });
+  // }
+
   function zoomToMarker(location) {
-    const bounds = L.latLngBounds([location]);
-    const paddedBounds = bounds.pad(0.2);
-    map.flyToBounds(paddedBounds, {
-      padding: [50, 50],
-      maxZoom: 15,
-      duration: 1,
+    // Convert to [lng, lat] format for MapLibre
+    const lngLat = [location[1], location[0]];
+    
+    map.easeTo({
+      center: lngLat,
+      zoom: 15,
+      duration: 1000
     });
   }
+
+  // function updateMarkersForCheckbox(checkboxId, isChecked) {
+  //   const allCategories = Object.keys(markersByCategory);
+    
+  //   if (checkboxId === 'all') {
+  //     allCategories.forEach(categoryId => {
+  //       Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
+  //         subcategoryMarkers.forEach(marker => {
+  //           if (isChecked) {
+  //             markersLayer.addLayer(marker);
+  //             visibleMarkers.add(marker);
+  //           } else {
+  //             markersLayer.removeLayer(marker);
+  //             visibleMarkers.delete(marker);
+  //           }
+  //         });
+  //       });
+  //     });
+  //     return;
+  //   }
+
+  //   const categoryMasterCheckboxes = {
+  //     'all-infrastructure': 'infrastructure',
+  //     'all-buildings': 'public_buildings', 
+  //     'all-natural': 'natural_features',
+  //     'all-risks': 'environmental_risks',
+  //     'all-poi': 'points_of_interest',
+  //     'all-demographics': 'population_data',
+  //     'all-internet': 'internet_access'
+  //   };
+
+  //   if (categoryMasterCheckboxes[checkboxId]) {
+  //     const categoryId = categoryMasterCheckboxes[checkboxId];
+  //     if (markersByCategory[categoryId]) {
+  //       Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
+  //         subcategoryMarkers.forEach(marker => {
+  //           if (isChecked) {
+  //             markersLayer.addLayer(marker);
+  //             visibleMarkers.add(marker);
+  //           } else {
+  //             markersLayer.removeLayer(marker);
+  //             visibleMarkers.delete(marker);
+  //           }
+  //         });
+  //       });
+  //     }
+  //     return;
+  //   }
+
+  //   allCategories.forEach(categoryId => {
+  //     if (markersByCategory[categoryId][checkboxId]) {
+  //       markersByCategory[categoryId][checkboxId].forEach(marker => {
+  //         if (isChecked) {
+  //           markersLayer.addLayer(marker);
+  //           visibleMarkers.add(marker);
+  //         } else {
+  //           markersLayer.removeLayer(marker);
+  //           visibleMarkers.delete(marker);
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
 
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
@@ -221,10 +425,13 @@ document.addEventListener("DOMContentLoaded", function () {
         Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
           subcategoryMarkers.forEach(marker => {
             if (isChecked) {
-              markersLayer.addLayer(marker);
+              markersLayer.push(marker);
+              marker.addTo(map);
               visibleMarkers.add(marker);
             } else {
-              markersLayer.removeLayer(marker);
+              const index = markersLayer.indexOf(marker);
+              if (index > -1) markersLayer.splice(index, 1);
+              marker.remove();
               visibleMarkers.delete(marker);
             }
           });
@@ -249,10 +456,13 @@ document.addEventListener("DOMContentLoaded", function () {
         Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
           subcategoryMarkers.forEach(marker => {
             if (isChecked) {
-              markersLayer.addLayer(marker);
+              markersLayer.push(marker);
+              marker.addTo(map);
               visibleMarkers.add(marker);
             } else {
-              markersLayer.removeLayer(marker);
+              const index = markersLayer.indexOf(marker);
+              if (index > -1) markersLayer.splice(index, 1);
+              marker.remove();
               visibleMarkers.delete(marker);
             }
           });
@@ -265,10 +475,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (markersByCategory[categoryId][checkboxId]) {
         markersByCategory[categoryId][checkboxId].forEach(marker => {
           if (isChecked) {
-            markersLayer.addLayer(marker);
+            markersLayer.push(marker);
+            marker.addTo(map);
             visibleMarkers.add(marker);
           } else {
-            markersLayer.removeLayer(marker);
+            const index = markersLayer.indexOf(marker);
+            if (index > -1) markersLayer.splice(index, 1);
+            marker.remove();
             visibleMarkers.delete(marker);
           }
         });
@@ -333,6 +546,36 @@ document.addEventListener("DOMContentLoaded", function () {
     return { site: foundSite, category: foundCategory };
   }
 
+  // function zoomToSiteById(siteId) {
+  //   const { site, category } = findSiteById(siteId);
+    
+  //   if (site && category) {
+  //     console.log('Zooming to site:', site.name);
+      
+  //     const location = site.location;
+  //     const bounds = L.latLngBounds([location]);
+  //     const paddedBounds = bounds.pad(0.2);
+      
+  //     map.flyToBounds(paddedBounds, {
+  //       padding: [50, 50],
+  //       maxZoom: 16,
+  //       duration: 2
+  //     });
+      
+  //     setTimeout(() => {
+  //       showSiteDetails(site, category);
+        
+  //       setTimeout(() => {
+  //         showLiveFeedCardForSite(site, null);
+  //       }, 500);
+  //     }, 1000);
+      
+  //     return true;
+  //   }
+    
+  //   return false;
+  // }
+
   function zoomToSiteById(siteId) {
     const { site, category } = findSiteById(siteId);
     
@@ -340,20 +583,21 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log('Zooming to site:', site.name);
       
       const location = site.location;
-      const bounds = L.latLngBounds([location]);
-      const paddedBounds = bounds.pad(0.2);
+      const lngLat = [location[1], location[0]]; // Convert to [lng, lat]
       
-      map.flyToBounds(paddedBounds, {
-        padding: [50, 50],
-        maxZoom: 16,
-        duration: 2
+      map.easeTo({
+        center: lngLat,
+        zoom: 16,
+        duration: 2000
       });
       
       setTimeout(() => {
-        showSiteDetails(site, category);
+        showSiteDetails(site.id, category.id);
         
         setTimeout(() => {
-          showLiveFeedCardForSite(site, null);
+          if (window.showLiveFeedCardForSite) {
+            window.showLiveFeedCardForSite(site, null);
+          }
         }, 500);
       }, 1000);
       

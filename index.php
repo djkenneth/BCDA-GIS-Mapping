@@ -7,13 +7,19 @@
     <title>Cebu City Interactive Data-Driven Map</title>
     <link rel="icon" type="image/x-icon" href="assets/cebu-logo.ico">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?t=<?php echo time(); ?>"
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?t=<?php echo time(); ?>"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin="" />
+        crossorigin="" /> -->
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?t=<?php echo time(); ?>"
+    <!-- MapLibre GL JS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" />
+
+    <!-- MapLibre GL JS JavaScript -->
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script>
+
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?t=<?php echo time(); ?>"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""></script>
+        crossorigin=""></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js?t=<?php echo time(); ?>"></script>
 
