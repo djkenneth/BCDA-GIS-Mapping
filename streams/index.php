@@ -68,10 +68,10 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
         crossorigin=""></script> -->
 
     <!-- MapLibre GL JS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" />
 
     <!-- MapLibre GL JS JavaScript -->
-    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script>
+    <script src="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script>
 
     <!-- ECharts JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js?t=<?php echo time(); ?>"></script>

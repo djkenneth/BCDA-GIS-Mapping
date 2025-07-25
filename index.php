@@ -12,10 +12,10 @@
         crossorigin="" /> -->
 
     <!-- MapLibre GL JS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" />
 
     <!-- MapLibre GL JS JavaScript -->
-    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script>
+    <script src="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script>
 
     <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?t=<?php echo time(); ?>"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -120,6 +120,7 @@
         });
     </script>
 
+<script src="script/cebu-city-markers.js?t=<?php echo time(); ?>"></script>
     <script src="script/charts.js?t=<?php echo time(); ?>"></script>
     <script src="script/menu.js?t=<?php echo time(); ?>"></script>
     <script src="script/notification-menu.js?t=<?php echo time(); ?>"></script>
@@ -132,7 +133,6 @@
     <script src="script/issue-report-form.js?t=<?php echo time(); ?>"></script>
     <script src="script/custom-marker-manager.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer.js?t=<?php echo time(); ?>"></script>
-    <script src="script/cebu-city-markers.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
     
