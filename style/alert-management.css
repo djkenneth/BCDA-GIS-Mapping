@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg-color: #080f17;
   --darker-bg: #050a10;
   --panel-bg: #111c2b;
@@ -13,7 +13,7 @@
   --green-status: #4CAF50;
   --blue-accent: #3498db;
   --inactive-status: #3C3C46;
-}
+} */
 
 #full-screen-alerts-interface {
   position: fixed;
@@ -21,7 +21,7 @@
   left: 340px;
   right: 0;
   bottom: 0;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   z-index: 5;
   overflow-y: auto;
   padding: 20px;

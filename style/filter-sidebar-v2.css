@@ -84,7 +84,7 @@
   top: 284px;
   width: 300px;
   height: calc(100vh - 284px);
-  background-color: #273c5a;
+  background: var(--bg-color);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
   overflow-y: auto;

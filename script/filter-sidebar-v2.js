@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const individualCheckboxes = document.querySelectorAll(
     '.content-section-item input[type="checkbox"]:not([id^="all-"])'
   );
+  
   individualCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
       // Update map markers based on the checkbox state

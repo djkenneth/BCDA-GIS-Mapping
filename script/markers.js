@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize MapLibre GL map with interaction handlers enabled
     map = new maplibregl.Map({
       container: "map",
-      // hash: true,
       style: {
         version: 8,
         sources: {
@@ -31,12 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
         sky: {},
       },
       zoom: 7,
-      center: [123.8854, 10.3157], // Cebu City coordinates [lng, lat]
+      center: [123.8854, 10.3157], // coordinates [lng, lat]
       pitch: 0,
       maxZoom: 18,
       maxPitch: 85,
       bearing: 0,
-      // Enable all interaction handlers explicitly
       interactive: true,
       scrollZoom: true,
       boxZoom: true,
@@ -124,13 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Store marker reference
-        // marker._siteData = { site, category };
-        // markersByCategory[categoryId][subcategory].push(marker);
-        // visibleMarkers.add(marker);
+        marker._siteData = { site, category };
+        markersByCategory[categoryId][subcategory].push(marker);
+        visibleMarkers.add(marker);
       });
     });
-
-    // console.log('Markers created:', markersByCategory);
   }
 
   function getMarkerIcon(subcategory, status) {

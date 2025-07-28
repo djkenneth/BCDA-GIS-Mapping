@@ -3,7 +3,7 @@
         <a href="javascript:history.back()">
                 <div class="logo-wrapper">
                     <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
-                    <p class="logo-title">DOF IMap</p>
+                    <p class="logo-title">Department of Finance</p>
                 </div>
             </a>
         <div class="flex items-center w-4/5">

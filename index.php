@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOF IMap</title>
+    <title>Department of Finance</title>
     <link rel="icon" type="image/x-icon" href="assets/dof-logo.ico">
 
 
@@ -112,7 +112,7 @@
         });
     </script>
 
-    <script src="script/cebu-city-markers.js?t=<?php echo time(); ?>"></script>
+    <script src="script/markers.js?t=<?php echo time(); ?>"></script>
     <script src="script/charts.js?t=<?php echo time(); ?>"></script>
     <script src="script/menu.js?t=<?php echo time(); ?>"></script>
     <script src="script/notification-menu.js?t=<?php echo time(); ?>"></script>
@@ -121,7 +121,7 @@
     <script src="script/alert-management.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-monitoring.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-form.js?t=<?php echo time(); ?>"></script>
-    <script src="script/cebu-city-data.js?t=<?php echo time(); ?>"></script>
+    <script src="script/data.js?t=<?php echo time(); ?>"></script>
     <script src="script/issue-report-form.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-cards.js?t=<?php echo time(); ?>"></script>

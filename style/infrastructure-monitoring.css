@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg-color: #080f17;
   --darker-bg: #050a10;
   --panel-bg: #111c2b;
@@ -13,7 +13,7 @@
   --blue-accent: #3498db;
   --inactive-status: #3c3c46;
   --warning-status: #8c6d0f;
-}
+} */
 
 #full-screen-monitoring {
   position: fixed;

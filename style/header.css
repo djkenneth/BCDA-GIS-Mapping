@@ -67,7 +67,8 @@ header .nav-bar {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: #101b2a;
+  /* background: #101b2a; */
+  background: var(--bg-color);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   padding-inline: 20px;
@@ -175,9 +176,9 @@ header.collapsed .header-toggle {
   gap: 10px;
   padding: 10px 16px;
   background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(240, 189, 54, 0.75);
   border-radius: 6px;
-  color: #64b5f6;
+  color: var(--accent);
   font-family: "Roboto";
   font-size: 13px;
   font-weight: 600;
@@ -202,7 +203,7 @@ header.collapsed .header-toggle {
   background: rgba(44, 62, 80, 0.9);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border-color: rgba(59, 130, 246, 0.5);
+  border-color: rgba(240, 189, 54, 1);
 }
 
 .header-button:active {
