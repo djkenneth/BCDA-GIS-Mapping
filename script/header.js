@@ -1764,13 +1764,13 @@ if (typeof window !== 'undefined') {
 document.addEventListener('DOMContentLoaded', function() {
   // Watch for map initialization
   const checkMapReady = setInterval(() => {
-    if (window.map) {
+    // if (window.map) {
       clearInterval(checkMapReady);
       
       // Set up map event listeners
-      window.map.on('resize', function() {
-        handleMapResize();
-      });
+      // window.map.on('resize', function() {
+      //   handleMapResize();
+      // });
       
       // Initial adjustment
       setTimeout(() => {
@@ -1778,7 +1778,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isCollapsed = header ? header.classList.contains('collapsed') : false;
         adjustAllContainers(isCollapsed);
       }, 500);
-    }
+    // }
   }, 100);
   
   // Fallback timeout

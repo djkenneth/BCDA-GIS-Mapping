@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize MapLibre GL map with interaction handlers enabled
     map = new maplibregl.Map({
       container: "map",
-      zoom: 7,
-      center: [123.8854, 10.3157], // Cebu City coordinates [lng, lat]
-      pitch: 0,
       // hash: true,
       style: {
         version: 8,
@@ -23,17 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             attribution: "&copy; OpenStreetMap Contributors",
             maxzoom: 19,
           },
-          // Use a different source for terrain and hillshade layers, to improve render quality
-          terrainSource: {
-            type: "raster-dem",
-            url: "https://demotiles.maplibre.org/terrain-tiles/tiles.json",
-            tileSize: 256,
-          },
-          hillshadeSource: {
-            type: "raster-dem",
-            url: "https://demotiles.maplibre.org/terrain-tiles/tiles.json",
-            tileSize: 256,
-          },
         },
         layers: [
           {
@@ -41,20 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
             type: "raster",
             source: "osm",
           },
-          {
-            id: "hills",
-            type: "hillshade",
-            source: "hillshadeSource",
-            layout: { visibility: "visible" },
-            paint: { "hillshade-shadow-color": "#473B24" },
-          },
         ],
-        terrain: {
-          source: "terrainSource",
-          exaggeration: 1,
-        },
         sky: {},
       },
+      zoom: 7,
+      center: [123.8854, 10.3157], // Cebu City coordinates [lng, lat]
+      pitch: 0,
       maxZoom: 18,
       maxPitch: 85,
       bearing: 0,
@@ -68,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       doubleClickZoom: true,
       touchZoomRotate: true,
       touchPitch: true,
-      cooperativeGestures: false, // Set to true if you want to require Ctrl+scroll for zoom
+      cooperativeGestures: false,
       fadeDuration: 300,
       preserveDrawingBuffer: false,
       antialias: false,
@@ -84,18 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
       })
     );
 
-    map.addControl(
-      new maplibregl.TerrainControl({
-        source: "terrainSource",
-        exaggeration: 1,
-      })
-    );
-
     // Add scale control
-    // map.addControl(new maplibregl.ScaleControl({
-    //   maxWidth: 80,
-    //   unit: 'metric'
-    // }), 'bottom-left');
+    map.addControl(new maplibregl.ScaleControl({
+      maxWidth: 80,
+      unit: 'metric'
+    }), 'bottom-left');
 
     // Store map globally
 
@@ -105,30 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
       createMarkers();
     });
 
-    // Handle map resize for header toggle
-    // map.on('resize', function() {
-    //   setTimeout(() => {
-    //     map.resize();
-    //   }, 100);
-    // });
-
     // Add error handling
     map.on("error", function (e) {
       console.error("MapLibre GL JS error:", e);
     });
-
-    window.map = map;
-
-    // Log interaction handlers status for debugging
-    // map.on('load', function() {
-    //   console.log('Map interaction handlers status:');
-    //   console.log('ScrollZoom enabled:', map.scrollZoom.isEnabled());
-    //   console.log('DragPan enabled:', map.dragPan.isEnabled());
-    //   console.log('DragRotate enabled:', map.dragRotate.isEnabled());
-    //   console.log('DoubleClickZoom enabled:', map.doubleClickZoom.isEnabled());
-    //   console.log('TouchZoomRotate enabled:', map.touchZoomRotate.isEnabled());
-    //   console.log('Keyboard enabled:', map.keyboard.isEnabled());
-    // });
   }
 
   function createMarkers() {
@@ -158,9 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create MapLibre marker
         const marker = new maplibregl.Marker({
           element: markerElement,
-          anchor: "bottom",
         })
-          .setLngLat([site.location[1], site.location[0]]) // [lng, lat] format
+          .setLngLat([site.location[1], site.location[0]])
           .addTo(map);
 
         // Add click event
@@ -169,14 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
           zoomToMarker(site.location);
 
           setTimeout(() => {
-            showLiveFeedCardForSite(site, e);
+            showLiveFeedCardForSite(site);
           }, 300);
         });
 
         // Store marker reference
-        marker._siteData = { site, category };
-        markersByCategory[categoryId][subcategory].push(marker);
-        visibleMarkers.add(marker);
+        // marker._siteData = { site, category };
+        // markersByCategory[categoryId][subcategory].push(marker);
+        // visibleMarkers.add(marker);
       });
     });
 
@@ -241,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return icons[key] || icons.default;
   }
 
-  function showLiveFeedCardForSite(site, event) {
+  function showLiveFeedCardForSite(site) {
     console.log("Showing live feed card for site:", site.name);
 
     if (typeof window.showLiveFeedCard !== "function") {
@@ -392,89 +342,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // function zoomToMarker(location) {
-  //   const bounds = L.latLngBounds([location]);
-  //   const paddedBounds = bounds.pad(0.2);
-  //   map.flyToBounds(paddedBounds, {
-  //     padding: [50, 50],
-  //     maxZoom: 15,
-  //     duration: 1,
-  //   });
-  // }
-
   function zoomToMarker(location) {
     // Convert to [lng, lat] format for MapLibre
     const lngLat = [location[1], location[0]];
-
+    // console.log('hello po', location)
     map.easeTo({
       center: lngLat,
       zoom: 15,
       duration: 1000,
     });
   }
-
-  // function updateMarkersForCheckbox(checkboxId, isChecked) {
-  //   const allCategories = Object.keys(markersByCategory);
-
-  //   if (checkboxId === 'all') {
-  //     allCategories.forEach(categoryId => {
-  //       Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
-  //         subcategoryMarkers.forEach(marker => {
-  //           if (isChecked) {
-  //             markersLayer.addLayer(marker);
-  //             visibleMarkers.add(marker);
-  //           } else {
-  //             markersLayer.removeLayer(marker);
-  //             visibleMarkers.delete(marker);
-  //           }
-  //         });
-  //       });
-  //     });
-  //     return;
-  //   }
-
-  //   const categoryMasterCheckboxes = {
-  //     'all-infrastructure': 'infrastructure',
-  //     'all-buildings': 'public_buildings',
-  //     'all-natural': 'natural_features',
-  //     'all-risks': 'environmental_risks',
-  //     'all-poi': 'points_of_interest',
-  //     'all-demographics': 'population_data',
-  //     'all-internet': 'internet_access'
-  //   };
-
-  //   if (categoryMasterCheckboxes[checkboxId]) {
-  //     const categoryId = categoryMasterCheckboxes[checkboxId];
-  //     if (markersByCategory[categoryId]) {
-  //       Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
-  //         subcategoryMarkers.forEach(marker => {
-  //           if (isChecked) {
-  //             markersLayer.addLayer(marker);
-  //             visibleMarkers.add(marker);
-  //           } else {
-  //             markersLayer.removeLayer(marker);
-  //             visibleMarkers.delete(marker);
-  //           }
-  //         });
-  //       });
-  //     }
-  //     return;
-  //   }
-
-  //   allCategories.forEach(categoryId => {
-  //     if (markersByCategory[categoryId][checkboxId]) {
-  //       markersByCategory[categoryId][checkboxId].forEach(marker => {
-  //         if (isChecked) {
-  //           markersLayer.addLayer(marker);
-  //           visibleMarkers.add(marker);
-  //         } else {
-  //           markersLayer.removeLayer(marker);
-  //           visibleMarkers.delete(marker);
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
 
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
@@ -615,36 +492,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return { site: foundSite, category: foundCategory };
   }
 
-  // function zoomToSiteById(siteId) {
-  //   const { site, category } = findSiteById(siteId);
-
-  //   if (site && category) {
-  //     console.log('Zooming to site:', site.name);
-
-  //     const location = site.location;
-  //     const bounds = L.latLngBounds([location]);
-  //     const paddedBounds = bounds.pad(0.2);
-
-  //     map.flyToBounds(paddedBounds, {
-  //       padding: [50, 50],
-  //       maxZoom: 16,
-  //       duration: 2
-  //     });
-
-  //     setTimeout(() => {
-  //       showSiteDetails(site, category);
-
-  //       setTimeout(() => {
-  //         showLiveFeedCardForSite(site, null);
-  //       }, 500);
-  //     }, 1000);
-
-  //     return true;
-  //   }
-
-  //   return false;
-  // }
-
   function zoomToSiteById(siteId) {
     const { site, category } = findSiteById(siteId);
 
@@ -652,23 +499,13 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Zooming to site:", site.name);
 
       const location = site.location;
-      const lngLat = [location[1], location[0]]; // Convert to [lng, lat]
+      const lngLat = [location[1], location[0]];
 
       map.easeTo({
         center: lngLat,
         zoom: 16,
         duration: 2000,
       });
-
-      setTimeout(() => {
-        showSiteDetails(site.id, category.id);
-
-        setTimeout(() => {
-          if (window.showLiveFeedCardForSite) {
-            window.showLiveFeedCardForSite(site, null);
-          }
-        }, 500);
-      }, 1000);
 
       return true;
     }
@@ -686,21 +523,16 @@ document.addEventListener("DOMContentLoaded", function () {
     calculateLiveFeedPosition,
     updateLiveFeedCardForSite,
     findSiteById,
-    zoomToSiteById,
+    zoomToSiteById
   };
 
   window.updateLiveFeedCardForSite = updateLiveFeedCardForSite;
 
-  // if (document.readyState === 'loading') {
-  //   document.addEventListener('DOMContentLoaded', function() {
-  //     initializeMap();
-  //     createMarkers();
-  //   });
-  // } else {
-  //   initializeMap();
-  //   createMarkers();
-  // }
-
-  initializeMap();
-  createMarkers();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeMap();
+    });
+  } else {
+    initializeMap();
+  }
 });

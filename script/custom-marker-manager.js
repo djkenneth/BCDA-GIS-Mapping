@@ -1,239 +1,239 @@
 const markerIcons = {
   // Default markers (used when no specific type is available)
-  default: {
-    active: {
-      iconUrl: "assets/marker/marker-active.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-maintenance.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-inactive.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-warning.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-critical.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
+  // default: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-active.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-maintenance.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-inactive.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-warning.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-critical.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
   
   // Hospital markers
-  hospital: {
-    active: {
-      iconUrl: "assets/marker/marker-hosp/marker-active-hosp.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-hosp/marker-maintenance-hosp.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-hosp/marker-inactive-hosp.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-hosp/marker-warning-hosp.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-hosp/marker-critical-hosp.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
+  // hospital: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-hosp/marker-active-hosp.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-hosp/marker-maintenance-hosp.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-hosp/marker-inactive-hosp.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-hosp/marker-warning-hosp.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-hosp/marker-critical-hosp.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
   
   // School markers
-  school: {
-    active: {
-      iconUrl: "assets/marker/marker-school/marker-active-school.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-school/marker-maintenance-school.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-school/marker-inactive-school.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-school/marker-warning-school.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-school/marker-critical-school.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
+  // school: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-school/marker-active-school.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-school/marker-maintenance-school.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-school/marker-inactive-school.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-school/marker-warning-school.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-school/marker-critical-school.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
   
   // Government office markers
-  government: {
-    active: {
-      iconUrl: "assets/marker/marker-gov/marker-active-gov.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-gov/marker-maintenance-gov.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-gov/marker-inactive-gov.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-gov/marker-warning-gov.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-gov/marker-critical-gov.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
+  // government: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-gov/marker-active-gov.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-gov/marker-maintenance-gov.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-gov/marker-inactive-gov.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-gov/marker-warning-gov.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-gov/marker-critical-gov.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
   
   // Police station markers
-  police: {
-    active: {
-      iconUrl: "assets/marker/marker-pol/marker-active-pol.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-pol/marker-maintenance-pol.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-pol/marker-inactive-pol.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-pol/marker-warning-pol.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-pol/marker-critical-pol.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
-  waste: {
-    active: {
-      iconUrl: "assets/marker/marker-waste/marker-active-waste.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-waste/marker-maintenance-waste.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-waste/marker-inactive-waste.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-waste/marker-warning-waste.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-waste/marker-critical-waste.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  },
+  // police: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-pol/marker-active-pol.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-pol/marker-maintenance-pol.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-pol/marker-inactive-pol.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-pol/marker-warning-pol.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-pol/marker-critical-pol.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
+  // waste: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-waste/marker-active-waste.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-waste/marker-maintenance-waste.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-waste/marker-inactive-waste.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-waste/marker-warning-waste.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-waste/marker-critical-waste.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // },
   
   // Fire department markers
-  fire: {
-    active: {
-      iconUrl: "assets/marker/marker-fire/marker-active-fire.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    maintenance: {
-      iconUrl: "assets/marker/marker-fire/marker-maintenance-fire.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    inactive: {
-      iconUrl: "assets/marker/marker-fire/marker-inactive-fire.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    warning: {
-      iconUrl: "assets/marker/marker-fire/marker-warning-fire.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    },
-    critical: {
-      iconUrl: "assets/marker/marker-fire/marker-critical-fire.svg",
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    }
-  }
+  // fire: {
+  //   active: {
+  //     iconUrl: "assets/marker/marker-fire/marker-active-fire.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   maintenance: {
+  //     iconUrl: "assets/marker/marker-fire/marker-maintenance-fire.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   inactive: {
+  //     iconUrl: "assets/marker/marker-fire/marker-inactive-fire.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   warning: {
+  //     iconUrl: "assets/marker/marker-fire/marker-warning-fire.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   },
+  //   critical: {
+  //     iconUrl: "assets/marker/marker-fire/marker-critical-fire.svg",
+  //     iconSize: [32, 32],
+  //     iconAnchor: [16, 32],
+  //     popupAnchor: [0, -32],
+  //   }
+  // }
 };
 
 /**

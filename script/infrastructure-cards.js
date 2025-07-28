@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   let infrastructureData = {};
   let isInitialLoad = true;
-  
+
   function initializeInfrastructureCards() {
     // Check if markers data is available
     if (!window.cebuCityMarkers) {
-      console.error('Cebu City markers data not loaded');
+      console.error("Cebu City markers data not loaded");
       // Create a retry mechanism
       setTimeout(() => {
-        console.log('Retrying infrastructure cards initialization...');
+        console.log("Retrying infrastructure cards initialization...");
         initializeInfrastructureCards();
       }, 1000);
       return;
@@ -23,30 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
     renderInfrastructureCards();
   }
 
- function initializeDefaultBuildings() {
+  function initializeDefaultBuildings() {
     try {
-      const buildingsCheckbox = document.getElementById('all-buildings');
+      const buildingsCheckbox = document.getElementById("all-buildings");
       if (buildingsCheckbox) {
         if (!buildingsCheckbox.checked) {
           buildingsCheckbox.checked = true;
-          buildingsCheckbox.dispatchEvent(new Event('change'));
+          buildingsCheckbox.dispatchEvent(new Event("change"));
         } else {
-          console.log('Buildings category already selected');
+          console.log("Buildings category already selected");
         }
       } else {
-        console.warn('Buildings checkbox not found, will try again later');
+        console.warn("Buildings checkbox not found, will try again later");
         // Schedule a retry
         setTimeout(initializeDefaultBuildings, 500);
       }
     } catch (error) {
-      console.error('Error initializing default buildings:', error);
+      console.error("Error initializing default buildings:", error);
     }
   }
 
- function calculateInfrastructureStats() {
+  function calculateInfrastructureStats() {
     try {
       const selectedCategories = getSelectedCategories();
-      
+
       infrastructureData = {
         total: 0,
         active: 0,
@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
         maintenance: 0,
         inactive: 0,
         categories: {},
-        subcategories: {}
+        subcategories: {},
       };
 
-      window.cebuCityMarkers.forEach(category => {
+      window.cebuCityMarkers.forEach((category) => {
         const categoryStats = {
           total: 0,
           active: 0,
@@ -66,23 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
           critical: 0,
           maintenance: 0,
           inactive: 0,
-          subcategories: {}
+          subcategories: {},
         };
 
-        const shouldIncludeCategory = selectedCategories.showAll || 
+        const shouldIncludeCategory =
+          selectedCategories.showAll ||
           selectedCategories.categories.includes(category.id);
 
         if (shouldIncludeCategory) {
-          category.sites.forEach(site => {
+          category.sites.forEach((site) => {
             categoryStats.total++;
             infrastructureData.total++;
-            
-            const status = site.status || 'active';
+
+            const status = site.status || "active";
             categoryStats[status]++;
             infrastructureData[status]++;
 
             const subcategoryKey = getSubcategoryKey(site.subcategory);
-            
+
             if (!categoryStats.subcategories[subcategoryKey]) {
               categoryStats.subcategories[subcategoryKey] = {
                 name: site.subcategory,
@@ -91,10 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 warning: 0,
                 critical: 0,
                 maintenance: 0,
-                inactive: 0
+                inactive: 0,
               };
             }
-            
+
             if (!infrastructureData.subcategories[subcategoryKey]) {
               infrastructureData.subcategories[subcategoryKey] = {
                 name: site.subcategory,
@@ -104,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 critical: 0,
                 maintenance: 0,
                 inactive: 0,
-                categoryId: category.id
+                categoryId: category.id,
               };
             }
-            
+
             categoryStats.subcategories[subcategoryKey].total++;
             categoryStats.subcategories[subcategoryKey][status]++;
-            
+
             infrastructureData.subcategories[subcategoryKey].total++;
             infrastructureData.subcategories[subcategoryKey][status]++;
           });
@@ -119,71 +120,74 @@ document.addEventListener("DOMContentLoaded", function () {
         infrastructureData.categories[category.id] = categoryStats;
       });
     } catch (error) {
-      console.error('Error calculating infrastructure stats:', error);
+      console.error("Error calculating infrastructure stats:", error);
     }
   }
 
   function getSubcategoryKey(subcategory) {
     const subcategoryMap = {
-      "Highways": "highways",
-      "Roads": "main-roads", 
-      "Streets": "streets",
+      Highways: "highways",
+      Roads: "main-roads",
+      Streets: "streets",
       "Public transportation networks": "public-transport",
       "Real-time traffic conditions": "traffic-data",
       "Congestion patterns": "traffic-data",
       "Public transport routes": "public-transport",
       "Water Supply": "water-supply",
-      "Electricity Supply": "electricity", 
+      "Electricity Supply": "electricity",
       "Sewage System": "sewage",
       "Communication lines": "communication",
       "Waste Management Facilities": "waste-management",
       "Core Infrastructure": "nbp",
       "Data Centers": "nbp",
-      "Operations": "nbp",
+      Operations: "nbp",
       "Public Access Points": "nbp",
       "Specialized Networks": "nbp",
       "Wireless Infrastructure": "nbp",
       "Service Centers": "nbp",
       "WiFi Hotspots": "wifi-hotspots",
       "Public Internet Centers": "internet-centers",
-      "Hospitals": "hospitals",
-      "Schools": "schools",
+      Hospitals: "hospitals",
+      Schools: "schools",
       "Government Offices": "government-offices",
       "Police Stations": "police-stations",
       "Fire Departments": "fire-departments",
-      "Topography": "topography",
-      "Waterways": "waterways",
-      "Parks": "parks",
+      Topography: "topography",
+      Waterways: "waterways",
+      Parks: "parks",
       "Green Spaces": "parks",
       "Areas vulnerable to flooding": "flood-zones",
       "Pollution zones": "pollution-zones",
       "Other environmental hazards": "other-hazards",
-      "Businesses": "businesses",
+      Businesses: "businesses",
       "Recreational areas": "recreational",
       "Community centers": "community-centers",
       "Population density": "population-density",
       "Income distribution": "income-distribution",
-      "Education levels": "education-levels"
+      "Education levels": "education-levels",
     };
-    
-    return subcategoryMap[subcategory] || subcategory.toLowerCase().replace(/\s+/g, '-');
+
+    return (
+      subcategoryMap[subcategory] ||
+      subcategory.toLowerCase().replace(/\s+/g, "-")
+    );
   }
 
   function renderInfrastructureCards() {
-    const cardsWrapper = document.getElementById('infra-cards-wrapper');
+    const cardsWrapper = document.getElementById("infra-cards-wrapper");
     if (!cardsWrapper) {
-      console.error('Infrastructure cards wrapper not found');
+      console.error("Infrastructure cards wrapper not found");
       return;
     }
 
     const selectedCategories = getSelectedCategories();
     let cards = [];
-    
+
     // if (!selectedCategories.showAll && selectedCategories.categories.length === 0) {
     //   cardsWrapper.innerHTML = '<div class="no-selection-message" style="color: #b0bec5; text-align: center; padding: 20px; font-size: 16px;">Select a category from the sidebar to view infrastructure cards</div>';
     //   return;
     // }
-    
+
     if (selectedCategories.showAll) {
       cards = getOverviewCards();
     } else if (selectedCategories.categories.length === 1) {
@@ -198,13 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //   return;
     // }
 
-    let cardsHTML = '';
-    cards.forEach(card => {
+    let cardsHTML = "";
+    cards.forEach((card) => {
       cardsHTML += `
         <div class="infra-card ${card.className}" 
              data-category="${card.category}" 
              data-filter="${card.filter}"
-             data-subcategory="${card.subcategory || ''}"
+             data-subcategory="${card.subcategory || ""}"
              style="cursor: pointer;">
           <div class="card-title">${card.value}</div>
           <div class="card-type">${card.title}</div>
@@ -223,249 +227,249 @@ document.addEventListener("DOMContentLoaded", function () {
   function getOverviewCards() {
     return [
       {
-        title: 'Total Sites',
+        title: "Total Sites",
         value: infrastructureData.total,
-        type: 'Total Infrastructure',
-        className: 'info-bg',
-        icon: 'fas fa-map-marker-alt',
-        category: 'status',
-        filter: 'total'
+        type: "Total Infrastructure",
+        className: "info-bg",
+        icon: "fas fa-map-marker-alt",
+        category: "status",
+        filter: "total",
       },
       {
-        title: 'Active',
+        title: "Active",
         value: infrastructureData.active,
-        type: 'Operational Sites',
-        className: 'active-bg',
-        icon: 'fas fa-check-circle',
-        category: 'status',
-        filter: 'active'
+        type: "Operational Sites",
+        className: "active-bg",
+        icon: "fas fa-check-circle",
+        category: "status",
+        filter: "active",
       },
       {
-        title: 'Warning',
+        title: "Warning",
         value: infrastructureData.warning,
-        type: 'Needs Attention',
-        className: 'warning-bg',
-        icon: 'fas fa-exclamation-triangle',
-        category: 'status',
-        filter: 'warning'
+        type: "Needs Attention",
+        className: "warning-bg",
+        icon: "fas fa-exclamation-triangle",
+        category: "status",
+        filter: "warning",
       },
       {
-        title: 'Critical',
+        title: "Critical",
         value: infrastructureData.critical,
-        type: 'Immediate Action',
-        className: 'critical-bg',
-        icon: 'fas fa-times-circle',
-        category: 'status',
-        filter: 'critical'
+        type: "Immediate Action",
+        className: "critical-bg",
+        icon: "fas fa-times-circle",
+        category: "status",
+        filter: "critical",
       },
       {
-        title: 'Maintenance',
+        title: "Maintenance",
         value: infrastructureData.maintenance,
-        type: 'Under Maintenance',
-        className: 'maintenance-bg',
-        icon: 'fas fa-wrench',
-        category: 'status',
-        filter: 'maintenance'
+        type: "Under Maintenance",
+        className: "maintenance-bg",
+        icon: "fas fa-wrench",
+        category: "status",
+        filter: "maintenance",
       },
       {
-        title: 'Inactive',
+        title: "Inactive",
         value: infrastructureData.inactive,
-        type: 'Inactive Sites',
-        className: 'inactive-bg',
-        icon: 'fas fa-ban',
-        category: 'status',
-        filter: 'inactive'
+        type: "Inactive Sites",
+        className: "inactive-bg",
+        icon: "fas fa-ban",
+        category: "status",
+        filter: "inactive",
       },
       {
-        title: 'Infrastructure',
+        title: "Infrastructure",
         value: infrastructureData.categories.infrastructure?.total || 0,
-        type: 'Roads, Utilities, Comm',
-        className: 'wifi-bg',
-        icon: 'fas fa-road',
-        category: 'infrastructure',
-        filter: 'infrastructure'
+        type: "Roads, Utilities, Comm",
+        className: "wifi-bg",
+        icon: "fas fa-road",
+        category: "infrastructure",
+        filter: "infrastructure",
       },
       {
-        title: 'Public Buildings',
+        title: "Public Buildings",
         value: infrastructureData.categories.public_buildings?.total || 0,
-        type: 'Hospitals, Schools, Govt',
-        className: 'nbp-bg',
-        icon: 'fas fa-building',
-        category: 'public_buildings',
-        filter: 'public_buildings'
+        type: "Hospitals, Schools, Govt",
+        className: "nbp-bg",
+        icon: "fas fa-building",
+        category: "public_buildings",
+        filter: "public_buildings",
       },
       {
-        title: 'Natural Features',
+        title: "Natural Features",
         value: infrastructureData.categories.natural_features?.total || 0,
-        type: 'Parks, Waterways',
-        className: 'data-center-bg',
-        icon: 'fas fa-leaf',
-        category: 'natural_features',
-        filter: 'natural_features'
+        type: "Parks, Waterways",
+        className: "data-center-bg",
+        icon: "fas fa-leaf",
+        category: "natural_features",
+        filter: "natural_features",
       },
       {
-        title: 'Environmental Risks',
+        title: "Environmental Risks",
         value: infrastructureData.categories.environmental_risks?.total || 0,
-        type: 'Flood, Pollution Zones',
-        className: 'critical-bg',
-        icon: 'fas fa-exclamation-triangle',
-        category: 'environmental_risks',
-        filter: 'environmental_risks'
+        type: "Flood, Pollution Zones",
+        className: "critical-bg",
+        icon: "fas fa-exclamation-triangle",
+        category: "environmental_risks",
+        filter: "environmental_risks",
       },
       {
-        title: 'Points of Interest',
+        title: "Points of Interest",
         value: infrastructureData.categories.points_of_interest?.total || 0,
-        type: 'Business, Recreation',
-        className: 'ai-bg',
-        icon: 'fas fa-star',
-        category: 'points_of_interest',
-        filter: 'points_of_interest'
+        type: "Business, Recreation",
+        className: "ai-bg",
+        icon: "fas fa-star",
+        category: "points_of_interest",
+        filter: "points_of_interest",
       },
       {
-        title: 'Demographics',
+        title: "Demographics",
         value: infrastructureData.categories.population_data?.total || 0,
-        type: 'Population Data',
-        className: 'info-bg',
-        icon: 'fas fa-users',
-        category: 'population_data',
-        filter: 'population_data'
+        type: "Population Data",
+        className: "info-bg",
+        icon: "fas fa-users",
+        category: "population_data",
+        filter: "population_data",
       },
       {
-        title: 'Internet Access',
+        title: "Internet Access",
         value: infrastructureData.categories.internet_access?.total || 0,
-        type: 'WiFi, Internet Centers',
-        className: 'wifi-bg',
-        icon: 'fas fa-wifi',
-        category: 'internet_access',
-        filter: 'internet_access'
-      }
+        type: "WiFi, Internet Centers",
+        className: "wifi-bg",
+        icon: "fas fa-wifi",
+        category: "internet_access",
+        filter: "internet_access",
+      },
     ];
   }
 
   function getStatusCards() {
     return [
       {
-        title: 'Active',
+        title: "Active",
         value: infrastructureData.active,
-        type: 'Operational Sites',
-        className: 'active-bg',
-        icon: 'fas fa-check-circle',
-        category: 'status',
-        filter: 'active'
+        type: "Operational Sites",
+        className: "active-bg",
+        icon: "fas fa-check-circle",
+        category: "status",
+        filter: "active",
       },
       {
-        title: 'Warning',
+        title: "Warning",
         value: infrastructureData.warning,
-        type: 'Needs Attention',
-        className: 'warning-bg',
-        icon: 'fas fa-exclamation-triangle',
-        category: 'status',
-        filter: 'warning'
+        type: "Needs Attention",
+        className: "warning-bg",
+        icon: "fas fa-exclamation-triangle",
+        category: "status",
+        filter: "warning",
       },
       {
-        title: 'Critical',
+        title: "Critical",
         value: infrastructureData.critical,
-        type: 'Immediate Action',
-        className: 'critical-bg',
-        icon: 'fas fa-times-circle',
-        category: 'status',
-        filter: 'critical'
+        type: "Immediate Action",
+        className: "critical-bg",
+        icon: "fas fa-times-circle",
+        category: "status",
+        filter: "critical",
       },
       {
-        title: 'Maintenance',
+        title: "Maintenance",
         value: infrastructureData.maintenance,
-        type: 'Under Maintenance',
-        className: 'maintenance-bg',
-        icon: 'fas fa-wrench',
-        category: 'status',
-        filter: 'maintenance'
+        type: "Under Maintenance",
+        className: "maintenance-bg",
+        icon: "fas fa-wrench",
+        category: "status",
+        filter: "maintenance",
       },
       {
-        title: 'Inactive',
+        title: "Inactive",
         value: infrastructureData.inactive,
-        type: 'Inactive Sites',
-        className: 'inactive-bg',
-        icon: 'fas fa-ban',
-        category: 'status',
-        filter: 'inactive'
-      }
+        type: "Inactive Sites",
+        className: "inactive-bg",
+        icon: "fas fa-ban",
+        category: "status",
+        filter: "inactive",
+      },
     ];
   }
 
   function getCategoryWithStatusCards(categoryId) {
     const cards = [];
     const categoryData = infrastructureData.categories[categoryId];
-    
+
     if (!categoryData) return cards;
 
     const statusCards = [
       {
-        title: 'Active',
+        title: "Active",
         value: categoryData.active,
-        type: 'Operational Sites',
-        className: 'active-bg',
-        icon: 'fas fa-check-circle',
-        category: 'status',
-        filter: 'active',
-        categoryFilter: categoryId
+        type: "Operational Sites",
+        className: "active-bg",
+        icon: "fas fa-check-circle",
+        category: "status",
+        filter: "active",
+        categoryFilter: categoryId,
       },
       {
-        title: 'Warning',
+        title: "Warning",
         value: categoryData.warning,
-        type: 'Needs Attention',
-        className: 'warning-bg',
-        icon: 'fas fa-exclamation-triangle',
-        category: 'status',
-        filter: 'warning',
-        categoryFilter: categoryId
+        type: "Needs Attention",
+        className: "warning-bg",
+        icon: "fas fa-exclamation-triangle",
+        category: "status",
+        filter: "warning",
+        categoryFilter: categoryId,
       },
       {
-        title: 'Critical',
+        title: "Critical",
         value: categoryData.critical,
-        type: 'Immediate Action',
-        className: 'critical-bg',
-        icon: 'fas fa-times-circle',
-        category: 'status',
-        filter: 'critical',
-        categoryFilter: categoryId
+        type: "Immediate Action",
+        className: "critical-bg",
+        icon: "fas fa-times-circle",
+        category: "status",
+        filter: "critical",
+        categoryFilter: categoryId,
       },
       {
-        title: 'Maintenance',
+        title: "Maintenance",
         value: categoryData.maintenance,
-        type: 'Under Maintenance',
-        className: 'maintenance-bg',
-        icon: 'fas fa-wrench',
-        category: 'status',
-        filter: 'maintenance',
-        categoryFilter: categoryId
+        type: "Under Maintenance",
+        className: "maintenance-bg",
+        icon: "fas fa-wrench",
+        category: "status",
+        filter: "maintenance",
+        categoryFilter: categoryId,
       },
       {
-        title: 'Inactive',
+        title: "Inactive",
         value: categoryData.inactive,
-        type: 'Inactive Sites',
-        className: 'inactive-bg',
-        icon: 'fas fa-ban',
-        category: 'status',
-        filter: 'inactive',
-        categoryFilter: categoryId
-      }
+        type: "Inactive Sites",
+        className: "inactive-bg",
+        icon: "fas fa-ban",
+        category: "status",
+        filter: "inactive",
+        categoryFilter: categoryId,
+      },
     ];
 
     cards.push(...statusCards);
 
     const subcategoryCards = getSubcategoryCards(categoryId);
     cards.push(...subcategoryCards);
-    
+
     return cards;
   }
 
   function getCategoryCards(selectedCategoryIds) {
     const cards = [];
-    
-    selectedCategoryIds.forEach(categoryId => {
+
+    selectedCategoryIds.forEach((categoryId) => {
       const categoryData = infrastructureData.categories[categoryId];
       if (!categoryData) return;
-      
+
       const categoryInfo = getCategoryInfo(categoryId);
       cards.push({
         title: categoryInfo.title,
@@ -474,22 +478,22 @@ document.addEventListener("DOMContentLoaded", function () {
         className: categoryInfo.className,
         icon: categoryInfo.icon,
         category: categoryId,
-        filter: categoryId
+        filter: categoryId,
       });
     });
-    
+
     return cards;
   }
 
   function getSubcategoryCards(categoryId) {
     const cards = [];
     const categoryData = infrastructureData.categories[categoryId];
-    
+
     if (!categoryData || !categoryData.subcategories) return cards;
 
     const subcategoryConfigs = getSubcategoryConfigs(categoryId);
-    
-    subcategoryConfigs.forEach(config => {
+
+    subcategoryConfigs.forEach((config) => {
       const subcategoryData = categoryData.subcategories[config.key];
       if (subcategoryData && subcategoryData.total > 0) {
         cards.push({
@@ -500,265 +504,463 @@ document.addEventListener("DOMContentLoaded", function () {
           icon: config.icon,
           category: categoryId,
           filter: config.key,
-          subcategory: config.key
+          subcategory: config.key,
         });
       }
     });
-    
+
     return cards;
   }
 
   function getSubcategoryConfigs(categoryId) {
     const configs = {
       infrastructure: [
-        { key: 'highways', title: 'Highways', type: 'Major Highway Routes', className: 'wifi-bg', icon: 'fas fa-highway' },
-        { key: 'main-roads', title: 'Main Roads', type: 'Primary Road Network', className: 'nbp-bg', icon: 'fas fa-road' },
-        { key: 'streets', title: 'Streets', type: 'Local Street Network', className: 'data-center-bg', icon: 'fas fa-route' },
-        { key: 'public-transport', title: 'Public Transportation', type: 'Transit Systems', className: 'info-bg', icon: 'fas fa-bus' },
-        { key: 'traffic-data', title: 'Traffic Data', type: 'Traffic Monitoring', className: 'ai-bg', icon: 'fas fa-traffic-light' },
-        { key: 'water-supply', title: 'Water Supply', type: 'Water Infrastructure', className: 'active-bg', icon: 'fas fa-tint' },
-        { key: 'electricity', title: 'Electricity', type: 'Power Infrastructure', className: 'warning-bg', icon: 'fas fa-bolt' },
-        { key: 'sewage', title: 'Sewage', type: 'Sewage Systems', className: 'maintenance-bg', icon: 'fas fa-water' },
-        { key: 'communication', title: 'Communication Lines', type: 'Telecom Infrastructure', className: 'wifi-bg', icon: 'fas fa-broadcast-tower' },
-        { key: 'waste-management', title: 'Waste Management', type: 'Waste Facilities', className: 'critical-bg', icon: 'fas fa-trash' },
-        { key: 'nbp', title: 'National Broadband Project', type: 'Government Broadband', className: 'nbp-bg', icon: 'fas fa-network-wired' }
+        {
+          key: "highways",
+          title: "Highways",
+          type: "Major Highway Routes",
+          className: "wifi-bg",
+          icon: "fas fa-highway",
+        },
+        {
+          key: "main-roads",
+          title: "Main Roads",
+          type: "Primary Road Network",
+          className: "nbp-bg",
+          icon: "fas fa-road",
+        },
+        {
+          key: "streets",
+          title: "Streets",
+          type: "Local Street Network",
+          className: "data-center-bg",
+          icon: "fas fa-route",
+        },
+        {
+          key: "public-transport",
+          title: "Public Transportation",
+          type: "Transit Systems",
+          className: "info-bg",
+          icon: "fas fa-bus",
+        },
+        {
+          key: "traffic-data",
+          title: "Traffic Data",
+          type: "Traffic Monitoring",
+          className: "ai-bg",
+          icon: "fas fa-traffic-light",
+        },
+        {
+          key: "water-supply",
+          title: "Water Supply",
+          type: "Water Infrastructure",
+          className: "active-bg",
+          icon: "fas fa-tint",
+        },
+        {
+          key: "electricity",
+          title: "Electricity",
+          type: "Power Infrastructure",
+          className: "warning-bg",
+          icon: "fas fa-bolt",
+        },
+        {
+          key: "sewage",
+          title: "Sewage",
+          type: "Sewage Systems",
+          className: "maintenance-bg",
+          icon: "fas fa-water",
+        },
+        {
+          key: "communication",
+          title: "Communication Lines",
+          type: "Telecom Infrastructure",
+          className: "wifi-bg",
+          icon: "fas fa-broadcast-tower",
+        },
+        {
+          key: "waste-management",
+          title: "Waste Management",
+          type: "Waste Facilities",
+          className: "critical-bg",
+          icon: "fas fa-trash",
+        },
+        {
+          key: "nbp",
+          title: "National Broadband Project",
+          type: "Government Broadband",
+          className: "nbp-bg",
+          icon: "fas fa-network-wired",
+        },
       ],
-      
+
       public_buildings: [
-        { key: 'hospitals', title: 'Hospitals', type: 'Healthcare Facilities', className: 'critical-bg', icon: 'fas fa-hospital' },
-        { key: 'schools', title: 'Schools', type: 'Educational Facilities', className: 'info-bg', icon: 'fas fa-school' },
-        { key: 'government-offices', title: 'Government Offices', type: 'Gov Buildings', className: 'nbp-bg', icon: 'fas fa-landmark' },
-        { key: 'police-stations', title: 'Police Stations', type: 'Law Enforcement', className: 'active-bg', icon: 'fas fa-shield-alt' },
-        { key: 'fire-departments', title: 'Fire Departments', type: 'Fire Safety', className: 'warning-bg', icon: 'fas fa-fire-extinguisher' }
+        {
+          key: "hospitals",
+          title: "Hospitals",
+          type: "Healthcare Facilities",
+          className: "critical-bg",
+          icon: "fas fa-hospital",
+        },
+        {
+          key: "schools",
+          title: "Schools",
+          type: "Educational Facilities",
+          className: "info-bg",
+          icon: "fas fa-school",
+        },
+        {
+          key: "government-offices",
+          title: "Government Offices",
+          type: "Gov Buildings",
+          className: "nbp-bg",
+          icon: "fas fa-landmark",
+        },
+        {
+          key: "police-stations",
+          title: "Police Stations",
+          type: "Law Enforcement",
+          className: "active-bg",
+          icon: "fas fa-shield-alt",
+        },
+        {
+          key: "fire-departments",
+          title: "Fire Departments",
+          type: "Fire Safety",
+          className: "warning-bg",
+          icon: "fas fa-fire-extinguisher",
+        },
       ],
-      
+
       natural_features: [
-        { key: 'topography', title: 'Topography', type: 'Terrain Features', className: 'data-center-bg', icon: 'fas fa-mountain' },
-        { key: 'waterways', title: 'Waterways', type: 'Rivers & Streams', className: 'active-bg', icon: 'fas fa-water' },
-        { key: 'parks', title: 'Parks & Green Spaces', type: 'Recreation Areas', className: 'maintenance-bg', icon: 'fas fa-tree' }
+        {
+          key: "topography",
+          title: "Topography",
+          type: "Terrain Features",
+          className: "data-center-bg",
+          icon: "fas fa-mountain",
+        },
+        {
+          key: "waterways",
+          title: "Waterways",
+          type: "Rivers & Streams",
+          className: "active-bg",
+          icon: "fas fa-water",
+        },
+        {
+          key: "parks",
+          title: "Parks & Green Spaces",
+          type: "Recreation Areas",
+          className: "maintenance-bg",
+          icon: "fas fa-tree",
+        },
       ],
-      
+
       environmental_risks: [
-        { key: 'flood-zones', title: 'Flood Prone Areas', type: 'Flooding Risk Zones', className: 'critical-bg', icon: 'fas fa-water' },
-        { key: 'pollution-zones', title: 'Pollution Zones', type: 'Contaminated Areas', className: 'warning-bg', icon: 'fas fa-smog' },
-        { key: 'other-hazards', title: 'Other Hazards', type: 'Environmental Risks', className: 'critical-bg', icon: 'fas fa-exclamation-triangle' }
+        {
+          key: "flood-zones",
+          title: "Flood Prone Areas",
+          type: "Flooding Risk Zones",
+          className: "critical-bg",
+          icon: "fas fa-water",
+        },
+        {
+          key: "pollution-zones",
+          title: "Pollution Zones",
+          type: "Contaminated Areas",
+          className: "warning-bg",
+          icon: "fas fa-smog",
+        },
+        {
+          key: "other-hazards",
+          title: "Other Hazards",
+          type: "Environmental Risks",
+          className: "critical-bg",
+          icon: "fas fa-exclamation-triangle",
+        },
       ],
-      
+
       points_of_interest: [
-        { key: 'businesses', title: 'Businesses', type: 'Commercial Areas', className: 'ai-bg', icon: 'fas fa-building' },
-        { key: 'recreational', title: 'Recreational Areas', type: 'Entertainment Venues', className: 'maintenance-bg', icon: 'fas fa-gamepad' },
-        { key: 'community-centers', title: 'Community Centers', type: 'Community Facilities', className: 'info-bg', icon: 'fas fa-users' }
+        {
+          key: "businesses",
+          title: "Businesses",
+          type: "Commercial Areas",
+          className: "ai-bg",
+          icon: "fas fa-building",
+        },
+        {
+          key: "recreational",
+          title: "Recreational Areas",
+          type: "Entertainment Venues",
+          className: "maintenance-bg",
+          icon: "fas fa-gamepad",
+        },
+        {
+          key: "community-centers",
+          title: "Community Centers",
+          type: "Community Facilities",
+          className: "info-bg",
+          icon: "fas fa-users",
+        },
       ],
-      
+
       population_data: [
-        { key: 'population-density', title: 'Population Density', type: 'Density Zones', className: 'warning-bg', icon: 'fas fa-users' },
-        { key: 'income-distribution', title: 'Income Distribution', type: 'Economic Zones', className: 'ai-bg', icon: 'fas fa-chart-line' },
-        { key: 'education-levels', title: 'Education Levels', type: 'Educational Stats', className: 'info-bg', icon: 'fas fa-graduation-cap' }
+        {
+          key: "population-density",
+          title: "Population Density",
+          type: "Density Zones",
+          className: "warning-bg",
+          icon: "fas fa-users",
+        },
+        {
+          key: "income-distribution",
+          title: "Income Distribution",
+          type: "Economic Zones",
+          className: "ai-bg",
+          icon: "fas fa-chart-line",
+        },
+        {
+          key: "education-levels",
+          title: "Education Levels",
+          type: "Educational Stats",
+          className: "info-bg",
+          icon: "fas fa-graduation-cap",
+        },
       ],
-      
+
       internet_access: [
-        { key: 'wifi-hotspots', title: 'WiFi Hotspots', type: 'Public WiFi Points', className: 'wifi-bg', icon: 'fas fa-wifi' },
-        { key: 'internet-centers', title: 'Public Internet Centers', type: 'Internet Access Points', className: 'nbp-bg', icon: 'fas fa-desktop' }
-      ]
+        {
+          key: "wifi-hotspots",
+          title: "WiFi Hotspots",
+          type: "Public WiFi Points",
+          className: "wifi-bg",
+          icon: "fas fa-wifi",
+        },
+        {
+          key: "internet-centers",
+          title: "Public Internet Centers",
+          type: "Internet Access Points",
+          className: "nbp-bg",
+          icon: "fas fa-desktop",
+        },
+      ],
     };
-    
+
     return configs[categoryId] || [];
   }
 
   function getCategoryInfo(categoryId) {
     const categoryInfoMap = {
       infrastructure: {
-        title: 'Infrastructure',
-        type: 'Roads, Utilities, Comm',
-        className: 'wifi-bg',
-        icon: 'fas fa-road'
+        title: "Infrastructure",
+        type: "Roads, Utilities, Comm",
+        className: "wifi-bg",
+        icon: "fas fa-road",
       },
       public_buildings: {
-        title: 'Public Buildings',
-        type: 'Hospitals, Schools, Govt',
-        className: 'nbp-bg',
-        icon: 'fas fa-building'
+        title: "Public Buildings",
+        type: "Hospitals, Schools, Govt",
+        className: "nbp-bg",
+        icon: "fas fa-building",
       },
       natural_features: {
-        title: 'Natural Features',
-        type: 'Parks, Waterways',
-        className: 'data-center-bg',
-        icon: 'fas fa-leaf'
+        title: "Natural Features",
+        type: "Parks, Waterways",
+        className: "data-center-bg",
+        icon: "fas fa-leaf",
       },
       environmental_risks: {
-        title: 'Environmental Risks',
-        type: 'Flood, Pollution Zones',
-        className: 'critical-bg',
-        icon: 'fas fa-exclamation-triangle'
+        title: "Environmental Risks",
+        type: "Flood, Pollution Zones",
+        className: "critical-bg",
+        icon: "fas fa-exclamation-triangle",
       },
       points_of_interest: {
-        title: 'Points of Interest',
-        type: 'Business, Recreation',
-        className: 'ai-bg',
-        icon: 'fas fa-star'
+        title: "Points of Interest",
+        type: "Business, Recreation",
+        className: "ai-bg",
+        icon: "fas fa-star",
       },
       population_data: {
-        title: 'Population Data',
-        type: 'Demographics Info',
-        className: 'info-bg',
-        icon: 'fas fa-users'
+        title: "Population Data",
+        type: "Demographics Info",
+        className: "info-bg",
+        icon: "fas fa-users",
       },
       internet_access: {
-        title: 'Free Public Internet',
-        type: 'WiFi, Internet Centers',
-        className: 'wifi-bg',
-        icon: 'fas fa-wifi'
+        title: "Free Public Internet",
+        type: "WiFi, Internet Centers",
+        className: "wifi-bg",
+        icon: "fas fa-wifi",
+      },
+    };
+
+    return (
+      categoryInfoMap[categoryId] || {
+        title: categoryId,
+        type: "Category",
+        className: "info-bg",
+        icon: "fas fa-circle",
       }
-    };
-    
-    return categoryInfoMap[categoryId] || {
-      title: categoryId,
-      type: 'Category',
-      className: 'info-bg',
-      icon: 'fas fa-circle'
-    };
+    );
   }
 
-function getSelectedCategories() {
+  function getSelectedCategories() {
     try {
-      const allCheckbox = document.getElementById('all');
-      const infrastructureCheckbox = document.getElementById('all-infrastructure');
-      const buildingsCheckbox = document.getElementById('all-buildings');
-      const naturalCheckbox = document.getElementById('all-natural');
-      const risksCheckbox = document.getElementById('all-risks');
-      const poiCheckbox = document.getElementById('all-poi');
-      const demographicsCheckbox = document.getElementById('all-demographics');
-      const internetCheckbox = document.getElementById('all-internet');
+      const allCheckbox = document.getElementById("all");
+      const infrastructureCheckbox =
+        document.getElementById("all-infrastructure");
+      const buildingsCheckbox = document.getElementById("all-buildings");
+      const naturalCheckbox = document.getElementById("all-natural");
+      const risksCheckbox = document.getElementById("all-risks");
+      const poiCheckbox = document.getElementById("all-poi");
+      const demographicsCheckbox = document.getElementById("all-demographics");
+      const internetCheckbox = document.getElementById("all-internet");
 
       // If all checkboxes aren't loaded yet, default to show all
       if (!allCheckbox && !buildingsCheckbox) {
-        console.warn('Checkboxes not found in DOM, defaulting to show all categories');
+        console.warn(
+          "Checkboxes not found in DOM, defaulting to show all categories"
+        );
         return {
           showAll: true,
-          categories: []
+          categories: [],
         };
       }
 
       if (allCheckbox && allCheckbox.checked) {
         return {
           showAll: true,
-          categories: []
+          categories: [],
         };
       }
 
       const selectedCategories = [];
-      
+
       if (infrastructureCheckbox && infrastructureCheckbox.checked) {
-        selectedCategories.push('infrastructure');
+        selectedCategories.push("infrastructure");
       }
       if (buildingsCheckbox && buildingsCheckbox.checked) {
-        selectedCategories.push('public_buildings');
+        selectedCategories.push("public_buildings");
       }
       if (naturalCheckbox && naturalCheckbox.checked) {
-        selectedCategories.push('natural_features');
+        selectedCategories.push("natural_features");
       }
       if (risksCheckbox && risksCheckbox.checked) {
-        selectedCategories.push('environmental_risks');
+        selectedCategories.push("environmental_risks");
       }
       if (poiCheckbox && poiCheckbox.checked) {
-        selectedCategories.push('points_of_interest');
+        selectedCategories.push("points_of_interest");
       }
       if (demographicsCheckbox && demographicsCheckbox.checked) {
-        selectedCategories.push('population_data');
+        selectedCategories.push("population_data");
       }
       if (internetCheckbox && internetCheckbox.checked) {
-        selectedCategories.push('internet_access');
+        selectedCategories.push("internet_access");
       }
-      
+
       // If no categories selected but checkboxes exist, select buildings by default
       if (selectedCategories.length === 0 && buildingsCheckbox) {
-        console.log('No categories selected, defaulting to buildings');
-        selectedCategories.push('public_buildings');
+        console.log("No categories selected, defaulting to buildings");
+        selectedCategories.push("public_buildings");
         // Don't automatically check the checkbox here to avoid infinite loop
       }
 
       return {
         showAll: false,
-        categories: selectedCategories
+        categories: selectedCategories,
       };
     } catch (error) {
-      console.error('Error getting selected categories:', error);
+      console.error("Error getting selected categories:", error);
       // Default fallback
       return {
         showAll: true,
-        categories: []
+        categories: [],
       };
     }
   }
-    function safeInitialization() {
+
+  function safeInitialization() {
     try {
       if (window.cebuCityMarkers) {
         initializeInfrastructureCards();
       } else {
-        console.log('Waiting for Cebu City markers data...');
+        console.log("Waiting for Cebu City markers data...");
         // Set up a global event listener for marker data
-        window.addEventListener('cebuCityMarkersLoaded', initializeInfrastructureCards);
-        
+        window.addEventListener(
+          "cebuCityMarkersLoaded",
+          initializeInfrastructureCards
+        );
+
         // Also set a timeout as a fallback
         setTimeout(() => {
           if (!window.cebuCityMarkers) {
-            console.warn('Timeout waiting for markers data, attempting initialization anyway');
+            console.warn(
+              "Timeout waiting for markers data, attempting initialization anyway"
+            );
             window.cebuCityMarkers = window.cebuCityMarkers || [];
             initializeInfrastructureCards();
           }
         }, 5000); // 5 second timeout
       }
     } catch (error) {
-      console.error('Error during initialization:', error);
+      console.error("Error during initialization:", error);
     }
   }
+
   safeInitialization();
 
   // Export the infrastructure cards API
   window.infrastructureCards = {
-    update: function() {
+    update: function () {
       try {
         calculateInfrastructureStats();
         renderInfrastructureCards();
-        console.log('Infrastructure cards updated');
+        console.log("Infrastructure cards updated");
       } catch (error) {
-        console.error('Error updating infrastructure cards:', error);
+        console.error("Error updating infrastructure cards:", error);
       }
     },
     getData: () => infrastructureData,
-    initialize: safeInitialization // Add explicit initialization method
+    initialize: safeInitialization, // Add explicit initialization method
   };
 
   function addCardClickListeners() {
-    const cards = document.querySelectorAll('.infra-card');
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        const category = this.getAttribute('data-category');
-        const filter = this.getAttribute('data-filter');
-        const subcategory = this.getAttribute('data-subcategory');
-        const categoryFilter = this.getAttribute('data-category-filter');
-        
+    const cards = document.querySelectorAll(".infra-card");
+    cards.forEach((card) => {
+      card.addEventListener("click", function () {
+        const category = this.getAttribute("data-category");
+        const filter = this.getAttribute("data-filter");
+        const subcategory = this.getAttribute("data-subcategory");
+        const categoryFilter = this.getAttribute("data-category-filter");
+
         showSitesList(category, filter, subcategory, categoryFilter);
       });
     });
   }
 
   function showSitesList(category, filter, subcategory, categoryFilter) {
-      let sitesModal = document.getElementById('sites-modal');
-      
-      if (!sitesModal) {
-          sitesModal = createSitesModal();
-      }
-      
-      populateSitesModal(sitesModal, category, filter, subcategory, categoryFilter);
-      sitesModal.style.display = 'block';
-      updateModalPosition(sitesModal);
+    let sitesModal = document.getElementById("sites-modal");
+
+    if (!sitesModal) {
+      sitesModal = createSitesModal();
+    }
+
+    populateSitesModal(
+      sitesModal,
+      category,
+      filter,
+      subcategory,
+      categoryFilter
+    );
+    sitesModal.style.display = "block";
+    updateModalPosition(sitesModal);
   }
 
-function createSitesModal() {
-    const modal = document.createElement('div');
-    modal.id = 'sites-modal';
-    modal.className = 'sites-modal';
+  function createSitesModal() {
+    const modal = document.createElement("div");
+    modal.id = "sites-modal";
+    modal.className = "sites-modal";
     modal.innerHTML = `
         <div class="sites-modal-header">
             <h3 id="sites-modal-title">Sites List</h3>
@@ -767,7 +969,7 @@ function createSitesModal() {
         <div class="sites-modal-content" id="sites-modal-content">
         </div>
     `;
-    
+
     // Base styles that work across all screen sizes
     modal.style.cssText = `
         position: fixed;
@@ -777,109 +979,128 @@ function createSitesModal() {
         display: none;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     `;
-    
+
     document.body.appendChild(modal);
-    
-    const closeBtn = modal.querySelector('#sites-modal-close');
-    closeBtn.addEventListener('click', function() {
-        closeSitesModal(modal);
+
+    const closeBtn = modal.querySelector("#sites-modal-close");
+    closeBtn.addEventListener("click", function () {
+      closeSitesModal(modal);
     });
-    
+
     // Close modal when clicking outside on desktop
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal && !window.matchMedia('(max-width: 768px)').matches) {
-            closeSitesModal(modal);
-        }
+    modal.addEventListener("click", function (e) {
+      if (
+        e.target === modal &&
+        !window.matchMedia("(max-width: 768px)").matches
+      ) {
+        closeSitesModal(modal);
+      }
     });
-    
+
     // Handle escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeSitesModal(modal);
-        }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.style.display === "block") {
+        closeSitesModal(modal);
+      }
     });
-    
+
     return modal;
-}
-function closeSitesModal(modal) {
-    modal.style.display = 'none';
-    modal.classList.remove('full-screen');
-    document.body.classList.remove('modal-open');
-}
-function updateModalPosition(modal) {
+  }
+
+  function closeSitesModal(modal) {
+    modal.style.display = "none";
+    modal.classList.remove("full-screen");
+    document.body.classList.remove("modal-open");
+  }
+
+  function updateModalPosition(modal) {
     if (!modal) return;
-    
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const isTablet = window.matchMedia('(max-width: 1024px) and (min-width: 769px)').matches;
-    
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const isTablet = window.matchMedia(
+      "(max-width: 1024px) and (min-width: 769px)"
+    ).matches;
+
     if (isMobile || isTablet) {
-        // Force full-screen positioning for mobile and tablet
-        modal.style.top = '0px';
-        modal.style.left = '0px';
-        modal.style.right = '0px';
-        modal.style.bottom = '0px';
-        modal.style.width = '100%';
-        modal.style.height = '100%';
-        modal.style.maxWidth = '100%';
-        modal.style.maxHeight = '100%';
-        modal.style.margin = '0';
-        modal.style.padding = '0';
-        modal.style.borderRadius = '0';
-        modal.style.border = 'none';
-        modal.style.zIndex = '1000';
-        modal.classList.add('full-screen');
-        
-        // Prevent body scroll on mobile
-        if (isMobile) {
-            document.body.classList.add('modal-open');
-        }
-        return;
+      // Force full-screen positioning for mobile and tablet
+      modal.style.top = "0px";
+      modal.style.left = "0px";
+      modal.style.right = "0px";
+      modal.style.bottom = "0px";
+      modal.style.width = "100%";
+      modal.style.height = "100%";
+      modal.style.maxWidth = "100%";
+      modal.style.maxHeight = "100%";
+      modal.style.margin = "0";
+      modal.style.padding = "0";
+      modal.style.borderRadius = "0";
+      modal.style.border = "none";
+      modal.style.zIndex = "1000";
+      modal.classList.add("full-screen");
+
+      // Prevent body scroll on mobile
+      if (isMobile) {
+        document.body.classList.add("modal-open");
+      }
+      return;
     }
-    
+
     // Desktop positioning logic (existing code)
-    const header = document.querySelector('header');
-    const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
-    
-    let topPosition = '284px';
-    let leftPosition = '60px';
-    
-    if (header && header.classList.contains('collapsed')) {
-        topPosition = '0px';
+    const header = document.querySelector("header");
+    const sidebar = document.querySelector(".sidebar-v2");
+    const sidebarContent = document.querySelector(
+      ".sidebar-content-v2.visible"
+    );
+
+    let topPosition = "284px";
+    let leftPosition = "60px";
+
+    if (header && header.classList.contains("collapsed")) {
+      topPosition = "0px";
     } else {
-        topPosition = '284px';
+      topPosition = "284px";
     }
-    
-    if (sidebarContent && sidebarContent.classList.contains('visible')) {
-        leftPosition = '380px';
+
+    if (sidebarContent && sidebarContent.classList.contains("visible")) {
+      leftPosition = "380px";
     } else {
-        leftPosition = '60px';
+      leftPosition = "60px";
     }
-    
+
     modal.style.top = topPosition;
     modal.style.left = leftPosition;
-    modal.style.right = '0';
-    modal.style.bottom = '0';
-    modal.style.width = 'auto';
-    modal.style.height = 'auto';
-    modal.style.maxWidth = 'none';
-    modal.style.maxHeight = 'none';
-    modal.classList.remove('full-screen');
-}
+    modal.style.right = "0";
+    modal.style.bottom = "0";
+    modal.style.width = "auto";
+    modal.style.height = "auto";
+    modal.style.maxWidth = "none";
+    modal.style.maxHeight = "none";
+    modal.classList.remove("full-screen");
+  }
 
-  function populateSitesModal(modal, category, filter, subcategory, categoryFilter) {
-    const title = modal.querySelector('#sites-modal-title');
-    const content = modal.querySelector('#sites-modal-content');
-    
+  function populateSitesModal(
+    modal,
+    category,
+    filter,
+    subcategory,
+    categoryFilter
+  ) {
+    const title = modal.querySelector("#sites-modal-title");
+    const content = modal.querySelector("#sites-modal-content");
+
     let sites = [];
-    let modalTitle = '';
-    
-    if (category === 'status') {
+    let modalTitle = "";
+
+    if (category === "status") {
       if (categoryFilter) {
-        modalTitle = `${filter.charAt(0).toUpperCase() + filter.slice(1)} Sites in ${getCategoryDisplayName(categoryFilter)}`;
+        modalTitle = `${
+          filter.charAt(0).toUpperCase() + filter.slice(1)
+        } Sites in ${getCategoryDisplayName(categoryFilter)}`;
         sites = getSitesByStatusAndCategory(filter, categoryFilter);
       } else {
-        modalTitle = `${filter.charAt(0).toUpperCase() + filter.slice(1)} Sites`;
+        modalTitle = `${
+          filter.charAt(0).toUpperCase() + filter.slice(1)
+        } Sites`;
         sites = getAllSitesByStatus(filter);
       }
     } else if (subcategory) {
@@ -889,42 +1110,45 @@ function updateModalPosition(modal) {
       modalTitle = getCategoryDisplayName(category);
       sites = getSitesByCategory(category);
     }
-    
+
     title.textContent = modalTitle;
-    
+
     if (sites.length === 0) {
-      content.innerHTML = '<div class="no-sites">No sites found for this category</div>';
+      content.innerHTML =
+        '<div class="no-sites">No sites found for this category</div>';
       return;
     }
-    
+
     const sitesBySubcategory = {};
-    sites.forEach(site => {
+    sites.forEach((site) => {
       const subcategoryKey = getSubcategoryKey(site.subcategory);
       const subcategoryName = site.subcategory;
-      
+
       if (!sitesBySubcategory[subcategoryKey]) {
         sitesBySubcategory[subcategoryKey] = {
           name: subcategoryName,
           sites: [],
           count: 0,
-          collapsed: false
+          collapsed: false,
         };
       }
-      
+
       sitesBySubcategory[subcategoryKey].sites.push(site);
       sitesBySubcategory[subcategoryKey].count++;
     });
-    
-    let sitesHTML = '';
-    
+
+    let sitesHTML = "";
+
     const sortedSubcategories = Object.keys(sitesBySubcategory).sort((a, b) => {
-      return sitesBySubcategory[a].name.localeCompare(sitesBySubcategory[b].name);
+      return sitesBySubcategory[a].name.localeCompare(
+        sitesBySubcategory[b].name
+      );
     });
-    
-    sortedSubcategories.forEach(subcategoryKey => {
+
+    sortedSubcategories.forEach((subcategoryKey) => {
       const subcategoryData = sitesBySubcategory[subcategoryKey];
       const collapseId = `collapse-${subcategoryKey}`;
-      
+
       sitesHTML += `
         <div class="subcategory-section">
           <div class="subcategory-header collapsible" data-target="${collapseId}">
@@ -936,14 +1160,16 @@ function updateModalPosition(modal) {
           </div>
           <div class="sites-grid collapsible-content" id="${collapseId}">
       `;
-      
-      subcategoryData.sites.forEach(site => {
-        const statusClass = `status-${site.status || 'active'}`;
+
+      subcategoryData.sites.forEach((site) => {
+        const statusClass = `status-${site.status || "active"}`;
         sitesHTML += `
           <div class="site-item ${statusClass}" data-site-id="${site.id}">
             <div class="site-header">
               <div class="site-name">${site.name}</div>
-              <div class="site-status ${statusClass}">${site.status || 'active'}</div>
+              <div class="site-status ${statusClass}">${
+          site.status || "active"
+        }</div>
             </div>
             <div class="site-details">
               <div class="site-subcategory">${site.subcategory}</div>
@@ -956,131 +1182,136 @@ function updateModalPosition(modal) {
           </div>
         `;
       });
-      
+
       sitesHTML += `
           </div>
         </div>
       `;
     });
-    
+
     content.innerHTML = sitesHTML;
-    
-    const siteItems = content.querySelectorAll('.site-item');
-    siteItems.forEach(item => {
-      item.addEventListener('click', function() {
-        const siteId = this.getAttribute('data-site-id');
+
+    const siteItems = content.querySelectorAll(".site-item");
+    siteItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        const siteId = this.getAttribute("data-site-id");
         const site = findSiteById(siteId);
         if (site && window.showInfoDrawer) {
           const category = findCategoryBySiteId(siteId);
           window.showInfoDrawer(site, category);
-          
-          if (window.map && window.map.setView) {
-            window.map.setView(site.location, 15);
+
+          if (window.cebuMapDebug && window.cebuMapDebug.zoomToSiteById) {
+            window.cebuMapDebug.zoomToSiteById(site.id)
           }
-          
-          modal.style.display = 'none';
+
+          modal.style.display = "none";
         }
       });
     });
-    
-    const collapsibleHeaders = content.querySelectorAll('.collapsible');
-    collapsibleHeaders.forEach(header => {
-      header.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-target');
+
+    const collapsibleHeaders = content.querySelectorAll(".collapsible");
+    collapsibleHeaders.forEach((header) => {
+      header.addEventListener("click", function () {
+        const targetId = this.getAttribute("data-target");
         const target = document.getElementById(targetId);
-        const icon = this.querySelector('.collapse-icon');
-        
+        const icon = this.querySelector(".collapse-icon");
+
         if (target) {
-          target.classList.toggle('collapsed');
-          icon.classList.toggle('fa-chevron-down');
-          icon.classList.toggle('fa-chevron-right');
+          target.classList.toggle("collapsed");
+          icon.classList.toggle("fa-chevron-down");
+          icon.classList.toggle("fa-chevron-right");
         }
       });
     });
-    
+
     addOrganizedSitesModalStyles();
   }
 
   function getSitesByStatusAndCategory(status, categoryId) {
     let sites = [];
-    
+
     if (!window.cebuCityMarkers) return sites;
-    
-    const category = window.cebuCityMarkers.find(cat => cat.id === categoryId);
+
+    const category = window.cebuCityMarkers.find(
+      (cat) => cat.id === categoryId
+    );
     if (!category) return sites;
-    
-    category.sites.forEach(site => {
-      if (status === 'total' || site.status === status) {
+
+    category.sites.forEach((site) => {
+      if (status === "total" || site.status === status) {
         sites.push({
           ...site,
-          categoryName: category.category
+          categoryName: category.category,
         });
       }
     });
-    
+
     return sites;
   }
 
   function getSitesBySubcategory(subcategoryKey) {
     let sites = [];
-    
+
     if (!window.cebuCityMarkers) return sites;
-    
-    window.cebuCityMarkers.forEach(category => {
-      category.sites.forEach(site => {
+
+    window.cebuCityMarkers.forEach((category) => {
+      category.sites.forEach((site) => {
         if (getSubcategoryKey(site.subcategory) === subcategoryKey) {
           sites.push({
             ...site,
-            categoryName: category.category
+            categoryName: category.category,
           });
         }
       });
     });
-    
+
     return sites;
   }
 
   function getSubcategoryDisplayName(subcategoryKey) {
     const subcategoryNames = {
-      'highways': 'Highways',
-      'main-roads': 'Main Roads',
-      'streets': 'Streets',
-      'public-transport': 'Public Transportation',
-      'traffic-data': 'Traffic Data',
-      'water-supply': 'Water Supply',
-      'electricity': 'Electricity',
-      'sewage': 'Sewage',
-      'communication': 'Communication Lines',
-      'waste-management': 'Waste Management',
-      'nbp': 'National Broadband Project',
-      'wifi-hotspots': 'WiFi Hotspots',
-      'internet-centers': 'Public Internet Centers',
-      'hospitals': 'Hospitals',
-      'schools': 'Schools',
-      'government-offices': 'Government Offices',
-      'police-stations': 'Police Stations',
-      'fire-departments': 'Fire Departments',
-      'topography': 'Topography',
-      'waterways': 'Waterways',
-      'parks': 'Parks & Green Spaces',
-      'flood-zones': 'Flood Prone Areas',
-      'pollution-zones': 'Pollution Zones',
-      'other-hazards': 'Other Environmental Hazards',
-      'businesses': 'Businesses',
-      'recreational': 'Recreational Areas',
-      'community-centers': 'Community Centers',
-      'population-density': 'Population Density',
-      'income-distribution': 'Income Distribution',
-      'education-levels': 'Education Levels'
+      highways: "Highways",
+      "main-roads": "Main Roads",
+      streets: "Streets",
+      "public-transport": "Public Transportation",
+      "traffic-data": "Traffic Data",
+      "water-supply": "Water Supply",
+      electricity: "Electricity",
+      sewage: "Sewage",
+      communication: "Communication Lines",
+      "waste-management": "Waste Management",
+      nbp: "National Broadband Project",
+      "wifi-hotspots": "WiFi Hotspots",
+      "internet-centers": "Public Internet Centers",
+      hospitals: "Hospitals",
+      schools: "Schools",
+      "government-offices": "Government Offices",
+      "police-stations": "Police Stations",
+      "fire-departments": "Fire Departments",
+      topography: "Topography",
+      waterways: "Waterways",
+      parks: "Parks & Green Spaces",
+      "flood-zones": "Flood Prone Areas",
+      "pollution-zones": "Pollution Zones",
+      "other-hazards": "Other Environmental Hazards",
+      businesses: "Businesses",
+      recreational: "Recreational Areas",
+      "community-centers": "Community Centers",
+      "population-density": "Population Density",
+      "income-distribution": "Income Distribution",
+      "education-levels": "Education Levels",
     };
-    
-    return subcategoryNames[subcategoryKey] || subcategoryKey.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+    return (
+      subcategoryNames[subcategoryKey] ||
+      subcategoryKey.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+    );
   }
 
   function addOrganizedSitesModalStyles() {
-    if (!document.getElementById('organized-sites-modal-styles')) {
-      const style = document.createElement('style');
-      style.id = 'organized-sites-modal-styles';
+    if (!document.getElementById("organized-sites-modal-styles")) {
+      const style = document.createElement("style");
+      style.id = "organized-sites-modal-styles";
       style.textContent = `
         .sites-modal-header {
           display: flex;
@@ -1382,33 +1613,35 @@ function updateModalPosition(modal) {
 
   function getAllSitesByStatus(status) {
     let sites = [];
-    
+
     if (!window.cebuCityMarkers) return sites;
-    
-    window.cebuCityMarkers.forEach(category => {
-      category.sites.forEach(site => {
-        if (status === 'total' || site.status === status) {
+
+    window.cebuCityMarkers.forEach((category) => {
+      category.sites.forEach((site) => {
+        if (status === "total" || site.status === status) {
           sites.push({
             ...site,
-            categoryName: category.category
+            categoryName: category.category,
           });
         }
       });
     });
-    
+
     return sites;
   }
 
   function getSitesByCategory(categoryId) {
     if (!window.cebuCityMarkers) return [];
-    
-    const category = window.cebuCityMarkers.find(cat => cat.id === categoryId);
+
+    const category = window.cebuCityMarkers.find(
+      (cat) => cat.id === categoryId
+    );
     return category ? category.sites : [];
   }
 
   function findSiteById(siteId) {
     if (!window.cebuCityMarkers) return null;
-    
+
     for (const category of window.cebuCityMarkers) {
       for (const site of category.sites) {
         if (site.id === siteId) {
@@ -1421,9 +1654,9 @@ function updateModalPosition(modal) {
 
   function findCategoryBySiteId(siteId) {
     if (!window.cebuCityMarkers) return null;
-    
+
     for (const category of window.cebuCityMarkers) {
-      if (category.sites.some(site => site.id === siteId)) {
+      if (category.sites.some((site) => site.id === siteId)) {
         return category;
       }
     }
@@ -1432,15 +1665,15 @@ function updateModalPosition(modal) {
 
   function getCategoryDisplayName(categoryId) {
     const categoryNames = {
-      'infrastructure': 'Infrastructure',
-      'public_buildings': 'Public Buildings',
-      'natural_features': 'Natural Features',
-      'environmental_risks': 'Environmental Risks',
-      'points_of_interest': 'Points of Interest',
-      'population_data': 'Population Data',
-      'internet_access': 'Free Public Internet'
+      infrastructure: "Infrastructure",
+      public_buildings: "Public Buildings",
+      natural_features: "Natural Features",
+      environmental_risks: "Environmental Risks",
+      points_of_interest: "Points of Interest",
+      population_data: "Population Data",
+      internet_access: "Free Public Internet",
     };
-    
+
     return categoryNames[categoryId] || categoryId;
   }
 
@@ -1449,14 +1682,17 @@ function updateModalPosition(modal) {
     renderInfrastructureCards();
   }
 
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.type === "childList") {
         const addedNodes = Array.from(mutation.addedNodes);
-        const hasMarkerChanges = addedNodes.some(node => 
-          node.classList && (node.classList.contains('leaflet-marker-icon') || node.classList.contains('leaflet-marker-shadow'))
+        const hasMarkerChanges = addedNodes.some(
+          (node) =>
+            node.classList &&
+            (node.classList.contains("leaflet-marker-icon") ||
+              node.classList.contains("leaflet-marker-shadow"))
         );
-        
+
         if (hasMarkerChanges) {
           setTimeout(updateInfrastructureCards, 100);
         }
@@ -1464,79 +1700,94 @@ function updateModalPosition(modal) {
     });
   });
 
-  const mapElement = document.getElementById('map');
+  const mapElement = document.getElementById("map");
   if (mapElement) {
     observer.observe(mapElement, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
   }
 
-  document.addEventListener('change', function(e) {
-    if (e.target.type === 'checkbox' && e.target.closest('.sidebar-content-v2')) {
+  document.addEventListener("change", function (e) {
+    if (
+      e.target.type === "checkbox" &&
+      e.target.closest(".sidebar-content-v2")
+    ) {
       setTimeout(updateInfrastructureCards, 100);
     }
   });
 
-  window.addEventListener('resize', function() {
-      const modal = document.getElementById('sites-modal');
-      if (modal && modal.style.display === 'block') {
-          // Small delay to ensure resize has completed
-          setTimeout(() => {
-              updateModalPosition(modal);
-          }, 100);
-      }
+  window.addEventListener("resize", function () {
+    const modal = document.getElementById("sites-modal");
+    if (modal && modal.style.display === "block") {
+      // Small delay to ensure resize has completed
+      setTimeout(() => {
+        updateModalPosition(modal);
+      }, 100);
+    }
   });
 
   // Handle orientation change on mobile devices
-  window.addEventListener('orientationchange', function() {
-      const modal = document.getElementById('sites-modal');
-      if (modal && modal.style.display === 'block') {
-          setTimeout(() => {
-              updateModalPosition(modal);
-          }, 200);
-      }
+  window.addEventListener("orientationchange", function () {
+    const modal = document.getElementById("sites-modal");
+    if (modal && modal.style.display === "block") {
+      setTimeout(() => {
+        updateModalPosition(modal);
+      }, 200);
+    }
   });
-  document.addEventListener('touchend', function(event) {
-    const modal = document.getElementById('sites-modal');
-    if (modal && modal.style.display === 'block' && window.matchMedia('(max-width: 768px)').matches) {
-        const now = (new Date()).getTime();
+
+  document.addEventListener(
+    "touchend",
+    function (event) {
+      const modal = document.getElementById("sites-modal");
+      if (
+        modal &&
+        modal.style.display === "block" &&
+        window.matchMedia("(max-width: 768px)").matches
+      ) {
+        const now = new Date().getTime();
         if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
+          event.preventDefault();
         }
         lastTouchEnd = now;
-    }
-  }, false);
+      }
+    },
+    false
+  );
 
   let lastTouchEnd = 0;
 
-  const searchObserver = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        const modal = document.getElementById('sites-modal');
-        if (modal && modal.style.display === 'block') {
+  const searchObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        const modal = document.getElementById("sites-modal");
+        if (modal && modal.style.display === "block") {
           setTimeout(() => updateModalPosition(modal), 100);
         }
       }
     });
   });
 
-  const searchIcon = document.querySelector('.search-icon');
+  const searchIcon = document.querySelector(".search-icon");
   if (searchIcon) {
     searchObserver.observe(searchIcon, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     });
   }
 
   if (window.cebuCityMarkers) {
     initializeInfrastructureCards();
   } else {
-    window.addEventListener('load', initializeInfrastructureCards);
+    window.addEventListener("load", initializeInfrastructureCards);
   }
 
   window.infrastructureCards = {
     update: updateInfrastructureCards,
-    getData: () => infrastructureData
+    getData: () => infrastructureData,
   };
 });
