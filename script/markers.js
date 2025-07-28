@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar-v2");
     const sidebarContent = document.querySelector(
-      ".sidebar-content-v2.visible"
+      ".sidebar-content.visible"
     );
 
     let topPosition = 248;

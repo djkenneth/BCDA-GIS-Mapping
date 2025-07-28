@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const SELECTORS = {
         header: 'header',
         sidebar: '.sidebar-v2',
-        sidebarContent: '.sidebar-content-v2',
+        sidebarContent: '.sidebar-content',
         headerToggle: '.header-toggle',
-        filterCheckboxes: '.sidebar-content-v2 input[type="checkbox"]',
+        filterCheckboxes: '.sidebar-content input[type="checkbox"]',
         liveFeedCard: '.live-feed-card',
         contentComponents: [
             '#full-screen-infrastructure-form',
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 if (currentOpenComponent && 
-                    currentOpenComponent !== '.sidebar-content-v2' && 
+                    currentOpenComponent !== '.sidebar-content' && 
                     !currentOpenComponent.includes('sidebar')) {
                     closeComponent(currentOpenComponent);
                 }
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 newCheckboxes.forEach(checkbox => {
                                     checkbox.addEventListener('change', function() {
                                         if (currentOpenComponent && 
-                                            currentOpenComponent !== '.sidebar-content-v2' && 
+                                            currentOpenComponent !== '.sidebar-content' && 
                                             !currentOpenComponent.includes('sidebar')) {
                                             closeComponent(currentOpenComponent);
                                         }
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (downloadReportBtn) {
             downloadReportBtn.addEventListener('click', function() {
                 if (typeof generateSiteReport === 'function') {
-                    // This function should be defined in filter-sidebar-v2.js
+                    // This function should be defined in filter-sidebar.js
                     const siteId = infoDrawer.getAttribute('data-tower-id');
                     if (siteId) {
                         const site = findSiteById(siteId);

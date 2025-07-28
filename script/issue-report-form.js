@@ -316,7 +316,7 @@ function adjustFormPosition() {
     // Position form based on header and sidebar state
     const header = document.querySelector('header');
     const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
+    const sidebarContent = document.querySelector('.sidebar-content.visible');
     
     // Default positioning
     let topPosition = '284px'; // Current default

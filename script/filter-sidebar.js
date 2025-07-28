@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Tab switching functionality
   const tabs = document.querySelectorAll(".sidebar-tab-v2");
-  const panels = document.querySelectorAll(".sidebar-content-v2");
+  const panels = document.querySelectorAll(".sidebar-content");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButtons = document.querySelectorAll(".close-panel");
   closeButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      const panel = this.closest(".sidebar-content-v2");
+      const panel = this.closest(".sidebar-content");
       panel.classList.remove("visible");
 
       // Also deactivate the corresponding tab
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Observer for dynamically added checkboxes
-  const sidebarContent = document.querySelector('.sidebar-content-v2');
+  const sidebarContent = document.querySelector('.sidebar-content');
   if (sidebarContent) {
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
@@ -279,7 +279,7 @@ function setupHeaderObserver() {
         if (mutation.attributeName === "class") {
           const isHeaderCollapsed = header.classList.contains("collapsed");
           const filterSidebar = document.querySelector(".sidebar-v2");
-          const sidebarContents = document.querySelectorAll(".sidebar-content-v2");
+          const sidebarContents = document.querySelectorAll(".sidebar-content");
 
           if (filterSidebar) {
             applySidebarPositioning(filterSidebar, sidebarContents, isHeaderCollapsed);
@@ -292,7 +292,7 @@ function setupHeaderObserver() {
     
     // Initial positioning on load
     const filterSidebar = document.querySelector(".sidebar-v2");
-    const sidebarContents = document.querySelectorAll(".sidebar-content-v2");
+    const sidebarContents = document.querySelectorAll(".sidebar-content");
     const isHeaderCollapsed = header.classList.contains("collapsed");
     
     if (filterSidebar) {
@@ -344,7 +344,7 @@ function applySidebarPositioning(filterSidebar, sidebarContents, isHeaderCollaps
 window.addEventListener('resize', function() {
   const header = document.querySelector("header");
   const filterSidebar = document.querySelector(".sidebar-v2");
-  const sidebarContents = document.querySelectorAll(".sidebar-content-v2");
+  const sidebarContents = document.querySelectorAll(".sidebar-content");
   
   if (header && filterSidebar) {
     const isHeaderCollapsed = header.classList.contains("collapsed");

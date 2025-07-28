@@ -1516,7 +1516,7 @@ function initializeSearchBar() {
   function calculateLiveFeedPosition() {
     const header = document.querySelector('header');
     const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
+    const sidebarContent = document.querySelector('.sidebar-content.visible');
     
     let topPosition = 248;
     let leftPosition = 80;

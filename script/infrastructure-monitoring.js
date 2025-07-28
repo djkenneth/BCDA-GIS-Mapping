@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Monitor sidebar content panel open/close
-        const sidebarContent = document.querySelector('.sidebar-content-v2');
+        const sidebarContent = document.querySelector('.sidebar-content');
         if (sidebarContent) {
             const sidebarContentObserver = new MutationObserver(function(mutations) {
                 positionMonitoringInterface();
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function positionMonitoringInterface() {
     const header = document.querySelector('header');
     const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
+    const sidebarContent = document.querySelector('.sidebar-content.visible');
     
     // Default positioning
     let topPosition = '284px'; // Current default

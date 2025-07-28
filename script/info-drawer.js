@@ -515,12 +515,6 @@ document.addEventListener("DOMContentLoaded", function () {
         'Service Status & Reliability',
         'Network Maintenance Records'
       ],
-      'Free Public Internet': [
-        'Public Wi-Fi Infrastructure Details',
-        'Usage Analytics & Performance',
-        'Network Status & Coverage',
-        'Service Maintenance History'
-      ],
       'National Broadband Project': [
         'NBP Infrastructure Specifications',
         'Network Performance & Adoption',
@@ -3809,14 +3803,6 @@ doc.setTextColor(headerColor[0], headerColor[1], headerColor[2]);
         "Create public-facing community dashboard with real-time demographic insights, service utilization data, and quality of life indicators",
         "Establish data-driven policy development process using demographic insights to guide budget allocation and program development",
         "Implement privacy-preserving data collection methods and transparent data governance policies to maintain public trust"
-      ],
-      'Internet Access': [
-        "Upgrade to Wi-Fi 6E technology to support growing user demand, improve speeds by 40%, and reduce network congestion",
-        "Install redundant fiber internet connections and backup satellite systems to achieve 99.9% uptime reliability target",
-        "Implement advanced usage analytics and AI-powered bandwidth management to optimize network performance and user experience",
-        "Expand coverage radius by 20% through strategic placement of additional access points and range extenders",
-        "Develop digital literacy training programs for underserved communities to maximize the social impact of free internet access",
-        "Create public-private partnership for sustainable funding and long-term network maintenance and upgrades"
       ],
       'National Broadband Project': [
         "Connect 12 additional educational institutions to expand digital access and support distance learning capabilities throughout the region",

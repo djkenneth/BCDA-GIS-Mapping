@@ -728,22 +728,22 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       ],
 
-      internet_access: [
-        {
-          key: "wifi-hotspots",
-          title: "WiFi Hotspots",
-          type: "Public WiFi Points",
-          className: "wifi-bg",
-          icon: "fas fa-wifi",
-        },
-        {
-          key: "internet-centers",
-          title: "Public Internet Centers",
-          type: "Internet Access Points",
-          className: "nbp-bg",
-          icon: "fas fa-desktop",
-        },
-      ],
+      // internet_access: [
+      //   {
+      //     key: "wifi-hotspots",
+      //     title: "WiFi Hotspots",
+      //     type: "Public WiFi Points",
+      //     className: "wifi-bg",
+      //     icon: "fas fa-wifi",
+      //   },
+      //   {
+      //     key: "internet-centers",
+      //     title: "Public Internet Centers",
+      //     type: "Internet Access Points",
+      //     className: "nbp-bg",
+      //     icon: "fas fa-desktop",
+      //   },
+      // ],
     };
 
     return configs[categoryId] || [];
@@ -1049,7 +1049,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar-v2");
     const sidebarContent = document.querySelector(
-      ".sidebar-content-v2.visible"
+      ".sidebar-content.visible"
     );
 
     let topPosition = "284px";
@@ -1711,7 +1711,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("change", function (e) {
     if (
       e.target.type === "checkbox" &&
-      e.target.closest(".sidebar-content-v2")
+      e.target.closest(".sidebar-content")
     ) {
       setTimeout(updateInfrastructureCards, 100);
     }

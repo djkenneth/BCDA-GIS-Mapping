@@ -30,15 +30,11 @@
             <i class="fas fa-users"></i>
             <span>Demographics</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="internet">
-            <i class="fas fa-wifi"></i>
-            <span>Internet</span>
-        </div>
     </div>
 </div>
 
 <!-- Layers Panel -->
-<div class="sidebar-content-v2 visible" id="layers-content">
+<div class="sidebar-content visible" id="layers-content">
     <div class="content-header">
         <h3>Map Features</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -83,17 +79,12 @@
                 <input type="checkbox" id="all-demographics">
                 <label for="all-demographics">Population Data</label>
             </div>
-
-            <div class="content-section-item">
-                <input type="checkbox" id="all-internet">
-                <label for="all-internet">Free Public Internet</label>
-            </div>
         </div>
     </div>
 </div>
 
 <!-- Infrastructure Panel -->
-<div class="sidebar-content-v2" id="infrastructure-content">
+<div class="sidebar-content" id="infrastructure-content">
     <div class="content-header">
         <h3>Infrastructure</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -170,7 +161,7 @@
 </div>
 
 <!-- Buildings Panel -->
-<div class="sidebar-content-v2" id="buildings-content">
+<div class="sidebar-content" id="buildings-content">
     <div class="content-header">
         <h3>Public Buildings</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -210,7 +201,7 @@
 </div>
 
 <!-- Natural Features Panel -->
-<div class="sidebar-content-v2" id="natural-content">
+<div class="sidebar-content" id="natural-content">
     <div class="content-header">
         <h3>Natural Features</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -240,7 +231,7 @@
 </div>
 
 <!-- Environmental Risks Panel -->
-<div class="sidebar-content-v2" id="risks-content">
+<div class="sidebar-content" id="risks-content">
     <div class="content-header">
         <h3>Environmental Risks</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -270,7 +261,7 @@
 </div>
 
 <!-- Points of Interest Panel -->
-<div class="sidebar-content-v2" id="poi-content">
+<div class="sidebar-content" id="poi-content">
     <div class="content-header">
         <h3>Points of Interest</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -300,7 +291,7 @@
 </div>
 
 <!-- Demographics Panel -->
-<div class="sidebar-content-v2" id="demographics-content">
+<div class="sidebar-content" id="demographics-content">
     <div class="content-header">
         <h3>Population Data</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -325,31 +316,6 @@
         <div class="content-section-item">
             <input type="checkbox" id="education">
             <label for="education">Education Levels</label>
-        </div>
-    </div>
-</div>
-
-<!-- Internet Access Panel -->
-<div class="sidebar-content-v2" id="internet-content">
-    <div class="content-header">
-        <h3>Free Public Internet</h3>
-        <button class="close-panel"><i class="fas fa-times"></i></button>
-    </div>
-
-    <div class="content-section">
-        <div class="content-section-title">
-            <span>Access Points</span>
-            <button class="select-all">Select All</button>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="wifi-hotspots">
-            <label for="wifi-hotspots">WiFi Hotspots</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="internet-centers">
-            <label for="internet-centers">Public Internet Centers</label>
         </div>
     </div>
 </div>

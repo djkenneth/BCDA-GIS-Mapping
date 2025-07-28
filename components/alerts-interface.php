@@ -13,7 +13,6 @@
         <div class="tab" data-tab="environmental">Environmental Risks</div>
         <div class="tab" data-tab="poi">Points of Interest</div>
         <div class="tab" data-tab="demographics">Population Data</div>
-        <div class="tab" data-tab="internet">Free Public Internet</div>
     </div>
 
     <div class="alerts-summary">
@@ -62,7 +61,6 @@
                 <option value="environmental">Environmental Risks</option>
                 <option value="poi">Points of Interest</option>
                 <option value="demographics">Population Data</option>
-                <option value="internet">Free Public Internet</option>
             </select>
         </div>
         

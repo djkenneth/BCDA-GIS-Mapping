@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerCollapsed = header && header.classList.contains('collapsed');
     
     const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
+    const sidebarContent = document.querySelector('.sidebar-content.visible');
     const sidebarExpanded = sidebarContent !== null;
     
     const windowWidth = window.innerWidth;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarObserver.observe(sidebar, { attributes: true });
   }
   
-  const sidebarContents = document.querySelectorAll('.sidebar-content-v2');
+  const sidebarContents = document.querySelectorAll('.sidebar-content');
   sidebarContents.forEach(content => {
     const contentObserver = new MutationObserver(updateLiveFeedCardPosition);
     contentObserver.observe(content, { attributes: true });

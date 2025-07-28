@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="style/custom.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/infrastructure-monitoring.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/alert-management.css?t=<?php echo time(); ?>" />
-    <link rel="stylesheet" href="style/filter-sidebar-v2.css?t=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="style/filter-sidebar.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/issue-report-form.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/components/drawer.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/components/card.css?t=<?php echo time(); ?>" />
@@ -66,7 +66,7 @@
 <body>
     <?php include("components/header.php") ?>
 
-    <?php include("components/filter-sidebar-v2.php") ?>
+    <?php include("components/filter-sidebar.php") ?>
     <?php include("components/info-drawer.php") ?>
     <?php include("components/alerts-interface.php") ?>
     <?php include("components/infrastructure-monitoring.php") ?>
@@ -116,7 +116,7 @@
     <script src="script/charts.js?t=<?php echo time(); ?>"></script>
     <script src="script/menu.js?t=<?php echo time(); ?>"></script>
     <script src="script/notification-menu.js?t=<?php echo time(); ?>"></script>
-    <script src="script/filter-sidebar-v2.js?t=<?php echo time(); ?>"></script>
+    <script src="script/filter-sidebar.js?t=<?php echo time(); ?>"></script>
     <script src="script/panel-manager.js?t=<?php echo time(); ?>"></script>
     <script src="script/alert-management.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-monitoring.js?t=<?php echo time(); ?>"></script>

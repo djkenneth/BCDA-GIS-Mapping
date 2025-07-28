@@ -78,13 +78,13 @@
 }
 
 /* Sidebar content panels */
-.sidebar-content-v2 {
+.sidebar-content {
   position: fixed;
   left: 60px;
   top: 284px;
   width: 300px;
   height: calc(100vh - 284px);
-  background: var(--bg-color);
+  background: var(--primary-2);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
   overflow-y: auto;
@@ -95,20 +95,20 @@
   scrollbar-color: #548A98 #1f2e47;
 }
 
-.sidebar-content-v2::-webkit-scrollbar {
+.sidebar-content::-webkit-scrollbar {
   width: 8px;
 }
 
-.sidebar-content-v2::-webkit-scrollbar-track {
+.sidebar-content::-webkit-scrollbar-track {
   background: #1f2e47;
 }
 
-.sidebar-content-v2::-webkit-scrollbar-thumb {
+.sidebar-content::-webkit-scrollbar-thumb {
   background-color: #548A98;
   border-radius: 4px;
 }
 
-.sidebar-content-v2.visible {
+.sidebar-content.visible {
   transform: translateX(0);
 }
 
@@ -256,7 +256,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .sidebar-content-v2 {
+  .sidebar-content {
     width: 280px;
     top: 257px;
     height: calc(100vh - 257px);
@@ -273,7 +273,7 @@ header.collapsed ~ .sidebar-v2 {
   height: 100vh;
 }
 
-header.collapsed ~ .sidebar-content-v2 {
+header.collapsed ~ .sidebar-content {
   top: 0;
   height: 100vh;
 }
@@ -294,7 +294,7 @@ header.collapsed ~ .map-container {
   height: 100vh;
 }
 
-.sidebar-content-v2.visible ~ .map-container {
+.sidebar-content.visible ~ .map-container {
   left: 0;
   width: 100vh;
   width: 100%;
@@ -365,7 +365,7 @@ header.collapsed ~ .map-container {
 }
 
 @media (max-width: 1024px) {
-  .sidebar-content-v2 {
+  .sidebar-content {
     top: 244px;
     width: 270px;
     height: calc(100vh - 244px);
@@ -377,7 +377,7 @@ header.collapsed ~ .map-container {
   
 }
 @media (max-width: 768px) {
-  .sidebar-content-v2 {
+  .sidebar-content {
     top: 253px;
     height: calc(100vh - 253px);
   }
@@ -387,7 +387,7 @@ header.collapsed ~ .map-container {
   }
 }
 @media (min-width: 320px) and (max-width: 425px) {
-  .sidebar-content-v2 {
+  .sidebar-content {
     top: 335px;
     height: calc(100vh - 335px);
     

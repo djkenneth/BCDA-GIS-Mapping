@@ -1,8 +1,8 @@
 /* style/variables.css */
 
 :root {
-  --primary: rgba(13, 26, 70, 0.85);
-  --primary-2: rgba(14, 21, 79, 0.85);
+  --primary: #121826;
+  --primary-2: #1B212F;
   --primary-3: rgba(18, 16, 82, 0.85);
   --primary-4: rgba(13, 26, 70, 0.85);
   --primary-5: rgba(16, 58, 82, 0.85);
@@ -23,6 +23,7 @@
   --darker-bg: #3d0d5c;
   --panel-bg: #121826;
   --input-bg: #1B212F;
+
   --primary-color: #f0bd36;
   --accent-color: #f0bd36;
   --text-color: #ffffff;

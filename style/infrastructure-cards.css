@@ -9,18 +9,18 @@
     transition: left 0.3s ease, width 0.3s ease;
 }
 
-.sidebar-content-v2.visible ~ .infrastructure-cards-container,
-body:has(.sidebar-content-v2.visible) .infrastructure-cards-container {
+.sidebar-content.visible ~ .infrastructure-cards-container,
+body:has(.sidebar-content.visible) .infrastructure-cards-container {
     left: 380px;
     width: calc(100% - 380px);
 }
 
-.sidebar-v2:has(.sidebar-content-v2.visible) ~ .infrastructure-cards-container {
+.sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container {
     left: 380px;
     width: calc(100% - 380px);
 }
 
-.app-wrapper:has(.sidebar-content-v2.visible) .infrastructure-cards-container {
+.app-wrapper:has(.sidebar-content.visible) .infrastructure-cards-container {
     left: 380px;
     width: calc(100% - 380px);
 }
@@ -412,10 +412,10 @@ header.collapsed ~ .infrastructure-cards-container {
         padding: 12px 0;
     }
     
-    .sidebar-content-v2.visible ~ .infrastructure-cards-container,
-    body:has(.sidebar-content-v2.visible) .infrastructure-cards-container,
-    .sidebar-v2:has(.sidebar-content-v2.visible) ~ .infrastructure-cards-container,
-    .app-wrapper:has(.sidebar-content-v2.visible) .infrastructure-cards-container,
+    .sidebar-content.visible ~ .infrastructure-cards-container,
+    body:has(.sidebar-content.visible) .infrastructure-cards-container,
+    .sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
+    .app-wrapper:has(.sidebar-content.visible) .infrastructure-cards-container,
     body.sidebar-expanded .infrastructure-cards-container,
     .sidebar-v2.expanded ~ .infrastructure-cards-container,
     .sidebar-v2.open ~ .infrastructure-cards-container {
@@ -498,10 +498,10 @@ header.collapsed ~ .infrastructure-cards-container {
         padding: 8px 0;
     }
     
-    .sidebar-content-v2.visible ~ .infrastructure-cards-container,
-    body:has(.sidebar-content-v2.visible) .infrastructure-cards-container,
-    .sidebar-v2:has(.sidebar-content-v2.visible) ~ .infrastructure-cards-container,
-    .app-wrapper:has(.sidebar-content-v2.visible) .infrastructure-cards-container,
+    .sidebar-content.visible ~ .infrastructure-cards-container,
+    body:has(.sidebar-content.visible) .infrastructure-cards-container,
+    .sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
+    .app-wrapper:has(.sidebar-content.visible) .infrastructure-cards-container,
     body.sidebar-expanded .infrastructure-cards-container,
     .sidebar-v2.expanded ~ .infrastructure-cards-container,
     .sidebar-v2.open ~ .infrastructure-cards-container {

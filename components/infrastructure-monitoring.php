@@ -9,7 +9,6 @@
         <div class="tab active" data-tab="overview">Overview</div>
         <div class="tab" data-tab="infrastructure">Infrastructure</div>
         <div class="tab" data-tab="buildings">Public Buildings</div>
-        <div class="tab" data-tab="internet">Internet Access</div>
         <div class="tab" data-tab="environmental">Environmental Risk</div>
         <div class="tab" data-tab="natural">Natural Features</div>
         <div class="tab" data-tab="analytics">Analytics</div>
