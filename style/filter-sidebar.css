@@ -93,6 +93,9 @@
   z-index: 2;
   scrollbar-width: thin;
   scrollbar-color: #548A98 #1f2e47;
+  border-right-style: inset;
+  border-right-color: #F0BD36;
+  border-right-width: 1px;
 }
 
 .sidebar-content::-webkit-scrollbar {

@@ -727,23 +727,6 @@ document.addEventListener("DOMContentLoaded", function () {
           icon: "fas fa-graduation-cap",
         },
       ],
-
-      // internet_access: [
-      //   {
-      //     key: "wifi-hotspots",
-      //     title: "WiFi Hotspots",
-      //     type: "Public WiFi Points",
-      //     className: "wifi-bg",
-      //     icon: "fas fa-wifi",
-      //   },
-      //   {
-      //     key: "internet-centers",
-      //     title: "Public Internet Centers",
-      //     type: "Internet Access Points",
-      //     className: "nbp-bg",
-      //     icon: "fas fa-desktop",
-      //   },
-      // ],
     };
 
     return configs[categoryId] || [];

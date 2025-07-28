@@ -125,37 +125,6 @@
         
         <div class="dashboard-card">
             <div class="card-header">
-                <h3 class="card-title">Internet Access Points</h3>
-                <div class="card-actions">
-                    
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="metric-row">
-                    <span class="metric-label">Network Availability</span>
-                    <span class="metric-value positive">99.8%</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Average Download Speed</span>
-                    <span class="metric-value">95 Mbps</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Average Upload Speed</span>
-                    <span class="metric-value">45 Mbps</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Average Latency</span>
-                    <span class="metric-value positive">18ms</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Public WiFi Points</span>
-                    <span class="metric-value">10 Active / 12 Total</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="dashboard-card">
-            <div class="card-header">
                 <h3 class="card-title">Usage Analytics</h3>
                 <div class="card-actions">
                     
@@ -203,7 +172,6 @@
         <div class="category-filter">Risk Types (15)</div>
         <div class="category-filter">POI Types (25)</div>
         <div class="category-filter">Data Types (8)</div>
-        <div class="category-filter">Access Points (12)</div>
     </div>
     
     <table class="infrastructure-table">

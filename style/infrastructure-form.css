@@ -95,7 +95,7 @@
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -140,6 +140,10 @@
   background-repeat: no-repeat;
   background-position: calc(100% - 10px) center;
   padding-right: 30px;
+}
+
+.checkbox-wrapper {
+  margin-bottom: 20px;
 }
 
 .status-container {
