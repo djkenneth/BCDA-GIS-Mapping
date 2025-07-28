@@ -2,8 +2,8 @@
     <div class="nav-bar">
         <a href="javascript:history.back()">
                 <div class="logo-wrapper">
-                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/cebu-logo.png' : 'assets/cebu-logo.png'; ?>" alt="dict logo" class="logo" />
-                    <p class="logo-title">Cebu City IMap</p>
+                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
+                    <p class="logo-title">DOF IMap</p>
                 </div>
             </a>
         <div class="flex items-center w-4/5">

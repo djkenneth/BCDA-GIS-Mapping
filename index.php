@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cebu City Interactive Data-Driven Map</title>
-    <link rel="icon" type="image/x-icon" href="assets/cebu-logo.ico">
+    <title>DOF IMap</title>
+    <link rel="icon" type="image/x-icon" href="assets/dof-logo.ico">
 
 
     <!-- MapLibre GL JS CSS -->
