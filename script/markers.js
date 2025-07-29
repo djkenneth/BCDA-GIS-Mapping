@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createMarkers() {
-    if (!window.cebuCityMarkers || !mapSourcesAdded) return;
+    if (!window.mapMarkers || !mapSourcesAdded) return;
 
     console.log("Creating markers with MapLibre GL JS");
 
-    window.cebuCityMarkers.forEach((category) => {
+    window.mapMarkers.forEach((category) => {
       const categoryId = category.id;
       markersByCategory[categoryId] = {};
 
@@ -475,8 +475,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let foundSite = null;
     let foundCategory = null;
 
-    if (window.cebuCityMarkers) {
-      window.cebuCityMarkers.forEach((category) => {
+    if (window.mapMarkers) {
+      window.mapMarkers.forEach((category) => {
         const site = category.sites.find((s) => s.id === siteId);
         if (site) {
           foundSite = site;

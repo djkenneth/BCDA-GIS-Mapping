@@ -382,7 +382,7 @@ function initializeCardCloseButtons() {
 }
 
 function searchForSiteByName(siteName) {
-  if (!window.cebuCityMarkers) {
+  if (!window.mapMarkers) {
     console.error('Cebu city markers not loaded');
     return null;
   }
@@ -390,7 +390,7 @@ function searchForSiteByName(siteName) {
   let foundSite = null;
   let foundCategory = null;
   
-  window.cebuCityMarkers.forEach(category => {
+  window.mapMarkers.forEach(category => {
     const site = category.sites.find(s => 
       s.name.toLowerCase().includes(siteName.toLowerCase()) ||
       s.description.toLowerCase().includes(siteName.toLowerCase())

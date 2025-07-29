@@ -326,557 +326,663 @@ const sitesMaintenanceLogs = {
   ],
 };
 
-const cebuCityMarkers = [
-  // Infrastructure
+const mapMarkers = [
+  // DOF Central/National Office
+  {
+    category: "DOF Central Office",
+    id: "dof_central",
+    center: [14.5832, 120.9797], // Manila/BSP Complex
+    sites: [
+      {
+        id: "dof_main_01",
+        name: "Department of Finance Building - BSP Complex",
+        location: [14.5832, 120.9797],
+        status: "active",
+        subcategory: "DOF Central Office",
+        description: "Main DOF Building located at BSP Complex, Roxas Boulevard, Manila. Houses the Office of the Secretary and various DOF departments.",
+        technicalDetails: {
+          address: "DOF Bldg., BSP Complex, Roxas Blvd., Manila, 1004, Philippines",
+          contactNumber: "(632) 8525-0244",
+          email: "osec@dof.gov.ph",
+          operatingHours: "8:00 AM - 5:00 PM",
+          buildingType: "Government Office Building",
+          floorCount: "Multiple floors",
+          yearEstablished: "1987"
+        }
+      }
+    ]
+  },
+
+  // Bureau of Internal Revenue (BIR) - DOF Agency
+  {
+    category: "Bureau of Internal Revenue",
+    id: "bir_facilities",
+    center: [14.6506, 121.0378], // Quezon City BIR HQ
+    sites: [
+      {
+        id: "bir_hq_01",
+        name: "BIR National Office - Quezon City",
+        location: [14.6506, 121.0378],
+        status: "active",
+        subcategory: "BIR Headquarters",
+        description: "Bureau of Internal Revenue National Office located in Quezon City, main headquarters for tax administration.",
+        technicalDetails: {
+          address: "BIR National Office, BIR Road, Diliman, Quezon City",
+          contactNumber: "+63 285383200",
+          email: "contact_us@bir.gov.ph",
+          buildingType: "Government Office Building",
+          regionalOffices: "17 Regional Offices Nationwide"
+        }
+      },
+      {
+        id: "bir_region_01",
+        name: "BIR Regional Office No. 1 - Ilocos",
+        location: [17.9688, 120.5739], // Laoag City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Ilocos Norte, Ilocos Sur, La Union, and Pangasinan.",
+        technicalDetails: {
+          address: "2nd & 3rd Floor, BIR Building, Mc Arthur Hi-way, Calasiao, Pangasinan",
+          contactNumber: "(075) 522-38-66",
+          coverage: "Ilocos Norte, Ilocos Sur, La Union, Pangasinan"
+        }
+      },
+      {
+        id: "bir_region_02",
+        name: "BIR Regional Office No. 2 - Cordillera",
+        location: [16.4023, 120.5960], // Baguio City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Cordillera Administrative Region including Baguio City.",
+        technicalDetails: {
+          address: "No. 69 Leonard Wood Road, Baguio City 2600",
+          contactNumber: "(074) 442-69-60",
+          coverage: "Cordillera Administrative Region"
+        }
+      },
+      {
+        id: "bir_region_03",
+        name: "BIR Regional Office No. 3 - Central Luzon",
+        location: [15.3794, 120.6200], // San Fernando, Pampanga
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Central Luzon region including Pampanga, Bulacan, Nueva Ecija.",
+        technicalDetails: {
+          address: "BIR Bldg. Capitol Compound Sto. Nino, San Fernando, Pampanga",
+          contactNumber: "(045) 961-17-72",
+          coverage: "Pampanga, Bulacan, Nueva Ecija, Tarlac, Zambales, Aurora"
+        }
+      },
+      {
+        id: "bir_region_04",
+        name: "BIR Regional Office No. 4 - CALABARZON",
+        location: [14.2691, 121.1121], // Laguna
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering CALABARZON region.",
+        technicalDetails: {
+          coverage: "Cavite, Laguna, Batangas, Rizal, Quezon"
+        }
+      },
+      {
+        id: "bir_region_05",
+        name: "BIR Regional Office No. 5 - Bicol",
+        location: [13.1391, 123.7437], // Legazpi City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Bicol Region.",
+        technicalDetails: {
+          address: "BIR Bldg. Camia St. Imperial Court Subd. Legazpi City",
+          contactNumber: "(052) 820-13-13",
+          coverage: "Albay, Camarines Norte, Camarines Sur, Catanduanes, Masbate, Sorsogon"
+        }
+      },
+      {
+        id: "bir_region_06",
+        name: "BIR Regional Office No. 6 - Western Visayas",
+        location: [10.7202, 122.5621], // Iloilo City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Western Visayas region.",
+        technicalDetails: {
+          address: "BIR Building, M.H.Del Pilar St. Molo, Iloilo City",
+          contactNumber: "(033) 338-14-65",
+          coverage: "Aklan, Antique, Capiz, Guimaras, Iloilo, Negros Occidental"
+        }
+      },
+      {
+        id: "bir_region_07",
+        name: "BIR Regional Office No. 7 - Central Visayas",
+        location: [10.3157, 123.8854], // Cebu City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Central Visayas region including Cebu.",
+        technicalDetails: {
+          coverage: "Bohol, Cebu, Negros Oriental, Siquijor"
+        }
+      },
+      {
+        id: "bir_region_08",
+        name: "BIR Regional Office No. 8 - Eastern Visayas",
+        location: [11.2442, 125.0045], // Tacloban City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Eastern Visayas region.",
+        technicalDetails: {
+          coverage: "Biliran, Eastern Samar, Leyte, Northern Samar, Samar, Southern Leyte"
+        }
+      },
+      {
+        id: "bir_region_09",
+        name: "BIR Regional Office No. 9 - Zamboanga Peninsula",
+        location: [6.9214, 122.0790], // Zamboanga City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Zamboanga Peninsula.",
+        technicalDetails: {
+          coverage: "Zamboanga del Norte, Zamboanga del Sur, Zamboanga Sibugay"
+        }
+      },
+      {
+        id: "bir_region_10",
+        name: "BIR Regional Office No. 10 - Northern Mindanao",
+        location: [8.4542, 124.6319], // Cagayan de Oro City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Northern Mindanao region.",
+        technicalDetails: {
+          coverage: "Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental"
+        }
+      },
+      {
+        id: "bir_region_11",
+        name: "BIR Regional Office No. 11 - Davao Region",
+        location: [7.0731, 125.6128], // Davao City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Davao Region.",
+        technicalDetails: {
+          coverage: "Davao de Oro, Davao del Norte, Davao del Sur, Davao Occidental, Davao Oriental"
+        }
+      },
+      {
+        id: "bir_region_12",
+        name: "BIR Regional Office No. 12 - SOCCSKSARGEN",
+        location: [6.1164, 125.1716], // General Santos City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering SOCCSKSARGEN region.",
+        technicalDetails: {
+          coverage: "South Cotabato, Cotabato, Sultan Kudarat, Sarangani, General Santos City"
+        }
+      },
+      {
+        id: "bir_region_13",
+        name: "BIR Regional Office No. 13 - CARAGA",
+        location: [9.3477, 125.4849], // Butuan City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering CARAGA region.",
+        technicalDetails: {
+          coverage: "Agusan del Norte, Agusan del Sur, Dinagat Islands, Surigao del Norte, Surigao del Sur"
+        }
+      }
+    ]
+  },
+
+  // Bureau of Customs (BOC) - DOF Agency
+  {
+    category: "Bureau of Customs",
+    id: "boc_facilities",
+    center: [14.5832, 120.9751], // Manila Port Area
+    sites: [
+      {
+        id: "boc_hq_01",
+        name: "Bureau of Customs Headquarters - Manila",
+        location: [14.5832, 120.9751],
+        status: "active",
+        subcategory: "BOC Headquarters",
+        description: "Bureau of Customs main headquarters located at South Harbor, Port Area, Manila.",
+        technicalDetails: {
+          address: "G/F OCOM Building, 16th Street, South Harbor, Port Area, Manila",
+          contactNumber: "(02) 87056000",
+          email: "boc.cares@customs.gov.ph",
+          operatingHours: "24/7 for port operations",
+          buildingType: "Government Office Building"
+        }
+      },
+      {
+        id: "boc_naia_01",
+        name: "BOC NAIA - Ninoy Aquino International Airport",
+        location: [14.5086, 121.0194],
+        status: "active",
+        subcategory: "BOC Port/Airport Office",
+        description: "Bureau of Customs office at Ninoy Aquino International Airport handling passenger and cargo clearance.",
+        technicalDetails: {
+          address: "NAIA Complex, Pasay City",
+          contactNumber: "(632) 879-6003",
+          operatingHours: "24/7",
+          facilityType: "Airport Customs Office"
+        }
+      },
+      {
+        id: "boc_cebu_01",
+        name: "BOC Cebu - Port of Cebu",
+        location: [10.3157, 123.8854],
+        status: "active",
+        subcategory: "BOC Port Office",
+        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger clearance.",
+        technicalDetails: {
+          address: "Port of Cebu, Cebu City",
+          facilityType: "Port Customs Office",
+          operatingHours: "24/7"
+        }
+      },
+      {
+        id: "boc_davao_01",
+        name: "BOC Davao - Port of Davao",
+        location: [7.0731, 125.6128],
+        status: "active",
+        subcategory: "BOC Port Office",
+        description: "Bureau of Customs office at Port of Davao serving Mindanao region.",
+        technicalDetails: {
+          address: "Port of Davao, Davao City",
+          facilityType: "Port Customs Office"
+        }
+      },
+      {
+        id: "boc_iloilo_01",
+        name: "BOC Iloilo - Port of Iloilo",
+        location: [10.7202, 122.5621],
+        status: "active",
+        subcategory: "BOC Port Office",
+        description: "Bureau of Customs office at Port of Iloilo serving Western Visayas region.",
+        technicalDetails: {
+          address: "Port of Iloilo, Iloilo City",
+          facilityType: "Port Customs Office"
+        }
+      },
+      {
+        id: "boc_zamboanga_01",
+        name: "BOC Zamboanga - Port of Zamboanga",
+        location: [6.9214, 122.0790],
+        status: "active",
+        subcategory: "BOC Port Office",
+        description: "Bureau of Customs office at Port of Zamboanga serving Zamboanga Peninsula.",
+        technicalDetails: {
+          address: "Port of Zamboanga, Zamboanga City",
+          facilityType: "Port Customs Office"
+        }
+      }
+    ]
+  },
+
+  // Bureau of Local Government Finance (BLGF) - DOF Agency
+  {
+    category: "Bureau of Local Government Finance",
+    id: "blgf_facilities",
+    center: [14.5832, 120.9797], // Manila BSP Complex
+    sites: [
+      {
+        id: "blgf_central_01",
+        name: "BLGF Central Office - Manila",
+        location: [14.5832, 120.9797],
+        status: "active",
+        subcategory: "BLGF Central Office",
+        description: "Bureau of Local Government Finance Central Office located at BSP Complex, Manila.",
+        technicalDetails: {
+          address: "8th Floor EDPC Building, Bangko Sentral ng Pilipinas Complex, Roxas Boulevard, Manila",
+          operatingHours: "8:00 AM - 5:00 PM",
+          buildingType: "Government Office Building",
+          regionalOffices: "15 Regional Offices Nationwide"
+        }
+      },
+      {
+        id: "blgf_region_01",
+        name: "BLGF Regional Office I - Ilocos",
+        location: [17.9688, 120.5739],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Ilocos Region for local government finance supervision.",
+        technicalDetails: {
+          coverage: "Ilocos Norte, Ilocos Sur, La Union, Pangasinan"
+        }
+      },
+      {
+        id: "blgf_region_02",
+        name: "BLGF Regional Office II - Cagayan Valley",
+        location: [17.6129, 121.7270],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Cagayan Valley Region.",
+        technicalDetails: {
+          coverage: "Batanes, Cagayan, Isabela, Nueva Vizcaya, Quirino"
+        }
+      },
+      {
+        id: "blgf_region_03",
+        name: "BLGF Regional Office III - Central Luzon",
+        location: [15.3794, 120.6200],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Central Luzon Region.",
+        technicalDetails: {
+          coverage: "Aurora, Bataan, Bulacan, Nueva Ecija, Pampanga, Tarlac, Zambales"
+        }
+      },
+      {
+        id: "blgf_region_04a",
+        name: "BLGF Regional Office IV-A - CALABARZON",
+        location: [14.2691, 121.1121],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving CALABARZON Region.",
+        technicalDetails: {
+          coverage: "Cavite, Laguna, Batangas, Rizal, Quezon"
+        }
+      },
+      {
+        id: "blgf_region_04b",
+        name: "BLGF Regional Office IV-B - MIMAROPA",
+        location: [13.4051, 121.0089],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving MIMAROPA Region.",
+        technicalDetails: {
+          coverage: "Marinduque, Occidental Mindoro, Oriental Mindoro, Palawan, Romblon"
+        }
+      },
+      {
+        id: "blgf_region_05",
+        name: "BLGF Regional Office V - Bicol",
+        location: [13.1391, 123.7437],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Bicol Region.",
+        technicalDetails: {
+          coverage: "Albay, Camarines Norte, Camarines Sur, Catanduanes, Masbate, Sorsogon"
+        }
+      },
+      {
+        id: "blgf_region_06",
+        name: "BLGF Regional Office VI - Western Visayas",
+        location: [10.7202, 122.5621],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Western Visayas Region.",
+        technicalDetails: {
+          coverage: "Aklan, Antique, Capiz, Guimaras, Iloilo, Negros Occidental"
+        }
+      },
+      {
+        id: "blgf_region_07",
+        name: "BLGF Regional Office VII - Central Visayas",
+        location: [10.3157, 123.8854],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Central Visayas Region.",
+        technicalDetails: {
+          coverage: "Bohol, Cebu, Negros Oriental, Siquijor"
+        }
+      },
+      {
+        id: "blgf_region_08",
+        name: "BLGF Regional Office VIII - Eastern Visayas",
+        location: [11.2442, 125.0045],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Eastern Visayas Region.",
+        technicalDetails: {
+          coverage: "Biliran, Eastern Samar, Leyte, Northern Samar, Samar, Southern Leyte"
+        }
+      },
+      {
+        id: "blgf_region_09",
+        name: "BLGF Regional Office IX - Zamboanga Peninsula",
+        location: [6.9214, 122.0790],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Zamboanga Peninsula.",
+        technicalDetails: {
+          coverage: "Zamboanga del Norte, Zamboanga del Sur, Zamboanga Sibugay"
+        }
+      },
+      {
+        id: "blgf_region_10",
+        name: "BLGF Regional Office X - Northern Mindanao",
+        location: [8.4542, 124.6319],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Northern Mindanao Region.",
+        technicalDetails: {
+          coverage: "Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental"
+        }
+      },
+      {
+        id: "blgf_region_11",
+        name: "BLGF Regional Office XI - Davao Region",
+        location: [7.0731, 125.6128],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving Davao Region.",
+        technicalDetails: {
+          coverage: "Davao de Oro, Davao del Norte, Davao del Sur, Davao Occidental, Davao Oriental"
+        }
+      },
+      {
+        id: "blgf_region_12",
+        name: "BLGF Regional Office XII - SOCCSKSARGEN",
+        location: [6.1164, 125.1716],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving SOCCSKSARGEN Region.",
+        technicalDetails: {
+          coverage: "South Cotabato, Cotabato, Sultan Kudarat, Sarangani"
+        }
+      },
+      {
+        id: "blgf_region_13",
+        name: "BLGF Regional Office XIII - CARAGA",
+        location: [9.3477, 125.4849],
+        status: "active",
+        subcategory: "BLGF Regional Office",
+        description: "BLGF Regional Office serving CARAGA Region.",
+        technicalDetails: {
+          coverage: "Agusan del Norte, Agusan del Sur, Dinagat Islands, Surigao del Norte, Surigao del Sur"
+        }
+      }
+    ]
+  },
+
+  // Other DOF Agencies and Properties
+  {
+    category: "DOF Attached Agencies",
+    id: "dof_attached_agencies",
+    center: [14.5995, 121.0346], // Metro Manila
+    sites: [
+      {
+        id: "dof_agency_01",
+        name: "Insurance Commission - Makati",
+        location: [14.5547, 121.0244],
+        status: "active",
+        subcategory: "DOF Attached Agency",
+        description: "Insurance Commission office regulating insurance, pre-need, and HMO industries under DOF supervision.",
+        technicalDetails: {
+          address: "Makati City",
+          function: "Insurance regulation and supervision",
+          buildingType: "Government Office Building"
+        }
+      },
+      {
+        id: "dof_agency_02",
+        name: "Securities and Exchange Commission - Mandaluyong",
+        location: [14.5794, 121.0359],
+        status: "active",
+        subcategory: "DOF Attached Agency",
+        description: "Securities and Exchange Commission under DOF supervision for corporate and capital market regulation.",
+        technicalDetails: {
+          address: "Mandaluyong City",
+          function: "Corporate and securities regulation",
+          buildingType: "Government Office Building"
+        }
+      },
+      {
+        id: "dof_agency_03",
+        name: "Philippine Tax Academy - Quezon City",
+        location: [14.6506, 121.0378],
+        status: "active",
+        subcategory: "DOF Training Institution",
+        description: "Philippine Tax Academy serving as learning institution for tax collectors and administrators.",
+        technicalDetails: {
+          address: "Quezon City",
+          function: "Tax education and training",
+          buildingType: "Educational/Training Facility"
+        }
+      },
+      {
+        id: "dof_agency_04",
+        name: "National Tax Research Center - Manila",
+        location: [14.5832, 120.9797],
+        status: "active",
+        subcategory: "DOF Research Center",
+        description: "National Tax Research Center conducting research on taxation to improve tax system and policy.",
+        technicalDetails: {
+          address: "Manila",
+          function: "Tax research and policy development",
+          buildingType: "Research Facility"
+        }
+      },
+      {
+        id: "dof_agency_05",
+        name: "Philippine Guarantee Corporation - Makati",
+        location: [14.5547, 121.0244],
+        status: "active",
+        subcategory: "DOF Government Corporation",
+        description: "Philippine Guarantee Corporation providing guarantee systems for trade, investments, and priority sectors.",
+        technicalDetails: {
+          address: "Makati City",
+          function: "State guarantee finance",
+          buildingType: "Corporate Office Building"
+        }
+      }
+    ]
+  },
+
+  // Regional DOF Properties and Support Facilities
+  {
+    category: "DOF Regional Support Facilities",
+    id: "dof_regional_support",
+    center: [12.8797, 121.7740], // Central Philippines
+    sites: [
+      {
+        id: "dof_support_01",
+        name: "DOF Northern Luzon Coordination Office",
+        location: [16.4023, 120.5960],
+        status: "active",
+        subcategory: "DOF Regional Coordination",
+        description: "DOF coordination office for Northern Luzon operations and inter-agency coordination.",
+        technicalDetails: {
+          coverage: "Northern Luzon coordination",
+          function: "Regional coordination and support"
+        }
+      },
+      {
+        id: "dof_support_02",
+        name: "DOF Southern Luzon Coordination Office",
+        location: [13.1391, 123.7437],
+        status: "active",
+        subcategory: "DOF Regional Coordination",
+        description: "DOF coordination office for Southern Luzon operations.",
+        technicalDetails: {
+          coverage: "Southern Luzon coordination",
+          function: "Regional coordination and support"
+        }
+      },
+      {
+        id: "dof_support_03",
+        name: "DOF Visayas Coordination Office",
+        location: [10.3157, 123.8854],
+        status: "active",
+        subcategory: "DOF Regional Coordination",
+        description: "DOF coordination office for Visayas region operations and support.",
+        technicalDetails: {
+          coverage: "Visayas region coordination",
+          function: "Regional coordination and support"
+        }
+      },
+      {
+        id: "dof_support_04",
+        name: "DOF Mindanao Coordination Office",
+        location: [7.0731, 125.6128],
+        status: "active",
+        subcategory: "DOF Regional Coordination",
+        description: "DOF coordination office for Mindanao region operations and support.",
+        technicalDetails: {
+          coverage: "Mindanao region coordination",
+          function: "Regional coordination and support"
+        }
+      }
+    ]
+  },
+
+  // Existing Cebu City Data (Enhanced)
   {
     category: "Infrastructure",
     id: "infrastructure",
     center: [10.3157, 123.8854],
     sites: [
+      // DOF-related infrastructure in Cebu
       {
-        id: "roads_01",
-        name: "Osmeña Boulevard",
-        location: [10.306, 123.891],
+        id: "dof_cebu_01",
+        name: "BIR Regional Office No. 7 - Cebu City",
+        location: [10.3157, 123.8854],
         status: "active",
-        subcategory: "Roads",
-        description:
-          "Major arterial road connecting M.J. Cuenco Avenue in San Roque to N. Escario Street in Capitol Site. Previously known as Jones Avenue; part of National Route 8 (N8).",
+        subcategory: "DOF Regional Office",
+        description: "Bureau of Internal Revenue Regional Office No. 7 serving Central Visayas region, located in Cebu City.",
+        technicalDetails: {
+          address: "Cebu City",
+          coverage: "Bohol, Cebu, Negros Oriental, Siquijor",
+          buildingType: "Government Office Building",
+          function: "Tax administration and collection"
+        }
       },
       {
-        id: "roads_02",
-        name: "Natalio Bacalso Avenue",
-        location: [10.309, 123.8917],
+        id: "dof_cebu_02",
+        name: "BOC Port of Cebu Office",
+        location: [10.3157, 123.8854],
         status: "active",
-        subcategory: "Roads",
-        description:
-          "National highway starting at Fuente Osmeña Circle and extending southward. Also known as Cebu South Road; part of National Routes 8 (N8) and 830 (N830).",
+        subcategory: "DOF Port Office",
+        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger customs clearance.",
+        technicalDetails: {
+          address: "Port of Cebu, Cebu City",
+          function: "Customs administration and revenue collection",
+          operatingHours: "24/7",
+          facilityType: "Port Customs Office"
+        }
       },
       {
-        id: "streets_01",
-        name: "Katipunan Street",
-        location: [10.2965, 123.878],
+        id: "dof_cebu_03",
+        name: "BLGF Regional Office VII - Cebu City",
+        location: [10.3157, 123.8854],
         status: "active",
-        subcategory: "Streets",
-        description:
-          "National tertiary road from N. Bacalso Avenue and V. Rama Avenue in Barangay Calamba to F. Llamas Street in Barangay Tisa.",
-      },
-      {
-        id: "streets_02",
-        name: "Tres de Abril Street",
-        location: [10.294, 123.8785],
-        status: "warning",
-        subcategory: "Streets",
-        description:
-          "National tertiary road from Spolarium Street in Barangay Pasil to F. Llamas Street in Barangay Punta Princesa.",
-      },
-      {
-        id: "highways_01",
-        name: "Cebu–Cordova Link Expressway",
-        location: [10.287, 123.88],
-        status: "active",
-        subcategory: "Highways",
-        description:
-          "8.9 km toll bridge expressway connecting South Road Properties in Cebu City to Cordova on Mactan Island. Longest sea-crossing bridge in the Philippines.",
-      },
-      {
-        id: "highways_02",
-        name: "N815 Highway",
-        location: [10.323, 123.905],
-        status: "active",
-        subcategory: "Highways",
-        description:
-          "National secondary road includes Juan Luna Avenue, Pope John Paul II Avenue, Salinas Drive, Veterans Drive, and Cebu–Balamban Transcentral Highway.",
-      },
-      {
-        id: "highways_03",
-        name: "Cebu North Road (National Route 8)",
-        location: [10.3795, 123.9528],
-        status: "active",
-        subcategory: "Highways",
-        description:
-          "A major highway connecting Cebu City to northern municipalities, facilitating regional transport and commerce.",
-      },
-      {
-        id: "transport_01",
-        name: "Jeepney Routes MI-03B",
-        location: [10.31, 123.949],
-        status: "active",
-        subcategory: "Public transportation networks",
-        description:
-          "Route from MEPZ 1 in Lapu-Lapu City to Cordova via various stops including Opon Public Market, Gaisano Mactan Island Mall, and Marina Mall.",
-      },
-      {
-        id: "transport_02",
-        name: "MyBus Terminal - SM City Cebu",
-        location: [10.3238, 123.9053],
-        status: "active",
-        subcategory: "Public transportation networks",
-        description:
-          "Bus terminal serving routes to Talisay City, SM Seaside City, and Mactan Airport.",
-      },
-      {
-        id: "water_utility_01",
-        name: "MCWD Water Distribution Network",
-        location: [10.33, 123.895],
-        status: "active",
-        subcategory: "Water Supply",
-        description:
-          "Main water distribution system managed by the Metropolitan Cebu Water District (MCWD), serving Cebu City and neighboring areas.",
-      },
-      {
-        id: "electricity_utility_01",
-        name: "VECO Power Distribution Grid",
-        location: [10.325, 123.9],
-        status: "active",
-        subcategory: "Electricity Supply",
-        description:
-          "Electricity distribution grid operated by Visayan Electric Company (VECO), covering Cebu City and surrounding municipalities.",
-      },
-      {
-        id: "sewage_utility_01",
-        name: "Central Sewage Treatment Facility",
-        location: [10.315, 123.91],
-        status: "warning",
-        subcategory: "Sewage System",
-        description:
-          "Main sewage treatment facility handled by the Cebu City Government's Department of Public Services, with ongoing projects to improve sewage systems.",
-      },
-      {
-        id: "communication_01",
-        name: "Underground Cabling Project",
-        location: [10.318, 123.882],
-        status: "maintenance",
-        subcategory: "Communication lines",
-        description:
-          "Project to underground approximately 90 km of power and telecommunication lines to enhance urban aesthetics and safety.",
-      },
-      {
-        id: "communication_02",
-        name: "PLDT Fiber Optic Network - Cebu City Central",
-        location: [10.31, 123.895],
-        status: "active",
-        subcategory: "Communication lines",
-        description:
-          "High-capacity fiber optic network providing internet and telecommunications services to central Cebu City.",
-      },
-      {
-        id: "communication_03",
-        name: "Globe Telecom Cell Tower - Lahug",
-        location: [10.326, 123.903],
-        status: "active",
-        subcategory: "Communication lines",
-        description:
-          "Telecommunications tower providing cellular service and data connectivity to the Lahug area.",
-      },
-      {
-        id: "communication_04",
-        name: "SmartTel Microwave Relay Station",
-        location: [10.335, 123.915],
-        status: "active",
-        subcategory: "Communication lines",
-        description:
-          "Relay station facilitating wireless communications and backup connectivity during network outages.",
-      },
-      {
-        id: "communication_05",
-        name: "Converge ICT Fiber Distribution Hub - Mandaue Boundary",
-        location: [10.35, 123.923],
-        status: "active",
-        subcategory: "Communication lines",
-        description:
-          "Internet service provider's distribution hub connecting fiber networks across northern Cebu City.",
-      },
-      {
-        id: "communication_06",
-        name: "Emergency Communications Tower - City Hall",
-        location: [10.2934, 123.9017],
-        status: "active",
-        subcategory: "Communication lines",
-        description:
-          "Dedicated communications infrastructure for emergency services and disaster response coordination.",
-      },
-      {
-        id: "waste_01",
-        name: "ARN Central Waste Management",
-        location: [10.419560195400575, 123.94093539653379],
-        status: "active",
-        subcategory: "Waste Management Facilities",
-        description:
-          "Facility for waste collection, processing, and management.",
-      },
-      {
-        id: "waste_02",
-        name: "Waste PH",
-        location: [10.319934243510673, 123.92445590452405],
-        status: "active",
-        subcategory: "Waste Management Facilities",
-        description:
-          "Waste management company providing collection and disposal services.",
-      },
-      {
-        id: "waste_03",
-        name: "Prime Waste Solutions Cebu",
-        location: [10.420910837599825, 123.90831973526456],
-        status: "active",
-        subcategory: "Waste Management Facilities",
-        description:
-          "Company offering waste management and recycling solutions.",
-      },
-      {
-        id: "waste_04",
-        name: "Inayawan Sanitary Landfill",
-        location: [10.2651, 123.8745],
-        status: "inactive",
-        subcategory: "Waste Management Facilities",
-        description: "15-hectare landfill, closed since 2015.",
-      },
-    ],
+        subcategory: "DOF Regional Office",
+        description: "Bureau of Local Government Finance Regional Office VII serving Central Visayas region.",
+        technicalDetails: {
+          address: "Cebu City",
+          coverage: "Bohol, Cebu, Negros Oriental, Siquijor",
+          function: "Local government finance supervision"
+        }
+      }
+    ]
   },
 
-  // Internet Access
-  {
-    category: "Internet Access",
-    id: "internet_access",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "wifi_01",
-        name: "Ayala Center Cebu Free WiFi Zone",
-        location: [10.3183, 123.9055],
-        status: "active",
-        subcategory: "WiFi Hotspots",
-        description:
-          "Shopping mall providing free WiFi access throughout its premises, serving thousands of visitors daily.",
-      },
-      {
-        id: "wifi_02",
-        name: "SM City Cebu WiFi Zone",
-        location: [10.3119, 123.9196],
-        status: "active",
-        subcategory: "WiFi Hotspots",
-        description:
-          "Large shopping center offering complimentary wireless internet access to shoppers and visitors.",
-      },
-      {
-        id: "wifi_03",
-        name: "Cebu IT Park Public WiFi",
-        location: [10.328, 123.906],
-        status: "active",
-        subcategory: "WiFi Hotspots",
-        description:
-          "Free public WiFi network covering the IT Park area, supporting businesses and visitors with high-speed internet.",
-      },
-      {
-        id: "wifi_04",
-        name: "Fuente Osmeña Circle WiFi Zone",
-        location: [10.307, 123.895],
-        status: "active",
-        subcategory: "WiFi Hotspots",
-        description:
-          "Public WiFi access point at a major city landmark and gathering place.",
-      },
-      {
-        id: "wifi_05",
-        name: "Plaza Independencia Free WiFi",
-        location: [10.2932, 123.9062],
-        status: "warning",
-        subcategory: "WiFi Hotspots",
-        description:
-          "Municipal WiFi service covering the historic plaza, with occasional connectivity issues during peak hours.",
-      },
-      {
-        id: "internet_01",
-        name: "Cebu City Central Library Digital Access Center",
-        location: [10.2985, 123.902],
-        status: "active",
-        subcategory: "Public Internet Centers",
-        description:
-          "Library-based facility providing free computer and internet access, digital literacy training, and e-government services.",
-      },
-      {
-        id: "internet_02",
-        name: "Lahug Barangay Technology Center",
-        location: [10.325, 123.902],
-        status: "active",
-        subcategory: "Public Internet Centers",
-        description:
-          "Community technology hub offering internet access, printing services, and basic computer training to residents.",
-      },
-      {
-        id: "internet_03",
-        name: "Pardo Digital Community Center",
-        location: [10.278, 123.847],
-        status: "active",
-        subcategory: "Public Internet Centers",
-        description:
-          "Public facility providing computer access, digital skills workshops, and online services to underserved communities.",
-      },
-      {
-        id: "internet_04",
-        name: "Guadalupe Community Tech Hub",
-        location: [10.31, 123.885],
-        status: "active",
-        subcategory: "Public Internet Centers",
-        description:
-          "Neighborhood center offering affordable internet access, computer usage, and technology education programs.",
-      },
-      {
-        id: "internet_05",
-        name: "Basak Digital Empowerment Center",
-        location: [10.3, 123.873],
-        status: "maintenance",
-        subcategory: "Public Internet Centers",
-        description:
-          "Public internet facility undergoing equipment upgrades and expansion of services.",
-      },
-    ],
-  },
-
-  // Public Buildings
+  // Continue with existing categories from original data.js...
   {
     category: "Public Buildings",
     id: "public_buildings",
     center: [10.3157, 123.8854],
     sites: [
-      {
-        id: "hospital_01",
-        name: "Cebu City Medical Center",
-        location: [10.298238766000578, 123.89159988604682],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Public hospital serving the city with comprehensive medical services.",
-      },
-      {
-        id: "hospital_02",
-        name: "Vicente Sotto Memorial Medical Center",
-        location: [10.308334083978739, 123.89139415672553],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Major government tertiary care hospital and referral center for the Central Visayas region.",
-      },
-      {
-        id: "hospital_03",
-        name: "St. Vincent General Hospital Cebu, Inc.",
-        location: [10.302545584597969, 123.89777969555047],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Private general hospital providing medical services to Cebu City residents.",
-      },
-      {
-        id: "hospital_04",
-        name: "Cebu Doctors' University Hospital",
-        location: [10.31571901726227, 123.89117073260907],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "University hospital affiliated with Cebu Doctors' University offering comprehensive healthcare services.",
-      },
-      {
-        id: "hospital_05",
-        name: "Adventist Hospital Cebu",
-        location: [10.297225388369254, 123.88516258448054],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Faith-based hospital formerly known as Miller Hospital providing quality healthcare services.",
-      },
-      {
-        id: "hospital_06",
-        name: "Perpetual Succour Hospital of Cebu, Inc.",
-        location: [10.316647892356961, 123.90026878548946],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Private Catholic hospital managed by the Religious of the Virgin Mary congregation.",
-      },
-      {
-        id: "hospital_07",
-        name: "Cebu North General Hospital",
-        location: [10.374622184200575, 123.91688438952787],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "General hospital serving the northern areas of Cebu City and surrounding communities.",
-      },
-      {
-        id: "hospital_08",
-        name: "Cebu Velez General Hospital",
-        location: [10.309179628664882, 123.89815894402746],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Private hospital providing healthcare services to the Cebu metropolitan area.",
-      },
-      {
-        id: "hospital_09",
-        name: "VisayasMed Hospital",
-        location: [10.308081840858982, 123.89472571652541],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Modern healthcare facility serving patients throughout the Visayas region.",
-      },
-      {
-        id: "hospital_10",
-        name: "Chong Hua Hospital",
-        location: [10.310304568568156, 123.89103000795832],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Leading private hospital in Cebu providing comprehensive medical care and specialized services.",
-      },
-      {
-        id: "hospital_11",
-        name: "Vicente Gullas Memorial Hospital",
-        location: [10.34799552142234, 123.91722498060223],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "Hospital serving the community and providing quality healthcare services.",
-      },
-      {
-        id: "hospital_12",
-        name: "SWUMed - Southwestern University Medical Center",
-        location: [10.304064583893501, 123.89260834724799],
-        status: "active",
-        subcategory: "Hospitals",
-        description:
-          "University hospital formerly known as Sacred Heart Hospital affiliated with Southwestern University.",
-      },
-      {
-        id: "school_01",
-        name: "Cebu City National Science High School",
-        location: [10.305188111488517, 123.87942884448371],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public science high school with specialized science and mathematics curriculum.",
-      },
-      {
-        id: "school_02",
-        name: "Cebu City Don Carlos A. Gothong Memorial National High School",
-        location: [10.297783682302445, 123.88986777581027],
-        status: "active",
-        subcategory: "Schools",
-        description: "Public high school serving the local community.",
-      },
-      {
-        id: "school_03",
-        name: "Don Vicente Rama Memorial National High School",
-        location: [10.293507723179621, 123.86582432259009],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public high school providing secondary education to local students.",
-      },
-      {
-        id: "school_04",
-        name: "Abellana National School",
-        location: [10.30122810212619, 123.89699008930913],
-        status: "active",
-        subcategory: "Schools",
-        description: "Public school offering primary and secondary education.",
-      },
-      {
-        id: "school_05",
-        name: "Inayawan Elementary School",
-        location: [10.272702963197748, 123.8566049439077],
-        status: "active",
-        subcategory: "Schools",
-        description: "Public elementary school serving the Inayawan community.",
-      },
-      {
-        id: "school_06",
-        name: "Bulacao Community School",
-        location: [10.276967903364486, 123.85145510265465],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Community school providing education to the Bulacao area.",
-      },
-      {
-        id: "school_07",
-        name: "Mabolo National High School",
-        location: [10.313365275107005, 123.917375044233],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public high school serving students in the Mabolo district.",
-      },
-      {
-        id: "school_08",
-        name: "Barrio Luz National High School",
-        location: [10.32518720557029, 123.90810532997753],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public high school providing education to students in Barrio Luz area.",
-      },
-      {
-        id: "school_09",
-        name: "Apas National High School",
-        location: [10.336945497792124, 123.90795285957677],
-        status: "active",
-        subcategory: "Schools",
-        description: "Public high school serving the Apas community.",
-      },
-      {
-        id: "school_10",
-        name: "Guadalupe Elementary School",
-        location: [10.322095223112013, 123.8863889595768],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public elementary school providing primary education in Guadalupe.",
-      },
-      {
-        id: "school_11",
-        name: "Don Vicente Rama Memorial Elementary School",
-        location: [10.28976433903188, 123.86716459873259],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public elementary school providing primary education to local children.",
-      },
-      {
-        id: "school_12",
-        name: "Cebu Institute of Technology - University",
-        location: [10.295126494886482, 123.8809140686289],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Private university focused on engineering, technology, and other academic disciplines.",
-      },
-      {
-        id: "school_13",
-        name: "University of the Visayas - Main Campus",
-        location: [10.299011117309355, 123.90254340189163],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Private university offering a wide range of undergraduate and graduate programs.",
-      },
-      {
-        id: "school_14",
-        name: "University of the Philippines Cebu",
-        location: [10.323493989808542, 123.90167144264025],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Public university offering undergraduate and graduate programs in various disciplines.",
-      },
-      {
-        id: "school_15",
-        name: "University of Cebu - Banilad Campus",
-        location: [10.339107624915384, 123.91391709767076],
-        status: "active",
-        subcategory: "Schools",
-        description:
-          "Private university campus offering various academic programs.",
-      },
+      // Government offices including DOF-related facilities
       {
         id: "govt_01",
         name: "Cebu City Hall",
@@ -886,1280 +992,24 @@ const cebuCityMarkers = [
         description: "Main administrative center for Cebu City government.",
       },
       {
-        id: "govt_02",
-        name: "Human Resource and Development Office - Cebu City Government",
-        location: [10.293384207358063, 123.90193822932032],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Office managing human resources for the Cebu City government.",
-      },
-      {
-        id: "govt_03",
-        name: "Philippine Statistics Authority - Regional Statistical Services Office VII",
-        location: [10.296366744032362, 123.89798666353829],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Government agency responsible for statistical data collection and analysis for Region VII.",
-      },
-      {
-        id: "govt_04",
-        name: "Cebu City Government Department of Public Services - Administrative Division",
-        location: [10.30503591754881, 123.90089421206046],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Division managing public services for Cebu City residents.",
-      },
-      {
-        id: "govt_05",
-        name: "DTI Cebu Provincial Office",
-        location: [10.2943532948567, 123.9046493046408],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Department of Trade and Industry provincial office serving Cebu.",
-      },
-      {
-        id: "govt_06",
-        name: "Department of Labor and Employment - Region VII Central Visayas",
-        location: [10.3111370949306, 123.90580801892276],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Government agency overseeing labor and employment matters in Central Visayas.",
-      },
-      {
-        id: "govt_07",
-        name: "Cebu City Environment and Natural Resources Office (CCENRO)",
-        location: [10.293578826172636, 123.90153114222535],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Office responsible for environmental protection and natural resources management in Cebu City.",
-      },
-      {
-        id: "govt_08",
-        name: "Department of Agrarian Reform - Cebu Provincial Office",
-        location: [10.294571103275274, 123.90406314750808],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Provincial office implementing agrarian reform programs in Cebu.",
-      },
-      {
-        id: "govt_09",
-        name: "Cebu City Cultural and Historical Affairs Office",
-        location: [10.312296632653537, 123.89258988402251],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Office managing cultural heritage and historical affairs in Cebu City.",
-      },
-      {
-        id: "govt_10",
-        name: "DPWH Cebu City District Engineering Office",
-        location: [10.298956323452884, 123.91009635280405],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Department of Public Works and Highways district office for Cebu City.",
-      },
-      {
-        id: "govt_11",
-        name: "Government Service Insurance System GSIS - Cebu",
-        location: [10.298438484009232, 123.89686766444461],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "GSIS branch providing insurance and benefits to government employees in Cebu.",
-      },
-      {
-        id: "govt_12",
-        name: "Cebu City Hall Satellite Office",
-        location: [10.292885982632347, 123.90306893162017],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Extension office of Cebu City Hall providing government services.",
-      },
-      {
-        id: "govt_13",
-        name: "Office of the City Civil Registrar - Cebu",
-        location: [10.308864993024608, 123.91108934433583],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Office managing civil registration records for Cebu City residents.",
-      },
-      {
-        id: "govt_14",
-        name: "CEBU IMMIGRATION DISTRICT OFFICE",
-        location: [10.30977277711169, 123.9146084025254],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Immigration office handling visa and immigration matters in Cebu.",
-      },
-      {
-        id: "govt_15",
-        name: "Cebu City Health Department",
-        location: [10.308020540362339, 123.90823547397477],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Department responsible for public health services in Cebu City.",
-      },
-      {
-        id: "govt_16",
-        name: "City Planning Development Office - City of Cebu",
-        location: [10.292807080913503, 123.90057178931848],
-        status: "active",
-        subcategory: "Government Offices",
-        description:
-          "Office overseeing urban planning and development for Cebu City.",
-      },
-      {
-        id: "police_01",
-        name: "Police Station 1 (Parian Police Station) - Cebu City Police Office",
-        location: [10.301862026495945, 123.90867453060714],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Parian area of Cebu City.",
-      },
-      {
-        id: "police_02",
-        name: "Police Station 4 (Mabolo Police Station) - Cebu City Police Office",
-        location: [10.315383708238953, 123.9215766184106],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Mabolo district of Cebu City.",
-      },
-      {
-        id: "police_03",
-        name: "Police Station 5 (Carbon Police Station) - Cebu City Police Office",
-        location: [10.293721142406856, 123.91063789179462],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Carbon area of Cebu City.",
-      },
-      {
-        id: "police_04",
-        name: "Police Station 3 (Waterfront Police Station) - Cebu City Police Office",
-        location: [10.294687020997658, 123.91232077281246],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Waterfront area of Cebu City.",
-      },
-      {
-        id: "police_05",
-        name: "Police Station 6 (Pasil Police Station) - Cebu City Police Office",
-        location: [10.294135090736464, 123.89759556390638],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Pasil area of Cebu City.",
-      },
-      {
-        id: "police_06",
-        name: "Police Station 7 (Inayawan Police Station) - Cebu City Police Office",
-        location: [10.281174396892089, 123.87019973633845],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Inayawan area of Cebu City.",
-      },
-      {
-        id: "police_07",
-        name: "Police Station 11 (Mambaling Police Station) - Cebu City Police Office",
-        location: [10.295362109267767, 123.8760362230919],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Mambaling area of Cebu City.",
-      },
-      {
-        id: "police_08",
-        name: "Police Station 2 - Abellana, Cebu City",
-        location: [10.303975766215547, 123.89011245585019],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Abellana area of Cebu City.",
-      },
-      {
-        id: "police_09",
-        name: "Police Station 8 (Talamban Police Station) - Cebu City Police Office",
-        location: [10.372086568437723, 123.92673735893361],
-        status: "active",
-        subcategory: "Police Stations",
-        description: "Police station serving the Talamban area of Cebu City.",
-      },
-      {
-        id: "police_10",
-        name: "City Government Police Stations - WaterFront Police Station",
-        location: [10.325985407405385, 123.910429528299],
-        status: "active",
-        subcategory: "Police Stations",
-        description:
-          "Police station operated by the city government serving the Waterfront area.",
-      },
-      {
-        id: "fire_01",
-        name: "Bureau of Fire Protection - Regional Office VII",
-        location: [10.298416278470773, 123.8922286907149],
-        status: "active",
-        subcategory: "Fire Departments",
-        description:
-          "Regional headquarters of the Bureau of Fire Protection for Central Visayas.",
-      },
-      {
-        id: "fire_02",
-        name: "Pari-an Fire Sub Station",
-        location: [10.299596283010846, 123.90335437132586],
-        status: "active",
-        subcategory: "Fire Departments",
-        description: "Fire sub-station serving the Pari-an area of Cebu City.",
-      },
-      {
-        id: "fire_03",
-        name: "Cebu Filipino-Chinese Volunteer Fire Brigade",
-        location: [10.310693130864394, 123.89049349282145],
-        status: "active",
-        subcategory: "Fire Departments",
-        description:
-          "Volunteer fire brigade operated by the Filipino-Chinese community in Cebu.",
-      },
-      {
-        id: "fire_04",
-        name: "Labangon Fire Station",
-        location: [10.299733621814568, 123.88115077512616],
-        status: "active",
-        subcategory: "Fire Departments",
-        description: "Fire station serving the Labangon area of Cebu City.",
-      },
-      {
-        id: "fire_05",
-        name: "Apas Fire Sub Station",
-        location: [10.337747871742383, 123.90848598867154],
-        status: "active",
-        subcategory: "Fire Departments",
-        description: "Fire sub-station serving the Apas area of Cebu City.",
-      },
-      {
-        id: "fire_06",
-        name: "Talamban Fire Station",
-        location: [10.370573436405872, 123.91918287438965],
-        status: "active",
-        subcategory: "Fire Departments",
-        description: "Fire station serving the Talamban area of Cebu City.",
-      },
-      {
-        id: "fire_07",
-        name: "Pahina Central Fire Station",
-        location: [10.298478944374898, 123.89249852254464],
-        status: "active",
-        subcategory: "Fire Departments",
-        description:
-          "Fire station serving the Pahina Central area of Cebu City.",
-      },
-      {
-        id: "fire_08",
-        name: "Guadalupe Fire Sub Station",
-        location: [10.323440123931785, 123.88534167545147],
-        status: "active",
-        subcategory: "Fire Departments",
-        description:
-          "Fire sub-station serving the Guadalupe area of Cebu City.",
-      },
-      {
-        id: "fire_09",
-        name: "Mabolo Fire Sub Station",
-        location: [10.313116030205054, 123.91953378867157],
-        status: "active",
-        subcategory: "Fire Departments",
-        description:
-          "Fire sub-station serving the Mabolo district of Cebu City.",
-      },
-      {
-        id: "fire_10",
-        name: "Lahug Fire Sub - Station",
-        location: [10.325011337546401, 123.90042657492056],
-        status: "active",
-        subcategory: "Fire Departments",
-        description: "Fire sub-station serving the Lahug area of Cebu City.",
-      },
-    ],
-  },
-
-  // Natural Features
-  {
-    category: "Natural Features",
-    id: "natural_features",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "topo_01",
-        name: "Central Cebu Protected Landscape",
-        location: [10.556943285282983, 123.88466893470284],
-        status: "active",
-        subcategory: "Topography",
-        description:
-          "Protected natural landscape in central Cebu covering forested mountains and watersheds.",
-      },
-      {
-        id: "topo_02",
-        name: "Sudlon National Park",
-        location: [10.402660935157575, 123.853764462093],
-        status: "active",
-        subcategory: "Topography",
-        description:
-          "National park preserving natural habitats and biodiversity in Cebu.",
-      },
-      {
-        id: "topo_03",
-        name: "Temple of Leah",
-        location: [10.38746231618032, 123.93696881142718],
-        status: "active",
-        subcategory: "Topography",
-        description:
-          "Landmark structure located on elevated terrain with panoramic views of the city.",
-      },
-      {
-        id: "topo_04",
-        name: "Magellan's Cross",
-        location: [10.32315230105024, 123.91676204087462],
-        status: "active",
-        subcategory: "Topography",
-        description:
-          "Historical landmark marking the arrival of Christianity to the Philippines.",
-      },
-      {
-        id: "topo_05",
-        name: "TOPS Cebu",
-        location: [10.382785669295837, 123.93340291074145],
-        status: "active",
-        subcategory: "Topography",
-        description:
-          "Elevated viewpoint offering panoramic views of Cebu City.",
-      },
-      {
-        id: "waterway_01",
-        name: "Central Cebu Protected Landscape (Watershed)",
-        location: [10.545475071713037, 123.8604911412256],
-        status: "active",
-        subcategory: "Waterways",
-        description:
-          "Protected watershed area providing water resources for Cebu.",
-      },
-      {
-        id: "waterway_02",
-        name: "Guadalupe River",
-        location: [10.317704527797694, 123.88865197922283],
-        status: "active",
-        subcategory: "Waterways",
-        description: "River flowing through the Guadalupe area of Cebu City.",
-      },
-      {
-        id: "waterway_03",
-        name: "Kamputhaw River",
-        location: [10.300238613265769, 123.91028534209605],
-        status: "active",
-        subcategory: "Waterways",
-        description: "River passing through the Kamputhaw area of Cebu City.",
-      },
-      {
-        id: "waterway_04",
-        name: "Kinalumsan River",
-        location: [10.303653062650705, 123.86272050572256],
-        status: "active",
-        subcategory: "Waterways",
-        description: "River flowing through parts of Cebu City.",
-      },
-      {
-        id: "waterway_05",
-        name: "Subangdaku River",
-        location: [10.331847446302016, 123.91929596390968],
-        status: "active",
-        subcategory: "Waterways",
-        description: "Major river in the metropolitan area of Cebu.",
-      },
-      {
-        id: "waterway_06",
-        name: "Butuanon River",
-        location: [10.374595018266985, 123.94187318747643],
-        status: "active",
-        subcategory: "Waterways",
-        description:
-          "River system flowing through northern parts of Metro Cebu.",
-      },
-      {
-        id: "waterway_07",
-        name: "Arrabal River",
-        location: [10.298170682328504, 123.86880066819049],
-        status: "active",
-        subcategory: "Waterways",
-        description: "River passing through the Arrabal area of Cebu City.",
-      },
-      {
-        id: "waterway_08",
-        name: "Bulacao River",
-        location: [10.271656656322426, 123.86006109777757],
-        status: "active",
-        subcategory: "Waterways",
-        description: "River flowing through the Bulacao area of Cebu City.",
-      },
-      {
-        id: "waterway_09",
-        name: "Mananga River",
-        location: [10.317039667649041, 123.82825877210827],
-        status: "active",
-        subcategory: "Waterways",
-        description: "Major river system in southern Cebu.",
-      },
-
-      {
-        id: "park_01",
-        name: "D' Family Park",
-        location: [10.36112267530041, 123.9172917314316],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Family-oriented recreational park with various amenities.",
-      },
-      {
-        id: "park_02",
-        name: "Cebu Ocean Park",
-        location: [10.284618776695728, 123.87866792203381],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Marine-themed attraction featuring aquatic wildlife and exhibits.",
-      },
-      {
-        id: "park_03",
-        name: "Sky Park Garden",
-        location: [10.284338639839207, 123.88169343856816],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Elevated garden park offering green space and city views.",
-      },
-      {
-        id: "park_04",
-        name: "Freedom Park",
-        location: [10.297714826437149, 123.89820151601482],
-        status: "active",
-        subcategory: "Parks",
-        description: "Public park area for gatherings and civic activities.",
-      },
-      {
-        id: "park_05",
-        name: "Cebu IT Park",
-        location: [10.332824615079318, 123.92369192971923],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Mixed-use development with green spaces and business centers.",
-      },
-      {
-        id: "park_06",
-        name: "Mountain View Nature's Park",
-        location: [10.374855664377776, 123.88654875546425],
-        status: "active",
-        subcategory: "Parks",
-        description: "Nature park with mountain views and natural landscapes.",
-      },
-      {
-        id: "park_07",
-        name: "Sudlon National Park",
-        location: [10.388201322120308, 123.80325122631511],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "National park with protected forest areas and natural trails.",
-      },
-      {
-        id: "park_08",
-        name: "Family Park Talamban Entrance",
-        location: [10.359495911920705, 123.93234058039123],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Entrance to family-oriented recreational park in Talamban area.",
-      },
-      {
-        id: "park_09",
-        name: "The Millennium Park",
-        location: [10.322006065783794, 123.93920703539527],
-        status: "active",
-        subcategory: "Parks",
-        description: "Public park offering recreational spaces for visitors.",
-      },
-      {
-        id: "park_10",
-        name: "Plaza Independencia",
-        location: [10.298023730059157, 123.93714709889404],
-        status: "active",
-        subcategory: "Parks",
-        description: "Historic plaza and public park in downtown Cebu City.",
-      },
-      {
-        id: "park_11",
-        name: "Kan-Irag Nature Park",
-        location: [10.399682748453985, 123.88015552236044],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Nature park preserving local flora and fauna with hiking trails.",
-      },
-      {
-        id: "park_12",
-        name: "Cebu City Government - Parks and Playgrounds Commission",
-        location: [10.294307993625171, 123.92513080263697],
-        status: "active",
-        subcategory: "Parks",
-        description:
-          "Government office overseeing parks and playgrounds in Cebu City.",
-      },
-      {
-        id: "green_01",
-        name: "Plaza Independencia",
-        location: [10.293407091217528, 123.90614543507638],
-        status: "active",
-        subcategory: "Green Spaces",
-        description:
-          "Historic plaza with green areas in the heart of Cebu City.",
-      },
-      {
-        id: "green_02",
-        name: "Senior Citizen's Park",
-        location: [10.292051883741381, 123.90155344873378],
-        status: "active",
-        subcategory: "Green Spaces",
-        description:
-          "Park dedicated to senior citizens with accessible green spaces.",
-      },
-      {
-        id: "green_03",
-        name: "Cebu Safari and Adventure Park",
-        location: [10.41, 123.86], // Approximate location as not provided in the original data
-        status: "active",
-        subcategory: "Green Spaces",
-        description:
-          "Wildlife and adventure park featuring various animal species and attractions.",
-      },
-      {
-        id: "green_04",
-        name: "Sirao Pictorial Garden and Camping Site",
-        location: [10.406390079777715, 123.86682541973404],
-        status: "active",
-        subcategory: "Green Spaces",
-        description:
-          "Flower garden and camping area known for its picturesque landscapes.",
-      },
-    ],
-  },
-
-  // Environmental Risks
-  {
-    category: "Environmental Risks",
-    id: "environmental_risks",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "flood_01",
-        name: "Kasambagan Flood Zone",
-        location: [10.33, 123.91],
-        status: "critical",
-        subcategory: "Areas vulnerable to flooding",
-        description: "Area highly vulnerable to flooding.",
-      },
-      {
-        id: "flood_02",
-        name: "Kinasang-an Flood Zone",
-        location: [10.285, 123.88],
-        status: "critical",
-        subcategory: "Areas vulnerable to flooding",
-        description: "Area highly vulnerable to flooding.",
-      },
-      {
-        id: "flood_03",
-        name: "Labangon Flood Zone",
-        location: [10.295, 123.885],
-        status: "critical",
-        subcategory: "Areas vulnerable to flooding",
-        description: "Area highly vulnerable to flooding.",
-      },
-      {
-        id: "flood_04",
-        name: "Mabolo Flood Zone",
-        location: [10.315, 123.915],
-        status: "critical",
-        subcategory: "Areas vulnerable to flooding",
-        description: "Area highly vulnerable to flooding.",
-      },
-      {
-        id: "flood_05",
-        name: "Bonbon Flood Zone",
-        location: [10.37, 123.89],
-        status: "critical",
-        subcategory: "Areas vulnerable to flooding",
-        description: "Area highly vulnerable to flooding.",
-      },
-      {
-        id: "pollution_01",
-        name: "Industrial Zone Pollution Area",
-        location: [10.3, 123.87],
-        status: "warning",
-        subcategory: "Pollution zones",
-        description:
-          "Area with high levels of industrial emissions and air quality concerns.",
-      },
-      {
-        id: "pollution_02",
-        name: "Traffic Congestion Pollution Zone",
-        location: [10.31, 123.89],
-        status: "warning",
-        subcategory: "Pollution zones",
-        description:
-          "Urban corridor with elevated air pollution levels due to heavy traffic congestion.",
-      },
-      {
-        id: "pollution_03",
-        name: "South Reclamation Project Pollution Zone",
-        location: [10.275, 123.865],
-        status: "warning",
-        subcategory: "Pollution zones",
-        description:
-          "Coastal development area with elevated air pollution from construction activities and increased traffic congestion.",
-      },
-      {
-        id: "pollution_04",
-        name: "Port Area Pollution Zone",
-        location: [10.293, 123.905],
-        status: "critical",
-        subcategory: "Pollution zones",
-        description:
-          "Harbor and shipping area with significant maritime emissions and industrial pollutants affecting air quality.",
-      },
-      {
-        id: "pollution_05",
-        name: "Inayawan Landfill Zone",
-        location: [10.2651, 123.8745],
-        status: "critical",
-        subcategory: "Pollution zones",
-        description:
-          "Former landfill site with ongoing environmental concerns including soil contamination and methane emissions.",
-      },
-      {
-        id: "hazard_01",
-        name: "Busay Landslide Risk Zone",
-        location: [10.34, 123.87],
-        status: "warning",
-        subcategory: "Other environmental hazards",
-        description:
-          "Hillside area at risk of landslides during heavy rain due to steep slopes and soil conditions.",
-      },
-      {
-        id: "hazard_02",
-        name: "Sirao Geological Hazard Area",
-        location: [10.37, 123.85],
-        status: "warning",
-        subcategory: "Other environmental hazards",
-        description:
-          "Mountainous terrain identified as highly susceptible to landslides and soil erosion.",
-      },
-      {
-        id: "hazard_03",
-        name: "Lusaran Landslide Zone",
-        location: [10.4, 123.86],
-        status: "warning",
-        subcategory: "Other environmental hazards",
-        description: "Area highly susceptible to landslides.",
-      },
-      {
-        id: "hazard_04",
-        name: "Binaliw Landslide Zone",
-        location: [10.41, 123.87],
-        status: "warning",
-        subcategory: "Other environmental hazards",
-        description: "Area highly susceptible to landslides.",
-      },
-      {
-        id: "hazard_05",
-        name: "Guba Landslide Zone",
-        location: [10.42, 123.865],
-        status: "warning",
-        subcategory: "Other environmental hazards",
-        description: "Area highly susceptible to landslides.",
-      },
-    ],
-  },
-
-  // Points of Interest
-  {
-    category: "Points of Interest",
-    id: "points_of_interest",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "business_01",
-        name: "Cebu Business Park",
-        location: [10.3183, 123.9055],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "50-hectare master-planned development integrating business, residential, sports, recreation, and leisure facilities.",
-      },
-      {
-        id: "business_02",
-        name: "Cebu IT Park",
-        location: [10.328, 123.906],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "27-hectare business park hosting numerous IT and BPO companies, residential condos, and commercial establishments.",
-      },
-      {
-        id: "business_03",
-        name: "CityMall Bacalso",
-        location: [10.295, 123.882],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "Community mall located along N. Bacalso Avenue, offering retail shops and a grocery store.",
-      },
-      {
-        id: "business_04",
-        name: "Downtown/Colon Street",
-        location: [10.297, 123.8977],
-        status: "active",
-        subcategory: "Businesses",
-        description: "Oldest street and traditional commercial center.",
-      },
-      {
-        id: "business_05",
-        name: "South Road Properties",
-        location: [10.275, 123.8799],
-        status: "active",
-        subcategory: "Businesses",
-        description: "300-hectare reclaimed development.",
-      },
-      {
-        id: "business_06",
-        name: "Cebu Port Area Business District",
-        location: [10.298, 123.905],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "Major shipping and commercial hub facilitating trade throughout the Visayas region.",
-      },
-      // Continuation of cebu-data.js
-
-      // Points of Interest continued
-      {
-        id: "business_07",
-        name: "Banilad Town Center",
-        location: [10.343, 123.913],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "Mixed-use commercial development with retail shops, restaurants, and service centers.",
-      },
-      {
-        id: "business_08",
-        name: "Gaisano Country Mall",
-        location: [10.355, 123.915],
-        status: "active",
-        subcategory: "Businesses",
-        description:
-          "Shopping center serving the northern areas of Cebu City with retail, dining, and entertainment options.",
-      },
-      {
-        id: "recreation_01",
-        name: "SM Seaside City Cebu",
-        location: [10.2804, 123.8818],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "One of the largest shopping malls in the Philippines, featuring retail shops, restaurants, cinemas, and a rooftop park.",
-      },
-      {
-        id: "recreation_02",
-        name: "Ayala Center Cebu",
-        location: [10.3183, 123.9055],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "Premier shopping mall offering a mix of retail, dining, and entertainment options, with landscaped gardens and open spaces.",
-      },
-      {
-        id: "recreation_03",
-        name: "Garden Bloc (within Cebu IT Park)",
-        location: [10.328, 123.906],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "3-hectare open park development featuring restaurants, bars, and event spaces, popular for outdoor dining and leisure.",
-      },
-      {
-        id: "recreation_04",
-        name: "Tops Lookout",
-        location: [10.3828, 123.9334],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "Popular mountain viewpoint offering panoramic views of Cebu City and surrounding areas, with food stalls and souvenir shops.",
-      },
-      {
-        id: "recreation_05",
-        name: "Plaza Independencia",
-        location: [10.2932, 123.9062],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "Historic urban plaza with landscaped gardens, walking paths, and a central gazebo, surrounded by significant landmarks.",
-      },
-      {
-        id: "recreation_06",
-        name: "Sugbu Chinese Heritage Museum",
-        location: [10.2932, 123.901],
-        status: "active",
-        subcategory: "Recreational areas",
-        description:
-          "Cultural museum showcasing the Chinese influence on Cebu's history and development, housed in a historic building.",
-      },
-      {
-        id: "community_01",
-        name: "Cebu City Sports Center",
-        location: [10.305, 123.888],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Multi-purpose stadium used for sports events, concerts, and community gatherings.",
-      },
-      {
-        id: "community_02",
-        name: "Barangay Lahug Community Center",
-        location: [10.325, 123.902],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Local government facility serving the residents of Barangay Lahug, hosting community events and services.",
-      },
-      {
-        id: "community_03",
-        name: "Barangay Guadalupe Community Center",
-        location: [10.31, 123.885],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Community center providing various services and programs for residents of Barangay Guadalupe.",
-      },
-      {
-        id: "community_04",
-        name: "Talamban Community Center",
-        location: [10.373, 123.91],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Multi-purpose facility serving the residents of Barangay Talamban, providing various community services and programs.",
-      },
-      {
-        id: "community_05",
-        name: "Basak Community Center",
-        location: [10.3, 123.873],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Local government facility providing services and hosting events for the Basak community.",
-      },
-      {
-        id: "community_06",
-        name: "Inayawan Barangay Hall and Community Center",
-        location: [10.27, 123.873],
-        status: "active",
-        subcategory: "Community centers",
-        description:
-          "Combined barangay government office and community facility serving Inayawan residents.",
-      },
-    ],
-  },
-
-  // Population Data
-  {
-    category: "Population Data",
-    id: "population_data",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "density_01",
-        name: "Lorega San Miguel Density Zone",
-        location: [10.31, 123.9],
-        status: "warning",
-        subcategory: "Population density",
-        description:
-          "Highly populated urban area with a density of 61,479 persons per square kilometer.",
-      },
-      {
-        id: "density_02",
-        name: "Suba Density Zone",
-        location: [10.295, 123.88],
-        status: "critical",
-        subcategory: "Population density",
-        description:
-          "One of the most densely populated areas in Cebu City with 109,691 persons per square kilometer.",
-      },
-      {
-        id: "density_03",
-        name: "Pasil Density Zone",
-        location: [10.296, 123.88],
-        status: "critical",
-        subcategory: "Population density",
-        description:
-          "Highly congested urban area with 105,003 persons per square kilometer.",
-      },
-      {
-        id: "density_04",
-        name: "Mabolo Density Zone",
-        location: [10.315, 123.917],
-        status: "warning",
-        subcategory: "Population density",
-        description:
-          "Urban area with high population concentration of approximately 38,000 persons per square kilometer.",
-      },
-      {
-        id: "density_05",
-        name: "Punta Princesa Density Zone",
-        location: [10.298, 123.87],
-        status: "warning",
-        subcategory: "Population density",
-        description:
-          "Densely populated residential area with approximately 42,000 persons per square kilometer.",
-      },
-      {
-        id: "density_06",
-        name: "Lahug Density Zone",
-        location: [10.325, 123.902],
-        status: "warning",
-        subcategory: "Population density",
-        description:
-          "Mixed residential and commercial area with population density of approximately 35,000 persons per square kilometer.",
-      },
-      {
-        id: "income_01",
-        name: "Cebu Business Park Affluent Zone",
-        location: [10.3183, 123.9055],
-        status: "active",
-        subcategory: "Income distribution",
-        description:
-          "High-income area with upscale residential developments, multinational companies, and premium commercial establishments.",
-      },
-      {
-        id: "income_02",
-        name: "Cebu IT Park Economic Zone",
-        location: [10.328, 123.906],
-        status: "active",
-        subcategory: "Income distribution",
-        description:
-          "Middle to high-income area with modern residential and commercial developments, hosting IT and BPO companies.",
-      },
-      {
-        id: "income_03",
-        name: "Pasil Economic Challenge Zone",
-        location: [10.296, 123.88],
-        status: "warning",
-        subcategory: "Income distribution",
-        description:
-          "Lower-income area facing challenges related to poverty and informal settlements, known for its fishing industry.",
-      },
-      {
-        id: "income_04",
-        name: "Pardo Low-Income Zone",
-        location: [10.278, 123.847],
-        status: "warning",
-        subcategory: "Income distribution",
-        description:
-          "Area with predominantly lower-income households facing economic challenges and limited access to resources.",
-      },
-      {
-        id: "income_05",
-        name: "Talamban Middle-Income Zone",
-        location: [10.373, 123.915],
-        status: "active",
-        subcategory: "Income distribution",
-        description:
-          "Growing residential area with predominantly middle-income households, featuring newer housing developments.",
-      },
-      {
-        id: "income_06",
-        name: "Maria Luisa Estate Park Affluent Zone",
-        location: [10.345, 123.88],
-        status: "active",
-        subcategory: "Income distribution",
-        description:
-          "Exclusive gated community with high-end residential properties and high-income households.",
-      },
-      {
-        id: "education_01",
-        name: "University of San Carlos Educational Zone",
-        location: [10.31, 123.89],
-        status: "active",
-        subcategory: "Education levels",
-        description:
-          "Area with high concentration of educational institutions and higher education attainment levels.",
-      },
-      {
-        id: "education_02",
-        name: "University of the Philippines Cebu Educational Zone",
-        location: [10.325, 123.902],
-        status: "active",
-        subcategory: "Education levels",
-        description:
-          "District with prominent educational institutions and high rates of college and post-graduate degrees.",
-      },
-      {
-        id: "education_03",
-        name: "University of Cebu Educational Zone",
-        location: [10.295, 123.88],
-        status: "active",
-        subcategory: "Education levels",
-        description:
-          "Area surrounding a prominent private university with diverse educational programs and accessibility.",
-      },
-      {
-        id: "education_04",
-        name: "Cebu Institute of Technology Educational Zone",
-        location: [10.295, 123.881],
-        status: "active",
-        subcategory: "Education levels",
-        description:
-          "Area surrounding a technology-focused university with high concentration of technical and engineering graduates.",
-      },
-      {
-        id: "education_05",
-        name: "University of Southern Philippines Foundation Educational Zone",
-        location: [10.301, 123.897],
-        status: "active",
-        subcategory: "Education levels",
-        description:
-          "District near a foundation university with diverse educational programs and relatively high tertiary education rates.",
-      },
-      {
-        id: "education_06",
-        name: "Inayawan Education Challenge Zone",
-        location: [10.27, 123.87],
-        status: "warning",
-        subcategory: "Education levels",
-        description:
-          "Area with lower educational attainment rates and challenges in accessing quality education resources.",
-      },
-    ],
-  },
-
-  // Traffic Data
-  {
-    category: "Traffic Data",
-    id: "traffic_data",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "traffic_condition_01",
-        name: "Banilad-Talamban Corridor Traffic Monitor",
-        location: [10.355, 123.91],
-        status: "warning",
-        subcategory: "Real-time traffic conditions",
-        description:
-          "Traffic monitoring system covering a persistent bottleneck due to narrow roads and the concentration of schools in Talamban.",
-      },
-      {
-        id: "traffic_condition_02",
-        name: "Osmeña Boulevard Traffic Monitor",
-        location: [10.31, 123.89],
-        status: "warning",
-        subcategory: "Real-time traffic conditions",
-        description:
-          "Live traffic monitoring system covering a major thoroughfare experiencing regular traffic congestion.",
-      },
-      {
-        id: "traffic_condition_03",
-        name: "South Road Properties Junction",
-        location: [10.2931, 123.8785],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description: "Major traffic bottleneck at SRP junction.",
-      },
-      {
-        id: "traffic_condition_04",
-        name: "N. Bacalso Avenue",
-        location: [10.298, 123.8709],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description: "Major north-south thoroughfare with heavy traffic.",
-      },
-      {
-        id: "traffic_condition_05",
-        name: "UN Avenue/Mandaue-Cebu Connection",
-        location: [10.3192, 123.922],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description: "Inter-city connection with consistent congestion.",
-      },
-      {
-        id: "congestion_01",
-        name: "Governor Cuenco Avenue Congestion Zone",
-        location: [10.34, 123.91],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description:
-          "Area experiencing heavy traffic during peak hours (7:00–9:00 AM and 5:00–7:00 PM).",
-      },
-      {
-        id: "congestion_02",
-        name: "General Maxilom Avenue Congestion Zone",
-        location: [10.31, 123.89],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description:
-          "Major commercial corridor known for traffic congestion, especially during rush hours.",
-      },
-      {
-        id: "congestion_03",
-        name: "Natalio Bacalso Avenue Congestion Zone",
-        location: [10.29, 123.88],
-        status: "warning",
-        subcategory: "Congestion patterns",
-        description:
-          "Key route with frequent traffic issues due to high volume of vehicles and commercial activity.",
-      },
-      {
-        id: "transport_route_01",
-        name: "Route 01K: Urgello – SM City Cebu – Parkmall",
-        location: [10.296, 123.888],
-        status: "active",
-        subcategory: "Public transport routes",
-        description:
-          "Jeepney route connecting the southern part of Cebu City to major commercial centers, passing through Urgello Street, E-Mall, Colon Street, SM City Cebu, and Parkmall.",
-      },
-      {
-        id: "transport_route_02",
-        name: "Route 04B: Lahug – Carbon Market",
-        location: [10.325, 123.902],
-        status: "active",
-        subcategory: "Public transport routes",
-        description:
-          "Key jeepney route traversing educational and commercial areas including JY Square Mall, UP Cebu, Provincial Capitol, Fuente Osmeña Circle, Colon Street, and Carbon Market.",
-      },
-      {
-        id: "transport_route_03",
-        name: "Route 13C: Talamban – Colon",
-        location: [10.373, 123.91],
-        status: "active",
-        subcategory: "Public transport routes",
-        description:
-          "Jeepney route serving students and commuters from northern barangays, passing through Banilad Town Center, Gaisano Country Mall, Ayala Center Cebu, and Colon Street.",
-      },
-    ],
-  },
-  {
-    category: "National Broadband Project",
-    id: "national_broadband",
-    center: [10.3157, 123.8854],
-    sites: [
-      {
-        id: "nbp_01",
-        name: "NBP Cebu City Gateway",
-        location: [10.3, 123.91],
-        status: "active",
-        subcategory: "Core Infrastructure",
-        description:
-          "Primary interconnection facility linking Cebu City to the national government's broadband backbone network.",
-      },
-      {
-        id: "nbp_02",
-        name: "NBP Data Center - Cebu City",
-        location: [10.315, 123.895],
-        status: "active",
-        subcategory: "Data Centers",
-        description:
-          "Regional data center hosting government digital services and applications as part of the National Broadband Plan.",
-      },
-      {
-        id: "nbp_03",
-        name: "Government Network Operations Center",
-        location: [10.295, 123.901],
-        status: "active",
-        subcategory: "Operations",
-        description:
-          "24/7 facility monitoring and managing all NBP infrastructure and services across Cebu Province.",
-      },
-      {
-        id: "nbp_04",
-        name: "Free WiFi for All - Plaza Independencia Site",
-        location: [10.293, 123.906],
-        status: "active",
-        subcategory: "Public Access Points",
-        description:
-          "High-capacity public WiFi installation providing free internet access as part of the national connectivity program.",
-      },
-      {
-        id: "nbp_05",
-        name: "Free WiFi for All - Cebu City Hospital",
-        location: [10.2982, 123.8916],
-        status: "active",
-        subcategory: "Public Access Points",
-        description:
-          "Government-sponsored free WiFi access point serving patients, visitors, and staff at the public hospital.",
-      },
-      {
-        id: "nbp_06",
-        name: "NBP Education Network Hub - Cebu City",
-        location: [10.301, 123.898],
-        status: "active",
-        subcategory: "Specialized Networks",
-        description:
-          "Dedicated connectivity hub linking all public schools and educational institutions to the national education network.",
-      },
-      {
-        id: "nbp_07",
-        name: "Government Fiber Distribution Point - North District",
-        location: [10.335, 123.912],
-        status: "active",
-        subcategory: "Core Infrastructure",
-        description:
-          "Fiber distribution facility connecting government offices in northern Cebu City to the national backbone.",
-      },
-      {
-        id: "nbp_08",
-        name: "Government Fiber Distribution Point - South District",
-        location: [10.28, 123.87],
-        status: "active",
-        subcategory: "Core Infrastructure",
-        description:
-          "Fiber distribution facility connecting government offices in southern Cebu City to the national backbone.",
-      },
-      {
-        id: "nbp_09",
-        name: "NBP Cellular Backhaul Station",
-        location: [10.32, 123.88],
-        status: "maintenance",
-        subcategory: "Wireless Infrastructure",
-        description:
-          "Facility providing backhaul connectivity for mobile network operators as part of public-private partnership.",
-      },
-      {
-        id: "nbp_10",
-        name: "Digital Government Service Center",
-        location: [10.305, 123.892],
-        status: "active",
-        subcategory: "Service Centers",
-        description:
-          "Integrated facility offering access to e-government services and digital assistance to residents.",
-      },
-    ],
-  },
+        id: "govt_dof_01",
+        name: "DOF Revenue District Office - Cebu City",
+        location: [10.3157, 123.8854],
+        status: "active",
+        subcategory: "DOF District Office",
+        description: "Department of Finance Revenue District Office serving Cebu City and surrounding areas.",
+        technicalDetails: {
+          function: "Local tax administration and revenue collection",
+          coverage: "Cebu City District",
+          buildingType: "Government Office Building"
+        }
+      }
+    ]
+  }
 ];
 
 // Export the data for use in other files
 window.siteTechnicalDetails = siteTechnicalDetails;
 window.siteNetworkInfo = siteNetworkInfo;
 window.sitesMaintenanceLogs = sitesMaintenanceLogs;
-window.cebuCityMarkers = cebuCityMarkers;
+window.mapMarkers = mapMarkers;

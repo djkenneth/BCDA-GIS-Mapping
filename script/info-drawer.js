@@ -2818,9 +2818,9 @@ function addTechnicalDetailsListener(site, category) {
       doc.setProperties({
         title: `${site.name} - Infrastructure Report`,
         subject: `${category.category} Executive Report`,
-        author: 'Cebu City Infrastructure Management System',
-        keywords: `infrastructure, ${category.category}, site report, Cebu City`,
-        creator: 'Cebu City Dashboard System'
+        author: 'Department of Finance Management System',
+        keywords: `infrastructure, ${category.category}, site report`,
+        creator: 'Dashboard System'
       });
       
       // Category-specific colors
@@ -2832,7 +2832,7 @@ function addTechnicalDetailsListener(site, category) {
       
       doc.setFontSize(20);
       doc.setTextColor(255, 255, 255);
-      doc.text("CEBU CITY INFRASTRUCTURE", 105, 12, { align: "center" });
+      doc.text("DEPARTMENT OF FINANCE", 105, 12, { align: "center" });
       doc.text("EXECUTIVE REPORT", 105, 20, { align: "center" });
       
       doc.setFontSize(12);
@@ -3086,7 +3086,7 @@ doc.setTextColor(headerColor[0], headerColor[1], headerColor[2]);
       for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i);
         doc.text(`Page ${i} of ${pageCount}`, 15, 285);
-        doc.text(`Cebu City Infrastructure Management System`, 105, 285, { align: 'center' });
+        doc.text(`Department of Finance Management System`, 105, 285, { align: 'center' });
         doc.text(`Generated: ${dateStr}`, 195, 285, { align: 'right' });
         
         // Add classification footer
@@ -3863,7 +3863,7 @@ doc.setTextColor(headerColor[0], headerColor[1], headerColor[2]);
       lastMaintenance: "2025-01-15",
       coverageArea: "Varies by facility",
       operatingHours: "24/7",
-      serviceProvider: "Cebu City Infrastructure Department",
+      serviceProvider: "Department of Finance Management System",
       lastInspection: "2025-02-28"
     };
   }

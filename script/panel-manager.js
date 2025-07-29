@@ -383,9 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function findSiteById(siteId) {
-        if (!window.cebuCityMarkers) return null;
+        if (!window.mapMarkers) return null;
         
-        for (const category of window.cebuCityMarkers) {
+        for (const category of window.mapMarkers) {
             for (const site of category.sites) {
                 if (site.id === siteId) {
                     return site;
@@ -396,9 +396,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function findCategoryBySite(site) {
-        if (!site || !window.cebuCityMarkers) return null;
+        if (!site || !window.mapMarkers) return null;
         
-        for (const category of window.cebuCityMarkers) {
+        for (const category of window.mapMarkers) {
             if (category.sites.includes(site)) {
                 return category;
             }

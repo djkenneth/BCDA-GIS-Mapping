@@ -127,14 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
     mapSection.style.width = '100%';
     mapSection.style.position = 'relative';
   }
-  
-  // Adjust leaflet container if it exists
-  // const leafletContainer = document.querySelector('.leaflet-container');
-  // if (leafletContainer) {
-  //   leafletContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
-  //   leafletContainer.style.width = '100%';
-  //   leafletContainer.style.position = 'relative';
-  // }
 }
   
   // Get accurate header height
@@ -1452,7 +1444,7 @@ function initializeSearchBar() {
     
     hideSearchBar();
     
-    if (!window.cebuCityMarkers || !window.map) {
+    if (!window.mapMarkers || !window.map) {
       console.error('Map or markers not available');
       return;
     }
@@ -1460,7 +1452,7 @@ function initializeSearchBar() {
     let targetSite = null;
     let targetCategory = null;
     
-    window.cebuCityMarkers.forEach(category => {
+    window.mapMarkers.forEach(category => {
       if (category.category === categoryName) {
         targetCategory = category;
         const site = category.sites.find(s => s.id === siteId);

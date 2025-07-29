@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeInfrastructureCards() {
     // Check if markers data is available
-    if (!window.cebuCityMarkers) {
+    if (!window.mapMarkers) {
       console.error("Cebu City markers data not loaded");
       // Create a retry mechanism
       setTimeout(() => {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         subcategories: {},
       };
 
-      window.cebuCityMarkers.forEach((category) => {
+      window.mapMarkers.forEach((category) => {
         const categoryStats = {
           total: 0,
           active: 0,
@@ -865,7 +865,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function safeInitialization() {
     try {
-      if (window.cebuCityMarkers) {
+      if (window.mapMarkers) {
         initializeInfrastructureCards();
       } else {
         console.log("Waiting for Cebu City markers data...");
@@ -877,11 +877,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Also set a timeout as a fallback
         setTimeout(() => {
-          if (!window.cebuCityMarkers) {
+          if (!window.mapMarkers) {
             console.warn(
               "Timeout waiting for markers data, attempting initialization anyway"
             );
-            window.cebuCityMarkers = window.cebuCityMarkers || [];
+            window.mapMarkers = window.mapMarkers || [];
             initializeInfrastructureCards();
           }
         }, 5000); // 5 second timeout
@@ -1213,9 +1213,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getSitesByStatusAndCategory(status, categoryId) {
     let sites = [];
 
-    if (!window.cebuCityMarkers) return sites;
+    if (!window.mapMarkers) return sites;
 
-    const category = window.cebuCityMarkers.find(
+    const category = window.mapMarkers.find(
       (cat) => cat.id === categoryId
     );
     if (!category) return sites;
@@ -1235,9 +1235,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getSitesBySubcategory(subcategoryKey) {
     let sites = [];
 
-    if (!window.cebuCityMarkers) return sites;
+    if (!window.mapMarkers) return sites;
 
-    window.cebuCityMarkers.forEach((category) => {
+    window.mapMarkers.forEach((category) => {
       category.sites.forEach((site) => {
         if (getSubcategoryKey(site.subcategory) === subcategoryKey) {
           sites.push({
@@ -1597,9 +1597,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getAllSitesByStatus(status) {
     let sites = [];
 
-    if (!window.cebuCityMarkers) return sites;
+    if (!window.mapMarkers) return sites;
 
-    window.cebuCityMarkers.forEach((category) => {
+    window.mapMarkers.forEach((category) => {
       category.sites.forEach((site) => {
         if (status === "total" || site.status === status) {
           sites.push({
@@ -1614,18 +1614,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getSitesByCategory(categoryId) {
-    if (!window.cebuCityMarkers) return [];
+    if (!window.mapMarkers) return [];
 
-    const category = window.cebuCityMarkers.find(
+    const category = window.mapMarkers.find(
       (cat) => cat.id === categoryId
     );
     return category ? category.sites : [];
   }
 
   function findSiteById(siteId) {
-    if (!window.cebuCityMarkers) return null;
+    if (!window.mapMarkers) return null;
 
-    for (const category of window.cebuCityMarkers) {
+    for (const category of window.mapMarkers) {
       for (const site of category.sites) {
         if (site.id === siteId) {
           return site;
@@ -1636,9 +1636,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function findCategoryBySiteId(siteId) {
-    if (!window.cebuCityMarkers) return null;
+    if (!window.mapMarkers) return null;
 
-    for (const category of window.cebuCityMarkers) {
+    for (const category of window.mapMarkers) {
       if (category.sites.some((site) => site.id === siteId)) {
         return category;
       }
@@ -1763,7 +1763,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (window.cebuCityMarkers) {
+  if (window.mapMarkers) {
     initializeInfrastructureCards();
   } else {
     window.addEventListener("load", initializeInfrastructureCards);
