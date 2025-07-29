@@ -259,11 +259,28 @@ function setupHeaderObserver() {
             content.style.height = '100vh';
           });
         } else {
-          sidebar.style.top = '253px';
-          sidebar.style.height = 'calc(100vh - 253px)';
+          const screenWidth = window.innerWidth;
+          let topValue, heightValue;
+
+          if (screenWidth <= 768) {
+            // Mobile breakpoint
+            topValue = "253px";
+            heightValue = "calc(100vh - 253px)";
+          } else if (screenWidth <= 1024) {
+            // Tablet breakpoint  
+            topValue = "244px";
+            heightValue = "calc(100vh - 244px)";
+          } else {
+            // Desktop (default)
+            topValue = "284px";
+            heightValue = "calc(100vh - 284px)";
+          }
+
+          sidebar.style.top = topValue;
+          sidebar.style.height = heightValue;
           sidebarContents.forEach(content => {
-            content.style.top = '253px';
-            content.style.height = 'calc(100vh - 253px)';
+            content.style.top = topValue;
+            content.style.height = heightValue;
           });
         }
       }
