@@ -96,23 +96,17 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        // Create marker element
-        const markerElement = document.createElement("div");
-        markerElement.className = "marker-custom";
-        markerElement.innerHTML = getMarkerIcon(site.subcategory, site.status);
-        markerElement.style.width = "30px";
-        markerElement.style.height = "30px";
-        markerElement.style.cursor = "pointer";
+        const siteMarker = createSiteMarker(site.location, site.subcategory, site.status);
 
         // Create MapLibre marker
         const marker = new maplibregl.Marker({
-          element: markerElement,
+          element: siteMarker,
         })
           .setLngLat([site.location[1], site.location[0]])
           .addTo(map);
 
         // Add click event
-        markerElement.addEventListener("click", function (e) {
+        siteMarker.addEventListener("click", function (e) {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
 
@@ -127,64 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
         visibleMarkers.add(marker);
       });
     });
-  }
-
-  function getMarkerIcon(subcategory, status) {
-    const iconColor = getStatusColor(status);
-    const iconType = getIconType(subcategory);
-
-    return `
-      <div style="
-        width: 32px; 
-        height: 32px; 
-        background: ${iconColor}; 
-        border: 2px solid white; 
-        border-radius: 50%; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        font-size: 14px;
-        color: white;
-      ">
-        ${iconType}
-      </div>
-    `;
-  }
-
-  function getStatusColor(status) {
-    const colors = {
-      active: "#10B981",
-      maintenance: "#F59E0B",
-      inactive: "#EF4444",
-      warning: "#F97316",
-      construction: "#8B5CF6",
-      default: "#6B7280",
-    };
-    return colors[status] || colors.default;
-  }
-
-  function getIconType(subcategory) {
-    const icons = {
-      hospitals: "🏥",
-      schools: "🏫",
-      govt: "🏛️",
-      police: "👮",
-      fire: "🚒",
-      water: "💧",
-      electricity: "⚡",
-      roads: "🛣️",
-      transport: "🚌",
-      wifi: "📶",
-      parks: "🌳",
-      businesses: "🏢",
-      default: "📍",
-    };
-
-    const key = Object.keys(icons).find((k) =>
-      subcategory.toLowerCase().includes(k)
-    );
-    return icons[key] || icons.default;
   }
 
   function showLiveFeedCardForSite(site) {

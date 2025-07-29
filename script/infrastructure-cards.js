@@ -1175,6 +1175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getSubcategoryDisplayName(subcategoryKey) {
     const subcategoryNames = {
+      // Infrastructure subcategories
       highways: "Highways",
       "main-roads": "Main Roads",
       streets: "Streets",
@@ -1188,20 +1189,30 @@ document.addEventListener("DOMContentLoaded", function () {
       nbp: "National Broadband Project",
       "wifi-hotspots": "WiFi Hotspots",
       "internet-centers": "Public Internet Centers",
+
+      // Public Buildings subcategories
       hospitals: "Hospitals",
       schools: "Schools",
       "government-offices": "Government Offices",
       "police-stations": "Police Stations",
       "fire-departments": "Fire Departments",
+
+      // Natural Features subcategories
       topography: "Topography",
       waterways: "Waterways",
       parks: "Parks & Green Spaces",
+
+      // Environmental Risks subcategories
       "flood-zones": "Flood Prone Areas",
       "pollution-zones": "Pollution Zones",
       "other-hazards": "Other Environmental Hazards",
+
+      // Points of Interest subcategories  
       businesses: "Businesses",
       recreational: "Recreational Areas",
       "community-centers": "Community Centers",
+
+      // Population Data subcategories
       "population-density": "Population Density",
       "income-distribution": "Income Distribution",
       "education-levels": "Education Levels",

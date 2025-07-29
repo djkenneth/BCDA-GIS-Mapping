@@ -285,13 +285,6 @@ function getMarkerIcon(subcategory, status) {
  * @param {Object} options - Additional options for the marker
  * @returns {maplibregl.Marker} - The MapLibre GL JS marker
  */
-// function createSiteMarker(location, subcategory, status, options = {}) {
-//   const icon = getMarkerIcon(subcategory, status);
-//   return L.marker(location, { 
-//     icon: icon,
-//     ...options
-//   });
-// }
 
 function createSiteMarker(location, subcategory, status, options = {}) {
   const iconUrl = getMarkerIcon(subcategory, status);
@@ -299,23 +292,19 @@ function createSiteMarker(location, subcategory, status, options = {}) {
   // Create marker element
   const el = document.createElement('div');
   el.className = 'maplibre-marker';
-  el.style.backgroundImage = `url(${iconUrl})`;
-  el.style.width = '32px';
-  el.style.height = '32px';
+  el.style.backgroundImage = `url(${iconUrl.iconUrl})`;
+  el.style.width = '40px';
+  el.style.height = '40px';
   el.style.backgroundSize = 'contain';
   el.style.backgroundRepeat = 'no-repeat';
   el.style.cursor = 'pointer';
   
-  // Create MapLibre marker
-  const marker = new maplibregl.Marker(el)
-    .setLngLat([location[1], location[0]]);
-  
-  return marker;
+  return el;
 }
 
 // Export the marker management functions
-window.markerManager = {
-  getMarkerIcon,
-  createSiteMarker,
-  markerIcons
-};
+// window.markerManager = {
+//   getMarkerIcon,
+//   createSiteMarker,
+//   markerIcons
+// };
