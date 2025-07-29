@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
       markersByCategory[categoryId] = {};
 
       category.sites.forEach((site) => {
-        const subcategory = getSubcategoryKey(site.subcategory);
+        const subcategory = window.getSubcategoryKey(site.subcategory);
 
         if (!markersByCategory[categoryId][subcategory]) {
           markersByCategory[categoryId][subcategory] = [];
@@ -278,55 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function getSubcategoryKey(subcategory) {
-    const subcategoryMap = {
-      Highways: "highways",
-      Roads: "main-roads",
-      Streets: "streets",
-      "Public transportation networks": "public-transport",
-      "Real-time traffic conditions": "traffic-data",
-      "Congestion patterns": "traffic-data",
-      "Public transport routes": "public-transport",
-      "Water Supply": "water",
-      "Electricity Supply": "electricity",
-      "Sewage System": "sewage",
-      "Communication lines": "communication",
-      "Waste Management Facilities": "waste",
-      "Core Infrastructure": "nbp",
-      "Data Centers": "nbp",
-      Operations: "nbp",
-      "Public Access Points": "nbp",
-      "Specialized Networks": "nbp",
-      "Wireless Infrastructure": "nbp",
-      "Service Centers": "nbp",
-      "WiFi Hotspots": "wifi-hotspots",
-      "Public Internet Centers": "internet-centers",
-      Hospitals: "hospitals",
-      Schools: "schools",
-      "Government Offices": "govt",
-      "Police Stations": "police",
-      "Fire Departments": "fire",
-      Topography: "topography",
-      Waterways: "waterways",
-      Parks: "parks",
-      "Green Spaces": "parks",
-      "Areas vulnerable to flooding": "flood",
-      "Pollution zones": "pollution",
-      "Other environmental hazards": "hazards",
-      Businesses: "businesses",
-      "Recreational areas": "recreational",
-      "Community centers": "community",
-      "Population density": "density",
-      "Income distribution": "income",
-      "Education levels": "education",
-    };
-
-    return (
-      subcategoryMap[subcategory] ||
-      subcategory.toLowerCase().replace(/\s+/g, "-")
-    );
-  }
-
   function showSiteDetails(site, category) {
     if (window.showInfoDrawer) {
       window.showInfoDrawer(site, category);
@@ -341,7 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function zoomToMarker(location) {
     // Convert to [lng, lat] format for MapLibre
     const lngLat = [location[1], location[0]];
-    // console.log('hello po', location)
     map.easeTo({
       center: lngLat,
       zoom: 15,
@@ -381,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "all-risks": "environmental_risks",
       "all-poi": "points_of_interest",
       "all-demographics": "population_data",
-      "all-internet": "internet_access",
     };
 
     if (categoryMasterCheckboxes[checkboxId]) {
@@ -434,7 +383,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "all-risks": document.getElementById("all-risks"),
       "all-poi": document.getElementById("all-poi"),
       "all-demographics": document.getElementById("all-demographics"),
-      "all-internet": document.getElementById("all-internet"),
     };
 
     Object.entries(masterCheckboxes).forEach(([id, checkbox]) => {

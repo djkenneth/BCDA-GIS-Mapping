@@ -1,3 +1,4 @@
+<?php ?>
 
 <div class="sidebar-v2">
 
@@ -129,8 +130,8 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="water">
-            <label for="water">Water Supply</label>
+            <input type="checkbox" id="water-supply">
+            <label for="water-supply">Water Supply</label>
         </div>
 
         <div class="content-section-item">
@@ -149,8 +150,8 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="waste">
-            <label for="waste">Waste Management</label>
+            <input type="checkbox" id="waste-management">
+            <label for="waste-management">Waste Management</label>
         </div>
 
         <div class="content-section-item">
@@ -184,18 +185,18 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="govt">
-            <label for="govt">Government Offices</label>
+            <input type="checkbox" id="government-offices">
+            <label for="government-offices">Government Offices</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="police">
-            <label for="police">Police Stations</label>
+            <input type="checkbox" id="police-stations">
+            <label for="police-stations">Police Stations</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="fire">
-            <label for="fire">Fire Departments</label>
+            <input type="checkbox" id="fire-departments">
+            <label for="fire-departments">Fire Departments</label>
         </div>
     </div>
 </div>
@@ -244,18 +245,18 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="flood">
-            <label for="flood">Flood Prone Areas</label>
+            <input type="checkbox" id="flood-zones">
+            <label for="flood-zones">Flood Prone Areas</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="pollution">
-            <label for="pollution">Pollution Zones</label>
+            <input type="checkbox" id="pollution-zones">
+            <label for="pollution-zones">Pollution Zones</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="hazards">
-            <label for="hazards">Other Hazards</label>
+            <input type="checkbox" id="other-hazards">
+            <label for="other-hazards">Other Hazards</label>
         </div>
     </div>
 </div>
@@ -284,8 +285,8 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="community">
-            <label for="community">Community Centers</label>
+            <input type="checkbox" id="community-centers">
+            <label for="community-centers">Community Centers</label>
         </div>
     </div>
 </div>
@@ -304,18 +305,18 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="density">
-            <label for="density">Population Density</label>
+            <input type="checkbox" id="population-density">
+            <label for="population-density">Population Density</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="income">
-            <label for="income">Income Distribution</label>
+            <input type="checkbox" id="income-distribution">
+            <label for="income-distribution">Income Distribution</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="education">
-            <label for="education">Education Levels</label>
+            <input type="checkbox" id="education-levels">
+            <label for="education-levels">Education Levels</label>
         </div>
     </div>
 </div>

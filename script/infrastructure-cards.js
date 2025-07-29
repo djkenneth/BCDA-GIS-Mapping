@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeInfrastructureCards() {
     // Check if markers data is available
     if (!window.mapMarkers) {
-      console.error("Cebu City markers data not loaded");
+      console.error("markers data not loaded");
       // Create a retry mechanism
       setTimeout(() => {
         console.log("Retrying infrastructure cards initialization...");
@@ -323,15 +323,6 @@ document.addEventListener("DOMContentLoaded", function () {
         icon: "fas fa-users",
         category: "population_data",
         filter: "population_data",
-      },
-      {
-        title: "Internet Access",
-        value: infrastructureData.categories.internet_access?.total || 0,
-        type: "WiFi, Internet Centers",
-        className: "wifi-bg",
-        icon: "fas fa-wifi",
-        category: "internet_access",
-        filter: "internet_access",
       },
     ];
   }
@@ -709,13 +700,7 @@ document.addEventListener("DOMContentLoaded", function () {
         type: "Demographics Info",
         className: "info-bg",
         icon: "fas fa-users",
-      },
-      internet_access: {
-        title: "Free Public Internet",
-        type: "WiFi, Internet Centers",
-        className: "wifi-bg",
-        icon: "fas fa-wifi",
-      },
+      }
     };
 
     return (
@@ -738,7 +723,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const risksCheckbox = document.getElementById("all-risks");
       const poiCheckbox = document.getElementById("all-poi");
       const demographicsCheckbox = document.getElementById("all-demographics");
-      const internetCheckbox = document.getElementById("all-internet");
 
       // If all checkboxes aren't loaded yet, default to show all
       if (!allCheckbox && !buildingsCheckbox) {
@@ -777,9 +761,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (demographicsCheckbox && demographicsCheckbox.checked) {
         selectedCategories.push("population_data");
-      }
-      if (internetCheckbox && internetCheckbox.checked) {
-        selectedCategories.push("internet_access");
       }
 
       // If no categories selected but checkboxes exist, select buildings by default
@@ -1594,7 +1575,6 @@ document.addEventListener("DOMContentLoaded", function () {
       environmental_risks: "Environmental Risks",
       points_of_interest: "Points of Interest",
       population_data: "Population Data",
-      internet_access: "Free Public Internet",
     };
 
     return categoryNames[categoryId] || categoryId;
@@ -1713,4 +1693,6 @@ document.addEventListener("DOMContentLoaded", function () {
     update: updateInfrastructureCards,
     getData: () => infrastructureData,
   };
+
+  window.getSubcategoryKey = getSubcategoryKey
 });
