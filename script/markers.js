@@ -302,6 +302,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
 
+    const categoryMasterCheckboxes = {
+      "all-infrastructure": "infrastructure",
+      "all-buildings": "public_buildings",
+      "all-natural": "natural_features",
+      "all-risks": "environmental_risks",
+      "all-poi": "points_of_interest",
+      "all-demographics": "population_data",
+    };
+
     if (checkboxId === "all") {
       allCategories.forEach((categoryId) => {
         Object.values(markersByCategory[categoryId]).forEach(
@@ -321,17 +330,9 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         );
       });
+
       return;
     }
-
-    const categoryMasterCheckboxes = {
-      "all-infrastructure": "infrastructure",
-      "all-buildings": "public_buildings",
-      "all-natural": "natural_features",
-      "all-risks": "environmental_risks",
-      "all-poi": "points_of_interest",
-      "all-demographics": "population_data",
-    };
 
     if (categoryMasterCheckboxes[checkboxId]) {
       const categoryId = categoryMasterCheckboxes[checkboxId];

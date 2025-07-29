@@ -211,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     cardsWrapper.innerHTML = cardsHTML;
+
     addCardClickListeners();
   }
 
@@ -805,7 +806,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.mapMarkers = window.mapMarkers || [];
             initializeInfrastructureCards();
           }
-        }, 5000); // 5 second timeout
+        }, 2000); // 5 second timeout
       }
     } catch (error) {
       console.error("Error during initialization:", error);

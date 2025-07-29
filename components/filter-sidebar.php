@@ -1,7 +1,6 @@
 <?php ?>
 
 <div class="sidebar-v2">
-
     <div class="sidebar-tabs-v2">
         <div class="sidebar-tab-v2 active" data-tab="layers">
             <i class="fas fa-layer-group"></i>
@@ -153,15 +152,32 @@
             <input type="checkbox" id="waste-management">
             <label for="waste-management">Waste Management</label>
         </div>
+    </div>
+
+    <div class="content-section">
+        <div class="content-section-title">
+            <span>Digital Infrastructure</span>
+            <button class="select-all">Select All</button>
+        </div>
 
         <div class="content-section-item">
             <input type="checkbox" id="nbp">
             <label for="nbp">National Broadband Project</label>
         </div>
+
+        <div class="content-section-item">
+            <input type="checkbox" id="wifi-hotspots">
+            <label for="wifi-hotspots">WiFi Hotspots</label>
+        </div>
+
+        <div class="content-section-item">
+            <input type="checkbox" id="internet-centers">
+            <label for="internet-centers">Public Internet Centers</label>
+        </div>
     </div>
 </div>
 
-<!-- Buildings Panel -->
+<!-- Public Buildings Panel -->
 <div class="sidebar-content" id="buildings-content">
     <div class="content-header">
         <h3>Public Buildings</h3>
@@ -170,7 +186,7 @@
 
     <div class="content-section">
         <div class="content-section-title">
-            <span>Building Types</span>
+            <span>Public Services</span>
             <button class="select-all">Select All</button>
         </div>
 
@@ -256,7 +272,7 @@
 
         <div class="content-section-item">
             <input type="checkbox" id="other-hazards">
-            <label for="other-hazards">Other Hazards</label>
+            <label for="other-hazards">Other Environmental Hazards</label>
         </div>
     </div>
 </div>

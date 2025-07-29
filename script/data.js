@@ -327,624 +327,125 @@ const sitesMaintenanceLogs = {
 };
 
 const mapMarkers = [
-  // DOF Central/National Office
-  {
-    category: "DOF Central Office",
-    id: "dof_central",
-    center: [14.5832, 120.9797], // Manila/BSP Complex
-    sites: [
-      {
-        id: "dof_main_01",
-        name: "Department of Finance Building - BSP Complex",
-        location: [14.5832, 120.9797],
-        status: "active",
-        subcategory: "DOF Central Office",
-        description: "Main DOF Building located at BSP Complex, Roxas Boulevard, Manila. Houses the Office of the Secretary and various DOF departments.",
-        technicalDetails: {
-          address: "DOF Bldg., BSP Complex, Roxas Blvd., Manila, 1004, Philippines",
-          contactNumber: "(632) 8525-0244",
-          email: "osec@dof.gov.ph",
-          operatingHours: "8:00 AM - 5:00 PM",
-          buildingType: "Government Office Building",
-          floorCount: "Multiple floors",
-          yearEstablished: "1987"
-        }
-      }
-    ]
-  },
-
-  // Bureau of Internal Revenue (BIR) - DOF Agency
-  {
-    category: "Bureau of Internal Revenue",
-    id: "bir_facilities",
-    center: [14.6506, 121.0378], // Quezon City BIR HQ
-    sites: [
-      {
-        id: "bir_hq_01",
-        name: "BIR National Office - Quezon City",
-        location: [14.6506, 121.0378],
-        status: "active",
-        subcategory: "BIR Headquarters",
-        description: "Bureau of Internal Revenue National Office located in Quezon City, main headquarters for tax administration.",
-        technicalDetails: {
-          address: "BIR National Office, BIR Road, Diliman, Quezon City",
-          contactNumber: "+63 285383200",
-          email: "contact_us@bir.gov.ph",
-          buildingType: "Government Office Building",
-          regionalOffices: "17 Regional Offices Nationwide"
-        }
-      },
-      {
-        id: "bir_region_01",
-        name: "BIR Regional Office No. 1 - Ilocos",
-        location: [17.9688, 120.5739], // Laoag City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Ilocos Norte, Ilocos Sur, La Union, and Pangasinan.",
-        technicalDetails: {
-          address: "2nd & 3rd Floor, BIR Building, Mc Arthur Hi-way, Calasiao, Pangasinan",
-          contactNumber: "(075) 522-38-66",
-          coverage: "Ilocos Norte, Ilocos Sur, La Union, Pangasinan"
-        }
-      },
-      {
-        id: "bir_region_02",
-        name: "BIR Regional Office No. 2 - Cordillera",
-        location: [16.4023, 120.5960], // Baguio City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Cordillera Administrative Region including Baguio City.",
-        technicalDetails: {
-          address: "No. 69 Leonard Wood Road, Baguio City 2600",
-          contactNumber: "(074) 442-69-60",
-          coverage: "Cordillera Administrative Region"
-        }
-      },
-      {
-        id: "bir_region_03",
-        name: "BIR Regional Office No. 3 - Central Luzon",
-        location: [15.3794, 120.6200], // San Fernando, Pampanga
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Central Luzon region including Pampanga, Bulacan, Nueva Ecija.",
-        technicalDetails: {
-          address: "BIR Bldg. Capitol Compound Sto. Nino, San Fernando, Pampanga",
-          contactNumber: "(045) 961-17-72",
-          coverage: "Pampanga, Bulacan, Nueva Ecija, Tarlac, Zambales, Aurora"
-        }
-      },
-      {
-        id: "bir_region_04",
-        name: "BIR Regional Office No. 4 - CALABARZON",
-        location: [14.2691, 121.1121], // Laguna
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering CALABARZON region.",
-        technicalDetails: {
-          coverage: "Cavite, Laguna, Batangas, Rizal, Quezon"
-        }
-      },
-      {
-        id: "bir_region_05",
-        name: "BIR Regional Office No. 5 - Bicol",
-        location: [13.1391, 123.7437], // Legazpi City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Bicol Region.",
-        technicalDetails: {
-          address: "BIR Bldg. Camia St. Imperial Court Subd. Legazpi City",
-          contactNumber: "(052) 820-13-13",
-          coverage: "Albay, Camarines Norte, Camarines Sur, Catanduanes, Masbate, Sorsogon"
-        }
-      },
-      {
-        id: "bir_region_06",
-        name: "BIR Regional Office No. 6 - Western Visayas",
-        location: [10.7202, 122.5621], // Iloilo City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Western Visayas region.",
-        technicalDetails: {
-          address: "BIR Building, M.H.Del Pilar St. Molo, Iloilo City",
-          contactNumber: "(033) 338-14-65",
-          coverage: "Aklan, Antique, Capiz, Guimaras, Iloilo, Negros Occidental"
-        }
-      },
-      {
-        id: "bir_region_07",
-        name: "BIR Regional Office No. 7 - Central Visayas",
-        location: [10.3157, 123.8854], // Cebu City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Central Visayas region including Cebu.",
-        technicalDetails: {
-          coverage: "Bohol, Cebu, Negros Oriental, Siquijor"
-        }
-      },
-      {
-        id: "bir_region_08",
-        name: "BIR Regional Office No. 8 - Eastern Visayas",
-        location: [11.2442, 125.0045], // Tacloban City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Eastern Visayas region.",
-        technicalDetails: {
-          coverage: "Biliran, Eastern Samar, Leyte, Northern Samar, Samar, Southern Leyte"
-        }
-      },
-      {
-        id: "bir_region_09",
-        name: "BIR Regional Office No. 9 - Zamboanga Peninsula",
-        location: [6.9214, 122.0790], // Zamboanga City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Zamboanga Peninsula.",
-        technicalDetails: {
-          coverage: "Zamboanga del Norte, Zamboanga del Sur, Zamboanga Sibugay"
-        }
-      },
-      {
-        id: "bir_region_10",
-        name: "BIR Regional Office No. 10 - Northern Mindanao",
-        location: [8.4542, 124.6319], // Cagayan de Oro City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Northern Mindanao region.",
-        technicalDetails: {
-          coverage: "Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental"
-        }
-      },
-      {
-        id: "bir_region_11",
-        name: "BIR Regional Office No. 11 - Davao Region",
-        location: [7.0731, 125.6128], // Davao City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Davao Region.",
-        technicalDetails: {
-          coverage: "Davao de Oro, Davao del Norte, Davao del Sur, Davao Occidental, Davao Oriental"
-        }
-      },
-      {
-        id: "bir_region_12",
-        name: "BIR Regional Office No. 12 - SOCCSKSARGEN",
-        location: [6.1164, 125.1716], // General Santos City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering SOCCSKSARGEN region.",
-        technicalDetails: {
-          coverage: "South Cotabato, Cotabato, Sultan Kudarat, Sarangani, General Santos City"
-        }
-      },
-      {
-        id: "bir_region_13",
-        name: "BIR Regional Office No. 13 - CARAGA",
-        location: [9.3477, 125.4849], // Butuan City
-        status: "active",
-        subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering CARAGA region.",
-        technicalDetails: {
-          coverage: "Agusan del Norte, Agusan del Sur, Dinagat Islands, Surigao del Norte, Surigao del Sur"
-        }
-      }
-    ]
-  },
-
-  // Bureau of Customs (BOC) - DOF Agency
-  {
-    category: "Bureau of Customs",
-    id: "boc_facilities",
-    center: [14.5832, 120.9751], // Manila Port Area
-    sites: [
-      {
-        id: "boc_hq_01",
-        name: "Bureau of Customs Headquarters - Manila",
-        location: [14.5832, 120.9751],
-        status: "active",
-        subcategory: "BOC Headquarters",
-        description: "Bureau of Customs main headquarters located at South Harbor, Port Area, Manila.",
-        technicalDetails: {
-          address: "G/F OCOM Building, 16th Street, South Harbor, Port Area, Manila",
-          contactNumber: "(02) 87056000",
-          email: "boc.cares@customs.gov.ph",
-          operatingHours: "24/7 for port operations",
-          buildingType: "Government Office Building"
-        }
-      },
-      {
-        id: "boc_naia_01",
-        name: "BOC NAIA - Ninoy Aquino International Airport",
-        location: [14.5086, 121.0194],
-        status: "active",
-        subcategory: "BOC Port/Airport Office",
-        description: "Bureau of Customs office at Ninoy Aquino International Airport handling passenger and cargo clearance.",
-        technicalDetails: {
-          address: "NAIA Complex, Pasay City",
-          contactNumber: "(632) 879-6003",
-          operatingHours: "24/7",
-          facilityType: "Airport Customs Office"
-        }
-      },
-      {
-        id: "boc_cebu_01",
-        name: "BOC Cebu - Port of Cebu",
-        location: [10.3157, 123.8854],
-        status: "active",
-        subcategory: "BOC Port Office",
-        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger clearance.",
-        technicalDetails: {
-          address: "Port of Cebu, Cebu City",
-          facilityType: "Port Customs Office",
-          operatingHours: "24/7"
-        }
-      },
-      {
-        id: "boc_davao_01",
-        name: "BOC Davao - Port of Davao",
-        location: [7.0731, 125.6128],
-        status: "active",
-        subcategory: "BOC Port Office",
-        description: "Bureau of Customs office at Port of Davao serving Mindanao region.",
-        technicalDetails: {
-          address: "Port of Davao, Davao City",
-          facilityType: "Port Customs Office"
-        }
-      },
-      {
-        id: "boc_iloilo_01",
-        name: "BOC Iloilo - Port of Iloilo",
-        location: [10.7202, 122.5621],
-        status: "active",
-        subcategory: "BOC Port Office",
-        description: "Bureau of Customs office at Port of Iloilo serving Western Visayas region.",
-        technicalDetails: {
-          address: "Port of Iloilo, Iloilo City",
-          facilityType: "Port Customs Office"
-        }
-      },
-      {
-        id: "boc_zamboanga_01",
-        name: "BOC Zamboanga - Port of Zamboanga",
-        location: [6.9214, 122.0790],
-        status: "active",
-        subcategory: "BOC Port Office",
-        description: "Bureau of Customs office at Port of Zamboanga serving Zamboanga Peninsula.",
-        technicalDetails: {
-          address: "Port of Zamboanga, Zamboanga City",
-          facilityType: "Port Customs Office"
-        }
-      }
-    ]
-  },
-
-  // Bureau of Local Government Finance (BLGF) - DOF Agency
-  {
-    category: "Bureau of Local Government Finance",
-    id: "blgf_facilities",
-    center: [14.5832, 120.9797], // Manila BSP Complex
-    sites: [
-      {
-        id: "blgf_central_01",
-        name: "BLGF Central Office - Manila",
-        location: [14.5832, 120.9797],
-        status: "active",
-        subcategory: "BLGF Central Office",
-        description: "Bureau of Local Government Finance Central Office located at BSP Complex, Manila.",
-        technicalDetails: {
-          address: "8th Floor EDPC Building, Bangko Sentral ng Pilipinas Complex, Roxas Boulevard, Manila",
-          operatingHours: "8:00 AM - 5:00 PM",
-          buildingType: "Government Office Building",
-          regionalOffices: "15 Regional Offices Nationwide"
-        }
-      },
-      {
-        id: "blgf_region_01",
-        name: "BLGF Regional Office I - Ilocos",
-        location: [17.9688, 120.5739],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Ilocos Region for local government finance supervision.",
-        technicalDetails: {
-          coverage: "Ilocos Norte, Ilocos Sur, La Union, Pangasinan"
-        }
-      },
-      {
-        id: "blgf_region_02",
-        name: "BLGF Regional Office II - Cagayan Valley",
-        location: [17.6129, 121.7270],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Cagayan Valley Region.",
-        technicalDetails: {
-          coverage: "Batanes, Cagayan, Isabela, Nueva Vizcaya, Quirino"
-        }
-      },
-      {
-        id: "blgf_region_03",
-        name: "BLGF Regional Office III - Central Luzon",
-        location: [15.3794, 120.6200],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Central Luzon Region.",
-        technicalDetails: {
-          coverage: "Aurora, Bataan, Bulacan, Nueva Ecija, Pampanga, Tarlac, Zambales"
-        }
-      },
-      {
-        id: "blgf_region_04a",
-        name: "BLGF Regional Office IV-A - CALABARZON",
-        location: [14.2691, 121.1121],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving CALABARZON Region.",
-        technicalDetails: {
-          coverage: "Cavite, Laguna, Batangas, Rizal, Quezon"
-        }
-      },
-      {
-        id: "blgf_region_04b",
-        name: "BLGF Regional Office IV-B - MIMAROPA",
-        location: [13.4051, 121.0089],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving MIMAROPA Region.",
-        technicalDetails: {
-          coverage: "Marinduque, Occidental Mindoro, Oriental Mindoro, Palawan, Romblon"
-        }
-      },
-      {
-        id: "blgf_region_05",
-        name: "BLGF Regional Office V - Bicol",
-        location: [13.1391, 123.7437],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Bicol Region.",
-        technicalDetails: {
-          coverage: "Albay, Camarines Norte, Camarines Sur, Catanduanes, Masbate, Sorsogon"
-        }
-      },
-      {
-        id: "blgf_region_06",
-        name: "BLGF Regional Office VI - Western Visayas",
-        location: [10.7202, 122.5621],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Western Visayas Region.",
-        technicalDetails: {
-          coverage: "Aklan, Antique, Capiz, Guimaras, Iloilo, Negros Occidental"
-        }
-      },
-      {
-        id: "blgf_region_07",
-        name: "BLGF Regional Office VII - Central Visayas",
-        location: [10.3157, 123.8854],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Central Visayas Region.",
-        technicalDetails: {
-          coverage: "Bohol, Cebu, Negros Oriental, Siquijor"
-        }
-      },
-      {
-        id: "blgf_region_08",
-        name: "BLGF Regional Office VIII - Eastern Visayas",
-        location: [11.2442, 125.0045],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Eastern Visayas Region.",
-        technicalDetails: {
-          coverage: "Biliran, Eastern Samar, Leyte, Northern Samar, Samar, Southern Leyte"
-        }
-      },
-      {
-        id: "blgf_region_09",
-        name: "BLGF Regional Office IX - Zamboanga Peninsula",
-        location: [6.9214, 122.0790],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Zamboanga Peninsula.",
-        technicalDetails: {
-          coverage: "Zamboanga del Norte, Zamboanga del Sur, Zamboanga Sibugay"
-        }
-      },
-      {
-        id: "blgf_region_10",
-        name: "BLGF Regional Office X - Northern Mindanao",
-        location: [8.4542, 124.6319],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Northern Mindanao Region.",
-        technicalDetails: {
-          coverage: "Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental"
-        }
-      },
-      {
-        id: "blgf_region_11",
-        name: "BLGF Regional Office XI - Davao Region",
-        location: [7.0731, 125.6128],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving Davao Region.",
-        technicalDetails: {
-          coverage: "Davao de Oro, Davao del Norte, Davao del Sur, Davao Occidental, Davao Oriental"
-        }
-      },
-      {
-        id: "blgf_region_12",
-        name: "BLGF Regional Office XII - SOCCSKSARGEN",
-        location: [6.1164, 125.1716],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving SOCCSKSARGEN Region.",
-        technicalDetails: {
-          coverage: "South Cotabato, Cotabato, Sultan Kudarat, Sarangani"
-        }
-      },
-      {
-        id: "blgf_region_13",
-        name: "BLGF Regional Office XIII - CARAGA",
-        location: [9.3477, 125.4849],
-        status: "active",
-        subcategory: "BLGF Regional Office",
-        description: "BLGF Regional Office serving CARAGA Region.",
-        technicalDetails: {
-          coverage: "Agusan del Norte, Agusan del Sur, Dinagat Islands, Surigao del Norte, Surigao del Sur"
-        }
-      }
-    ]
-  },
-
-  // Other DOF Agencies and Properties
-  {
-    category: "DOF Attached Agencies",
-    id: "dof_attached_agencies",
-    center: [14.5995, 121.0346], // Metro Manila
-    sites: [
-      {
-        id: "dof_agency_01",
-        name: "Insurance Commission - Makati",
-        location: [14.5547, 121.0244],
-        status: "active",
-        subcategory: "DOF Attached Agency",
-        description: "Insurance Commission office regulating insurance, pre-need, and HMO industries under DOF supervision.",
-        technicalDetails: {
-          address: "Makati City",
-          function: "Insurance regulation and supervision",
-          buildingType: "Government Office Building"
-        }
-      },
-      {
-        id: "dof_agency_02",
-        name: "Securities and Exchange Commission - Mandaluyong",
-        location: [14.5794, 121.0359],
-        status: "active",
-        subcategory: "DOF Attached Agency",
-        description: "Securities and Exchange Commission under DOF supervision for corporate and capital market regulation.",
-        technicalDetails: {
-          address: "Mandaluyong City",
-          function: "Corporate and securities regulation",
-          buildingType: "Government Office Building"
-        }
-      },
-      {
-        id: "dof_agency_03",
-        name: "Philippine Tax Academy - Quezon City",
-        location: [14.6506, 121.0378],
-        status: "active",
-        subcategory: "DOF Training Institution",
-        description: "Philippine Tax Academy serving as learning institution for tax collectors and administrators.",
-        technicalDetails: {
-          address: "Quezon City",
-          function: "Tax education and training",
-          buildingType: "Educational/Training Facility"
-        }
-      },
-      {
-        id: "dof_agency_04",
-        name: "National Tax Research Center - Manila",
-        location: [14.5832, 120.9797],
-        status: "active",
-        subcategory: "DOF Research Center",
-        description: "National Tax Research Center conducting research on taxation to improve tax system and policy.",
-        technicalDetails: {
-          address: "Manila",
-          function: "Tax research and policy development",
-          buildingType: "Research Facility"
-        }
-      },
-      {
-        id: "dof_agency_05",
-        name: "Philippine Guarantee Corporation - Makati",
-        location: [14.5547, 121.0244],
-        status: "active",
-        subcategory: "DOF Government Corporation",
-        description: "Philippine Guarantee Corporation providing guarantee systems for trade, investments, and priority sectors.",
-        technicalDetails: {
-          address: "Makati City",
-          function: "State guarantee finance",
-          buildingType: "Corporate Office Building"
-        }
-      }
-    ]
-  },
-
-  // Regional DOF Properties and Support Facilities
-  {
-    category: "DOF Regional Support Facilities",
-    id: "dof_regional_support",
-    center: [12.8797, 121.7740], // Central Philippines
-    sites: [
-      {
-        id: "dof_support_01",
-        name: "DOF Northern Luzon Coordination Office",
-        location: [16.4023, 120.5960],
-        status: "active",
-        subcategory: "DOF Regional Coordination",
-        description: "DOF coordination office for Northern Luzon operations and inter-agency coordination.",
-        technicalDetails: {
-          coverage: "Northern Luzon coordination",
-          function: "Regional coordination and support"
-        }
-      },
-      {
-        id: "dof_support_02",
-        name: "DOF Southern Luzon Coordination Office",
-        location: [13.1391, 123.7437],
-        status: "active",
-        subcategory: "DOF Regional Coordination",
-        description: "DOF coordination office for Southern Luzon operations.",
-        technicalDetails: {
-          coverage: "Southern Luzon coordination",
-          function: "Regional coordination and support"
-        }
-      },
-      {
-        id: "dof_support_03",
-        name: "DOF Visayas Coordination Office",
-        location: [10.3157, 123.8854],
-        status: "active",
-        subcategory: "DOF Regional Coordination",
-        description: "DOF coordination office for Visayas region operations and support.",
-        technicalDetails: {
-          coverage: "Visayas region coordination",
-          function: "Regional coordination and support"
-        }
-      },
-      {
-        id: "dof_support_04",
-        name: "DOF Mindanao Coordination Office",
-        location: [7.0731, 125.6128],
-        status: "active",
-        subcategory: "DOF Regional Coordination",
-        description: "DOF coordination office for Mindanao region operations and support.",
-        technicalDetails: {
-          coverage: "Mindanao region coordination",
-          function: "Regional coordination and support"
-        }
-      }
-    ]
-  },
-
-  // Existing Cebu City Data (Enhanced)
   {
     category: "Infrastructure",
     id: "infrastructure",
     center: [10.3157, 123.8854],
     sites: [
-      // DOF-related infrastructure in Cebu
+      // Roads & Transportation
+      {
+        id: "highway_01",
+        name: "South Road Properties Highway",
+        location: [10.2513, 123.8437],
+        status: "active",
+        subcategory: "Highways",
+        description: "Major highway connecting southern Cebu City areas.",
+      },
+      {
+        id: "mainroad_01",
+        name: "Colon Street",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Main Roads",
+        description: "Historic main road and commercial center of Cebu City.",
+      },
+      {
+        id: "street_01",
+        name: "Capitol Site Streets",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Streets",
+        description: "Local street network in Capitol Site area.",
+      },
+      {
+        id: "transport_01",
+        name: "BRT System",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Public Transportation",
+        description: "Bus Rapid Transit system serving Cebu City.",
+      },
+      {
+        id: "traffic_01",
+        name: "Traffic Monitoring Center",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Traffic Data",
+        description: "Central traffic monitoring and data collection facility.",
+      },
+      
+      // Utilities
+      {
+        id: "water_01",
+        name: "Metropolitan Cebu Water District",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Water Supply",
+        description: "Main water supply facility for Cebu City.",
+      },
+      {
+        id: "power_01",
+        name: "VECO Substation Capitol",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Electricity",
+        description: "Primary electrical substation serving Capitol area.",
+      },
+      {
+        id: "sewage_01",
+        name: "Cebu City Sewage Treatment Plant",
+        location: [10.2513, 123.8437],
+        status: "active",
+        subcategory: "Sewage",
+        description: "Main sewage treatment facility for the city.",
+      },
+      {
+        id: "comm_01",
+        name: "PLDT Central Office",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Communication Lines",
+        description: "Major telecommunications hub for Cebu City.",
+      },
+      {
+        id: "waste_01",
+        name: "Inayawan Sanitary Landfill",
+        location: [10.2513, 123.8437],
+        status: "warning",
+        subcategory: "Waste Management",
+        description: "Primary waste management facility for Cebu City.",
+      },
+      {
+        id: "nbp_01",
+        name: "National Broadband Project Hub",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "National Broadband Project",
+        description: "Government broadband infrastructure hub.",
+      },
+      {
+        id: "wifi_01",
+        name: "Cebu City WiFi Hotspot - Plaza Independencia",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "WiFi Hotspots",
+        description: "Public WiFi access point in Plaza Independencia.",
+      },
+      {
+        id: "internet_01",
+        name: "Public Internet Center - Balamban",
+        location: [10.4769, 123.7436],
+        status: "active",
+        subcategory: "Public Internet Centers",
+        description: "Public internet access facility in Balamban.",
+      },
       {
         id: "dof_cebu_01",
         name: "BIR Regional Office No. 7 - Cebu City",
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Regional Office",
-        description: "Bureau of Internal Revenue Regional Office No. 7 serving Central Visayas region, located in Cebu City.",
-        technicalDetails: {
-          address: "Cebu City",
-          coverage: "Bohol, Cebu, Negros Oriental, Siquijor",
-          buildingType: "Government Office Building",
-          function: "Tax administration and collection"
-        }
+        description: "Bureau of Internal Revenue Regional Office No. 7 serving Central Visayas region, located in Cebu City."
       },
       {
         id: "dof_cebu_02",
@@ -952,13 +453,7 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Port Office",
-        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger customs clearance.",
-        technicalDetails: {
-          address: "Port of Cebu, Cebu City",
-          function: "Customs administration and revenue collection",
-          operatingHours: "24/7",
-          facilityType: "Port Customs Office"
-        }
+        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger customs clearance."
       },
       {
         id: "dof_cebu_03",
@@ -966,23 +461,96 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Regional Office",
-        description: "Bureau of Local Government Finance Regional Office VII serving Central Visayas region.",
-        technicalDetails: {
-          address: "Cebu City",
-          coverage: "Bohol, Cebu, Negros Oriental, Siquijor",
-          function: "Local government finance supervision"
-        }
+        description: "Bureau of Local Government Finance Regional Office VII serving Central Visayas region."
       }
     ]
   },
 
-  // Continue with existing categories from original data.js...
   {
     category: "Public Buildings",
     id: "public_buildings",
     center: [10.3157, 123.8854],
     sites: [
-      // Government offices including DOF-related facilities
+      {
+        id: "hospital_01",
+        name: "Vicente Sotto Memorial Medical Center",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Hospitals",
+        description: "Major public hospital serving Central Visayas region.",
+      },
+      {
+        id: "hospital_02",
+        name: "Cebu City Medical Center",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Hospitals",
+        description: "Primary public hospital for Cebu City residents.",
+      },
+      {
+        id: "school_01",
+        name: "University of the Philippines Cebu",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Schools",
+        description: "Premier state university in Cebu.",
+      },
+      {
+        id: "school_02",
+        name: "Cebu Normal University",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Schools",
+        description: "Leading teacher education institution in Cebu.",
+      },
+      {
+        id: "govt_01",
+        name: "Cebu City Hall",
+        location: [10.293401960635979, 123.90172170516787],
+        status: "active",
+        subcategory: "Government Offices",
+        description: "Main administrative center for Cebu City government.",
+      },
+      {
+        id: "govt_02",
+        name: "Capitol Building",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Government Offices",
+        description: "Provincial Capitol building of Cebu Province.",
+      },
+      {
+        id: "police_01",
+        name: "Cebu City Police Office",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Police Stations",
+        description: "Main police headquarters for Cebu City.",
+      },
+      {
+        id: "police_02",
+        name: "Fuente Police Station",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Police Stations",
+        description: "Police station serving Fuente Circle area.",
+      },
+      {
+        id: "fire_01",
+        name: "Cebu City Fire Department Central",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Fire Departments",
+        description: "Central fire station for Cebu City.",
+      },
+      {
+        id: "fire_02",
+        name: "Capitol Fire Station",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Fire Departments",
+        description: "Fire station serving Capitol Site area.",
+      },
       {
         id: "govt_01",
         name: "Cebu City Hall",
@@ -998,11 +566,350 @@ const mapMarkers = [
         status: "active",
         subcategory: "DOF District Office",
         description: "Department of Finance Revenue District Office serving Cebu City and surrounding areas.",
-        technicalDetails: {
-          function: "Local tax administration and revenue collection",
-          coverage: "Cebu City District",
-          buildingType: "Government Office Building"
-        }
+      }
+    ]
+  },
+
+  {
+    category: "Natural Features",
+    id: "natural_features",
+    center: [10.3157, 123.8854],
+    sites: [
+      {
+        id: "topo_01",
+        name: "Temple of Leah Viewpoint",
+        location: [10.3157, 123.8437],
+        status: "active",
+        subcategory: "Topography",
+        description: "Elevated viewpoint showcasing Cebu's topography.",
+      },
+      {
+        id: "topo_02",
+        name: "Sirao Hills",
+        location: [10.3580, 123.8320],
+        status: "active",
+        subcategory: "Topography",
+        description: "Highland area with scenic mountain views.",
+      },
+      {
+        id: "water_01",
+        name: "Guadalupe River",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Waterways",
+        description: "Major river system flowing through Cebu City.",
+      },
+      {
+        id: "water_02",
+        name: "Lahug River",
+        location: [10.3380, 123.8690],
+        status: "active",
+        subcategory: "Waterways",
+        description: "River system in northern Cebu City area.",
+      },
+      {
+        id: "park_01",
+        name: "Plaza Independencia",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Parks & Green Spaces",
+        description: "Historic central park and plaza of Cebu City.",
+      },
+      {
+        id: "park_02",
+        name: "Cebu IT Park",
+        location: [10.3269, 123.9063],
+        status: "active",
+        subcategory: "Parks & Green Spaces",
+        description: "Modern business park with green spaces.",
+      },
+      {
+        id: "dof_main_01",
+        name: "Department of Finance Building - BSP Complex",
+        location: [14.5832, 120.9797],
+        status: "active",
+        subcategory: "DOF Central Office",
+        description: "Main DOF Building located at BSP Complex, Roxas Boulevard, Manila. Houses the Office of the Secretary and various DOF departments.",
+      }
+    ]
+  },
+
+  {
+    category: "Environmental Risks",
+    id: "environmental_risks",
+    center: [10.3157, 123.8854],
+    sites: [
+      {
+        id: "flood_01",
+        name: "Lahug Creek Flood Zone",
+        location: [10.3380, 123.8690],
+        status: "warning",
+        subcategory: "Flood Prone Areas",
+        description: "Area prone to flooding during heavy rainfall.",
+      },
+      {
+        id: "flood_02",
+        name: "Guadalupe Low-lying Areas",
+        location: [10.2936, 123.9015],
+        status: "critical",
+        subcategory: "Flood Prone Areas",
+        description: "Critical flood-prone areas in Guadalupe district.",
+      },
+      {
+        id: "pollution_01",
+        name: "Carbon Market Air Quality Zone",
+        location: [10.2936, 123.9015],
+        status: "warning",
+        subcategory: "Pollution Zones",
+        description: "Area with elevated air pollution levels.",
+      },
+      {
+        id: "pollution_02",
+        name: "Cebu Harbor Water Pollution Zone",
+        location: [10.2936, 123.9115],
+        status: "critical",
+        subcategory: "Pollution Zones",
+        description: "Harbor area with water contamination issues.",
+      },
+      {
+        id: "hazard_01",
+        name: "Landslide Risk Area - Temple of Leah",
+        location: [10.3157, 123.8437],
+        status: "warning",
+        subcategory: "Other Environmental Hazards",
+        description: "Steep terrain with potential landslide risk.",
+      },
+      {
+        id: "hazard_02",
+        name: "Coastal Erosion Zone - SRP",
+        location: [10.2513, 123.8437],
+        status: "warning",
+        subcategory: "Other Environmental Hazards",
+        description: "Coastal area experiencing erosion issues.",
+      }
+    ]
+  },
+
+  {
+    category: "Points of Interest",
+    id: "points_of_interest",
+    center: [10.3157, 123.8854],
+    sites: [
+      {
+        id: "business_01",
+        name: "Ayala Center Cebu",
+        location: [10.3269, 123.9063],
+        status: "active",
+        subcategory: "Businesses",
+        description: "Major shopping and business complex in Cebu City.",
+      },
+      {
+        id: "business_02",
+        name: "SM City Cebu",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Businesses",
+        description: "Large shopping mall and commercial center.",
+      },
+      {
+        id: "recreation_01",
+        name: "Crown Regency Sky Experience",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Recreational Areas",
+        description: "Adventure and entertainment facility with city views.",
+      },
+      {
+        id: "recreation_02",
+        name: "Cebu Heritage Monument",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Recreational Areas",
+        description: "Historical monument and tourist attraction.",
+      },
+      {
+        id: "community_01",
+        name: "Barangay Capitol Site Community Center",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Community Centers",
+        description: "Local community center serving Capitol Site residents.",
+      },
+      {
+        id: "community_02",
+        name: "Lahug Community Center",
+        location: [10.3380, 123.8690],
+        status: "active",
+        subcategory: "Community Centers",
+        description: "Community facility in Lahug district.",
+      }
+    ]
+  },
+
+  {
+    category: "Population Data",
+    id: "population_data",
+    center: [10.3157, 123.8854],
+    sites: [
+      {
+        id: "density_01",
+        name: "Downtown High Density Zone",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Population Density",
+        description: "High population density area in downtown Cebu City.",
+      },
+      {
+        id: "density_02",
+        name: "IT Park Residential Density",
+        location: [10.3269, 123.9063],
+        status: "active",
+        subcategory: "Population Density",
+        description: "Growing residential density around IT Park area.",
+      },
+      {
+        id: "income_01",
+        name: "Ayala Business District Economic Zone",
+        location: [10.3269, 123.9063],
+        status: "active",
+        subcategory: "Income Distribution",
+        description: "High-income economic zone in Ayala area.",
+      },
+      {
+        id: "income_02",
+        name: "Carbon Market Economic Zone",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Income Distribution",
+        description: "Mixed-income commercial and residential area.",
+      },
+      {
+        id: "education_01",
+        name: "University Belt Education Hub",
+        location: [10.2936, 123.9015],
+        status: "active",
+        subcategory: "Education Levels",
+        description: "Area with high concentration of educational institutions.",
+      },
+      {
+        id: "education_02",
+        name: "Capitol Site Education Zone",
+        location: [10.3157, 123.8954],
+        status: "active",
+        subcategory: "Education Levels",
+        description: "Residential area with good access to educational facilities.",
+      },
+      {
+        id: "bir_hq_01",
+        name: "BIR National Office - Quezon City",
+        location: [14.6506, 121.0378],
+        status: "active",
+        subcategory: "BIR Headquarters",
+        description: "Bureau of Internal Revenue National Office located in Quezon City, main headquarters for tax administration."
+      },
+      {
+        id: "bir_region_01",
+        name: "BIR Regional Office No. 1 - Ilocos",
+        location: [17.9688, 120.5739], // Laoag City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Ilocos Norte, Ilocos Sur, La Union, and Pangasinan.",
+      },
+      {
+        id: "bir_region_02",
+        name: "BIR Regional Office No. 2 - Cordillera",
+        location: [16.4023, 120.5960], // Baguio City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Cordillera Administrative Region including Baguio City.",
+      },
+      {
+        id: "bir_region_03",
+        name: "BIR Regional Office No. 3 - Central Luzon",
+        location: [15.3794, 120.6200], // San Fernando, Pampanga
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Central Luzon region including Pampanga, Bulacan, Nueva Ecija.",
+      },
+      {
+        id: "bir_region_04",
+        name: "BIR Regional Office No. 4 - CALABARZON",
+        location: [14.2691, 121.1121], // Laguna
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering CALABARZON region.",
+      },
+      {
+        id: "bir_region_05",
+        name: "BIR Regional Office No. 5 - Bicol",
+        location: [13.1391, 123.7437], // Legazpi City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Bicol Region.",
+      },
+      {
+        id: "bir_region_06",
+        name: "BIR Regional Office No. 6 - Western Visayas",
+        location: [10.7202, 122.5621], // Iloilo City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Western Visayas region.",
+      },
+      {
+        id: "bir_region_07",
+        name: "BIR Regional Office No. 7 - Central Visayas",
+        location: [10.3157, 123.8854], // Cebu City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Central Visayas region including Cebu.",
+      },
+      {
+        id: "bir_region_08",
+        name: "BIR Regional Office No. 8 - Eastern Visayas",
+        location: [11.2442, 125.0045], // Tacloban City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Eastern Visayas region.",
+      },
+      {
+        id: "bir_region_09",
+        name: "BIR Regional Office No. 9 - Zamboanga Peninsula",
+        location: [6.9214, 122.0790], // Zamboanga City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Zamboanga Peninsula.",
+      },
+      {
+        id: "bir_region_10",
+        name: "BIR Regional Office No. 10 - Northern Mindanao",
+        location: [8.4542, 124.6319], // Cagayan de Oro City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Northern Mindanao region.",
+      },
+      {
+        id: "bir_region_11",
+        name: "BIR Regional Office No. 11 - Davao Region",
+        location: [7.0731, 125.6128], // Davao City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering Davao Region.",
+      },
+      {
+        id: "bir_region_12",
+        name: "BIR Regional Office No. 12 - SOCCSKSARGEN",
+        location: [6.1164, 125.1716], // General Santos City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering SOCCSKSARGEN region.",
+      },
+      {
+        id: "bir_region_13",
+        name: "BIR Regional Office No. 13 - CARAGA",
+        location: [9.3477, 125.4849], // Butuan City
+        status: "active",
+        subcategory: "BIR Regional Office",
+        description: "BIR Regional Office covering CARAGA region.",
       }
     ]
   }
