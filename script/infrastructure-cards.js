@@ -183,11 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedCategories = getSelectedCategories();
     let cards = [];
 
-    // if (!selectedCategories.showAll && selectedCategories.categories.length === 0) {
-    //   cardsWrapper.innerHTML = '<div class="no-selection-message" style="color: #b0bec5; text-align: center; padding: 20px; font-size: 16px;">Select a category from the sidebar to view infrastructure cards</div>';
-    //   return;
-    // }
-
     if (selectedCategories.showAll) {
       cards = getOverviewCards();
     } else if (selectedCategories.categories.length === 1) {
@@ -196,11 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (selectedCategories.categories.length > 1) {
       cards = getCategoryCards(selectedCategories.categories);
     }
-
-    // if (cards.length === 0) {
-    //   cardsWrapper.innerHTML = '<div class="no-data-message" style="color: #b0bec5; text-align: center; padding: 20px; font-size: 16px;">No data available for selected categories</div>';
-    //   return;
-    // }
 
     let cardsHTML = "";
     cards.forEach((card) => {
@@ -342,56 +332,6 @@ document.addEventListener("DOMContentLoaded", function () {
         icon: "fas fa-wifi",
         category: "internet_access",
         filter: "internet_access",
-      },
-    ];
-  }
-
-  function getStatusCards() {
-    return [
-      {
-        title: "Active",
-        value: infrastructureData.active,
-        type: "Operational Sites",
-        className: "active-bg",
-        icon: "fas fa-check-circle",
-        category: "status",
-        filter: "active",
-      },
-      {
-        title: "Warning",
-        value: infrastructureData.warning,
-        type: "Needs Attention",
-        className: "warning-bg",
-        icon: "fas fa-exclamation-triangle",
-        category: "status",
-        filter: "warning",
-      },
-      {
-        title: "Critical",
-        value: infrastructureData.critical,
-        type: "Immediate Action",
-        className: "critical-bg",
-        icon: "fas fa-times-circle",
-        category: "status",
-        filter: "critical",
-      },
-      {
-        title: "Maintenance",
-        value: infrastructureData.maintenance,
-        type: "Under Maintenance",
-        className: "maintenance-bg",
-        icon: "fas fa-wrench",
-        category: "status",
-        filter: "maintenance",
-      },
-      {
-        title: "Inactive",
-        value: infrastructureData.inactive,
-        type: "Inactive Sites",
-        className: "inactive-bg",
-        icon: "fas fa-ban",
-        category: "status",
-        filter: "inactive",
       },
     ];
   }
