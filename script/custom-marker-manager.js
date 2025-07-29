@@ -34,7 +34,7 @@ const markerIcons = {
   },
   
   // Hospital markers
-  hospital: {
+  hospitals: {
     active: {
       iconUrl: "assets/marker/marker-hosp/marker-active-hosp.svg",
       iconSize: [32, 32],
@@ -102,7 +102,7 @@ const markerIcons = {
   },
   
   // Government office markers
-  government: {
+  'government-offices': {
     active: {
       iconUrl: "assets/marker/marker-gov/marker-active-gov.svg",
       iconSize: [32, 32],
@@ -136,7 +136,7 @@ const markerIcons = {
   },
   
   // Police station markers
-  police: {
+  'police-stations': {
     active: {
       iconUrl: "assets/marker/marker-pol/marker-active-pol.svg",
       iconSize: [32, 32],
@@ -168,7 +168,7 @@ const markerIcons = {
       popupAnchor: [0, -32],
     }
   },
-  waste: {
+  'waste-management': {
     active: {
       iconUrl: "assets/marker/marker-waste/marker-active-waste.svg",
       iconSize: [32, 32],
@@ -202,7 +202,7 @@ const markerIcons = {
   },
   
   // Fire department markers
-  fire: {
+  'fire-departments': {
     active: {
       iconUrl: "assets/marker/marker-fire/marker-active-fire.svg",
       iconSize: [32, 32],
@@ -242,20 +242,20 @@ const markerIcons = {
  */
 const subcategoryToMarkerType = {
   // Hospital subcategories
-  "Hospitals": "hospital",
+  "Hospitals": "hospitals",
   
-  "Waste Management Facilities": "waste",
+  "Waste Management Facilities": "waste-management",
   // School subcategories
   "Schools": "school",
   
   // Government office subcategories
-  "Government Offices": "government",
+  "Government Offices": "government-offices",
   
   // Police subcategories
-  "Police Stations": "police",
+  "Police Stations": "police-stations",
   
   // Fire department subcategories
-  "Fire Departments": "fire"
+  "Fire Departments": "fire-departments"
 };
 
 /**
@@ -308,7 +308,7 @@ function createSiteMarker(location, subcategory, status, options = {}) {
   
   // Create MapLibre marker
   const marker = new maplibregl.Marker(el)
-    .setLngLat([location[1], location[0]]); // MapLibre uses [lng, lat]
+    .setLngLat([location[1], location[0]]);
   
   return marker;
 }

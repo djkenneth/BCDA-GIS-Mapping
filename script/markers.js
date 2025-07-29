@@ -135,8 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return `
       <div style="
-        width: 30px; 
-        height: 30px; 
+        width: 32px; 
+        height: 32px; 
         background: ${iconColor}; 
         border: 2px solid white; 
         border-radius: 50%; 
