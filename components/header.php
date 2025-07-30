@@ -86,19 +86,19 @@
 
     <div class="header-buttons-container">
         <button class="header-button" id="addEquipmentBtn">
-            <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/icons/infrastructure.svg' : 'assets/icons/infrastructure.svg'; ?>" alt="Infrastructure icon" class="infrastructure" />
+            <?php include 'components/icons/infrastructure.php' ?>
             <span>Add New Infrastructure</span>
         </button>
         <button class="header-button" id="viewAllAlertsBtn">
-            <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/icons/critical-alerts.svg' : 'assets/icons/critical-alerts.svg'; ?>" alt="Alerts icon" class="critical-alerts" />
+            <?php include 'components/icons/critical-alerts.php' ?>
             <span>View Alerts</span>
         </button>
         <button class="header-button" id="systemMonitoringBtn">
-            <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/icons/active-towers.svg' : 'assets/icons/active-towers.svg'; ?>" alt="Mapping icon" class="active-towers" />
+            <?php include 'components/icons/active-towers.php' ?>
             <span>Infrastructure Monitoring</span>
         </button>
         <button class="header-button" id="issueReportBtn">
-            <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/icons/active-alerts.svg' : 'assets/icons/active-alerts.svg'; ?>" alt="Mapping icon" class="active-alerts" />
+            <?php include 'components/icons/active-alerts.php' ?>
             <span>Issue Report</span>
         </button>
     </div>
