@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let visibleMarkers = new Set();
   let mapSourcesAdded = false;
 
-  function initializeMap() {
+  async function initializeMap() {
     // Initialize MapLibre GL map with interaction handlers enabled
-    map = new maplibregl.Map({
+    map = await new maplibregl.Map({
       container: "map",
       style: {
         version: 8,
@@ -61,12 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     // Add scale control
-    map.addControl(new maplibregl.ScaleControl({
-      maxWidth: 80,
-      unit: 'metric'
-    }), 'bottom-left');
+    map.addControl(
+      new maplibregl.ScaleControl({
+        maxWidth: 80,
+        unit: "metric",
+      }),
+      "bottom-left"
+    );
 
     // Store map globally
+    window.map = map;
 
     map.on("load", function () {
       console.log("MapLibre map loaded successfully");
@@ -96,7 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        const siteMarker = createSiteMarker(site.location, site.subcategory, site.status);
+        const siteMarker = createSiteMarker(
+          site.location,
+          site.subcategory,
+          site.status
+        );
 
         // Create MapLibre marker
         const marker = new maplibregl.Marker({
@@ -135,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.showLiveFeedCard(cardPosition);
 
       updateLiveFeedCardForSite(site);
-
     } catch (error) {
       console.error("Error showing live feed card:", error);
     }
@@ -144,9 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar-v2");
-    const sidebarContent = document.querySelector(
-      ".sidebar-content.visible"
-    );
+    const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = 248;
     let leftPosition = 80;
@@ -226,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
     map.easeTo({
       center: lngLat,
       zoom: 15,
-      duration: 1000,
+      duration: 3000,
     });
   }
 
@@ -377,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       map.easeTo({
         center: lngLat,
-        zoom: 16,
+        zoom: 15,
         duration: 2000,
       });
 
@@ -397,13 +402,13 @@ document.addEventListener("DOMContentLoaded", function () {
     calculateLiveFeedPosition,
     updateLiveFeedCardForSite,
     findSiteById,
-    zoomToSiteById
+    zoomToSiteById,
   };
 
   window.updateLiveFeedCardForSite = updateLiveFeedCardForSite;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
       initializeMap();
     });
   } else {

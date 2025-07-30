@@ -86,20 +86,22 @@
 
     <div class="header-buttons-container">
         <button class="header-button" id="addEquipmentBtn">
-            <?php include 'components/icons/infrastructure.php' ?>
+            <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/infrastructure.php' : 'components/icons/infrastructure.php'; ?>
             <span>Add New Infrastructure</span>
         </button>
         <button class="header-button" id="viewAllAlertsBtn">
-            <?php include 'components/icons/critical-alerts.php' ?>
+            <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/critical-alerts.php' : 'components/icons/critical-alerts.php'; ?>
             <span>View Alerts</span>
         </button>
         <button class="header-button" id="systemMonitoringBtn">
-            <?php include 'components/icons/active-towers.php' ?>
+            <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/active-towers.php' : 'components/icons/active-towers.php'; ?>
             <span>Infrastructure Monitoring</span>
         </button>
         <button class="header-button" id="issueReportBtn">
-            <?php include 'components/icons/active-alerts.php' ?>
+            <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/active-alerts.php' : 'components/icons/active-alerts.php'; ?>
             <span>Issue Report</span>
         </button>
     </div>
 </header>
+
+<script src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? "../script/header.js" : 'script/header.js'; ?>"></script>

@@ -1007,47 +1007,6 @@ header .flex.w-full {
   border-left: 3px solid #64b5f6;
 }
 
-.notification-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(59, 130, 246, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.notification-content {
-  flex: 1;
-}
-
-.notification-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-.notification-message {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.4;
-  margin-bottom: 4px;
-}
-
-.notification-time {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.notification-empty {
-  padding: 40px 20px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
-}
-
 .notification-badge {
   position: absolute;
   top: -5px;

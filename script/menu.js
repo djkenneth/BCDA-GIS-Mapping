@@ -1,28 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Apps data - add or remove items as needed
-  const apps = [
-    {
-      name: "Guardian (UAC)",
-      icon: "guardian-icon.png",
-      url: "https://dict.itbsstudio.com/GUARDIAN/login",
-    },
-    {
-      name: "NERVE",
-      icon: "nerve-icon.png",
-      url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
-    },
-    {
-      name: "LEDGER",
-      icon: "ledger-icon.png",
-      url: "https://dict.itbsstudio.com/LEDGER/login",
-    },
-    {
-      name: "Pulse",
-      icon: "pulse-icon.png",
-      url: "https://dict.itbsstudio.com/PULSE/login",
-    },
-  ];
-
   const switcherIcon = document.getElementById("app-switcher-icon");
   const switcherImg = switcherIcon ? switcherIcon.querySelector('img') : null;
 

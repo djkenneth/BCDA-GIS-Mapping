@@ -115,12 +115,14 @@
     color: #e4dad7;
     margin-bottom: 4px;
     font-weight: 500;
+    margin-bottom: 4px;
 }
 
 .notification-message {
     font-size: 13px;
     color: #a0aec0;
     margin-bottom: 4px;
+    line-height: 1.4;
 }
 
 .notification-time {
@@ -141,6 +143,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid #101b2a;
 }
 
 .notification-empty {

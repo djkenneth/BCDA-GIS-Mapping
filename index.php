@@ -78,7 +78,6 @@
     </div>
 
     <div class="container">
-        <?php include("components/cards.php") ?>
         <?php include("components/infrastructure-cards.php") ?>
     </div>
     
@@ -115,7 +114,6 @@
     <script src="script/data.js?t=<?php echo time(); ?>"></script>
     <script src="script/marker-manager.js?t=<?php echo time(); ?>"></script>
     <script src="script/markers.js?t=<?php echo time(); ?>"></script>
-    <script src="script/header.js?t=<?php echo time(); ?>"></script>
     <script src="script/charts.js?t=<?php echo time(); ?>"></script>
     <script src="script/menu.js?t=<?php echo time(); ?>"></script>
     <script src="script/notification-menu.js?t=<?php echo time(); ?>"></script>

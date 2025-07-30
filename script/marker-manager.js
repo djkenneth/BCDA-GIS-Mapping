@@ -301,10 +301,3 @@ function createSiteMarker(location, subcategory, status, options = {}) {
   
   return el;
 }
-
-// Export the marker management functions
-// window.markerManager = {
-//   getMarkerIcon,
-//   createSiteMarker,
-//   markerIcons
-// };

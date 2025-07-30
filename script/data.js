@@ -1,3 +1,26 @@
+  const apps = [
+    {
+      name: "Guardian (UAC)",
+      icon: "guardian-icon.png",
+      url: "https://dict.itbsstudio.com/GUARDIAN/login",
+    },
+    {
+      name: "NERVE",
+      icon: "nerve-icon.png",
+      url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
+    },
+    {
+      name: "LEDGER",
+      icon: "ledger-icon.png",
+      url: "https://dict.itbsstudio.com/LEDGER/login",
+    },
+    {
+      name: "Pulse",
+      icon: "pulse-icon.png",
+      url: "https://dict.itbsstudio.com/PULSE/login",
+    },
+  ];
+
 const siteTechnicalDetails = {
   // Infrastructure
   roads_01: {
@@ -326,74 +349,74 @@ const sitesMaintenanceLogs = {
   ],
 };
 
-  const publicAlerts = [
-    { text: 'Construction: Escario Street', class: 'alert-construction' },
-    { text: 'Road closure: IT Park area', class: 'alert-closure' },
-    { text: 'Weather alert: Heavy rainfall', class: 'alert-weather' },
-    { text: 'Traffic advisory: Osmeña Blvd', class: 'alert-traffic' },
-    { text: 'Accident: Fuente Circle', class: 'alert-accident' },
-    { text: 'Event traffic: SM City Cebu', class: 'alert-event' },
-    { text: 'Flooding alert: Mabolo area', class: 'alert-flooding' }
-  ];
-  
-  const cityEvents = [
-    { 
-      icon: 'S', 
-      text: 'Sinulog Festival 2025', 
-      date: 'Jan 19',
-      class: 'event-festival',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'M', 
-      text: 'Public Meeting: Budget 2025', 
-      date: 'Feb 15',
-      class: 'event-meeting',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'C', 
-      text: 'Community Cleanup Drive', 
-      date: 'Feb 20',
-      class: 'event-community',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'H', 
-      text: 'Health & Wellness Fair', 
-      date: 'Mar 1-3',
-      class: 'event-health',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'F', 
-      text: 'Food Festival at Plaza', 
-      date: 'Mar 14-16',
-      class: 'event-ongoing',
-      status: 'ongoing'
-    },
-    { 
-      icon: 'T', 
-      text: 'Tech Summit 2025', 
-      date: 'Apr 5',
-      class: 'event-tech',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'E', 
-      text: 'Environmental Fair', 
-      date: 'Apr 22',
-      class: 'event-community',
-      status: 'upcoming'
-    },
-    { 
-      icon: 'B', 
-      text: 'Barangay Sports Festival', 
-      date: 'May 1-3',
-      class: 'event-ongoing',
-      status: 'ongoing'
-    }
-  ];
+const publicAlerts = [
+  { text: "Construction: Escario Street", class: "alert-construction" },
+  { text: "Road closure: IT Park area", class: "alert-closure" },
+  { text: "Weather alert: Heavy rainfall", class: "alert-weather" },
+  { text: "Traffic advisory: Osmeña Blvd", class: "alert-traffic" },
+  { text: "Accident: Fuente Circle", class: "alert-accident" },
+  { text: "Event traffic: SM City Cebu", class: "alert-event" },
+  { text: "Flooding alert: Mabolo area", class: "alert-flooding" },
+];
+
+const cityEvents = [
+  {
+    icon: "S",
+    text: "Sinulog Festival 2025",
+    date: "Jan 19",
+    class: "event-festival",
+    status: "upcoming",
+  },
+  {
+    icon: "M",
+    text: "Public Meeting: Budget 2025",
+    date: "Feb 15",
+    class: "event-meeting",
+    status: "upcoming",
+  },
+  {
+    icon: "C",
+    text: "Community Cleanup Drive",
+    date: "Feb 20",
+    class: "event-community",
+    status: "upcoming",
+  },
+  {
+    icon: "H",
+    text: "Health & Wellness Fair",
+    date: "Mar 1-3",
+    class: "event-health",
+    status: "upcoming",
+  },
+  {
+    icon: "F",
+    text: "Food Festival at Plaza",
+    date: "Mar 14-16",
+    class: "event-ongoing",
+    status: "ongoing",
+  },
+  {
+    icon: "T",
+    text: "Tech Summit 2025",
+    date: "Apr 5",
+    class: "event-tech",
+    status: "upcoming",
+  },
+  {
+    icon: "E",
+    text: "Environmental Fair",
+    date: "Apr 22",
+    class: "event-community",
+    status: "upcoming",
+  },
+  {
+    icon: "B",
+    text: "Barangay Sports Festival",
+    date: "May 1-3",
+    class: "event-ongoing",
+    status: "ongoing",
+  },
+];
 
 const mapMarkers = [
   {
@@ -442,7 +465,7 @@ const mapMarkers = [
         subcategory: "Traffic Data",
         description: "Central traffic monitoring and data collection facility.",
       },
-      
+
       // Utilities
       {
         id: "water_01",
@@ -514,7 +537,8 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Regional Office",
-        description: "Bureau of Internal Revenue Regional Office No. 7 serving Central Visayas region, located in Cebu City."
+        description:
+          "Bureau of Internal Revenue Regional Office No. 7 serving Central Visayas region, located in Cebu City.",
       },
       {
         id: "dof_cebu_02",
@@ -522,7 +546,8 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Port Office",
-        description: "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger customs clearance."
+        description:
+          "Bureau of Customs office at Port of Cebu handling maritime cargo and passenger customs clearance.",
       },
       {
         id: "dof_cebu_03",
@@ -530,9 +555,10 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF Regional Office",
-        description: "Bureau of Local Government Finance Regional Office VII serving Central Visayas region."
-      }
-    ]
+        description:
+          "Bureau of Local Government Finance Regional Office VII serving Central Visayas region.",
+      },
+    ],
   },
 
   {
@@ -634,9 +660,10 @@ const mapMarkers = [
         location: [10.3157, 123.8854],
         status: "active",
         subcategory: "DOF District Office",
-        description: "Department of Finance Revenue District Office serving Cebu City and surrounding areas.",
-      }
-    ]
+        description:
+          "Department of Finance Revenue District Office serving Cebu City and surrounding areas.",
+      },
+    ],
   },
 
   {
@@ -655,7 +682,7 @@ const mapMarkers = [
       {
         id: "topo_02",
         name: "Sirao Hills",
-        location: [10.3580, 123.8320],
+        location: [10.358, 123.832],
         status: "active",
         subcategory: "Topography",
         description: "Highland area with scenic mountain views.",
@@ -671,7 +698,7 @@ const mapMarkers = [
       {
         id: "water_02",
         name: "Lahug River",
-        location: [10.3380, 123.8690],
+        location: [10.338, 123.869],
         status: "active",
         subcategory: "Waterways",
         description: "River system in northern Cebu City area.",
@@ -698,9 +725,10 @@ const mapMarkers = [
         location: [14.5832, 120.9797],
         status: "active",
         subcategory: "DOF Central Office",
-        description: "Main DOF Building located at BSP Complex, Roxas Boulevard, Manila. Houses the Office of the Secretary and various DOF departments.",
-      }
-    ]
+        description:
+          "Main DOF Building located at BSP Complex, Roxas Boulevard, Manila. Houses the Office of the Secretary and various DOF departments.",
+      },
+    ],
   },
 
   {
@@ -711,7 +739,7 @@ const mapMarkers = [
       {
         id: "flood_01",
         name: "Lahug Creek Flood Zone",
-        location: [10.3380, 123.8690],
+        location: [10.338, 123.869],
         status: "warning",
         subcategory: "Flood Prone Areas",
         description: "Area prone to flooding during heavy rainfall.",
@@ -755,8 +783,8 @@ const mapMarkers = [
         status: "warning",
         subcategory: "Other Environmental Hazards",
         description: "Coastal area experiencing erosion issues.",
-      }
-    ]
+      },
+    ],
   },
 
   {
@@ -807,12 +835,12 @@ const mapMarkers = [
       {
         id: "community_02",
         name: "Lahug Community Center",
-        location: [10.3380, 123.8690],
+        location: [10.338, 123.869],
         status: "active",
         subcategory: "Community Centers",
         description: "Community facility in Lahug district.",
-      }
-    ]
+      },
+    ],
   },
 
   {
@@ -858,7 +886,8 @@ const mapMarkers = [
         location: [10.2936, 123.9015],
         status: "active",
         subcategory: "Education Levels",
-        description: "Area with high concentration of educational institutions.",
+        description:
+          "Area with high concentration of educational institutions.",
       },
       {
         id: "education_02",
@@ -866,7 +895,8 @@ const mapMarkers = [
         location: [10.3157, 123.8954],
         status: "active",
         subcategory: "Education Levels",
-        description: "Residential area with good access to educational facilities.",
+        description:
+          "Residential area with good access to educational facilities.",
       },
       {
         id: "bir_hq_01",
@@ -874,7 +904,8 @@ const mapMarkers = [
         location: [14.6506, 121.0378],
         status: "active",
         subcategory: "BIR Headquarters",
-        description: "Bureau of Internal Revenue National Office located in Quezon City, main headquarters for tax administration."
+        description:
+          "Bureau of Internal Revenue National Office located in Quezon City, main headquarters for tax administration.",
       },
       {
         id: "bir_region_01",
@@ -882,23 +913,26 @@ const mapMarkers = [
         location: [17.9688, 120.5739], // Laoag City
         status: "active",
         subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Ilocos Norte, Ilocos Sur, La Union, and Pangasinan.",
+        description:
+          "BIR Regional Office covering Ilocos Norte, Ilocos Sur, La Union, and Pangasinan.",
       },
       {
         id: "bir_region_02",
         name: "BIR Regional Office No. 2 - Cordillera",
-        location: [16.4023, 120.5960], // Baguio City
+        location: [16.4023, 120.596], // Baguio City
         status: "active",
         subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Cordillera Administrative Region including Baguio City.",
+        description:
+          "BIR Regional Office covering Cordillera Administrative Region including Baguio City.",
       },
       {
         id: "bir_region_03",
         name: "BIR Regional Office No. 3 - Central Luzon",
-        location: [15.3794, 120.6200], // San Fernando, Pampanga
+        location: [15.3794, 120.62], // San Fernando, Pampanga
         status: "active",
         subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Central Luzon region including Pampanga, Bulacan, Nueva Ecija.",
+        description:
+          "BIR Regional Office covering Central Luzon region including Pampanga, Bulacan, Nueva Ecija.",
       },
       {
         id: "bir_region_04",
@@ -930,7 +964,8 @@ const mapMarkers = [
         location: [10.3157, 123.8854], // Cebu City
         status: "active",
         subcategory: "BIR Regional Office",
-        description: "BIR Regional Office covering Central Visayas region including Cebu.",
+        description:
+          "BIR Regional Office covering Central Visayas region including Cebu.",
       },
       {
         id: "bir_region_08",
@@ -943,7 +978,7 @@ const mapMarkers = [
       {
         id: "bir_region_09",
         name: "BIR Regional Office No. 9 - Zamboanga Peninsula",
-        location: [6.9214, 122.0790], // Zamboanga City
+        location: [6.9214, 122.079], // Zamboanga City
         status: "active",
         subcategory: "BIR Regional Office",
         description: "BIR Regional Office covering Zamboanga Peninsula.",
@@ -979,10 +1014,442 @@ const mapMarkers = [
         status: "active",
         subcategory: "BIR Regional Office",
         description: "BIR Regional Office covering CARAGA region.",
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
+
+const searchData = {
+  quickActions: [],
+  categories: {
+    "Hospitals & Healthcare": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l11 11z"/></svg>`,
+      items: [
+        {
+          title: "Cebu City Medical Center",
+          description: "Public hospital with comprehensive services",
+          distance: "1.2km",
+          siteId: "hospital_01",
+          category: "Public Buildings",
+        },
+        {
+          title: "Vicente Sotto Memorial",
+          description: "Major government tertiary care hospital",
+          distance: "0.8km",
+          siteId: "hospital_02",
+          category: "Public Buildings",
+        },
+        {
+          title: "Chong Hua Hospital",
+          description: "Leading private hospital",
+          distance: "1.5km",
+          siteId: "hospital_10",
+          category: "Public Buildings",
+        },
+        {
+          title: "Cebu Doctors' University Hospital",
+          description: "University hospital with comprehensive healthcare",
+          distance: "0.9km",
+          siteId: "hospital_04",
+          category: "Public Buildings",
+        },
+        {
+          title: "Adventist Hospital Cebu",
+          description: "Faith-based hospital providing quality healthcare",
+          distance: "1.1km",
+          siteId: "hospital_05",
+          category: "Public Buildings",
+        },
+      ],
+    },
+    "Government Services": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>`,
+      items: [
+        {
+          title: "Cebu City Hall",
+          description: "Main administrative center",
+          distance: "0.3km",
+          siteId: "govt_01",
+          category: "Public Buildings",
+        },
+        {
+          title: "Office of the City Civil Registrar",
+          description: "Birth certificates, marriage licenses",
+          distance: "0.5km",
+          siteId: "govt_13",
+          category: "Public Buildings",
+        },
+        {
+          title: "Cebu City Health Department",
+          description: "Public health services",
+          distance: "0.7km",
+          siteId: "govt_15",
+          category: "Public Buildings",
+        },
+        {
+          title: "DPWH Cebu City District Office",
+          description: "Public works and highways office",
+          distance: "0.4km",
+          siteId: "govt_10",
+          category: "Public Buildings",
+        },
+        {
+          title: "DTI Cebu Provincial Office",
+          description: "Trade and industry services",
+          distance: "0.6km",
+          siteId: "govt_05",
+          category: "Public Buildings",
+        },
+      ],
+    },
+    Transportation: {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14"/><path d="M8 8v4"/><path d="M9 18h6"/></svg>`,
+      items: [
+        {
+          title: "Route 01K: Urgello - SM - Parkmall",
+          description: "Jeepney route through commercial areas",
+          distance: "Multiple stops",
+          siteId: "transport_route_01",
+          category: "Traffic Data",
+        },
+        {
+          title: "Route 04B: Lahug - Carbon Market",
+          description: "Route through educational areas",
+          distance: "Multiple stops",
+          siteId: "transport_route_02",
+          category: "Traffic Data",
+        },
+        {
+          title: "Route 13C: Talamban - Colon",
+          description: "Northern route to downtown",
+          distance: "Multiple stops",
+          siteId: "transport_route_03",
+          category: "Traffic Data",
+        },
+        {
+          title: "MyBus Terminal - SM City",
+          description: "Bus routes to airport and Talisay",
+          distance: "1.8km",
+          siteId: "transport_02",
+          category: "Infrastructure",
+        },
+        {
+          title: "Jeepney Routes MI-03B",
+          description: "Route from MEPZ to Cordova",
+          distance: "Various",
+          siteId: "transport_01",
+          category: "Infrastructure",
+        },
+      ],
+    },
+    Education: {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+      items: [
+        {
+          title: "University of the Philippines Cebu",
+          description: "Public university campus",
+          distance: "2.2km",
+          siteId: "school_14",
+          category: "Public Buildings",
+        },
+        {
+          title: "Cebu City National Science High School",
+          description: "Specialized science high school",
+          distance: "1.5km",
+          siteId: "school_01",
+          category: "Public Buildings",
+        },
+        {
+          title: "Cebu Institute of Technology - University",
+          description: "Technology-focused university",
+          distance: "0.9km",
+          siteId: "school_12",
+          category: "Public Buildings",
+        },
+        {
+          title: "University of the Visayas - Main Campus",
+          description: "Private university with various programs",
+          distance: "1.1km",
+          siteId: "school_13",
+          category: "Public Buildings",
+        },
+        {
+          title: "University of Cebu - Banilad Campus",
+          description: "Private university campus",
+          distance: "2.8km",
+          siteId: "school_15",
+          category: "Public Buildings",
+        },
+      ],
+    },
+    "Internet & Connectivity": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></svg>`,
+      items: [
+        {
+          title: "Ayala Center Free WiFi",
+          description: "Shopping mall WiFi access",
+          distance: "1.2km",
+          siteId: "wifi_01",
+          category: "Internet Access",
+        },
+        {
+          title: "IT Park Public WiFi",
+          description: "High-speed internet in business district",
+          distance: "2.5km",
+          siteId: "wifi_03",
+          category: "Internet Access",
+        },
+        {
+          title: "Plaza Independencia WiFi",
+          description: "Public WiFi at historic plaza",
+          distance: "0.4km",
+          siteId: "wifi_05",
+          category: "Internet Access",
+        },
+        {
+          title: "Cebu City Library Digital Center",
+          description: "Free computer and internet access",
+          distance: "0.7km",
+          siteId: "internet_01",
+          category: "Internet Access",
+        },
+        {
+          title: "NBP Cebu City Gateway",
+          description: "National broadband infrastructure",
+          distance: "1.0km",
+          siteId: "nbp_01",
+          category: "National Broadband Project",
+        },
+      ],
+    },
+    "Shopping & Recreation": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1z"/><path d="M9 12v4"/><path d="M15 12v4"/></svg>`,
+      items: [
+        {
+          title: "Ayala Center Cebu",
+          description: "Premier shopping destination",
+          distance: "1.2km",
+          siteId: "recreation_02",
+          category: "Points of Interest",
+        },
+        {
+          title: "SM Seaside City Cebu",
+          description: "Large shopping mall with entertainment",
+          distance: "2.8km",
+          siteId: "recreation_01",
+          category: "Points of Interest",
+        },
+        {
+          title: "Cebu Business Park",
+          description: "Mixed-use development with amenities",
+          distance: "1.1km",
+          siteId: "business_01",
+          category: "Points of Interest",
+        },
+        {
+          title: "Cebu IT Park",
+          description: "Business and entertainment district",
+          distance: "2.5km",
+          siteId: "business_02",
+          category: "Points of Interest",
+        },
+        {
+          title: "Plaza Independencia",
+          description: "Historic plaza and public space",
+          distance: "0.4km",
+          siteId: "recreation_05",
+          category: "Points of Interest",
+        },
+      ],
+    },
+  },
+};
+
+// Generate category-specific maintenance examples
+const categoryMaintenance = {
+  Infrastructure: [
+    {
+      date: "2025-04-15",
+      type: "Comprehensive Structural Inspection",
+      technician: "Civil Engineer Maria Santos, P.E.",
+      duration: "6 hours",
+      findings:
+        "Infrastructure condition rated at 86% (Excellent). Minor concrete spalling observed on south wall requiring attention within 3 months. Overall structural integrity remains excellent with no immediate safety concerns. Recommended preventive concrete repair and protective coating application.",
+    },
+    {
+      date: "2025-02-28",
+      type: "Preventive Maintenance",
+      technician: "Maintenance Team Alpha (4 members)",
+      duration: "4 hours",
+      findings:
+        "All systems operational within specifications. Drainage systems cleaned and flow-tested. LED lighting system inspection completed - all fixtures operational. Safety equipment verified and emergency systems tested. Concrete surfaces cleaned and sealed.",
+    },
+    {
+      date: "2025-01-10",
+      type: "Quarterly Safety Inspection",
+      technician: "Safety Inspector Carlos Mendoza",
+      duration: "3 hours",
+      findings:
+        "Safety compliance at 100%. All emergency exits clear and properly marked. Fire safety equipment within service dates. Structural stability confirmed. No safety hazards identified. Certificate of compliance issued.",
+    },
+  ],
+  "Public Buildings": [
+    {
+      date: "2025-05-10",
+      type: "HVAC System Service",
+      technician: "CoolAir Systems Inc. (Certified Contractor)",
+      duration: "8 hours",
+      findings:
+        "Annual HVAC system maintenance completed successfully. All 5 units serviced, filters replaced with HEPA-grade filters. System efficiency improved by 12% through calibration. Energy consumption reduced by estimated 8%. Next service scheduled for May 2026.",
+    },
+    {
+      date: "2025-03-22",
+      type: "Fire Safety Inspection",
+      technician: "Bureau of Fire Protection Inspector",
+      duration: "3 hours",
+      findings:
+        "All fire safety systems operational and compliant. Emergency exits unobstructed and properly lit. Fire extinguishers serviced and within certification dates. Sprinkler system pressure tested and operational. 100% compliance rating achieved, certificate renewed for 12 months.",
+    },
+    {
+      date: "2025-01-28",
+      type: "Elevator Maintenance",
+      technician: "Elevator Solutions Corp.",
+      duration: "5 hours",
+      findings:
+        "All 4 elevator units inspected and serviced. Safety mechanisms tested and calibrated. Door sensors cleaned and adjusted. Emergency communication systems verified. All units operating within safety parameters with smooth operation.",
+    },
+  ],
+  "Natural Features": [
+    {
+      date: "2025-04-30",
+      type: "Ecological Assessment",
+      technician: "Dr. Elena Rodriguez (Marine Biologist)",
+      duration: "12 hours (2 days)",
+      findings:
+        "Comprehensive biodiversity assessment completed. Biodiversity index maintained at high level (7.8/10). Native species population stable with 3 new bird species documented. Water quality excellent in all test locations. Minimal invasive species encroachment successfully managed.",
+    },
+    {
+      date: "2025-01-15",
+      type: "Trail System Maintenance",
+      technician: "Parks & Recreation Crew (6 members)",
+      duration: "16 hours (4 days)",
+      findings:
+        "Complete trail system renovation completed. All visitor trails restored to excellent condition. New erosion control measures installed on steep sections. Trail signage updated with QR codes for digital guides. Waste removal and landscape restoration completed.",
+    },
+    {
+      date: "2024-11-20",
+      type: "Wildlife Monitoring System",
+      technician: "Conservation Technology Team",
+      duration: "6 hours",
+      findings:
+        "Wildlife camera network maintenance completed. 6 cameras cleaned, batteries replaced, and data downloaded. 847 wildlife images captured in past quarter showing healthy animal populations. Motion sensors calibrated for optimal detection range.",
+    },
+  ],
+  "Environmental Risks": [
+    {
+      date: "2025-05-20",
+      type: "Emergency Risk Assessment",
+      technician: "Risk Management Office (5 specialists)",
+      duration: "4 hours",
+      findings:
+        "Comprehensive risk evaluation triggered by weather alert. Water levels monitored across 12 sensor points. Early warning systems activated and tested - all communications functional. Community alert messages sent to 15,000 registered residents. Emergency response teams positioned strategically.",
+    },
+    {
+      date: "2025-03-08",
+      type: "Sensor Network Calibration",
+      technician: "Environmental Monitoring Team",
+      duration: "4 hours",
+      findings:
+        "All 12 environmental monitoring sensors calibrated and tested for accuracy. Data transmission verified at 99.8% reliability. Backup power systems tested and operational. Sensor housing cleaned and weatherproofing inspected. Real-time data feed to NDRRMC confirmed operational.",
+    },
+    {
+      date: "2024-12-15",
+      type: "Community Preparedness Drill",
+      technician: "Emergency Response Coordinator",
+      duration: "3 hours",
+      findings:
+        "Quarterly community emergency drill conducted with 65% resident participation. Evacuation routes tested and timing recorded. Emergency communication systems performed well. Community feedback collected for system improvements. Overall preparedness level rated at 83%.",
+    },
+  ],
+  "Points of Interest": [
+    {
+      date: "2025-05-12",
+      type: "Heritage Site Maintenance",
+      technician: "Cultural Heritage Preservation Team",
+      duration: "6 hours",
+      findings:
+        "Comprehensive facility cleaning and preservation work completed. Artifact preservation protocols verified and updated. Visitor area deep cleaning with heritage-safe products. All historical displays inspected and maintained. No disruption to normal operating hours during maintenance.",
+    },
+    {
+      date: "2025-02-14",
+      type: "Security System Upgrade",
+      technician: "SecureGuard Systems (Licensed Contractor)",
+      duration: "3 hours",
+      findings:
+        "CCTV system upgraded with 4K resolution cameras. Access control systems tested and user permissions updated. Motion detection calibrated for optimal coverage. Integration with city emergency response systems verified. Security coverage improved by 25% with new system.",
+    },
+    {
+      date: "2024-12-10",
+      type: "Visitor Experience Enhancement",
+      technician: "Digital Experience Team",
+      duration: "4 hours",
+      findings:
+        "Audio guide systems updated with new content in 12 languages. WiFi network expanded and speed increased to 50 Mbps. Interactive displays calibrated and software updated. QR code systems for contactless information access implemented successfully.",
+    },
+  ],
+  "Internet Access": [
+    {
+      date: "2025-05-18",
+      type: "Network Infrastructure Maintenance",
+      technician: "DICT Technical Team (3 engineers)",
+      duration: "3 hours",
+      findings:
+        "Comprehensive network equipment servicing completed. Router and switch firmware updated to latest security versions. Fiber optic connections cleaned and signal strength tested. Bandwidth optimization algorithms updated resulting in 15% performance improvement. 99.8% uptime maintained throughout service period.",
+    },
+    {
+      date: "2025-04-02",
+      type: "Equipment Upgrade and Security Patch",
+      technician: "Network Solutions Inc. (Certified Partner)",
+      duration: "6 hours",
+      findings:
+        "Core router hardware upgraded to support increased user demand. Critical security patches applied to all network equipment. User authentication system enhanced with improved encryption. Network monitoring tools updated for better performance tracking. Zero service interruption during upgrade process.",
+    },
+    {
+      date: "2025-02-15",
+      type: "Coverage Area Expansion",
+      technician: "Installation Team (5 technicians)",
+      duration: "8 hours",
+      findings:
+        "WiFi coverage area extended by 20% through strategic antenna placement. Signal strength improved in previously weak areas. New access points configured with load balancing. Coverage now reaches 92% of target area with excellent signal quality. User capacity increased to 400 concurrent connections.",
+    },
+  ],
+  "Traffic Data": [
+    {
+      date: "2025-05-18",
+      type: "Traffic Sensor Maintenance",
+      technician: "Traffic Management Systems Team",
+      duration: "2 hours",
+      findings:
+        "All 6 traffic counting sensors cleaned and recalibrated for accuracy. Inductive loop sensors tested for proper vehicle detection. Camera systems cleaned and focus adjusted for optimal image quality. Data accuracy verified at 99.8% through calibration vehicles. Real-time data feed confirmed operational.",
+    },
+    {
+      date: "2025-04-03",
+      type: "Quarterly Data Analysis",
+      technician: "Traffic Engineering Office (Data Analyst)",
+      duration: "4 hours",
+      findings:
+        "Q1 2025 traffic data comprehensive analysis completed. 15% increase in traffic volume during peak hours identified. Traffic flow patterns analyzed for optimization opportunities. Recommendations developed for signal timing adjustments. Historical data trends show consistent growth requiring infrastructure planning.",
+    },
+    {
+      date: "2025-01-20",
+      type: "System Integration Update",
+      technician: "Smart City Technology Team",
+      duration: "3 hours",
+      findings:
+        "Traffic monitoring system integrated with city-wide smart traffic management platform. Real-time data sharing with traffic signal controllers implemented. Mobile app integration completed for public traffic information. AI analytics module installed for predictive traffic modeling and incident detection.",
+    },
+  ],
+};
 
 // Export the data for use in other files
 window.siteTechnicalDetails = siteTechnicalDetails;
