@@ -120,9 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Mark as read logic here
                 this.classList.add('read');
                 this.classList.remove('unread');
-                
-                // Here you would typically update your data or make an API call
-                console.log(`Notification ${notification.id} marked as read`);
             });
             
             notificationBody.appendChild(notificationItem);
@@ -136,12 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     notificationMenu.appendChild(notificationBody);
-
-    // Add footer
-    // const footer = document.createElement('div');
-    // footer.className = 'notification-footer';
-    // footer.innerHTML = '<a href="#all-notifications">View all notifications</a>';
-    // notificationMenu.appendChild(footer);
 
     // Append menu to bell parent
     bellIcon.appendChild(notificationMenu);
@@ -178,9 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (badge) {
             badge.remove();
         }
-        
-        // Here you would typically update your data or make an API call
-        console.log('All notifications marked as read');
     });
 
     // Close menu when clicking outside

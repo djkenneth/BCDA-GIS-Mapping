@@ -13,8 +13,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
     const cameraCode = urlParams.get('camera');
     
     if (cameraCode) {
-        console.log("Auto-selecting camera with device code:", cameraCode);
-        
         // Set a small delay to make sure the devices list has loaded
         setTimeout(function() {
             // Find the device with the specified code
@@ -33,7 +31,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
             if (targetDevice) {
                 const streamBtn = targetDevice.querySelector('.stream-btn');
                 if (streamBtn && !streamBtn.disabled) {
-                    console.log("Starting stream for camera:", cameraCode);
                     streamBtn.click();
                 } else {
                     console.warn("Stream button for camera not available or disabled:", cameraCode);
@@ -57,22 +54,9 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-    <!-- Leaflet CSS -->
-        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?t=<?php echo time(); ?>"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin="" /> -->
-
-    <!-- Leaflet JavaScript -->
-    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?t=<?php echo time(); ?>"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""></script> -->
 
     <!-- MapLibre GL JS CSS -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.css?t=<?php echo time(); ?>" /> -->
      <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css" />
-
-    <!-- MapLibre GL JS JavaScript -->
-    <!-- <script src="https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.js?t=<?php echo time(); ?>"></script> -->
 
     <!-- ECharts JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js?t=<?php echo time(); ?>"></script>
@@ -281,7 +265,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
         updateStreamGrid();
         
         // Log for debugging
-        console.log('Stream started:', streamData);
     } catch (error) {
         // Remove the temporary container if there was an error
         const tempElement = document.getElementById(`temp-container-${tempStreamId}`);
@@ -560,7 +543,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
     }
     
     // Log for debugging
-    console.log(`Initializing HLS player for stream ${streamId} with URL: ${streamUrl}`);
     
     if (Hls.isSupported()) {
         const hls = new Hls({
@@ -575,12 +557,10 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
         
         // Handle manifest parsed event - stream is ready to play
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            console.log(`Stream ${streamId} manifest parsed, attempting to play`);
             
             // Use the play promise to know when playback actually starts
             videoElement.play()
                 .then(() => {
-                    console.log(`Stream ${streamId} playback started successfully`);
                     // Hide loader only when playback actually starts
                     if (loaderElement) {
                         loaderElement.style.display = 'none';
@@ -621,7 +601,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
         
                 // In your FRAG_BUFFERED event handler
         hls.on(Hls.Events.FRAG_BUFFERED, function() {
-            console.log(`Stream ${streamId} fragment buffered, video should be visible now`);
             // Mark playback as started
             playbackStarted = true;
             // Hide loader when buffer is ready

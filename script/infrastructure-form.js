@@ -1,8 +1,6 @@
 // script/infrastructure-form.js - Updated for DOF Asset Management System
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Infrastructure form script loaded");
-
     // Form elements
     const fullScreenForm = document.getElementById('full-screen-infrastructure-form');
     const closeBtn = document.getElementById('infrastructure-form-close');
@@ -110,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize form
     function initForm() {
-        console.log("Initializing infrastructure form");
-        
         // Set default date values
         setDefaultDates();
         
@@ -246,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle asset photos upload
     function handleAssetPhotosUpload(event) {
         const files = event.target.files;
-        console.log("Asset photos selected:", files.length);
         
         if (files.length === 0) return;
         
@@ -299,7 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle documents upload
     function handleDocumentsUpload(event) {
         const files = event.target.files;
-        console.log("Documents selected:", files.length);
         
         if (files.length === 0) return;
         
@@ -405,7 +399,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update asset subcategories based on selected type
     function updateAssetSubCategories(event) {
         const selectedType = event.target.value;
-        console.log("Asset type selected:", selectedType);
         
         // This could be used to show additional subcategory fields
         // For now, we'll just show suggestions in the specifications field
@@ -419,7 +412,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update available locations based on department
     function updateAvailableLocations(event) {
         const selectedDepartment = event.target.value;
-        console.log("Department selected:", selectedDepartment);
         
         if (!locationSelect || !selectedDepartment) return;
         
@@ -442,7 +434,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle status changes
     function handleStatusChange(event) {
         const selectedStatus = event.target.value;
-        console.log("Status changed to:", selectedStatus);
         
         // Show relevant fields based on status
         const maintenanceDateField = document.getElementById('nextMaintenanceDate');
@@ -559,8 +550,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Reset form to initial state
     function resetForm() {
-        console.log("Resetting infrastructure form");
-        
         // Reset all input fields
         const form = fullScreenForm;
         if (form) {
@@ -599,7 +588,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle main form submission
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Infrastructure form submission started");
         
         // Validate form
         if (!validateForm()) {
@@ -609,9 +597,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Collect form data
         const formData = collectFormData();
-        
-        // Log form data for debugging
-        console.log("Form data collected:", formData);
         
         // TODO: Send to server
         // For now, just show success message
@@ -808,8 +793,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show notification
     function showNotification(message, type = 'info') {
-        console.log(`${type.toUpperCase()}: ${message}`);
-        
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
@@ -883,9 +866,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (previewItems && previewItems[index]) {
             previewItems[index].remove();
         }
-        
-        // Update file input (this is tricky with file inputs, might need server-side handling)
-        console.log(`Photo ${index} marked for removal`);
     }
 
     // Remove document preview
@@ -894,8 +874,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (previewItems && previewItems[index]) {
             previewItems[index].remove();
         }
-        
-        console.log(`Document ${index} marked for removal`);
     }
 
     // Load draft if exists
@@ -904,8 +882,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const draftData = localStorage.getItem('infrastructure_form_draft');
             if (draftData) {
                 const data = JSON.parse(draftData);
-                console.log("Loading draft data:", data);
-                
+
                 // Populate form fields with draft data
                 // This would require more complex implementation
                 showNotification('Draft data available. Would you like to load it?', 'info');
@@ -940,6 +917,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle window resize
     window.addEventListener('resize', adjustFormPosition);
-    
-    console.log("Infrastructure form script initialization complete");
 });

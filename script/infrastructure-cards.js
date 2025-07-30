@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("markers data not loaded");
       // Create a retry mechanism
       setTimeout(() => {
-        console.log("Retrying infrastructure cards initialization...");
         initializeInfrastructureCards();
       }, 1000);
       return;
@@ -766,9 +765,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // If no categories selected but checkboxes exist, select buildings by default
       if (selectedCategories.length === 0 && buildingsCheckbox) {
-        console.log("No categories selected, defaulting to buildings");
         selectedCategories.push("public_buildings");
-        // Don't automatically check the checkbox here to avoid infinite loop
       }
 
       return {
@@ -790,7 +787,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (window.mapMarkers) {
         initializeInfrastructureCards();
       } else {
-        console.log("Waiting for Cebu City markers data...");
         // Set up a global event listener for marker data
         window.addEventListener(
           "cebuCityMarkersLoaded",
@@ -821,7 +817,6 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         calculateInfrastructureStats();
         renderInfrastructureCards();
-        console.log("Infrastructure cards updated");
       } catch (error) {
         console.error("Error updating infrastructure cards:", error);
       }

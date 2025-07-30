@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle button click to show monitoring interface
     if (systemMonitoringBtn) {
         systemMonitoringBtn.addEventListener('click', function() {
-            console.log("Monitoring button clicked");
             showMonitoringInterface();
         });
     } else {
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // In a real app, you would show/hide content based on the selected tab
             const tabCategory = this.getAttribute('data-tab');
-            console.log('Selected tab:', tabCategory);
         });
     });
     
@@ -45,13 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryFilters.forEach(f => f.classList.remove('active'));
             this.classList.add('active');
             
-            console.log('Selected category filter:', this.textContent);
         });
     });
     
     // Show monitoring interface and initialize
     function showMonitoringInterface() {
-        console.log("Showing monitoring interface");
         
         // Make sure the interface exists before trying to show it
         if (!monitoringInterface) {
@@ -98,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Monitor sidebar content panel open/close
-        const sidebarContent = document.querySelector('.sidebar-content');
+        const sidebarContent = document.querySelector('.sidebar-content-v2');
         if (sidebarContent) {
             const sidebarContentObserver = new MutationObserver(function(mutations) {
                 positionMonitoringInterface();
@@ -115,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function positionMonitoringInterface() {
     const header = document.querySelector('header');
     const sidebar = document.querySelector('.sidebar-v2');
-    const sidebarContent = document.querySelector('.sidebar-content.visible');
+    const sidebarContent = document.querySelector('.sidebar-content-v2.visible');
     
     // Default positioning
     let topPosition = '284px'; // Current default
@@ -212,7 +208,6 @@ function positionMonitoringInterface() {
             // Update average response time
         }
         
-        console.log('Metrics updated');
     }
     
     // Initialize metrics updates when monitoring interface is shown
@@ -221,14 +216,12 @@ function positionMonitoringInterface() {
     function startMetricsUpdates() {
         // Update metrics every 30 seconds
         metricsInterval = setInterval(updateMetrics, 30000);
-        console.log('Started metrics updates');
     }
     
     function stopMetricsUpdates() {
         if (metricsInterval) {
             clearInterval(metricsInterval);
             metricsInterval = null;
-            console.log('Stopped metrics updates');
         }
     }
     

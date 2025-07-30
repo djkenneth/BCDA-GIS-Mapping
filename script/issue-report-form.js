@@ -223,12 +223,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show the issue report form
     function showIssueForm() {
-        console.log("Showing issue form...");
         if (fullScreenForm) {
             adjustFormPosition();
             fullScreenForm.style.display = 'block';
             resetForm();
-            console.log("Form displayed");
         } else {
             console.error("Form element not found!");
         }
@@ -236,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hide the issue report form
     function hideIssueForm() {
-        console.log("Hiding issue form...");
         if (fullScreenForm) {
             fullScreenForm.style.display = 'none';
             resetForm();
@@ -379,8 +376,6 @@ function adjustFormPosition() {
 
     // Handle form submission
     function handleSubmit() {
-        console.log("Submit button clicked - processing form submission");
-        
         // Collect form data
         const formData = new FormData();
         
@@ -418,7 +413,6 @@ function adjustFormPosition() {
         }
         
         // Print form data to console for debugging
-        console.log("Form data collected:");
         for (let [key, value] of formData.entries()) {
             console.log(`${key}: ${value}`);
         }
@@ -445,15 +439,12 @@ function adjustFormPosition() {
 
     // Show success message
     function showSuccessMessage() {
-        console.log("Showing success message");
-        
         // Create success message
         const message = document.createElement('div');
         message.textContent = 'Issue reported successfully!';
         message.className = 'success-message';
         
         document.body.appendChild(message);
-        console.log("Success message added to DOM");
         
         // Hide message after 3 seconds
         setTimeout(function() {
@@ -471,7 +462,6 @@ function adjustFormPosition() {
         // Hide form after 1 second
         setTimeout(function() {
             hideIssueForm();
-            console.log("Form hidden after submission");
         }, 1000);
     }
 
@@ -511,7 +501,6 @@ function adjustFormPosition() {
     if (issueReportButton) {
         issueReportButton.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log("Issue Report button clicked");
             showIssueForm();
         });
     } else {
@@ -524,10 +513,8 @@ function adjustFormPosition() {
             if (text.includes('report') && text.includes('issue') || 
                 text.includes('report issue') ||
                 text.includes('issue report')) {
-                console.log("Found potential issue report button by text:", btn);
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log("Issue Report button clicked (found by text)");
                     showIssueForm();
                 });
             }
@@ -638,7 +625,6 @@ function adjustFormPosition() {
 
     // For testing/development - auto initialize if URL parameter is present
     if (fullScreenForm && window.location.search.includes('showissueform=true')) {
-        console.log("Auto-showing form for testing");
         showIssueForm();
     }
 

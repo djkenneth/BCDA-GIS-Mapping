@@ -407,8 +407,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function openComponent(selector) {
-        console.log('Opening component:', selector);
-        
         if (currentOpenComponent && currentOpenComponent !== selector) {
             closeComponent(currentOpenComponent);
         }
@@ -450,8 +448,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function closeComponent(selector) {
-        console.log('Closing component:', selector);
-        
         const component = document.querySelector(selector);
         if (!component) return;
         

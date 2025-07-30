@@ -326,6 +326,75 @@ const sitesMaintenanceLogs = {
   ],
 };
 
+  const publicAlerts = [
+    { text: 'Construction: Escario Street', class: 'alert-construction' },
+    { text: 'Road closure: IT Park area', class: 'alert-closure' },
+    { text: 'Weather alert: Heavy rainfall', class: 'alert-weather' },
+    { text: 'Traffic advisory: Osmeña Blvd', class: 'alert-traffic' },
+    { text: 'Accident: Fuente Circle', class: 'alert-accident' },
+    { text: 'Event traffic: SM City Cebu', class: 'alert-event' },
+    { text: 'Flooding alert: Mabolo area', class: 'alert-flooding' }
+  ];
+  
+  const cityEvents = [
+    { 
+      icon: 'S', 
+      text: 'Sinulog Festival 2025', 
+      date: 'Jan 19',
+      class: 'event-festival',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'M', 
+      text: 'Public Meeting: Budget 2025', 
+      date: 'Feb 15',
+      class: 'event-meeting',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'C', 
+      text: 'Community Cleanup Drive', 
+      date: 'Feb 20',
+      class: 'event-community',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'H', 
+      text: 'Health & Wellness Fair', 
+      date: 'Mar 1-3',
+      class: 'event-health',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'F', 
+      text: 'Food Festival at Plaza', 
+      date: 'Mar 14-16',
+      class: 'event-ongoing',
+      status: 'ongoing'
+    },
+    { 
+      icon: 'T', 
+      text: 'Tech Summit 2025', 
+      date: 'Apr 5',
+      class: 'event-tech',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'E', 
+      text: 'Environmental Fair', 
+      date: 'Apr 22',
+      class: 'event-community',
+      status: 'upcoming'
+    },
+    { 
+      icon: 'B', 
+      text: 'Barangay Sports Festival', 
+      date: 'May 1-3',
+      class: 'event-ongoing',
+      status: 'ongoing'
+    }
+  ];
+
 const mapMarkers = [
   {
     category: "Infrastructure",

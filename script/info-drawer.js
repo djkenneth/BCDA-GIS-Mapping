@@ -239,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error('Could not get stream URL');
       }
       
-      console.log("Initializing integrated HLS player with URL:", streamUrl);
       await initializeHlsPlayer(videoElement, streamUrl, loaderElement);
     } catch (error) {
       console.error('Error initializing integrated live feed:', error);
@@ -270,7 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (viewBtn) {
       viewBtn.addEventListener('click', function() {
         const cameraCode = this.getAttribute('data-camera-code') || site.id || '1000013';
-        console.log("Redirecting to streams page with camera:", cameraCode);
         
         const currentPath = window.location.pathname;
         let streamsPath;
@@ -283,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
           streamsPath = `streams/?camera=${cameraCode}`;
         }
         
-        console.log("Navigating to:", streamsPath);
         window.location.href = streamsPath;
       });
     }
@@ -298,10 +295,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const isValid = await isStreamUrlValid(storedStreamInfo.url);
         
         if (isValid) {
-          console.log("Using stored stream URL - it's still valid");
           return storedStreamInfo.url;
         } else {
-          console.log("Stored stream URL is invalid, creating new");
           localStorage.removeItem(`stream_${cameraCode}`);
         }
       }
@@ -329,7 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     try {
       localStorage.setItem(`stream_${cameraCode}`, JSON.stringify(streamInfo));
-      console.log("Stream URL stored in local storage for camera:", cameraCode);
       return streamInfo;
     } catch (error) {
       console.error('Error storing stream URL in local storage:', error);
@@ -344,7 +338,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!streamInfoStr) return null;
       
       const streamInfo = JSON.parse(streamInfoStr);
-      console.log("Retrieved stream URL from local storage for camera:", cameraCode);
       return streamInfo;
     } catch (error) {
       console.error('Error retrieving stream URL from local storage:', error);
@@ -359,7 +352,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     return new Promise((resolve) => {
       const timeoutId = setTimeout(() => {
-        console.log('Stream validation timed out - considering invalid');
         resolve(false);
       }, 5000);
       
@@ -367,7 +359,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => {
           clearTimeout(timeoutId);
           const isValid = response.ok;
-          console.log(`Stream URL validation result: ${isValid ? 'valid' : 'invalid'}`);
           resolve(isValid);
         })
         .catch(error => {
@@ -381,8 +372,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start camera stream
   async function startCameraStream(cameraCode) {
     try {
-      console.log("Creating new stream for camera", cameraCode);
-      
       const channelId = `${cameraCode}$1$0$0`;
       
       const response = await fetch(`https://philtower.itbsstudio.com/api/video/start-stream?channel_id=${channelId}`, {
@@ -397,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       
       const streamData = await response.json();
-      console.log('New stream created:', streamData);
       return streamData;
     } catch (error) {
       console.error('Error starting camera stream:', error);
@@ -3100,8 +3088,6 @@ doc.setTextColor(headerColor[0], headerColor[1], headerColor[2]);
       const filename = `${site.id}_${sanitizedSiteName}_${sanitizedCategory}_Executive_Report_${now.toISOString().split('T')[0]}.pdf`;
       
       doc.save(filename);
-      
-      console.log(`Enhanced PDF report generated successfully: ${filename}`);
       
     } catch (error) {
       console.error("Error generating enhanced PDF report:", error);

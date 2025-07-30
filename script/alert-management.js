@@ -79,8 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Show alerts interface and load data
     function showAlertsInterface() {
-        console.log('Showing alerts interface');
-        
         // Make sure the interface is visible regardless of previous state
         if (alertsInterface) {
             // Position the interface based on header state
@@ -206,13 +204,10 @@ function positionAlertsInterface() {
     }
 }
     // Load alert data
-    function loadAlertData() {
-        console.log('Loading alert data');
-        
+    function loadAlertData() { 
         // This would typically be fetched from an API
         // For this example, we'll use mock data
         const alerts = getMockAlertData();
-        console.log('Mock data loaded, count:', alerts.length);
         
         // Store all alerts
         filteredAlerts = [...alerts];
@@ -240,19 +235,10 @@ function positionAlertsInterface() {
         if (criticalAlertsEl) criticalAlertsEl.textContent = criticalCount;
         if (warningAlertsEl) warningAlertsEl.textContent = warningCount;
         if (activeAlertsEl) activeAlertsEl.textContent = activeCount;
-        
-        console.log('Summary updated:', {
-            total: alerts.length,
-            critical: criticalCount,
-            warning: warningCount,
-            active: activeCount
-        });
     }
     
     // Display alerts in the table
     function displayAlerts(alerts) {
-        console.log('Displaying alerts, count:', alerts.length);
-        
         // Reset pagination
         currentPage = 1;
         totalPages = Math.ceil(alerts.length / itemsPerPage);
@@ -274,8 +260,6 @@ function positionAlertsInterface() {
             return;
         }
         
-        console.log('Displaying page', currentPage, 'of', totalPages);
-        
         // Clear the table body
         alertsTableBody.innerHTML = '';
         
@@ -285,7 +269,6 @@ function positionAlertsInterface() {
         
         // Get alerts for current page
         const currentAlerts = filteredAlerts.slice(startIndex, endIndex);
-        console.log('Current page alerts:', currentAlerts.length);
         
         // If no alerts match the filters
         if (currentAlerts.length === 0) {
@@ -367,8 +350,6 @@ function positionAlertsInterface() {
                 
                 alertsTableBody.appendChild(row);
             });
-            
-            console.log('Added', currentAlerts.length, 'rows to the table');
         }
         
         // Update pagination controls
@@ -389,15 +370,11 @@ function positionAlertsInterface() {
             pageStart.textContent = start;
             pageEnd.textContent = end;
             totalRecords.textContent = filteredAlerts.length;
-            
-            console.log('Pagination updated:', { start, end, total: filteredAlerts.length });
         }
     }
     
     // Filter alerts based on tab
-    function filterAlertsByTab(tabCategory) {
-        console.log('Filtering by tab:', tabCategory);
-        
+    function filterAlertsByTab(tabCategory) {    
         // Get all alerts
         const alerts = getMockAlertData();
         
@@ -412,30 +389,18 @@ function positionAlertsInterface() {
             return alert.category.toLowerCase().includes(tabCategory);
         });
         
-        console.log('Filtered alerts count:', filtered.length);
-        
         // Display filtered alerts
         displayAlerts(filtered);
     }
     
     // Apply filters from the form
     function applyFilters() {
-        console.log('Applying filters');
-        
         // Get filter values
         const priorityFilter = document.getElementById('priority-filter').value;
         const categoryFilter = document.getElementById('category-filter').value;
         const locationFilter = document.getElementById('location-filter')?.value || 'all';
         const dateFromFilter = document.getElementById('date-from').value;
         const dateToFilter = document.getElementById('date-to').value;
-        
-        console.log('Filter values:', {
-            priority: priorityFilter,
-            category: categoryFilter,
-            location: locationFilter,
-            dateFrom: dateFromFilter,
-            dateTo: dateToFilter
-        });
         
         // Get all alerts
         const alerts = getMockAlertData();
@@ -462,8 +427,6 @@ function positionAlertsInterface() {
             
             return true;
         });
-        
-        console.log('Filtered alerts count after applying filters:', filtered.length);
         
         // Display filtered alerts
         displayAlerts(filtered);

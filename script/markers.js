@@ -124,8 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showLiveFeedCardForSite(site) {
-    console.log("Showing live feed card for site:", site.name);
-
     if (typeof window.showLiveFeedCard !== "function") {
       console.error("showLiveFeedCard function not available");
       return;
@@ -138,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       updateLiveFeedCardForSite(site);
 
-      console.log("Live feed card shown successfully");
     } catch (error) {
       console.error("Error showing live feed card:", error);
     }
@@ -193,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newViewBtn.addEventListener("click", function () {
           const cameraCode = this.getAttribute("data-camera-code") || "1000013";
-          console.log("Redirecting to streams page with camera:", cameraCode);
 
           const currentPath = window.location.pathname;
           let streamsPath;
@@ -207,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
             streamsPath = `streams/?camera=${cameraCode}`;
           }
 
-          console.log("Navigating to:", streamsPath);
           window.location.href = streamsPath;
         });
       }
@@ -377,8 +372,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const { site, category } = findSiteById(siteId);
 
     if (site && category) {
-      console.log("Zooming to site:", site.name);
-
       const location = site.location;
       const lngLat = [location[1], location[0]];
 

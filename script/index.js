@@ -18,7 +18,6 @@ function storeStreamUrl(cameraCode, streamData) {
   
   try {
     localStorage.setItem(`stream_${cameraCode}`, JSON.stringify(streamInfo));
-    console.log("Stream URL stored in local storage for camera:", cameraCode);
     return streamInfo;
   } catch (error) {
     console.error('Error storing stream URL in local storage:', error);
@@ -32,7 +31,6 @@ function getStoredStreamUrl(cameraCode) {
     if (!streamInfoStr) return null;
     
     const streamInfo = JSON.parse(streamInfoStr);
-    console.log("Retrieved stream URL from local storage for camera:", cameraCode);
     return streamInfo;
   } catch (error) {
     console.error('Error retrieving stream URL from local storage:', error);
@@ -46,7 +44,6 @@ async function isStreamUrlValid(streamUrl) {
   
   return new Promise((resolve) => {
     const timeoutId = setTimeout(() => {
-      console.log('Stream validation timed out - considering invalid');
       resolve(false);
     }, 5000);
     
@@ -54,7 +51,6 @@ async function isStreamUrlValid(streamUrl) {
       .then(response => {
         clearTimeout(timeoutId);
         const isValid = response.ok;
-        console.log(`Stream URL validation result: ${isValid ? 'valid' : 'invalid'}`);
         resolve(isValid);
       })
       .catch(error => {
@@ -72,10 +68,8 @@ async function getStreamUrl(cameraCode = DEMO_CAMERA_CODE) {
     const isValid = await isStreamUrlValid(storedStreamInfo.url);
     
     if (isValid) {
-      console.log("Using stored stream URL - it's still valid");
       return storedStreamInfo.url;
     } else {
-      console.log("Stored stream URL is invalid, creating new");
       localStorage.removeItem(`stream_${cameraCode}`);
     }
   }
@@ -95,7 +89,6 @@ async function getStreamUrl(cameraCode = DEMO_CAMERA_CODE) {
 
 async function startCameraStream(cameraCode = DEMO_CAMERA_CODE) {
   try {
-    console.log("Creating new stream for camera", cameraCode);
     
     const channelId = `${cameraCode}$1$0$0`;
     
@@ -111,7 +104,6 @@ async function startCameraStream(cameraCode = DEMO_CAMERA_CODE) {
     }
     
     const streamData = await response.json();
-    console.log('New stream created:', streamData);
     return streamData;
   } catch (error) {
     console.error('Error starting camera stream:', error);
@@ -408,17 +400,8 @@ function zoomToSiteByName(siteName) {
   const { site, category } = searchForSiteByName(siteName);
   
   if (site && category && window.map) {
-    console.log('Zooming to site by name:', site.name);
     
     const location = site.location;
-    // const bounds = L.latLngBounds([location]);
-    // const paddedBounds = bounds.pad(0.2);
-    
-    // window.map.flyToBounds(paddedBounds, {
-    //   padding: [50, 50],
-    //   maxZoom: 16,
-    //   duration: 2
-    // });
 
     window.map.flyTo({
       center: [location[1], location[0]], // MapLibre uses [lng, lat]
@@ -445,8 +428,6 @@ function zoomToSiteByName(siteName) {
 }
 
 function executeSearchAction(searchTerm) {
-  console.log('Executing search action for:', searchTerm);
-  
   const searchMappings = {
     'hospital': ['hospital', 'medical', 'health'],
     'government': ['government', 'city hall', 'office'],
