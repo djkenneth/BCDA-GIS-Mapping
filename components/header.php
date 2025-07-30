@@ -103,4 +103,4 @@
         </button>
     </div>
 </header>
-<script src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../script/header.js' : 'script/header.js'; ?>"></script>
+<script src="script/header.js"></script>

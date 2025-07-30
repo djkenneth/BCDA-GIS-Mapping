@@ -289,8 +289,9 @@ function adjustStreamsLayout() {
       });
       
       // Ensure the view stays the same
-      window.map.setView(currentCenter, currentZoom, {
-        animate: false
+      window.map.flyTo({
+        center: currentCenter,
+        zoom: currentZoom,
       });
     }, 100);
   }
@@ -1188,12 +1189,11 @@ function initializeSearchBar() {
       const location = targetSite.location;
       
       if (window.map) {
-        const bounds = L.latLngBounds([location]);
-        const paddedBounds = bounds.pad(0.2);
-        window.map.flyToBounds(paddedBounds, {
-          padding: [50, 50],
-          maxZoom: 16,
-          duration: 2
+        
+        window.map.flyTo({
+            center: [location[0], location[1]],
+            zoom: 16,
+            speed: 2
         });
         
         setTimeout(() => {
