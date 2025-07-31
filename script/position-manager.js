@@ -55,18 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   const header = document.querySelector('header');
+  
   if (header) {
     const headerObserver = new MutationObserver(updateLiveFeedCardPosition);
     headerObserver.observe(header, { attributes: true });
   }
   
   const sidebar = document.querySelector('.sidebar-v2');
+
   if (sidebar) {
     const sidebarObserver = new MutationObserver(updateLiveFeedCardPosition);
     sidebarObserver.observe(sidebar, { attributes: true });
   }
   
   const sidebarContents = document.querySelectorAll('.sidebar-content');
+
   sidebarContents.forEach(content => {
     const contentObserver = new MutationObserver(updateLiveFeedCardPosition);
     contentObserver.observe(content, { attributes: true });
@@ -75,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', updateLiveFeedCardPosition);
   
   const originalShowLiveFeedCard = window.showLiveFeedCard;
+
   if (originalShowLiveFeedCard) {
     window.showLiveFeedCard = function(position) {
       originalShowLiveFeedCard(position);

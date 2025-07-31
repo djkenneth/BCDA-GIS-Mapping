@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const switcherIcon = document.getElementById("app-switcher-icon");
-  const switcherImg = switcherIcon ? switcherIcon.querySelector('img') : null;
+  const switcherImg = switcherIcon ? switcherIcon.querySelector("img") : null;
 
   if (!switcherIcon) {
     console.error("App switcher icon not found!");
@@ -59,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
   switcherIcon.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    
+
     // Toggle app switcher menu
     if (e.target === switcherIcon || e.target === switcherImg) {
       menu.classList.toggle("show");
-      
+
       // Hide the notification menu if it's open
-      const notificationMenu = document.querySelector('.notification-menu');
+      const notificationMenu = document.querySelector(".notification-menu");
       if (notificationMenu) {
         notificationMenu.classList.remove("show");
       }

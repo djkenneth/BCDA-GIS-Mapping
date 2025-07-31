@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  
   function positionAlertsInterface() {
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar-v2");
@@ -204,6 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alertsInterface.style.bottom = bottomPosition;
     }
   }
+  
   // Load alert data
   function loadAlertData() {
     // This would typically be fetched from an API

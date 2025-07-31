@@ -1,41 +1,5 @@
 // Notification menu functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Sample notifications data
-    const notifications = [
-        {
-            id: 1,
-            type: 'alert',
-            title: 'Maintenance Alert',
-            message: 'Scheduled maintenance for Cebu Infrastractrue 1 tomorrow at 10:00 AM.',
-            time: '1 hour ago',
-            read: false
-        },
-        {
-            id: 2,
-            type: 'warning',
-            title: 'Power Fluctuation',
-            message: 'Minor power fluctuations detected at Cebu Infrastractrue 2.',
-            time: '3 hours ago',
-            read: false
-        },
-        {
-            id: 3,
-            type: 'info',
-            title: 'System Update',
-            message: 'Infrastractrue monitoring system updated to version 2.4.1',
-            time: '1 day ago',
-            read: true
-        },
-        {
-            id: 4,
-            type: 'success',
-            title: 'Maintenance Complete',
-            message: 'Routine maintenance for Cebu Infrastractrue 3 completed successfully.',
-            time: '2 days ago',
-            read: true
-        }
-    ];
-
     // Get the bell icon element
     const bellIcon = document.getElementById('bell-icon');
     if (!bellIcon) {

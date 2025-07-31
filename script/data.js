@@ -1,25 +1,62 @@
-  const apps = [
-    {
-      name: "Guardian (UAC)",
-      icon: "guardian-icon.png",
-      url: "https://dict.itbsstudio.com/GUARDIAN/login",
-    },
-    {
-      name: "NERVE",
-      icon: "nerve-icon.png",
-      url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
-    },
-    {
-      name: "LEDGER",
-      icon: "ledger-icon.png",
-      url: "https://dict.itbsstudio.com/LEDGER/login",
-    },
-    {
-      name: "Pulse",
-      icon: "pulse-icon.png",
-      url: "https://dict.itbsstudio.com/PULSE/login",
-    },
-  ];
+const apps = [
+  {
+    name: "Guardian (UAC)",
+    icon: "guardian-icon.png",
+    url: "https://dict.itbsstudio.com/GUARDIAN/login",
+  },
+  {
+    name: "NERVE",
+    icon: "nerve-icon.png",
+    url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
+  },
+  {
+    name: "LEDGER",
+    icon: "ledger-icon.png",
+    url: "https://dict.itbsstudio.com/LEDGER/login",
+  },
+  {
+    name: "Pulse",
+    icon: "pulse-icon.png",
+    url: "https://dict.itbsstudio.com/PULSE/login",
+  },
+];
+
+const notifications = [
+  {
+    id: 1,
+    type: "alert",
+    title: "Maintenance Alert",
+    message:
+      "Scheduled maintenance for Cebu Infrastractrue 1 tomorrow at 10:00 AM.",
+    time: "1 hour ago",
+    read: false,
+  },
+  {
+    id: 2,
+    type: "warning",
+    title: "Power Fluctuation",
+    message: "Minor power fluctuations detected at Cebu Infrastractrue 2.",
+    time: "3 hours ago",
+    read: false,
+  },
+  {
+    id: 3,
+    type: "info",
+    title: "System Update",
+    message: "Infrastractrue monitoring system updated to version 2.4.1",
+    time: "1 day ago",
+    read: true,
+  },
+  {
+    id: 4,
+    type: "success",
+    title: "Maintenance Complete",
+    message:
+      "Routine maintenance for Cebu Infrastractrue 3 completed successfully.",
+    time: "2 days ago",
+    read: true,
+  },
+];
 
 const siteTechnicalDetails = {
   // Infrastructure
@@ -1452,7 +1489,4 @@ const categoryMaintenance = {
 };
 
 // Export the data for use in other files
-window.siteTechnicalDetails = siteTechnicalDetails;
-window.siteNetworkInfo = siteNetworkInfo;
-window.sitesMaintenanceLogs = sitesMaintenanceLogs;
 window.mapMarkers = mapMarkers;

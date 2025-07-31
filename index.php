@@ -111,6 +111,7 @@
         });
     </script>
 
+    <script src="script/utils.js"></script>
     <script src="script/data.js?t=<?php echo time(); ?>"></script>
     <script src="script/marker-manager.js?t=<?php echo time(); ?>"></script>
     <script src="script/markers.js?t=<?php echo time(); ?>"></script>
