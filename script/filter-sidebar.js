@@ -48,25 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Updated allCheckboxes mapping aligned with mapMarkers structure
   const allCheckboxes = {
-    all: document.querySelectorAll('.content-section-item input[type="checkbox"]:not(#all)'),
-    "all-infrastructure": [
-      "dof-regional-office"
-    ],
+    all: document.querySelectorAll(
+      '.content-section-item input[type="checkbox"]:not(#all)'
+    ),
+    "all-infrastructure": ["dof-regional-office"],
     "all-buildings": [
-      "hospitals", "schools", "government-offices", "police-stations", "fire-departments"
+      "hospitals",
+      "schools",
+      "government-offices",
+      "police-stations",
+      "fire-departments",
     ],
-    "all-natural": [
-      "topography", "waterways", "parks"
-    ],
-    "all-risks": [
-      "flood-zones", "pollution-zones", "other-hazards"
-    ],
-    "all-poi": [
-      "businesses", "recreational", "community-centers"
-    ],
+    "all-natural": ["topography", "waterways", "parks"],
+    "all-risks": ["flood-zones", "pollution-zones", "other-hazards"],
+    "all-poi": ["businesses", "recreational", "community-centers"],
     "all-demographics": [
-      "population-density", "income-distribution", "education-levels"
-    ]
+      "population-density",
+      "income-distribution",
+      "education-levels",
+    ],
   };
 
   // Add event listeners for all master checkboxes
@@ -75,31 +75,44 @@ document.addEventListener("DOMContentLoaded", function () {
     if (masterCheckbox) {
       masterCheckbox.addEventListener("change", function () {
         const isChecked = this.checked;
-        
+
         // Handle the "All" checkbox specially
-        if (id === 'all') {
+        if (id === "all") {
           // Check/uncheck all category master checkboxes
-          const categoryMasterIds = ['all-infrastructure', 'all-buildings', 'all-natural', 'all-risks', 'all-poi', 'all-demographics'];
-          categoryMasterIds.forEach(categoryId => {
+          const categoryMasterIds = [
+            "all-infrastructure",
+            "all-buildings",
+            "all-natural",
+            "all-risks",
+            "all-poi",
+            "all-demographics",
+          ];
+          categoryMasterIds.forEach((categoryId) => {
             const categoryCheckbox = document.getElementById(categoryId);
             if (categoryCheckbox) {
               categoryCheckbox.checked = isChecked;
               // Trigger change event for each category
-              categoryCheckbox.dispatchEvent(new Event('change'));
+              categoryCheckbox.dispatchEvent(new Event("change"));
             }
           });
         } else {
           // Handle individual category checkboxes
           const checkboxIds = allCheckboxes[id];
           if (Array.isArray(checkboxIds)) {
-            checkboxIds.forEach(checkboxId => {
+            checkboxIds.forEach((checkboxId) => {
               const checkbox = document.getElementById(checkboxId);
               if (checkbox) {
                 checkbox.checked = isChecked;
-                
+
                 // Update map markers based on the checkbox state
-                if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
-                  window.filterMarkers.updateMarkersForCheckbox(checkboxId, isChecked);
+                if (
+                  window.filterMarkers &&
+                  window.filterMarkers.updateMarkersForCheckbox
+                ) {
+                  window.filterMarkers.updateMarkersForCheckbox(
+                    checkboxId,
+                    isChecked
+                  );
                 }
               }
             });
@@ -107,18 +120,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Update map markers for master checkbox
-        if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
+        if (
+          window.filterMarkers &&
+          window.filterMarkers.updateMarkersForCheckbox
+        ) {
           window.filterMarkers.updateMarkersForCheckbox(id, isChecked);
         }
 
         // Update the select all button text
-        const selectAllButton = this.closest('.content-section')?.querySelector('.select-all');
+        const selectAllButton =
+          this.closest(".content-section")?.querySelector(".select-all");
         if (selectAllButton) {
-          selectAllButton.textContent = isChecked ? "Deselect All" : "Select All";
+          selectAllButton.textContent = isChecked
+            ? "Deselect All"
+            : "Select All";
         }
 
         // Update master checkbox states
-        if (window.filterMarkers && window.filterMarkers.updateMasterCheckboxes) {
+        if (
+          window.filterMarkers &&
+          window.filterMarkers.updateMasterCheckboxes
+        ) {
           window.filterMarkers.updateMasterCheckboxes();
         }
 
@@ -131,12 +153,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Individual checkbox listeners - aligned with mapMarkers subcategories
-  const individualCheckboxes = document.querySelectorAll('.content-section-item input[type="checkbox"]:not([id^="all"])');
-  
+  const individualCheckboxes = document.querySelectorAll(
+    '.content-section-item input[type="checkbox"]:not([id^="all"])'
+  );
+
   individualCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
       // Update map markers based on the checkbox state
-      if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
+      if (
+        window.filterMarkers &&
+        window.filterMarkers.updateMarkersForCheckbox
+      ) {
         window.filterMarkers.updateMarkersForCheckbox(this.id, this.checked);
       }
 
@@ -153,28 +180,46 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Observer for dynamically added checkboxes
-  const sidebarContent = document.querySelector('.sidebar-content');
+  const sidebarContent = document.querySelector(".sidebar-content");
   if (sidebarContent) {
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList') {
-          mutation.addedNodes.forEach(function(node) {
-            if (node.nodeType === 1) { // Element node
-              const checkboxes = node.querySelectorAll('input[type="checkbox"]');
-              checkboxes.forEach(checkbox => {
-                if (!checkbox.hasAttribute('data-listener-added')) {
-                  checkbox.addEventListener('change', function() {
-                    if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
-                      window.filterMarkers.updateMarkersForCheckbox(this.id, this.checked);
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.type === "childList") {
+          mutation.addedNodes.forEach(function (node) {
+            if (node.nodeType === 1) {
+              // Element node
+              const checkboxes = node.querySelectorAll(
+                'input[type="checkbox"]'
+              );
+              checkboxes.forEach((checkbox) => {
+                if (!checkbox.hasAttribute("data-listener-added")) {
+                  checkbox.addEventListener("change", function () {
+                    if (
+                      window.filterMarkers &&
+                      window.filterMarkers.updateMarkersForCheckbox
+                    ) {
+                      window.filterMarkers.updateMarkersForCheckbox(
+                        this.id,
+                        this.checked
+                      );
                     }
-                    if (window.filterMarkers && window.filterMarkers.updateMasterCheckboxes) {
+                    if (
+                      window.filterMarkers &&
+                      window.filterMarkers.updateMasterCheckboxes
+                    ) {
                       window.filterMarkers.updateMasterCheckboxes();
                     }
-                    if (window.infrastructureCards && window.infrastructureCards.update) {
-                      setTimeout(() => window.infrastructureCards.update(), 100);
+                    if (
+                      window.infrastructureCards &&
+                      window.infrastructureCards.update
+                    ) {
+                      setTimeout(
+                        () => window.infrastructureCards.update(),
+                        100
+                      );
                     }
                   });
-                  checkbox.setAttribute('data-listener-added', 'true');
+                  checkbox.setAttribute("data-listener-added", "true");
                 }
               });
             }
@@ -185,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(sidebarContent, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
   }
 
@@ -194,15 +239,23 @@ document.addEventListener("DOMContentLoaded", function () {
   selectAllButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const section = this.closest(".content-section");
-      const checkboxes = section.querySelectorAll('input[type="checkbox"]:not([id^="all-"])');
+      const checkboxes = section.querySelectorAll(
+        'input[type="checkbox"]:not([id^="all-"])'
+      );
       const isSelectAll = this.textContent === "Select All";
 
       checkboxes.forEach((checkbox) => {
         checkbox.checked = isSelectAll;
-        
+
         // Trigger change event for each checkbox
-        if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
-          window.filterMarkers.updateMarkersForCheckbox(checkbox.id, isSelectAll);
+        if (
+          window.filterMarkers &&
+          window.filterMarkers.updateMarkersForCheckbox
+        ) {
+          window.filterMarkers.updateMarkersForCheckbox(
+            checkbox.id,
+            isSelectAll
+          );
         }
       });
 
@@ -223,40 +276,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Category master checkbox mappings aligned with mapMarkers
   const categoryMasterCheckboxes = {
-    "all": "all_categories",
-    "all-infrastructure": "infrastructure", 
+    all: "all_categories",
+    "all-infrastructure": "infrastructure",
     "all-buildings": "public_buildings",
     "all-natural": "natural_features",
     "all-risks": "environmental_risks",
     "all-poi": "points_of_interest",
-    "all-demographics": "population_data"
+    "all-demographics": "population_data",
   };
 
   // Export for global access
   window.filterSidebar = {
     allCheckboxes: allCheckboxes,
-    categoryMasterCheckboxes: categoryMasterCheckboxes
+    categoryMasterCheckboxes: categoryMasterCheckboxes,
   };
 });
 
 function setupHeaderObserver() {
-  const header = document.querySelector('header');
-  const sidebar = document.querySelector('.sidebar-v2');
-  const sidebarContents = document.querySelectorAll('.sidebar-content');
+  const header = document.querySelector("header");
+  const sidebar = document.querySelector(".sidebar-v2");
+  const sidebarContents = document.querySelectorAll(".sidebar-content");
 
   if (!header || !sidebar) return;
 
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        const isCollapsed = header.classList.contains('collapsed');
-        
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        const isCollapsed = header.classList.contains("collapsed");
+
         if (isCollapsed) {
-          sidebar.style.top = '0';
-          sidebar.style.height = '100vh';
-          sidebarContents.forEach(content => {
-            content.style.top = '0';
-            content.style.height = '100vh';
+          sidebar.style.top = "0";
+          sidebar.style.height = "100vh";
+          sidebarContents.forEach((content) => {
+            content.style.top = "0";
+            content.style.height = "100vh";
           });
         } else {
           const screenWidth = window.innerWidth;
@@ -267,7 +323,7 @@ function setupHeaderObserver() {
             topValue = "253px";
             heightValue = "calc(100vh - 253px)";
           } else if (screenWidth <= 1024) {
-            // Tablet breakpoint  
+            // Tablet breakpoint
             topValue = "244px";
             heightValue = "calc(100vh - 244px)";
           } else {
@@ -278,7 +334,7 @@ function setupHeaderObserver() {
 
           sidebar.style.top = topValue;
           sidebar.style.height = heightValue;
-          sidebarContents.forEach(content => {
+          sidebarContents.forEach((content) => {
             content.style.top = topValue;
             content.style.height = heightValue;
           });
@@ -289,6 +345,6 @@ function setupHeaderObserver() {
 
   observer.observe(header, {
     attributes: true,
-    attributeFilter: ['class']
+    attributeFilter: ["class"],
   });
 }

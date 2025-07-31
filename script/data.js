@@ -462,6 +462,24 @@ const mapMarkers = [
     category: "Infrastructure",
     id: "infrastructure",
     center: [10.3157, 123.8854],
+    checkboxConfig: {
+      masterCheckboxId: "all-infrastructure",
+      subcategoryCheckboxIds: [
+        "highways",
+        "main-roads",
+        "streets",
+        "public-transport",
+        "traffic-data",
+        "water-supply",
+        "electricity",
+        "sewage",
+        "communication",
+        "waste-management",
+        "nbp",
+        "wifi-hotspots",
+        "internet-centers",
+      ],
+    },
     displayInfo: {
       title: "Infrastructure",
       type: "Roads, Utilities, Comm",
@@ -866,6 +884,16 @@ const mapMarkers = [
     category: "Public Buildings",
     id: "public_buildings",
     center: [10.3157, 123.8854],
+    checkboxConfig: {
+      masterCheckboxId: "all-buildings",
+      subcategoryCheckboxIds: [
+        "hospitals",
+        "schools",
+        "government-offices",
+        "police-stations",
+        "fire-departments",
+      ],
+    },
     displayInfo: {
       title: "Public Buildings",
       type: "Hospitals, Schools, Govt",
@@ -1008,6 +1036,10 @@ const mapMarkers = [
     category: "Natural Features",
     id: "natural_features",
     center: [10.3157, 123.8854],
+    checkboxConfig: {
+      masterCheckboxId: "all-natural",
+      subcategoryCheckboxIds: ["topography", "waterways", "parks"],
+    },
     displayInfo: {
       title: "Natural Features",
       type: "Parks, Waterways",
@@ -1099,6 +1131,14 @@ const mapMarkers = [
     category: "Environmental Risks",
     id: "environmental_risks",
     center: [10.3157, 123.8854],
+    checkboxConfig: {
+      masterCheckboxId: "all-risks",
+      subcategoryCheckboxIds: [
+        "flood-zones",
+        "pollution-zones",
+        "other-hazards",
+      ],
+    },
     displayInfo: {
       title: "Environmental Risks",
       type: "Flood, Pollution Zones",
@@ -1180,6 +1220,14 @@ const mapMarkers = [
     category: "Points of Interest",
     id: "points_of_interest",
     center: [10.3157, 123.8854],
+    checkboxConfig: {
+      masterCheckboxId: "all-poi",
+      subcategoryCheckboxIds: [
+        "businesses",
+        "recreational",
+        "community-centers",
+      ],
+    },
     displayInfo: {
       title: "Points of Interest",
       type: "Business, Recreation",

@@ -126,52 +126,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getSubcategoryKey(subcategory) {
-    const subcategoryMap = {
-      // Highways: "highways",
-      // Roads: "main-roads",
-      // Streets: "streets",
-      "Public transportation networks": "public-transport",
-      // "Real-time traffic conditions": "traffic-data",
-      // "Congestion patterns": "traffic-data",
-      "Public transport routes": "public-transport",
-      // "Water Supply": "water-supply",
-      // "Electricity Supply": "electricity",
-      // "Sewage System": "sewage",
-      // "Communication lines": "communication",
-      // "Waste Management Facilities": "waste-management",
-      // "Core Infrastructure": "nbp",
-      // "Data Centers": "nbp",
-      // Operations: "nbp",
-      // "Public Access Points": "nbp",
-      // "Specialized Networks": "nbp",
-      // "Wireless Infrastructure": "nbp",
-      // "Service Centers": "nbp",
-      // "WiFi Hotspots": "wifi-hotspots",
-      // "Public Internet Centers": "internet-centers",
-      // Hospitals: "hospitals",
-      // Schools: "schools",
-      "Government Offices": "government-offices",
-      // "Police Stations": "police-stations",
-      // "Fire Departments": "fire-departments",
-      Topography: "topography",
-      // Waterways: "waterways",
-      Parks: "parks",
-      "Green Spaces": "parks",
-      // "Areas vulnerable to flooding": "flood-zones",
-      // "Pollution zones": "pollution-zones",
-      // "Other environmental hazards": "other-hazards",
-      // Businesses: "businesses",
-      "Recreational areas": "recreational",
-      "Community centers": "community-centers",
-      // "Population density": "population-density",
-      // "Income distribution": "income-distribution",
-      // "Education levels": "education-levels",
-    };
+    // Search through all categories in mapMarkers for matching subcategory
+    for (const category of window.mapMarkers || []) {
+      if (category.subcategoryConfigs) {
+        // Check if subcategory matches any display title
+        for (const [key, config] of Object.entries(
+          category.subcategoryConfigs
+        )) {
+          if (config.title === subcategory) {
+            return key;
+          }
+        }
+      }
+    }
 
-    return (
-      subcategoryMap[subcategory] ||
-      subcategory.toLowerCase().replace(/\s+/g, "-")
-    );
+    // Fallback: convert subcategory to kebab-case
+    return subcategory.toLowerCase().replace(/\s+/g, "-");
   }
 
   function renderInfrastructureCards() {
@@ -491,29 +461,12 @@ document.addEventListener("DOMContentLoaded", function () {
       ...config,
     }));
   }
-
+  
   function getSelectedCategories() {
     try {
       const allCheckbox = document.getElementById("all");
-      const infrastructureCheckbox =
-        document.getElementById("all-infrastructure");
-      const buildingsCheckbox = document.getElementById("all-buildings");
-      const naturalCheckbox = document.getElementById("all-natural");
-      const risksCheckbox = document.getElementById("all-risks");
-      const poiCheckbox = document.getElementById("all-poi");
-      const demographicsCheckbox = document.getElementById("all-demographics");
 
-      // If all checkboxes aren't loaded yet, default to show all
-      if (!allCheckbox && !buildingsCheckbox) {
-        console.warn(
-          "Checkboxes not found in DOM, defaulting to show all categories"
-        );
-        return {
-          showAll: true,
-          categories: [],
-        };
-      }
-
+      // If all checkbox is checked, show all categories
       if (allCheckbox && allCheckbox.checked) {
         return {
           showAll: true,
@@ -523,37 +476,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const selectedCategories = [];
 
-      if (infrastructureCheckbox && infrastructureCheckbox.checked) {
-        selectedCategories.push("infrastructure");
-      }
-      if (buildingsCheckbox && buildingsCheckbox.checked) {
-        selectedCategories.push("public_buildings");
-      }
-      if (naturalCheckbox && naturalCheckbox.checked) {
-        selectedCategories.push("natural_features");
-      }
-      if (risksCheckbox && risksCheckbox.checked) {
-        selectedCategories.push("environmental_risks");
-      }
-      if (poiCheckbox && poiCheckbox.checked) {
-        selectedCategories.push("points_of_interest");
-      }
-      if (demographicsCheckbox && demographicsCheckbox.checked) {
-        selectedCategories.push("population_data");
-      }
+      // Get categoryMasterCheckboxes from filter-sidebar.js
+      const categoryMasterCheckboxes =
+        window.filterSidebar?.categoryMasterCheckboxes || {};
 
-      // If no categories selected but checkboxes exist, select buildings by default
-      if (selectedCategories.length === 0 && buildingsCheckbox) {
-        selectedCategories.push("public_buildings");
+      // Check each master category checkbox dynamically
+      Object.entries(categoryMasterCheckboxes).forEach(
+        ([checkboxId, categoryId]) => {
+          if (checkboxId !== "all") {
+            // Skip the "all" checkbox
+            const checkbox = document.getElementById(checkboxId);
+            if (checkbox && checkbox.checked) {
+              selectedCategories.push(categoryId);
+            }
+          }
+        }
+      );
+
+      // If no categories selected, try to find any checked category from mapMarkers
+      if (selectedCategories.length === 0 && window.mapMarkers) {
+        // Fallback: check if any individual subcategory is selected
+        const hasAnyChecked = window.mapMarkers.some((category) => {
+          if (category.subcategoryConfigs) {
+            return Object.keys(category.subcategoryConfigs).some(
+              (subcategoryKey) => {
+                const checkbox = document.getElementById(subcategoryKey);
+                return checkbox && checkbox.checked;
+              }
+            );
+          }
+          return false;
+        });
+
+        if (hasAnyChecked) {
+          // Return all categories if any subcategory is selected but no master category is selected
+          return {
+            showAll: false,
+            categories: window.mapMarkers.map((cat) => cat.id),
+          };
+        }
       }
 
       return {
-        showAll: false,
+        showAll: selectedCategories.length === 0,
         categories: selectedCategories,
       };
     } catch (error) {
       console.error("Error getting selected categories:", error);
-      // Default fallback
       return {
         showAll: true,
         categories: [],
