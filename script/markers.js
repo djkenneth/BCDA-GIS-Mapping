@@ -85,11 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createMarkers() {
-    if (!window.mapMarkers || !mapSourcesAdded) return;
+    if (!mapMarkers || !mapSourcesAdded) return;
 
     console.log("Creating markers with MapLibre GL JS");
 
-    window.mapMarkers.forEach((category) => {
+    mapMarkers.forEach((category) => {
       const categoryId = category.id;
       markersByCategory[categoryId] = {};
 
@@ -360,8 +360,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let foundSite = null;
     let foundCategory = null;
 
-    if (window.mapMarkers) {
-      window.mapMarkers.forEach((category) => {
+    if (mapMarkers) {
+      mapMarkers.forEach((category) => {
         const site = category.sites.find((s) => s.id === siteId);
         if (site) {
           foundSite = site;

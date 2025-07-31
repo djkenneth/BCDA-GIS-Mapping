@@ -3,9 +3,6 @@ const STREAM_STORAGE_KEY = "stream_" + DEMO_CAMERA_CODE;
 const EXCLUDED_DEVICE_CODES = ["1000012", "1000014", "1000006"];
 const API_BASE_URL = "https://philtower.itbsstudio.com";
 
-// Remove separate live feed card functionality since it's now integrated
-// Keep only the functions needed for the integrated version
-
 function storeStreamUrl(cameraCode, streamData) {
   const streamInfo = {
     url: streamData.html_stream_url,
@@ -395,7 +392,7 @@ function initializeCardCloseButtons() {
 }
 
 function searchForSiteByName(siteName) {
-  if (!window.mapMarkers) {
+  if (!mapMarkers) {
     console.error("Cebu city markers not loaded");
     return null;
   }
@@ -403,7 +400,7 @@ function searchForSiteByName(siteName) {
   let foundSite = null;
   let foundCategory = null;
 
-  window.mapMarkers.forEach((category) => {
+  mapMarkers.forEach((category) => {
     const site = category.sites.find(
       (s) =>
         s.name.toLowerCase().includes(siteName.toLowerCase()) ||

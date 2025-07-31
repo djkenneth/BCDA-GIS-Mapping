@@ -1487,6 +1487,3 @@ const categoryMaintenance = {
     },
   ],
 };
-
-// Export the data for use in other files
-window.mapMarkers = mapMarkers;

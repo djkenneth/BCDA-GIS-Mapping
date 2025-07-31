@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeInfrastructureCards() {
     // Check if markers data is available
-    if (!window.mapMarkers) {
+    if (!mapMarkers) {
       console.error("markers data not loaded");
       // Create a retry mechanism
       setTimeout(() => {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         subcategories: {},
       };
 
-      window.mapMarkers.forEach((category) => {
+      mapMarkers.forEach((category) => {
         const categoryStats = {
           total: 0,
           active: 0,
@@ -784,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function safeInitialization() {
     try {
-      if (window.mapMarkers) {
+      if (mapMarkers) {
         initializeInfrastructureCards();
       } else {
         // Set up a global event listener for marker data
@@ -795,11 +795,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Also set a timeout as a fallback
         setTimeout(() => {
-          if (!window.mapMarkers) {
+          if (!mapMarkers) {
             console.warn(
               "Timeout waiting for markers data, attempting initialization anyway"
             );
-            window.mapMarkers = window.mapMarkers || [];
+            mapMarkers = mapMarkers || [];
             initializeInfrastructureCards();
           }
         }, 2000); // 5 second timeout
@@ -1130,9 +1130,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getSitesByStatusAndCategory(status, categoryId) {
     let sites = [];
 
-    if (!window.mapMarkers) return sites;
+    if (!mapMarkers) return sites;
 
-    const category = window.mapMarkers.find(
+    const category = mapMarkers.find(
       (cat) => cat.id === categoryId
     );
     if (!category) return sites;
@@ -1152,9 +1152,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getSitesBySubcategory(subcategoryKey) {
     let sites = [];
 
-    if (!window.mapMarkers) return sites;
+    if (!mapMarkers) return sites;
 
-    window.mapMarkers.forEach((category) => {
+    mapMarkers.forEach((category) => {
       category.sites.forEach((site) => {
         if (getSubcategoryKey(site.subcategory) === subcategoryKey) {
           sites.push({
@@ -1525,9 +1525,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getAllSitesByStatus(status) {
     let sites = [];
 
-    if (!window.mapMarkers) return sites;
+    if (!mapMarkers) return sites;
 
-    window.mapMarkers.forEach((category) => {
+    mapMarkers.forEach((category) => {
       category.sites.forEach((site) => {
         if (status === "total" || site.status === status) {
           sites.push({
@@ -1542,18 +1542,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getSitesByCategory(categoryId) {
-    if (!window.mapMarkers) return [];
+    if (!mapMarkers) return [];
 
-    const category = window.mapMarkers.find(
+    const category = mapMarkers.find(
       (cat) => cat.id === categoryId
     );
     return category ? category.sites : [];
   }
 
   function findSiteById(siteId) {
-    if (!window.mapMarkers) return null;
+    if (!mapMarkers) return null;
 
-    for (const category of window.mapMarkers) {
+    for (const category of mapMarkers) {
       for (const site of category.sites) {
         if (site.id === siteId) {
           return site;
@@ -1564,9 +1564,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function findCategoryBySiteId(siteId) {
-    if (!window.mapMarkers) return null;
+    if (!mapMarkers) return null;
 
-    for (const category of window.mapMarkers) {
+    for (const category of mapMarkers) {
       if (category.sites.some((site) => site.id === siteId)) {
         return category;
       }
@@ -1690,7 +1690,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (window.mapMarkers) {
+  if (mapMarkers) {
     initializeInfrastructureCards();
   } else {
     window.addEventListener("load", initializeInfrastructureCards);

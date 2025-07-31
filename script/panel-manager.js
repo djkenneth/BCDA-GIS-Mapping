@@ -401,22 +401,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function findSiteById(siteId) {
-    if (!window.mapMarkers) return null;
+    if (!mapMarkers) return null;
 
-    for (const category of window.mapMarkers) {
+    for (const category of mapMarkers) {
       for (const site of category.sites) {
         if (site.id === siteId) {
           return site;
         }
       }
     }
+
     return null;
   }
 
   function findCategoryBySite(site) {
-    if (!site || !window.mapMarkers) return null;
+    if (!site || !mapMarkers) return null;
 
-    for (const category of window.mapMarkers) {
+    for (const category of mapMarkers) {
       if (category.sites.includes(site)) {
         return category;
       }

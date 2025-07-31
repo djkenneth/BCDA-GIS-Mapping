@@ -1181,7 +1181,7 @@ function initializeSearchBar() {
   function executeSearchWithSite(siteId, categoryName) {
     hideSearchBar();
 
-    if (!window.mapMarkers || !map) {
+    if (!mapMarkers || !map) {
       console.error("Map or markers not available");
       return;
     }
@@ -1189,7 +1189,7 @@ function initializeSearchBar() {
     let targetSite = null;
     let targetCategory = null;
 
-    window.mapMarkers.forEach((category) => {
+    mapMarkers.forEach((category) => {
       if (category.category === categoryName) {
         targetCategory = category;
         const site = category.sites.find((s) => s.id === siteId);
