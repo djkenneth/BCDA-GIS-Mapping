@@ -1,3 +1,5 @@
+// script/marker-manager.js
+
 const markerIcons = {
   // Default markers (used when no specific type is available)
   default: {

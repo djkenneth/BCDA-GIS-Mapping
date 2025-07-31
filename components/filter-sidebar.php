@@ -92,37 +92,42 @@
 
     <div class="content-section">
         <div class="content-section-title">
-            <span>Roads & Transportation</span>
+            <span>Infrastructure</span>
             <button class="select-all">Select All</button>
         </div>
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="highways">
             <label for="highways">Highways</label>
-        </div>
+        </div> -->
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="main-roads">
             <label for="main-roads">Main Roads</label>
-        </div>
+        </div> -->
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="streets">
             <label for="streets">Streets</label>
-        </div>
+        </div> -->
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="public-transport">
             <label for="public-transport">Public Transportation</label>
-        </div>
+        </div> -->
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="traffic-data">
             <label for="traffic-data">Traffic Data</label>
+        </div> -->
+
+        <div class="content-section-item">
+            <input type="checkbox" id="dof-regional-office">
+            <label for="dof-regional-office">DOF Regional Office</label>
         </div>
     </div>
 
-    <div class="content-section">
+    <!-- <div class="content-section">
         <div class="content-section-title">
             <span>Utilities</span>
             <button class="select-all">Select All</button>
@@ -152,9 +157,9 @@
             <input type="checkbox" id="waste-management">
             <label for="waste-management">Waste Management</label>
         </div>
-    </div>
+    </div> -->
 
-    <div class="content-section">
+    <!-- <div class="content-section">
         <div class="content-section-title">
             <span>Digital Infrastructure</span>
             <button class="select-all">Select All</button>
@@ -174,7 +179,7 @@
             <input type="checkbox" id="internet-centers">
             <label for="internet-centers">Public Internet Centers</label>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- Public Buildings Panel -->
@@ -190,15 +195,15 @@
             <button class="select-all">Select All</button>
         </div>
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="hospitals">
             <label for="hospitals">Hospitals</label>
-        </div>
+        </div> -->
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="schools">
             <label for="schools">Schools</label>
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <input type="checkbox" id="government-offices">
@@ -235,10 +240,10 @@
             <label for="topography">Topography</label>
         </div>
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="waterways">
             <label for="waterways">Waterways</label>
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <input type="checkbox" id="parks">
@@ -260,10 +265,10 @@
             <button class="select-all">Select All</button>
         </div>
 
-        <div class="content-section-item">
+        <!-- <div class="content-section-item">
             <input type="checkbox" id="flood-zones">
             <label for="flood-zones">Flood Prone Areas</label>
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <input type="checkbox" id="pollution-zones">

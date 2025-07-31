@@ -1,3 +1,5 @@
+// script/info-drawer.js
+
 document.addEventListener("DOMContentLoaded", function () {
   function showInfoDrawer(site, category) {
     const drawer = document.getElementById("info-drawer");

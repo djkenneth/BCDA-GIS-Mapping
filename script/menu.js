@@ -1,3 +1,5 @@
+// script/menu.js
+
 document.addEventListener("DOMContentLoaded", function () {
   const switcherIcon = document.getElementById("app-switcher-icon");
   const switcherImg = switcherIcon ? switcherIcon.querySelector("img") : null;

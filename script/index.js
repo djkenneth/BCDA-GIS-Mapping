@@ -1,3 +1,5 @@
+// script/index.js
+
 const DEMO_CAMERA_CODE = "1000013";
 const STREAM_STORAGE_KEY = "stream_" + DEMO_CAMERA_CODE;
 const EXCLUDED_DEVICE_CODES = ["1000012", "1000014", "1000006"];
@@ -447,11 +449,11 @@ function zoomToSiteByName(siteName) {
 
 function executeSearchAction(searchTerm) {
   const searchMappings = {
-    hospital: ["hospital", "medical", "health"],
+    // hospital: ["hospital", "medical", "health"],
     government: ["government", "city hall", "office"],
-    school: ["school", "university", "education"],
-    transport: ["transport", "jeepney", "bus", "route"],
-    wifi: ["wifi", "internet", "connectivity"],
+    // school: ["school", "university", "education"],
+    // transport: ["transport", "jeepney", "bus", "route"],
+    // wifi: ["wifi", "internet", "connectivity"],
     park: ["park", "plaza", "recreation"],
   };
 
@@ -460,17 +462,22 @@ function executeSearchAction(searchTerm) {
   Object.entries(searchMappings).forEach(([category, keywords]) => {
     keywords.forEach((keyword) => {
       if (searchTerm.toLowerCase().includes(keyword)) {
-        if (category === "hospital") {
-          activateMarkerCategory("hospitals");
-        } else if (category === "government") {
+        // if (category === "hospital") {
+        //   activateMarkerCategory("hospitals");
+        // } else 
+        if (category === "government") {
           activateMarkerCategory("govt");
-        } else if (category === "school") {
-          activateMarkerCategory("schools");
-        } else if (category === "transport") {
+        } else 
+        // if (category === "school") {
+        //   activateMarkerCategory("schools");
+        // } else 
+        if (category === "transport") {
           activateMarkerCategory("public-transport");
-        } else if (category === "wifi") {
-          activateMarkerCategory("wifi-hotspots");
-        } else if (category === "park") {
+        } else 
+        // if (category === "wifi") {
+        //   activateMarkerCategory("wifi-hotspots");
+        // } else 
+        if (category === "park") {
           activateMarkerCategory("parks");
         }
         categoryFound = true;

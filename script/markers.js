@@ -1,3 +1,5 @@
+// script/markers.js
+
 document.addEventListener("DOMContentLoaded", function () {
   let map;
   let markersLayer = [];

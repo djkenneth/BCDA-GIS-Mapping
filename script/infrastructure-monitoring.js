@@ -1,3 +1,5 @@
+// script/infrastructure-monitoring.js
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get monitoring interface elements
   const systemMonitoringBtn = document.getElementById("systemMonitoringBtn");

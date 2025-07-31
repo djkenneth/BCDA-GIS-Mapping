@@ -1,3 +1,5 @@
+// script/infrastructure-cards.js
+
 document.addEventListener("DOMContentLoaded", function () {
   let infrastructureData = {};
   let isInitialLoad = true;
@@ -125,45 +127,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getSubcategoryKey(subcategory) {
     const subcategoryMap = {
-      Highways: "highways",
-      Roads: "main-roads",
-      Streets: "streets",
+      // Highways: "highways",
+      // Roads: "main-roads",
+      // Streets: "streets",
       "Public transportation networks": "public-transport",
-      "Real-time traffic conditions": "traffic-data",
-      "Congestion patterns": "traffic-data",
+      // "Real-time traffic conditions": "traffic-data",
+      // "Congestion patterns": "traffic-data",
       "Public transport routes": "public-transport",
-      "Water Supply": "water-supply",
-      "Electricity Supply": "electricity",
-      "Sewage System": "sewage",
-      "Communication lines": "communication",
-      "Waste Management Facilities": "waste-management",
-      "Core Infrastructure": "nbp",
-      "Data Centers": "nbp",
-      Operations: "nbp",
-      "Public Access Points": "nbp",
-      "Specialized Networks": "nbp",
-      "Wireless Infrastructure": "nbp",
-      "Service Centers": "nbp",
-      "WiFi Hotspots": "wifi-hotspots",
-      "Public Internet Centers": "internet-centers",
-      Hospitals: "hospitals",
-      Schools: "schools",
+      // "Water Supply": "water-supply",
+      // "Electricity Supply": "electricity",
+      // "Sewage System": "sewage",
+      // "Communication lines": "communication",
+      // "Waste Management Facilities": "waste-management",
+      // "Core Infrastructure": "nbp",
+      // "Data Centers": "nbp",
+      // Operations: "nbp",
+      // "Public Access Points": "nbp",
+      // "Specialized Networks": "nbp",
+      // "Wireless Infrastructure": "nbp",
+      // "Service Centers": "nbp",
+      // "WiFi Hotspots": "wifi-hotspots",
+      // "Public Internet Centers": "internet-centers",
+      // Hospitals: "hospitals",
+      // Schools: "schools",
       "Government Offices": "government-offices",
-      "Police Stations": "police-stations",
-      "Fire Departments": "fire-departments",
+      // "Police Stations": "police-stations",
+      // "Fire Departments": "fire-departments",
       Topography: "topography",
-      Waterways: "waterways",
+      // Waterways: "waterways",
       Parks: "parks",
       "Green Spaces": "parks",
-      "Areas vulnerable to flooding": "flood-zones",
-      "Pollution zones": "pollution-zones",
-      "Other environmental hazards": "other-hazards",
-      Businesses: "businesses",
+      // "Areas vulnerable to flooding": "flood-zones",
+      // "Pollution zones": "pollution-zones",
+      // "Other environmental hazards": "other-hazards",
+      // Businesses: "businesses",
       "Recreational areas": "recreational",
       "Community centers": "community-centers",
-      "Population density": "population-density",
-      "Income distribution": "income-distribution",
-      "Education levels": "education-levels",
+      // "Population density": "population-density",
+      // "Income distribution": "income-distribution",
+      // "Education levels": "education-levels",
     };
 
     return (
@@ -443,274 +445,51 @@ document.addEventListener("DOMContentLoaded", function () {
     return cards;
   }
 
-  function getSubcategoryConfigs(categoryId) {
-    const configs = {
-      infrastructure: [
-        {
-          key: "highways",
-          title: "Highways",
-          type: "Major Highway Routes",
-          className: "wifi-bg",
-          icon: "fas fa-highway",
-        },
-        {
-          key: "main-roads",
-          title: "Main Roads",
-          type: "Primary Road Network",
-          className: "nbp-bg",
-          icon: "fas fa-road",
-        },
-        {
-          key: "streets",
-          title: "Streets",
-          type: "Local Street Network",
-          className: "data-center-bg",
-          icon: "fas fa-route",
-        },
-        {
-          key: "public-transport",
-          title: "Public Transportation",
-          type: "Transit Systems",
-          className: "info-bg",
-          icon: "fas fa-bus",
-        },
-        {
-          key: "traffic-data",
-          title: "Traffic Data",
-          type: "Traffic Monitoring",
-          className: "ai-bg",
-          icon: "fas fa-traffic-light",
-        },
-        {
-          key: "water-supply",
-          title: "Water Supply",
-          type: "Water Infrastructure",
-          className: "active-bg",
-          icon: "fas fa-tint",
-        },
-        {
-          key: "electricity",
-          title: "Electricity",
-          type: "Power Infrastructure",
-          className: "warning-bg",
-          icon: "fas fa-bolt",
-        },
-        {
-          key: "sewage",
-          title: "Sewage",
-          type: "Sewage Systems",
-          className: "maintenance-bg",
-          icon: "fas fa-water",
-        },
-        {
-          key: "communication",
-          title: "Communication Lines",
-          type: "Telecom Infrastructure",
-          className: "wifi-bg",
-          icon: "fas fa-broadcast-tower",
-        },
-        {
-          key: "waste-management",
-          title: "Waste Management",
-          type: "Waste Facilities",
-          className: "critical-bg",
-          icon: "fas fa-trash",
-        },
-        {
-          key: "nbp",
-          title: "National Broadband Project",
-          type: "Government Broadband",
-          className: "nbp-bg",
-          icon: "fas fa-network-wired",
-        },
-      ],
+  function findCategoryById(categoryId) {
+    return mapMarkers?.find((cat) => cat.id === categoryId) || null;
+  }
 
-      public_buildings: [
-        {
-          key: "hospitals",
-          title: "Hospitals",
-          type: "Healthcare Facilities",
-          className: "critical-bg",
-          icon: "fas fa-hospital",
-        },
-        {
-          key: "schools",
-          title: "Schools",
-          type: "Educational Facilities",
-          className: "info-bg",
-          icon: "fas fa-school",
-        },
-        {
-          key: "government-offices",
-          title: "Government Offices",
-          type: "Gov Buildings",
-          className: "nbp-bg",
-          icon: "fas fa-landmark",
-        },
-        {
-          key: "police-stations",
-          title: "Police Stations",
-          type: "Law Enforcement",
-          className: "active-bg",
-          icon: "fas fa-shield-alt",
-        },
-        {
-          key: "fire-departments",
-          title: "Fire Departments",
-          type: "Fire Safety",
-          className: "warning-bg",
-          icon: "fas fa-fire-extinguisher",
-        },
-      ],
+  function getCategoryDisplayName(categoryId) {
+    const category = findCategoryById(categoryId);
+    return category?.displayInfo?.title || categoryId;
+  }
 
-      natural_features: [
-        {
-          key: "topography",
-          title: "Topography",
-          type: "Terrain Features",
-          className: "data-center-bg",
-          icon: "fas fa-mountain",
-        },
-        {
-          key: "waterways",
-          title: "Waterways",
-          type: "Rivers & Streams",
-          className: "active-bg",
-          icon: "fas fa-water",
-        },
-        {
-          key: "parks",
-          title: "Parks & Green Spaces",
-          type: "Recreation Areas",
-          className: "maintenance-bg",
-          icon: "fas fa-tree",
-        },
-      ],
+  function getSubcategoryDisplayName(subcategoryKey) {
+    // Search all categories for the subcategory
+    for (const category of mapMarkers || []) {
+      const subcategoryConfig = category.subcategoryConfigs?.[subcategoryKey];
+      if (subcategoryConfig) {
+        return subcategoryConfig.title;
+      }
+    }
 
-      environmental_risks: [
-        {
-          key: "flood-zones",
-          title: "Flood Prone Areas",
-          type: "Flooding Risk Zones",
-          className: "critical-bg",
-          icon: "fas fa-water",
-        },
-        {
-          key: "pollution-zones",
-          title: "Pollution Zones",
-          type: "Contaminated Areas",
-          className: "warning-bg",
-          icon: "fas fa-smog",
-        },
-        {
-          key: "other-hazards",
-          title: "Other Hazards",
-          type: "Environmental Risks",
-          className: "critical-bg",
-          icon: "fas fa-exclamation-triangle",
-        },
-      ],
-
-      points_of_interest: [
-        {
-          key: "businesses",
-          title: "Businesses",
-          type: "Commercial Areas",
-          className: "ai-bg",
-          icon: "fas fa-building",
-        },
-        {
-          key: "recreational",
-          title: "Recreational Areas",
-          type: "Entertainment Venues",
-          className: "maintenance-bg",
-          icon: "fas fa-gamepad",
-        },
-        {
-          key: "community-centers",
-          title: "Community Centers",
-          type: "Community Facilities",
-          className: "info-bg",
-          icon: "fas fa-users",
-        },
-      ],
-
-      population_data: [
-        {
-          key: "population-density",
-          title: "Population Density",
-          type: "Density Zones",
-          className: "warning-bg",
-          icon: "fas fa-users",
-        },
-        {
-          key: "income-distribution",
-          title: "Income Distribution",
-          type: "Economic Zones",
-          className: "ai-bg",
-          icon: "fas fa-chart-line",
-        },
-        {
-          key: "education-levels",
-          title: "Education Levels",
-          type: "Educational Stats",
-          className: "info-bg",
-          icon: "fas fa-graduation-cap",
-        },
-      ],
-    };
-
-    return configs[categoryId] || [];
+    // Fallback to formatted key if not found
+    return subcategoryKey
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase());
   }
 
   function getCategoryInfo(categoryId) {
-    const categoryInfoMap = {
-      infrastructure: {
-        title: "Infrastructure",
-        type: "Roads, Utilities, Comm",
-        className: "wifi-bg",
-        icon: "fas fa-road",
-      },
-      public_buildings: {
-        title: "Public Buildings",
-        type: "Hospitals, Schools, Govt",
-        className: "nbp-bg",
-        icon: "fas fa-building",
-      },
-      natural_features: {
-        title: "Natural Features",
-        type: "Parks, Waterways",
-        className: "data-center-bg",
-        icon: "fas fa-leaf",
-      },
-      environmental_risks: {
-        title: "Environmental Risks",
-        type: "Flood, Pollution Zones",
-        className: "critical-bg",
-        icon: "fas fa-exclamation-triangle",
-      },
-      points_of_interest: {
-        title: "Points of Interest",
-        type: "Business, Recreation",
-        className: "ai-bg",
-        icon: "fas fa-star",
-      },
-      population_data: {
-        title: "Population Data",
-        type: "Demographics Info",
-        className: "info-bg",
-        icon: "fas fa-users",
-      }
-    };
-
+    const category = findCategoryById(categoryId);
     return (
-      categoryInfoMap[categoryId] || {
+      category?.displayInfo || {
         title: categoryId,
-        type: "Category",
+        type: "Unknown",
         className: "info-bg",
-        icon: "fas fa-circle",
+        icon: "fas fa-question",
       }
     );
+  }
+
+  function getSubcategoryConfigs(categoryId) {
+    const category = findCategoryById(categoryId);
+    if (!category?.subcategoryConfigs) return [];
+
+    // Convert object to array format expected by existing code
+    return Object.entries(category.subcategoryConfigs).map(([key, config]) => ({
+      key,
+      ...config,
+    }));
   }
 
   function getSelectedCategories() {
@@ -948,9 +727,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Desktop positioning logic (existing code)
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar-v2");
-    const sidebarContent = document.querySelector(
-      ".sidebar-content.visible"
-    );
+    const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = "284px";
     let leftPosition = "60px";
@@ -1101,7 +878,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.showInfoDrawer(site, category);
 
           if (window.cebuMapDebug && window.cebuMapDebug.zoomToSiteById) {
-            window.cebuMapDebug.zoomToSiteById(site.id)
+            window.cebuMapDebug.zoomToSiteById(site.id);
           }
 
           modal.style.display = "none";
@@ -1132,9 +909,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!mapMarkers) return sites;
 
-    const category = mapMarkers.find(
-      (cat) => cat.id === categoryId
-    );
+    const category = mapMarkers.find((cat) => cat.id === categoryId);
     if (!category) return sites;
 
     category.sites.forEach((site) => {
@@ -1166,57 +941,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     return sites;
-  }
-
-  function getSubcategoryDisplayName(subcategoryKey) {
-    const subcategoryNames = {
-      // Infrastructure subcategories
-      highways: "Highways",
-      "main-roads": "Main Roads",
-      streets: "Streets",
-      "public-transport": "Public Transportation",
-      "traffic-data": "Traffic Data",
-      "water-supply": "Water Supply",
-      electricity: "Electricity",
-      sewage: "Sewage",
-      communication: "Communication Lines",
-      "waste-management": "Waste Management",
-      nbp: "National Broadband Project",
-      "wifi-hotspots": "WiFi Hotspots",
-      "internet-centers": "Public Internet Centers",
-
-      // Public Buildings subcategories
-      hospitals: "Hospitals",
-      schools: "Schools",
-      "government-offices": "Government Offices",
-      "police-stations": "Police Stations",
-      "fire-departments": "Fire Departments",
-
-      // Natural Features subcategories
-      topography: "Topography",
-      waterways: "Waterways",
-      parks: "Parks & Green Spaces",
-
-      // Environmental Risks subcategories
-      "flood-zones": "Flood Prone Areas",
-      "pollution-zones": "Pollution Zones",
-      "other-hazards": "Other Environmental Hazards",
-
-      // Points of Interest subcategories  
-      businesses: "Businesses",
-      recreational: "Recreational Areas",
-      "community-centers": "Community Centers",
-
-      // Population Data subcategories
-      "population-density": "Population Density",
-      "income-distribution": "Income Distribution",
-      "education-levels": "Education Levels",
-    };
-
-    return (
-      subcategoryNames[subcategoryKey] ||
-      subcategoryKey.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
-    );
   }
 
   function addOrganizedSitesModalStyles() {
@@ -1544,9 +1268,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function getSitesByCategory(categoryId) {
     if (!mapMarkers) return [];
 
-    const category = mapMarkers.find(
-      (cat) => cat.id === categoryId
-    );
+    const category = mapMarkers.find((cat) => cat.id === categoryId);
     return category ? category.sites : [];
   }
 
@@ -1572,19 +1294,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     return null;
-  }
-
-  function getCategoryDisplayName(categoryId) {
-    const categoryNames = {
-      infrastructure: "Infrastructure",
-      public_buildings: "Public Buildings",
-      natural_features: "Natural Features",
-      environmental_risks: "Environmental Risks",
-      points_of_interest: "Points of Interest",
-      population_data: "Population Data",
-    };
-
-    return categoryNames[categoryId] || categoryId;
   }
 
   function updateInfrastructureCards() {
@@ -1619,10 +1328,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("change", function (e) {
-    if (
-      e.target.type === "checkbox" &&
-      e.target.closest(".sidebar-content")
-    ) {
+    if (e.target.type === "checkbox" && e.target.closest(".sidebar-content")) {
       setTimeout(updateInfrastructureCards, 100);
     }
   });
@@ -1701,5 +1407,5 @@ document.addEventListener("DOMContentLoaded", function () {
     getData: () => infrastructureData,
   };
 
-  window.getSubcategoryKey = getSubcategoryKey
+  window.getSubcategoryKey = getSubcategoryKey;
 });

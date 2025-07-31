@@ -1,3 +1,5 @@
+// script/alert-management.js
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get alert interface elements
   const viewAllAlertsBtn = document.getElementById("viewAllAlertsBtn");

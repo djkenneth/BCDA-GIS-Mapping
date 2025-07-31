@@ -1,3 +1,5 @@
+// script/filter-sidebar.js
+
 document.addEventListener("DOMContentLoaded", function () {
   // Tab switching functionality
   const tabs = document.querySelectorAll(".sidebar-tab-v2");
@@ -48,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const allCheckboxes = {
     all: document.querySelectorAll('.content-section-item input[type="checkbox"]:not(#all)'),
     "all-infrastructure": [
-      "highways", "main-roads", "streets", "public-transport", "traffic-data",
-      "water-supply", "electricity", "sewage", "communication", "waste-management",
-      "nbp", "wifi-hotspots", "internet-centers"
+      "dof-regional-office"
     ],
     "all-buildings": [
       "hospitals", "schools", "government-offices", "police-stations", "fire-departments"

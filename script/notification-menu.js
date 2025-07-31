@@ -1,4 +1,5 @@
-// Notification menu functionality
+// script/notification-menu.js
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the bell icon element
     const bellIcon = document.getElementById('bell-icon');

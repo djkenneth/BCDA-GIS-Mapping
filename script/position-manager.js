@@ -1,3 +1,5 @@
+// script/position-manager.js
+
 document.addEventListener('DOMContentLoaded', function() {
   function updateLiveFeedCardPosition() {
     const liveFeedCard = document.querySelector('.live-feed-card');

@@ -1,3 +1,5 @@
+// script/charts.js
+
 document.addEventListener("DOMContentLoaded", function () {
   initTimeBarChart();
   initLineChart();

@@ -1,4 +1,4 @@
-// script/infrastructure-form.js - Updated for DOF Asset Management System
+// script/infrastructure-form.js
 
 document.addEventListener('DOMContentLoaded', function() {
     // Form elements

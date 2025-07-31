@@ -1,3 +1,5 @@
+// script/issue-report-form.js
+
 document.addEventListener("DOMContentLoaded", function () {
   // DOM Elements - Check for multiple possible button IDs
   const issueReportButton =

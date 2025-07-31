@@ -1,3 +1,5 @@
+// script/panel-manager.js
+
 document.addEventListener("DOMContentLoaded", function () {
   const SELECTORS = {
     header: "header",

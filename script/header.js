@@ -1,3 +1,5 @@
+// script/header.js
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.createElement("button");
   toggleBtn.className = "header-toggle";
