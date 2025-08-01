@@ -51,7 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
     all: document.querySelectorAll(
       '.content-section-item input[type="checkbox"]:not(#all)'
     ),
-    "all-infrastructure": ["dof-regional-office"],
+    "all-infrastructure": [
+        "highways",
+        "main-roads",
+        "streets",
+        "public-transport",
+        "traffic-data",
+        "water-supply",
+        "electricity",
+        "sewage",
+        "communication",
+        "waste-management",
+        "nbp",
+        "wifi-hotspots",
+        "internet-centers",
+        "dof-regional-office"
+      ],
     "all-buildings": [
       "hospitals",
       "schools",

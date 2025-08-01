@@ -478,6 +478,7 @@ const mapMarkers = [
         "nbp",
         "wifi-hotspots",
         "internet-centers",
+        "dof-regional-office"
       ],
     },
     displayInfo: {
