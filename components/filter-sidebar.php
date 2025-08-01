@@ -88,82 +88,18 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="highways">
-            <label for="highways">Highways</label>
+            <input type="checkbox" id="bir-headquarters">
+            <label for="bir-headquarters">BIR Headquarters</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="main-roads">
-            <label for="main-roads">Main Roads</label>
+            <input type="checkbox" id="dof-regional-office">
+            <label for="dof-regional-office">DOF Regional Office</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="streets">
-            <label for="streets">Streets</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="public-transport">
-            <label for="public-transport">Public Transportation</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="traffic-data">
-            <label for="traffic-data">Traffic Data</label>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="content-section-title">
-            <span>Utilities</span>
-            <button class="select-all">Select All</button>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="water-supply">
-            <label for="water-supply">Water Supply</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="electricity">
-            <label for="electricity">Electricity</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="sewage">
-            <label for="sewage">Sewage</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="communication">
-            <label for="communication">Communication Lines</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="waste-management">
-            <label for="waste-management">Waste Management</label>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="content-section-title">
-            <span>Digital Infrastructure</span>
-            <button class="select-all">Select All</button>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="nbp">
-            <label for="nbp">National Broadband Project</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="wifi-hotspots">
-            <label for="wifi-hotspots">WiFi Hotspots</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="internet-centers">
-            <label for="internet-centers">Public Internet Centers</label>
+            <input type="checkbox" id="bir-reqional-office">
+            <label for="bir-reqional-office">BIR Regional Office</label>
         </div>
     </div>
 </div>
@@ -182,28 +118,13 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="hospitals">
-            <label for="hospitals">Hospitals</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="schools">
-            <label for="schools">Schools</label>
-        </div>
-
-        <div class="content-section-item">
             <input type="checkbox" id="government-offices">
             <label for="government-offices">Government Offices</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="police-stations">
-            <label for="police-stations">Police Stations</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="fire-departments">
-            <label for="fire-departments">Fire Departments</label>
+            <input type="checkbox" id="dof-district-office">
+            <label for="dof-district-office">DOF District Office</label>
         </div>
     </div>
 </div>
@@ -227,13 +148,13 @@
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="waterways">
-            <label for="waterways">Waterways</label>
+            <input type="checkbox" id="parks">
+            <label for="parks">Parks & Green Spaces</label>
         </div>
 
         <div class="content-section-item">
-            <input type="checkbox" id="parks">
-            <label for="parks">Parks & Green Spaces</label>
+            <input type="checkbox" id="dof-central-office">
+            <label for="dof-central-office">DOF Central Office</label>
         </div>
     </div>
 </div>
@@ -249,16 +170,6 @@
         <div class="content-section-title">
             <span>Risk Types</span>
             <button class="select-all">Select All</button>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="flood-zones">
-            <label for="flood-zones">Flood Prone Areas</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="pollution-zones">
-            <label for="pollution-zones">Pollution Zones</label>
         </div>
 
         <div class="content-section-item">
