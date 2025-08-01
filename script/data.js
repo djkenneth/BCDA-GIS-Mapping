@@ -464,22 +464,6 @@ const mapMarkers = [
     center: [10.3157, 123.8854],
     checkboxConfig: {
       masterCheckboxId: "all-infrastructure",
-      subcategoryCheckboxIds: [
-        "highways",
-        "main-roads",
-        "streets",
-        "public-transport",
-        "traffic-data",
-        "water-supply",
-        "electricity",
-        "sewage",
-        "communication",
-        "waste-management",
-        "nbp",
-        "wifi-hotspots",
-        "internet-centers",
-        "dof-regional-office"
-      ],
     },
     displayInfo: {
       title: "Infrastructure",
@@ -887,13 +871,6 @@ const mapMarkers = [
     center: [10.3157, 123.8854],
     checkboxConfig: {
       masterCheckboxId: "all-buildings",
-      subcategoryCheckboxIds: [
-        "hospitals",
-        "schools",
-        "government-offices",
-        "police-stations",
-        "fire-departments",
-      ],
     },
     displayInfo: {
       title: "Public Buildings",
@@ -1039,7 +1016,6 @@ const mapMarkers = [
     center: [10.3157, 123.8854],
     checkboxConfig: {
       masterCheckboxId: "all-natural",
-      subcategoryCheckboxIds: ["topography", "waterways", "parks"],
     },
     displayInfo: {
       title: "Natural Features",
@@ -1134,11 +1110,6 @@ const mapMarkers = [
     center: [10.3157, 123.8854],
     checkboxConfig: {
       masterCheckboxId: "all-risks",
-      subcategoryCheckboxIds: [
-        "flood-zones",
-        "pollution-zones",
-        "other-hazards",
-      ],
     },
     displayInfo: {
       title: "Environmental Risks",
@@ -1223,11 +1194,6 @@ const mapMarkers = [
     center: [10.3157, 123.8854],
     checkboxConfig: {
       masterCheckboxId: "all-poi",
-      subcategoryCheckboxIds: [
-        "businesses",
-        "recreational",
-        "community-centers",
-      ],
     },
     displayInfo: {
       title: "Points of Interest",

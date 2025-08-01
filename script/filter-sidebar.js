@@ -52,15 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ),
   };
 
-  // Dynamically generate from mapMarkers
   mapMarkers.forEach(category => {
     const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
-    const subcategoryIds = category.checkboxConfig.subcategoryCheckboxIds;
+    const subcategoryIds = Object.keys(category.subcategoryConfigs || {});
     
-    if (masterCheckboxId && subcategoryIds) {
+    if (masterCheckboxId && subcategoryIds.length > 0) {
       allCheckboxes[masterCheckboxId] = subcategoryIds;
     }
   });
+
   
   // Add event listeners for all master checkboxes
   Object.keys(allCheckboxes).forEach((id) => {

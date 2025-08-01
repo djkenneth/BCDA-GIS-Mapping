@@ -26,10 +26,6 @@
             <i class="fas fa-map-marker-alt"></i>
             <span>Points of Interest</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="demographics">
-            <i class="fas fa-users"></i>
-            <span>Demographics</span>
-        </div>
     </div>
 </div>
 
@@ -114,11 +110,6 @@
         <div class="content-section-item">
             <input type="checkbox" id="traffic-data">
             <label for="traffic-data">Traffic Data</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="dof-regional-office">
-            <label for="dof-regional-office">DOF Regional Office</label>
         </div>
     </div>
 
