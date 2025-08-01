@@ -46,44 +46,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Updated allCheckboxes mapping aligned with mapMarkers structure
   const allCheckboxes = {
     all: document.querySelectorAll(
       '.content-section-item input[type="checkbox"]:not(#all)'
     ),
-    "all-infrastructure": [
-        "highways",
-        "main-roads",
-        "streets",
-        "public-transport",
-        "traffic-data",
-        "water-supply",
-        "electricity",
-        "sewage",
-        "communication",
-        "waste-management",
-        "nbp",
-        "wifi-hotspots",
-        "internet-centers",
-        "dof-regional-office"
-      ],
-    "all-buildings": [
-      "hospitals",
-      "schools",
-      "government-offices",
-      "police-stations",
-      "fire-departments",
-    ],
-    "all-natural": ["topography", "waterways", "parks"],
-    "all-risks": ["flood-zones", "pollution-zones", "other-hazards"],
-    "all-poi": ["businesses", "recreational", "community-centers"],
-    "all-demographics": [
-      "population-density",
-      "income-distribution",
-      "education-levels",
-    ],
   };
 
+  // Dynamically generate from mapMarkers
+  mapMarkers.forEach(category => {
+    const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
+    const subcategoryIds = category.checkboxConfig.subcategoryCheckboxIds;
+    
+    if (masterCheckboxId && subcategoryIds) {
+      allCheckboxes[masterCheckboxId] = subcategoryIds;
+    }
+  });
+  
   // Add event listeners for all master checkboxes
   Object.keys(allCheckboxes).forEach((id) => {
     const masterCheckbox = document.getElementById(id);
@@ -93,15 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Handle the "All" checkbox specially
         if (id === "all") {
-          // Check/uncheck all category master checkboxes
-          const categoryMasterIds = [
-            "all-infrastructure",
-            "all-buildings",
-            "all-natural",
-            "all-risks",
-            "all-poi",
-            "all-demographics",
-          ];
           categoryMasterIds.forEach((categoryId) => {
             const categoryCheckbox = document.getElementById(categoryId);
             if (categoryCheckbox) {
@@ -288,17 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
-  // Category master checkbox mappings aligned with mapMarkers
-  const categoryMasterCheckboxes = {
-    all: "all_categories",
-    "all-infrastructure": "infrastructure",
-    "all-buildings": "public_buildings",
-    "all-natural": "natural_features",
-    "all-risks": "environmental_risks",
-    "all-poi": "points_of_interest",
-    "all-demographics": "population_data",
-  };
 
   // Export for global access
   window.filterSidebar = {

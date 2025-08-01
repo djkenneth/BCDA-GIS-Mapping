@@ -1308,6 +1308,20 @@ const mapMarkers = [
   },
 ];
 
+// Add these after the mapMarkers array, before any exports
+const categoryMasterIds = mapMarkers.map(category => category.checkboxConfig.masterCheckboxId);
+
+// Dynamic mapping from master checkbox IDs to category IDs
+const categoryMasterCheckboxes = {
+  all: "all_categories",
+  ...Object.fromEntries(
+    mapMarkers.map(category => [
+      category.checkboxConfig.masterCheckboxId,
+      category.id
+    ])
+  )
+};
+
 const searchData = {
   quickActions: [],
   categories: {

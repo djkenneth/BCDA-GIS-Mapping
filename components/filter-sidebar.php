@@ -74,11 +74,6 @@
                 <input type="checkbox" id="all-poi">
                 <label for="all-poi">Points of Interest</label>
             </div>
-
-            <div class="content-section-item">
-                <input type="checkbox" id="all-demographics">
-                <label for="all-demographics">Population Data</label>
-            </div>
         </div>
     </div>
 </div>
@@ -308,36 +303,6 @@
         <div class="content-section-item">
             <input type="checkbox" id="community-centers">
             <label for="community-centers">Community Centers</label>
-        </div>
-    </div>
-</div>
-
-<!-- Demographics Panel -->
-<div class="sidebar-content" id="demographics-content">
-    <div class="content-header">
-        <h3>Population Data</h3>
-        <button class="close-panel"><i class="fas fa-times"></i></button>
-    </div>
-
-    <div class="content-section">
-        <div class="content-section-title">
-            <span>Data Types</span>
-            <button class="select-all">Select All</button>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="population-density">
-            <label for="population-density">Population Density</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="income-distribution">
-            <label for="income-distribution">Income Distribution</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="education-levels">
-            <label for="education-levels">Education Levels</label>
         </div>
     </div>
 </div>
