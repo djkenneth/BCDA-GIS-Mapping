@@ -458,116 +458,6 @@ function initializeMobileEmergencyContacts() {
   });
 }
 
-// function initializePublicInformation() {
-//   const alertsContainer = document.querySelector("#alerts-container");
-//   const eventsContainer = document.querySelector(
-//     ".city-events-section .events-container"
-//   );
-//   const noEventsMessage = document.querySelector(".no-events-message");
-
-//   console.log('alerts-container', alertsContainer)
-
-//   if (!alertsContainer) return;
-
-//   if (!eventsContainer) {
-//     const cityEventsSection = document.querySelector(".city-events-section");
-//     if (cityEventsSection) {
-//       const container = document.createElement("div");
-//       container.className = "events-container";
-//       cityEventsSection.appendChild(container);
-//     }
-//   }
-
-//   const finalEventsContainer = document.querySelector(
-//     ".city-events-section .events-container"
-//   );
-
-//   if (noEventsMessage) {
-//     noEventsMessage.style.display = "none";
-//   }
-//   if (finalEventsContainer) {
-//     finalEventsContainer.style.display = "flex";
-//   }
-
-//   let currentAlertIndex = 3;
-//   let currentEventIndex = 0;
-
-//   displayEvents(currentEventIndex);
-
-//   setInterval(() => {
-//     const alertItems = alertsContainer.querySelectorAll(".alert-item");
-//     const eventItems = finalEventsContainer.querySelectorAll(".event-item");
-
-//     alertItems.forEach((item) => {
-//       item.style.opacity = "0";
-//       item.style.transform = "translateX(-20px)";
-//     });
-
-//     eventItems.forEach((item) => {
-//       item.style.opacity = "0";
-//       item.style.transform = "translateX(-20px)";
-//     });
-
-//     setTimeout(() => {
-//       alertsContainer.innerHTML = "";
-//       for (let i = 0; i < 3; i++) {
-//         const alertIndex = (currentAlertIndex + i) % publicAlerts.length;
-//         const alert = publicAlerts[alertIndex];
-
-//         const alertItem = document.createElement("div");
-//         alertItem.className = `alert-item ${alert.class}`;
-//         alertItem.innerHTML = `
-//           <span class="alert-icon"></span>
-//           <span class="alert-text">${alert.text}</span>
-//         `;
-//         alertItem.style.opacity = "0";
-//         alertItem.style.transform = "translateX(-20px)";
-
-//         alertsContainer.appendChild(alertItem);
-
-//         setTimeout(() => {
-//           alertItem.style.opacity = "1";
-//           alertItem.style.transform = "translateX(0)";
-//         }, 100 * i);
-//       }
-
-//       currentEventIndex = (currentEventIndex + 3) % cityEvents.length;
-//       displayEvents(currentEventIndex);
-
-//       currentAlertIndex = (currentAlertIndex + 3) % publicAlerts.length;
-//     }, 300);
-//   }, 5000);
-
-//   function displayEvents(startIndex) {
-//     finalEventsContainer.innerHTML = "";
-
-//     const eventsToShow = Math.min(3, cityEvents.length);
-
-//     for (let i = 0; i < eventsToShow; i++) {
-//       const eventIndex = (startIndex + i) % cityEvents.length;
-//       const event = cityEvents[eventIndex];
-
-//       const eventItem = document.createElement("div");
-//       eventItem.className = `event-item ${event.class}`;
-//       eventItem.innerHTML = `
-//         <span class="event-icon">${event.icon}</span>
-//         <span class="event-text">${event.text}</span>
-//         <span class="event-date">${event.date}</span>
-//       `;
-//       eventItem.style.opacity = "0";
-//       eventItem.style.transform = "translateX(-20px)";
-
-//       finalEventsContainer.appendChild(eventItem);
-
-//       setTimeout(() => {
-//         eventItem.style.transition = "all 0.3s ease";
-//         eventItem.style.opacity = "1";
-//         eventItem.style.transform = "translateX(0)";
-//       }, 100 * i);
-//     }
-//   }
-// }
-
 function initializeEmergencyContacts() {
   const emergencyGrid = document.querySelector(".emergency-grid");
   if (!emergencyGrid) return;
@@ -1174,6 +1064,7 @@ function initializeSearchBar() {
           this.getAttribute("data-search") || this.textContent.toLowerCase();
 
         if (siteId && category) {
+          
           executeSearchWithSite(siteId, category);
         } else {
           executeSearch(searchTerm);
@@ -1193,14 +1084,22 @@ function initializeSearchBar() {
     let targetSite = null;
     let targetCategory = null;
 
+
+
     mapMarkers.forEach((category) => {
-      if (category.category === categoryName) {
-        targetCategory = category;
-        const site = category.sites.find((s) => s.id === siteId);
-        if (site) {
-          targetSite = site;
+      // console.log('categoryName', categoryName);
+      
+      Object.entries(category.subcategoryConfigs).forEach(([key, value]) => {
+        // console.log(`Key: ${key}, Value: ${JSON.stringify(value)}`);
+        // You can check the key here
+        if(key === categoryName) {
+          targetCategory = category;
+          const site = category.sites.find((s) => s.id === siteId);
+          if(site) {
+            targetSite = site;
+          }
         }
-      }
+      });
     });
 
     if (targetSite && targetCategory) {
