@@ -28,8 +28,7 @@ const notifications = [
     id: 1,
     type: "alert",
     title: "Maintenance Alert",
-    message:
-      "Scheduled maintenance for Infrastractrue 1 tomorrow at 10:00 AM.",
+    message: "Scheduled maintenance for Infrastractrue 1 tomorrow at 10:00 AM.",
     time: "1 hour ago",
     read: false,
   },
@@ -403,19 +402,19 @@ const mapMarkers = [
       icon: "fas fa-building",
     },
     subcategoryConfigs: {
-      "offices": {
+      offices: {
         title: "Offices",
         type: "Government Offices",
         className: "nbp-bg",
         icon: "fas fa-building",
       },
-      "warehouses": {
+      warehouses: {
         title: "Warehouses",
         type: "Storage Facilities",
         className: "data-center-bg",
         icon: "fas fa-warehouse",
       },
-      "facilities": {
+      facilities: {
         title: "Facilities",
         type: "General Facilities",
         className: "info-bg",
@@ -430,7 +429,8 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Offices",
-        description: "Official residence and workplace of the President of the Philippines.",
+        description:
+          "Official residence and workplace of the President of the Philippines.",
       },
       {
         id: "office_02",
@@ -464,7 +464,7 @@ const mapMarkers = [
         subcategory: "Offices",
         description: "Central office of the Department of Finance.",
       },
-      
+
       // Cebu
       {
         id: "office_06",
@@ -472,30 +472,32 @@ const mapMarkers = [
         location: [10.293719, 123.902612],
         status: "active",
         subcategory: "Offices",
-        description: "Primary government office building for Cebu city administration.",
+        description:
+          "Primary government office building for Cebu city administration.",
       },
       {
         id: "office_07",
         name: "DOF Regional Office VII",
-        location: [10.315700, 123.885400],
+        location: [10.3157, 123.8854],
         status: "active",
         subcategory: "Offices",
-        description: "Department of Finance regional headquarters for Central Visayas.",
+        description:
+          "Department of Finance regional headquarters for Central Visayas.",
       },
       {
         id: "office_08",
         name: "BIR Regional Office No. 13",
-        location: [10.301500, 123.894200],
+        location: [10.3015, 123.8942],
         status: "active",
         subcategory: "Offices",
         description: "Bureau of Internal Revenue regional office for Cebu.",
       },
-      
+
       // Davao
       {
         id: "office_09",
         name: "Davao City Hall",
-        location: [7.073150, 125.612831],
+        location: [7.07315, 125.612831],
         status: "active",
         subcategory: "Offices",
         description: "Main government office for Davao City administration.",
@@ -503,17 +505,17 @@ const mapMarkers = [
       {
         id: "office_10",
         name: "DOF Regional Office XI",
-        location: [7.064250, 125.608200],
+        location: [7.06425, 125.6082],
         status: "active",
         subcategory: "Offices",
         description: "Department of Finance regional office for Davao Region.",
       },
-      
+
       // Iloilo
       {
         id: "office_11",
         name: "Iloilo Provincial Capitol",
-        location: [10.721100, 122.562600],
+        location: [10.7211, 122.5626],
         status: "active",
         subcategory: "Offices",
         description: "Provincial government headquarters of Iloilo.",
@@ -521,17 +523,18 @@ const mapMarkers = [
       {
         id: "office_12",
         name: "BIR Regional Office No. 21",
-        location: [10.696700, 122.564400],
+        location: [10.6967, 122.5644],
         status: "warning",
         subcategory: "Offices",
-        description: "Bureau of Internal Revenue office in Iloilo requiring maintenance.",
+        description:
+          "Bureau of Internal Revenue office in Iloilo requiring maintenance.",
       },
-      
+
       // Baguio
       {
         id: "office_13",
         name: "Baguio City Hall",
-        location: [16.412000, 120.593600],
+        location: [16.412, 120.5936],
         status: "active",
         subcategory: "Offices",
         description: "Mountain city government center in Baguio.",
@@ -539,12 +542,12 @@ const mapMarkers = [
       {
         id: "office_14",
         name: "Cordillera Administrative Region Office",
-        location: [16.416200, 120.595800],
+        location: [16.4162, 120.5958],
         status: "active",
         subcategory: "Offices",
         description: "Regional administrative headquarters for CAR.",
       },
-      
+
       // Warehouses across Philippines
       {
         id: "warehouse_01",
@@ -557,7 +560,7 @@ const mapMarkers = [
       {
         id: "warehouse_02",
         name: "Emergency Relief Warehouse - Cebu",
-        location: [10.285300, 123.875100],
+        location: [10.2853, 123.8751],
         status: "active",
         subcategory: "Warehouses",
         description: "Regional disaster response supplies storage.",
@@ -573,7 +576,7 @@ const mapMarkers = [
       {
         id: "warehouse_04",
         name: "Agricultural Supplies Depot - Davao",
-        location: [7.108900, 125.627400],
+        location: [7.1089, 125.6274],
         status: "active",
         subcategory: "Warehouses",
         description: "Farm equipment and supplies storage facility.",
@@ -581,7 +584,7 @@ const mapMarkers = [
       {
         id: "warehouse_05",
         name: "Military Equipment Storage - Camp Aguinaldo",
-        location: [14.6391, 121.0570],
+        location: [14.6391, 121.057],
         status: "active",
         subcategory: "Warehouses",
         description: "Military supplies and equipment warehouse.",
@@ -589,7 +592,7 @@ const mapMarkers = [
       {
         id: "warehouse_06",
         name: "Medical Supplies Warehouse - Iloilo",
-        location: [10.739200, 122.547800],
+        location: [10.7392, 122.5478],
         status: "active",
         subcategory: "Warehouses",
         description: "Regional medical and pharmaceutical storage.",
@@ -597,25 +600,26 @@ const mapMarkers = [
       {
         id: "warehouse_07",
         name: "Educational Materials Depot - Baguio",
-        location: [16.404500, 120.582100],
+        location: [16.4045, 120.5821],
         status: "active",
         subcategory: "Warehouses",
         description: "Textbooks and educational supplies storage.",
       },
-      
+
       // Facilities
       {
         id: "facility_01",
         name: "Metropolitan Waterworks Pumping Station",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Facilities",
-        description: "Main water treatment and distribution facility for Metro Manila.",
+        description:
+          "Main water treatment and distribution facility for Metro Manila.",
       },
       {
         id: "facility_02",
         name: "Cebu Public Works Maintenance Facility",
-        location: [10.295600, 123.882700],
+        location: [10.2956, 123.8827],
         status: "active",
         subcategory: "Facilities",
         description: "Municipal maintenance and repair facility.",
@@ -623,7 +627,7 @@ const mapMarkers = [
       {
         id: "facility_03",
         name: "Davao Waste Management Facility",
-        location: [7.121800, 125.594300],
+        location: [7.1218, 125.5943],
         status: "active",
         subcategory: "Facilities",
         description: "Central waste processing and recycling facility.",
@@ -639,7 +643,7 @@ const mapMarkers = [
       {
         id: "facility_05",
         name: "Iloilo Port Authority Service Center",
-        location: [10.691400, 122.565600],
+        location: [10.6914, 122.5656],
         status: "active",
         subcategory: "Facilities",
         description: "Port operations and vessel maintenance facility.",
@@ -647,10 +651,11 @@ const mapMarkers = [
       {
         id: "facility_06",
         name: "Road Construction Equipment Depot - Baguio",
-        location: [16.398700, 120.571200],
+        location: [16.3987, 120.5712],
         status: "active",
         subcategory: "Facilities",
-        description: "Heavy equipment storage and maintenance for road construction.",
+        description:
+          "Heavy equipment storage and maintenance for road construction.",
       },
       {
         id: "facility_07",
@@ -658,15 +663,16 @@ const mapMarkers = [
         location: [14.5547, 121.0244],
         status: "active",
         subcategory: "Facilities",
-        description: "Central service facility for Metro Manila government fleet.",
+        description:
+          "Central service facility for Metro Manila government fleet.",
       },
     ],
   },
-  
+
   {
     category: "Land Properties",
     id: "land_properties",
-    center: [12.8797, 121.7740], // Geographic center of Philippines
+    center: [12.8797, 121.774], // Geographic center of Philippines
     checkboxConfig: {
       masterCheckboxId: "all-land",
     },
@@ -677,19 +683,19 @@ const mapMarkers = [
       icon: "fas fa-map",
     },
     subcategoryConfigs: {
-      "lots": {
+      lots: {
         title: "Lots",
         type: "Residential/Commercial Lots",
         className: "wifi-bg",
         icon: "fas fa-square",
       },
-      "parcels": {
+      parcels: {
         title: "Parcels",
         type: "Land Parcels",
         className: "data-center-bg",
         icon: "fas fa-map-marked-alt",
       },
-      "estates": {
+      estates: {
         title: "Estates",
         type: "Large Properties",
         className: "info-bg",
@@ -709,7 +715,7 @@ const mapMarkers = [
       {
         id: "lot_02",
         name: "Quezon City Government Center Lot QC-15",
-        location: [14.6760, 121.0437],
+        location: [14.676, 121.0437],
         status: "active",
         subcategory: "Lots",
         description: "Government administrative complex expansion lot.",
@@ -738,12 +744,12 @@ const mapMarkers = [
         subcategory: "Lots",
         description: "Aviation and logistics development lot in Clark.",
       },
-      
+
       // Visayas Lots
       {
         id: "lot_06",
         name: "Cebu IT Park Expansion Lot CEB-18A",
-        location: [10.327500, 123.907200],
+        location: [10.3275, 123.9072],
         status: "active",
         subcategory: "Lots",
         description: "Technology park expansion lot in Cebu City.",
@@ -751,7 +757,7 @@ const mapMarkers = [
       {
         id: "lot_07",
         name: "Iloilo Business Park Development Lot ILO-5D",
-        location: [10.717800, 122.548300],
+        location: [10.7178, 122.5483],
         status: "active",
         subcategory: "Lots",
         description: "Mixed-use development lot in Iloilo Business District.",
@@ -759,17 +765,17 @@ const mapMarkers = [
       {
         id: "lot_08",
         name: "Bacolod Government Complex Lot BAC-3F",
-        location: [10.6760, 122.9503],
+        location: [10.676, 122.9503],
         status: "active",
         subcategory: "Lots",
         description: "Government office complex development lot.",
       },
-      
+
       // Mindanao Lots
       {
         id: "lot_09",
         name: "Davao Central Business District Lot DAV-11B",
-        location: [7.063400, 125.588900],
+        location: [7.0634, 125.5889],
         status: "active",
         subcategory: "Lots",
         description: "Commercial development lot in downtown Davao.",
@@ -780,9 +786,10 @@ const mapMarkers = [
         location: [8.4542, 124.6319],
         status: "warning",
         subcategory: "Lots",
-        description: "Industrial zone development lot requiring environmental assessment.",
+        description:
+          "Industrial zone development lot requiring environmental assessment.",
       },
-      
+
       // Government Land Parcels
       {
         id: "parcel_01",
@@ -806,12 +813,13 @@ const mapMarkers = [
         location: [16.9286, 120.8738],
         status: "active",
         subcategory: "Parcels",
-        description: "Environmental protection buffer zone in Mountain Province.",
+        description:
+          "Environmental protection buffer zone in Mountain Province.",
       },
       {
         id: "parcel_04",
         name: "Agricultural Research Station ARS-IRRI-3",
-        location: [14.1591, 121.2570],
+        location: [14.1591, 121.257],
         status: "active",
         subcategory: "Parcels",
         description: "Rice research facility land parcel in Laguna.",
@@ -827,7 +835,7 @@ const mapMarkers = [
       {
         id: "parcel_06",
         name: "Disaster Risk Reduction Reserve DRR-ALB-4",
-        location: [13.1391, 123.7210],
+        location: [13.1391, 123.721],
         status: "active",
         subcategory: "Parcels",
         description: "Emergency evacuation area in Albay Province.",
@@ -848,7 +856,7 @@ const mapMarkers = [
         subcategory: "Parcels",
         description: "Tourism infrastructure development area in Bohol.",
       },
-      
+
       // Government Estate Holdings
       {
         id: "estate_01",
@@ -856,15 +864,17 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Estates",
-        description: "Presidential palace estate with historic buildings and gardens.",
+        description:
+          "Presidential palace estate with historic buildings and gardens.",
       },
       {
         id: "estate_02",
         name: "Camp John Hay Government Estate",
-        location: [16.4023, 120.5960],
+        location: [16.4023, 120.596],
         status: "active",
         subcategory: "Estates",
-        description: "Former US military base converted to government retreat center.",
+        description:
+          "Former US military base converted to government retreat center.",
       },
       {
         id: "estate_03",
@@ -888,12 +898,13 @@ const mapMarkers = [
         location: [14.1339, 121.1964],
         status: "active",
         subcategory: "Estates",
-        description: "Government-managed forest research and conservation estate.",
+        description:
+          "Government-managed forest research and conservation estate.",
       },
       {
         id: "estate_06",
         name: "Corregidor Island Historic Estate",
-        location: [14.3850, 120.5883],
+        location: [14.385, 120.5883],
         status: "maintenance",
         subcategory: "Estates",
         description: "Historic island fortress and memorial park estate.",
@@ -964,7 +975,7 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Official vehicle for Vice Presidential office.",
       },
-      
+
       // Manila NCR Fleet
       {
         id: "vehicle_004",
@@ -1009,7 +1020,7 @@ const mapMarkers = [
       {
         id: "vehicle_009",
         name: "Quezon City Ambulance - QC-MED-45",
-        location: [14.6760, 121.0437],
+        location: [14.676, 121.0437],
         status: "active",
         subcategory: "Fleet Management",
         description: "Emergency medical response vehicle for QC.",
@@ -1022,7 +1033,7 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Waste collection vehicle currently under maintenance.",
       },
-      
+
       // Regional Government Vehicles - Cebu
       {
         id: "vehicle_011",
@@ -1043,7 +1054,7 @@ const mapMarkers = [
       {
         id: "vehicle_013",
         name: "Cebu Fire Truck - CEB-FD-Engine-12",
-        location: [10.309600, 123.895200],
+        location: [10.3096, 123.8952],
         status: "active",
         subcategory: "Fleet Management",
         description: "Fire department emergency response vehicle in Cebu.",
@@ -1051,7 +1062,7 @@ const mapMarkers = [
       {
         id: "vehicle_014",
         name: "Cebu Police Patrol Car - CEB-PNP-089",
-        location: [10.301200, 123.898500],
+        location: [10.3012, 123.8985],
         status: "active",
         subcategory: "Fleet Management",
         description: "Police patrol vehicle for Cebu City law enforcement.",
@@ -1059,17 +1070,17 @@ const mapMarkers = [
       {
         id: "vehicle_015",
         name: "Cebu Public Works Truck - CEB-PW-23",
-        location: [10.295600, 123.882700],
+        location: [10.2956, 123.8827],
         status: "warning",
         subcategory: "Fleet Management",
         description: "Road maintenance truck requiring inspection.",
       },
-      
+
       // Regional Government Vehicles - Davao
       {
         id: "vehicle_016",
         name: "Davao City Mayor Vehicle - DAV-MAYOR-1",
-        location: [7.073150, 125.612831],
+        location: [7.07315, 125.612831],
         status: "active",
         subcategory: "Fleet Management",
         description: "Official vehicle for Davao City Mayor.",
@@ -1077,7 +1088,7 @@ const mapMarkers = [
       {
         id: "vehicle_017",
         name: "Davao Emergency Response Vehicle - DAV-ERV-8",
-        location: [7.064250, 125.608200],
+        location: [7.06425, 125.6082],
         status: "active",
         subcategory: "Fleet Management",
         description: "Multi-purpose emergency response vehicle.",
@@ -1085,17 +1096,17 @@ const mapMarkers = [
       {
         id: "vehicle_018",
         name: "Davao Airport Security Vehicle - DAV-AS-14",
-        location: [7.125520, 125.645710],
+        location: [7.12552, 125.64571],
         status: "active",
         subcategory: "Fleet Management",
         description: "Airport perimeter security patrol vehicle.",
       },
-      
+
       // Regional Government Vehicles - Iloilo
       {
         id: "vehicle_019",
         name: "Iloilo Provincial Governor Vehicle - ILO-GOV-1",
-        location: [10.721100, 122.562600],
+        location: [10.7211, 122.5626],
         status: "active",
         subcategory: "Fleet Management",
         description: "Official vehicle for Iloilo Provincial Governor.",
@@ -1103,17 +1114,17 @@ const mapMarkers = [
       {
         id: "vehicle_020",
         name: "Iloilo Port Authority Patrol Boat - ILO-PA-Marine-3",
-        location: [10.691400, 122.565600],
+        location: [10.6914, 122.5656],
         status: "active",
         subcategory: "Fleet Management",
         description: "Maritime patrol vessel for port security.",
       },
-      
+
       // Regional Government Vehicles - Baguio
       {
         id: "vehicle_021",
         name: "Baguio City Mayor Vehicle - BAG-MAYOR-1",
-        location: [16.412000, 120.593600],
+        location: [16.412, 120.5936],
         status: "active",
         subcategory: "Fleet Management",
         description: "Official vehicle for Baguio City Mayor.",
@@ -1121,7 +1132,7 @@ const mapMarkers = [
       {
         id: "vehicle_022",
         name: "CAR Regional Director Vehicle - CAR-RD-1",
-        location: [16.416200, 120.595800],
+        location: [16.4162, 120.5958],
         status: "active",
         subcategory: "Fleet Management",
         description: "Official vehicle for CAR Regional Director.",
@@ -1129,12 +1140,12 @@ const mapMarkers = [
       {
         id: "vehicle_023",
         name: "Baguio Mountain Rescue Vehicle - BAG-MR-5",
-        location: [16.404500, 120.582100],
+        location: [16.4045, 120.5821],
         status: "active",
         subcategory: "Fleet Management",
         description: "Specialized mountain rescue and emergency vehicle.",
       },
-      
+
       // Specialized Government Vehicles
       {
         id: "vehicle_024",
@@ -1193,7 +1204,7 @@ const mapMarkers = [
       icon: "fas fa-server",
     },
     subcategoryConfigs: {
-      "servers": {
+      servers: {
         title: "Servers",
         type: "Server Equipment",
         className: "data-center-bg",
@@ -1214,12 +1225,13 @@ const mapMarkers = [
         location: [14.5832, 120.9797],
         status: "active",
         subcategory: "Servers",
-        description: "Primary government data center hosting critical national systems.",
+        description:
+          "Primary government data center hosting critical national systems.",
       },
       {
         id: "server_002",
         name: "National Government Data Center - Backup",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Servers",
         description: "Disaster recovery data center for government operations.",
@@ -1254,7 +1266,8 @@ const mapMarkers = [
         location: [14.5832, 120.9797],
         status: "warning",
         subcategory: "Servers",
-        description: "Tax processing servers requiring performance optimization.",
+        description:
+          "Tax processing servers requiring performance optimization.",
       },
       {
         id: "server_007",
@@ -1272,15 +1285,16 @@ const mapMarkers = [
         subcategory: "Servers",
         description: "Gaming industry regulatory and monitoring systems.",
       },
-      
+
       // Regional Government Data Centers
       {
         id: "server_009",
         name: "Region VII Government Data Center - Cebu",
-        location: [10.315700, 123.885400],
+        location: [10.3157, 123.8854],
         status: "active",
         subcategory: "Servers",
-        description: "Central Visayas regional government server infrastructure.",
+        description:
+          "Central Visayas regional government server infrastructure.",
       },
       {
         id: "server_010",
@@ -1293,7 +1307,7 @@ const mapMarkers = [
       {
         id: "server_011",
         name: "Region XI Government Data Center - Davao",
-        location: [7.064250, 125.608200],
+        location: [7.06425, 125.6082],
         status: "active",
         subcategory: "Servers",
         description: "Davao Region government server infrastructure.",
@@ -1301,7 +1315,7 @@ const mapMarkers = [
       {
         id: "server_012",
         name: "Region VI Government Data Center - Iloilo",
-        location: [10.696700, 122.564400],
+        location: [10.6967, 122.5644],
         status: "active",
         subcategory: "Servers",
         description: "Western Visayas regional server infrastructure.",
@@ -1309,12 +1323,13 @@ const mapMarkers = [
       {
         id: "server_013",
         name: "CAR Government Data Center - Baguio",
-        location: [16.416200, 120.595800],
+        location: [16.4162, 120.5958],
         status: "maintenance",
         subcategory: "Servers",
-        description: "Cordillera Administrative Region servers under maintenance.",
+        description:
+          "Cordillera Administrative Region servers under maintenance.",
       },
-      
+
       // Specialized Government IT Systems
       {
         id: "server_014",
@@ -1335,12 +1350,12 @@ const mapMarkers = [
       {
         id: "server_016",
         name: "DOST-ASTI Scientific Computing Cluster",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Servers",
         description: "High-performance computing for research and development.",
       },
-      
+
       // Network Infrastructure - Core Systems
       {
         id: "network_001",
@@ -1356,7 +1371,8 @@ const mapMarkers = [
         location: [14.5832, 120.9797],
         status: "active",
         subcategory: "Network Equipment",
-        description: "Core routing infrastructure for inter-agency connectivity.",
+        description:
+          "Core routing infrastructure for inter-agency connectivity.",
       },
       {
         id: "network_003",
@@ -1364,7 +1380,8 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Network Equipment",
-        description: "Secure communications network for presidential operations.",
+        description:
+          "Secure communications network for presidential operations.",
       },
       {
         id: "network_004",
@@ -1382,12 +1399,12 @@ const mapMarkers = [
         subcategory: "Network Equipment",
         description: "Network infrastructure for legislative operations.",
       },
-      
+
       // Regional Network Infrastructure
       {
         id: "network_006",
         name: "Region VII Network Hub - Cebu",
-        location: [10.315700, 123.885400],
+        location: [10.3157, 123.8854],
         status: "active",
         subcategory: "Network Equipment",
         description: "Central Visayas regional network distribution hub.",
@@ -1395,7 +1412,7 @@ const mapMarkers = [
       {
         id: "network_007",
         name: "Cebu Fiber Optic Distribution Hub - FOH-CEB-1",
-        location: [10.308900, 123.896800],
+        location: [10.3089, 123.8968],
         status: "active",
         subcategory: "Network Equipment",
         description: "High-speed fiber optic network distribution point.",
@@ -1403,7 +1420,7 @@ const mapMarkers = [
       {
         id: "network_008",
         name: "Region XI Network Hub - Davao",
-        location: [7.064250, 125.608200],
+        location: [7.06425, 125.6082],
         status: "active",
         subcategory: "Network Equipment",
         description: "Davao Region government network infrastructure hub.",
@@ -1411,7 +1428,7 @@ const mapMarkers = [
       {
         id: "network_009",
         name: "Region VI Network Hub - Iloilo",
-        location: [10.696700, 122.564400],
+        location: [10.6967, 122.5644],
         status: "warning",
         subcategory: "Network Equipment",
         description: "Western Visayas network hub requiring firmware updates.",
@@ -1419,12 +1436,12 @@ const mapMarkers = [
       {
         id: "network_010",
         name: "CAR Network Hub - Baguio",
-        location: [16.416200, 120.595800],
+        location: [16.4162, 120.5958],
         status: "active",
         subcategory: "Network Equipment",
         description: "Cordillera region network distribution center.",
       },
-      
+
       // Specialized Network Equipment
       {
         id: "network_011",
@@ -1437,7 +1454,7 @@ const mapMarkers = [
       {
         id: "network_012",
         name: "Emergency Communications Network Hub - ECN-1",
-        location: [14.6391, 121.0570],
+        location: [14.6391, 121.057],
         status: "active",
         subcategory: "Network Equipment",
         description: "Disaster response communications network hub.",
@@ -1483,13 +1500,13 @@ const mapMarkers = [
       icon: "fas fa-chair",
     },
     subcategoryConfigs: {
-      "furniture": {
+      furniture: {
         title: "Furniture",
         type: "Office Furniture",
         className: "ai-bg",
         icon: "fas fa-chair",
       },
-      "fixtures": {
+      fixtures: {
         title: "Fixtures",
         type: "Office Fixtures",
         className: "info-bg",
@@ -1504,7 +1521,8 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Furniture",
-        description: "Premium mahogany executive desk set for Presidential office.",
+        description:
+          "Premium mahogany executive desk set for Presidential office.",
       },
       {
         id: "furniture_002",
@@ -1528,9 +1546,10 @@ const mapMarkers = [
         location: [14.5789, 120.9761],
         status: "active",
         subcategory: "Furniture",
-        description: "Executive office furniture set for Vice Presidential office.",
+        description:
+          "Executive office furniture set for Vice Presidential office.",
       },
-      
+
       // Supreme Court and Judicial Furniture
       {
         id: "furniture_005",
@@ -1556,7 +1575,7 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Complete hearing room furniture set for appellate court.",
       },
-      
+
       // Legislative Branch Furniture
       {
         id: "furniture_008",
@@ -1590,7 +1609,7 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Modular conference tables for committee hearings.",
       },
-      
+
       // Department Executive Offices
       {
         id: "furniture_012",
@@ -1598,7 +1617,8 @@ const mapMarkers = [
         location: [14.5832, 120.9797],
         status: "active",
         subcategory: "Furniture",
-        description: "Premium executive furniture for Finance Secretary office.",
+        description:
+          "Premium executive furniture for Finance Secretary office.",
       },
       {
         id: "furniture_013",
@@ -1616,7 +1636,7 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Central bank governor's executive office furniture.",
       },
-      
+
       // Regional Government Office Furniture
       {
         id: "furniture_015",
@@ -1637,15 +1657,16 @@ const mapMarkers = [
       {
         id: "furniture_017",
         name: "DOF Region VII Conference Room Set",
-        location: [10.315700, 123.885400],
+        location: [10.3157, 123.8854],
         status: "active",
         subcategory: "Furniture",
-        description: "Regional office conference furniture for Central Visayas.",
+        description:
+          "Regional office conference furniture for Central Visayas.",
       },
       {
         id: "furniture_018",
         name: "Davao City Mayor Executive Furniture",
-        location: [7.073150, 125.612831],
+        location: [7.07315, 125.612831],
         status: "active",
         subcategory: "Furniture",
         description: "Executive office furniture for Davao City Mayor.",
@@ -1653,7 +1674,7 @@ const mapMarkers = [
       {
         id: "furniture_019",
         name: "Iloilo Provincial Capitol Reception Set",
-        location: [10.721100, 122.562600],
+        location: [10.7211, 122.5626],
         status: "maintenance",
         subcategory: "Furniture",
         description: "Reception area furniture requiring refurbishment.",
@@ -1661,12 +1682,12 @@ const mapMarkers = [
       {
         id: "furniture_020",
         name: "Baguio City Hall Executive Furniture",
-        location: [16.412000, 120.593600],
+        location: [16.412, 120.5936],
         status: "active",
         subcategory: "Furniture",
         description: "Mountain city executive office furniture set.",
       },
-      
+
       // Government Agency Work Stations
       {
         id: "furniture_021",
@@ -1687,12 +1708,13 @@ const mapMarkers = [
       {
         id: "furniture_023",
         name: "DOST Research Laboratory Furniture",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Furniture",
-        description: "Specialized laboratory furniture for scientific research.",
+        description:
+          "Specialized laboratory furniture for scientific research.",
       },
-      
+
       // Office Fixtures - Lighting Systems
       {
         id: "fixture_001",
@@ -1700,7 +1722,8 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Fixtures",
-        description: "Historic palace LED lighting upgrade for energy efficiency.",
+        description:
+          "Historic palace LED lighting upgrade for energy efficiency.",
       },
       {
         id: "fixture_002",
@@ -1726,7 +1749,7 @@ const mapMarkers = [
         subcategory: "Fixtures",
         description: "Automated smart lighting system for energy management.",
       },
-      
+
       // Office Fixtures - Security Systems
       {
         id: "fixture_005",
@@ -1734,7 +1757,8 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Fixtures",
-        description: "Comprehensive security camera system for presidential complex.",
+        description:
+          "Comprehensive security camera system for presidential complex.",
       },
       {
         id: "fixture_006",
@@ -1760,7 +1784,7 @@ const mapMarkers = [
         subcategory: "Fixtures",
         description: "High-security vault access system requiring calibration.",
       },
-      
+
       // Regional Office Fixtures
       {
         id: "fixture_009",
@@ -1768,12 +1792,13 @@ const mapMarkers = [
         location: [10.293719, 123.902612],
         status: "active",
         subcategory: "Fixtures",
-        description: "Energy-efficient lighting upgrade for provincial capitol.",
+        description:
+          "Energy-efficient lighting upgrade for provincial capitol.",
       },
       {
         id: "fixture_010",
         name: "Davao City Hall Security System",
-        location: [7.073150, 125.612831],
+        location: [7.07315, 125.612831],
         status: "active",
         subcategory: "Fixtures",
         description: "Comprehensive security system for city hall complex.",
@@ -1781,7 +1806,7 @@ const mapMarkers = [
       {
         id: "fixture_011",
         name: "Iloilo Provincial Building HVAC Controls",
-        location: [10.721100, 122.562600],
+        location: [10.7211, 122.5626],
         status: "maintenance",
         subcategory: "Fixtures",
         description: "Climate control system requiring seasonal maintenance.",
@@ -1789,7 +1814,7 @@ const mapMarkers = [
       {
         id: "fixture_012",
         name: "Baguio City Hall Mountain Climate Systems",
-        location: [16.412000, 120.593600],
+        location: [16.412, 120.5936],
         status: "active",
         subcategory: "Fixtures",
         description: "Specialized climate control for mountain environment.",
@@ -1826,15 +1851,17 @@ const mapMarkers = [
         location: [14.5995, 120.9842],
         status: "active",
         subcategory: "Specialized Equipment",
-        description: "Advanced command and control center for national emergencies.",
+        description:
+          "Advanced command and control center for national emergencies.",
       },
       {
         id: "highvalue_002",
         name: "National Defense Radar System - Baguio",
-        location: [16.416200, 120.595800],
+        location: [16.4162, 120.5958],
         status: "active",
         subcategory: "Specialized Equipment",
-        description: "Strategic air defense radar installation in mountain region.",
+        description:
+          "Strategic air defense radar installation in mountain region.",
       },
       {
         id: "highvalue_003",
@@ -1847,7 +1874,7 @@ const mapMarkers = [
       {
         id: "highvalue_004",
         name: "PAGASA Weather Satellite Ground Station",
-        location: [14.6391, 121.0570],
+        location: [14.6391, 121.057],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Satellite communication system for weather monitoring.",
@@ -1860,7 +1887,7 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Specialized equipment for printing Philippine currency.",
       },
-      
+
       // Critical Infrastructure Protection
       {
         id: "highvalue_006",
@@ -1876,12 +1903,13 @@ const mapMarkers = [
         location: [14.5086, 121.0198],
         status: "active",
         subcategory: "Specialized Equipment",
-        description: "Primary radar system for international airport operations.",
+        description:
+          "Primary radar system for international airport operations.",
       },
       {
         id: "highvalue_008",
         name: "Metropolitan Waterworks Master Control System",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Automated water distribution control for Metro Manila.",
@@ -1902,7 +1930,7 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Critical telecommunications infrastructure hub.",
       },
-      
+
       // Regional Strategic Assets
       {
         id: "highvalue_011",
@@ -1915,7 +1943,7 @@ const mapMarkers = [
       {
         id: "highvalue_012",
         name: "Cebu Port Authority Container Tracking System",
-        location: [10.288720, 123.896990],
+        location: [10.28872, 123.89699],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Advanced cargo tracking and management system.",
@@ -1931,7 +1959,7 @@ const mapMarkers = [
       {
         id: "highvalue_014",
         name: "Davao International Airport Security Scanner",
-        location: [7.125520, 125.645710],
+        location: [7.12552, 125.64571],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Advanced security screening equipment for aviation.",
@@ -1939,33 +1967,35 @@ const mapMarkers = [
       {
         id: "highvalue_015",
         name: "Davao Seaport Customs X-Ray System",
-        location: [7.063400, 125.588900],
+        location: [7.0634, 125.5889],
         status: "warning",
         subcategory: "Specialized Equipment",
-        description: "Large-scale cargo inspection system requiring calibration.",
+        description:
+          "Large-scale cargo inspection system requiring calibration.",
       },
       {
         id: "highvalue_016",
         name: "Iloilo River Flood Control Monitoring System",
-        location: [10.717800, 122.548300],
+        location: [10.7178, 122.5483],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Automated flood monitoring and warning system.",
       },
-      
+
       // Scientific and Research Equipment
       {
         id: "highvalue_017",
         name: "DOST-ASTI Supercomputer Cluster",
-        location: [14.6506, 121.0170],
+        location: [14.6506, 121.017],
         status: "active",
         subcategory: "Specialized Equipment",
-        description: "High-performance computing system for research and development.",
+        description:
+          "High-performance computing system for research and development.",
       },
       {
         id: "highvalue_018",
         name: "PHIVOLCS Seismic Monitoring Network Hub",
-        location: [14.6391, 121.0570],
+        location: [14.6391, 121.057],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "National earthquake monitoring and analysis system.",
@@ -1981,17 +2011,17 @@ const mapMarkers = [
       {
         id: "highvalue_020",
         name: "IRRI Agricultural Research Equipment Cluster",
-        location: [14.1591, 121.2570],
+        location: [14.1591, 121.257],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Specialized agricultural research and testing equipment.",
       },
-      
+
       // Military and Defense Assets
       {
         id: "highvalue_021",
         name: "AFP Command and Control System - Camp Aguinaldo",
-        location: [14.6391, 121.0570],
+        location: [14.6391, 121.057],
         status: "active",
         subcategory: "Specialized Equipment",
         description: "Military command and communication system.",
@@ -2020,7 +2050,7 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Maritime search and rescue coordination equipment.",
       },
-      
+
       // Financial and Economic Infrastructure
       {
         id: "highvalue_025",
@@ -2058,23 +2088,65 @@ const mapMarkers = [
   },
 ];
 
-const categoryMasterIds = mapMarkers.map(category => category.checkboxConfig.masterCheckboxId);
+const categoryMasterIds = mapMarkers.map(
+  (category) => category.checkboxConfig.masterCheckboxId
+);
 
 const categoryMasterCheckboxes = {
   all: "all_categories",
   ...Object.fromEntries(
-    mapMarkers.map(category => [
+    mapMarkers.map((category) => [
       category.checkboxConfig.masterCheckboxId,
-      category.id
+      category.id,
     ])
-  )
+  ),
 };
 
 const searchData = {
   quickActions: [],
   categories: {
-    "Hospitals & Healthcare": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l11 11z"/></svg>`,
+    "Infrastructure": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`,
+      items: [
+        {
+          title: "DPWH Regional Office VII",
+          description: "Department of Public Works and Highways office",
+          distance: "0.5km",
+          siteId: "infrastructure_01",
+          category: "Infrastructure",
+        },
+        {
+          title: "Cebu City Hall Annex",
+          description: "Municipal government building",
+          distance: "0.3km",
+          siteId: "infrastructure_02",
+          category: "Infrastructure",
+        },
+        {
+          title: "Smart Communications Tower",
+          description: "Telecommunications infrastructure",
+          distance: "1.8km",
+          siteId: "infrastructure_03",
+          category: "Infrastructure",
+        },
+        {
+          title: "Cebu Water District",
+          description: "Water supply and distribution facility",
+          distance: "2.1km",
+          siteId: "infrastructure_04",
+          category: "Infrastructure",
+        },
+        {
+          title: "Globe Telecom Base Station",
+          description: "Mobile network infrastructure",
+          distance: "1.5km",
+          siteId: "infrastructure_05",
+          category: "Infrastructure",
+        },
+      ],
+    },
+    "Public Buildings": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>`,
       items: [
         {
           title: "Cebu City Medical Center",
@@ -2091,225 +2163,185 @@ const searchData = {
           category: "Public Buildings",
         },
         {
-          title: "Chong Hua Hospital",
-          description: "Leading private hospital",
-          distance: "1.5km",
-          siteId: "hospital_10",
-          category: "Public Buildings",
-        },
-        {
-          title: "Cebu Doctors' University Hospital",
-          description: "University hospital with comprehensive healthcare",
-          distance: "0.9km",
-          siteId: "hospital_04",
-          category: "Public Buildings",
-        },
-        {
-          title: "Adventist Hospital Cebu",
-          description: "Faith-based hospital providing quality healthcare",
-          distance: "1.1km",
-          siteId: "hospital_05",
-          category: "Public Buildings",
-        },
-      ],
-    },
-    "Government Services": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>`,
-      items: [
-        {
-          title: "Cebu City Hall",
-          description: "Main administrative center",
-          distance: "0.3km",
-          siteId: "govt_01",
-          category: "Public Buildings",
-        },
-        {
-          title: "Office of the City Civil Registrar",
-          description: "Birth certificates, marriage licenses",
-          distance: "0.5km",
-          siteId: "govt_13",
-          category: "Public Buildings",
-        },
-        {
-          title: "Cebu City Health Department",
-          description: "Public health services",
-          distance: "0.7km",
-          siteId: "govt_15",
-          category: "Public Buildings",
-        },
-        {
-          title: "DPWH Cebu City District Office",
-          description: "Public works and highways office",
-          distance: "0.4km",
-          siteId: "govt_10",
-          category: "Public Buildings",
-        },
-        {
-          title: "DTI Cebu Provincial Office",
-          description: "Trade and industry services",
-          distance: "0.6km",
-          siteId: "govt_05",
-          category: "Public Buildings",
-        },
-      ],
-    },
-    Transportation: {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14"/><path d="M8 8v4"/><path d="M9 18h6"/></svg>`,
-      items: [
-        {
-          title: "Route 01K: Urgello - SM - Parkmall",
-          description: "Jeepney route through commercial areas",
-          distance: "Multiple stops",
-          siteId: "transport_route_01",
-          category: "Traffic Data",
-        },
-        {
-          title: "Route 04B: Lahug - Carbon Market",
-          description: "Route through educational areas",
-          distance: "Multiple stops",
-          siteId: "transport_route_02",
-          category: "Traffic Data",
-        },
-        {
-          title: "Route 13C: Talamban - Colon",
-          description: "Northern route to downtown",
-          distance: "Multiple stops",
-          siteId: "transport_route_03",
-          category: "Traffic Data",
-        },
-        {
-          title: "MyBus Terminal - SM City",
-          description: "Bus routes to airport and Talisay",
-          distance: "1.8km",
-          siteId: "transport_02",
-          category: "Infrastructure",
-        },
-        {
-          title: "Jeepney Routes MI-03B",
-          description: "Route from MEPZ to Cordova",
-          distance: "Various",
-          siteId: "transport_01",
-          category: "Infrastructure",
-        },
-      ],
-    },
-    Education: {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
-      items: [
-        {
           title: "University of the Philippines Cebu",
-          description: "Public university campus",
-          distance: "2.2km",
-          siteId: "school_14",
-          category: "Public Buildings",
-        },
-        {
-          title: "Cebu City National Science High School",
-          description: "Specialized science high school",
-          distance: "1.5km",
+          description: "State university campus",
+          distance: "2.5km",
           siteId: "school_01",
           category: "Public Buildings",
         },
         {
-          title: "Cebu Institute of Technology - University",
-          description: "Technology-focused university",
-          distance: "0.9km",
-          siteId: "school_12",
-          category: "Public Buildings",
-        },
-        {
-          title: "University of the Visayas - Main Campus",
-          description: "Private university with various programs",
-          distance: "1.1km",
-          siteId: "school_13",
-          category: "Public Buildings",
-        },
-        {
-          title: "University of Cebu - Banilad Campus",
-          description: "Private university campus",
-          distance: "2.8km",
-          siteId: "school_15",
-          category: "Public Buildings",
-        },
-      ],
-    },
-    "Internet & Connectivity": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></svg>`,
-      items: [
-        {
-          title: "Ayala Center Free WiFi",
-          description: "Shopping mall WiFi access",
-          distance: "1.2km",
-          siteId: "wifi_01",
-          category: "Internet Access",
-        },
-        {
-          title: "IT Park Public WiFi",
-          description: "High-speed internet in business district",
-          distance: "2.5km",
-          siteId: "wifi_03",
-          category: "Internet Access",
-        },
-        {
-          title: "Plaza Independencia WiFi",
-          description: "Public WiFi at historic plaza",
+          title: "Cebu City Hall",
+          description: "Main municipal government building",
           distance: "0.4km",
-          siteId: "wifi_05",
-          category: "Internet Access",
+          siteId: "government_01",
+          category: "Public Buildings",
         },
         {
-          title: "Cebu City Library Digital Center",
-          description: "Free computer and internet access",
+          title: "Fuente Police Station",
+          description: "Local police precinct",
           distance: "0.7km",
-          siteId: "internet_01",
-          category: "Internet Access",
-        },
-        {
-          title: "NBP Cebu City Gateway",
-          description: "National broadband infrastructure",
-          distance: "1.0km",
-          siteId: "nbp_01",
-          category: "National Broadband Project",
+          siteId: "police_01",
+          category: "Public Buildings",
         },
       ],
     },
-    "Shopping & Recreation": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1z"/><path d="M9 12v4"/><path d="M15 12v4"/></svg>`,
+    "Natural Features": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c0 8-7 13-7 13s-7-5-7-13a7 7 0 1 1 14 0Z"/><circle cx="10" cy="8" r="3"/></svg>`,
       items: [
         {
-          title: "Ayala Center Cebu",
-          description: "Premier shopping destination",
-          distance: "1.2km",
-          siteId: "recreation_02",
-          category: "Points of Interest",
+          title: "Colon Rainforest Park",
+          description: "Urban forest conservation area",
+          distance: "1.5km",
+          siteId: "park_01",
+          category: "Natural Features",
         },
         {
-          title: "SM Seaside City Cebu",
-          description: "Large shopping mall with entertainment",
+          title: "Mahiga Creek",
+          description: "Natural waterway and watershed",
+          distance: "2.0km",
+          siteId: "waterway_01",
+          category: "Natural Features",
+        },
+        {
+          title: "Sirao Flower Garden",
+          description: "Botanical garden and conservation site",
+          distance: "8.5km",
+          siteId: "garden_01",
+          category: "Natural Features",
+        },
+        {
+          title: "Lahug River",
+          description: "Major river system",
+          distance: "3.2km",
+          siteId: "river_01",
+          category: "Natural Features",
+        },
+        {
+          title: "Busay Hills Forest",
+          description: "Protected forest area",
+          distance: "12.5km",
+          siteId: "forest_01",
+          category: "Natural Features",
+        },
+      ],
+    },
+    "Environmental Risks": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="m12 17 .01 0"/><path d="M8.5 2.5 12 6l3.5-3.5"/><path d="M8.5 21.5 12 18l3.5 3.5"/><path d="M2.5 8.5 6 12l-3.5 3.5"/><path d="M21.5 8.5 18 12l3.5 3.5"/></svg>`,
+      items: [
+        {
+          title: "Lahug Flood Zone",
+          description: "High-risk flooding area during heavy rains",
           distance: "2.8km",
-          siteId: "recreation_01",
-          category: "Points of Interest",
+          siteId: "flood_01",
+          category: "Environmental Risks",
         },
         {
-          title: "Cebu Business Park",
-          description: "Mixed-use development with amenities",
+          title: "Colon Landslide Area",
+          description: "Landslide-prone slope",
+          distance: "1.9km",
+          siteId: "landslide_01",
+          category: "Environmental Risks",
+        },
+        {
+          title: "Capitol Site Air Quality Monitor",
+          description: "Air pollution monitoring station",
           distance: "1.1km",
-          siteId: "business_01",
+          siteId: "air_01",
+          category: "Environmental Risks",
+        },
+        {
+          title: "Guadalupe Fault Line",
+          description: "Active geological fault zone",
+          distance: "4.5km",
+          siteId: "fault_01",
+          category: "Environmental Risks",
+        },
+        {
+          title: "Septic Tank Overflow Site",
+          description: "Water contamination risk area",
+          distance: "0.9km",
+          siteId: "contamination_01",
+          category: "Environmental Risks",
+        },
+      ],
+    },
+    "Points of Interest": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+      items: [
+        {
+          title: "Heritage Monument",
+          description: "Historical landmark in downtown area",
+          distance: "0.2km",
+          siteId: "poi_01",
           category: "Points of Interest",
         },
         {
-          title: "Cebu IT Park",
-          description: "Business and entertainment district",
+          title: "Magellan's Cross",
+          description: "Famous historical and religious site",
+          distance: "0.1km",
+          siteId: "poi_02",
+          category: "Points of Interest",
+        },
+        {
+          title: "Cebu Metropolitan Cathedral",
+          description: "Historic Catholic cathedral",
+          distance: "0.3km",
+          siteId: "poi_03",
+          category: "Points of Interest",
+        },
+        {
+          title: "Carbon Public Market",
+          description: "Traditional public market",
+          distance: "0.6km",
+          siteId: "poi_04",
+          category: "Points of Interest",
+        },
+        {
+          title: "Fort San Pedro",
+          description: "Spanish colonial fortress",
+          distance: "0.8km",
+          siteId: "poi_05",
+          category: "Points of Interest",
+        },
+      ],
+    },
+    "Population Data": {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      items: [
+        {
+          title: "Barangay Lahug Census",
+          description: "Demographic data collection point",
           distance: "2.5km",
-          siteId: "business_02",
-          category: "Points of Interest",
+          siteId: "census_01",
+          category: "Population Data",
         },
         {
-          title: "Plaza Independencia",
-          description: "Historic plaza and public space",
+          title: "Capitol Site Statistics Office",
+          description: "Population data processing center",
+          distance: "1.3km",
+          siteId: "census_02",
+          category: "Population Data",
+        },
+        {
+          title: "Cebu City Planning Office",
+          description: "Urban development and demographics",
           distance: "0.4km",
-          siteId: "recreation_05",
-          category: "Points of Interest",
+          siteId: "census_03",
+          category: "Population Data",
+        },
+        {
+          title: "Colon Survey Station",
+          description: "Community survey data collection",
+          distance: "0.1km",
+          siteId: "census_04",
+          category: "Population Data",
+        },
+        {
+          title: "University Belt Demographics",
+          description: "Student population monitoring",
+          distance: "3.1km",
+          siteId: "census_05",
+          category: "Population Data",
         },
       ],
     },
