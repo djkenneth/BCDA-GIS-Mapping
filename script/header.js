@@ -1470,7 +1470,7 @@ function handleMapResize() {
 
     // Force Leaflet to recognize the size change
     setTimeout(() => {
-      if(map.resize) {
+      if (map.resize) {
         map.resize();
       }
 
@@ -1511,4 +1511,41 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     clearInterval(checkMapReady);
   }, 10000);
+});
+
+// Dashboard Cards Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const dashboardCards = document.querySelectorAll(".header-card");
+
+  dashboardCards.forEach((card) => {
+    card.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      // Close all other cards
+      dashboardCards.forEach((otherCard) => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("active");
+        }
+      });
+
+      // Toggle current card
+      card.classList.toggle("active");
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".header-card")) {
+      dashboardCards.forEach((card) => {
+        card.classList.remove("active");
+      });
+    }
+  });
+
+  // Prevent dropdown from closing when clicking inside dropdown content
+  document.querySelectorAll(".card-dropdown").forEach((dropdown) => {
+    dropdown.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  });
 });

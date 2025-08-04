@@ -207,7 +207,7 @@
   overflow: hidden;
 }
 
-.card-header {
+.dashboard-card .card-header {
   padding: 15px;
   background-color: rgba(52, 152, 219, 0.1);
   border-bottom: 1px solid rgba(84, 138, 152, 0.3);
@@ -215,18 +215,18 @@
   align-items: center;
 }
 
-.card-title {
+.dashboard-card .card-title {
   margin: 0;
   font-size: 20px;
   font-weight: 500;
 }
 
-.card-actions {
+.dashboard-card .card-actions {
   display: flex;
   gap: 8px;
 }
 
-.action-btn {
+.dashboard-card .action-btn {
   background-color: transparent;
   border: none;
   color: var(--text-color);
@@ -235,11 +235,11 @@
   border-radius: 4px;
 }
 
-.action-btn:hover {
+.dashboard-card .action-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.card-body {
+.dashboard-card .card-body {
   padding: 15px;
 }
 
