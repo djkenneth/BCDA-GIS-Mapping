@@ -6,25 +6,29 @@
             <i class="fas fa-layer-group"></i>
             <span>Features</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="infrastructure">
-            <i class="fas fa-road"></i>
-            <span>Infrastructure</span>
-        </div>
-        <div class="sidebar-tab-v2" data-tab="buildings">
+        <div class="sidebar-tab-v2" data-tab="government">
             <i class="fas fa-building"></i>
-            <span>Buildings</span>
+            <span>Government</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="natural">
-            <i class="fas fa-leaf"></i>
-            <span>Natural</span>
+        <div class="sidebar-tab-v2" data-tab="land">
+            <i class="fas fa-map"></i>
+            <span>Land</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="risks">
-            <i class="fas fa-exclamation-triangle"></i>
-            <span>Risks</span>
+        <div class="sidebar-tab-v2" data-tab="vehicles">
+            <i class="fas fa-car"></i>
+            <span>Vehicles</span>
         </div>
-        <div class="sidebar-tab-v2" data-tab="poi">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Points of Interest</span>
+        <div class="sidebar-tab-v2" data-tab="it">
+            <i class="fas fa-server"></i>
+            <span>IT</span>
+        </div>
+        <div class="sidebar-tab-v2" data-tab="office">
+            <i class="fas fa-chair"></i>
+            <span>Office</span>
+        </div>
+        <div class="sidebar-tab-v2" data-tab="highvalue">
+            <i class="fas fa-gem"></i>
+            <span>High-Value</span>
         </div>
     </div>
 </div>
@@ -47,164 +51,166 @@
             </div>
 
             <div class="content-section-item">
-                <input type="checkbox" id="all-infrastructure">
-                <label for="all-infrastructure">Infrastructure</label>
+                <input type="checkbox" id="all-government">
+                <label for="all-government">Government Buildings</label>
             </div>
 
             <div class="content-section-item">
-                <input type="checkbox" id="all-buildings">
-                <label for="all-buildings">Public Buildings</label>
+                <input type="checkbox" id="all-land">
+                <label for="all-land">Land Properties</label>
             </div>
 
             <div class="content-section-item">
-                <input type="checkbox" id="all-natural">
-                <label for="all-natural">Natural Features</label>
+                <input type="checkbox" id="all-vehicles">
+                <label for="all-vehicles">Vehicles</label>
             </div>
 
             <div class="content-section-item">
-                <input type="checkbox" id="all-risks">
-                <label for="all-risks">Environmental Risks</label>
+                <input type="checkbox" id="all-it">
+                <label for="all-it">IT Infrastructure</label>
             </div>
 
             <div class="content-section-item">
-                <input type="checkbox" id="all-poi">
-                <label for="all-poi">Points of Interest</label>
+                <input type="checkbox" id="all-office">
+                <label for="all-office">Office Equipment</label>
+            </div>
+
+            <div class="content-section-item">
+                <input type="checkbox" id="all-highvalue">
+                <label for="all-highvalue">High-Value Assets</label>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Infrastructure Panel -->
-<div class="sidebar-content" id="infrastructure-content">
+<!-- Government Buildings Panel -->
+<div class="sidebar-content" id="government-content">
     <div class="content-header">
-        <h3>Infrastructure</h3>
+        <h3>Government Buildings</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
-
     <div class="content-section">
         <div class="content-section-title">
-            <span>Infrastructure</span>
+            <span>Building Types</span>
             <button class="select-all">Select All</button>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="bir-headquarters">
-            <label for="bir-headquarters">BIR Headquarters</label>
+            <input type="checkbox" id="offices">
+            <label for="offices">Offices</label>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="dof-regional-office">
-            <label for="dof-regional-office">DOF Regional Office</label>
+            <input type="checkbox" id="warehouses">
+            <label for="warehouses">Warehouses</label>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="bir-reqional-office">
-            <label for="bir-reqional-office">BIR Regional Office</label>
+            <input type="checkbox" id="facilities">
+            <label for="facilities">Facilities</label>
         </div>
     </div>
 </div>
 
-<!-- Public Buildings Panel -->
-<div class="sidebar-content" id="buildings-content">
+<!-- Land Properties Panel -->
+<div class="sidebar-content" id="land-content">
     <div class="content-header">
-        <h3>Public Buildings</h3>
+        <h3>Land Properties</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
-
     <div class="content-section">
         <div class="content-section-title">
-            <span>Public Services</span>
+            <span>Property Types</span>
             <button class="select-all">Select All</button>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="government-offices">
-            <label for="government-offices">Government Offices</label>
+            <input type="checkbox" id="lots">
+            <label for="lots">Lots</label>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="dof-district-office">
-            <label for="dof-district-office">DOF District Office</label>
+            <input type="checkbox" id="parcels">
+            <label for="parcels">Parcels</label>
+        </div>
+        <div class="content-section-item">
+            <input type="checkbox" id="estates">
+            <label for="estates">Estates</label>
         </div>
     </div>
 </div>
 
-<!-- Natural Features Panel -->
-<div class="sidebar-content" id="natural-content">
+<!-- Vehicles Panel -->
+<div class="sidebar-content" id="vehicles-content">
     <div class="content-header">
-        <h3>Natural Features</h3>
+        <h3>Vehicles</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
-
     <div class="content-section">
         <div class="content-section-title">
-            <span>Features</span>
+            <span>Fleet Management</span>
             <button class="select-all">Select All</button>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="topography">
-            <label for="topography">Topography</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="parks">
-            <label for="parks">Parks & Green Spaces</label>
-        </div>
-
-        <div class="content-section-item">
-            <input type="checkbox" id="dof-central-office">
-            <label for="dof-central-office">DOF Central Office</label>
+            <input type="checkbox" id="fleet-management">
+            <label for="fleet-management">Fleet Management</label>
         </div>
     </div>
 </div>
 
-<!-- Environmental Risks Panel -->
-<div class="sidebar-content" id="risks-content">
+<!-- IT Infrastructure Panel -->
+<div class="sidebar-content" id="it-content">
     <div class="content-header">
-        <h3>Environmental Risks</h3>
+        <h3>IT Infrastructure</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
-
     <div class="content-section">
         <div class="content-section-title">
-            <span>Risk Types</span>
+            <span>IT Equipment</span>
             <button class="select-all">Select All</button>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="other-hazards">
-            <label for="other-hazards">Other Environmental Hazards</label>
+            <input type="checkbox" id="servers">
+            <label for="servers">Servers</label>
+        </div>
+        <div class="content-section-item">
+            <input type="checkbox" id="network-equipment">
+            <label for="network-equipment">Network Equipment</label>
         </div>
     </div>
 </div>
 
-<!-- Points of Interest Panel -->
-<div class="sidebar-content" id="poi-content">
+<!-- Office Equipment Panel -->
+<div class="sidebar-content" id="office-content">
     <div class="content-header">
-        <h3>Points of Interest</h3>
+        <h3>Office Equipment</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
-
     <div class="content-section">
         <div class="content-section-title">
-            <span>POI Types</span>
+            <span>Equipment Types</span>
             <button class="select-all">Select All</button>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="businesses">
-            <label for="businesses">Businesses</label>
+            <input type="checkbox" id="furniture">
+            <label for="furniture">Furniture</label>
         </div>
-
         <div class="content-section-item">
-            <input type="checkbox" id="recreational">
-            <label for="recreational">Recreational Areas</label>
+            <input type="checkbox" id="fixtures">
+            <label for="fixtures">Fixtures</label>
         </div>
+    </div>
+</div>
 
+<!-- High-Value Assets Panel -->
+<div class="sidebar-content" id="highvalue-content">
+    <div class="content-header">
+        <h3>High-Value Assets</h3>
+        <button class="close-panel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="content-section">
+        <div class="content-section-title">
+            <span>Specialized Equipment</span>
+            <button class="select-all">Select All</button>
+        </div>
         <div class="content-section-item">
-            <input type="checkbox" id="community-centers">
-            <label for="community-centers">Community Centers</label>
+            <input type="checkbox" id="specialized-equipment">
+            <label for="specialized-equipment">Specialized Equipment</label>
         </div>
     </div>
 </div>

@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize other components
   initializeResponsiveFeatures();
-  initializePublicInformation();
+  // initializePublicInformation();
   initializeEmergencyContacts();
   initializeAppSwitcher();
   initializePanelManager();
@@ -458,113 +458,115 @@ function initializeMobileEmergencyContacts() {
   });
 }
 
-function initializePublicInformation() {
-  const alertsContainer = document.querySelector("#alerts-container");
-  const eventsContainer = document.querySelector(
-    ".city-events-section .events-container"
-  );
-  const noEventsMessage = document.querySelector(".no-events-message");
+// function initializePublicInformation() {
+//   const alertsContainer = document.querySelector("#alerts-container");
+//   const eventsContainer = document.querySelector(
+//     ".city-events-section .events-container"
+//   );
+//   const noEventsMessage = document.querySelector(".no-events-message");
 
-  if (!alertsContainer) return;
+//   console.log('alerts-container', alertsContainer)
 
-  if (!eventsContainer) {
-    const cityEventsSection = document.querySelector(".city-events-section");
-    if (cityEventsSection) {
-      const container = document.createElement("div");
-      container.className = "events-container";
-      cityEventsSection.appendChild(container);
-    }
-  }
+//   if (!alertsContainer) return;
 
-  const finalEventsContainer = document.querySelector(
-    ".city-events-section .events-container"
-  );
+//   if (!eventsContainer) {
+//     const cityEventsSection = document.querySelector(".city-events-section");
+//     if (cityEventsSection) {
+//       const container = document.createElement("div");
+//       container.className = "events-container";
+//       cityEventsSection.appendChild(container);
+//     }
+//   }
 
-  if (noEventsMessage) {
-    noEventsMessage.style.display = "none";
-  }
-  if (finalEventsContainer) {
-    finalEventsContainer.style.display = "flex";
-  }
+//   const finalEventsContainer = document.querySelector(
+//     ".city-events-section .events-container"
+//   );
 
-  let currentAlertIndex = 3;
-  let currentEventIndex = 0;
+//   if (noEventsMessage) {
+//     noEventsMessage.style.display = "none";
+//   }
+//   if (finalEventsContainer) {
+//     finalEventsContainer.style.display = "flex";
+//   }
 
-  displayEvents(currentEventIndex);
+//   let currentAlertIndex = 3;
+//   let currentEventIndex = 0;
 
-  setInterval(() => {
-    const alertItems = alertsContainer.querySelectorAll(".alert-item");
-    const eventItems = finalEventsContainer.querySelectorAll(".event-item");
+//   displayEvents(currentEventIndex);
 
-    alertItems.forEach((item) => {
-      item.style.opacity = "0";
-      item.style.transform = "translateX(-20px)";
-    });
+//   setInterval(() => {
+//     const alertItems = alertsContainer.querySelectorAll(".alert-item");
+//     const eventItems = finalEventsContainer.querySelectorAll(".event-item");
 
-    eventItems.forEach((item) => {
-      item.style.opacity = "0";
-      item.style.transform = "translateX(-20px)";
-    });
+//     alertItems.forEach((item) => {
+//       item.style.opacity = "0";
+//       item.style.transform = "translateX(-20px)";
+//     });
 
-    setTimeout(() => {
-      alertsContainer.innerHTML = "";
-      for (let i = 0; i < 3; i++) {
-        const alertIndex = (currentAlertIndex + i) % publicAlerts.length;
-        const alert = publicAlerts[alertIndex];
+//     eventItems.forEach((item) => {
+//       item.style.opacity = "0";
+//       item.style.transform = "translateX(-20px)";
+//     });
 
-        const alertItem = document.createElement("div");
-        alertItem.className = `alert-item ${alert.class}`;
-        alertItem.innerHTML = `
-          <span class="alert-icon"></span>
-          <span class="alert-text">${alert.text}</span>
-        `;
-        alertItem.style.opacity = "0";
-        alertItem.style.transform = "translateX(-20px)";
+//     setTimeout(() => {
+//       alertsContainer.innerHTML = "";
+//       for (let i = 0; i < 3; i++) {
+//         const alertIndex = (currentAlertIndex + i) % publicAlerts.length;
+//         const alert = publicAlerts[alertIndex];
 
-        alertsContainer.appendChild(alertItem);
+//         const alertItem = document.createElement("div");
+//         alertItem.className = `alert-item ${alert.class}`;
+//         alertItem.innerHTML = `
+//           <span class="alert-icon"></span>
+//           <span class="alert-text">${alert.text}</span>
+//         `;
+//         alertItem.style.opacity = "0";
+//         alertItem.style.transform = "translateX(-20px)";
 
-        setTimeout(() => {
-          alertItem.style.opacity = "1";
-          alertItem.style.transform = "translateX(0)";
-        }, 100 * i);
-      }
+//         alertsContainer.appendChild(alertItem);
 
-      currentEventIndex = (currentEventIndex + 3) % cityEvents.length;
-      displayEvents(currentEventIndex);
+//         setTimeout(() => {
+//           alertItem.style.opacity = "1";
+//           alertItem.style.transform = "translateX(0)";
+//         }, 100 * i);
+//       }
 
-      currentAlertIndex = (currentAlertIndex + 3) % publicAlerts.length;
-    }, 300);
-  }, 5000);
+//       currentEventIndex = (currentEventIndex + 3) % cityEvents.length;
+//       displayEvents(currentEventIndex);
 
-  function displayEvents(startIndex) {
-    finalEventsContainer.innerHTML = "";
+//       currentAlertIndex = (currentAlertIndex + 3) % publicAlerts.length;
+//     }, 300);
+//   }, 5000);
 
-    const eventsToShow = Math.min(3, cityEvents.length);
+//   function displayEvents(startIndex) {
+//     finalEventsContainer.innerHTML = "";
 
-    for (let i = 0; i < eventsToShow; i++) {
-      const eventIndex = (startIndex + i) % cityEvents.length;
-      const event = cityEvents[eventIndex];
+//     const eventsToShow = Math.min(3, cityEvents.length);
 
-      const eventItem = document.createElement("div");
-      eventItem.className = `event-item ${event.class}`;
-      eventItem.innerHTML = `
-        <span class="event-icon">${event.icon}</span>
-        <span class="event-text">${event.text}</span>
-        <span class="event-date">${event.date}</span>
-      `;
-      eventItem.style.opacity = "0";
-      eventItem.style.transform = "translateX(-20px)";
+//     for (let i = 0; i < eventsToShow; i++) {
+//       const eventIndex = (startIndex + i) % cityEvents.length;
+//       const event = cityEvents[eventIndex];
 
-      finalEventsContainer.appendChild(eventItem);
+//       const eventItem = document.createElement("div");
+//       eventItem.className = `event-item ${event.class}`;
+//       eventItem.innerHTML = `
+//         <span class="event-icon">${event.icon}</span>
+//         <span class="event-text">${event.text}</span>
+//         <span class="event-date">${event.date}</span>
+//       `;
+//       eventItem.style.opacity = "0";
+//       eventItem.style.transform = "translateX(-20px)";
 
-      setTimeout(() => {
-        eventItem.style.transition = "all 0.3s ease";
-        eventItem.style.opacity = "1";
-        eventItem.style.transform = "translateX(0)";
-      }, 100 * i);
-    }
-  }
-}
+//       finalEventsContainer.appendChild(eventItem);
+
+//       setTimeout(() => {
+//         eventItem.style.transition = "all 0.3s ease";
+//         eventItem.style.opacity = "1";
+//         eventItem.style.transform = "translateX(0)";
+//       }, 100 * i);
+//     }
+//   }
+// }
 
 function initializeEmergencyContacts() {
   const emergencyGrid = document.querySelector(".emergency-grid");

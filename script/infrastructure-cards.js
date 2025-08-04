@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeDefaultBuildings() {
     try {
-      const buildingsCheckbox = document.getElementById("all-buildings");
+      const buildingsCheckbox = document.getElementById("all-government");
       if (buildingsCheckbox) {
         if (!buildingsCheckbox.checked) {
           buildingsCheckbox.checked = true;
