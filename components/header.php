@@ -1,15 +1,18 @@
 <header>
     <div class="nav-bar">
         <a href="javascript:history.back()">
-                <div class="logo-wrapper">
-                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
+            <div class="logo-wrapper">
+                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
+                <div class="logo-content">
                     <p class="logo-title">Department of Finance</p>
+                    <p class="logo-subtitle">Asset and Property Management</p>
                 </div>
-            </a>
+            </div>
+        </a>
+
         <div class="flex items-center w-4/5">
             <div class="flex w-full">
-
-            <div class="flex-1 desktop-metrics emergency-contacts-section">
+                <!-- <div class="flex-1 desktop-metrics emergency-contacts-section">
                     <p class="text-sm text-accent-custom mb-2">Emergency Contacts</p>
                     <div class="emergency-grid">
                         <div class="emergency-contact">
@@ -26,7 +29,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Desktop View Metrics -->
                 <div class="flex-1 desktop-metrics public-alerts-section">
                     <p class="text-sm text-accent-custom mb-2">Public Alerts</p>
                     <div class="alerts-container" id="alerts-container">
@@ -44,11 +46,10 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="flex-1 desktop-metrics city-events-section">
                     <p class="text-sm text-accent-custom mb-2">City Events</p>
                     <div class="events-container">
-                        <!-- Events will be dynamically populated by JavaScript -->
                     </div>
                     <div class="no-events-message" style="display: none;">
                         <div class="no-events-icon">
@@ -62,9 +63,7 @@
                         <p>No upcoming events</p>
                         <p style="font-size: 11px; color: rgba(255, 255, 255, 0.5);">Check back later for updates</p>
                     </div>
-                </div>
-
-                
+                </div> -->
             </div>
         </div>
 

@@ -49,7 +49,7 @@ header {
 
 header .logo-wrapper {
   display: flex;
-  width: 165px;
+  width: 210px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -79,12 +79,28 @@ header.collapsed {
   transform: translateY(-100%);
 }
 
+header .logo-content {
+  display: flex;
+  flex-direction: column;
+}
+
 header .logo-title {
   color: #e4dad7;
   font-family: "Roboto";
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  width: 100%;
+}
+
+header .logo-subtitle {
+  color: #e4dad7;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
   text-align: center;
   width: 100%;
