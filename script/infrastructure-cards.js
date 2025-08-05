@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         critical: 0,
         maintenance: 0,
         inactive: 0,
+        recently_acquired: 0,
+        transfer_pending: 0,
         categories: {},
         subcategories: {},
       };
@@ -67,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
           critical: 0,
           maintenance: 0,
           inactive: 0,
+          recently_acquired: 0,
+          transfer_pending: 0,
           subcategories: {},
         };
 
@@ -80,8 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
             infrastructureData.total++;
 
             const status = site.status || "active";
+
             categoryStats[status]++;
             infrastructureData[status]++;
+            
+            // console.log('status', status);
 
             const subcategoryKey = getSubcategoryKey(site.subcategory);
 
@@ -94,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 critical: 0,
                 maintenance: 0,
                 inactive: 0,
+                recently_acquired: 0,
+                transfer_pending: 0,
               };
             }
 
@@ -106,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 critical: 0,
                 maintenance: 0,
                 inactive: 0,
+                recently_acquired: 0,
+                transfer_pending: 0,
                 categoryId: category.id,
               };
             }
@@ -119,7 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         infrastructureData.categories[category.id] = categoryStats;
+
       });
+
     } catch (error) {
       console.error("Error calculating infrastructure stats:", error);
     }
@@ -189,9 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function getOverviewCards() {
     return [
       {
-        title: "Total Sites",
+        title: "Total Assets",
         value: infrastructureData.total,
-        type: "Total Infrastructure",
+        type: "Total Assets",
         className: "info-bg",
         icon: "fas fa-map-marker-alt",
         category: "status",
@@ -200,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Operational Assets",
         value: infrastructureData.active,
-        type: "Active Infrastructure",
+        type: "Active Assets",
         className: "active-bg",
         icon: "fas fa-check-circle",
         category: "status",
@@ -226,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         title: "Recently Acquired",
-        value: infrastructureData.categories.recently_acquired?.total || 0,
+        value: infrastructureData.recently_acquired,
         type: "New Assets",
         className: "nbp-bg",
         icon: "fas fa-plus-circle",
@@ -235,31 +248,31 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         title: "Transfer Pending",
-        value: infrastructureData.categories.transfer_pending?.total || 0,
+        value: infrastructureData.transfer_pending,
         type: "Pending Transfer",
         className: "wifi-bg",
         icon: "fas fa-exchange-alt",
         category: "status",
         filter: "transfer_pending",
       },
-      {
-        title: "NBP Infrastructure",
-        value: infrastructureData.categories.nbp?.total || 0,
-        type: "NBP Facilities",
-        className: "nbp-bg",
-        icon: "fas fa-building",
-        category: "nbp",
-        filter: "nbp",
-      },
-      {
-        title: "Demographics",
-        value: infrastructureData.categories.population_data?.total || 0,
-        type: "Population Data",
-        className: "info-bg",
-        icon: "fas fa-users",
-        category: "population_data",
-        filter: "population_data",
-      },
+      // {
+      //   title: "NBP Infrastructure",
+      //   value: infrastructureData.categories.nbp?.total || 0,
+      //   type: "NBP Facilities",
+      //   className: "nbp-bg",
+      //   icon: "fas fa-building",
+      //   category: "nbp",
+      //   filter: "nbp",
+      // },
+      // {
+      //   title: "Demographics",
+      //   value: infrastructureData.categories.population_data?.total || 0,
+      //   type: "Population Data",
+      //   className: "info-bg",
+      //   icon: "fas fa-users",
+      //   category: "population_data",
+      //   filter: "population_data",
+      // },
     ];
   }
 

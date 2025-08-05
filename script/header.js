@@ -839,7 +839,7 @@ function initializeSearchBar() {
               (item) => `
             <div class="search-suggestion-item" data-search="${item.title.toLowerCase()}" data-site-id="${
                 item.siteId || ""
-              }" data-category="${item.category || ""}">
+              }" data-category="${item.subcategory || ""}">
               <div class="search-suggestion-icon">${data.icon}</div>
               <div class="search-suggestion-content">
                 <div class="search-suggestion-title">${item.title}</div>
@@ -922,8 +922,6 @@ function initializeSearchBar() {
     return results;
   }
 
-  // Continuation of the search functions and remaining code
-
   function displaySearchResults(results, searchTerm) {
     const suggestionsContainer = document.getElementById("search-suggestions");
 
@@ -957,7 +955,7 @@ function initializeSearchBar() {
               (item) => `
             <div class="search-suggestion-item" data-search="${item.title.toLowerCase()}" data-site-id="${
                 item.siteId || ""
-              }" data-category="${item.category || ""}">
+              }" data-category="${item.subcategory || ""}">
               <div class="search-suggestion-icon">${item.icon}</div>
               <div class="search-suggestion-content">
                 <div class="search-suggestion-title">${highlightMatch(
@@ -988,7 +986,7 @@ function initializeSearchBar() {
               (item) => `
             <div class="search-suggestion-item" data-search="${item.title.toLowerCase()}" data-site-id="${
                 item.siteId || ""
-              }" data-category="${item.category || ""}">
+              }" data-category="${item.subcategory || ""}">
               <div class="search-suggestion-icon">${item.icon}</div>
               <div class="search-suggestion-content">
                 <div class="search-suggestion-title">${highlightMatch(
@@ -1019,7 +1017,7 @@ function initializeSearchBar() {
               (item) => `
             <div class="search-suggestion-item" data-search="${item.title.toLowerCase()}" data-site-id="${
                 item.siteId || ""
-              }" data-category="${item.category || ""}">
+              }" data-category="${item.subcategory || ""}">
               <div class="search-suggestion-icon">${item.icon}</div>
               <div class="search-suggestion-content">
                 <div class="search-suggestion-title">${item.title}</div>
@@ -1087,11 +1085,7 @@ function initializeSearchBar() {
 
 
     mapMarkers.forEach((category) => {
-      // console.log('categoryName', categoryName);
-      
       Object.entries(category.subcategoryConfigs).forEach(([key, value]) => {
-        // console.log(`Key: ${key}, Value: ${JSON.stringify(value)}`);
-        // You can check the key here
         if(key === categoryName) {
           targetCategory = category;
           const site = category.sites.find((s) => s.id === siteId);
@@ -1109,7 +1103,7 @@ function initializeSearchBar() {
         map.easeTo({
           center: [location[1], location[0]],
           zoom: 15,
-          duration: 3000,
+          duration: 5000,
         });
 
         setTimeout(() => {

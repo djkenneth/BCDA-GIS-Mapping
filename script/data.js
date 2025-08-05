@@ -1951,7 +1951,7 @@ const mapMarkers = [
         id: "server_001",
         name: "National Government Data Center - Primary",
         location: [14.5832, 120.9797],
-        status: "active",
+        status: "inactive",
         subcategory: "Servers",
         description:
           "Primary government data center hosting critical national systems.",
@@ -1968,7 +1968,7 @@ const mapMarkers = [
         id: "server_003",
         name: "Supreme Court IT Server Farm",
         location: [14.5901, 120.9794],
-        status: "active",
+        status: "inactive",
         subcategory: "Servers",
         description: "Judicial system servers for court management systems.",
       },
@@ -2001,7 +2001,7 @@ const mapMarkers = [
         id: "server_007",
         name: "BSP Banking Supervision Server Farm",
         location: [14.5832, 120.9797],
-        status: "active",
+        status: "recently_acquired",
         subcategory: "Servers",
         description: "Central bank regulatory system servers.",
       },
@@ -2009,7 +2009,7 @@ const mapMarkers = [
         id: "server_008",
         name: "PAGCOR Gaming Regulation Servers",
         location: [14.5547, 121.0244],
-        status: "active",
+        status: "transfer_pending",
         subcategory: "Servers",
         description: "Gaming industry regulatory and monitoring systems.",
       },
@@ -2028,7 +2028,7 @@ const mapMarkers = [
         id: "server_010",
         name: "Cebu City LGU Server Farm",
         location: [10.293719, 123.902612],
-        status: "active",
+        status: "critical",
         subcategory: "Servers",
         description: "Local government unit servers for city services.",
       },
@@ -2044,7 +2044,7 @@ const mapMarkers = [
         id: "server_012",
         name: "Region VI Government Data Center - Iloilo",
         location: [10.6967, 122.5644],
-        status: "active",
+        status: "critical",
         subcategory: "Servers",
         description: "Western Visayas regional server infrastructure.",
       },
@@ -2256,7 +2256,7 @@ const mapMarkers = [
         id: "furniture_002",
         name: "Cabinet Meeting Conference Table - Malacañang",
         location: [14.5995, 120.9842],
-        status: "active",
+        status: "recently_acquired",
         subcategory: "Furniture",
         description: "Historic cabinet meeting conference table and chairs.",
       },
@@ -2264,7 +2264,7 @@ const mapMarkers = [
         id: "furniture_003",
         name: "State Reception Furniture Set - Malacañang",
         location: [14.5995, 120.9842],
-        status: "active",
+        status: "critical",
         subcategory: "Furniture",
         description: "Ceremonial furniture for state functions and receptions.",
       },
@@ -2299,7 +2299,7 @@ const mapMarkers = [
         id: "furniture_007",
         name: "Court of Appeals Hearing Room Furniture",
         location: [14.5901, 120.9794],
-        status: "active",
+        status: "critical",
         subcategory: "Furniture",
         description: "Complete hearing room furniture set for appellate court.",
       },
@@ -2325,7 +2325,7 @@ const mapMarkers = [
         id: "furniture_010",
         name: "House of Representatives Speaker Podium",
         location: [14.5803, 120.9765],
-        status: "active",
+        status: "critical",
         subcategory: "Furniture",
         description: "Official Speaker's podium and rostrum set.",
       },
@@ -2360,7 +2360,7 @@ const mapMarkers = [
         id: "furniture_014",
         name: "BSP Governor Executive Desk Set",
         location: [14.5832, 120.9797],
-        status: "active",
+        status: "transfer_pending",
         subcategory: "Furniture",
         description: "Central bank governor's executive office furniture.",
       },
@@ -2543,7 +2543,7 @@ const mapMarkers = [
         id: "fixture_012",
         name: "Baguio City Hall Mountain Climate Systems",
         location: [16.412, 120.5936],
-        status: "active",
+        status: "critical",
         subcategory: "Fixtures",
         description: "Specialized climate control for mountain environment.",
       },
@@ -2832,249 +2832,77 @@ const categoryMasterCheckboxes = {
 
 const searchData = {
   quickActions: [],
-  categories: {
-    Infrastructure: {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`,
-      items: [
-        {
-          title: "DPWH Regional Office VII",
-          description: "Department of Public Works and Highways office",
-          distance: "0.5km",
-          siteId: "office_01",
-          category: "offices",
-        },
-        {
-          title: "Cebu City Hall Annex",
-          description: "Municipal government building",
-          distance: "0.3km",
-          siteId: "office_02",
-          category: "Infrastructure",
-        },
-        {
-          title: "Smart Communications Tower",
-          description: "Telecommunications infrastructure",
-          distance: "1.8km",
-          siteId: "infrastructure_03",
-          category: "Infrastructure",
-        },
-        {
-          title: "Cebu Water District",
-          description: "Water supply and distribution facility",
-          distance: "2.1km",
-          siteId: "infrastructure_04",
-          category: "Infrastructure",
-        },
-        {
-          title: "Globe Telecom Base Station",
-          description: "Mobile network infrastructure",
-          distance: "1.5km",
-          siteId: "infrastructure_05",
-          category: "Infrastructure",
-        },
-      ],
-    },
-    "Public Buildings": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>`,
-      items: [
-        {
-          title: "Cebu City Medical Center",
-          description: "Public hospital with comprehensive services",
-          distance: "1.2km",
-          siteId: "hospital_01",
-          category: "Public Buildings",
-        },
-        {
-          title: "Vicente Sotto Memorial",
-          description: "Major government tertiary care hospital",
-          distance: "0.8km",
-          siteId: "hospital_02",
-          category: "Public Buildings",
-        },
-        {
-          title: "University of the Philippines Cebu",
-          description: "State university campus",
-          distance: "2.5km",
-          siteId: "school_01",
-          category: "Public Buildings",
-        },
-        {
-          title: "Cebu City Hall",
-          description: "Main municipal government building",
-          distance: "0.4km",
-          siteId: "government_01",
-          category: "Public Buildings",
-        },
-        {
-          title: "Fuente Police Station",
-          description: "Local police precinct",
-          distance: "0.7km",
-          siteId: "police_01",
-          category: "Public Buildings",
-        },
-      ],
-    },
-    "Natural Features": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c0 8-7 13-7 13s-7-5-7-13a7 7 0 1 1 14 0Z"/><circle cx="10" cy="8" r="3"/></svg>`,
-      items: [
-        {
-          title: "Colon Rainforest Park",
-          description: "Urban forest conservation area",
-          distance: "1.5km",
-          siteId: "park_01",
-          category: "Natural Features",
-        },
-        {
-          title: "Mahiga Creek",
-          description: "Natural waterway and watershed",
-          distance: "2.0km",
-          siteId: "waterway_01",
-          category: "Natural Features",
-        },
-        {
-          title: "Sirao Flower Garden",
-          description: "Botanical garden and conservation site",
-          distance: "8.5km",
-          siteId: "garden_01",
-          category: "Natural Features",
-        },
-        {
-          title: "Lahug River",
-          description: "Major river system",
-          distance: "3.2km",
-          siteId: "river_01",
-          category: "Natural Features",
-        },
-        {
-          title: "Busay Hills Forest",
-          description: "Protected forest area",
-          distance: "12.5km",
-          siteId: "forest_01",
-          category: "Natural Features",
-        },
-      ],
-    },
-    "Environmental Risks": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="m12 17 .01 0"/><path d="M8.5 2.5 12 6l3.5-3.5"/><path d="M8.5 21.5 12 18l3.5 3.5"/><path d="M2.5 8.5 6 12l-3.5 3.5"/><path d="M21.5 8.5 18 12l3.5 3.5"/></svg>`,
-      items: [
-        {
-          title: "Lahug Flood Zone",
-          description: "High-risk flooding area during heavy rains",
-          distance: "2.8km",
-          siteId: "flood_01",
-          category: "Environmental Risks",
-        },
-        {
-          title: "Colon Landslide Area",
-          description: "Landslide-prone slope",
-          distance: "1.9km",
-          siteId: "landslide_01",
-          category: "Environmental Risks",
-        },
-        {
-          title: "Capitol Site Air Quality Monitor",
-          description: "Air pollution monitoring station",
-          distance: "1.1km",
-          siteId: "air_01",
-          category: "Environmental Risks",
-        },
-        {
-          title: "Guadalupe Fault Line",
-          description: "Active geological fault zone",
-          distance: "4.5km",
-          siteId: "fault_01",
-          category: "Environmental Risks",
-        },
-        {
-          title: "Septic Tank Overflow Site",
-          description: "Water contamination risk area",
-          distance: "0.9km",
-          siteId: "contamination_01",
-          category: "Environmental Risks",
-        },
-      ],
-    },
-    "Points of Interest": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
-      items: [
-        {
-          title: "Heritage Monument",
-          description: "Historical landmark in downtown area",
-          distance: "0.2km",
-          siteId: "poi_01",
-          category: "Points of Interest",
-        },
-        {
-          title: "Magellan's Cross",
-          description: "Famous historical and religious site",
-          distance: "0.1km",
-          siteId: "poi_02",
-          category: "Points of Interest",
-        },
-        {
-          title: "Cebu Metropolitan Cathedral",
-          description: "Historic Catholic cathedral",
-          distance: "0.3km",
-          siteId: "poi_03",
-          category: "Points of Interest",
-        },
-        {
-          title: "Carbon Public Market",
-          description: "Traditional public market",
-          distance: "0.6km",
-          siteId: "poi_04",
-          category: "Points of Interest",
-        },
-        {
-          title: "Fort San Pedro",
-          description: "Spanish colonial fortress",
-          distance: "0.8km",
-          siteId: "poi_05",
-          category: "Points of Interest",
-        },
-      ],
-    },
-    "Population Data": {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-      items: [
-        {
-          title: "Barangay Lahug Census",
-          description: "Demographic data collection point",
-          distance: "2.5km",
-          siteId: "census_01",
-          category: "Population Data",
-        },
-        {
-          title: "Capitol Site Statistics Office",
-          description: "Population data processing center",
-          distance: "1.3km",
-          siteId: "census_02",
-          category: "Population Data",
-        },
-        {
-          title: "Cebu City Planning Office",
-          description: "Urban development and demographics",
-          distance: "0.4km",
-          siteId: "census_03",
-          category: "Population Data",
-        },
-        {
-          title: "Colon Survey Station",
-          description: "Community survey data collection",
-          distance: "0.1km",
-          siteId: "census_04",
-          category: "Population Data",
-        },
-        {
-          title: "University Belt Demographics",
-          description: "Student population monitoring",
-          distance: "3.1km",
-          siteId: "census_05",
-          category: "Population Data",
-        },
-      ],
-    },
-  },
+  categories: {}
 };
+
+// Dynamically generate searchData from mapMarkers
+function generateSearchData() {
+  // Clear existing categories
+  searchData.categories = {};
+  
+  if (!mapMarkers || mapMarkers.length === 0) {
+    console.warn("mapMarkers not available for searchData generation");
+    return;
+  }
+
+  mapMarkers.forEach(category => {
+    const categoryKey = category.displayInfo?.title || category.category;
+    
+    // Convert Font Awesome icon class to SVG (simplified version)
+    const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+    
+    searchData.categories[categoryKey] = {
+      icon: iconSvg,
+      items: []
+    };
+
+    if (category.sites && category.sites.length > 0) {
+      category.sites.forEach(site => {        
+        searchData.categories[categoryKey].items.push({
+          title: site.name,
+          description: site.description || `${site.subcategory} - ${category.category}`,
+          distance: "0.5km",
+          siteId: site.id,
+          category: categoryKey,
+          subcategory: site.subcategory.toLowerCase(),
+        });
+      });
+    }
+  });
+}
+
+// Helper function to convert subcategory to key (matches infrastructure-cards.js)
+function getSubcategoryKey(subcategory) {
+  // Search through all categories in mapMarkers for matching subcategory
+  for (const category of mapMarkers || []) {
+    if (category.subcategoryConfigs) {
+      // Check if subcategory matches any display title
+      for (const [key, config] of Object.entries(category.subcategoryConfigs)) {
+        if (config.title === subcategory) {
+          return key;
+        }
+      }
+    }
+  }
+
+  // Fallback: convert subcategory to kebab-case
+  return subcategory.toLowerCase().replace(/\s+/g, "-");
+}
+
+// Initialize searchData when mapMarkers is available
+if (typeof mapMarkers !== 'undefined' && mapMarkers.length > 0) {
+  generateSearchData();
+} else {
+  // Wait for mapMarkers to be loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mapMarkers !== 'undefined' && mapMarkers.length > 0) {
+      generateSearchData();
+    } else {
+      // Set up a listener for when markers are loaded
+      window.addEventListener('cebuCityMarkersLoaded', generateSearchData);
+    }
+  });
+}
 
 // Generate category-specific maintenance examples
 const categoryMaintenance = {
