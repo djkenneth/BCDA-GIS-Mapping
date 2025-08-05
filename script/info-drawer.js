@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //         <span>Live Feed - ${site.name}</span>
     //       </div>
     //     </div>
-        
+
     //     <div class="live-feed-video">
     //       <video id="live-feed-video-player" autoplay muted playsinline></video>
     //       <div id="live-feed-loader" class="live-feed-loader">
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //         <div>Loading stream...</div>
     //       </div>
     //     </div>
-        
+
     //     <div class="live-feed-info">
     //       <div class="info-row">
     //         <span>Device Channel</span>
@@ -4174,18 +4174,56 @@ document.addEventListener("DOMContentLoaded", function () {
   window.showInfoDrawer = showInfoDrawer;
 });
 
-
 function generatePhotoGrid(site) {
   // Sample photos - replace with actual site photos
   const photos = [
-    { src: 'https://images.unsplash.com/photo-1564763557753-051f91b57684?q=80&w=1493&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Site overview' },
-    { src: 'https://images.unsplash.com/photo-1535779023901-a39d15762564?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Equipment view' },
-    { src: 'https://plus.unsplash.com/premium_photo-1661924187597-233d38b88221?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Maintenance area' },
+    {
+      src: "https://images.unsplash.com/photo-1564763557753-051f91b57684?q=80&w=1493&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Site overview",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1535779023901-a39d15762564?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Equipment view",
+    },
+    {
+      src: "https://plus.unsplash.com/premium_photo-1661924187597-233d38b88221?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Maintenance area",
+    },
   ];
-  
-  return photos.map((photo, index) => `
+
+  return photos
+    .map(
+      (photo, index) => `
     <div class="photo-item" data-index="${index}" data-toggle="modal" data-target="#modal-default">
       <img class="photo" src="${photo.src}" alt="${photo.alt}" loading="lazy">
     </div>
-  `).join('');
+  `
+    )
+    .join("");
 }
+
+$(document).ready(function () {
+  // Initialize carousel with custom settings
+  $("#imageCarousel").carousel({
+    interval: 5000, // Auto-slide every 5 seconds
+    pause: "hover", // Pause on hover
+    wrap: true, // Loop back to first slide
+  });
+
+  // Thumbnail navigation click handler
+  $(".thumbnail-nav").click(function () {
+    var slideIndex = $(this).data("slide-to");
+    $("#imageCarousel").carousel(slideIndex);
+
+    // Update thumbnail active state
+    $(".thumbnail-nav").removeClass("border-primary");
+    $(this).addClass("border-primary");
+  });
+
+  // Update thumbnail active state on carousel slide
+  $("#imageCarousel").on("slide.bs.carousel", function (e) {
+    var activeIndex = $(e.relatedTarget).index();
+    $(".thumbnail-nav").removeClass("border-primary");
+    $(".thumbnail-nav").eq(activeIndex).addClass("border-primary");
+  });
+});

@@ -28,7 +28,7 @@
             <div class="modal-header">
                 <h4 class="modal-title">Default Modal</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="false">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -146,31 +146,3 @@
         margin: 0 5px;
     }
 </style>
-
-<script>
-    $(document).ready(function() {
-        // Initialize carousel with custom settings
-        $('#imageCarousel').carousel({
-            interval: 5000, // Auto-slide every 5 seconds
-            pause: 'hover', // Pause on hover
-            wrap: true // Loop back to first slide
-        });
-
-        // Thumbnail navigation click handler
-        $('.thumbnail-nav').click(function() {
-            var slideIndex = $(this).data('slide-to');
-            $('#imageCarousel').carousel(slideIndex);
-
-            // Update thumbnail active state
-            $('.thumbnail-nav').removeClass('border-primary');
-            $(this).addClass('border-primary');
-        });
-
-        // Update thumbnail active state on carousel slide
-        $('#imageCarousel').on('slide.bs.carousel', function(e) {
-            var activeIndex = $(e.relatedTarget).index();
-            $('.thumbnail-nav').removeClass('border-primary');
-            $('.thumbnail-nav').eq(activeIndex).addClass('border-primary');
-        });
-    });
-</script>
