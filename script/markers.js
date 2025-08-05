@@ -120,9 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
 
-          setTimeout(() => {
-            showLiveFeedCardForSite(site);
-          }, 300);
+          // setTimeout(() => {
+          //   showLiveFeedCardForSite(site);
+          // }, 300);
         });
 
         // Store marker reference
@@ -133,22 +133,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function showLiveFeedCardForSite(site) {
-    if (typeof window.showLiveFeedCard !== "function") {
-      console.error("showLiveFeedCard function not available");
-      return;
-    }
+  // function showLiveFeedCardForSite(site) {
+  //   if (typeof window.showLiveFeedCard !== "function") {
+  //     console.error("showLiveFeedCard function not available");
+  //     return;
+  //   }
 
-    const cardPosition = calculateLiveFeedPosition();
+  //   const cardPosition = calculateLiveFeedPosition();
 
-    try {
-      window.showLiveFeedCard(cardPosition);
+  //   try {
+  //     window.showLiveFeedCard(cardPosition);
 
-      updateLiveFeedCardForSite(site);
-    } catch (error) {
-      console.error("Error showing live feed card:", error);
-    }
-  }
+  //     updateLiveFeedCardForSite(site);
+  //   } catch (error) {
+  //     console.error("Error showing live feed card:", error);
+  //   }
+  // }
 
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.cebuMapDebug = {
-    showLiveFeedCardForSite,
+    // showLiveFeedCardForSite,
     calculateLiveFeedPosition,
     updateLiveFeedCardForSite,
     findSiteById,
