@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="site-details-header">${site.name}</div>
         <div class="site-details-grid">
           <div class="site-detail-row">
+            <span class="site-detail-label">Asset ID:</span>
+            <span class="site-detail-value">${site.id}</span>
+          </div>
+          <div class="site-detail-row">
             <span class="site-detail-label">Category:</span>
             <span class="site-detail-value">${categoryLabel}</span>
           </div>

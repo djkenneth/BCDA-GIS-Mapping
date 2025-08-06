@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } else {
         console.warn("Buildings checkbox not found, will try again later");
-        // Schedule a retry
         setTimeout(initializeDefaultBuildings, 500);
       }
     } catch (error) {
@@ -87,8 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             categoryStats[status]++;
             infrastructureData[status]++;
-            
-            // console.log('status', status);
 
             const subcategoryKey = getSubcategoryKey(site.subcategory);
 
@@ -130,9 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         infrastructureData.categories[category.id] = categoryStats;
-
       });
-
     } catch (error) {
       console.error("Error calculating infrastructure stats:", error);
     }
@@ -153,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Fallback: convert subcategory to kebab-case
     return subcategory.toLowerCase().replace(/\s+/g, "-");
   }
 
@@ -164,17 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const selectedCategories = getSelectedCategories();
     let cards = [];
 
-    if (selectedCategories.showAll) {
-      cards = getOverviewCards();
-    } else if (selectedCategories.categories.length === 1) {
-      const categoryId = selectedCategories.categories[0];
-      cards = getCategoryWithStatusCards(categoryId);
-    } else if (selectedCategories.categories.length > 1) {
-      cards = getCategoryCards(selectedCategories.categories);
-    }
+    cards = getOverviewCards();
 
     let cardsHTML = "";
     cards.forEach((card) => {
@@ -229,6 +215,24 @@ document.addEventListener("DOMContentLoaded", function () {
         filter: "critical",
       },
       {
+        title: "Warning",
+        value: infrastructureData.warning,
+        type: "Needs Attention",
+        className: "warning-bg",
+        icon: "fas fa-exclamation-triangle",
+        category: "status",
+        filter: "warning",
+      },
+      {
+        title: "Inactive",
+        value: infrastructureData.inactive,
+        type: "Inactive Sites",
+        className: "inactive-bg",
+        icon: "fas fa-ban",
+        category: "status",
+        filter: "inactive",
+      },
+      {
         title: "Under Maintenance",
         value: infrastructureData.maintenance,
         type: "Maintenance Status",
@@ -255,141 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
         category: "status",
         filter: "transfer_pending",
       },
-      // {
-      //   title: "NBP Infrastructure",
-      //   value: infrastructureData.categories.nbp?.total || 0,
-      //   type: "NBP Facilities",
-      //   className: "nbp-bg",
-      //   icon: "fas fa-building",
-      //   category: "nbp",
-      //   filter: "nbp",
-      // },
-      // {
-      //   title: "Demographics",
-      //   value: infrastructureData.categories.population_data?.total || 0,
-      //   type: "Population Data",
-      //   className: "info-bg",
-      //   icon: "fas fa-users",
-      //   category: "population_data",
-      //   filter: "population_data",
-      // },
     ];
-  }
-
-  function getCategoryWithStatusCards(categoryId) {
-    const cards = [];
-    const categoryData = infrastructureData.categories[categoryId];
-
-    if (!categoryData) return cards;
-
-    const statusCards = [
-      {
-        title: "Active",
-        value: categoryData.active,
-        type: "Operational Sites",
-        className: "active-bg",
-        icon: "fas fa-check-circle",
-        category: "status",
-        filter: "active",
-        categoryFilter: categoryId,
-      },
-      {
-        title: "Warning",
-        value: categoryData.warning,
-        type: "Needs Attention",
-        className: "warning-bg",
-        icon: "fas fa-exclamation-triangle",
-        category: "status",
-        filter: "warning",
-        categoryFilter: categoryId,
-      },
-      {
-        title: "Critical",
-        value: categoryData.critical,
-        type: "Immediate Action",
-        className: "critical-bg",
-        icon: "fas fa-times-circle",
-        category: "status",
-        filter: "critical",
-        categoryFilter: categoryId,
-      },
-      {
-        title: "Maintenance",
-        value: categoryData.maintenance,
-        type: "Under Maintenance",
-        className: "maintenance-bg",
-        icon: "fas fa-wrench",
-        category: "status",
-        filter: "maintenance",
-        categoryFilter: categoryId,
-      },
-      {
-        title: "Inactive",
-        value: categoryData.inactive,
-        type: "Inactive Sites",
-        className: "inactive-bg",
-        icon: "fas fa-ban",
-        category: "status",
-        filter: "inactive",
-        categoryFilter: categoryId,
-      },
-    ];
-
-    cards.push(...statusCards);
-
-    const subcategoryCards = getSubcategoryCards(categoryId);
-    cards.push(...subcategoryCards);
-
-    return cards;
-  }
-
-  function getCategoryCards(selectedCategoryIds) {
-    const cards = [];
-
-    selectedCategoryIds.forEach((categoryId) => {
-      const categoryData = infrastructureData.categories[categoryId];
-      if (!categoryData) return;
-
-      const categoryInfo = getCategoryInfo(categoryId);
-      cards.push({
-        title: categoryInfo.title,
-        value: categoryData.total,
-        type: categoryInfo.type,
-        className: categoryInfo.className,
-        icon: categoryInfo.icon,
-        category: categoryId,
-        filter: categoryId,
-      });
-    });
-
-    return cards;
-  }
-
-  function getSubcategoryCards(categoryId) {
-    const cards = [];
-    const categoryData = infrastructureData.categories[categoryId];
-
-    if (!categoryData || !categoryData.subcategories) return cards;
-
-    const subcategoryConfigs = getSubcategoryConfigs(categoryId);
-
-    subcategoryConfigs.forEach((config) => {
-      const subcategoryData = categoryData.subcategories[config.key];
-      if (subcategoryData && subcategoryData.total > 0) {
-        cards.push({
-          title: config.title,
-          value: subcategoryData.total,
-          type: config.type,
-          className: config.className,
-          icon: config.icon,
-          category: categoryId,
-          filter: config.key,
-          subcategory: config.key,
-        });
-      }
-    });
-
-    return cards;
   }
 
   function findCategoryById(categoryId) {
@@ -416,29 +286,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace(/\b\w/g, (l) => l.toUpperCase());
   }
 
-  function getCategoryInfo(categoryId) {
-    const category = findCategoryById(categoryId);
-    return (
-      category?.displayInfo || {
-        title: categoryId,
-        type: "Unknown",
-        className: "info-bg",
-        icon: "fas fa-question",
-      }
-    );
-  }
-
-  function getSubcategoryConfigs(categoryId) {
-    const category = findCategoryById(categoryId);
-    if (!category?.subcategoryConfigs) return [];
-
-    // Convert object to array format expected by existing code
-    return Object.entries(category.subcategoryConfigs).map(([key, config]) => ({
-      key,
-      ...config,
-    }));
-  }
-  
   function getSelectedCategories() {
     try {
       const allCheckbox = document.getElementById("all");
@@ -470,9 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       );
 
-      // If no categories selected, try to find any checked category from mapMarkers
       if (selectedCategories.length === 0 && window.mapMarkers) {
-        // Fallback: check if any individual subcategory is selected
         const hasAnyChecked = window.mapMarkers.some((category) => {
           if (category.subcategoryConfigs) {
             return Object.keys(category.subcategoryConfigs).some(
@@ -486,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (hasAnyChecked) {
-          // Return all categories if any subcategory is selected but no master category is selected
           return {
             showAll: false,
             categories: window.mapMarkers.map((cat) => cat.id),
@@ -672,7 +516,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Desktop positioning logic (existing code)
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar-v2");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = "284px";
@@ -893,301 +736,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("organized-sites-modal-styles")) {
       const style = document.createElement("style");
       style.id = "organized-sites-modal-styles";
-      style.textContent = `
-        .sites-modal-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px;
-          border-bottom: 1px solid rgba(84, 138, 152, 0.3);
-          background-color: #111c2b;
-          position: sticky;
-          top: 0;
-          z-index: 10;
-        }
-        
-        .sites-modal-header h3 {
-          margin: 0;
-          font-size: 22px;
-          color: #FAD754;
-        }
-        
-        .sites-modal-header .close-btn {
-          background: none;
-          border: none;
-          color: white;
-          font-size: 24px;
-          cursor: pointer;
-          padding: 5px;
-          border-radius: 4px;
-          transition: background-color 0.2s ease;
-        }
-        
-        .sites-modal-header .close-btn:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .sites-modal-content {
-          padding: 20px;
-          overflow-y: auto;
-        }
-        
-        .subcategory-section {
-          margin-bottom: 30px;
-        }
-        
-        .subcategory-section:last-child {
-          margin-bottom: 0;
-        }
-        
-        .subcategory-header {
-          margin-bottom: 15px;
-          padding: 10px 15px;
-          border-bottom: 2px solid rgba(250, 215, 84, 0.3);
-          cursor: pointer;
-          transition: background-color 0.2s ease;
-          border-radius: 5px;
-        }
-        
-        .subcategory-header:hover {
-          background-color: rgba(250, 215, 84, 0.1);
-        }
-        
-        .subcategory-title {
-          margin: 0;
-          font-size: 18px;
-          font-weight: 600;
-          color: #FAD754;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        
-        .collapse-icon {
-          transition: transform 0.3s ease;
-          font-size: 14px;
-        }
-        
-        .collapse-icon.fa-chevron-right {
-          transform: rotate(-90deg);
-        }
-        
-        .subcategory-count {
-          font-size: 14px;
-          font-weight: 400;
-          color: rgba(255, 255, 255, 0.7);
-          background-color: rgba(250, 215, 84, 0.2);
-          padding: 2px 8px;
-          border-radius: 12px;
-          margin-left: auto;
-        }
-        
-        .sites-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 15px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-        }
-        
-        .sites-grid.collapsed {
-          max-height: 0;
-          margin-bottom: 0;
-          opacity: 0;
-        }
-        
-        .site-item {
-          background-color: #111c2b;
-          border-radius: 8px;
-          padding: 15px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        
-        .site-item:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          border-color: #FAD754;
-        }
-        
-        .site-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 10px;
-        }
-        
-        .site-name {
-          font-size: 16px;
-          font-weight: 600;
-          color: white;
-          flex: 1;
-          margin-right: 10px;
-          line-height: 1.3;
-        }
-        
-        .site-status {
-          padding: 3px 8px;
-          border-radius: 12px;
-          font-size: 12px;
-          font-weight: 500;
-          text-transform: uppercase;
-          flex-shrink: 0;
-        }
-        
-        .site-status.status-active {
-          background-color: rgba(76, 175, 80, 0.2);
-          color: #4CAF50;
-        }
-        
-        .site-status.status-warning {
-          background-color: rgba(255, 193, 7, 0.2);
-          color: #FFC107;
-        }
-        
-        .site-status.status-critical {
-          background-color: rgba(244, 67, 54, 0.2);
-          color: #F44336;
-        }
-        
-        .site-status.status-maintenance {
-          background-color: rgba(33, 150, 243, 0.2);
-          color: #2196F3;
-        }
-        
-        .site-status.status-inactive {
-          background-color: rgba(158, 158, 158, 0.2);
-          color: #9E9E9E;
-        }
-        
-        .site-details {
-          margin-bottom: 10px;
-        }
-        
-        .site-subcategory {
-          color: #FAD754;
-          font-size: 14px;
-          font-weight: 500;
-          margin-bottom: 5px;
-        }
-        
-        .site-location {
-          color: #b0bec5;
-          font-size: 13px;
-          display: flex;
-          align-items: center;
-          gap: 5px;
-        }
-        
-        .site-description {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 13px;
-          line-height: 1.4;
-        }
-        
-        .no-sites {
-          text-align: center;
-          color: #b0bec5;
-          font-size: 16px;
-          padding: 40px;
-        }
-        
-        .sites-modal-content::-webkit-scrollbar {
-          width: 8px;
-        }
-        
-        .sites-modal-content::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 4px;
-        }
-        
-        .sites-modal-content::-webkit-scrollbar-thumb {
-          background: #FAD754;
-          border-radius: 4px;
-        }
-        
-        .sites-modal-content::-webkit-scrollbar-thumb:hover {
-          background: #e6c34a;
-        }
-        
-        @media (max-width: 1024px) {
-          .sites-modal-header {
-            padding: 15px;
-          }
-          
-          .sites-modal-header h3 {
-            font-size: 20px;
-          }
-          
-          .sites-modal-content {
-            padding: 15px;
-          }
-          
-          .sites-grid {
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 12px;
-          }
-          
-          .subcategory-title {
-            font-size: 16px;
-          }
-          
-          .subcategory-section {
-            margin-bottom: 25px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .sites-modal-header {
-            position: sticky;
-            top: 0;
-            background-color: #080f17;
-            z-index: 10;
-            padding-top: 15px;
-            margin-bottom: 15px;
-          }
-          
-          .sites-modal-header h3 {
-            font-size: 18px;
-          }
-          
-          .sites-modal-content {
-            padding: 15px;
-            max-height: calc(100vh - 80px);
-            overflow-y: auto;
-          }
-          
-          .sites-grid {
-            grid-template-columns: 1fr;
-            gap: 10px;
-          }
-          
-          .site-item {
-            margin-bottom: 8px;
-          }
-          
-          .subcategory-title {
-            font-size: 15px;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 5px;
-          }
-          
-          .subcategory-count {
-            align-self: flex-start;
-          }
-          
-          .subcategory-section {
-            margin-bottom: 20px;
-          }
-          
-          .subcategory-header {
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-          }
-        }
-      `;
+
       document.head.appendChild(style);
     }
   }

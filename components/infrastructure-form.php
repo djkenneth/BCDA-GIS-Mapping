@@ -1,7 +1,7 @@
 <!-- components/infrastructure-form.php -->
 <div id="full-screen-infrastructure-form" style="display: none;">
     <div class="form-header">
-        <h2>Add New Infrastructure Asset</h2>
+        <h2>Documents</h2>
         <button id="infrastructure-form-close">&times;</button>
     </div>
     <div class="form-content">
@@ -40,26 +40,6 @@
             <div class="form-group">
                 <label for="identificationTags">Identification Tags:</label>
                 <input type="text" id="identificationTags" name="identificationTags" placeholder="Barcode, QR code, or other identification tags">
-            </div>
-        </div>
-
-        <!-- Financial Information Section -->
-        <div class="form-section">
-            <h3>Financial Information</h3>
-            
-            <div class="form-group">
-                <label for="acquisitionCost">Acquisition Cost (PHP):</label>
-                <input type="number" id="acquisitionCost" name="acquisitionCost" step="0.01" min="0" placeholder="0.00">
-            </div>
-            
-            <div class="form-group">
-                <label for="purchaseDate">Acquisition Date:</label>
-                <input type="date" id="purchaseDate" name="purchaseDate" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="warrantyExpiry">Operation Start Date:</label>
-                <input type="date" id="warrantyExpiry" name="warrantyExpiry" required>
             </div>
         </div>
 
@@ -249,22 +229,6 @@
                     <div class="checkbox-wrapper">
                         <label for="doc-other">Other</label>
                         <input type="checkbox" id="doc-other" name="documentTypes[]" value="other">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Previous Location History Section -->
-        <div class="form-section">
-            <h3>Asset History</h3>
-            
-            <div class="form-group">
-                <label>Previous Location History:</label>
-                <div id="locationHistory" class="location-history-container">
-                    <div class="history-item">
-                        <span class="history-date">New Asset</span>
-                        <span class="history-location">No previous locations</span>
-                        <span class="history-status">Initial Registration</span>
                     </div>
                 </div>
             </div>

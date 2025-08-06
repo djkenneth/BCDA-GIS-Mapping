@@ -2,9 +2,6 @@
     <div id="drawer-header">
         <h3>Site Information</h3>
         <button id="drawer-close">×</button>
-        <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-            Launch Default Modal
-        </button> -->
     </div>
 
     <div id="drawer-content">
