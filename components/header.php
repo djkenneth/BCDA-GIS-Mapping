@@ -224,12 +224,16 @@
     <div class="header-buttons-container">
         <button class="header-button" id="addEquipmentBtn">
             <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/infrastructure.php' : 'components/icons/infrastructure.php'; ?>
-            <span>Add New Infrastructure</span>
+            <span>Upload Documents</span>
         </button>
-        <button class="header-button" id="viewAllAlertsBtn">
+        <button class="header-button" id="addEquipmentBtn">
+            <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/infrastructure.php' : 'components/icons/infrastructure.php'; ?>
+            <span>Register New Asstes</span>
+        </button>
+        <!-- <button class="header-button" id="viewAllAlertsBtn">
             <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/critical-alerts.php' : 'components/icons/critical-alerts.php'; ?>
             <span>View Alerts</span>
-        </button>
+        </button> -->
         <button class="header-button" id="systemMonitoringBtn">
             <?php include (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../components/icons/active-towers.php' : 'components/icons/active-towers.php'; ?>
             <span>Infrastructure Monitoring</span>

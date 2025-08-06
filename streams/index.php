@@ -131,7 +131,6 @@ if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
 
                 const data = await response.json();
 
-                // Parse the response based on the specified format
                 let allDevices = [];
 
                 if (data && data.code === 1000 && data.data && Array.isArray(data.data.pageData)) {
