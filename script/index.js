@@ -1,7 +1,5 @@
 // script/index.js
 
-const DEMO_CAMERA_CODE = "1000013";
-const STREAM_STORAGE_KEY = "stream_" + DEMO_CAMERA_CODE;
 const EXCLUDED_DEVICE_CODES = ["1000012", "1000014", "1000006"];
 const API_BASE_URL = "https://philtower.itbsstudio.com";
 
