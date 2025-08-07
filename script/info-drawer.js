@@ -286,16 +286,6 @@ document.addEventListener("DOMContentLoaded", function () {
         categories: ["all"],
       },
       {
-        id: "maintenance-history",
-        label: getMaintenanceLabel(categoryName),
-        categories: getMaintenanceCategories(),
-      },
-      {
-        id: "network-info",
-        label: getNetworkLabel(categoryName),
-        categories: getNetworkCategories(),
-      },
-      {
         id: "schedule-inspection",
         label: "Schedule Inspection",
         categories: ["all"],
