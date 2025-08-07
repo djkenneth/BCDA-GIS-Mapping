@@ -35,18 +35,6 @@ header {
   transform: scale(0.95);
 }
 
-@media (max-width: 425px) {
-  .mobile-close-btn {
-    display: flex;
-  }
-
-  .notification-menu.show .mobile-close-btn,
-  .app-switcher-menu.show .mobile-close-btn,
-  .search-suggestions.show .mobile-close-btn {
-    display: flex;
-  }
-}
-
 header .logo-wrapper {
   display: flex;
   width: 210px;
@@ -569,26 +557,6 @@ header.collapsed .header-toggle {
   font-weight: 600;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .header-cards-container {
-    flex-wrap: wrap;
-  }
-
-  .header-card {
-    flex: 1 1 50%;
-    min-width: 50%;
-  }
-
-  .main-value {
-    font-size: 24px;
-  }
-
-  .card-header h3 {
-    font-size: 10px;
-  }
-}
-
 .mobile-sections {
   display: flex;
   flex-direction: column;
@@ -1000,71 +968,6 @@ header .flex.w-full {
   border: 2px solid #101b2a;
 }
 
-.app-switcher-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 300px;
-  background: rgba(20, 25, 40, 0.98);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 8px;
-  z-index: 1000;
-  display: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.app-switcher-menu.show {
-  display: block;
-  animation: slideDown 0.2s ease forwards;
-}
-
-.app-switcher-title {
-  padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.app-switcher-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.app-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  gap: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.app-item:hover {
-  background: rgba(59, 130, 246, 0.1);
-}
-
-.app-item:last-child {
-  border-bottom: none;
-}
-
-.app-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.app-name {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -1087,6 +990,132 @@ header .flex.w-full {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 320px) {
+  header .logo-title {
+    font-size: 12px;
+  }
+
+  .header-buttons-container {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .header-button {
+    font-size: 10px;
+  }
+
+  .header-toggle {
+    width: 35px;
+    height: 15px;
+    bottom: -168px;
+  }
+
+  header.collapsed .header-toggle {
+    bottom: -168px;
+  }
+
+  .notification-menu {
+    padding: 15px;
+  }
+
+  .notification-header h3 {
+    font-size: 18px;
+  }
+
+  .notification-title {
+    font-size: 15px;
+  }
+
+  .notification-message {
+    font-size: 13px;
+  }
+
+  .app-switcher-menu {
+    padding: 15px;
+  }
+
+  .app-switcher-title {
+    font-size: 18px;
+  }
+
+  .app-name {
+    font-size: 15px;
+  }
+
+  .search-suggestions {
+    padding: 70px 15px 15px 15px;
+  }
+
+  .search-suggestion-title {
+    font-size: 15px;
+  }
+
+  .search-suggestion-description {
+    font-size: 13px;
+  }
+
+  .search-input-group {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .search-input {
+    padding: 14px 45px 14px 45px;
+    font-size: 15px;
+  }
+
+  .search-input-icon {
+    left: 25px;
+  }
+
+  .search-close-btn {
+    right: 25px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-toggle {
+    width: 35px;
+    height: 15px;
+    bottom: -154px;
+  }
+
+  header.collapsed .header-toggle {
+    bottom: -154px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-cards-container {
+    flex-wrap: wrap;
+  }
+
+  .header-card {
+    flex: 1 1 50%;
+    min-width: 50%;
+  }
+
+  .main-value {
+    font-size: 24px;
+  }
+
+  .card-header h3 {
+    font-size: 10px;
+  }
+}
+
 @media (min-width: 1201px) {
   header .flex.w-full {
     gap: 20px;
@@ -1101,7 +1130,8 @@ header .flex.w-full {
     bottom: -166px;
   }
 
-  header.collapsed:has(.search-bar-container[style*="display: block"]) .header-toggle {
+  header.collapsed:has(.search-bar-container[style*="display: block"])
+    .header-toggle {
     bottom: -141px;
   }
 }
@@ -1120,7 +1150,8 @@ header .flex.w-full {
     bottom: -166px;
   }
 
-  header.collapsed:has(.search-bar-container[style*="display: block"]) .header-toggle {
+  header.collapsed:has(.search-bar-container[style*="display: block"])
+    .header-toggle {
     bottom: -141px;
   }
 }
@@ -1139,7 +1170,6 @@ header .flex.w-full {
     margin-left: 10px;
   }
 
-  .alert-item,
   .event-item {
     font-size: 12px;
     padding: 5px 8px;
@@ -1151,6 +1181,18 @@ header .flex.w-full {
 
   header.collapsed .header-toggle {
     bottom: -83px;
+  }
+}
+
+@media (max-width: 425px) {
+  .mobile-close-btn {
+    display: flex;
+  }
+
+  .notification-menu.show .mobile-close-btn,
+  .app-switcher-menu.show .mobile-close-btn,
+  .search-suggestions.show .mobile-close-btn {
+    display: flex;
   }
 }
 
@@ -1197,10 +1239,6 @@ header .flex.w-full {
   .app-name {
     font-size: 13px;
   }
-}
-
-@media (max-width: 768px) {
-
 }
 
 @media (max-width: 768px) and (min-width: 426px) {
@@ -1301,24 +1339,6 @@ header .flex.w-full {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     border-color: rgba(59, 130, 246, 0.5);
     z-index: 100;
-  }
-
-  .alert-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .alert-item:hover {
-    transform: translateX(3px);
-    opacity: 0.9;
   }
 
   .alert-icon {
@@ -1505,32 +1525,7 @@ header .flex.w-full {
   header .icon {
     width: 40px;
     height: 40px;
-  }
-
-  .alert-item {
-    border-radius: 8px;
-    padding: 5px 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    width: 290px;
-  }
-
-  .alert-item.alert-flooding {
-    background: rgba(0, 188, 212, 0.15);
-    border-color: rgba(0, 188, 212, 0.3);
-  }
-
-  .alert-item.alert-construction {
-    background: rgba(255, 152, 0, 0.15);
-    border-color: rgba(255, 152, 0, 0.3);
-  }
-
-  .alert-item.alert-closure {
-    background: rgba(244, 67, 54, 0.15);
-    border-color: rgba(244, 67, 54, 0.3);
-  }
+  } 
 
   .alert-icon {
     width: 8px;
@@ -1888,121 +1883,14 @@ header .flex.w-full {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ensure header toggle adjusts when search is open */
 @media (max-width: 425px) and (min-width: 320px) {
-
   header:has(.search-bar-container[style*="display: block"]) .header-toggle,
-  header.collapsed:has(.search-bar-container[style*="display: block"]) .header-toggle {
+  header.collapsed:has(.search-bar-container[style*="display: block"])
+    .header-toggle {
     display: none;
   }
 }
 
-@media (max-width: 375px) {
-  .header-toggle {
-    width: 35px;
-    height: 15px;
-    bottom: -154px;
-  }
-
-  header.collapsed .header-toggle {
-    bottom: -154px;
-  }
-
-}
-
-@media (max-width: 320px) {
-  header .logo-title {
-    font-size: 12px;
-  }
-
-  .header-buttons-container {
-    gap: 9px;
-    padding: 10px;
-  }
-
-  .header-button {
-    font-size: 10px;
-  }
-
-  .header-toggle {
-    width: 35px;
-    height: 15px;
-    bottom: -168px;
-  }
-
-  header.collapsed .header-toggle {
-    bottom: -168px;
-  }
 
 
 
-  .notification-menu {
-    padding: 15px;
-  }
-
-  .notification-header h3 {
-    font-size: 18px;
-  }
-
-  .notification-title {
-    font-size: 15px;
-  }
-
-  .notification-message {
-    font-size: 13px;
-  }
-
-  .app-switcher-menu {
-    padding: 15px;
-  }
-
-  .app-switcher-title {
-    font-size: 18px;
-  }
-
-  .app-name {
-    font-size: 15px;
-  }
-
-  .search-suggestions {
-    padding: 70px 15px 15px 15px;
-  }
-
-  .search-suggestion-title {
-    font-size: 15px;
-  }
-
-  .search-suggestion-description {
-    font-size: 13px;
-  }
-
-  .search-input-group {
-    height: 70px;
-    padding: 0 15px;
-  }
-
-  .search-input {
-    padding: 14px 45px 14px 45px;
-    font-size: 15px;
-  }
-
-  .search-input-icon {
-    left: 25px;
-  }
-
-  .search-close-btn {
-    right: 25px;
-  }
-}

@@ -10,7 +10,7 @@
     background-color: #1c2130;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1100; /* Increased z-index to ensure it appears above other elements */
+    z-index: 1100;
     display: none;
     overflow: hidden;
     border: 1px solid #2c3144;
@@ -200,7 +200,6 @@ body.notification-active .notification-menu {
     }
 }
 
-/* Full screen notification menu for mobile devices 320px to 425px */
 @media (min-width: 320px) and (max-width: 425px) {
     .notification-menu {
         position: fixed;
@@ -215,6 +214,6 @@ body.notification-active .notification-menu {
     }
 
     .notification-body {
-        max-height: calc(100vh - 160px); /* Account for header and footer */
+        max-height: calc(100vh - 160px);
     }
 }

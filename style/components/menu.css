@@ -14,10 +14,13 @@
     z-index: 10;
     display: none;
     overflow: hidden;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .app-switcher-menu.show {
     display: block;
+    animation: slideDown 0.2s ease forwards;
 }
 
 .app-switcher-title {
@@ -25,6 +28,8 @@
     font-size: 14px;
     color: #ffffff;
     border-bottom: 1px solid #2c3d4f;
+    font-weight: 600;
+    text-align: center;
 }
 
 .app-switcher-list {
@@ -40,6 +45,7 @@
     border-bottom: 1px solid #2c3d4f;
     cursor: pointer;
     transition: background-color 0.2s;
+    gap: 12px;
 }
 
 .app-item:hover {
@@ -55,6 +61,8 @@
     height: 24px;
     margin-right: 10px;
     color: #0066cc;
+    border-radius: 6px;
+    flex-shrink: 0;
 }
 
 .app-name {

@@ -1,20 +1,3 @@
-/* :root {
-  --bg-color: #080f17;
-  --darker-bg: #050a10;
-  --panel-bg: #111c2b;
-  --input-bg: #1e2a3a;
-  --primary-color: #f3b941;
-  --accent-color: #f3b941;
-  --text-color: #ffffff;
-  --text-secondary: #b0bec5;
-  --red-status: #8D2C24;
-  --yellow-status: #EAD353;
-  --warning-status: #8C6D0F;
-  --green-status: #4CAF50;
-  --blue-accent: #3498db;
-  --inactive-status: #3C3C46;
-} */
-
 #full-screen-infrastructure-form {
   position: fixed;
   top: 228px;

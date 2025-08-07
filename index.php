@@ -15,7 +15,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js?t=<?php echo time(); ?>"></script>
 
     <link rel="stylesheet" href="style/main.css?t=<?php echo time(); ?>" />
-    <link rel="stylesheet" href="style/custom.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/infrastructure-monitoring.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/alert-management.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/filter-sidebar.css?t=<?php echo time(); ?>" />
@@ -23,45 +22,6 @@
     <link rel="stylesheet" href="style/components/drawer.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/components/card.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/infrastructure-cards.css?t=<?php echo time(); ?>" />
-
-    <style>
-        .infrastructure-scroll-area {
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            scrollbar-width: thin;
-            scrollbar-color: #FAD754 #002722;
-        }
-
-        #style-1::-webkit-scrollbar-track,
-        .infrastructure-scroll-area::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px #FAD754;
-            border-radius: 10px;
-            background-color: #002722;
-        }
-
-        #style-1::-webkit-scrollbar,
-        .infrastructure-scroll-area::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-            border-radius: 10px;
-            background-color: #002722;
-        }
-
-        #style-1::-webkit-scrollbar-thumb,
-        .infrastructure-scroll-area::-webkit-scrollbar-thumb {
-            border-radius: 20px;
-            -webkit-box-shadow: inset 0 0 6px #FAD754;
-            background-color: #FAD754;
-        }
-
-        #style-1::-webkit-scrollbar-thumb:horizontal,
-        .infrastructure-scroll-area::-webkit-scrollbar-thumb:horizontal {
-            border-radius: 20px;
-            -webkit-box-shadow: inset 0 0 6px #FAD754;
-            background-color: #FAD754;
-        }
-    </style>
 </head>
 
 <body>
@@ -90,32 +50,7 @@
     <!-- MapLibre GL JS JavaScript -->
     <script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js?t=<?php echo time(); ?>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script>
-        function testJsPDF() {
-            try {
-                // For newer versions
-                if (window.jspdf && window.jspdf.jsPDF) {
-                    const doc = new window.jspdf.jsPDF();
-                    return true;
-                } else if (typeof window.jspdf === 'function') {
-                    const doc = new window.jspdf();
-                    console.log("jsPDF is loaded correctly!");
-                    return true;
-                } else {
-                    console.error("jsPDF is not available in the expected format");
-                    return false;
-                }
-            } catch (e) {
-                console.error("Error loading jsPDF:", e);
-                return false;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            testJsPDF();
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>]
 
     <script src="script/utils.js"></script>
     <script src="script/data.js?t=<?php echo time(); ?>"></script>
@@ -143,31 +78,7 @@
     <script src="script/infrastructure-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.pathname.includes('streams')) {
-                const header = document.querySelector('header');
-                if (header) {
-                    header.classList.remove('collapsed');
-                    localStorage.removeItem('headerCollapsed');
-
-                    setTimeout(() => {
-                        window.dispatchEvent(new Event('resize'));
-                    }, 100);
-                }
-            }
-        });
-    </script>
-
-    <script
-        src="https://dev.aitbs.com.ph/plugins/eassist.js?apiKey=sk_uKzHeyAIIiASnjNrZSY9jgjC">
-    </script>
-    <style>
-        .flex,
-        .colunm>* {
-            flex-wrap: unset !important;
-        }
-    </style>
+    <script src="https://dev.aitbs.com.ph/plugins/eassist.js?apiKey=sk_uKzHeyAIIiASnjNrZSY9jgjC"></script>
 </body>
 
 </html>

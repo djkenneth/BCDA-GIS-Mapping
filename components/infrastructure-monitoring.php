@@ -1,4 +1,5 @@
 <!-- components/infrastructure-monitoring.php -->
+
 <div id="full-screen-monitoring" style="display: none;">
     <div class="monitoring-header">
         <h2>Infrastructure Monitoring</h2>

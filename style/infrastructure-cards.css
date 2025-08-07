@@ -146,40 +146,6 @@ header.collapsed ~ .infrastructure-cards-container {
   bottom: 0;
 }
 
-.infrastructure-scroll-area {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding-bottom: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #fad754 #002722;
-}
-
-.infrastructure-scroll-area::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px #fad754;
-  border-radius: 10px;
-  background-color: #002722;
-}
-
-.infrastructure-scroll-area::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-  border-radius: 10px;
-  background-color: #002722;
-}
-
-.infrastructure-scroll-area::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 0 6px #fad754;
-  background-color: #fad754;
-}
-
-.infrastructure-scroll-area::-webkit-scrollbar-thumb:horizontal {
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 0 6px #fad754;
-  background-color: #fad754;
-}
-
 .sites-modal-header {
   display: flex;
   justify-content: space-between;
