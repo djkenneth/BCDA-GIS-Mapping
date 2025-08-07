@@ -134,12 +134,8 @@
     <script src="script/info-drawer/drawer-utils.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer/drawer-categories.js?t=<?php echo time(); ?>"></script>
 
-    <script src="script/info-drawer/drawer-live-feed.js?t=<?php echo time(); ?>"></script>
-    <script src="script/info-drawer/drawer-templates.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer/drawer-analytics.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer/drawer-maintenance.js?t=<?php echo time(); ?>"></script>
-    <script src="script/info-drawer/drawer-network.js?t=<?php echo time(); ?>"></script>
-    <script src="script/info-drawer/drawer-inspection.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer/drawer-reports.js?t=<?php echo time(); ?>"></script>
     <script src="script/info-drawer/drawer-media.js?t=<?php echo time(); ?>"></script>
 

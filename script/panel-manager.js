@@ -334,8 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scheduleBtn = document.querySelector("#schedule-btn");
     if (scheduleBtn) {
       scheduleBtn.addEventListener("click", function () {
-        alert("Inspection scheduled successfully!");
-        toggleDrawerSection("#inspection-section", true); // Force close
+        toggleDrawerSection("#inspection-section", true);
       });
     }
 
@@ -344,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     if (cancelInspectionBtn) {
       cancelInspectionBtn.addEventListener("click", function () {
-        toggleDrawerSection("#inspection-section", true); // Force close
+        toggleDrawerSection("#inspection-section", true);
       });
     }
   }
@@ -531,10 +530,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (typeof window.liveFeedCardVisible !== "undefined") {
       window.liveFeedCardVisible = false;
-    }
-
-    if (typeof window.hideLiveFeedCard === "function") {
-      window.hideLiveFeedCard();
     }
   }
 

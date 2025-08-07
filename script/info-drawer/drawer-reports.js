@@ -232,32 +232,32 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(10);
     doc.setTextColor(20, 20, 20);
 
-    const maintenanceData = getCategoryMaintenanceData(category.category, site);
+    // const maintenanceData = getCategoryMaintenanceData(category.category, site);
 
-    maintenanceData.forEach((item, index) => {
-      if (yPosition > 250) {
-        doc.addPage();
-        yPosition = 20;
-      }
+    // maintenanceData.forEach((item, index) => {
+    //   if (yPosition > 250) {
+    //     doc.addPage();
+    //     yPosition = 20;
+    //   }
 
-      doc.setFont("helvetica", "bold");
-      doc.text(`${item.date} - ${item.type}`, 20, yPosition + index * 20);
-      doc.setFont("helvetica", "normal");
-      doc.text(
-        `Technician: ${item.technician}`,
-        20,
-        yPosition + index * 20 + 5
-      );
-      doc.text(`Duration: ${item.duration}`, 20, yPosition + index * 20 + 10);
+    //   doc.setFont("helvetica", "bold");
+    //   doc.text(`${item.date} - ${item.type}`, 20, yPosition + index * 20);
+    //   doc.setFont("helvetica", "normal");
+    //   doc.text(
+    //     `Technician: ${item.technician}`,
+    //     20,
+    //     yPosition + index * 20 + 5
+    //   );
+    //   doc.text(`Duration: ${item.duration}`, 20, yPosition + index * 20 + 10);
 
-      const findingsLines = doc.splitTextToSize(
-        `Findings: ${item.findings}`,
-        160
-      );
-      doc.text(findingsLines, 20, yPosition + index * 20 + 15);
-    });
+    //   const findingsLines = doc.splitTextToSize(
+    //     `Findings: ${item.findings}`,
+    //     160
+    //   );
+    //   doc.text(findingsLines, 20, yPosition + index * 20 + 15);
+    // });
 
-    yPosition += maintenanceData.length * 20 + 20;
+    // yPosition += maintenanceData.length * 20 + 20;
 
     // Strategic Recommendations Section
     if (yPosition > 180) {
@@ -454,27 +454,6 @@ function getExecutiveSummary(categoryName, site) {
     summaries[categoryName] ||
     `Assessment of ${site.name} shows a well-managed facility operating within established parameters with good performance metrics and user satisfaction. The facility demonstrates reliable service delivery, appropriate maintenance standards, and compliance with relevant regulations. Current operational status meets community needs while providing room for enhancement through recommended improvements. Regular monitoring and proactive maintenance ensure continued service quality and preparation for future growth. This facility contributes positively to the city's infrastructure portfolio and serves as a foundation for continued community development.`
   );
-}
-
-// Add event listener for direct PDF generation
-const directGenerateBtn = document.getElementById("direct-generate-report-btn");
-if (directGenerateBtn) {
-  directGenerateBtn.addEventListener("click", function () {
-    // Show loading state
-    const originalText = directGenerateBtn.innerHTML;
-    directGenerateBtn.innerHTML =
-      '<span style="margin-right: 8px;">⏳</span>Generating Report...';
-    directGenerateBtn.disabled = true;
-
-    // Generate PDF report after short delay
-    setTimeout(() => {
-      downloadPDFReport(site, category);
-
-      // Reset button state
-      directGenerateBtn.innerHTML = originalText;
-      directGenerateBtn.disabled = false;
-    }, 1000);
-  });
 }
 
 // Helper function to get category-specific colors

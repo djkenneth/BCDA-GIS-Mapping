@@ -25,11 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           closeBtn.addEventListener("click", function (e) {
             e.stopPropagation();
-            sideWrapper.classList.remove("active");
-
-            if (window.hideLiveFeedCard) {
-              window.hideLiveFeedCard();
-            }
+            sideWrapper.classList.remove("active");            
           });
 
           card.appendChild(closeBtn);
@@ -38,35 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const categoryLabel = getCategoryLabel(category.category, site.subcategory);
-
-    // Live Feed Card Integration
-    // <div class="live-feed-card-integrated" id="live-feed-card-integrated" style="display: block;">
-    //     <div class="live-feed-header">
-    //       <div class="alert-indicator">
-    //         <span class="alert-dot"></span>
-    //         <span>Live Feed - ${site.name}</span>
-    //       </div>
-    //     </div>
-
-    //     <div class="live-feed-video">
-    //       <video id="live-feed-video-player" autoplay muted playsinline></video>
-    //       <div id="live-feed-loader" class="live-feed-loader">
-    //         <div class="loader-spinner"></div>
-    //         <div>Loading stream...</div>
-    //       </div>
-    //     </div>
-
-    //     <div class="live-feed-info">
-    //       <div class="info-row">
-    //         <span>Device Channel</span>
-    //         <span class="personnel-count">${site.id || "1000013"}</span>
-    //       </div>
-    //       <button id="live-feed-view-btn" class="view-btn" data-camera-code="${
-    //         site.id || "1000013"
-    //       }" data-site-id="${site.id}">View in Stream Viewer</button>
-    //     </div>
-    //   </div>
-
+    
     drawerContent.innerHTML = `
       <!-- Photo Grid Section -->
       <div class="photo-grid-section">
@@ -126,18 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="performance-analytics-section" class="tab-section">
           <div class="detail-section">
             <div id="performance-analytics-content"></div>
-          </div>
-        </div>
-
-        <div id="maintenance-history-section" class="tab-section">
-          <div class="detail-section">
-            <div id="maintenance-history-content"></div>
-          </div>
-        </div>
-
-        <div id="network-info-section" class="tab-section">
-          <div class="detail-section">
-            <div id="network-info-content"></div>
           </div>
         </div>
 
@@ -221,14 +177,52 @@ document.addEventListener("DOMContentLoaded", function () {
     drawer.classList.add("open");
     drawer.classList.add("style-1");
 
-    loadTechnicalDetails(site, category);
-    addEventListeners(site, category, drawer);
+    const technicalDetails = getTechnicalDetails(site.id);
+    const content = document.getElementById("technical-details-content");
 
-    // Initialize live feed after drawer content is loaded
-    // setTimeout(() => {
-    //   initializeLiveFeed(site);
-    //   setupLiveFeedEventListeners(site);
-    // }, 200);
+    content.innerHTML = `
+      <h4>Technical Details</h4>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span class="detail-item-label">Installation Date:</span>
+          <span class="detail-item-value">${
+            technicalDetails.installationDate || "N/A"
+          }</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-item-label">Last Maintenance:</span>
+          <span class="detail-item-value">${
+            technicalDetails.lastMaintenance || "N/A"
+          }</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-item-label">Coverage Area:</span>
+          <span class="detail-item-value">${
+            technicalDetails.coverageArea || "N/A"
+          }</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-item-label">Operating Hours:</span>
+          <span class="detail-item-value">${
+            technicalDetails.operatingHours || "N/A"
+          }</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-item-label">Service Provider:</span>
+          <span class="detail-item-value">${
+            technicalDetails.serviceProvider || "N/A"
+          }</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-item-label">Last Inspection:</span>
+          <span class="detail-item-value">${
+            technicalDetails.lastInspection || "N/A"
+          }</span>
+        </div>
+      </div>
+    `
+
+    addEventListeners(site, category, drawer);
   }
 
   function addEventListeners(site, category, drawer) {
@@ -249,10 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (targetTab === "performance-analytics") {
             loadPerformanceAnalytics(site, category);
-          } else if (targetTab === "maintenance-history") {
-            loadMaintenanceHistory(site, category);
-          } else if (targetTab === "network-info") {
-            loadNetworkInfo(site, category);
           } else if (targetTab === "download-report-main") {
             loadDownloadReportContent(site, category);
           }
@@ -261,11 +251,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const firstTab = document.querySelector(".tab-btn");
+    
     if (firstTab) {
       firstTab.classList.add("active");
     }
 
     const drawerCloseBtn = document.getElementById("drawer-close");
+
     if (drawerCloseBtn) {
       drawerCloseBtn.addEventListener("click", function () {
         drawer.classList.remove("open");
@@ -277,25 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         hideAllSections();
-
-        // Clean up integrated live feed
-        const videoElement = document.getElementById("live-feed-video-player");
-        if (videoElement) {
-          videoElement.pause();
-          if (window.integratedHlsPlayer) {
-            try {
-              window.integratedHlsPlayer.destroy();
-              window.integratedHlsPlayer = null;
-            } catch (error) {
-              console.warn("Error destroying integrated HLS player:", error);
-            }
-          }
-          videoElement.src = "";
-        }
-
-        if (window.hideLiveFeedCard) {
-          window.hideLiveFeedCard();
-        }
       });
     }
   }
