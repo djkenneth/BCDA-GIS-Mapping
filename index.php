@@ -68,6 +68,7 @@
     <?php include("components/header.php") ?>
 
     <?php include("components/filter-sidebar.php") ?>
+    
     <?php include("components/info-drawer.php") ?>
     <?php include("components/alerts-interface.php") ?>
     <?php include("components/infrastructure-monitoring.php") ?>
@@ -129,6 +130,19 @@
     <script src="script/infrastructure-monitoring.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-form.js?t=<?php echo time(); ?>"></script>
     <script src="script/issue-report-form.js?t=<?php echo time(); ?>"></script>
+
+    <script src="script/info-drawer/drawer-utils.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-categories.js?t=<?php echo time(); ?>"></script>
+
+    <script src="script/info-drawer/drawer-live-feed.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-templates.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-analytics.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-maintenance.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-network.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-inspection.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-reports.js?t=<?php echo time(); ?>"></script>
+    <script src="script/info-drawer/drawer-media.js?t=<?php echo time(); ?>"></script>
+
     <script src="script/info-drawer.js?t=<?php echo time(); ?>"></script>
     <script src="script/infrastructure-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
