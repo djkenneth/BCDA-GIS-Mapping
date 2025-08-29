@@ -5,19 +5,84 @@
     </div>
 
     <div id="drawer-content">
-        <!-- Content will be populated by JavaScript including integrated live feed -->
+        <!-- Status Section (integrated from right-panel) -->
+        <div class="info-section status-section">
+            <div class="status-indicator">🟢 <span id="site-status">Active</span> - <span id="site-company">Select a location</span></div>
+            <div class="device-channel">
+                <span>Device Channel:</span> <span id="device-channel">Click on a site to view details</span>
+            </div>
+            <button class="action-btn primary portal-btn" id="view-portal-btn">View in Locator Portal</button>
+        </div>
+
+        <!-- Site Details Section (integrated from right-panel) -->
+        <div class="info-section">
+            <h3 id="site-name">Site Details</h3>
+
+            <div class="info-row">
+                <span class="info-label">Category:</span>
+                <span class="info-value" id="site-category">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Zone Type:</span>
+                <span class="info-value" id="site-zone">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Status:</span>
+                <span class="info-value" id="site-status-detail">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Location:</span>
+                <span class="info-value" id="site-location">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Lot Size:</span>
+                <span class="info-value" id="site-size">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Lease Expiry:</span>
+                <span class="info-value" id="site-lease">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Employees:</span>
+                <span class="info-value" id="site-employees">-</span>
+            </div>
+        </div>
+
+        <!-- Locator Details Section (integrated from right-panel) -->
+        <div class="info-section">
+            <h3>Locator Details</h3>
+            <div class="locator-description" id="site-description">
+                Select a site to view detailed information about the locator and their operations.
+            </div>
+        </div>
+
+        <!-- Action Buttons Section (integrated from right-panel) -->
+        <div class="action-buttons">
+            <button class="action-btn" id="compliance-report-btn">Compliance Report</button>
+            <button class="action-btn" id="permit-status-btn">Permit Status</button>
+            <button class="action-btn" id="site-inspection-btn">Site Inspection</button>
+            <button class="action-btn" id="contact-locator-btn">Contact Locator</button>
+            <button class="action-btn" id="utilities-usage-btn">Utilities Usage</button>
+            <button class="action-btn" id="environmental-data-btn">Environmental Data</button>
+        </div>
     </div>
 </div>
 
 <!-- Photo Modal -->
-<div id="photo-modal" class="photo-modal" style="display: none;">
+<!-- <div id="photo-modal" class="photo-modal" style="display: none;">
     <div class="modal-content">
         <span class="modal-close">&times;</span>
         <div class="photo-carousel" id="photo-carousel">
-            <!-- Photos will be loaded here -->
+            Photos will be loaded here
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- <div class="modal fade" id="modal-default">
     <div class="modal-dialog modal-xl">
