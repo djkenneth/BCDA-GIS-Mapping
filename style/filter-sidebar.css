@@ -2,9 +2,9 @@
 .sidebar {
   position: fixed;
   left: 0;
-  top: 284px;
+  top: var(--map-top);
   width: 60px;
-  height: calc(100vh - 284px);
+  height: calc(100vh - var(--map-top));
   background-color: #1f2e47;
   color: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  padding-right: .2rem;
+
 }
 
 /* Tabs container */
@@ -81,9 +83,9 @@
 .sidebar-content {
   position: fixed;
   left: 60px;
-  top: 284px;
+  top: var(--map-top);
   width: 300px;
-  height: calc(100vh - 284px);
+  height: calc(100vh - var(--map-top));
   background: var(--primary-2);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
@@ -193,6 +195,10 @@
   transition: background-color 0.2s;
 }
 
+.content-section-item .label {
+  margin-bottom: 0 !important;
+}
+
 .content-section-item:hover {
   background-color: rgba(84, 138, 152, 0.1);
 }
@@ -274,9 +280,9 @@ header.collapsed ~ .sidebar-content {
 .map-container {
   position: absolute;
   left: 60px;
-  top: 253px;
+  top: var(--map-top);
   right: 0;
-  height: calc(100vh - 253px );
+  height: calc(100vh - var(--map-top));
   z-index: 1;
   transition: all 0.3s ease;
 }

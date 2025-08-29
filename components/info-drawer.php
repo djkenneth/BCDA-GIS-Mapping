@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-default">
+<!-- <div class="modal fade" id="modal-default">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,7 +30,7 @@
             </div>
             <div class="modal-body">
                 <div id="imageCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
+                    Indicators
                     <ol class="carousel-indicators">
                         <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#imageCarousel" data-slide-to="1"></li>
@@ -38,7 +38,7 @@
                         <li data-target="#imageCarousel" data-slide-to="3"></li>
                     </ol>
 
-                    <!-- Carousel Items -->
+                    Carousel Items
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="https://images.unsplash.com/photo-1564763557753-051f91b57684?q=80&w=1493&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="First slide">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
 
-                    <!-- Navigation Controls -->
+                    Navigation Controls
                     <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <style>
     .photo-grid {

@@ -11,11 +11,11 @@
             </div>
         </a>
 
-        <div class="flex items-center w-4/5">
+        <!-- <div class="flex items-center w-4/5">
             <div class="flex w-full">
-                <!-- Dashboard Cards Section -->
+                Dashboard Cards Section
                 <div class="header-cards-container">
-                    <!-- Total Asset Value Card -->
+                    Total Asset Value Card
                     <div class="header-card" data-card="asset-value">
                         <div class="card-header">
                             <h3>TOTAL ASSET VALUE</h3>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <!-- Maintenance Compliance Card -->
+                    Maintenance Compliance Card
                     <div class="header-card" data-card="maintenance">
                         <div class="card-header">
                             <h3>MAINTENANCE COMPLIANCE</h3>
@@ -109,7 +109,7 @@
                         </div>
                     </div>
 
-                    <!-- Document Coverage Card -->
+                    Document Coverage Card
                     <div class="header-card" data-card="documents">
                         <div class="card-header">
                             <h3>DOCUMENT COVERAGE</h3>
@@ -156,7 +156,7 @@
                         </div>
                     </div>
 
-                    <!-- Critical Alerts Card -->
+                    Critical Alerts Card
                     <div class="header-card" data-card="alerts">
                         <div class="card-header">
                             <h3>CRITICAL ALERTS</h3>
@@ -204,7 +204,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="icons">
             <div class="icon relative" id="bell-icon">

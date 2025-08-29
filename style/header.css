@@ -103,7 +103,7 @@ header .icons {
   align-items: center;
   gap: 10px;
   position: relative;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 header .icon {
