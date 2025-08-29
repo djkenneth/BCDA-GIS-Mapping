@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Position form based on header and sidebar state
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar-v2");
+    const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     // Default positioning
@@ -629,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Observe sidebar state changes to adjust form position
-  const sidebar = document.querySelector(".sidebar-v2");
+  const sidebar = document.querySelector(".sidebar");
   if (sidebar) {
     const sidebarObserver = new MutationObserver(adjustFormPosition);
     sidebarObserver.observe(sidebar, { attributes: true, subtree: true });

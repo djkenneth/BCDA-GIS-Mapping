@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const SELECTORS = {
     header: "header",
-    sidebar: ".sidebar-v2",
+    sidebar: ".sidebar",
     sidebarContent: ".sidebar-content",
     headerToggle: ".header-toggle",
     filterCheckboxes: '.sidebar-content input[type="checkbox"]',

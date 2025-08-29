@@ -1,5 +1,5 @@
 /* Core sidebar styles */
-.sidebar-v2 {
+.sidebar {
   position: fixed;
   left: 0;
   top: 284px;
@@ -260,7 +260,7 @@
 
 
 /* Adjustments for when header is collapsed */
-header.collapsed ~ .sidebar-v2 {
+header.collapsed ~ .sidebar {
   top: 0;
   height: 100vh;
 }
@@ -364,7 +364,7 @@ header.collapsed ~ .map-container {
     height: calc(100vh - 244px);
   }
 
-  .sidebar-v2 {
+  .sidebar {
     top: 244px;
     height: calc(100vh - 244px);
   }
@@ -377,7 +377,7 @@ header.collapsed ~ .map-container {
     height: calc(100vh - 253px);
   }
 
-  .sidebar-v2 {
+  .sidebar {
     top: 253px;
     height: calc(100vh - 253px);
   }
@@ -394,7 +394,7 @@ header.collapsed ~ .map-container {
     
   }
 
-  .sidebar-v2 {
+  .sidebar {
     top: 335px;
     height: calc(100vh - 335px);
     z-index: 6;

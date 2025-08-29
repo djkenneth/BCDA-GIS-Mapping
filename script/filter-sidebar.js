@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function setupHeaderObserver() {
   const header = document.querySelector("header");
-  const sidebar = document.querySelector(".sidebar-v2");
+  const sidebar = document.querySelector(".sidebar");
   const sidebarContents = document.querySelectorAll(".sidebar-content");
 
   if (!header || !sidebar) return;

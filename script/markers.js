@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar-v2");
+    const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = 248;

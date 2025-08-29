@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!fullScreenForm) return;
         
         const header = document.querySelector('header');
-        const sidebar = document.querySelector('.sidebar-v2');
+        const sidebar = document.querySelector('.sidebar');
         const sidebarContent = document.querySelector('.sidebar-content.visible');
         
         let topPosition = '228px';
@@ -815,7 +815,7 @@ document.addEventListener('DOMContentLoaded', function() {
         headerObserver.observe(header, { attributes: true });
     }
     
-    const sidebar = document.querySelector('.sidebar-v2');
+    const sidebar = document.querySelector('.sidebar');
     if (sidebar) {
         const sidebarObserver = new MutationObserver(adjustFormPosition);
         sidebarObserver.observe(sidebar, { attributes: true, subtree: true });

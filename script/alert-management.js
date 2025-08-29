@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Monitor sidebar changes (collapsed/expanded)
-    const sidebar = document.querySelector(".sidebar-v2");
+    const sidebar = document.querySelector(".sidebar");
     if (sidebar) {
       const sidebarObserver = new MutationObserver(function (mutations) {
         positionAlertsInterface();
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function positionAlertsInterface() {
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar-v2");
+    const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     // Default positioning

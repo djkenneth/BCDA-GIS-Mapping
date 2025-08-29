@@ -4,8 +4,9 @@
             <div class="logo-wrapper">
                 <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
                 <div class="logo-content">
-                    <p class="logo-title">Department of Finance</p>
-                    <p class="logo-subtitle">Asset and Property Management</p>
+                    <!-- <p class="logo-title">Bases Conversion and Developement Authority</p> -->
+                    <p class="logo-title">BCDA</p>
+                    <p class="logo-subtitle">GIS Mapping System</p>
                 </div>
             </div>
         </a>

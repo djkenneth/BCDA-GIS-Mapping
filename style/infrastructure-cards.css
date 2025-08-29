@@ -16,7 +16,7 @@ body:has(.sidebar-content.visible) .infrastructure-cards-container {
   width: calc(100% - 380px);
 }
 
-.sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container {
+.sidebar:has(.sidebar-content.visible) ~ .infrastructure-cards-container {
   left: 380px;
   width: calc(100% - 380px);
 }
@@ -31,8 +31,8 @@ body.sidebar-expanded .infrastructure-cards-container {
   width: calc(100% - 380px);
 }
 
-.sidebar-v2.expanded ~ .infrastructure-cards-container,
-.sidebar-v2.open ~ .infrastructure-cards-container {
+.sidebar.expanded ~ .infrastructure-cards-container,
+.sidebar.open ~ .infrastructure-cards-container {
   left: 380px;
   width: calc(100% - 380px);
 }
@@ -407,11 +407,11 @@ header.collapsed ~ .infrastructure-cards-container {
 
   .sidebar-content.visible ~ .infrastructure-cards-container,
   body:has(.sidebar-content.visible) .infrastructure-cards-container,
-  .sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
+  .sidebar:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
   .app-wrapper:has(.sidebar-content.visible) .infrastructure-cards-container,
   body.sidebar-expanded .infrastructure-cards-container,
-  .sidebar-v2.expanded ~ .infrastructure-cards-container,
-  .sidebar-v2.open ~ .infrastructure-cards-container {
+  .sidebar.expanded ~ .infrastructure-cards-container,
+  .sidebar.open ~ .infrastructure-cards-container {
     left: 330px;
     width: calc(100% - 320px);
   }
@@ -493,11 +493,11 @@ header.collapsed ~ .infrastructure-cards-container {
 
   .sidebar-content.visible ~ .infrastructure-cards-container,
   body:has(.sidebar-content.visible) .infrastructure-cards-container,
-  .sidebar-v2:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
+  .sidebar:has(.sidebar-content.visible) ~ .infrastructure-cards-container,
   .app-wrapper:has(.sidebar-content.visible) .infrastructure-cards-container,
   body.sidebar-expanded .infrastructure-cards-container,
-  .sidebar-v2.expanded ~ .infrastructure-cards-container,
-  .sidebar-v2.open ~ .infrastructure-cards-container {
+  .sidebar.expanded ~ .infrastructure-cards-container,
+  .sidebar.open ~ .infrastructure-cards-container {
     left: 330px;
     width: 100%;
   }

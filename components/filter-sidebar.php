@@ -1,6 +1,6 @@
 <?php ?>
 
-<div class="sidebar-v2">
+<div class="sidebar">
     <div class="sidebar-tabs-v2">
         <div class="sidebar-tab-v2 active" data-tab="layers">
             <i class="fas fa-layer-group"></i>
