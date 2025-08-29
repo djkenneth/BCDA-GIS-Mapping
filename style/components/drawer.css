@@ -274,36 +274,6 @@
   padding-bottom: 15px;
 }
 
-.tab-btn {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 12px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  text-align: center;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tab-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.tab-btn.active {
-  background-color: #fad754;
-  color: #000;
-  border-color: #fad754;
-  font-weight: 600;
-}
-
 .tab-navigation-actions {
   margin-bottom: 20px;
   padding-top: 10px;
@@ -605,9 +575,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
   color: #4fc3f7;
   font-size: 16px;
+  margin-bottom: 10px;
   font-weight: 500;
   width: 100%;
 }
@@ -804,16 +774,16 @@
 }
 
 /* Status Text Colors */
-.status-active-text { 
-  color: #4caf50; 
+.status-active-text {
+  color: #4caf50;
 }
 
-.status-warning-text { 
-  color: #ff9800; 
+.status-warning-text {
+  color: #ff9800;
 }
 
-.status-critical-text { 
-  color: #f44336; 
+.status-critical-text {
+  color: #f44336;
 }
 
 /* Locator Details */
@@ -823,8 +793,8 @@
   line-height: 1.6;
   padding: 10px;
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  border-left: 3px solid #4fc3f7;
+  /* border-radius: 6px; */
+  /* border-left: 3px solid #4fc3f7; */
 }
 
 /* Action Buttons Grid */
@@ -904,7 +874,8 @@
   text-align: center;
 }
 
-.tab-btn:hover, .tab-btn.active {
+.tab-btn:hover,
+.tab-btn.active {
   background: #4fc3f7;
   color: #0a1628;
   transform: translateY(-1px);
@@ -976,7 +947,9 @@
 }
 
 /* Animation for smooth transitions */
-.info-section, .action-buttons, .tab-navigation {
+.info-section,
+.action-buttons,
+.tab-navigation {
   animation: fadeInUp 0.3s ease-out;
 }
 
@@ -992,14 +965,21 @@
 }
 
 /* Enhanced focus states for accessibility */
-.action-btn:focus, .tab-btn:focus, .expand-drawer-btn:focus {
+.action-btn:focus,
+.tab-btn:focus,
+.expand-drawer-btn:focus {
   outline: 2px solid #4fc3f7;
   outline-offset: 2px;
 }
 
 /* Loading state for dynamic content */
 .loading-placeholder {
-  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 4px;
@@ -1007,8 +987,12 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Tablet Mode - 768px to 1024px */
