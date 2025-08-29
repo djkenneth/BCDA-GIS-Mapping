@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCDA GIS Mapping System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a1628;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0a1628;
+            padding: 10px 20px;
+            border-bottom: 1px solid #2a3441;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0a1628;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .emergency-contacts-header {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-item-header {
+            text-align: center;
+            background: #1a2332;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .contact-number-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: #4fc3f7;
+        }
+
+        .contact-label-header {
+            font-size: 10px;
+            color: #8fa8b8;
+            margin-top: 2px;
+        }
+
+        .main-container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        .left-sidebar {
+            width: 280px;
+            background: #0f1a2b;
+            border-right: 1px solid #2a3441;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            padding: 15px 20px 10px;
+            color: #ffd700;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #2a3441;
+        }
+
+        .alert-item, .event-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid #2a3441;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .alert-item:hover, .event-item:hover {
+            background: #1a2332;
+        }
+
+        .alert-item.critical {
+            border-left: 4px solid #f44336;
+        }
+
+        .alert-item.warning {
+            border-left: 4px solid #ff9800;
+        }
+
+        .alert-item.info {
+            border-left: 4px solid #2196f3;
+        }
+
+        .event-item.upcoming {
+            border-left: 4px solid #4caf50;
+        }
+
+        .event-item.ongoing {
+            border-left: 4px solid #9c27b0;
+        }
+
+        .alert-text, .event-text {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .event-date {
+            font-size: 11px;
+            color: #8fa8b8;
+            text-align: right;
+        }
+
+        .map-container {
+            flex: 1;
+            position: relative;
+            background: #1a2332;
+        }
+
+        .map-controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: #2a3441;
+            color: #4fc3f7;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-btn:hover {
+            background: #4fc3f7;
+            color: #0a1628;
+        }
+
+        .map-view {
+            width: 100%;
+            height: calc(100% - 120px);
+            margin-top: 80px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e8f5e8" width="1200" height="800"/><path fill="%23d0e5d0" d="M0,300 Q300,250 600,300 T1200,300 L1200,800 L0,800 Z"/><circle fill="%23ff4444" cx="300" cy="400" r="8"/><circle fill="%2344ff44" cx="500" cy="350" r="8"/><circle fill="%234444ff" cx="700" cy="380" r="8"/><circle fill="%23ffff44" cx="400" cy="320" r="8"/><circle fill="%23ff44ff" cx="600" cy="420" r="8"/><path stroke="%23888" stroke-width="2" fill="none" d="M0,300 Q300,250 600,300 T1200,300"/><path stroke="%23666" stroke-width="1" fill="none" d="M100,200 Q400,180 800,200"/><text x="300" y="430" font-family="Arial" font-size="12" fill="%23333">BGC</text><text x="500" y="380" font-family="Arial" font-size="12" fill="%23333">Clark</text><text x="700" y="410" font-family="Arial" font-size="12" fill="%23333">NCC</text><text x="400" y="350" font-family="Arial" font-size="12" fill="%23333">McKinley</text><text x="600" y="450" font-family="Arial" font-size="12" fill="%23333">Newport</text></svg>');
+            background-size: cover;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .status-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: 120px;
+        }
+
+        .status-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .status-active { background: #2e7d32; }
+        .status-warning { background: #f57c00; }
+        .status-critical { background: #d32f2f; }
+        .status-maintenance { background: #1976d2; }
+        .status-inactive { background: #424242; }
+        .status-healthcare { background: #7b1fa2; }
+
+        .status-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .status-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .right-panel {
+            width: 400px;
+            background: #0f1a2b;
+            border-left: 1px solid #2a3441;
+            padding: 20px;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .right-panel.open {
+            transform: translateX(0);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .panel-title {
+            color: #ffd700;
+            font-size: 18px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #8fa8b8;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-section h3 {
+            color: #4fc3f7;
+            font-size: 14px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #2a3441;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .info-label {
+            color: #8fa8b8;
+            font-size: 13px;
+        }
+
+        .info-value {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: right;
+            max-width: 200px;
+        }
+
+        .status-active-text { color: #4caf50; }
+        
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            background: #2a3441;
+            color: #4fc3f7;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #4fc3f7;
+            color: #0a1628;
+        }
+
+        .action-btn.primary {
+            background: #ffd700;
+            color: #0a1628;
+        }
+
+        .action-btn.primary:hover {
+            background: #ffed4e;
+        }
+
+        .map-pin {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s;
+            border: 2px solid rgba(255,255,255,0.8);
+        }
+
+        .map-pin:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .map-pin.selected {
+            transform: translate(-50%, -50%) scale(1.3);
+            box-shadow: 0 0 20px rgba(255,255,255,0.8);
+        }
+
+        .pin-bgc { background: #f44336; top: 50%; left: 25%; }
+        .pin-clark { background: #4caf50; top: 44%; left: 42%; }
+        .pin-ncc { background: #2196f3; top: 48%; left: 58%; }
+        .pin-mckinley { background: #ffeb3b; top: 40%; left: 33%; }
+        .pin-newport { background: #9c27b0; top: 53%; left: 50%; }
+
+        .sidebar-toggle {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 200;
+            background: #2a3441;
+            border: none;
+            color: #4fc3f7;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .layer-controls {
+            background: #0f1a2b;
+            padding: 15px 20px;
+        }
+
+        .layer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .layer-checkbox {
+            width: 16px;
+            height: 16px;
+        }
+
+        .nav-section {
+            padding: 0;
+        }
+
+        .nav-category {
+            background: #1a2332;
+            border-bottom: 1px solid #2a3441;
+        }
+
+        .nav-category-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .nav-category-header:hover {
+            background: #2a3441;
+        }
+
+        .nav-category-header.active {
+            background: #2a3441;
+            color: #ffd700;
+        }
+
+        .nav-subcategories {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .nav-subcategories.open {
+            max-height: 500px;
+        }
+
+        .nav-subcategory {
+            padding: 10px 40px;
+            cursor: pointer;
+            color: #8fa8b8;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(42, 52, 65, 0.5);
+            transition: all 0.2s;
+        }
+
+        .nav-subcategory:hover {
+            background: #0f1a2b;
+            color: #4fc3f7;
+        }
+
+        .nav-subcategory.active {
+            background: #0f1a2b;
+            color: #ffd700;
+            border-left: 3px solid #ffd700;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s;
+        }
+
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 1024px) {
+            .left-sidebar {
+                width: 250px;
+            }
+            .right-panel {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left-sidebar {
+                position: absolute;
+                left: -280px;
+                z-index: 1000;
+                transition: left 0.3s;
+            }
+            .left-sidebar.open {
+                left: 0;
+            }
+            .sidebar-toggle {
+                display: block;
+            }
+            .right-panel {
+                width: 100%;
+            }
+            .header-right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">BCDA</div>
+            <div class="brand-name">BCDA GIS Mapping System</div>
+        </div>
+        <div class="header-right">
+            <div class="emergency-contacts-header">
+                <div class="contact-item-header">
+                    <div class="contact-number-header">911</div>
+                    <div class="contact-label-header">EMERGENCY</div>
+                </div>
+                <div class="contact-item-header">
+                    <div class="contact-number-header">8926</div>
+                    <div class="contact-label-header">BCDA</div>
+                </div>
+                <div class="contact-item-header">
+                    <div class="contact-number-header">117</div>
+                    <div class="contact-label-header">SECURITY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        
+        <div class="left-sidebar" id="sidebar">
+            <div class="nav-section">
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('infrastructure')">
+                        <span>🏗️ Infrastructure</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="infrastructure">
+                        <div class="nav-subcategory">Roads & Bridges</div>
+                        <div class="nav-subcategory">Utilities Network</div>
+                        <div class="nav-subcategory">Telecommunications</div>
+                        <div class="nav-subcategory">Power Systems</div>
+                        <div class="nav-subcategory">Water & Sewerage</div>
+                    </div>
+                </div>
+
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('locators')">
+                        <span>🏢 Locators</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="locators">
+                        <div class="nav-subcategory">Active Businesses</div>
+                        <div class="nav-subcategory">Pending Applications</div>
+                        <div class="nav-subcategory">BPO Companies</div>
+                        <div class="nav-subcategory">Manufacturing</div>
+                        <div class="nav-subcategory">Government Offices</div>
+                    </div>
+                </div>
+
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('zones')">
+                        <span>🗺️ Economic Zones</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="zones">
+                        <div class="nav-subcategory">Bonifacio Global City</div>
+                        <div class="nav-subcategory">Clark Freeport Zone</div>
+                        <div class="nav-subcategory">New Clark City</div>
+                        <div class="nav-subcategory">McKinley Hill</div>
+                        <div class="nav-subcategory">Newport City</div>
+                    </div>
+                </div>
+
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('compliance')">
+                        <span>📋 Compliance & Permits</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="compliance">
+                        <div class="nav-subcategory">Environmental Permits</div>
+                        <div class="nav-subcategory">Building Permits</div>
+                        <div class="nav-subcategory">Business Licenses</div>
+                        <div class="nav-subcategory">Safety Certifications</div>
+                        <div class="nav-subcategory">Regulatory Reports</div>
+                    </div>
+                </div>
+
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('monitoring')">
+                        <span>📊 Monitoring & Analytics</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="monitoring">
+                        <div class="nav-subcategory">Real-time Sensors</div>
+                        <div class="nav-subcategory">Environmental Data</div>
+                        <div class="nav-subcategory">Traffic Analysis</div>
+                        <div class="nav-subcategory">Occupancy Rates</div>
+                        <div class="nav-subcategory">Performance Metrics</div>
+                    </div>
+                </div>
+
+                <div class="nav-category">
+                    <div class="nav-category-header" onclick="toggleCategory('emergency')">
+                        <span>🚨 Emergency & Security</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="nav-subcategories" id="emergency">
+                        <div class="nav-subcategory">Incident Response</div>
+                        <div class="nav-subcategory">Evacuation Routes</div>
+                        <div class="nav-subcategory">Emergency Shelters</div>
+                        <div class="nav-subcategory">Security Systems</div>
+                        <div class="nav-subcategory">Disaster Preparedness</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-header">Recent Alerts</div>
+                <div class="alert-item critical">
+                    <div class="alert-text">Infrastructure maintenance: Clark Freeport</div>
+                </div>
+                <div class="alert-item warning">
+                    <div class="alert-text">Permit renewal deadline: BGC locators</div>
+                </div>
+                <div class="alert-item info">
+                    <div class="alert-text">Traffic advisory: SCTEX corridor</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-header">Upcoming Events</div>
+                <div class="event-item upcoming">
+                    <div class="event-text">Locator Business Forum</div>
+                    <div class="event-date">Mar 15</div>
+                </div>
+                <div class="event-item ongoing">
+                    <div class="event-text">NCC Infrastructure Inspection</div>
+                    <div class="event-date">Mar 10-12</div>
+                </div>
+                <div class="event-item upcoming">
+                    <div class="event-text">BGC Sustainability Summit</div>
+                    <div class="event-date">Mar 20-22</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div class="map-controls">
+                <button class="control-btn">📍 ADD NEW LOCATOR</button>
+                <button class="control-btn">⚠️ VIEW ALERTS</button>
+                <button class="control-btn">🔧 INFRASTRUCTURE MONITORING</button>
+                <button class="control-btn">📊 GENERATE REPORT</button>
+            </div>
+
+            <div class="map-view">
+                <div class="map-pin pin-bgc" onclick="selectLocation(event, 'bgc')" title="Bonifacio Global City"></div>
+                <div class="map-pin pin-clark" onclick="selectLocation(event, 'clark')" title="Clark Freeport Zone"></div>
+                <div class="map-pin pin-ncc" onclick="selectLocation(event, 'ncc')" title="New Clark City"></div>
+                <div class="map-pin pin-mckinley" onclick="selectLocation(event, 'mckinley')" title="McKinley Hill"></div>
+                <div class="map-pin pin-newport" onclick="selectLocation(event, 'newport')" title="Newport City"></div>
+            </div>
+
+            <div class="status-bar" id="statusBar">
+                <div class="status-item status-active">
+                    <div class="status-number" id="metric1-number">127</div>
+                    <div class="status-label" id="metric1-label">Active Locators</div>
+                </div>
+                <div class="status-item status-warning">
+                    <div class="status-number" id="metric2-number">8</div>
+                    <div class="status-label" id="metric2-label">Pending Permits</div>
+                </div>
+                <div class="status-item status-critical">
+                    <div class="status-number" id="metric3-number">3</div>
+                    <div class="status-label" id="metric3-label">Critical Issues</div>
+                </div>
+                <div class="status-item status-maintenance">
+                    <div class="status-number" id="metric4-number">24</div>
+                    <div class="status-label" id="metric4-label">Infrastructure Assets</div>
+                </div>
+                <div class="status-item status-inactive">
+                    <div class="status-number" id="metric5-number">5</div>
+                    <div class="status-label" id="metric5-label">Available Lots</div>
+                </div>
+                <div class="status-item status-healthcare">
+                    <div class="status-number" id="metric6-number">89%</div>
+                    <div class="status-label" id="metric6-label">Occupancy Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel" id="rightPanel">
+            <div class="panel-header">
+                <div class="panel-title">Site Information</div>
+                <button class="close-btn" onclick="closeSiteInfo()">&times;</button>
+            </div>
+
+            <div class="info-section">
+                <div style="color: #4fc3f7; font-size: 16px; margin-bottom: 10px;">🟢 Active - Select a location</div>
+                <div style="margin-bottom: 20px;">
+                    <span style="color: #ffd700;">Click on a pin to view details</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const globalMetrics = {
+            metric1: { number: '127', label: 'Active Locators' },
+            metric2: { number: '8', label: 'Pending Permits' },
+            metric3: { number: '3', label: 'Critical Issues' },
+            metric4: { number: '24', label: 'Infrastructure Assets' },
+            metric5: { number: '5', label: 'Available Lots' },
+            metric6: { number: '89%', label: 'Occupancy Rate' }
+        };
+
+        const locationMetrics = {
+            bgc: {
+                metric1: { number: '47', label: 'Active Locators' },
+                metric2: { number: '3', label: 'Pending Permits' },
+                metric3: { number: '1', label: 'Critical Issues' },
+                metric4: { number: '12', label: 'Infrastructure Assets' },
+                metric5: { number: '2', label: 'Available Lots' },
+                metric6: { number: '94%', label: 'Occupancy Rate' }
+            },
+            clark: {
+                metric1: { number: '35', label: 'Active Locators' },
+                metric2: { number: '2', label: 'Pending Permits' },
+                metric3: { number: '1', label: 'Critical Issues' },
+                metric4: { number: '8', label: 'Infrastructure Assets' },
+                metric5: { number: '1', label: 'Available Lots' },
+                metric6: { number: '87%', label: 'Occupancy Rate' }
+            },
+            ncc: {
+                metric1: { number: '12', label: 'Government Units' },
+                metric2: { number: '1', label: 'Pending Permits' },
+                metric3: { number: '0', label: 'Critical Issues' },
+                metric4: { number: '6', label: 'Infrastructure Assets' },
+                metric5: { number: '8', label: 'Available Lots' },
+                metric6: { number: '45%', label: 'Development Progress' }
+            },
+            mckinley: {
+                metric1: { number: '18', label: 'Embassy/Diplomatic' },
+                metric2: { number: '1', label: 'Pending Permits' },
+                metric3: { number: '0', label: 'Critical Issues' },
+                metric4: { number: '5', label: 'Infrastructure Assets' },
+                metric5: { number: '0', label: 'Available Lots' },
+                metric6: { number: '100%', label: 'Occupancy Rate' }
+            },
+            newport: {
+                metric1: { number: '15', label: 'Active Locators' },
+                metric2: { number: '1', label: 'Pending Permits' },
+                metric3: { number: '1', label: 'Critical Issues' },
+                metric4: { number: '4', label: 'Infrastructure Assets' },
+                metric5: { number: '1', label: 'Available Lots' },
+                metric6: { number: '92%', label: 'Occupancy Rate' }
+            }
+        };
+
+        const siteData = {
+            bgc: {
+                name: "Bonifacio Global City - Tech Hub",
+                category: "Business Process Outsourcing",
+                zone: "Mixed-Use Development",
+                status: "OPERATIONAL",
+                location: "14.5511° N, 121.0477° E",
+                size: "2.5 hectares",
+                lease: "December 2028",
+                employees: "3,247",
+                description: "Leading multinational technology corporation specializing in business process outsourcing, software development, and digital solutions. The facility houses state-of-the-art technology infrastructure and serves clients across North America and Europe.",
+                company: "Multinational Technology Corp"
+            },
+            clark: {
+                name: "Clark Freeport Zone - Manufacturing Hub",
+                category: "Manufacturing & Logistics",
+                zone: "Industrial Development",
+                status: "OPERATIONAL",
+                location: "15.1853° N, 120.5600° E",
+                size: "4.2 hectares",
+                lease: "March 2030",
+                employees: "1,890",
+                description: "Advanced manufacturing facility specializing in semiconductor assembly and electronics production. Features automated production lines and serves as a regional distribution center for Southeast Asia.",
+                company: "Global Electronics Manufacturing Inc."
+            },
+            ncc: {
+                name: "New Clark City - Government Complex",
+                category: "Government Facilities",
+                zone: "Administrative District",
+                status: "UNDER CONSTRUCTION",
+                location: "15.1500° N, 120.5400° E",
+                size: "15.0 hectares",
+                lease: "Government Owned",
+                employees: "Estimated 2,500",
+                description: "State-of-the-art government backup facilities designed for disaster resilience. Features sustainable architecture, smart building systems, and comprehensive security infrastructure.",
+                company: "Government of the Philippines"
+            },
+            mckinley: {
+                name: "McKinley Hill - Embassy Row",
+                category: "Diplomatic & International",
+                zone: "Mediterranean-Inspired Township",
+                status: "OPERATIONAL",
+                location: "14.5400° N, 121.0500° E",
+                size: "1.8 hectares",
+                lease: "July 2032",
+                employees: "456",
+                description: "Premium diplomatic compound housing multiple embassies and international organizations. Features high-security infrastructure and Mediterranean-inspired architecture.",
+                company: "Embassy of European Union"
+            },
+            newport: {
+                name: "Newport City - Hospitality & Gaming",
+                category: "Tourism & Entertainment",
+                zone: "Leisure Business District",
+                status: "OPERATIONAL",
+                location: "14.5100° N, 121.0200° E",
+                size: "3.1 hectares",
+                lease: "September 2027",
+                employees: "2,156",
+                description: "Integrated resort and entertainment complex featuring luxury hotels, gaming facilities, and convention centers. Strategic location near NAIA Terminal 3.",
+                company: "Newport Hospitality Group"
+            }
+        };
+
+        let currentSelectedLocation = null;
+
+        function updateMetrics(location) {
+            const metrics = location ? locationMetrics[location] : globalMetrics;
+            
+            for (let i = 1; i <= 6; i++) {
+                const numberEl = document.getElementById(`metric${i}-number`);
+                const labelEl = document.getElementById(`metric${i}-label`);
+                
+                numberEl.textContent = metrics[`metric${i}`].number;
+                labelEl.textContent = metrics[`metric${i}`].label;
+            }
+        }
+
+        function selectLocation(event, locationId) {
+            event.stopPropagation();
+            
+            // Remove previous selection
+            document.querySelectorAll('.map-pin').forEach(pin => {
+                pin.classList.remove('selected');
+            });
+            
+            // Add selection to clicked pin
+            event.target.classList.add('selected');
+            
+            currentSelectedLocation = locationId;
+            updateMetrics(locationId);
+            showSiteInfo(event, locationId);
+        }
+
+        function showSiteInfo(event, siteId = 'bgc') {
+            const panel = document.getElementById('rightPanel');
+            const data = siteData[siteId];
+            
+            panel.innerHTML = `
+                <div class="panel-header">
+                    <div class="panel-title">Site Information</div>
+                    <button class="close-btn" onclick="closeSiteInfo()">&times;</button>
+                </div>
+
+                <div class="info-section">
+                    <div style="color: #4fc3f7; font-size: 16px; margin-bottom: 10px;">🟢 ${data.status} - ${data.company}</div>
+                    <div style="margin-bottom: 20px;">
+                        <span style="color: #ffd700;">Device Channel:</span> ${siteId}_${Math.floor(Math.random() * 100).toString().padStart(2, '0')}
+                    </div>
+                    <button class="action-btn primary" style="width: 100%; margin-bottom: 20px;">View in Locator Portal</button>
+                </div>
+
+                <div class="info-section">
+                    <h3>${data.name}</h3>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Category:</span>
+                        <span class="info-value">${data.category}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Zone Type:</span>
+                        <span class="info-value">${data.zone}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Status:</span>
+                        <span class="info-value ${data.status === 'OPERATIONAL' ? 'status-active-text' : ''}">${data.status}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">${data.location}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Lot Size:</span>
+                        <span class="info-value">${data.size}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Lease Expiry:</span>
+                        <span class="info-value">${data.lease}</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Employees:</span>
+                        <span class="info-value">${data.employees}</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Locator Details</h3>
+                    <div style="color: #8fa8b8; font-size: 13px; line-height: 1.5;">
+                        ${data.description}
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn">Compliance Report</button>
+                    <button class="action-btn">Permit Status</button>
+                    <button class="action-btn">Site Inspection</button>
+                    <button class="action-btn">Contact Locator</button>
+                    <button class="action-btn">Utilities Usage</button>
+                    <button class="action-btn">Environmental Data</button>
+                </div>
+            `;
+            
+            panel.classList.add('open');
+        }
+
+        function closeSiteInfo() {
+            document.getElementById('rightPanel').classList.remove('open');
+            
+            // Remove selection and reset to global metrics
+            document.querySelectorAll('.map-pin').forEach(pin => {
+                pin.classList.remove('selected');
+            });
+            
+            currentSelectedLocation = null;
+            updateMetrics(null);
+        }
+
+        function toggleCategory(categoryId) {
+            const subcategories = document.getElementById(categoryId);
+            const header = subcategories.previousElementSibling;
+            const icon = header.querySelector('.expand-icon');
+            
+            subcategories.classList.toggle('open');
+            header.classList.toggle('active');
+            icon.classList.toggle('rotated');
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMetrics(null); // Start with global metrics
+        });
+    </script>
+</body>
+</html>

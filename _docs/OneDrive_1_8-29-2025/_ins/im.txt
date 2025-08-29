@@ -1,0 +1,27 @@
+BCDA (Bases Conversion and Development Authority
+
+ECONOMIC ZONES IN THE PHILIPPINES
+Clark Economic Zone
+
+PROPERTIES
+machine Machineries
+numbers: properties, locatiors, renewal, contract , occupants, expired
+
+
+who are the Locators of PHIVIDEC e.g OOgada (contract of ogada)
+details lot property details0
+
+Prompt: Tell me more about BCDA? Im going to proposed IT solutions and ICT project for them. List down all their requirements this 2025
+https://copilot.microsoft.com/shares/DEhgHWCcwraqBHe7ThrwK
+
+What are the economic zone under BCDA list them all
+https://copilot.microsoft.com/shares/gdnMRPTsAc7Kt9mfEF94Y
+
+CAN I APPLY ALL THIS SOLUTIONS AND BONUS MODULES TO BCDA?
+https://copilot.microsoft.com/shares/FmuKG1RkAxPzzmgx2aKeA
+
+PROMPT: Can we apply this to BCDA GIS Mapping System:  Land use planning, locator tracking, infrastructure monitoring	Essential for NCC and Clark masterplans, can you provid eme the details of modules and features of the GIS Mapping System
+https://copilot.microsoft.com/shares/feytUjR6YFSnoxU6zpRpa
+
+
+GIS Mapping System:  Land use planning, locator tracking, infrastructure monitoring	Essential for NCC and Clark masterplans
