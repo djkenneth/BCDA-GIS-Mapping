@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Subcategory:</span>
-            <span class="site-detail-value">${site.subcategory}</span>
+            <span class="site-detail-value">${site.subcategoryConfigs[site.subcategory].title} asdasdas</span>
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Status:</span>

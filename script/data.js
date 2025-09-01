@@ -1117,7 +1117,7 @@ const sitesMaintenanceLogs = {
 
 const mapMarkers = [
   {
-    id: "government_buildings",
+    id: "economic-zones",
     center: [14.5995, 120.9842],
     checkboxConfig: {
       masterCheckboxId: "all-economic-zones",
@@ -1188,7 +1188,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890', 
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description:
           "Official residence and workplace of the President of the Philippines.",
       },
@@ -1200,7 +1200,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Highest judicial court in the Philippines.",
       },
       {
@@ -1211,7 +1211,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Upper chamber of the Congress of the Philippines.",
       },
       {
@@ -1222,7 +1222,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Lower house of the Congress of the Philippines.",
       },
       {
@@ -1233,7 +1233,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Central office of the Department of Finance.",
       },
       {
@@ -1244,7 +1244,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description:
           "Primary government office building for Cebu city administration.",
       },
@@ -1256,7 +1256,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description:
           "Department of Finance regional headquarters for Central Visayas.",
       },
@@ -1268,7 +1268,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Bureau of Internal Revenue regional office for Cebu.",
       },
       {
@@ -1279,7 +1279,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Main government office for Davao City administration.",
       },
       {
@@ -1290,7 +1290,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Department of Finance regional office for Davao Region.",
       },
       {
@@ -1301,7 +1301,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Provincial government headquarters of Iloilo.",
       },
       {
@@ -1312,7 +1312,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description:
           "Bureau of Internal Revenue office in Iloilo requiring maintenance.",
       },
@@ -1324,7 +1324,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Mountain city government center in Baguio.",
       },
       {
@@ -1335,7 +1335,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Offices",
+        subcategory: "clark-freeport",
         description: "Regional administrative headquarters for CAR.",
       },
       {
@@ -1346,7 +1346,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Central grain storage facility in Metro Manila.",
       },
       {
@@ -1357,7 +1357,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Regional disaster response supplies storage.",
       },
       {
@@ -1368,7 +1368,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Storage for government documents and publications.",
       },
       {
@@ -1379,7 +1379,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Farm equipment and supplies storage facility.",
       },
       {
@@ -1390,7 +1390,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Military supplies and equipment warehouse.",
       },
       {
@@ -1401,7 +1401,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Regional medical and pharmaceutical storage.",
       },
       {
@@ -1412,7 +1412,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Warehouses",
+        subcategory: "new-clark-city",
         description: "Textbooks and educational supplies storage.",
       },
       {
@@ -1423,7 +1423,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description:
           "Main water treatment and distribution facility for Metro Manila.",
       },
@@ -1435,7 +1435,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description: "Municipal maintenance and repair facility.",
       },
       {
@@ -1446,7 +1446,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description: "Central waste processing and recycling facility.",
       },
       {
@@ -1457,7 +1457,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description: "Power generation equipment maintenance center.",
       },
       {
@@ -1468,7 +1468,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description: "Port operations and vessel maintenance facility.",
       },
       {
@@ -1479,7 +1479,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description:
           "Heavy equipment storage and maintenance for road construction.",
       },
@@ -1491,15 +1491,14 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Facilities",
+        subcategory: "bonifacio-global",
         description:
           "Central service facility for Metro Manila government fleet.",
       },
     ],
   },
-
   {
-    id: "land_properties",
+    id: "locator-management",
     center: [12.8797, 121.774],
     checkboxConfig: {
       masterCheckboxId: "all-locator-management",
@@ -1552,7 +1551,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "bpo-it-services",
         description: "Government office complex development lot.",
       },
       {
@@ -1563,7 +1562,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "bpo-it-services",
         description: "Prime commercial development lot in BGC, Taguig.",
       },
       {
@@ -1574,7 +1573,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "bpo-it-services",
         description: "Government administrative complex expansion lot.",
       },
       {
@@ -1585,7 +1584,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "bpo-it-services",
         description: "Financial district commercial development lot.",
       },
       {
@@ -1596,7 +1595,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description: "Industrial development lot in Subic Bay Economic Zone.",
       },
       {
@@ -1607,7 +1606,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description: "Aviation and logistics development lot in Clark.",
       },
       {
@@ -1618,7 +1617,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description: "Technology park expansion lot in Cebu City.",
       },
       {
@@ -1629,7 +1628,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description: "Mixed-use development lot in Iloilo Business District.",
       },
       {
@@ -1640,7 +1639,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description: "Commercial development lot in downtown Davao.",
       },
       {
@@ -1651,7 +1650,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Lots",
+        subcategory: "manufacturing-logistics",
         description:
           "Industrial zone development lot requiring environmental assessment.",
       },
@@ -1663,7 +1662,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description: "Strategic government reserve land in Rizal Province.",
       },
       {
@@ -1674,7 +1673,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description: "Military training ground parcel in Fort Bonifacio.",
       },
       {
@@ -1685,7 +1684,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description:
           "Environmental protection buffer zone in Mountain Province.",
       },
@@ -1697,7 +1696,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description: "Rice research facility land parcel in Laguna.",
       },
       {
@@ -1708,7 +1707,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description: "Marine sanctuary protection area in Palawan.",
       },
       {
@@ -1719,7 +1718,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "government-facilities",
         description: "Emergency evacuation area in Albay Province.",
       },
       {
@@ -1730,7 +1729,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "tourism-entertainment",
         description: "Protected ancestral domain in Cordillera region.",
       },
       {
@@ -1741,7 +1740,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Parcels",
+        subcategory: "tourism-entertainment",
         description: "Tourism infrastructure development area in Bohol.",
       },
       {
@@ -1752,7 +1751,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "tourism-entertainment",
         description:
           "Presidential palace estate with historic buildings and gardens.",
       },
@@ -1764,7 +1763,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "tourism-entertainment",
         description:
           "Former US military base converted to government retreat center.",
       },
@@ -1776,7 +1775,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "tourism-entertainment",
         description: "Government guesthouse and cultural center estate.",
       },
       {
@@ -1787,7 +1786,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "tourism-entertainment",
         description: "Historic urban park and recreational estate in Baguio.",
       },
       {
@@ -1798,7 +1797,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "tourism-entertainment",
         description:
           "Government-managed forest research and conservation estate.",
       },
@@ -1810,7 +1809,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Estates",
+        subcategory: "aviation-aerospace",
         description: "Historic island fortress and memorial park estate.",
       },
       {
@@ -1821,7 +1820,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "aviation-aerospace",
         description: "Marine protected area and tourism estate in Pangasinan.",
       },
       {
@@ -1832,14 +1831,13 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Estates",
+        subcategory: "aviation-aerospace",
         description: "Government executive training and conference estate.",
       },
     ],
   },
-
   {
-    id: "vehicles",
+    id: "infrastructure-projects",
     center: [14.5995, 120.9842],
     checkboxConfig: {
       masterCheckboxId: "all-infrastructure-projects",
@@ -1898,7 +1896,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "sctex-corridor",
         description: "Official armored limousine for Presidential use.",
       },
       {
@@ -1909,7 +1907,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "sctex-corridor",
         description: "Security escort vehicle for Presidential convoy.",
       },
       {
@@ -1920,7 +1918,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "sctex-corridor",
         description: "Official vehicle for Vice Presidential office.",
       },
       {
@@ -1931,7 +1929,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "sctex-corridor",
         description: "Official transport for Senate operations.",
       },
       {
@@ -1942,7 +1940,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "clark-airport",
         description: "Official vehicle assigned to Supreme Court.",
       },
       {
@@ -1953,7 +1951,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "clark-airport",
         description: "Official vehicle for Department of Finance Secretary.",
       },
       {
@@ -1964,7 +1962,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "clark-airport",
         description: "Official vehicle for Manila City Mayor.",
       },
       {
@@ -1975,7 +1973,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "clark-airport",
         description: "Emergency response fire truck for Makati City.",
       },
       {
@@ -1986,7 +1984,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "clark-airport",
         description: "Emergency medical response vehicle for QC.",
       },
       {
@@ -1997,7 +1995,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Waste collection vehicle currently under maintenance.",
       },
       {
@@ -2008,7 +2006,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Official vehicle for Cebu Provincial Governor.",
       },
       {
@@ -2019,7 +2017,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Official vehicle for Cebu City Mayor.",
       },
       {
@@ -2030,7 +2028,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Fire department emergency response vehicle in Cebu.",
       },
       {
@@ -2041,7 +2039,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Police patrol vehicle for Cebu City law enforcement.",
       },
       {
@@ -2049,7 +2047,7 @@ const mapMarkers = [
         name: "Cebu Public Works Truck - CEB-PW-23",
         location: [10.2956, 123.8827],
         status: "warning",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Road maintenance truck requiring inspection.",
       },
       {
@@ -2060,7 +2058,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Official vehicle for Davao City Mayor.",
       },
       {
@@ -2071,7 +2069,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "ns-commuter-railway",
         description: "Multi-purpose emergency response vehicle.",
       },
       {
@@ -2082,7 +2080,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Airport perimeter security patrol vehicle.",
       },
       {
@@ -2093,7 +2091,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Official vehicle for Iloilo Provincial Governor.",
       },
       {
@@ -2104,7 +2102,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Maritime patrol vessel for port security.",
       },
       {
@@ -2115,7 +2113,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Official vehicle for Baguio City Mayor.",
       },
       {
@@ -2126,7 +2124,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Official vehicle for CAR Regional Director.",
       },
       {
@@ -2137,7 +2135,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Specialized mountain rescue and emergency vehicle.",
       },
       {
@@ -2148,7 +2146,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "metro-subway",
         description: "Official helicopter for Presidential air transport.",
       },
       {
@@ -2159,7 +2157,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "bgc-ortigas-bridge",
         description: "Philippine Coast Guard maritime patrol vessel.",
       },
       {
@@ -2170,7 +2168,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "bgc-ortigas-bridge",
         description: "Mobile cargo inspection vehicle.",
       },
       {
@@ -2181,7 +2179,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fleet Management",
+        subcategory: "bgc-ortigas-bridge",
         description: "Mobile command center for disaster response.",
       },
       {
@@ -2192,14 +2190,14 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Fleet Management",
+        subcategory: "bgc-ortigas-bridge",
         description: "Mobile medical unit currently under maintenance.",
       },
     ],
   },
 
   {
-    id: "it_infrastructure",
+    id: "afp-modernization",
     center: [14.5995, 120.9842],
     checkboxConfig: {
       masterCheckboxId: "all-afp-modernization",
@@ -2223,7 +2221,6 @@ const mapMarkers = [
         className: "info-bg",
         icon: "fas fa-network-wired",
       },
-
       "army-support": {
         title: "Army Support Command",
         type: "Networking Hardware",
@@ -2252,7 +2249,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "inactive",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description:
           "Primary government data center hosting critical national systems.",
       },
@@ -2264,7 +2261,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description: "Disaster recovery data center for government operations.",
       },
       {
@@ -2275,7 +2272,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "inactive",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description: "Judicial system servers for court management systems.",
       },
       {
@@ -2286,7 +2283,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description: "Legislative information system servers.",
       },
       {
@@ -2297,7 +2294,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description: "Core financial management system servers.",
       },
       {
@@ -2308,7 +2305,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description:
           "Tax processing servers requiring performance optimization.",
       },
@@ -2320,7 +2317,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "recently_acquired",
-        subcategory: "Servers",
+        subcategory: "paf-housing",
         description: "Central bank regulatory system servers.",
       },
       {
@@ -2331,7 +2328,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "transfer_pending",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description: "Gaming industry regulatory and monitoring systems.",
       },
       {
@@ -2342,7 +2339,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description:
           "Central Visayas regional government server infrastructure.",
       },
@@ -2354,7 +2351,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "critical",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description: "Local government unit servers for city services.",
       },
       {
@@ -2365,7 +2362,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description: "Davao Region government server infrastructure.",
       },
       {
@@ -2376,7 +2373,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "critical",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description: "Western Visayas regional server infrastructure.",
       },
       {
@@ -2387,7 +2384,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description:
           "Cordillera Administrative Region servers under maintenance.",
       },
@@ -2399,7 +2396,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "pmc-hq",
         description: "Electoral system servers for automated elections.",
       },
       {
@@ -2410,7 +2407,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "army-support",
         description: "National statistical data processing servers.",
       },
       {
@@ -2421,7 +2418,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Servers",
+        subcategory: "army-support",
         description: "High-performance computing for research and development.",
       },
       {
@@ -2432,7 +2429,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Primary network backbone for government communications.",
       },
       {
@@ -2443,7 +2440,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description:
           "Core routing infrastructure for inter-agency connectivity.",
       },
@@ -2455,7 +2452,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description:
           "Secure communications network for presidential operations.",
       },
@@ -2467,7 +2464,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Judicial network infrastructure for court systems.",
       },
       {
@@ -2478,7 +2475,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Network infrastructure for legislative operations.",
       },
       {
@@ -2489,7 +2486,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Central Visayas regional network distribution hub.",
       },
       {
@@ -2500,7 +2497,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "High-speed fiber optic network distribution point.",
       },
       {
@@ -2511,7 +2508,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Davao Region government network infrastructure hub.",
       },
       {
@@ -2522,7 +2519,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Network Equipment",
+        subcategory: "army-support",
         description: "Western Visayas network hub requiring firmware updates.",
       },
       {
@@ -2533,7 +2530,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "special-service",
         description: "Cordillera region network distribution center.",
       },
       {
@@ -2544,7 +2541,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "special-service",
         description: "National broadband infrastructure backbone node.",
       },
       {
@@ -2555,7 +2552,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "special-service",
         description: "Disaster response communications network hub.",
       },
       {
@@ -2566,7 +2563,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "special-service",
         description: "Secure gateway for financial institution communications.",
       },
       {
@@ -2577,7 +2574,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "military-replication",
         description: "Immigration and customs network interface at NAIA.",
       },
       {
@@ -2588,14 +2585,13 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Network Equipment",
+        subcategory: "military-replication",
         description: "Coastal and maritime communications network hub.",
       },
     ],
   },
-
   {
-    id: "office_equipment",
+    id: "investment-tracking",
     center: [14.5995, 120.9842],
     checkboxConfig: {
       masterCheckboxId: "all-investment-tracking",
@@ -2647,7 +2643,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description:
           "Premium mahogany executive desk set for Presidential office.",
       },
@@ -2659,7 +2655,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "recently_acquired",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description: "Historic cabinet meeting conference table and chairs.",
       },
       {
@@ -2670,7 +2666,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "critical",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description: "Ceremonial furniture for state functions and receptions.",
       },
       {
@@ -2681,7 +2677,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description:
           "Executive office furniture set for Vice Presidential office.",
       },
@@ -2693,7 +2689,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description: "Ceremonial bench and gavel set for Chief Justice.",
       },
       {
@@ -2704,7 +2700,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description: "Conference table for Supreme Court deliberations.",
       },
       {
@@ -2715,7 +2711,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "critical",
-        subcategory: "Furniture",
+        subcategory: "joint-venture",
         description: "Complete hearing room furniture set for appellate court.",
       },
       {
@@ -2726,7 +2722,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description: "Complete furniture set for Senate plenary sessions.",
       },
       {
@@ -2737,7 +2733,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description: "Executive desk set for Senate President office.",
       },
       {
@@ -2748,7 +2744,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "critical",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description: "Official Speaker's podium and rostrum set.",
       },
       {
@@ -2759,7 +2755,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description: "Modular conference tables for committee hearings.",
       },
       {
@@ -2770,7 +2766,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description:
           "Premium executive furniture for Finance Secretary office.",
       },
@@ -2782,7 +2778,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "asset-disposition",
         description: "Executive office furniture for BIR Commissioner.",
       },
       {
@@ -2793,7 +2789,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "transfer_pending",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Central bank governor's executive office furniture.",
       },
       {
@@ -2804,7 +2800,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Provincial governor's executive furniture set in Cebu.",
       },
       {
@@ -2815,7 +2811,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Council chamber furniture for city sessions.",
       },
       {
@@ -2826,7 +2822,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description:
           "Regional office conference furniture for Central Visayas.",
       },
@@ -2838,7 +2834,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Executive office furniture for Davao City Mayor.",
       },
       {
@@ -2849,7 +2845,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Reception area furniture requiring refurbishment.",
       },
       {
@@ -2860,7 +2856,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Mountain city executive office furniture set.",
       },
       {
@@ -2871,7 +2867,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Modular workstations for election commission staff.",
       },
       {
@@ -2882,7 +2878,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description: "Ergonomic workstations for statistical data processing.",
       },
       {
@@ -2893,7 +2889,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Furniture",
+        subcategory: "revenue-monitoring",
         description:
           "Specialized laboratory furniture for scientific research.",
       },
@@ -2905,7 +2901,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description:
           "Historic palace LED lighting upgrade for energy efficiency.",
       },
@@ -2917,7 +2913,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "Ceremonial and ambient lighting for court proceedings.",
       },
       {
@@ -2928,7 +2924,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "Professional lighting system for legislative sessions.",
       },
       {
@@ -2939,7 +2935,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "Automated smart lighting system for energy management.",
       },
       {
@@ -2950,7 +2946,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description:
           "Comprehensive security camera system for presidential complex.",
       },
@@ -2962,7 +2958,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "Biometric access control for judicial facilities.",
       },
       {
@@ -2973,7 +2969,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "Integrated security system for legislative complex.",
       },
       {
@@ -2981,7 +2977,7 @@ const mapMarkers = [
         name: "DOF Vault Security System",
         location: [14.5832, 120.9797],
         status: "warning",
-        subcategory: "Fixtures",
+        subcategory: "foreign-investments",
         description: "High-security vault access system requiring calibration.",
       },
       {
@@ -2989,7 +2985,7 @@ const mapMarkers = [
         name: "Cebu Capitol Building Lighting Upgrade",
         location: [10.293719, 123.902612],
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "ppp-projects",
         description:
           "Energy-efficient lighting upgrade for provincial capitol.",
       },
@@ -2998,7 +2994,7 @@ const mapMarkers = [
         name: "Davao City Hall Security System",
         location: [7.07315, 125.612831],
         status: "active",
-        subcategory: "Fixtures",
+        subcategory: "ppp-projects",
         description: "Comprehensive security system for city hall complex.",
       },
       {
@@ -3006,7 +3002,7 @@ const mapMarkers = [
         name: "Iloilo Provincial Building HVAC Controls",
         location: [10.7211, 122.5626],
         status: "maintenance",
-        subcategory: "Fixtures",
+        subcategory: "ppp-projects",
         description: "Climate control system requiring seasonal maintenance.",
       },
       {
@@ -3014,14 +3010,13 @@ const mapMarkers = [
         name: "Baguio City Hall Mountain Climate Systems",
         location: [16.412, 120.5936],
         status: "critical",
-        subcategory: "Fixtures",
+        subcategory: "ppp-projects",
         description: "Specialized climate control for mountain environment.",
       },
     ],
   },
-
   {
-    id: "high_value_assets",
+    id: "sustainability-environment",
     center: [14.5995, 120.9842],
     checkboxConfig: {
       masterCheckboxId: "all-sustainability-environment",
@@ -3039,7 +3034,6 @@ const mapMarkers = [
         className: "critical-bg",
         icon: "fas fa-cogs",
       },
-
       "green-building": {
         title: "Green Building Standards",
         type: "High-Value Equipment",
@@ -3080,7 +3074,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description:
           "Advanced command and control center for national emergencies.",
       },
@@ -3092,7 +3086,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description:
           "Strategic air defense radar installation in mountain region.",
       },
@@ -3104,7 +3098,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "Ultra-high security system for national gold reserves.",
       },
       {
@@ -3115,7 +3109,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "Satellite communication system for weather monitoring.",
       },
       {
@@ -3126,7 +3120,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "Specialized equipment for printing Philippine currency.",
       },
       {
@@ -3137,7 +3131,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "Advanced vessel tracking and management system.",
       },
       {
@@ -3148,7 +3142,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description:
           "Primary radar system for international airport operations.",
       },
@@ -3160,7 +3154,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "Automated water distribution control for Metro Manila.",
       },
       {
@@ -3171,7 +3165,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "environmental-compliance",
         description: "National power grid monitoring and control systems.",
       },
       {
@@ -3182,7 +3176,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Critical telecommunications infrastructure hub.",
       },
       {
@@ -3193,7 +3187,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Aviation radar system for Cebu international airport.",
       },
       {
@@ -3204,7 +3198,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Advanced cargo tracking and management system.",
       },
       {
@@ -3215,7 +3209,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Regional disaster response coordination center.",
       },
       {
@@ -3226,7 +3220,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Advanced security screening equipment for aviation.",
       },
       {
@@ -3237,7 +3231,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "warning",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description:
           "Large-scale cargo inspection system requiring calibration.",
       },
@@ -3249,7 +3243,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "green-building",
         description: "Automated flood monitoring and warning system.",
       },
       {
@@ -3260,7 +3254,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description:
           "High-performance computing system for research and development.",
       },
@@ -3272,7 +3266,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "National earthquake monitoring and analysis system.",
       },
       {
@@ -3283,7 +3277,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "Advanced DNA sequencing equipment for genomic research.",
       },
       {
@@ -3294,7 +3288,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "Specialized agricultural research and testing equipment.",
       },
       {
@@ -3305,7 +3299,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "Military command and communication system.",
       },
       {
@@ -3316,7 +3310,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "Naval operations command and control center.",
       },
       {
@@ -3327,7 +3321,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "waste-management",
         description: "Air force tactical command and control systems.",
       },
       {
@@ -3338,7 +3332,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "renewable-energy",
         description: "Maritime search and rescue coordination equipment.",
       },
       {
@@ -3349,7 +3343,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "renewable-energy",
         description: "Electronic stock trading and settlement system.",
       },
       {
@@ -3360,7 +3354,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "renewable-energy",
         description: "High-value payment system for financial institutions.",
       },
       {
@@ -3371,7 +3365,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "maintenance",
-        subcategory: "Specialized Equipment",
+        subcategory: "carbon-footprint",
         description: "Automated customs processing system under upgrade.",
       },
       {
@@ -3382,7 +3376,7 @@ const mapMarkers = [
         leaseExpiry: 'March 2030',
         employees: '1,890',
         status: "active",
-        subcategory: "Specialized Equipment",
+        subcategory: "biodiversity-protection",
         description: "National tax collection and processing system.",
       },
     ],

@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     // Default positioning
-    let topPosition = "284px"; // Current default
+    let topPosition = "204px"; // Current default
     let leftPosition = "60px"; // Current default
     let rightPosition = "0";
     let bottomPosition = "0";
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "284px"; // Keep original for desktop
+          topPosition = "204px"; // Keep original for desktop
         }
       }
 

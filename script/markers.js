@@ -237,12 +237,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const allCategories = Object.keys(markersByCategory);
 
     const categoryMasterCheckboxes = {
-      "all-infrastructure": "infrastructure",
-      "all-buildings": "public_buildings",
-      "all-natural": "natural_features",
-      "all-risks": "environmental_risks",
-      "all-poi": "points_of_interest",
-      "all-demographics": "population_data",
+      "all-economic-zones": "economic-zones",
+      "all-locator-management": "locator-management",
+      "all-infrastructure-projects": "infrastructure-projects",
+      "all-afp-modernization": "afp-modernization",
+      "all-investment-tracking": "investment-tracking",
+      "all-sustainability-environment": "sustainability-environment",
     };
 
     if (checkboxId === "all") {
@@ -310,14 +310,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMasterCheckboxes() {
+    console.log('a;sldlkasjdkhaskhd')
     const masterCheckboxes = {
       all: document.getElementById("all"),
-      "all-infrastructure": document.getElementById("all-infrastructure"),
-      "all-buildings": document.getElementById("all-buildings"),
-      "all-natural": document.getElementById("all-natural"),
-      "all-risks": document.getElementById("all-risks"),
-      "all-poi": document.getElementById("all-poi"),
-      "all-demographics": document.getElementById("all-demographics"),
+      "all-economic-zones": document.getElementById("all-economic-zones"),
+      "all-locator-management": document.getElementById("all-locator-management"),
+      "all-infrastructure-projects": document.getElementById("all-infrastructure-projects"),
+      "all-afp-modernization": document.getElementById("all-afp-modernization"),
+      "all-investment-tracking": document.getElementById("all-investment-tracking"),
+      "all-sustainability-environment": document.getElementById("all-sustainability-environment"),
     };
 
     Object.entries(masterCheckboxes).forEach(([id, checkbox]) => {
