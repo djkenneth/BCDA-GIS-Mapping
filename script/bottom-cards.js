@@ -1,4 +1,4 @@
-// script/infrastructure-cards.js
+// script/bottom-cards.js
 
 document.addEventListener("DOMContentLoaded", function () {
   let infrastructureData = {};
@@ -171,8 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
              data-subcategory="${card.subcategory || ""}"
              style="cursor: pointer;">
           <div class="card-title">${card.value}</div>
-          <div class="card-type">${card.title}</div>
-          <div class="card-result">${card.type}</div>
+          <div class="card-result">${card.title}</div>
           <div class="icon">
             <i class="${card.icon}"></i>
           </div>
@@ -190,7 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Total Assets",
         value: infrastructureData.total,
-        type: "Total Assets",
         className: "info-bg",
         icon: "fas fa-map-marker-alt",
         category: "status",
@@ -199,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Operational Assets",
         value: infrastructureData.active,
-        type: "Active Assets",
         className: "active-bg",
         icon: "fas fa-check-circle",
         category: "status",
@@ -208,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Scheduled for Disposal",
         value: infrastructureData.critical,
-        type: "Disposal Status",
         className: "critical-bg",
         icon: "fas fa-exclamation-triangle",
         category: "status",
@@ -217,7 +213,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Warning",
         value: infrastructureData.warning,
-        type: "Needs Attention",
         className: "warning-bg",
         icon: "fas fa-exclamation-triangle",
         category: "status",
@@ -226,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Inactive",
         value: infrastructureData.inactive,
-        type: "Inactive Sites",
         className: "inactive-bg",
         icon: "fas fa-ban",
         category: "status",
@@ -235,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Under Maintenance",
         value: infrastructureData.maintenance,
-        type: "Maintenance Status",
         className: "maintenance-bg",
         icon: "fas fa-wrench",
         category: "status",
@@ -244,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Recently Acquired",
         value: infrastructureData.recently_acquired,
-        type: "New Assets",
         className: "nbp-bg",
         icon: "fas fa-plus-circle",
         category: "status",
@@ -253,7 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         title: "Transfer Pending",
         value: infrastructureData.transfer_pending,
-        type: "Pending Transfer",
         className: "wifi-bg",
         icon: "fas fa-exchange-alt",
         category: "status",

@@ -75,7 +75,7 @@
     <script src="script/info-drawer/drawer-media.js?t=<?php echo time(); ?>"></script>
 
     <script src="script/info-drawer.js?t=<?php echo time(); ?>"></script>
-    <script src="script/infrastructure-cards.js?t=<?php echo time(); ?>"></script>
+    <script src="script/bottom-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
 
     <script src="https://dev.aitbs.com.ph/plugins/eassist.js?apiKey=sk_uKzHeyAIIiASnjNrZSY9jgjC"></script>
