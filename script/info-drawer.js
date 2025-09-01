@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    const subCategoryTitle = category.subcategoryConfigs[site.subcategory].title;
+
     drawerContent.innerHTML = `
       <div class="site-details-section">
         <div class="site-details-header">${site.name}</div>
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Subcategory:</span>
-            <span class="site-detail-value">${site.subcategoryConfigs[site.subcategory].title} asdasdas</span>
+            <span class="site-detail-value">${subCategoryTitle}</span>
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Status:</span>
