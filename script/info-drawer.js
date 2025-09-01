@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    const categoryLabel = getCategoryLabel(category.category, site.subcategory);
-    
     drawerContent.innerHTML = `
       <div class="site-details-section">
         <div class="site-details-header">${site.name}</div>
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="site-details-grid">
           <div class="site-detail-row">
             <span class="site-detail-label">Category:</span>
-            <span class="site-detail-value">${categoryLabel}</span>
+            <span class="site-detail-value">${category.displayInfo.title}</span>
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Zone Type:</span>

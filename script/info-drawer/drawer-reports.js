@@ -21,14 +21,14 @@ function downloadPDFReport(site, category) {
     // Set document properties
     doc.setProperties({
       title: `${site.name} - Infrastructure Report`,
-      subject: `${category.category} Executive Report`,
+      subject: `${category.displayInfo.title} Executive Report`,
       author: "Department of Finance Management System",
-      keywords: `infrastructure, ${category.category}, site report`,
+      keywords: `infrastructure, ${category.displayInfo.title}, site report`,
       creator: "Dashboard System",
     });
 
     // Category-specific colors
-    let headerColor = getCategoryColor(category.category);
+    let headerColor = getCategoryColor(category.displayInfo.title);
 
     // Header Section
     doc.setFillColor(headerColor[0], headerColor[1], headerColor[2]);
@@ -40,7 +40,7 @@ function downloadPDFReport(site, category) {
     doc.text("EXECUTIVE REPORT", 105, 20, { align: "center" });
 
     doc.setFontSize(12);
-    doc.text(`${category.category} Analysis`, 105, 26, { align: "center" });
+    doc.text(`${category.displayInfo.title} Analysis`, 105, 26, { align: "center" });
 
     let yPosition = 45;
 
@@ -61,7 +61,7 @@ function downloadPDFReport(site, category) {
     // Basic site information with enhanced formatting
     const basicInfo = [
       [`Site Name:`, site.name],
-      [`Category:`, getCategoryLabel(category.category, site.subcategory)],
+      [`Category:`, category.displayInfo.title],
       [`Subcategory:`, site.subcategory],
       [
         `Current Status:`,
@@ -114,7 +114,7 @@ function downloadPDFReport(site, category) {
     }
 
     const categorySpecificData = getCategorySpecificPDFData(
-      category.category,
+      category.displayInfo.title,
       site
     );
 
@@ -178,7 +178,7 @@ function downloadPDFReport(site, category) {
     doc.setTextColor(20, 20, 20);
 
     const performanceMetrics = getCategoryPerformanceMetrics(
-      category.category,
+      category.displayInfo.title,
       site
     );
 
@@ -232,7 +232,7 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(10);
     doc.setTextColor(20, 20, 20);
 
-    // const maintenanceData = getCategoryMaintenanceData(category.category, site);
+    // const maintenanceData = getCategoryMaintenanceData(category.displayInfo.title, site);
 
     // maintenanceData.forEach((item, index) => {
     //   if (yPosition > 250) {
@@ -274,7 +274,7 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(10);
     doc.setTextColor(20, 20, 20);
 
-    const recommendations = getCategoryRecommendations(category.category, site);
+    const recommendations = getCategoryRecommendations(category.displayInfo.title, site);
 
     recommendations.forEach((rec, index) => {
       if (yPosition > 270) {
@@ -302,7 +302,7 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(11);
     doc.setTextColor(20, 20, 20);
 
-    const executiveSummary = getExecutiveSummary(category.category, site);
+    const executiveSummary = getExecutiveSummary(category.displayInfo.title, site);
     const summaryLines = doc.splitTextToSize(executiveSummary, 175);
     doc.text(summaryLines, 20, yPosition);
 
@@ -322,7 +322,7 @@ function downloadPDFReport(site, category) {
       // Add classification footer
       doc.setFontSize(7);
       doc.text(
-        `OFFICIAL USE - ${category.category.toUpperCase()} INFRASTRUCTURE REPORT`,
+        `OFFICIAL USE - ${category.displayInfo.title.toUpperCase()} INFRASTRUCTURE REPORT`,
         105,
         292,
         { align: "center" }
@@ -331,7 +331,7 @@ function downloadPDFReport(site, category) {
 
     // Save the PDF with enhanced filename
     const sanitizedSiteName = site.name.replace(/[^a-zA-Z0-9]/g, "_");
-    const sanitizedCategory = category.category.replace(/[^a-zA-Z0-9]/g, "_");
+    const sanitizedCategory = category.displayInfo.title.replace(/[^a-zA-Z0-9]/g, "_");
     const filename = `${
       site.id
     }_${sanitizedSiteName}_${sanitizedCategory}_Executive_Report_${
@@ -1050,7 +1050,7 @@ function loadDownloadReportContent(site, category) {
           <h5 style="margin-bottom: 10px; color: #FAD754;">Report Contents:</h5>
           <ul style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
             <li>Site Information & Classification</li>
-            <li>${getCategorySpecificReportSections(category.category).join(
+            <li>${getCategorySpecificReportSections(category.displayInfo.title).join(
               "</li><li>"
             )}</li>
             <li>Strategic Recommendations</li>

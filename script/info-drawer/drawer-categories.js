@@ -1,19 +1,3 @@
-function getCategoryLabel(category, subcategory) {
-  const categoryMappings = {
-    Infrastructure: "Infrastructure",
-    "Public Buildings": "Public Buildings",
-    "Natural Features": "Natural Features",
-    "Environmental Risks": "Environmental Risks",
-    "Points of Interest": "Points of Interest",
-    "Population Data": "Population Data",
-    "Internet Access": "Internet Access",
-    "Traffic Data": "Traffic Data",
-    "National Broadband Project": "National Broadband Project",
-  };
-
-  return categoryMappings[category] || category;
-}
-
 function getPerformanceLabel(categoryName) {
   switch (categoryName) {
     case "Internet Access":

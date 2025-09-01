@@ -119,10 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         siteMarker.addEventListener("click", function (e) {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
-
-          // setTimeout(() => {
-          //   showLiveFeedCardForSite(site);
-          // }, 300);
         });
 
         // Store marker reference
