@@ -1117,40 +1117,69 @@ const sitesMaintenanceLogs = {
 
 const mapMarkers = [
   {
-    category: "Government Buildings",
     id: "government_buildings",
-    center: [14.5995, 120.9842], // Manila center
+    center: [14.5995, 120.9842],
     checkboxConfig: {
-      masterCheckboxId: "all-government",
+      masterCheckboxId: "all-economic-zones",
     },
     displayInfo: {
-      title: "Government Buildings",
+      title: "Economic Zones",
       type: "Offices, Warehouses, Facilities",
       className: "nbp-bg",
       icon: "fas fa-building",
     },
     subcategoryConfigs: {
-      offices: {
-        title: "Offices",
+      'clark-freeport': {
+        title: "Clark Freeport",
         type: "Government Offices",
         className: "nbp-bg",
         icon: "fas fa-building",
       },
-      warehouses: {
-        title: "Warehouses",
+      'new-clark-city': {
+        title: "New Clark City",
         type: "Storage Facilities",
         className: "data-center-bg",
         icon: "fas fa-warehouse",
       },
-      facilities: {
-        title: "Facilities",
+      'bonifacio-global': {
+        title: "Bonifacio Global",
+        type: "General Facilities",
+        className: "info-bg",
+        icon: "fas fa-industry",
+      },
+
+      'mckinley-hill': {
+        title: "McKinley Hill",
+        type: "General Facilities",
+        className: "info-bg",
+        icon: "fas fa-industry",
+      },
+      'newport-city': {
+        title: "Newport City",
+        type: "General Facilities",
+        className: "info-bg",
+        icon: "fas fa-industry",
+      },
+      'john-hay-zone': {
+        title: "John Hay Special Economic Zone",
+        type: "General Facilities",
+        className: "info-bg",
+        icon: "fas fa-industry",
+      },
+      'poro-point': {
+        title: "Poro Point Freeport Zone",
+        type: "General Facilities",
+        className: "info-bg",
+        icon: "fas fa-industry",
+      },
+      'bataan-tech': {
+        title: "Bataan Technology Park",
         type: "General Facilities",
         className: "info-bg",
         icon: "fas fa-industry",
       },
     },
     sites: [
-      // Manila NCR
       {
         id: "office_01",
         name: "Malacañang Palace Complex",
@@ -1192,8 +1221,6 @@ const mapMarkers = [
         subcategory: "Offices",
         description: "Central office of the Department of Finance.",
       },
-
-      // Cebu
       {
         id: "office_06",
         name: "Cebu City Hall",
@@ -1220,8 +1247,6 @@ const mapMarkers = [
         subcategory: "Offices",
         description: "Bureau of Internal Revenue regional office for Cebu.",
       },
-
-      // Davao
       {
         id: "office_09",
         name: "Davao City Hall",
@@ -1238,8 +1263,6 @@ const mapMarkers = [
         subcategory: "Offices",
         description: "Department of Finance regional office for Davao Region.",
       },
-
-      // Iloilo
       {
         id: "office_11",
         name: "Iloilo Provincial Capitol",
@@ -1257,8 +1280,6 @@ const mapMarkers = [
         description:
           "Bureau of Internal Revenue office in Iloilo requiring maintenance.",
       },
-
-      // Baguio
       {
         id: "office_13",
         name: "Baguio City Hall",
@@ -1275,8 +1296,6 @@ const mapMarkers = [
         subcategory: "Offices",
         description: "Regional administrative headquarters for CAR.",
       },
-
-      // Warehouses across Philippines
       {
         id: "warehouse_01",
         name: "National Food Authority Warehouse - Manila",
@@ -1333,8 +1352,6 @@ const mapMarkers = [
         subcategory: "Warehouses",
         description: "Textbooks and educational supplies storage.",
       },
-
-      // Facilities
       {
         id: "facility_01",
         name: "Metropolitan Waterworks Pumping Station",
@@ -1398,40 +1415,62 @@ const mapMarkers = [
   },
 
   {
-    category: "Land Properties",
     id: "land_properties",
     center: [12.8797, 121.774], // Geographic center of Philippines
     checkboxConfig: {
-      masterCheckboxId: "all-land",
+      masterCheckboxId: "all-locator-management",
     },
     displayInfo: {
-      title: "Land Properties",
+      title: "Locator Management",
       type: "Lots, Parcels, Estates",
       className: "wifi-bg",
       icon: "fas fa-map",
     },
     subcategoryConfigs: {
-      lots: {
-        title: "Lots",
+      'bpo-it-services': {
+        title: "BPO & IT Services",
         type: "Residential/Commercial Lots",
         className: "wifi-bg",
         icon: "fas fa-square",
       },
-      parcels: {
-        title: "Parcels",
+      'manufacturing-logistics': {
+        title: "Manufacturing & Logistics",
         type: "Land Parcels",
         className: "data-center-bg",
         icon: "fas fa-map-marked-alt",
       },
-      estates: {
-        title: "Estates",
+      'government-facilities': {
+        title: "Government Facilities",
+        type: "Large Properties",
+        className: "info-bg",
+        icon: "fas fa-home",
+      },
+
+      'tourism-entertainment': {
+        title: "Tourism & Entertainment",
+        type: "Large Properties",
+        className: "info-bg",
+        icon: "fas fa-home",
+      },
+      'aviation-aerospace': {
+        title: "Aviation & Aerospace",
         type: "Large Properties",
         className: "info-bg",
         icon: "fas fa-home",
       },
     },
     sites: [
-      // Luzon Lots
+      {
+        id: "lot_08",
+        name: "Bacolod Government Complex Lot BAC-3F",
+        location: [10.676, 122.9503],
+        lotSize: '4.2 hectares',
+        leaseExpiry: 'March 2030',
+        employees: '1,890',
+        status: "active",
+        subcategory: "Lots",
+        description: "Government office complex development lot.",
+      },
       {
         id: "lot_01",
         name: "Bonifacio Global City Commercial Lot BGC-1A",
@@ -1472,8 +1511,6 @@ const mapMarkers = [
         subcategory: "Lots",
         description: "Aviation and logistics development lot in Clark.",
       },
-
-      // Visayas Lots
       {
         id: "lot_06",
         name: "Cebu IT Park Expansion Lot CEB-18A",
@@ -1491,19 +1528,6 @@ const mapMarkers = [
         description: "Mixed-use development lot in Iloilo Business District.",
       },
       {
-        id: "lot_08",
-        name: "Bacolod Government Complex Lot BAC-3F",
-        location: [10.676, 122.9503],
-        lotSize: '4.2 hectares',
-        leaseExpiry: 'March 2030',
-        employees: '1,890',
-        status: "active",
-        subcategory: "Lots",
-        description: "Government office complex development lot.",
-      },
-
-      // Mindanao Lots
-      {
         id: "lot_09",
         name: "Davao Central Business District Lot DAV-11B",
         location: [7.0634, 125.5889],
@@ -1520,8 +1544,6 @@ const mapMarkers = [
         description:
           "Industrial zone development lot requiring environmental assessment.",
       },
-
-      // Government Land Parcels
       {
         id: "parcel_01",
         name: "National Government Reserve Parcel NGR-001",
@@ -1587,8 +1609,6 @@ const mapMarkers = [
         subcategory: "Parcels",
         description: "Tourism infrastructure development area in Bohol.",
       },
-
-      // Government Estate Holdings
       {
         id: "estate_01",
         name: "Malacañang Palace Grounds and Gardens",
@@ -1660,28 +1680,57 @@ const mapMarkers = [
   },
 
   {
-    category: "Vehicles",
     id: "vehicles",
     center: [14.5995, 120.9842], // Manila center for vehicle fleet
     checkboxConfig: {
-      masterCheckboxId: "all-vehicles",
+      masterCheckboxId: "all-infrastructure-projects",
     },
     displayInfo: {
-      title: "Vehicles",
+      title: "Infrastructure Projects",
       type: "Fleet Management",
       className: "maintenance-bg",
       icon: "fas fa-car",
     },
     subcategoryConfigs: {
-      "fleet-management": {
-        title: "Fleet Management",
+      "sctex-corridor": {
+        title: "SCTEX Corridor",
+        type: "Government Vehicles",
+        className: "maintenance-bg",
+        icon: "fas fa-truck",
+      },
+
+      "clark-airport": {
+        title: "Clark International Airport",
+        type: "Government Vehicles",
+        className: "maintenance-bg",
+        icon: "fas fa-truck",
+      },
+      "ns-commuter-railway": {
+        title: "North-South Commuter Railway",
+        type: "Government Vehicles",
+        className: "maintenance-bg",
+        icon: "fas fa-truck",
+      },
+      "metro-subway": {
+        title: "Metro Manila Subway",
+        type: "Government Vehicles",
+        className: "maintenance-bg",
+        icon: "fas fa-truck",
+      },
+      "bgc-ortigas-bridge": {
+        title: "BGC-Ortigas Link Bridge",
+        type: "Government Vehicles",
+        className: "maintenance-bg",
+        icon: "fas fa-truck",
+      },
+      "fiber-backbone": {
+        title: "National Fiber Backbone",
         type: "Government Vehicles",
         className: "maintenance-bg",
         icon: "fas fa-truck",
       },
     },
     sites: [
-      // Presidential and Executive Fleet
       {
         id: "vehicle_001",
         name: "Presidential Limousine - Unit 1",
@@ -1706,8 +1755,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Official vehicle for Vice Presidential office.",
       },
-
-      // Manila NCR Fleet
       {
         id: "vehicle_004",
         name: "Senate Official Vehicle - SEN-15",
@@ -1764,8 +1811,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Waste collection vehicle currently under maintenance.",
       },
-
-      // Regional Government Vehicles - Cebu
       {
         id: "vehicle_011",
         name: "Cebu Governor Vehicle - CEB-GOV-1",
@@ -1806,8 +1851,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Road maintenance truck requiring inspection.",
       },
-
-      // Regional Government Vehicles - Davao
       {
         id: "vehicle_016",
         name: "Davao City Mayor Vehicle - DAV-MAYOR-1",
@@ -1832,8 +1875,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Airport perimeter security patrol vehicle.",
       },
-
-      // Regional Government Vehicles - Iloilo
       {
         id: "vehicle_019",
         name: "Iloilo Provincial Governor Vehicle - ILO-GOV-1",
@@ -1850,8 +1891,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Maritime patrol vessel for port security.",
       },
-
-      // Regional Government Vehicles - Baguio
       {
         id: "vehicle_021",
         name: "Baguio City Mayor Vehicle - BAG-MAYOR-1",
@@ -1876,8 +1915,6 @@ const mapMarkers = [
         subcategory: "Fleet Management",
         description: "Specialized mountain rescue and emergency vehicle.",
       },
-
-      // Specialized Government Vehicles
       {
         id: "vehicle_024",
         name: "Presidential Helicopter - PAF-1",
@@ -1922,34 +1959,51 @@ const mapMarkers = [
   },
 
   {
-    category: "IT Infrastructure",
     id: "it_infrastructure",
     center: [14.5995, 120.9842], // Manila IT hub center
     checkboxConfig: {
-      masterCheckboxId: "all-it",
+      masterCheckboxId: "all-afp-modernization",
     },
     displayInfo: {
-      title: "IT Infrastructure",
+      title: "AFP Modernization",
       type: "Servers, Network Equipment",
       className: "data-center-bg",
       icon: "fas fa-server",
     },
     subcategoryConfigs: {
-      servers: {
-        title: "Servers",
+      'paf-housing': {
+        title: "Philippine Air Force Housing",
         type: "Server Equipment",
         className: "data-center-bg",
         icon: "fas fa-server",
       },
-      "network-equipment": {
-        title: "Network Equipment",
+      "pmc-hq": {
+        title: "Philippine Marine Corps HQ",
+        type: "Networking Hardware",
+        className: "info-bg",
+        icon: "fas fa-network-wired",
+      },
+
+      "army-support": {
+        title: "Army Support Command",
+        type: "Networking Hardware",
+        className: "info-bg",
+        icon: "fas fa-network-wired",
+      },
+      "special-service": {
+        title: "Special Service Center",
+        type: "Networking Hardware",
+        className: "info-bg",
+        icon: "fas fa-network-wired",
+      },
+      "military-replication": {
+        title: "Military Replication Projects",
         type: "Networking Hardware",
         className: "info-bg",
         icon: "fas fa-network-wired",
       },
     },
     sites: [
-      // National Government Data Centers - Manila NCR
       {
         id: "server_001",
         name: "National Government Data Center - Primary",
@@ -2016,8 +2070,6 @@ const mapMarkers = [
         subcategory: "Servers",
         description: "Gaming industry regulatory and monitoring systems.",
       },
-
-      // Regional Government Data Centers
       {
         id: "server_009",
         name: "Region VII Government Data Center - Cebu",
@@ -2060,8 +2112,6 @@ const mapMarkers = [
         description:
           "Cordillera Administrative Region servers under maintenance.",
       },
-
-      // Specialized Government IT Systems
       {
         id: "server_014",
         name: "COMELEC Election Systems Server",
@@ -2086,8 +2136,6 @@ const mapMarkers = [
         subcategory: "Servers",
         description: "High-performance computing for research and development.",
       },
-
-      // Network Infrastructure - Core Systems
       {
         id: "network_001",
         name: "National Government Network Core Switch - NGN-1",
@@ -2130,8 +2178,6 @@ const mapMarkers = [
         subcategory: "Network Equipment",
         description: "Network infrastructure for legislative operations.",
       },
-
-      // Regional Network Infrastructure
       {
         id: "network_006",
         name: "Region VII Network Hub - Cebu",
@@ -2172,8 +2218,6 @@ const mapMarkers = [
         subcategory: "Network Equipment",
         description: "Cordillera region network distribution center.",
       },
-
-      // Specialized Network Equipment
       {
         id: "network_011",
         name: "DICT National Broadband Network Node - NBN-1",
@@ -2218,34 +2262,50 @@ const mapMarkers = [
   },
 
   {
-    category: "Office Equipment",
     id: "office_equipment",
     center: [14.5995, 120.9842], // Manila government center
     checkboxConfig: {
-      masterCheckboxId: "all-office",
+      masterCheckboxId: "all-investment-tracking",
     },
     displayInfo: {
-      title: "Office Equipment",
+      title: "Investment Tracking",
       type: "Furniture, Fixtures",
       className: "ai-bg",
       icon: "fas fa-chair",
     },
     subcategoryConfigs: {
-      furniture: {
-        title: "Furniture",
+      'joint-venture': {
+        title: "Joint Venture Projects",
         type: "Office Furniture",
         className: "ai-bg",
         icon: "fas fa-chair",
       },
-      fixtures: {
-        title: "Fixtures",
+      'asset-disposition': {
+        title: "Asset Disposition",
+        type: "Office Fixtures",
+        className: "info-bg",
+        icon: "fas fa-lamp",
+      },
+      'revenue-monitoring': {
+        title: "Revenue Monitoring",
+        type: "Office Fixtures",
+        className: "info-bg",
+        icon: "fas fa-lamp",
+      },
+      'foreign-investments': {
+        title: "Foreign Investments",
+        type: "Office Fixtures",
+        className: "info-bg",
+        icon: "fas fa-lamp",
+      },
+      'ppp-projects': {
+        title: "PPP Projects",
         type: "Office Fixtures",
         className: "info-bg",
         icon: "fas fa-lamp",
       },
     },
     sites: [
-      // Presidential and Executive Office Furniture
       {
         id: "furniture_001",
         name: "Presidential Executive Desk Set - Malacañang",
@@ -2280,8 +2340,6 @@ const mapMarkers = [
         description:
           "Executive office furniture set for Vice Presidential office.",
       },
-
-      // Supreme Court and Judicial Furniture
       {
         id: "furniture_005",
         name: "Supreme Court Chief Justice Bench",
@@ -2306,8 +2364,6 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Complete hearing room furniture set for appellate court.",
       },
-
-      // Legislative Branch Furniture
       {
         id: "furniture_008",
         name: "Senate Session Hall Furniture Set",
@@ -2340,8 +2396,6 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Modular conference tables for committee hearings.",
       },
-
-      // Department Executive Offices
       {
         id: "furniture_012",
         name: "DOF Secretary Executive Suite",
@@ -2367,8 +2421,6 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Central bank governor's executive office furniture.",
       },
-
-      // Regional Government Office Furniture
       {
         id: "furniture_015",
         name: "Cebu Governor Executive Office Suite",
@@ -2418,8 +2470,6 @@ const mapMarkers = [
         subcategory: "Furniture",
         description: "Mountain city executive office furniture set.",
       },
-
-      // Government Agency Work Stations
       {
         id: "furniture_021",
         name: "COMELEC Workstation Cluster - Main Office",
@@ -2445,8 +2495,6 @@ const mapMarkers = [
         description:
           "Specialized laboratory furniture for scientific research.",
       },
-
-      // Office Fixtures - Lighting Systems
       {
         id: "fixture_001",
         name: "Malacañang Palace LED Lighting System",
@@ -2480,8 +2528,6 @@ const mapMarkers = [
         subcategory: "Fixtures",
         description: "Automated smart lighting system for energy management.",
       },
-
-      // Office Fixtures - Security Systems
       {
         id: "fixture_005",
         name: "Malacañang Security Camera Network",
@@ -2515,8 +2561,6 @@ const mapMarkers = [
         subcategory: "Fixtures",
         description: "High-security vault access system requiring calibration.",
       },
-
-      // Regional Office Fixtures
       {
         id: "fixture_009",
         name: "Cebu Capitol Building Lighting Upgrade",
@@ -2554,28 +2598,57 @@ const mapMarkers = [
   },
 
   {
-    category: "High-Value Assets",
     id: "high_value_assets",
-    center: [14.5995, 120.9842], // Manila strategic center
+    center: [14.5995, 120.9842],
     checkboxConfig: {
-      masterCheckboxId: "all-highvalue",
+      masterCheckboxId: "all-sustainability-environment",
     },
     displayInfo: {
-      title: "High-Value Assets",
+      title: "Sustainability & Environment",
       type: "Specialized Equipment",
       className: "critical-bg",
       icon: "fas fa-gem",
     },
     subcategoryConfigs: {
-      "specialized-equipment": {
-        title: "Specialized Equipment",
+      "environmental-compliance": {
+        title: "Environmental Compliance",
+        type: "High-Value Equipment",
+        className: "critical-bg",
+        icon: "fas fa-cogs",
+      },
+
+      "green-building": {
+        title: "Green Building Standards",
+        type: "High-Value Equipment",
+        className: "critical-bg",
+        icon: "fas fa-cogs",
+      },
+      "waste-management": {
+        title: "Waste Management",
+        type: "High-Value Equipment",
+        className: "critical-bg",
+        icon: "fas fa-cogs",
+      },
+      "renewable-energy": {
+        title: "Renewable Energy",
+        type: "High-Value Equipment",
+        className: "critical-bg",
+        icon: "fas fa-cogs",
+      },
+      "carbon-footprint": {
+        title: "Carbon Footprint",
+        type: "High-Value Equipment",
+        className: "critical-bg",
+        icon: "fas fa-cogs",
+      },
+      "biodiversity-protection": {
+        title: "Biodiversity Protection",
         type: "High-Value Equipment",
         className: "critical-bg",
         icon: "fas fa-cogs",
       },
     },
     sites: [
-      // National Strategic Assets
       {
         id: "highvalue_001",
         name: "Presidential Emergency Command Center",
@@ -2618,8 +2691,6 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Specialized equipment for printing Philippine currency.",
       },
-
-      // Critical Infrastructure Protection
       {
         id: "highvalue_006",
         name: "Manila Bay Port Authority Vessel Traffic System",
@@ -2661,8 +2732,6 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Critical telecommunications infrastructure hub.",
       },
-
-      // Regional Strategic Assets
       {
         id: "highvalue_011",
         name: "Cebu Mactan International Airport Radar",
@@ -2712,8 +2781,6 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Automated flood monitoring and warning system.",
       },
-
-      // Scientific and Research Equipment
       {
         id: "highvalue_017",
         name: "DOST-ASTI Supercomputer Cluster",
@@ -2747,8 +2814,6 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Specialized agricultural research and testing equipment.",
       },
-
-      // Military and Defense Assets
       {
         id: "highvalue_021",
         name: "AFP Command and Control System - Camp Aguinaldo",
@@ -2781,8 +2846,6 @@ const mapMarkers = [
         subcategory: "Specialized Equipment",
         description: "Maritime search and rescue coordination equipment.",
       },
-
-      // Financial and Economic Infrastructure
       {
         id: "highvalue_025",
         name: "Philippine Stock Exchange Trading System",
@@ -2849,7 +2912,7 @@ function generateSearchData() {
   }
 
   mapMarkers.forEach(category => {
-    const categoryKey = category.displayInfo?.title || category.category;
+    const categoryKey = category.displayInfo?.title;
     
     // Convert Font Awesome icon class to SVG (simplified version)
     const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
@@ -2863,7 +2926,7 @@ function generateSearchData() {
       category.sites.forEach(site => {        
         searchData.categories[categoryKey].items.push({
           title: site.name,
-          description: site.description || `${site.subcategory} - ${category.category}`,
+          description: site.description || `${site.subcategory} - ${category.displayInfo.title}`,
           distance: "0.5km",
           siteId: site.id,
           category: categoryKey,
