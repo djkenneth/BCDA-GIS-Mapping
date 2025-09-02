@@ -301,8 +301,8 @@ function setupHeaderObserver() {
             heightValue = "calc(100vh - 244px)";
           } else {
             // Desktop (default)
-            topValue = "204px";
-            heightValue = "calc(100vh - 204px)";
+            topValue = "191px";
+            heightValue = "calc(100vh - 191px)";
           }
 
           sidebar.style.top = topValue;

@@ -2,12 +2,11 @@
     <div class="nav-bar">
         <a href="javascript:history.back()">
             <div class="logo-wrapper">
-                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/dof-logo.png' : 'assets/dof-logo.png'; ?>" alt="dict logo" class="logo" />
-                <div class="logo-content">
-                    <!-- <p class="logo-title">Bases Conversion and Developement Authority</p> -->
+                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/bcda-logo.png' : 'assets/bcda-logo.png'; ?>" alt="dict logo" class="logo" />
+                <!-- <div class="logo-content">
                     <p class="logo-title">BCDA</p>
                     <p class="logo-subtitle">GIS Mapping System</p>
-                </div>
+                </div> -->
             </div>
         </a>
 
