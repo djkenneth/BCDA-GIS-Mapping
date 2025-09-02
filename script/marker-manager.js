@@ -1,34 +1,39 @@
 // script/marker-manager.js
 
 const markerIcons = {
-  // Default markers (used when no specific type is available)
   default: {
-    active: {
+    active_locators: {
       iconUrl: "assets/marker/marker-active.svg",
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
     },
-    maintenance: {
-      iconUrl: "assets/marker/marker-maintenance.svg",
+    pending_permits: {
+      iconUrl: "assets/marker/marker-maintenance.svg", // Reuse existing maintenance icon
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
     },
-    inactive: {
-      iconUrl: "assets/marker/marker-inactive.svg",
+    critical_issues: {
+      iconUrl: "assets/marker/marker-warning.svg", // Reuse existing warning icon
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
     },
-    warning: {
-      iconUrl: "assets/marker/marker-warning.svg",
+    infrastructure_assets: {
+      iconUrl: "assets/marker/marker-critical.svg", // Reuse existing critical icon
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
     },
-    critical: {
-      iconUrl: "assets/marker/marker-critical.svg",
+    available_lots: {
+      iconUrl: "assets/marker/marker-inactive.svg", // Reuse existing inactive icon
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32],
+    },
+    occupancy_rate: {
+      iconUrl: "assets/marker/marker-active.svg", // Use active icon for occupancy rate
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],

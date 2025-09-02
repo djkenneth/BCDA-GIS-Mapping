@@ -1,11 +1,11 @@
-<?php ?>
+<!-- components/filter-sidebar.php -->
 
 <div class="sidebar">
     <div class="sidebar-tabs-v2">
-        <!-- <div class="sidebar-tab-v2 active" data-tab="layers">
+        <div class="sidebar-tab-v2 active" data-tab="layers">
             <i class="fas fa-layer-group"></i>
             <span>Features</span>
-        </div> -->
+        </div>
         <div class="sidebar-tab-v2" data-tab="zones">
             <i class="fas fa-landmark"></i>
             <span>Economic Zones</span>
@@ -34,7 +34,7 @@
 </div>
 
 <!-- Layers Panel -->
-<!-- <div class="sidebar-content visible" id="layers-content">
+<div class="sidebar-content visible" id="layers-content">
     <div class="content-header">
         <h3>Map Features</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
@@ -81,10 +81,10 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Economic Zones Panel -->
-<div class="sidebar-content visible" id="zones-content">
+<div class="sidebar-content" id="zones-content">
     <div class="content-header">
         <h3>🏛️ Economic Zones</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
