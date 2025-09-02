@@ -11,12 +11,12 @@
 
     <!-- MapLibre GL JS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js?t=<?php echo time(); ?>"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
     <link rel="stylesheet" href="style/main.css?t=<?php echo time(); ?>" />
-    <link rel="stylesheet" href="style/infrastructure-monitoring.css?t=<?php echo time(); ?>" />
-    <link rel="stylesheet" href="style/alert-management.css?t=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="style/executive-summary-report.css?t=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="style/performance-analytics.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/filter-sidebar.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/issue-report-form.css?t=<?php echo time(); ?>" />
     <link rel="stylesheet" href="style/components/drawer.css?t=<?php echo time(); ?>" />
@@ -30,9 +30,9 @@
     <?php include("components/filter-sidebar.php") ?>
     
     <?php include("components/info-drawer.php") ?>
-    <?php include("components/alerts-interface.php") ?>
-    <?php include("components/infrastructure-monitoring.php") ?>
-    <?php include("components/infrastructure-form.php") ?>
+    <?php include("components/performance-analytics.php") ?>
+    <?php include("components/executive-summary-report.php") ?>
+    <?php include("components/strategic-dashboard.php") ?>
     <?php include("components/issue-report-form.php") ?>
 
     <div class="map-container">
@@ -61,9 +61,9 @@
     <script src="script/notification-menu.js?t=<?php echo time(); ?>"></script>
     <script src="script/filter-sidebar.js?t=<?php echo time(); ?>"></script>
     <script src="script/panel-manager.js?t=<?php echo time(); ?>"></script>
-    <script src="script/alert-management.js?t=<?php echo time(); ?>"></script>
-    <script src="script/infrastructure-monitoring.js?t=<?php echo time(); ?>"></script>
-    <script src="script/infrastructure-form.js?t=<?php echo time(); ?>"></script>
+    <script src="script/performance-analytics.js?t=<?php echo time(); ?>"></script>
+    <script src="script/executive-summary-report.js?t=<?php echo time(); ?>"></script>
+    <script src="script/strategic-dashboard.js?t=<?php echo time(); ?>"></script>
     <script src="script/issue-report-form.js?t=<?php echo time(); ?>"></script>
 
     <script src="script/info-drawer/drawer-utils.js?t=<?php echo time(); ?>"></script>

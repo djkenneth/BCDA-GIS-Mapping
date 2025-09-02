@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCDA Performance Analytics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bcda-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #2c5282, #3182ce);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .header-title {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .nav-pills {
+            display: flex;
+            gap: 1rem;
+            margin-left: auto;
+        }
+
+        .nav-pill {
+            padding: 0.5rem 1.2rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 25px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover, .nav-pill.active {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .main-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filters-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .filter-select {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analytics-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+
+        .trend-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .trend-up {
+            color: #38a169;
+        }
+
+        .trend-down {
+            color: #e53e3e;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3b82f6;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .metric-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .performance-table {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        tr:hover {
+            background: #f7fafc;
+        }
+
+        .zone-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .zone-clark { background: #3182ce; }
+        .zone-subic { background: #38a169; }
+        .zone-bataan { background: #d69e2e; }
+        .zone-taguig { background: #805ad5; }
+
+        .export-btn {
+            padding: 0.75rem 1.5rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .export-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .status-excellent { background: #38a169; }
+        .status-good { background: #d69e2e; }
+        .status-needs-attention { background: #e53e3e; }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
+            
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-pills {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="bcda-logo">BCDA</div>
+            <div>
+                <div class="header-title">Performance Analytics</div>
+                <div style="font-size: 0.9rem; color: #718096;">Portfolio Performance & Growth Metrics</div>
+            </div>
+        </div>
+        <div class="nav-pills">
+            <a href="#" class="nav-pill">Strategic Dashboard</a>
+            <a href="#" class="nav-pill">Investment Pipeline</a>
+            <a href="#" class="nav-pill active">Performance Analytics</a>
+            <a href="#" class="nav-pill">Executive Summary</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="filters-section">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label">Time Period</label>
+                    <select class="filter-select" id="timePeriod">
+                        <option value="q4-2024">Q4 2024</option>
+                        <option value="2024">Full Year 2024</option>
+                        <option value="ytd">Year-to-Date</option>
+                        <option value="trailing-12">Trailing 12 Months</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Zone Selection</label>
+                    <select class="filter-select" id="zoneFilter">
+                        <option value="all">All Zones</option>
+                        <option value="clark">Clark Freeport Zone</option>
+                        <option value="subic">Subic Bay Freeport</option>
+                        <option value="bataan">Bataan Technology Park</option>
+                        <option value="taguig">Bonifacio Global City</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Performance Metric</label>
+                    <select class="filter-select" id="metricFilter">
+                        <option value="revenue">Revenue Performance</option>
+                        <option value="occupancy">Occupancy Rates</option>
+                        <option value="growth">Growth Metrics</option>
+                        <option value="efficiency">Operational Efficiency</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Comparison</label>
+                    <select class="filter-select" id="comparisonFilter">
+                        <option value="previous-period">vs Previous Period</option>
+                        <option value="previous-year">vs Previous Year</option>
+                        <option value="budget">vs Budget Target</option>
+                        <option value="industry">vs Industry Average</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">₱22.1B</div>
+                <div class="metric-label">Total Portfolio Revenue</div>
+                <div class="metric-trend trend-up">
+                    <span>↗</span>
+                    <span>+12.3% vs Q3 2024</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">89.4%</div>
+                <div class="metric-label">Portfolio Occupancy Rate</div>
+                <div class="metric-trend trend-up">
+                    <span>↗</span>
+                    <span>+3.2% vs previous period</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">15.7%</div>
+                <div class="metric-label">Revenue Growth Rate</div>
+                <div class="metric-trend trend-up">
+                    <span>↗</span>
+                    <span>Above target of 12%</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">₱2.8B</div>
+                <div class="metric-label">EBITDA</div>
+                <div class="metric-trend trend-up">
+                    <span>↗</span>
+                    <span>+18.5% margin improvement</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-grid">
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Revenue Trends</div>
+                        <div class="card-subtitle">Quarterly revenue performance across all zones</div>
+                    </div>
+                    <div class="trend-indicator trend-up">
+                        <span>↗</span>
+                        <span>+15.7% growth</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Occupancy Rates by Zone</div>
+                        <div class="card-subtitle">Current occupancy performance</div>
+                    </div>
+                    <div class="trend-indicator trend-up">
+                        <span>↗</span>
+                        <span>Portfolio avg: 89.4%</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="occupancyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Growth Metrics Comparison</div>
+                        <div class="card-subtitle">YoY growth across key performance indicators</div>
+                    </div>
+                    <div class="trend-indicator trend-up">
+                        <span>↗</span>
+                        <span>All metrics positive</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Portfolio Performance Mix</div>
+                        <div class="card-subtitle">Revenue contribution by zone</div>
+                    </div>
+                    <div class="trend-indicator trend-up">
+                        <span>↗</span>
+                        <span>Diversified portfolio</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="performance-table">
+            <div class="table-header">
+                <h3>Zone Performance Summary</h3>
+                <button class="export-btn" onclick="exportData()">Export Data</button>
+            </div>
+            <table id="performanceTable">
+                <thead>
+                    <tr>
+                        <th>Zone</th>
+                        <th>Revenue (₱B)</th>
+                        <th>Occupancy (%)</th>
+                        <th>Growth Rate (%)</th>
+                        <th>Active Locators</th>
+                        <th>Performance Status</th>
+                        <th>Avg. Lease Rate (₱/sqm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="zone-badge zone-clark">Clark Freeport</span></td>
+                        <td>₱8.2B</td>
+                        <td>92.3%</td>
+                        <td>+16.8%</td>
+                        <td>247</td>
+                        <td><span class="status-indicator status-excellent"></span>Excellent</td>
+                        <td>₱1,850</td>
+                    </tr>
+                    <tr>
+                        <td><span class="zone-badge zone-taguig">BGC Taguig</span></td>
+                        <td>₱6.9B</td>
+                        <td>94.1%</td>
+                        <td>+14.2%</td>
+                        <td>189</td>
+                        <td><span class="status-indicator status-excellent"></span>Excellent</td>
+                        <td>₱3,200</td>
+                    </tr>
+                    <tr>
+                        <td><span class="zone-badge zone-subic">Subic Bay</span></td>
+                        <td>₱4.3B</td>
+                        <td>87.6%</td>
+                        <td>+18.9%</td>
+                        <td>156</td>
+                        <td><span class="status-indicator status-excellent"></span>Excellent</td>
+                        <td>₱1,650</td>
+                    </tr>
+                    <tr>
+                        <td><span class="zone-badge zone-bataan">Bataan Tech Park</span></td>
+                        <td>₱2.7B</td>
+                        <td>84.2%</td>
+                        <td>+12.1%</td>
+                        <td>98</td>
+                        <td><span class="status-indicator status-good"></span>Good</td>
+                        <td>₱1,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Revenue Trends Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024'],
+                datasets: [{
+                    label: 'Total Revenue (₱B)',
+                    data: [16.2, 17.8, 18.5, 19.1, 19.8, 20.4, 21.2, 22.1],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Occupancy Chart
+        const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
+        new Chart(occupancyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Clark Freeport', 'BGC Taguig', 'Subic Bay', 'Bataan Tech'],
+                datasets: [{
+                    label: 'Occupancy Rate (%)',
+                    data: [92.3, 94.1, 87.6, 84.2],
+                    backgroundColor: ['#3182ce', '#805ad5', '#38a169', '#d69e2e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Growth Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Revenue Growth', 'Occupancy Growth', 'Locator Growth', 'Lease Rate Growth', 'EBITDA Growth'],
+                datasets: [{
+                    label: '2024 Performance',
+                    data: [15.7, 3.2, 8.4, 11.2, 18.5],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    pointBackgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 20,
+                        grid: { color: 'rgba(0,0,0,0.1)' }
+                    }
+                }
+            }
+        });
+
+        // Portfolio Mix Chart
+        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(portfolioCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Clark Freeport', 'BGC Taguig', 'Subic Bay', 'Bataan Tech'],
+                datasets: [{
+                    data: [37.1, 31.2, 19.5, 12.2],
+                    backgroundColor: ['#3182ce', '#805ad5', '#38a169', '#d69e2e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { usePointStyle: true }
+                    }
+                }
+            }
+        });
+
+        // Export functionality
+        function exportData() {
+            alert('Performance analytics data exported successfully!');
+        }
+
+        // Filter functionality
+        document.getElementById('timePeriod').addEventListener('change', updateAnalytics);
+        document.getElementById('zoneFilter').addEventListener('change', updateAnalytics);
+        document.getElementById('metricFilter').addEventListener('change', updateAnalytics);
+        document.getElementById('comparisonFilter').addEventListener('change', updateAnalytics);
+
+        function updateAnalytics() {
+            // Simulate data refresh based on filters
+            console.log('Analytics updated based on filter changes');
+        }
+    </script>
+</body>
+</html>
