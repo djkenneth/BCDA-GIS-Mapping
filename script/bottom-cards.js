@@ -46,30 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
   function calculateInfrastructureStats() {
     try {
       const selectedCategories = getSelectedCategories();
-
       infrastructureData = {
-        total: 0,
-        active: 0,
-        warning: 0,
-        critical: 0,
-        maintenance: 0,
-        inactive: 0,
-        recently_acquired: 0,
-        transfer_pending: 0,
+        activeLocators: 0,
+        pendingPermits: 0,
+        criticalIssues: 0,
+        infrastructureAssets: 0,
+        availableLots: 0,
+        occupancyRate: 0,
         categories: {},
         subcategories: {},
       };
 
       mapMarkers.forEach((category) => {
         const categoryStats = {
-          total: 0,
-          active: 0,
-          warning: 0,
-          critical: 0,
-          maintenance: 0,
-          inactive: 0,
-          recently_acquired: 0,
-          transfer_pending: 0,
+          // Remove old status properties and add new ones
+          activeLocators: 0,
+          pendingPermits: 0,
+          criticalIssues: 0,
+          infrastructureAssets: 0,
+          availableLots: 0,
+          occupancyRate: 0,
           subcategories: {},
         };
 
@@ -79,59 +75,217 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (shouldIncludeCategory) {
           category.sites.forEach((site) => {
-            categoryStats.total++;
-            infrastructureData.total++;
+            // Count sites based on NEW status values
+            const status = site.status || "active_locators";
 
-            const status = site.status || "active";
-
-            categoryStats[status]++;
-            infrastructureData[status]++;
+            // Update counters based on new status values
+            switch (status) {
+              case "active_locators":
+                categoryStats.activeLocators++;
+                infrastructureData.activeLocators++;
+                break;
+              case "pending_permits":
+                categoryStats.pendingPermits++;
+                infrastructureData.pendingPermits++;
+                break;
+              case "critical_issues":
+                categoryStats.criticalIssues++;
+                infrastructureData.criticalIssues++;
+                break;
+              case "infrastructure_assets":
+                categoryStats.infrastructureAssets++;
+                infrastructureData.infrastructureAssets++;
+                break;
+              case "available_lots":
+                categoryStats.availableLots++;
+                infrastructureData.availableLots++;
+                break;
+              case "occupancy_rate":
+                categoryStats.occupancyRate++;
+                infrastructureData.occupancyRate++;
+                break;
+              default:
+                // Default to active_locators for unknown status
+                categoryStats.activeLocators++;
+                infrastructureData.activeLocators++;
+            }
 
             const subcategoryKey = getSubcategoryKey(site.subcategory);
 
+            // Update subcategory tracking with new status properties
             if (!categoryStats.subcategories[subcategoryKey]) {
               categoryStats.subcategories[subcategoryKey] = {
                 name: site.subcategory,
-                total: 0,
-                active: 0,
-                warning: 0,
-                critical: 0,
-                maintenance: 0,
-                inactive: 0,
-                recently_acquired: 0,
-                transfer_pending: 0,
+                activeLocators: 0,
+                pendingPermits: 0,
+                criticalIssues: 0,
+                infrastructureAssets: 0,
+                availableLots: 0,
+                occupancyRate: 0,
               };
             }
 
             if (!infrastructureData.subcategories[subcategoryKey]) {
               infrastructureData.subcategories[subcategoryKey] = {
                 name: site.subcategory,
-                total: 0,
-                active: 0,
-                warning: 0,
-                critical: 0,
-                maintenance: 0,
-                inactive: 0,
-                recently_acquired: 0,
-                transfer_pending: 0,
+                activeLocators: 0,
+                pendingPermits: 0,
+                criticalIssues: 0,
+                infrastructureAssets: 0,
+                availableLots: 0,
+                occupancyRate: 0,
                 categoryId: category.id,
               };
             }
 
-            categoryStats.subcategories[subcategoryKey].total++;
-            categoryStats.subcategories[subcategoryKey][status]++;
-
-            infrastructureData.subcategories[subcategoryKey].total++;
-            infrastructureData.subcategories[subcategoryKey][status]++;
+            // Update subcategory counters
+            switch (status) {
+              case "active_locators":
+                categoryStats.subcategories[subcategoryKey].activeLocators++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .activeLocators++;
+                break;
+              case "pending_permits":
+                categoryStats.subcategories[subcategoryKey].pendingPermits++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .pendingPermits++;
+                break;
+              case "critical_issues":
+                categoryStats.subcategories[subcategoryKey].criticalIssues++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .criticalIssues++;
+                break;
+              case "infrastructure_assets":
+                categoryStats.subcategories[subcategoryKey]
+                  .infrastructureAssets++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .infrastructureAssets++;
+                break;
+              case "available_lots":
+                categoryStats.subcategories[subcategoryKey].availableLots++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .availableLots++;
+                break;
+              case "occupancy_rate":
+                categoryStats.subcategories[subcategoryKey].occupancyRate++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .occupancyRate++;
+                break;
+              default:
+                categoryStats.subcategories[subcategoryKey].activeLocators++;
+                infrastructureData.subcategories[subcategoryKey]
+                  .activeLocators++;
+            }
           });
         }
 
         infrastructureData.categories[category.id] = categoryStats;
       });
+
+      // Calculate occupancy rate as percentage
+      const totalSites =
+        infrastructureData.activeLocators +
+        infrastructureData.pendingPermits +
+        infrastructureData.criticalIssues +
+        infrastructureData.infrastructureAssets +
+        infrastructureData.availableLots;
+
+      if (totalSites > 0) {
+        // Calculate occupancy rate (active locators / total sites * 100)
+        infrastructureData.occupancyRate = Math.round(
+          (infrastructureData.activeLocators / totalSites) * 100
+        );
+      }
     } catch (error) {
       console.error("Error calculating infrastructure stats:", error);
     }
   }
+
+  // function calculateInfrastructureStats() {
+  //   try {
+  //     const selectedCategories = getSelectedCategories();
+
+  //     infrastructureData = {
+  //       activeLocators: 0,
+  //       pendingPermits: 0,
+  //       criticalIssues: 0,
+  //       infrastructureAssets: 0,
+  //       availableLots: 0,
+  //       occupancyRate: 0,
+  //       categories: {},
+  //       subcategories: {},
+  //     };
+
+  //     mapMarkers.forEach((category) => {
+  //       const categoryStats = {
+  //         activeLocators: 0,
+  //         pendingPermits: 0,
+  //         criticalIssues: 0,
+  //         infrastructureAssets: 0,
+  //         availableLots: 0,
+  //         occupancyRate: 0,
+  //         subcategories: {},
+  //       };
+
+  //       const shouldIncludeCategory =
+  //         selectedCategories.showAll ||
+  //         selectedCategories.categories.includes(category.id);
+
+  //       if (shouldIncludeCategory) {
+  //         category.sites.forEach((site) => {
+  //           categoryStats.total++;
+  //           infrastructureData.total++;
+
+  //           const status = site.status || "active";
+
+  //           categoryStats[status]++;
+  //           infrastructureData[status]++;
+
+  //           const subcategoryKey = getSubcategoryKey(site.subcategory);
+
+  //           if (!categoryStats.subcategories[subcategoryKey]) {
+  //             categoryStats.subcategories[subcategoryKey] = {
+  //               name: site.subcategory,
+  //               total: 0,
+  //               active: 0,
+  //               warning: 0,
+  //               critical: 0,
+  //               maintenance: 0,
+  //               inactive: 0,
+  //               recently_acquired: 0,
+  //               transfer_pending: 0,
+  //             };
+  //           }
+
+  //           if (!infrastructureData.subcategories[subcategoryKey]) {
+  //             infrastructureData.subcategories[subcategoryKey] = {
+  //               name: site.subcategory,
+  //               total: 0,
+  //               active: 0,
+  //               warning: 0,
+  //               critical: 0,
+  //               maintenance: 0,
+  //               inactive: 0,
+  //               recently_acquired: 0,
+  //               transfer_pending: 0,
+  //               categoryId: category.id,
+  //             };
+  //           }
+
+  //           categoryStats.subcategories[subcategoryKey].total++;
+  //           categoryStats.subcategories[subcategoryKey][status]++;
+
+  //           infrastructureData.subcategories[subcategoryKey].total++;
+  //           infrastructureData.subcategories[subcategoryKey][status]++;
+  //         });
+  //       }
+
+  //       infrastructureData.categories[category.id] = categoryStats;
+  //     });
+  //   } catch (error) {
+  //     console.error("Error calculating infrastructure stats:", error);
+  //   }
+  // }
 
   function getSubcategoryKey(subcategory) {
     // Search through all categories in mapMarkers for matching subcategory
@@ -187,68 +341,52 @@ document.addEventListener("DOMContentLoaded", function () {
   function getOverviewCards() {
     return [
       {
-        title: "Total Assets",
-        value: infrastructureData.total,
-        className: "info-bg",
+        title: "Active Locators",
+        value: infrastructureData.activeLocators || 0,
+        className: "active-bg",
         icon: "fas fa-map-marker-alt",
         category: "status",
-        filter: "total",
+        filter: "active_locators",
       },
       {
-        title: "Operational Assets",
-        value: infrastructureData.active,
-        className: "active-bg",
-        icon: "fas fa-check-circle",
+        title: "Pending Permits",
+        value: infrastructureData.pendingPermits || 0,
+        className: "warning-bg",
+        icon: "fas fa-clock",
         category: "status",
-        filter: "active",
+        filter: "pending_permits",
       },
       {
-        title: "Scheduled for Disposal",
-        value: infrastructureData.critical,
+        title: "Critical Issues",
+        value: infrastructureData.criticalIssues || 0,
         className: "critical-bg",
         icon: "fas fa-exclamation-triangle",
         category: "status",
-        filter: "critical",
+        filter: "critical_issues",
       },
       {
-        title: "Warning",
-        value: infrastructureData.warning,
-        className: "warning-bg",
-        icon: "fas fa-exclamation-triangle",
+        title: "Infrastructure Assets",
+        value: infrastructureData.infrastructureAssets || 0,
+        className: "info-bg",
+        icon: "fas fa-building",
         category: "status",
-        filter: "warning",
+        filter: "infrastructure_assets",
       },
       {
-        title: "Inactive",
-        value: infrastructureData.inactive,
+        title: "Available Lots",
+        value: infrastructureData.availableLots || 0,
         className: "inactive-bg",
-        icon: "fas fa-ban",
+        icon: "fas fa-map",
         category: "status",
-        filter: "inactive",
+        filter: "available_lots",
       },
       {
-        title: "Under Maintenance",
-        value: infrastructureData.maintenance,
+        title: "Occupancy Rate",
+        value: (infrastructureData.occupancyRate || 0) + "%",
         className: "maintenance-bg",
-        icon: "fas fa-wrench",
+        icon: "fas fa-chart-pie",
         category: "status",
-        filter: "maintenance",
-      },
-      {
-        title: "Recently Acquired",
-        value: infrastructureData.recently_acquired,
-        className: "nbp-bg",
-        icon: "fas fa-plus-circle",
-        category: "status",
-        filter: "recently_acquired",
-      },
-      {
-        title: "Transfer Pending",
-        value: infrastructureData.transfer_pending,
-        className: "wifi-bg",
-        icon: "fas fa-exchange-alt",
-        category: "status",
-        filter: "transfer_pending",
+        filter: "occupancy_rate",
       },
     ];
   }

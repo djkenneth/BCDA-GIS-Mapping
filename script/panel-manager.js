@@ -575,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `${SELECTORS.sidebarContent}.visible`
     );
 
-    let topPosition = "204px";
+    let topPosition = "191px";
     let leftPosition = "360px";
     let rightPosition = "0";
     let bottomPosition = "0";

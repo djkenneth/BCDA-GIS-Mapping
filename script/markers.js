@@ -310,7 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMasterCheckboxes() {
-    console.log('a;sldlkasjdkhaskhd')
     const masterCheckboxes = {
       all: document.getElementById("all"),
       "all-economic-zones": document.getElementById("all-economic-zones"),
