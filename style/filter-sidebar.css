@@ -457,13 +457,13 @@ header.collapsed ~ .map-container {
 
 @media (min-width: 320px) and (max-width: 425px) {
   .sidebar-content {
-    top: 335px;
-    height: calc(100vh - 335px);
+    top: 194px;
+    height: calc(100vh - 194px);
   }
 
   .sidebar {
-    top: 335px;
-    height: calc(100vh - 335px);
+    top: 194px;
+    height: calc(100vh - 194px);
     z-index: 6;
   }
 }

@@ -332,10 +332,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if we're in mobile view
     if (window.matchMedia("(max-width: 768px)").matches) {
       // Mobile view - take full screen
-      topPosition = "0";
-      leftPosition = "0";
-      rightPosition = "0";
-      bottomPosition = "0";
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0";
+      } else {
+        topPosition = "126px";
+      }
+
+      if (sidebar) {
+        if (sidebarContent && sidebarContent.classList.contains("visible")) {
+          leftPosition = "340px";
+        } else {
+          leftPosition = "60px";
+        }
+      }
     } else if (
       window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
     ) {
@@ -344,13 +353,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "244px"; // Changed from 284px to 244px
+          topPosition = "154px"; // Changed from 284px to 244px
         }
       }
 
       if (sidebar) {
         if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "330px"; // Changed from 360px to 330px
+          leftPosition = "360px"; // Changed from 360px to 330px
         } else {
           leftPosition = "60px";
         }

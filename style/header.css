@@ -1508,7 +1508,7 @@ header .flex.w-full {
   }
 
   header .logo {
-    width: 40px;
+    width: 100px;
   }
 
   header .logo-title {
@@ -1645,7 +1645,7 @@ header .flex.w-full {
   }
 
   header.collapsed .header-toggle {
-    bottom: -132px;
+    bottom: -142px;
   }
 
   .notification-menu {

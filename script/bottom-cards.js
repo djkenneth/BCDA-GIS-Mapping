@@ -201,92 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // function calculateInfrastructureStats() {
-  //   try {
-  //     const selectedCategories = getSelectedCategories();
-
-  //     infrastructureData = {
-  //       activeLocators: 0,
-  //       pendingPermits: 0,
-  //       criticalIssues: 0,
-  //       infrastructureAssets: 0,
-  //       availableLots: 0,
-  //       occupancyRate: 0,
-  //       categories: {},
-  //       subcategories: {},
-  //     };
-
-  //     mapMarkers.forEach((category) => {
-  //       const categoryStats = {
-  //         activeLocators: 0,
-  //         pendingPermits: 0,
-  //         criticalIssues: 0,
-  //         infrastructureAssets: 0,
-  //         availableLots: 0,
-  //         occupancyRate: 0,
-  //         subcategories: {},
-  //       };
-
-  //       const shouldIncludeCategory =
-  //         selectedCategories.showAll ||
-  //         selectedCategories.categories.includes(category.id);
-
-  //       if (shouldIncludeCategory) {
-  //         category.sites.forEach((site) => {
-  //           categoryStats.total++;
-  //           infrastructureData.total++;
-
-  //           const status = site.status || "active";
-
-  //           categoryStats[status]++;
-  //           infrastructureData[status]++;
-
-  //           const subcategoryKey = getSubcategoryKey(site.subcategory);
-
-  //           if (!categoryStats.subcategories[subcategoryKey]) {
-  //             categoryStats.subcategories[subcategoryKey] = {
-  //               name: site.subcategory,
-  //               total: 0,
-  //               active: 0,
-  //               warning: 0,
-  //               critical: 0,
-  //               maintenance: 0,
-  //               inactive: 0,
-  //               recently_acquired: 0,
-  //               transfer_pending: 0,
-  //             };
-  //           }
-
-  //           if (!infrastructureData.subcategories[subcategoryKey]) {
-  //             infrastructureData.subcategories[subcategoryKey] = {
-  //               name: site.subcategory,
-  //               total: 0,
-  //               active: 0,
-  //               warning: 0,
-  //               critical: 0,
-  //               maintenance: 0,
-  //               inactive: 0,
-  //               recently_acquired: 0,
-  //               transfer_pending: 0,
-  //               categoryId: category.id,
-  //             };
-  //           }
-
-  //           categoryStats.subcategories[subcategoryKey].total++;
-  //           categoryStats.subcategories[subcategoryKey][status]++;
-
-  //           infrastructureData.subcategories[subcategoryKey].total++;
-  //           infrastructureData.subcategories[subcategoryKey][status]++;
-  //         });
-  //       }
-
-  //       infrastructureData.categories[category.id] = categoryStats;
-  //     });
-  //   } catch (error) {
-  //     console.error("Error calculating infrastructure stats:", error);
-  //   }
-  // }
-
   function getSubcategoryKey(subcategory) {
     // Search through all categories in mapMarkers for matching subcategory
     for (const category of window.mapMarkers || []) {
@@ -689,12 +603,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (category === "status") {
       if (categoryFilter) {
         modalTitle = `${
-          filter.charAt(0).toUpperCase() + filter.slice(1)
+          filter.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase())
         } Sites in ${getCategoryDisplayName(categoryFilter)}`;
         sites = getSitesByStatusAndCategory(filter, categoryFilter);
       } else {
         modalTitle = `${
-          filter.charAt(0).toUpperCase() + filter.slice(1)
+          filter.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase())
         } Sites`;
         sites = getAllSitesByStatus(filter);
       }
@@ -718,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sites.forEach((site) => {
       const subcategoryKey = getSubcategoryKey(site.subcategory);
       const subcategoryName = site.subcategory;
-
+      
       if (!sitesBySubcategory[subcategoryKey]) {
         sitesBySubcategory[subcategoryKey] = {
           name: subcategoryName,
@@ -744,12 +658,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const subcategoryData = sitesBySubcategory[subcategoryKey];
       const collapseId = `collapse-${subcategoryKey}`;
 
+      const subcategoryDisplayName = getSubcategoryDisplayName(subcategoryKey);
+
       sitesHTML += `
         <div class="subcategory-section">
           <div class="subcategory-header collapsible" data-target="${collapseId}">
             <h4 class="subcategory-title">
               <i class="collapse-icon fas fa-chevron-down"></i>
-              ${subcategoryData.name}
+              ${subcategoryDisplayName}
               <span class="subcategory-count">(${subcategoryData.count})</span>
             </h4>
           </div>
@@ -767,7 +683,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }</div>
             </div>
             <div class="site-details">
-              <div class="site-subcategory">${site.subcategory}</div>
+              <div class="site-subcategory">${subcategoryDisplayName}</div>
               <div class="site-location">
                 <i class="fas fa-map-marker-alt"></i>
                 ${site.location[0].toFixed(4)}, ${site.location[1].toFixed(4)}

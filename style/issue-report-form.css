@@ -1,7 +1,7 @@
 #full-screen-issue-report-form {
   position: fixed;
-  top: 228px;
-  left: 340px;
+  top: 217px;
+  left: 60px;
   right: 0;
   bottom: 0;
   background: var(--bg-color);
@@ -10,7 +10,11 @@
   padding: 20px;
   color: var(--text-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  transition: top 0.3s ease, left 0.3s ease;
+  transition: top 0.3s ease-in-out, left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
+  display: none;
+  scrollbar-width: thin;
+  scrollbar-color: #fad754 #002722;
 }
 
 #full-screen-issue-report-form {
@@ -101,11 +105,6 @@
 }
 
 .form-group select {
-  /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
-  background-repeat: no-repeat;
-  background-position: calc(100% - 10px) center;
-  padding-right: 30px; */
-
   padding: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -354,18 +353,6 @@
 }
 
 @media (max-width: 768px) {
-  #full-screen-issue-report-form {
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    padding: 15px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    z-index: 1000;
-  }
-  
   .form-header {
     position: sticky;
     top: 0;

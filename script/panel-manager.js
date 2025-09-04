@@ -580,15 +580,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let rightPosition = "0";
     let bottomPosition = "0";
 
-    // Check screen width for responsive behavior
-    const screenWidth = window.innerWidth;
-
     if (window.matchMedia("(max-width: 768px)").matches) {
       // Mobile view - take full screen
-      topPosition = "0";
-      leftPosition = "0";
-      rightPosition = "0";
-      bottomPosition = "0";
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0";
+      } else {
+        topPosition = "126px";
+      }
+
+      if (sidebar) {
+        if (sidebarContent && sidebarContent.classList.contains("visible")) {
+          leftPosition = "340px";
+        } else {
+          leftPosition = "60px";
+        }
+      }
     } else if (
       window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
     ) {
@@ -596,12 +602,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {
-        topPosition = "244px"; // Changed from 284px to 244px for tablet
+        topPosition = "154px";
       }
 
       if (sidebar) {
         if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "330px"; // Changed from 360px to 330px for tablet
+          leftPosition = "360px";
         } else {
           leftPosition = "60px";
         }

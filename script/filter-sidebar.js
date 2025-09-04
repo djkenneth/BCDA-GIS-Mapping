@@ -268,7 +268,10 @@ function setupHeaderObserver() {
           const screenWidth = window.innerWidth;
           let topValue, heightValue;
 
-          if (screenWidth <= 768) {
+          if(screenWidth <= 425) {
+            topValue = "194px";
+            heightValue = "calc(100vh - 194px)";
+          } else if (screenWidth <= 768) {
             // Mobile breakpoint
             topValue = "125px";
             heightValue = "calc(100vh - 125px)";
