@@ -13,8 +13,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  padding-right: .2rem;
-
+  padding-right: 0.2rem;
 }
 
 /* Tabs container */
@@ -44,7 +43,7 @@
 
 .sidebar-tab-v2.active {
   background-color: rgba(250, 215, 84, 0.2);
-  border-left: 3px solid #FAD754;
+  border-left: 3px solid #fad754;
 }
 
 /* Tab icons */
@@ -59,7 +58,7 @@
 }
 
 .sidebar-tab-v2.active i {
-  color: #FAD754;
+  color: #fad754;
 }
 
 /* Tab labels */
@@ -75,7 +74,7 @@
 }
 
 .sidebar-tab-v2.active span {
-  color: #FAD754;
+  color: #fad754;
   font-weight: 500;
 }
 
@@ -94,9 +93,9 @@
   transform: translateX(-100%);
   z-index: 2;
   scrollbar-width: thin;
-  scrollbar-color: #548A98 #1f2e47;
+  scrollbar-color: #548a98 #1f2e47;
   border-right-style: inset;
-  border-right-color: #F0BD36;
+  border-right-color: #f0bd36;
   border-right-width: 1px;
 }
 
@@ -109,7 +108,7 @@
 }
 
 .sidebar-content::-webkit-scrollbar-thumb {
-  background-color: #548A98;
+  background-color: #548a98;
   border-radius: 4px;
 }
 
@@ -129,7 +128,7 @@
 
 .content-header h3 {
   font-size: 16px;
-  color: #FAD754;
+  color: #fad754;
   font-weight: 500;
 }
 
@@ -174,7 +173,7 @@
 
 .select-all {
   font-size: 12px;
-  color: #FAD754;
+  color: #fad754;
   background: none;
   border: none;
   cursor: pointer;
@@ -227,8 +226,8 @@
 }
 
 .content-section-item input[type="checkbox"]:checked {
-  background-color: #FAD754;
-  border-color: #FAD754;
+  background-color: #fad754;
+  border-color: #fad754;
 }
 
 .content-section-item input[type="checkbox"]:checked::before {
@@ -244,7 +243,7 @@
 
 .content-section-item input[type="checkbox"]:indeterminate {
   background-color: rgba(250, 215, 84, 0.5);
-  border-color: #FAD754;
+  border-color: #fad754;
 }
 
 .content-section-item input[type="checkbox"]:indeterminate::before {
@@ -258,12 +257,68 @@
   font-weight: bold;
 }
 
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  padding: 15px 20px 10px;
+  color: #ffd700;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #2a3441;
+}
+
+.alert-item,
+.event-item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #2a3441;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.alert-item:hover,
+.event-item:hover {
+  background: #1a2332;
+}
+
+.alert-item.critical {
+  border-left: 4px solid #f44336;
+}
+
+.alert-item.warning {
+  border-left: 4px solid #ff9800;
+}
+
+.alert-item.info {
+  border-left: 4px solid #2196f3;
+}
+
+.event-item.upcoming {
+  border-left: 4px solid #4caf50;
+}
+
+.event-item.ongoing {
+  border-left: 4px solid #9c27b0;
+}
+
+.alert-text,
+.event-text {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.event-date {
+  font-size: 11px;
+  color: #8fa8b8;
+  text-align: right;
+}
+
 /* Layer groups */
 .layer-group {
   margin-bottom: 15px;
 }
-
-
 
 /* Adjustments for when header is collapsed */
 header.collapsed ~ .sidebar {
@@ -297,7 +352,6 @@ header.collapsed ~ .map-container {
   width: 100vh;
   width: 100%;
   height: 100vh;
-
 }
 
 /* Badge for showing active filters count */
@@ -305,7 +359,7 @@ header.collapsed ~ .map-container {
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: #FAD754;
+  background-color: #fad754;
   color: #1f2e47;
   font-size: 10px;
   font-weight: bold;
@@ -363,29 +417,37 @@ header.collapsed ~ .map-container {
 }
 
 @media (max-width: 1024px) {
+  .map-container {
+    top: 150px;
+    height: calc(100vh - 150px);
+  }
 
   .sidebar-content {
-    top: 244px;
-    width: 270px;
-    height: calc(100vh - 244px);
+    top: 154px;
+    height: calc(100vh - 154px);
   }
 
   .sidebar {
-    top: 244px;
-    height: calc(100vh - 244px);
+    top: 154px;
+    height: calc(100vh - 154px);
   }
 }
 
 @media (max-width: 768px) {
+  .map-container {
+    top: 125px;
+    height: calc(100vh - 125px);
+  }
+
   .sidebar-content {
     width: 280px;
-    top: 253px;
-    height: calc(100vh - 253px);
+    top: 125px;
+    height: calc(100vh - 125px);
   }
 
   .sidebar {
-    top: 253px;
-    height: calc(100vh - 253px);
+    top: 125px;
+    height: calc(100vh - 125px);
   }
 
   .content-section-item label {
@@ -397,7 +459,6 @@ header.collapsed ~ .map-container {
   .sidebar-content {
     top: 335px;
     height: calc(100vh - 335px);
-    
   }
 
   .sidebar {

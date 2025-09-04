@@ -530,16 +530,17 @@ header.collapsed ~ .infrastructure-cards-container {
     line-height: 1.2;
   }
 
-  .infra-card .card-result {
+  /* .infra-card .card-result {
     display: none;
-  }
+  } */
 
   .infra-card .icon {
-    position: static;
+    /* position: static;
     float: right;
     margin-top: -20px;
     font-size: 12px;
-    opacity: 0.5;
+    opacity: 0.5; */
+    display: none;
   }
 
   .sites-modal {

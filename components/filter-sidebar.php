@@ -30,6 +30,11 @@
             <i class="fas fa-leaf"></i>
             <span>Sustainability</span>
         </div>
+
+        <div class="sidebar-tab-v2" style="margin-top: 2rem;" data-tab="alert-event">
+            <i class="fas fa-calendar-days"></i>
+            <span>Alert & Event</span>
+        </div>
     </div>
 </div>
 
@@ -94,42 +99,42 @@
             <span>Zone Areas</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="clark-freeport">
             <label for="clark-freeport">Clark Freeport Zone</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="new-clark-city">
             <label for="new-clark-city">New Clark City</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="bonifacio-global">
             <label for="bonifacio-global">Bonifacio Global City</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="mckinley-hill">
             <label for="mckinley-hill">McKinley Hill</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="newport-city">
             <label for="newport-city">Newport City</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="john-hay-zone">
             <label for="john-hay-zone">John Hay Special Economic Zone</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="poro-point">
             <label for="poro-point">Poro Point Freeport Zone</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="bataan-tech">
             <label for="bataan-tech">Bataan Technology Park</label>
@@ -148,27 +153,27 @@
             <span>Active Locators (1,198)</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="bpo-it-services">
             <label for="bpo-it-services">BPO & IT Services</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="manufacturing-logistics">
             <label for="manufacturing-logistics">Manufacturing & Logistics</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="government-facilities">
             <label for="government-facilities">Government Facilities</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="tourism-entertainment">
             <label for="tourism-entertainment">Tourism & Entertainment</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="aviation-aerospace">
             <label for="aviation-aerospace">Aviation & Aerospace</label>
@@ -187,32 +192,32 @@
             <span>Major Projects</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="sctex-corridor">
             <label for="sctex-corridor">SCTEX Corridor</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="clark-airport">
             <label for="clark-airport">Clark International Airport</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="ns-commuter-railway">
             <label for="ns-commuter-railway">North-South Commuter Railway</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="metro-subway">
             <label for="metro-subway">Metro Manila Subway</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="bgc-ortigas-bridge">
             <label for="bgc-ortigas-bridge">BGC-Ortigas Link Bridge</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="fiber-backbone">
             <label for="fiber-backbone">National Fiber Backbone</label>
@@ -231,27 +236,27 @@
             <span>Military Projects</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="paf-housing">
             <label for="paf-housing">Philippine Air Force Housing</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="pmc-hq">
             <label for="pmc-hq">Philippine Marine Corps HQ</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="army-support">
             <label for="army-support">Army Support Command</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="special-service">
             <label for="special-service">Special Service Center</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="military-replication">
             <label for="military-replication">Military Replication Projects</label>
@@ -270,27 +275,27 @@
             <span>Investment Categories</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="joint-venture">
             <label for="joint-venture">Joint Venture Projects</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="asset-disposition">
             <label for="asset-disposition">Asset Disposition</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="revenue-monitoring">
             <label for="revenue-monitoring">Revenue Monitoring</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="foreign-investments">
             <label for="foreign-investments">Foreign Investments</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="ppp-projects">
             <label for="ppp-projects">PPP Projects</label>
@@ -309,35 +314,75 @@
             <span>Environmental Categories</span>
             <button class="select-all">Select All</button>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="environmental-compliance">
             <label for="environmental-compliance">Environmental Compliance</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="green-building">
             <label for="green-building">Green Building Standards</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="waste-management">
             <label for="waste-management">Waste Management</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="renewable-energy">
             <label for="renewable-energy">Renewable Energy</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="carbon-footprint">
             <label for="carbon-footprint">Carbon Footprint</label>
         </div>
-        
+
         <div class="content-section-item">
             <input type="checkbox" id="biodiversity-protection">
             <label for="biodiversity-protection">Biodiversity Protection</label>
+        </div>
+    </div>
+</div>
+
+<!-- Alert & Event Panel -->
+<div class="sidebar-content" id="alert-event-content">
+    <div class="content-header">
+        <h3>Alert & Event</h3>
+        <button class="close-panel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="content-section">
+        <div class="sidebar-section">
+            <div class="section-header">Recent Alerts</div>
+            <div class="alert-item critical">
+                <div class="alert-text">Infrastructure maintenance: Clark Freeport</div>
+            </div>
+            <div class="alert-item warning">
+                <div class="alert-text">Permit renewal deadline: BGC locators</div>
+            </div>
+            <div class="alert-item info">
+                <div class="alert-text">Traffic advisory: SCTEX corridor</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="sidebar-section">
+            <div class="section-header">Upcoming Events</div>
+            <div class="event-item upcoming">
+                <div class="event-text">Locator Business Forum</div>
+                <div class="event-date">Mar 15</div>
+            </div>
+            <div class="event-item ongoing">
+                <div class="event-text">NCC Infrastructure Inspection</div>
+                <div class="event-date">Mar 10-12</div>
+            </div>
+            <div class="event-item upcoming">
+                <div class="event-text">BGC Sustainability Summit</div>
+                <div class="event-date">Mar 20-22</div>
+            </div>
         </div>
     </div>
 </div>

@@ -120,14 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
             : "Select All";
         }
 
-        // Update master checkbox states
-        if (
-          window.filterMarkers &&
-          window.filterMarkers.updateMasterCheckboxes
-        ) {
-          window.filterMarkers.updateMasterCheckboxes();
-        }
-
         // Update infrastructure cards
         if (window.infrastructureCards && window.infrastructureCards.update) {
           setTimeout(() => window.infrastructureCards.update(), 100);
@@ -149,11 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.filterMarkers.updateMarkersForCheckbox
       ) {
         window.filterMarkers.updateMarkersForCheckbox(this.id, this.checked);
-      }
-
-      // Update master checkbox states
-      if (window.filterMarkers && window.filterMarkers.updateMasterCheckboxes) {
-        window.filterMarkers.updateMasterCheckboxes();
       }
 
       // Update infrastructure cards
@@ -187,12 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         this.checked
                       );
                     }
-                    if (
-                      window.filterMarkers &&
-                      window.filterMarkers.updateMasterCheckboxes
-                    ) {
-                      window.filterMarkers.updateMasterCheckboxes();
-                    }
+
                     if (
                       window.infrastructureCards &&
                       window.infrastructureCards.update
@@ -246,11 +228,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Update button text
       this.textContent = isSelectAll ? "Deselect All" : "Select All";
 
-      // Update master checkboxes
-      if (window.filterMarkers && window.filterMarkers.updateMasterCheckboxes) {
-        window.filterMarkers.updateMasterCheckboxes();
-      }
-
       // Update infrastructure cards
       if (window.infrastructureCards && window.infrastructureCards.update) {
         setTimeout(() => window.infrastructureCards.update(), 100);
@@ -293,12 +270,12 @@ function setupHeaderObserver() {
 
           if (screenWidth <= 768) {
             // Mobile breakpoint
-            topValue = "253px";
-            heightValue = "calc(100vh - 253px)";
+            topValue = "125px";
+            heightValue = "calc(100vh - 125px)";
           } else if (screenWidth <= 1024) {
             // Tablet breakpoint
-            topValue = "244px";
-            heightValue = "calc(100vh - 244px)";
+            topValue = "154px";
+            heightValue = "calc(100vh - 154px)";
           } else {
             // Desktop (default)
             topValue = "191px";

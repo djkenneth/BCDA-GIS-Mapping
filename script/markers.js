@@ -309,51 +309,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function updateMasterCheckboxes() {
-    const masterCheckboxes = {
-      all: document.getElementById("all"),
-      "all-economic-zones": document.getElementById("all-economic-zones"),
-      "all-locator-management": document.getElementById("all-locator-management"),
-      "all-infrastructure-projects": document.getElementById("all-infrastructure-projects"),
-      "all-afp-modernization": document.getElementById("all-afp-modernization"),
-      "all-investment-tracking": document.getElementById("all-investment-tracking"),
-      "all-sustainability-environment": document.getElementById("all-sustainability-environment"),
-    };
-
-    Object.entries(masterCheckboxes).forEach(([id, checkbox]) => {
-      if (!checkbox) return;
-
-      let relatedCheckboxes = [];
-
-      if (id === "all") {
-        relatedCheckboxes = document.querySelectorAll(
-          '.content-section-item input[type="checkbox"]:not(#all):not([id^="all-"])'
-        );
-      } else {
-        const contentId = id.replace("all-", "") + "-content";
-        relatedCheckboxes = document.querySelectorAll(
-          `#${contentId} .content-section-item input[type="checkbox"]:not([id^="all-"])`
-        );
-      }
-
-      const checkedCount = Array.from(relatedCheckboxes).filter(
-        (cb) => cb.checked
-      ).length;
-      const totalCount = relatedCheckboxes.length;
-
-      if (checkedCount === 0) {
-        checkbox.checked = false;
-        checkbox.indeterminate = false;
-      } else if (checkedCount === totalCount) {
-        checkbox.checked = true;
-        checkbox.indeterminate = false;
-      } else {
-        checkbox.checked = false;
-        checkbox.indeterminate = true;
-      }
-    });
-  }
-
   function findSiteById(siteId) {
     let foundSite = null;
     let foundCategory = null;
@@ -392,7 +347,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.filterMarkers = {
     updateMarkersForCheckbox,
-    updateMasterCheckboxes,
   };
 
   window.cebuMapDebug = {

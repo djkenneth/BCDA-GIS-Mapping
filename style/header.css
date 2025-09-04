@@ -37,7 +37,7 @@ header {
 
 header .logo-wrapper {
   display: flex;
-  width: 280px;
+  /* width: 280px; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -1201,9 +1201,13 @@ header .flex.w-full {
     font-size: 12px;
   }
 
-  header .logo-wrapper {
-    width: 75px;
+  header .logo {
+    width: 120px;
   }
+
+  /* header .logo-wrapper {
+    width: 75px;
+  } */
 
   header .icon {
     width: 45px;
@@ -1256,7 +1260,7 @@ header .flex.w-full {
   }
 
   header .logo {
-    width: 50px;
+    width: 100px;
   }
 
   header .logo-title {
@@ -1266,7 +1270,7 @@ header .flex.w-full {
 
   header .icons {
     gap: 8px;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-left: 8px;
   }
 
@@ -1310,9 +1314,9 @@ header .flex.w-full {
     gap: 6px;
     padding: 8px 10px;
     background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    /* border: 1px solid rgba(59, 130, 246, 0.3); */
     border-radius: 6px;
-    color: #64b5f6;
+    /* color: #64b5f6; */
     font-family: "Roboto";
     font-size: 10px;
     font-weight: 600;
@@ -1320,6 +1324,10 @@ header .flex.w-full {
     transition: all 0.2s ease;
     cursor: pointer;
     text-transform: uppercase;
+  }
+
+  .header-button svg {
+    display: none;
   }
 
   .header-button-icon {
@@ -1465,12 +1473,12 @@ header .flex.w-full {
   .header-toggle {
     width: 45px;
     height: 18px;
-    bottom: -87px;
+    bottom: -72px;
     z-index: 9;
   }
 
   header.collapsed .header-toggle {
-    bottom: -87px;
+    bottom: -72px;
   }
 
   .notification-menu {

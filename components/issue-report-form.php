@@ -6,14 +6,14 @@
     <div class="form-content">
         <div class="form-group">
             <label for="issueType">Issue Type:</label>
-            <select id="issueType" name="issueType">
+            <select id="issueType" class="input-field" name="issueType">
                 <option value="">Select Issue Type</option>
             </select>
         </div>
         
         <div class="form-group">
             <label for="issueCategory">Category:</label>
-            <select id="issueCategory" name="issueCategory">
+            <select id="issueCategory" class="input-field" name="issueCategory">
                 <option value="">Select Category</option>
             </select>
         </div>
