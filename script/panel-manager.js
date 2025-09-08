@@ -575,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `${SELECTORS.sidebarContent}.visible`
     );
 
-    let topPosition = "191px";
+    let topPosition = "298px";
     let leftPosition = "360px";
     let rightPosition = "0";
     let bottomPosition = "0";
@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {
-        topPosition = "154px";
+        topPosition = "258px";
       }
 
       if (sidebar) {

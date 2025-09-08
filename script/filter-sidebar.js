@@ -273,16 +273,16 @@ function setupHeaderObserver() {
             heightValue = "calc(100vh - 194px)";
           } else if (screenWidth <= 768) {
             // Mobile breakpoint
-            topValue = "125px";
-            heightValue = "calc(100vh - 125px)";
+            topValue = "236px";
+            heightValue = "calc(100vh - 236px)";
           } else if (screenWidth <= 1024) {
             // Tablet breakpoint
-            topValue = "154px";
-            heightValue = "calc(100vh - 154px)";
+            topValue = "258px";
+            heightValue = "calc(100vh - 258px)";
           } else {
             // Desktop (default)
-            topValue = "191px";
-            heightValue = "calc(100vh - 191px)";
+            topValue = "298px";
+            heightValue = "calc(100vh - 298px)";
           }
 
           sidebar.style.top = topValue;

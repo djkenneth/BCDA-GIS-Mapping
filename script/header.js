@@ -1,4 +1,4 @@
-// script/header.js
+// script/header.js bcda
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.createElement("button");
@@ -152,6 +152,343 @@ document.addEventListener("DOMContentLoaded", function () {
     return totalHeight || 284; // fallback to default height
   }
 
+  function initializeResponsiveFeatures() {
+    initializeMobileAlerts();
+    initializeMobileEvents();
+    initializeMobileEmergencyContacts();
+  }
+
+  function initializeMobileAlerts() {
+    const mobileAlertsContainer = document.querySelector(
+      "#mobile-alerts-container"
+    );
+    if (!mobileAlertsContainer) return;
+
+    const alerts = [
+      {
+        text: "Road closure: IT Park area",
+        class: "alert-closure",
+        icon: "🚧",
+      },
+      {
+        text: "Weather alert: Heavy rainfall",
+        class: "alert-weather",
+        icon: "🌧️",
+      },
+      {
+        text: "Traffic advisory: Osmeña Blvd",
+        class: "alert-traffic",
+        icon: "🚗",
+      },
+      {
+        text: "Construction: Escario Street",
+        class: "alert-construction",
+        icon: "🔨",
+      },
+      { text: "Accident: Fuente Circle", class: "alert-accident", icon: "⚠️" },
+      { text: "Event traffic: SM City Cebu", class: "alert-event", icon: "🎪" },
+      {
+        text: "Flooding alert: Mabolo area",
+        class: "alert-flooding",
+        icon: "🌊",
+      },
+    ];
+
+    let currentAlertIndex = 0;
+
+    function updateMobileAlerts() {
+      mobileAlertsContainer.innerHTML = "";
+
+      for (let i = 0; i < 3; i++) {
+        const alertIndex = (currentAlertIndex + i) % alerts.length;
+        const alert = alerts[alertIndex];
+
+        const alertItem = document.createElement("div");
+        alertItem.className = `mobile-alert-item ${alert.class}`;
+        alertItem.innerHTML = `
+        <span class="mobile-alert-icon">${alert.icon}</span>
+        <span class="mobile-alert-text">${alert.text}</span>
+      `;
+
+        mobileAlertsContainer.appendChild(alertItem);
+      }
+
+      currentAlertIndex = (currentAlertIndex + 3) % alerts.length;
+    }
+
+    updateMobileAlerts();
+    setInterval(updateMobileAlerts, 5000);
+  }
+
+  function initializeMobileEvents() {
+    const mobileEventsContainer = document.querySelector(
+      ".mobile-events-container"
+    );
+    if (!mobileEventsContainer) return;
+
+    const events = [
+      { text: "Sinulog Festival 2025", date: "Jan 19", icon: "🎉" },
+      { text: "Public Meeting: Budget 2025", date: "Feb 15", icon: "🏛️" },
+      { text: "Community Cleanup Drive", date: "Feb 20", icon: "🧹" },
+      { text: "Health & Wellness Fair", date: "Mar 1-3", icon: "🏥" },
+      { text: "Food Festival at Plaza", date: "Mar 14-16", icon: "🍽️" },
+      { text: "Tech Summit 2025", date: "Apr 5", icon: "💻" },
+      { text: "Environmental Fair", date: "Apr 22", icon: "🌱" },
+      { text: "Barangay Sports Festival", date: "May 1-3", icon: "⚽" },
+    ];
+
+    let currentEventIndex = 0;
+
+    function updateMobileEvents() {
+      mobileEventsContainer.innerHTML = "";
+
+      for (let i = 0; i < 3; i++) {
+        const eventIndex = (currentEventIndex + i) % events.length;
+        const event = events[eventIndex];
+
+        const eventItem = document.createElement("div");
+        eventItem.className = "mobile-event-item";
+        eventItem.innerHTML = `
+        <span class="mobile-event-icon">${event.icon}</span>
+        <div class="mobile-event-content">
+          <span class="mobile-event-text">${event.text}</span>
+          <span class="mobile-event-date">${event.date}</span>
+        </div>
+      `;
+
+        mobileEventsContainer.appendChild(eventItem);
+      }
+
+      currentEventIndex = (currentEventIndex + 3) % events.length;
+    }
+
+    updateMobileEvents();
+    setInterval(updateMobileEvents, 5000);
+  }
+
+  function initializeMobileEmergencyContacts() {
+    const mobileEmergencyGrid = document.querySelector(
+      ".mobile-emergency-grid"
+    );
+    if (!mobileEmergencyGrid) return;
+
+    mobileEmergencyGrid.addEventListener("click", function (e) {
+      const contact = e.target.closest(".mobile-emergency-contact");
+      if (contact) {
+        const number = contact.querySelector(
+          ".mobile-emergency-number"
+        ).textContent;
+        const service = contact.querySelector(
+          ".mobile-emergency-label"
+        ).textContent;
+
+        console.log(`Emergency contact clicked: ${service} - ${number}`);
+
+        contact.style.transform = "scale(0.95)";
+        setTimeout(() => {
+          contact.style.transform = "scale(1)";
+        }, 150);
+      }
+    });
+  }
+
+  function initializePublicInformation() {
+    const alerts = [
+      { text: "Construction: Escario Street", class: "alert-construction" },
+      { text: "Road closure: IT Park area", class: "alert-closure" },
+      { text: "Weather alert: Heavy rainfall", class: "alert-weather" },
+      { text: "Traffic advisory: Osmeña Blvd", class: "alert-traffic" },
+      { text: "Accident: Fuente Circle", class: "alert-accident" },
+      { text: "Event traffic: SM City Cebu", class: "alert-event" },
+      { text: "Flooding alert: Mabolo area", class: "alert-flooding" },
+    ];
+
+    const events = [
+      {
+        icon: "S",
+        text: "Sinulog Festival 2025",
+        date: "Jan 19",
+        class: "event-festival",
+        status: "upcoming",
+      },
+      {
+        icon: "M",
+        text: "Public Meeting: Budget 2025",
+        date: "Feb 15",
+        class: "event-meeting",
+        status: "upcoming",
+      },
+      {
+        icon: "C",
+        text: "Community Cleanup Drive",
+        date: "Feb 20",
+        class: "event-community",
+        status: "upcoming",
+      },
+      {
+        icon: "H",
+        text: "Health & Wellness Fair",
+        date: "Mar 1-3",
+        class: "event-health",
+        status: "upcoming",
+      },
+      {
+        icon: "F",
+        text: "Food Festival at Plaza",
+        date: "Mar 14-16",
+        class: "event-ongoing",
+        status: "ongoing",
+      },
+      {
+        icon: "T",
+        text: "Tech Summit 2025",
+        date: "Apr 5",
+        class: "event-tech",
+        status: "upcoming",
+      },
+      {
+        icon: "E",
+        text: "Environmental Fair",
+        date: "Apr 22",
+        class: "event-community",
+        status: "upcoming",
+      },
+      {
+        icon: "B",
+        text: "Barangay Sports Festival",
+        date: "May 1-3",
+        class: "event-ongoing",
+        status: "ongoing",
+      },
+    ];
+
+    const alertsContainer = document.querySelector("#alerts-container");
+    const eventsContainer = document.querySelector(
+      ".city-events-section .events-container"
+    );
+    const noEventsMessage = document.querySelector(".no-events-message");
+
+    if (!alertsContainer) return;
+
+    if (!eventsContainer) {
+      const cityEventsSection = document.querySelector(".city-events-section");
+      if (cityEventsSection) {
+        const container = document.createElement("div");
+        container.className = "events-container";
+        cityEventsSection.appendChild(container);
+      }
+    }
+
+    const finalEventsContainer = document.querySelector(
+      ".city-events-section .events-container"
+    );
+
+    if (noEventsMessage) {
+      noEventsMessage.style.display = "none";
+    }
+    if (finalEventsContainer) {
+      finalEventsContainer.style.display = "flex";
+    }
+
+    let currentAlertIndex = 3;
+    let currentEventIndex = 0;
+
+    displayEvents(currentEventIndex);
+
+    setInterval(() => {
+      const alertItems = alertsContainer.querySelectorAll(".alert-item");
+      const eventItems = finalEventsContainer.querySelectorAll(".event-item");
+
+      alertItems.forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateX(-20px)";
+      });
+
+      eventItems.forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateX(-20px)";
+      });
+
+      setTimeout(() => {
+        alertsContainer.innerHTML = "";
+        for (let i = 0; i < 3; i++) {
+          const alertIndex = (currentAlertIndex + i) % alerts.length;
+          const alert = alerts[alertIndex];
+
+          const alertItem = document.createElement("div");
+          alertItem.className = `alert-item ${alert.class}`;
+          alertItem.innerHTML = `
+          <span class="alert-icon"></span>
+          <span class="alert-text">${alert.text}</span>
+        `;
+          alertItem.style.opacity = "0";
+          alertItem.style.transform = "translateX(-20px)";
+
+          alertsContainer.appendChild(alertItem);
+
+          setTimeout(() => {
+            alertItem.style.opacity = "1";
+            alertItem.style.transform = "translateX(0)";
+          }, 100 * i);
+        }
+
+        currentEventIndex = (currentEventIndex + 3) % events.length;
+        displayEvents(currentEventIndex);
+
+        currentAlertIndex = (currentAlertIndex + 3) % alerts.length;
+      }, 300);
+    }, 5000);
+
+    function displayEvents(startIndex) {
+      finalEventsContainer.innerHTML = "";
+
+      const eventsToShow = Math.min(3, events.length);
+
+      for (let i = 0; i < eventsToShow; i++) {
+        const eventIndex = (startIndex + i) % events.length;
+        const event = events[eventIndex];
+
+        const eventItem = document.createElement("div");
+        eventItem.className = `event-item ${event.class}`;
+        eventItem.innerHTML = `
+        <span class="event-icon">${event.icon}</span>
+        <span class="event-text">${event.text}</span>
+        <span class="event-date">${event.date}</span>
+      `;
+        eventItem.style.opacity = "0";
+        eventItem.style.transform = "translateX(-20px)";
+
+        finalEventsContainer.appendChild(eventItem);
+
+        setTimeout(() => {
+          eventItem.style.transition = "all 0.3s ease";
+          eventItem.style.opacity = "1";
+          eventItem.style.transform = "translateX(0)";
+        }, 100 * i);
+      }
+    }
+  }
+
+  function initializeEmergencyContacts() {
+    const emergencyGrid = document.querySelector(".emergency-grid");
+    if (!emergencyGrid) return;
+
+    emergencyGrid.addEventListener("click", function (e) {
+      const contact = e.target.closest(".emergency-contact");
+      if (contact) {
+        const number = contact.querySelector(".emergency-number").textContent;
+        const service = contact.querySelector(".emergency-label").textContent;
+
+        console.log(`Emergency contact clicked: ${service} - ${number}`);
+
+        contact.style.transform = "scale(0.95)";
+        setTimeout(() => {
+          contact.style.transform = "scale(1)";
+        }, 150);
+      }
+    });
+  }
+
   // Initialize on page load
   initializeHeaderState();
 
@@ -233,6 +570,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Initialize other components
+  initializeResponsiveFeatures();
+  initializePublicInformation();
+  initializeEmergencyContacts();
   initializeAppSwitcher();
   initializePanelManager();
   initializeSearchBar();
@@ -324,6 +664,29 @@ function getHeaderHeight() {
 }
 
 function initializeAppSwitcher() {
+  const apps = [
+    {
+      name: "Guardian (UAC)",
+      icon: "guardian-icon.png",
+      url: "https://dict.itbsstudio.com/GUARDIAN/login",
+    },
+    {
+      name: "NERVE",
+      icon: "nerve-icon.png",
+      url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
+    },
+    {
+      name: "LEDGER",
+      icon: "ledger-icon.png",
+      url: "https://dict.itbsstudio.com/LEDGER/login",
+    },
+    {
+      name: "Pulse",
+      icon: "pulse-icon.png",
+      url: "https://dict.itbsstudio.com/PULSE/login",
+    },
+  ];
+
   const switcherIcon = document.getElementById("app-switcher-icon");
   const switcherImg = switcherIcon ? switcherIcon.querySelector("img") : null;
 
@@ -418,6 +781,218 @@ function initializeAppSwitcher() {
       }
     });
   }
+}
+
+function initializeNotificationMenu() {
+  const notifications = [
+    {
+      id: 1,
+      type: "alert",
+      title: "Traffic Update",
+      message: "Heavy traffic on Osmeña Boulevard due to road construction.",
+      time: "10 minutes ago",
+      read: false,
+    },
+    {
+      id: 2,
+      type: "warning",
+      title: "Weather Advisory",
+      message: "Thunderstorm warning in effect until 6:00 PM today.",
+      time: "30 minutes ago",
+      read: false,
+    },
+    {
+      id: 3,
+      type: "info",
+      title: "Event Reminder",
+      message: "Sinulog Festival parade starts at 9:00 AM tomorrow.",
+      time: "1 hour ago",
+      read: true,
+    },
+    {
+      id: 4,
+      type: "success",
+      title: "Service Update",
+      message: "Water service restored in Lahug area.",
+      time: "2 hours ago",
+      read: true,
+    },
+  ];
+
+  const bellIcon = document.getElementById("bell-icon");
+  if (!bellIcon) {
+    console.error("Bell icon not found!");
+    return;
+  }
+
+  const bellImg = bellIcon.querySelector("img");
+  if (!bellImg) {
+    console.error("Bell icon image not found inside the bell-icon div!");
+    return;
+  }
+
+  if (bellIcon.querySelector(".notification-menu")) {
+    return;
+  }
+
+  const unreadCount = notifications.filter((n) => !n.read).length;
+  if (unreadCount > 0) {
+    let badge = bellIcon.querySelector(".notification-badge");
+    if (!badge) {
+      badge = document.createElement("div");
+      badge.className = "notification-badge";
+      badge.textContent = unreadCount > 9 ? "9+" : unreadCount;
+      bellIcon.appendChild(badge);
+    }
+  }
+
+  const notificationMenu = document.createElement("div");
+  notificationMenu.className = "notification-menu";
+
+  const mobileCloseBtn = document.createElement("button");
+  mobileCloseBtn.className = "mobile-close-btn";
+  mobileCloseBtn.innerHTML = "×";
+  mobileCloseBtn.addEventListener("click", function () {
+    notificationMenu.classList.remove("show");
+  });
+
+  const header = document.createElement("div");
+  header.className = "notification-header";
+  header.innerHTML = `
+    <h3>Notifications</h3>
+    <div class="notification-actions">
+      <button id="mark-all-read">Mark all as read</button>
+    </div>
+  `;
+  notificationMenu.appendChild(header);
+
+  const notificationBody = document.createElement("div");
+  notificationBody.className = "notification-body";
+  notificationBody.id = "style-1";
+
+  if (notifications.length > 0) {
+    notifications.forEach((notification) => {
+      const notificationItem = document.createElement("div");
+      notificationItem.className = `notification-item ${
+        notification.read ? "read" : "unread"
+      }`;
+
+      let iconHtml = "";
+      switch (notification.type) {
+        case "alert":
+          iconHtml =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/></svg>';
+          break;
+        case "warning":
+          iconHtml =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>';
+          break;
+        case "info":
+          iconHtml =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>';
+          break;
+        case "success":
+          iconHtml =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>';
+          break;
+        default:
+          iconHtml =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>';
+      }
+
+      notificationItem.innerHTML = `
+        <div class="notification-icon">
+          ${iconHtml}
+        </div>
+        <div class="notification-content">
+          <div class="notification-title">${notification.title}</div>
+          <div class="notification-message">${notification.message}</div>
+          <div class="notification-time">${notification.time}</div>
+        </div>
+      `;
+
+      notificationItem.addEventListener("click", function () {
+        this.classList.add("read");
+        this.classList.remove("unread");
+
+        const badge = bellIcon.querySelector(".notification-badge");
+        if (badge) {
+          const currentUnread = parseInt(badge.textContent);
+          if (currentUnread > 1) {
+            badge.textContent = currentUnread - 1;
+          } else {
+            badge.remove();
+          }
+        }
+
+        console.log(`Notification ${notification.id} marked as read`);
+      });
+
+      notificationBody.appendChild(notificationItem);
+    });
+  } else {
+    const emptyState = document.createElement("div");
+    emptyState.className = "notification-empty";
+    emptyState.textContent = "No notifications at this time.";
+    notificationBody.appendChild(emptyState);
+  }
+
+  notificationMenu.appendChild(notificationBody);
+  notificationMenu.appendChild(mobileCloseBtn);
+
+  if (!bellIcon.querySelector(".notification-menu")) {
+    bellIcon.appendChild(notificationMenu);
+  }
+
+  bellIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (e.target === bellIcon || e.target === bellImg) {
+      notificationMenu.classList.toggle("show");
+
+      const appSwitcherMenu = document.querySelector(".app-switcher-menu");
+      if (appSwitcherMenu) {
+        appSwitcherMenu.classList.remove("show");
+      }
+
+      if (window.panelManager) {
+        if (notificationMenu.classList.contains("show")) {
+          window.panelManager.openPanel("notifications");
+        } else {
+          window.panelManager.currentOpenPanel = null;
+        }
+      }
+    }
+  });
+
+  const markAllReadBtn = document.getElementById("mark-all-read");
+  if (markAllReadBtn) {
+    markAllReadBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      const unreadItems = notificationBody.querySelectorAll(
+        ".notification-item.unread"
+      );
+      unreadItems.forEach((item) => {
+        item.classList.remove("unread");
+        item.classList.add("read");
+      });
+
+      const badge = bellIcon.querySelector(".notification-badge");
+      if (badge) {
+        badge.remove();
+      }
+
+      console.log("All notifications marked as read");
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (!bellIcon.contains(e.target)) {
+      notificationMenu.classList.remove("show");
+    }
+  });
 }
 
 function initializePanelManager() {
@@ -909,7 +1484,6 @@ function initializeSearchBar() {
           this.getAttribute("data-search") || this.textContent.toLowerCase();
 
         if (siteId && category) {
-          
           executeSearchWithSite(siteId, category);
         } else {
           executeSearch(searchTerm);
@@ -929,14 +1503,12 @@ function initializeSearchBar() {
     let targetSite = null;
     let targetCategory = null;
 
-
-
     mapMarkers.forEach((category) => {
       Object.entries(category.subcategoryConfigs).forEach(([key, value]) => {
-        if(key === categoryName) {
+        if (key === categoryName) {
           targetCategory = category;
           const site = category.sites.find((s) => s.id === siteId);
-          if(site) {
+          if (site) {
             targetSite = site;
           }
         }

@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     // Default positioning
-    let topPosition = "191px"; // Current default
+    let topPosition = "298px"; // Current default
     let leftPosition = "60px"; // Current default
     let rightPosition = "0";
     let bottomPosition = "0";
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "154px"; // Changed from 284px to 244px
+          topPosition = "258px"; // Changed from 284px to 244px
         }
       }
 
@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "191px"; // Keep original for desktop
+          topPosition = "298px"; // Keep original for desktop
         }
       }
 
