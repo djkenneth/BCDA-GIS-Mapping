@@ -31,7 +31,7 @@
                 </div> -->
                 <!-- Desktop View Metrics -->
                 <div class="desktop-metrics public-alerts-section">
-                    <p class="text-sm text-accent-custom mb-2">Public Alerts</p>
+                    <p class="text-sm text-accent-custom mb-2">Recent Alerts</p>
                     <div class="alerts-container" id="alerts-container">
                         <div class="alert-item alert-construction">
                             <span class="alert-icon"></span>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="    desktop-metrics city-events-section">
-                    <p class="text-sm text-accent-custom mb-2">City Events</p>
+                    <p class="text-sm text-accent-custom mb-2">Upcoming Events</p>
                     <div class="events-container">
                         <!-- Events will be dynamically populated by JavaScript -->
                     </div>
