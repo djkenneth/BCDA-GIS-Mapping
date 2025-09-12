@@ -67,37 +67,15 @@ function toggleSiteDropdown(subcategoryId) {
   }
 }
 
-// Function to handle site visibility toggle
-function toggleSiteVisibility(siteId, isVisible) {
-  // Find the marker for this site
-  mapMarkers.forEach(categoryData => {
-    if (categoryData.sites) {
-      const site = categoryData.sites.find(s => s.id === siteId);
-      if (site && site.marker) {
-        if (isVisible) {
-          site.marker.addTo(map);
-          if (typeof visibleMarkers !== 'undefined') {
-            visibleMarkers.add(site.marker);
-          }
-        } else {
-          site.marker.remove();
-          if (typeof visibleMarkers !== 'undefined') {
-            visibleMarkers.delete(site.marker);
-          }
-        }
-      }
-    }
-  });
-}
-
 function updateSubcategoryCheckbox(subcategoryId) {
   const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
-  const subcategoryCheckbox = document.getElementById(subcategoryId);
+  const subcategoryCheckbox = dropdown?.querySelector('.all-sites-item input[type="checkbox"]');
   
   if (!dropdown || !subcategoryCheckbox) return;
   
-  const siteCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]');
-  const checkedSites = dropdown.querySelectorAll('input[type="checkbox"]:checked');
+  const siteCheckboxes = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]:not(.all-sites-item input[type="checkbox"])');
+
+  const checkedSites = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]:checked:not(.all-sites-item input[type="checkbox"])');
   
   if (checkedSites.length === 0) {
     subcategoryCheckbox.checked = false;
@@ -113,15 +91,16 @@ function updateSubcategoryCheckbox(subcategoryId) {
 
 // Function to handle subcategory checkbox changes
 function handleSubcategoryChange(subcategoryId, isChecked) {
+  
   const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
   if (!dropdown) return;
   
-  const siteCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+  const siteCheckboxes = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]:not(.all-sites-item input[type="checkbox"])');
   siteCheckboxes.forEach(checkbox => {
     checkbox.checked = isChecked;
-    const siteId = checkbox.dataset.siteId;
-    if (siteId) {
-      toggleSiteVisibility(siteId, isChecked);
+
+    if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
+      window.filterMarkers.updateMarkersForCheckbox(checkbox.id, isChecked);
     }
   });
 }
@@ -335,7 +314,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Add event listeners for individual site checkboxes (delegated)
   document.addEventListener('change', function(e) {
+    
     if (e.target.matches('.all-sites-item input[type="checkbox"]')) {
+
       const subcategoryId = e.target.dataset.subcategory;
       const isChecked = e.target.checked;
       
@@ -344,19 +325,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     
-    if (e.target.matches('.site-dropdown-item input[type="checkbox"]:not(.all-sites-item input)')) {
-      const siteId = e.target.dataset.siteId;
+    if (e.target.matches('.site-dropdown-item input[type="checkbox"]') && !e.target.closest('.all-sites-item')) {
+
       const isChecked = e.target.checked;
-      
-      if (siteId) {
-        toggleSiteVisibility(siteId, isChecked);
-        
-        // Update parent subcategory checkbox state
-        const dropdown = e.target.closest('.sites-dropdown');
-        if (dropdown) {
-          const subcategoryId = dropdown.id.replace('-dropdown', '');
-          updateSubcategoryCheckbox(subcategoryId);
-        }
+
+      // Use updateMarkersForCheckbox for individual sites  
+      if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
+        console.log('e.target.id', e.target.id)
+        window.filterMarkers.updateMarkersForCheckbox(e.target.id, isChecked);
+      }
+
+      // Update parent subcategory checkbox state
+      const dropdown = e.target.closest('.sites-dropdown');
+      if (dropdown) {
+        const subcategoryId = dropdown.id.replace('-dropdown', '');
+        updateSubcategoryCheckbox(subcategoryId);
       }
     }
   });

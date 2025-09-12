@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     drawerContent.innerHTML = `
       <div class="site-details-section">
         <div class="site-details-header">${site.name}</div>
-        <h3 id="site-name">Site Details</h3>
+        <h6 id="site-name">Site Details</h6>
         <div class="site-details-grid">
           <div class="site-detail-row">
             <span class="site-detail-label">Category:</span>

@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
-
+    
     const categoryMasterCheckboxes = {
       "all-economic-zones": "economic-zones",
       "all-locator-management": "locator-management",
@@ -245,35 +245,38 @@ document.addEventListener("DOMContentLoaded", function () {
       "all-sustainability-environment": "sustainability-environment",
     };
 
-    if (checkboxId === "all") {
-      allCategories.forEach((categoryId) => {
-        Object.values(markersByCategory[categoryId]).forEach(
-          (subcategoryMarkers) => {
-            subcategoryMarkers.forEach((marker) => {
-              if (isChecked) {
-                markersLayer.push(marker);
-                marker.addTo(map);
-                visibleMarkers.add(marker);
-              } else {
-                const index = markersLayer.indexOf(marker);
-                if (index > -1) markersLayer.splice(index, 1);
-                marker.remove();
-                visibleMarkers.delete(marker);
-              }
-            });
-          }
-        );
-      });
+    // if (checkboxId === "all") {
+    //   allCategories.forEach((categoryId) => {
+    //     Object.values(markersByCategory[categoryId]).forEach(
+    //       (subcategoryMarkers) => {
+    //         subcategoryMarkers.forEach((marker) => {
+    //           if (isChecked) {
+    //             markersLayer.push(marker);
+    //             marker.addTo(map);
+    //             visibleMarkers.add(marker);
+    //           } else {
+    //             const index = markersLayer.indexOf(marker);
+    //             if (index > -1) markersLayer.splice(index, 1);
+    //             marker.remove();
+    //             visibleMarkers.delete(marker);
+    //           }
+    //         });
+    //       }
+    //     );
+    //   });
 
-      return;
-    }
+    //   return;
+    // }
 
     if (categoryMasterCheckboxes[checkboxId]) {
+
       const categoryId = categoryMasterCheckboxes[checkboxId];
       if (markersByCategory[categoryId]) {
+        console.log('markersByCategory[categoryId]', markersByCategory[categoryId])
         Object.values(markersByCategory[categoryId]).forEach(
           (subcategoryMarkers) => {
             subcategoryMarkers.forEach((marker) => {
+
               if (isChecked) {
                 markersLayer.push(marker);
                 marker.addTo(map);
@@ -289,6 +292,43 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
       return;
+    }
+
+    // Handle individual site checkboxes (format: "site-{siteId}")
+    if (checkboxId.startsWith("site-")) {
+      const siteId = checkboxId.replace("site-", "");
+      
+      // Find the marker in markersByCategory structure
+      let foundMarker = null;
+      
+      allCategories.forEach(categoryId => {
+        if (markersByCategory[categoryId] && !foundMarker) {
+          Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
+            subcategoryMarkers.forEach(marker => {
+              if (marker._siteData && marker._siteData.site.id === siteId) {
+                foundMarker = marker;
+              }
+            });
+          });
+        }
+      });
+      
+      if (foundMarker) {
+        if (isChecked) {
+          if (!markersLayer.includes(foundMarker)) {
+            markersLayer.push(foundMarker);
+          }
+          foundMarker.addTo(map);
+          visibleMarkers.add(foundMarker);
+        } else {
+          const index = markersLayer.indexOf(foundMarker);
+          if (index > -1) markersLayer.splice(index, 1);
+          foundMarker.remove();
+          visibleMarkers.delete(foundMarker);
+        }
+      }
+      
+      return; // Exit early for individual site handling
     }
 
     allCategories.forEach((categoryId) => {
