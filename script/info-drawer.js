@@ -85,13 +85,64 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       </div>
+
+      <div class="detail-section">
+        <div id="download-report-content">
+          <h4>Generate Comprehensive Report</h4>
+          <p>Generate a detailed  executive report for <strong>${
+            site.name
+          }</strong> including all technical specifications, performance analytics, maintenance history, and strategic recommendations.</p>
+          
+          <div class="report-preview-section" style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <h5 style="margin-bottom: 10px; color: #FAD754;">Report Contents:</h5>
+            <ul style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
+              <li>Site Information & Classification</li>
+              <li>${getCategorySpecificReportSections(
+                category.category
+              ).join("</li><li>")}</li>
+              <li>Strategic Recommendations</li>
+            </ul>
+          </div>
+          
+          <div class="site-actions">
+            <div class="site-actions-row">
+              <button class="btn-primary" id="direct-generate-report-btn" style="width: 100%; padding: 12px; border-radius: 5px; border: none; cursor: pointer; font-weight: 500; background-color: #FAD754; color: #000;">
+                <span style="margin-right: 8px;"></span>Generate Executive Report
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
 
     deviceChannel.innerHTML = site.id
 
     drawer.classList.add("open");
     drawer.classList.add("style-1");
+    
+    // Add event listener for direct PDF generation
+    const directGenerateBtn = document.getElementById(
+      "direct-generate-report-btn"
+    );
+    
+    if (directGenerateBtn) {
+      directGenerateBtn.addEventListener("click", function () {
+        // Show loading state
+        const originalText = directGenerateBtn.innerHTML;
+        directGenerateBtn.innerHTML =
+          '<span style="margin-right: 8px;">⏳</span>Generating Report...';
+        directGenerateBtn.disabled = true;
 
+        // Generate PDF report after short delay
+        setTimeout(() => {
+          downloadPDFReport(site, category);
+
+          // Reset button state
+          directGenerateBtn.innerHTML = originalText;
+          directGenerateBtn.disabled = false;
+        }, 1000);
+      });
+    }
   }
 
   function generateTabButtons(categoryName) {

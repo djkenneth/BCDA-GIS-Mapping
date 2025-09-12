@@ -18,10 +18,10 @@
     </div>
 
     <!-- Locator Details Section (integrated from right-panel) -->
-    <div class="info-section">
+    <!-- <div class="info-section">
         <h3>Locator Details</h3>
         <div class="locator-description" id="site-description">
             Advanced manufacturing facility specializing in semiconductor assembly and electronics production. Features automated production lines and serves as a regional distribution center for Southeast Asia.
         </div>
-    </div>
+    </div> -->
 </div>
