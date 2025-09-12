@@ -1,6 +1,135 @@
 // script/filter-sidebar.js
 
+function populateSiteDropdowns() {
+  if (typeof mapMarkers === 'undefined') {
+    console.log('mapMarkers not available, retrying...');
+    setTimeout(populateSiteDropdowns, 100);
+    return;
+  }
+
+  console.log('Populating site dropdowns...');
+  
+  // Iterate through each category in mapMarkers
+  mapMarkers.forEach(categoryData => {
+    const categoryId = categoryData.id;
+    console.log(`Processing category: ${categoryId}`);
+    
+    // Iterate through subcategories
+    Object.keys(categoryData.subcategoryConfigs || {}).forEach(subcategoryId => {
+      const sites = categoryData.sites.filter(site => site.subcategory === subcategoryId);
+      const dropdownId = `${subcategoryId}-dropdown`;
+      const dropdown = document.getElementById(dropdownId);
+      const countSpan = document.querySelector(`[data-count="${subcategoryId}"]`);
+      
+      console.log(`Processing subcategory: ${subcategoryId}, sites found: ${sites.length}`);
+      
+      if (dropdown && countSpan) {
+        countSpan.textContent = sites.length;
+        
+        // Populate dropdown
+        dropdown.innerHTML = '';
+
+        const allItem = document.createElement('div');
+        allItem.className = 'site-dropdown-item all-sites-item';
+        allItem.innerHTML = `
+            <input type="checkbox" id="${subcategoryId}" data-category="${categoryId}" data-subcategory="${subcategoryId}">
+            <label for="${subcategoryId}">All</label>
+        `;
+        dropdown.appendChild(allItem);
+
+        sites.forEach(site => {
+          const siteItem = document.createElement('div');
+          siteItem.className = 'site-dropdown-item';
+          siteItem.innerHTML = `
+            <input type="checkbox" id="site-${site.id}" data-site-id="${site.id}">
+            <label for="site-${site.id}">${site.name}</label>
+          `;
+          dropdown.appendChild(siteItem);
+        });
+
+        console.log(`Populated dropdown for ${subcategoryId} with ${sites.length} sites`);
+      } else {
+        if (!dropdown) console.log(`Dropdown not found: ${dropdownId}`);
+        if (!countSpan) console.log(`Count span not found for: ${subcategoryId}`);
+      }
+    });
+  });
+}
+
+// Function to toggle dropdown visibility
+function toggleSiteDropdown(subcategoryId) {
+  const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
+  if (dropdown) {
+    dropdown.classList.toggle('expanded');
+    console.log(`Toggled dropdown for ${subcategoryId}`);
+  } else {
+    console.log(`Dropdown not found: ${subcategoryId}-dropdown`);
+  }
+}
+
+// Function to handle site visibility toggle
+function toggleSiteVisibility(siteId, isVisible) {
+  // Find the marker for this site
+  mapMarkers.forEach(categoryData => {
+    if (categoryData.sites) {
+      const site = categoryData.sites.find(s => s.id === siteId);
+      if (site && site.marker) {
+        if (isVisible) {
+          site.marker.addTo(map);
+          if (typeof visibleMarkers !== 'undefined') {
+            visibleMarkers.add(site.marker);
+          }
+        } else {
+          site.marker.remove();
+          if (typeof visibleMarkers !== 'undefined') {
+            visibleMarkers.delete(site.marker);
+          }
+        }
+      }
+    }
+  });
+}
+
+function updateSubcategoryCheckbox(subcategoryId) {
+  const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
+  const subcategoryCheckbox = document.getElementById(subcategoryId);
+  
+  if (!dropdown || !subcategoryCheckbox) return;
+  
+  const siteCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+  const checkedSites = dropdown.querySelectorAll('input[type="checkbox"]:checked');
+  
+  if (checkedSites.length === 0) {
+    subcategoryCheckbox.checked = false;
+    subcategoryCheckbox.indeterminate = false;
+  } else if (checkedSites.length === siteCheckboxes.length) {
+    subcategoryCheckbox.checked = true;
+    subcategoryCheckbox.indeterminate = false;
+  } else {
+    subcategoryCheckbox.checked = false;
+    subcategoryCheckbox.indeterminate = true;
+  }
+}
+
+// Function to handle subcategory checkbox changes
+function handleSubcategoryChange(subcategoryId, isChecked) {
+  const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
+  if (!dropdown) return;
+  
+  const siteCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+  siteCheckboxes.forEach(checkbox => {
+    checkbox.checked = isChecked;
+    const siteId = checkbox.dataset.siteId;
+    if (siteId) {
+      toggleSiteVisibility(siteId, isChecked);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Wait for data to be loaded, then populate dropdowns
+  setTimeout(populateSiteDropdowns, 1000);
+
   // Tab switching functionality
   const tabs = document.querySelectorAll(".sidebar-tab-v2");
   const panels = document.querySelectorAll(".sidebar-content");
@@ -52,15 +181,27 @@ document.addEventListener("DOMContentLoaded", function () {
     ),
   };
 
-  mapMarkers.forEach(category => {
-    const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
-    const subcategoryIds = Object.keys(category.subcategoryConfigs || {});
-    
-    if (masterCheckboxId && subcategoryIds.length > 0) {
-      allCheckboxes[masterCheckboxId] = subcategoryIds;
-    }
-  });
+  // Build allCheckboxes from mapMarkers data
+  if (typeof mapMarkers !== 'undefined') {
+    mapMarkers.forEach(category => {
+      const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
+      const subcategoryIds = Object.keys(category.subcategoryConfigs || {});
+      
+      if (masterCheckboxId && subcategoryIds.length > 0) {
+        allCheckboxes[masterCheckboxId] = subcategoryIds;
+      }
+    });
+  }
 
+  // Define categoryMasterIds for the "All" checkbox
+  const categoryMasterIds = [
+    "all-economic-zones",
+    "all-locator-management", 
+    "all-infrastructure-projects",
+    "all-afp-modernization",
+    "all-investment-tracking",
+    "all-sustainability-environment"
+  ];
   
   // Add event listeners for all master checkboxes
   Object.keys(allCheckboxes).forEach((id) => {
@@ -148,6 +289,76 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => window.infrastructureCards.update(), 100);
       }
     });
+  });
+
+  document.querySelectorAll('.checkbox-flex-container').forEach(container => {
+    const label = container.querySelector('label');
+    if (label) {
+      const subcategoryId = label.getAttribute('for');
+      
+      // Add dropdown toggle button
+      if (!container.querySelector('.dropdown-toggle-btn')) {
+        const toggleButton = document.createElement('button');
+        toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        toggleButton.className = 'dropdown-toggle-btn';
+        toggleButton.style.cssText = `
+          background: none;
+          border: none;
+          color: #fad754;
+          cursor: pointer;
+          padding: 2px 6px;
+          margin-left: 8px;
+          font-size: 10px;
+          transition: transform 0.3s ease;
+          border-radius: 2px;
+        `;
+        toggleButton.title = 'Toggle sites list';
+        
+        container.appendChild(toggleButton);
+      }
+      
+      // Make entire container clickable for dropdown toggle
+      container.style.cursor = 'pointer';
+      container.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleSiteDropdown(subcategoryId);
+        const icon = container.querySelector('.dropdown-toggle-btn i');
+        const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
+        if (dropdown && dropdown.classList.contains('expanded')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  });
+  
+  // Add event listeners for individual site checkboxes (delegated)
+  document.addEventListener('change', function(e) {
+    if (e.target.matches('.all-sites-item input[type="checkbox"]')) {
+      const subcategoryId = e.target.dataset.subcategory;
+      const isChecked = e.target.checked;
+      
+      if (subcategoryId) {
+        handleSubcategoryChange(subcategoryId, isChecked);
+      }
+    }
+    
+    if (e.target.matches('.site-dropdown-item input[type="checkbox"]:not(.all-sites-item input)')) {
+      const siteId = e.target.dataset.siteId;
+      const isChecked = e.target.checked;
+      
+      if (siteId) {
+        toggleSiteVisibility(siteId, isChecked);
+        
+        // Update parent subcategory checkbox state
+        const dropdown = e.target.closest('.sites-dropdown');
+        if (dropdown) {
+          const subcategoryId = dropdown.id.replace('-dropdown', '');
+          updateSubcategoryCheckbox(subcategoryId);
+        }
+      }
+    }
   });
 
   // Observer for dynamically added checkboxes
@@ -239,6 +450,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.filterSidebar = {
     allCheckboxes: allCheckboxes,
     categoryMasterCheckboxes: categoryMasterCheckboxes,
+    populateSiteDropdowns: populateSiteDropdowns,
+    toggleSiteDropdown: toggleSiteDropdown
   };
 });
 
@@ -300,4 +513,8 @@ function setupHeaderObserver() {
     attributes: true,
     attributeFilter: ["class"],
   });
+}
+
+function refreshSiteDropdowns() {
+  populateSiteDropdowns();
 }

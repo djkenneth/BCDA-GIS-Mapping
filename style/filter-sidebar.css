@@ -14,6 +14,7 @@
   flex-direction: column;
   overflow-y: auto;
   padding-right: 0.2rem;
+  padding-left: 0;
 }
 
 /* Tabs container */
@@ -87,7 +88,8 @@
   height: calc(100vh - var(--map-top));
   background: var(--primary-2);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  /* padding: 15px; */
+  padding: 4px;
   overflow-y: auto;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
@@ -188,8 +190,9 @@
 .content-section-item {
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
-  padding: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 0;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -267,6 +270,172 @@
   font-size: 14px;
   font-weight: 600;
   border-bottom: 1px solid #2a3441;
+}
+
+.checkbox-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.checkbox-flex-container:hover {
+  background-color: rgba(84, 138, 152, 0.1);
+}
+
+/* Left side: checkbox and label */
+.checkbox-flex-container input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(84, 138, 152, 0.7);
+  border-radius: 3px;
+  background-color: rgba(31, 46, 71, 0.7);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox-flex-container input[type="checkbox"]:checked {
+  background-color: #fad754;
+  border-color: #fad754;
+}
+
+.checkbox-flex-container input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: #1f2e47;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-flex-container label {
+  margin-left: 12px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+  flex-grow: 1;
+  margin-bottom: 0 !important;
+}
+
+/* Site count styling */
+.site-count {
+  background-color: rgba(250, 215, 84, 0.2);
+  color: #fad754;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+  border: 1px solid rgba(250, 215, 84, 0.3);
+  flex-shrink: 0;
+}
+
+/* Sites dropdown styling */
+.sites-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  /* background-color: rgba(15, 23, 42, 0.8); */
+  /* border-radius: 4px; */
+  margin-top: 8px;
+  border-left: 2px solid rgba(250, 215, 84, 0.3);
+}
+
+.sites-dropdown.expanded {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #548a98 transparent;
+}
+
+.sites-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sites-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sites-dropdown::-webkit-scrollbar-thumb {
+  background-color: #548a98;
+  border-radius: 2px;
+}
+
+/* Individual site item in dropdown */
+.site-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(84, 138, 152, 0.1);
+  transition: background-color 0.2s;
+}
+
+.site-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.site-dropdown-item:hover {
+  background-color: rgba(84, 138, 152, 0.1);
+}
+
+.site-dropdown-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(84, 138, 152, 0.5);
+  border-radius: 2px;
+  background-color: rgba(31, 46, 71, 0.5);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.site-dropdown-item input[type="checkbox"]:checked {
+  background-color: #fad754;
+  border-color: #fad754;
+}
+
+.site-dropdown-item input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: #1f2e47;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.site-dropdown-item label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  flex-grow: 1;
+  margin-bottom: 0 !important;
+}
+
+.content-section-item:hover {
+  background-color: transparent;
+}
+
+.content-section-item .checkbox-flex-container label {
+  margin-left: 0 !important;
 }
 
 .alert-item,
