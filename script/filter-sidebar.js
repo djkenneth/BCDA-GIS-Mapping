@@ -7,8 +7,6 @@ function populateSiteDropdowns() {
     return;
   }
 
-  console.log('Populating site dropdowns...');
-  
   // Iterate through each category in mapMarkers
   mapMarkers.forEach(categoryData => {
     const categoryId = categoryData.id;
@@ -36,6 +34,25 @@ function populateSiteDropdowns() {
             <label for="${subcategoryId}">All</label>
         `;
         dropdown.appendChild(allItem);
+
+        const searchItem = document.createElement('div');
+        searchItem.className = 'search-input-item';
+        searchItem.innerHTML = `
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" 
+                      class="site-search-input" 
+                      placeholder="Search sites..." 
+                      data-dropdown-id="${dropdownId}">
+            </div>
+        `;
+        dropdown.appendChild(searchItem);
+
+        // Add search event listener
+      const searchInput = searchItem.querySelector('.site-search-input');
+      searchInput.addEventListener('input', function(event) {
+        handleSearchInput(event, dropdown);
+      });
 
         sites.forEach(site => {
           const siteItem = document.createElement('div');
@@ -103,6 +120,29 @@ function handleSubcategoryChange(subcategoryId, isChecked) {
       window.filterMarkers.updateMarkersForCheckbox(checkbox.id, isChecked);
     }
   });
+}
+
+// Function to filter sites based on search input
+function filterSitesInDropdown(searchTerm, dropdown) {
+  const siteItems = dropdown.querySelectorAll('.site-dropdown-item:not(.all-sites-item):not(.search-input-item)');
+  const normalizedSearch = searchTerm.toLowerCase().trim();
+  
+  siteItems.forEach(item => {
+    const label = item.querySelector('label');
+    const siteName = label ? label.textContent.toLowerCase() : '';
+    
+    if (normalizedSearch === '' || siteName.includes(normalizedSearch)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// Function to handle search input events
+function handleSearchInput(event, dropdown) {
+  const searchTerm = event.target.value;
+  filterSitesInDropdown(searchTerm, dropdown);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

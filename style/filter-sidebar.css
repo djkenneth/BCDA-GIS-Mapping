@@ -352,8 +352,57 @@
   border-left: 2px solid rgba(250, 215, 84, 0.3);
 }
 
+.search-input-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(84, 138, 152, 0.2);
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  z-index: 1;
+}
+
+.site-search-input {
+  width: 100%;
+  background-color: rgba(31, 46, 71, 0.7);
+  border: 1px solid rgba(84, 138, 152, 0.5);
+  border-radius: 4px;
+  padding: 6px 10px;
+  padding-left: 27px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s;
+}
+
+.site-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.site-search-input:focus {
+  outline: none;
+  border-color: #fad754;
+  background-color: rgba(31, 46, 71, 0.9);
+  box-shadow: 0 0 0 2px rgba(250, 215, 84, 0.2);
+}
+
+.site-search-input:hover {
+  border-color: rgba(84, 138, 152, 0.7);
+}
+
 .sites-dropdown.expanded {
-  max-height: 200px;
+  width: 100%;
+  max-height: 350px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #548a98 transparent;
