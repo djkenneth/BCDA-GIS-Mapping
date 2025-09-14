@@ -1072,3 +1072,18 @@ p {
     min-width: 100%;
   }
 }
+
+
+/* eassist */
+
+.assistant-info h2, .assistant-info p.text-body1, .q-dialog-plugin {
+  color: #000000 !important;
+}
+
+.q-message-text-content > div > div {
+  padding: 10px;
+}
+
+.q-dialog-plugin .row, .q-btn .row {
+  margin: 0 !important;
+}

@@ -78,7 +78,9 @@
     <script src="script/bottom-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
 
-    <script src="https://dev.aitbs.com.ph/plugins/eassist.js?apiKey=sk_uKzHeyAIIiASnjNrZSY9jgjC"></script>
+    <script 
+src="https://eassist.aitbs.com.ph/plugins/eassist.js?apiKey=sk_avKlYy9jCXtSpomWAA4GJkWd">
+</script>
 </body>
 
 </html>
