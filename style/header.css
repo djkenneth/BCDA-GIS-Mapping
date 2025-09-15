@@ -4,7 +4,9 @@ header {
   position: relative;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
-  background-color: transparent;
+  background-color: transparent; 
+  /* background: url('../assets/header-bg.png') lightgray -19.842px -67.992px / 57.477% 201.971% no-repeat, #062840; */
+  box-shadow: 7px 0 10px 0 rgba(0, 0, 0, 0.10);
 }
 
 .mobile-close-btn {
@@ -61,7 +63,8 @@ header .nav-bar {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: var(--bg-color);
+  /* background: var(--bg-color); */
+  background: url('../assets/header-bg.png') #062840 -19.842px -67.992px / 57.477% 201.971% no-repeat;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   padding-inline: 20px;
@@ -184,9 +187,6 @@ header.collapsed .header-toggle {
   justify-content: center;
   gap: 10px;
   padding: 10px 16px;
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(240, 189, 54, 0.75);
-  border-radius: 6px;
   color: var(--accent);
   font-family: "Roboto";
   font-size: 13px;
@@ -195,6 +195,9 @@ header.collapsed .header-toggle {
   transition: all 0.2s ease;
   cursor: pointer;
   text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px solid #3197A3;
+  background: #062840;
 }
 
 .header-button-icon {
@@ -211,7 +214,7 @@ header.collapsed .header-toggle {
 .header-button:hover {
   background: rgba(44, 62, 80, 0.9);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border-color: rgba(240, 189, 54, 1);
+  /* border-color: rgba(240, 189, 54, 1); */
 }
 
 .header-button:active {
@@ -271,7 +274,7 @@ header.collapsed .header-toggle {
 }
 
 .public-alerts-section {
-  border-left: 3px solid #ff4444;
+  border-left: 2px solid #3197A3;
   padding-left: 15px;
   min-height: 140px;
   display: flex;
@@ -293,13 +296,15 @@ header.collapsed .header-toggle {
   font-size: 13px;
   color: #fff;
   padding: 6px 10px;
-  border-radius: 4px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #0C6474;
+  background: #123D4C;
 }
 
-.alert-item.alert-construction {
+/* .alert-item.alert-construction {
   background: rgba(255, 152, 0, 0.2);
   border: 1px solid rgba(255, 152, 0, 0.3);
 }
@@ -332,7 +337,9 @@ header.collapsed .header-toggle {
 .alert-item.alert-flooding {
   background: rgba(0, 188, 212, 0.2);
   border: 1px solid rgba(0, 188, 212, 0.3);
-}
+} */
+
+
 
 .alert-item:hover {
   transform: translateX(5px);
@@ -342,7 +349,7 @@ header.collapsed .header-toggle {
 .alert-icon {
   width: 8px;
   height: 8px;
-  background: #ff4444;
+  background: #3197A3;;
   border-radius: 50%;
   flex-shrink: 0;
   align-self: center;
@@ -355,7 +362,7 @@ header.collapsed .header-toggle {
 }
 
 .city-events-section {
-  border-left: 3px solid #44ff88;
+  border-left: 2px solid #F44;
   padding-left: 15px;
   min-height: 140px;
   display: flex;
@@ -377,13 +384,15 @@ header.collapsed .header-toggle {
   font-size: 13px;
   color: #fff;
   padding: 6px 10px;
-  border-radius: 4px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #0C6474;
+  background: #123D4C;
 }
 
-.event-item.event-ongoing {
+/* .event-item.event-ongoing {
   background: rgba(76, 175, 80, 0.2);
   border: 1px solid rgba(76, 175, 80, 0.3);
 }
@@ -416,7 +425,7 @@ header.collapsed .header-toggle {
 .event-item.event-tech {
   background: rgba(121, 134, 203, 0.2);
   border: 1px solid rgba(121, 134, 203, 0.3);
-}
+} */
 
 .event-item:hover {
   transform: translateX(5px);
@@ -424,9 +433,9 @@ header.collapsed .header-toggle {
 }
 
 .event-icon {
-  width: 16px;
-  height: 16px;
-  background: #44ff88;
+  width: 8px;
+  height: 8px;
+  background: #F44;
   border-radius: 3px;
   display: flex;
   align-items: center;

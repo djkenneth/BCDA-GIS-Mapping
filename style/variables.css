@@ -1,8 +1,8 @@
 /* style/variables.css */
 
 :root {
-  --primary: #121826;
-  --primary-2: #1B212F;
+  --primary: #031E31;
+  --primary-2: rgba(7, 51, 83, 0.95);
   --primary-3: rgba(18, 16, 82, 0.85);
   --primary-4: rgba(13, 26, 70, 0.85);
   --primary-5: rgba(16, 58, 82, 0.85);
@@ -13,11 +13,14 @@
 
   --border: #548a98;
 
-  --active: #4caf50;
+  --active: rgba(76, 175, 80, 1);
   --maintenance: #ead353;
   --inactive: #f44336;
 
-  --accent: #f0bd36;
+  --active-7: rgba(76, 175, 80, 0.7);
+
+  --accent: rgba(49, 151, 163, 1);
+  --accent-2: rgba(49, 151, 163, 0.439);
 
   --bg-color: linear-gradient(180deg, #121826 0%, #1B212F 100%);
   --darker-bg: #3d0d5c;
@@ -34,6 +37,11 @@
   --green-status: #4caf50;
   --blue-accent: #3498db;
   --inactive-status: #3c3c46;
+
+
+
+  --border-1: 1px solid var(--accent-2);
+
 
 
   /* --map-top: 191px; */

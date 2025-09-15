@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const eventItem = document.createElement("div");
         eventItem.className = "mobile-event-item";
         eventItem.innerHTML = `
-        <span class="mobile-event-icon">${event.icon}</span>
+        <span class="mobile-event-icon"></span>
         <div class="mobile-event-content">
           <span class="mobile-event-text">${event.text}</span>
           <span class="mobile-event-date">${event.date}</span>
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const eventItem = document.createElement("div");
         eventItem.className = `event-item ${event.class}`;
         eventItem.innerHTML = `
-        <span class="event-icon">${event.icon}</span>
+        <span class="event-icon"></span>
         <span class="event-text">${event.text}</span>
         <span class="event-date">${event.date}</span>
       `;

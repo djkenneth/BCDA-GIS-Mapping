@@ -3,31 +3,45 @@
 <div class="sidebar">
     <div class="sidebar-tabs-v2">
         <div class="sidebar-tab-v2 active" data-tab="layers">
-            <i class="fas fa-layer-group"></i>
+            <div class="icon">
+                <i class="fas fa-layer-group"></i>
+            </div>
             <span>Features</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="zones">
-            <i class="fas fa-landmark"></i>
+            <div class="icon">
+                <i class="fas fa-landmark"></i>
+            </div>
             <span>Economic Zones</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="locators">
-            <i class="fas fa-building"></i>
+            <div class="icon">
+                <i class="fas fa-building"></i>
+            </div>
             <span>Locators</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="infrastructure">
-            <i class="fas fa-hammer"></i>
+            <div class="icon">
+                <i class="fas fa-hammer"></i>
+            </div>
             <span>Infrastructure</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="afp">
-            <i class="fas fa-shield-alt"></i>
+            <div class="icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
             <span>AFP Modernization</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="investments">
-            <i class="fas fa-chart-line"></i>
+            <div class="icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
             <span>Investments</span>
         </div>
         <div class="sidebar-tab-v2" data-tab="sustainability">
-            <i class="fas fa-leaf"></i>
+            <div class="icon">
+                <i class="fas fa-leaf"></i>
+            </div>
             <span>Sustainability</span>
         </div>
 
@@ -46,9 +60,9 @@
     </div>
     <div class="layer-group">
         <div class="content-section">
-            <div class="content-section-title">
+            <!-- <div class="content-section-title">
                 <span>Layer Groups</span>
-            </div>
+            </div> -->
 
             <div class="content-section-item">
                 <div class="flex">
@@ -106,14 +120,13 @@
 <!-- Economic Zones Panel -->
 <div class="sidebar-content" id="zones-content">
     <div class="content-header">
-        <h3>🏛️ Economic Zones</h3>
+        <h3>Economic Zones</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Zone Areas</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -200,14 +213,13 @@
 <!-- Locator Management Panel -->
 <div class="sidebar-content" id="locators-content">
     <div class="content-header">
-        <h3>🏢 Locator Management</h3>
+        <h3>Locator Management</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Active Locators</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -265,14 +277,13 @@
 <!-- Infrastructure Projects Panel -->
 <div class="sidebar-content" id="infrastructure-content">
     <div class="content-header">
-        <h3>🏗️ Infrastructure Projects</h3>
+        <h3>Infrastructure Projects</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Major Projects</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -339,14 +350,13 @@
 <!-- AFP Modernization Panel - Updated Structure -->
 <div class="sidebar-content" id="afp-content">
     <div class="content-header">
-        <h3>⚔️ AFP Modernization</h3>
+        <h3>AFP Modernization</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Military Projects</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -403,14 +413,13 @@
 <!-- Investment Tracking Panel - Updated Structure -->
 <div class="sidebar-content" id="investments-content">
     <div class="content-header">
-        <h3>💼 Investment Tracking</h3>
+        <h3>Investment Tracking</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Investment Categories</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -467,14 +476,13 @@
 <!-- Sustainability & Environment Panel - Updated Structure -->
 <div class="sidebar-content" id="sustainability-content">
     <div class="content-header">
-        <h3>🌱 Sustainability & Environment</h3>
+        <h3>Sustainability & Environment</h3>
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <div class="content-section-title">
+        <!-- <div class="content-section-title">
             <span>Environmental Categories</span>
-            <!-- <button class="select-all">Select All</button> -->
-        </div>
+        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">

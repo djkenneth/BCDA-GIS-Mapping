@@ -57,7 +57,7 @@
   background: rgba(26, 35, 50, 0.8);
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  border: var(--border-1);
   margin-bottom: 25px;
   backdrop-filter: blur(10px);
 }
@@ -70,7 +70,7 @@
 }
 
 .filters-title {
-  color: #ffd700;
+  color: var(--accent);
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -187,7 +187,7 @@
   background: rgba(26, 35, 50, 0.8);
   border-radius: 12px;
   padding: 25px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  border: var(--border-1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
@@ -253,7 +253,7 @@
   background: rgba(26, 35, 50, 0.8);
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: var(--border-1);
   transition: all 0.3s ease;
 }
 
@@ -334,7 +334,7 @@
 }
 
 .section-title {
-  color: #ffd700;
+  color: var(--accent);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -353,7 +353,7 @@
   background: rgba(26, 35, 50, 0.8);
   border-radius: 12px;
   padding: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: var(--border-1);
   height: auto;
 }
 
@@ -373,7 +373,7 @@
   background: rgba(26, 35, 50, 0.8);
   border-radius: 12px;
   padding: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: var(--border-1);
 }
 
 .stat-item {

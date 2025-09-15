@@ -185,7 +185,6 @@ p {
 .infrastructure-scroll-area {
   overflow-y: hidden;
   white-space: nowrap;
-  padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #fad754 #002722;
 }

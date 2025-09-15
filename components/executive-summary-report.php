@@ -9,7 +9,7 @@
     <div class="main-container">
         <div class="executive-controls">
             <div class="report-generator">
-                <h4 style="margin-bottom: 1rem; color: #ffd700;">📊 Generate Executive Report</h4>
+                <h4 class="report-title">📊 Generate Executive Report</h4>
                 <div class="generator-grid">
                     <div class="input-group">
                         <label class="input-label">Report Type</label>

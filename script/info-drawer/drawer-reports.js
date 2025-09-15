@@ -1047,7 +1047,7 @@ function loadDownloadReportContent(site, category) {
         }</strong> including all technical specifications, performance analytics, maintenance history, and strategic recommendations.</p>
         
         <div class="report-preview-section" style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-          <h5 style="margin-bottom: 10px; color: #FAD754;">Report Contents:</h5>
+          <h5>Report Contents:</h5>
           <ul style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
             <li>Site Information & Classification</li>
             <li>${getCategorySpecificReportSections(category.displayInfo.title).join(

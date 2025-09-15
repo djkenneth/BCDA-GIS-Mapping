@@ -10,9 +10,10 @@
             </div>
         </a>
 
-        <div class="items-center w-4/5 alert-wrapper">
-            <div class="flex justify-center flex-nowrap w-full">
-                <!-- <div class="desktop-metrics emergency-contacts-section">
+        <div class="flex gap-10">
+            <div class="items-center alert-wrapper">
+                <div class="flex justify-center flex-nowrap w-full">
+                    <!-- <div class="desktop-metrics emergency-contacts-section">
                     <p class="text-sm text-accent-custom mb-2">Emergency Contacts</p>
                     <div class="emergency-grid">
                         <div class="emergency-contact">
@@ -29,60 +30,62 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- Desktop View Metrics -->
-                <div class="desktop-metrics public-alerts-section">
-                    <p class="text-sm text-accent-custom mb-2">Recent Alerts</p>
-                    <div class="alerts-container" id="alerts-container">
-                        <div class="alert-item alert-construction">
-                            <span class="alert-icon"></span>
-                            <span class="alert-text">Construction: Escario Street</span>
-                        </div>
-                        <div class="alert-item alert-closure">
-                            <span class="alert-icon"></span>
-                            <span class="alert-text">Road closure: IT Park area</span>
-                        </div>
-                        <div class="alert-item alert-weather">
-                            <span class="alert-icon"></span>
-                            <span class="alert-text">Weather alert: Heavy rainfall</span>
+                    <!-- Desktop View Metrics -->
+                    <div class="desktop-metrics public-alerts-section">
+                        <p class="text-md text-white mb-2">Recent Alerts</p>
+                        <div class="alerts-container" id="alerts-container">
+                            <div class="alert-item alert-construction">
+                                <span class="alert-icon"></span>
+                                <span class="alert-text">Construction: Escario Street</span>
+                            </div>
+                            <div class="alert-item alert-closure">
+                                <span class="alert-icon"></span>
+                                <span class="alert-text">Road closure: IT Park area</span>
+                            </div>
+                            <div class="alert-item alert-weather">
+                                <span class="alert-icon"></span>
+                                <span class="alert-text">Weather alert: Heavy rainfall</span>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="desktop-metrics city-events-section">
+                        <p class="text-md text-white mb-2">Upcoming Events</p>
+                        <div class="events-container">
+                            <!-- Events will be dynamically populated by JavaScript -->
+                        </div>
+                        <div class="no-events-message" style="display: none;">
+                            <div class="no-events-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <p>No upcoming events</p>
+                            <p style="font-size: 11px; color: rgba(255, 255, 255, 0.5);">Check back later for updates</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="icons">
+                <div class="icon relative" id="bell-icon">
+                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/bell-icon.png' : 'assets/bell-icon.png'; ?>" alt="Bell icon" class="bell-icon" style="width: 20px;">
                 </div>
 
-                <div class="    desktop-metrics city-events-section">
-                    <p class="text-sm text-accent-custom mb-2">Upcoming Events</p>
-                    <div class="events-container">
-                        <!-- Events will be dynamically populated by JavaScript -->
-                    </div>
-                    <div class="no-events-message" style="display: none;">
-                        <div class="no-events-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                        </div>
-                        <p>No upcoming events</p>
-                        <p style="font-size: 11px; color: rgba(255, 255, 255, 0.5);">Check back later for updates</p>
-                    </div>
+                <div class="icon" id="app-switcher-icon">
+                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/app-switcher-icon.png' : 'assets/app-switcher-icon.png'; ?>" alt="App Switcher icon" class="switcher-icon" />
                 </div>
-
-
+                <div class="icon" id="search-icon">
+                    <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/search-icon.png' : 'assets/search-icon.png'; ?>" alt="Search icon" class="switcher-icon" />
+                </div>
             </div>
         </div>
 
-        <div class="icons">
-            <div class="icon relative" id="bell-icon">
-                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/bell-icon.png' : 'assets/bell-icon.png'; ?>" alt="Bell icon" class="bell-icon" style="width: 20px;">
-            </div>
-
-            <div class="icon" id="app-switcher-icon">
-                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/app-switcher-icon.png' : 'assets/app-switcher-icon.png'; ?>" alt="App Switcher icon" class="switcher-icon" />
-            </div>
-            <div class="icon" id="search-icon">
-                <img src="<?php echo (strpos($_SERVER['REQUEST_URI'], 'streams') !== false) ? '../assets/search-icon.png' : 'assets/search-icon.png'; ?>" alt="Search icon" class="switcher-icon" />
-            </div>
-        </div>
     </div>
 
     <!-- Search bar will be inserted here by JavaScript -->

@@ -238,10 +238,12 @@ document.addEventListener("DOMContentLoaded", function () {
              data-filter="${card.filter}"
              data-subcategory="${card.subcategory || ""}"
              style="cursor: pointer;">
-          <div class="card-title">${card.value}</div>
           <div class="card-result">${card.title}</div>
-          <div class="icon">
-            <i class="${card.icon}"></i>
+          <div class="flex items-center justify-between">
+            <div class="card-title">${card.value}</div>
+            <div class="icon">
+              <i class="${card.icon} "></i>
+            </div>
           </div>
         </div>
       `;
@@ -271,12 +273,12 @@ document.addEventListener("DOMContentLoaded", function () {
         filter: "pending_permits",
       },
       {
-        title: "Critical Issues",
-        value: infrastructureData.criticalIssues || 0,
-        className: "critical-bg",
-        icon: "fas fa-exclamation-triangle",
+        title: "Occupancy Rate",
+        value: (infrastructureData.occupancyRate || 0) + "%",
+        className: "maintenance-bg",
+        icon: "fas fa-chart-pie",
         category: "status",
-        filter: "critical_issues",
+        filter: "occupancy_rate",
       },
       {
         title: "Infrastructure Assets",
@@ -295,12 +297,12 @@ document.addEventListener("DOMContentLoaded", function () {
         filter: "available_lots",
       },
       {
-        title: "Occupancy Rate",
-        value: (infrastructureData.occupancyRate || 0) + "%",
-        className: "maintenance-bg",
-        icon: "fas fa-chart-pie",
+        title: "Critical Issues",
+        value: infrastructureData.criticalIssues || 0,
+        className: "critical-bg",
+        icon: "fas fa-exclamation-triangle",
         category: "status",
-        filter: "occupancy_rate",
+        filter: "critical_issues",
       },
     ];
   }

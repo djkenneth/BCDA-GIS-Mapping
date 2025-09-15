@@ -35,7 +35,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  color: #fad754;
+  color: var(--accent);
 }
 
 #drawer-close {
@@ -60,6 +60,11 @@
 
 #drawer-content {
   padding: 20px;
+}
+
+.report-preview-section h5 {
+  margin-bottom: 10px; 
+  color: var(--accent);
 }
 
 /* Live Feed Card Integration Styles */
@@ -335,7 +340,7 @@
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 16px;
-  color: #fad754;
+  color: var(--accent);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 8px;
 }
@@ -478,7 +483,7 @@
 .form-group textarea {
   width: 100%;
   background: rgba(15, 26, 43, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: var(--border-1);
   border-radius: 6px;
   padding: 10px;
   color: #ffffff;
@@ -518,7 +523,7 @@
 }
 
 .btn-primary {
-  background-color: #fad754;
+  background-color: var(--active);
   color: #000;
   border: none;
   padding: 10px 15px;
@@ -531,8 +536,12 @@
 }
 
 .btn-primary:hover {
-  background-color: #f5d235;
+  background-color: var(--active-7);
   transform: translateY(-1px);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--active) !important; 
 }
 
 .btn-secondary {
@@ -806,7 +815,7 @@
   padding: 15px;
   background: rgba(21, 26, 41, 0.4);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: var(--border-1);
 }
 
 .action-btn {
@@ -828,18 +837,19 @@
   background: #4fc3f7;
   color: #0a1628;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(79, 195, 247, 0.3);
+  /* box-shadow: 0 4px 8px rgba(79, 195, 247, 0.3); */
 }
 
 .action-btn.primary {
-  background: #ffd700;
+  border-radius: 6px;
+  background: var(--active);
   color: #0a1628;
   font-weight: 600;
 }
 
 .action-btn.primary:hover {
-  background: #ffed4e;
-  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  background: var(--active-7);
+  /* box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); */
 }
 
 /* Expandable Section Toggle */

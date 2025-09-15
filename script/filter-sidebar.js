@@ -320,17 +320,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const toggleButton = document.createElement('button');
         toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
         toggleButton.className = 'dropdown-toggle-btn';
-        toggleButton.style.cssText = `
-          background: none;
-          border: none;
-          color: #fad754;
-          cursor: pointer;
-          padding: 2px 6px;
-          margin-left: 8px;
-          font-size: 10px;
-          transition: transform 0.3s ease;
-          border-radius: 2px;
-        `;
         toggleButton.title = 'Toggle sites list';
         
         container.appendChild(toggleButton);
