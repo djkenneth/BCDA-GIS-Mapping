@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     // Default positioning
-    let topPosition = "298px"; // Current default
+    let topPosition = CONFIG.DESKTOP.TOP; // Current default
     let leftPosition = "60px"; // Current default
     let rightPosition = "0";
     let bottomPosition = "0";
@@ -348,38 +348,34 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (
       window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
     ) {
-      // ADD THIS NEW TABLET SECTION
       if (header) {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "258px"; // Changed from 284px to 244px
+          topPosition = "258px";
         }
       }
 
       if (sidebar) {
         if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px"; // Changed from 360px to 330px
+          leftPosition = "360px";
         } else {
           leftPosition = "60px";
         }
       }
     } else {
       // Desktop view - adjust based on header and sidebar state
-
-      // Check header state
       if (header) {
         if (header.classList.contains("collapsed")) {
           topPosition = "0px";
         } else {
-          topPosition = "298px"; // Keep original for desktop
+          topPosition = CONFIG.DESKTOP.TOP;
         }
       }
 
-      // Check sidebar state
       if (sidebar) {
         if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px"; // Keep original for desktop
+          leftPosition = "360px";
         } else {
           leftPosition = "60px";
         }

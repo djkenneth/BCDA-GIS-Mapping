@@ -575,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `${SELECTORS.sidebarContent}.visible`
     );
 
-    let topPosition = "298px";
+    let topPosition = CONFIG.DESKTOP.TOP;
     let leftPosition = "360px";
     let rightPosition = "0";
     let bottomPosition = "0";
@@ -598,7 +598,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (
       window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
     ) {
-      // Tablet view (769px to 1024px) - NEW POSITIONING LOGIC
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {

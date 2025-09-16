@@ -10,7 +10,6 @@ function populateSiteDropdowns() {
   // Iterate through each category in mapMarkers
   mapMarkers.forEach(categoryData => {
     const categoryId = categoryData.id;
-    console.log(`Processing category: ${categoryId}`);
     
     // Iterate through subcategories
     Object.keys(categoryData.subcategoryConfigs || {}).forEach(subcategoryId => {
@@ -18,9 +17,7 @@ function populateSiteDropdowns() {
       const dropdownId = `${subcategoryId}-dropdown`;
       const dropdown = document.getElementById(dropdownId);
       const countSpan = document.querySelector(`[data-count="${subcategoryId}"]`);
-      
-      console.log(`Processing subcategory: ${subcategoryId}, sites found: ${sites.length}`);
-      
+            
       if (dropdown && countSpan) {
         countSpan.textContent = sites.length;
         
@@ -63,8 +60,6 @@ function populateSiteDropdowns() {
           `;
           dropdown.appendChild(siteItem);
         });
-
-        console.log(`Populated dropdown for ${subcategoryId} with ${sites.length} sites`);
       } else {
         if (!dropdown) console.log(`Dropdown not found: ${dropdownId}`);
         if (!countSpan) console.log(`Count span not found for: ${subcategoryId}`);
@@ -506,8 +501,8 @@ function setupHeaderObserver() {
             heightValue = "calc(100vh - 258px)";
           } else {
             // Desktop (default)
-            topValue = "298px";
-            heightValue = "calc(100vh - 298px)";
+            topValue = CONFIG.DESKTOP.TOP;
+            heightValue = `calc(100vh - ${CONFIG.DESKTOP.TOP})`;
           }
 
           sidebar.style.top = topValue;
