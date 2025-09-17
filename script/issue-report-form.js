@@ -230,7 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Show the issue report form
   function showIssueForm() {
     if (fullScreenForm) {
-      adjustFormPosition();
+      // adjustFormPosition();
+      positionComponents(fullScreenForm);
       fullScreenForm.style.display = "block";
       resetForm();
     } else {
@@ -315,79 +316,79 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function adjustFormPosition() {
-    if (!fullScreenForm) return;
+  // function adjustFormPosition() {
+  //   if (!fullScreenForm) return;
 
-    // Position form based on header and sidebar state
-    const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar");
-    const sidebarContent = document.querySelector(".sidebar-content.visible");
+  //   // Position form based on header and sidebar state
+  //   const header = document.querySelector("header");
+  //   const sidebar = document.querySelector(".sidebar");
+  //   const sidebarContent = document.querySelector(".sidebar-content.visible");
 
-    // Default positioning
-    let topPosition = CONFIG.DESKTOP.TOP; // Current default
-    let leftPosition = "60px"; // Current default
-    let rightPosition = "0";
-    let bottomPosition = "0";
+  //   // Default positioning
+  //   let topPosition = CONFIG.DESKTOP.TOP; // Current default
+  //   let leftPosition = "60px"; // Current default
+  //   let rightPosition = "0";
+  //   let bottomPosition = "0";
 
-    // Check if we're in mobile view
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      // Mobile view - take full screen
-      if (header && header.classList.contains("collapsed")) {
-        topPosition = "0";
-      } else {
-        topPosition = "126px";
-      }
+  //   // Check if we're in mobile view
+  //   if (window.matchMedia("(max-width: 768px)").matches) {
+  //     // Mobile view - take full screen
+  //     if (header && header.classList.contains("collapsed")) {
+  //       topPosition = "0";
+  //     } else {
+  //       topPosition = "126px";
+  //     }
 
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "340px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    } else if (
-      window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
-    ) {
-      if (header) {
-        if (header.classList.contains("collapsed")) {
-          topPosition = "0px";
-        } else {
-          topPosition = "258px";
-        }
-      }
+  //     if (sidebar) {
+  //       if (sidebarContent && sidebarContent.classList.contains("visible")) {
+  //         leftPosition = "340px";
+  //       } else {
+  //         leftPosition = "60px";
+  //       }
+  //     }
+  //   } else if (
+  //     window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
+  //   ) {
+  //     if (header) {
+  //       if (header.classList.contains("collapsed")) {
+  //         topPosition = "0px";
+  //       } else {
+  //         topPosition = "258px";
+  //       }
+  //     }
 
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    } else {
-      // Desktop view - adjust based on header and sidebar state
-      if (header) {
-        if (header.classList.contains("collapsed")) {
-          topPosition = "0px";
-        } else {
-          topPosition = CONFIG.DESKTOP.TOP;
-        }
-      }
+  //     if (sidebar) {
+  //       if (sidebarContent && sidebarContent.classList.contains("visible")) {
+  //         leftPosition = "360px";
+  //       } else {
+  //         leftPosition = "60px";
+  //       }
+  //     }
+  //   } else {
+  //     // Desktop view - adjust based on header and sidebar state
+  //     if (header) {
+  //       if (header.classList.contains("collapsed")) {
+  //         topPosition = "0px";
+  //       } else {
+  //         topPosition = CONFIG.DESKTOP.TOP;
+  //       }
+  //     }
 
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    }
+  //     if (sidebar) {
+  //       if (sidebarContent && sidebarContent.classList.contains("visible")) {
+  //         leftPosition = "360px";
+  //       } else {
+  //         leftPosition = "60px";
+  //       }
+  //     }
+  //   }
 
-    // Apply the calculated positions
-    fullScreenForm.style.top = topPosition;
-    fullScreenForm.style.left = leftPosition;
-    fullScreenForm.style.right = rightPosition;
-    fullScreenForm.style.bottom = bottomPosition;
-  }
+  //   // Apply the calculated positions
+  //   fullScreenForm.style.top = topPosition;
+  //   fullScreenForm.style.left = leftPosition;
+  //   fullScreenForm.style.right = rightPosition;
+  //   fullScreenForm.style.bottom = bottomPosition;
+  // }
 
   // Handle form submission
   function handleSubmit() {
@@ -620,31 +621,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Observe header collapse state to adjust form position
-  const header = document.querySelector("header");
-  if (header) {
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (mutation.attributeName === "class") {
-          adjustFormPosition();
-        }
-      });
-    });
+  // const header = document.querySelector("header");
+  // if (header) {
+  //   const observer = new MutationObserver(function (mutations) {
+  //     mutations.forEach(function (mutation) {
+  //       if (mutation.attributeName === "class") {
+  //         adjustFormPosition();
+  //       }
+  //     });
+  //   });
 
-    observer.observe(header, { attributes: true });
-  }
+  //   observer.observe(header, { attributes: true });
+  // }
 
   // Observe sidebar state changes to adjust form position
-  const sidebar = document.querySelector(".sidebar");
-  if (sidebar) {
-    const sidebarObserver = new MutationObserver(adjustFormPosition);
-    sidebarObserver.observe(sidebar, { attributes: true, subtree: true });
+  // const sidebar = document.querySelector(".sidebar");
+  // if (sidebar) {
+  //   const sidebarObserver = new MutationObserver(adjustFormPosition);
+  //   sidebarObserver.observe(sidebar, { attributes: true, subtree: true });
+  // }
+
+  if (fullScreenForm) {
+    positionComponents(fullScreenForm, { observeChanges: true });
   }
 
   // Listen for window resize to handle responsive layout
-  window.addEventListener("resize", function () {
-    adjustFormPosition();
-    checkCameraAvailability();
-  });
+  // window.addEventListener("resize", function () {
+  //   adjustFormPosition();
+  //   checkCameraAvailability();
+  // });
 
   // Initialize the form
   initForm();

@@ -92,3 +92,169 @@ function removeNotification(notification) {
     }
   }, 300);
 }
+
+/**
+ * Universal component positioning function
+ * Handles responsive positioning based on header and sidebar state
+ * @param {Element|NodeList} elements - Single element or list of elements to position
+ * @param {Object} options - Positioning options
+ * @param {boolean} options.observeChanges - Whether to set up observers for dynamic positioning
+ * @param {Function} options.callback - Optional callback after positioning
+ * @param {Array} options.excludeSelectors - Selectors to skip positioning for
+ */
+function positionComponents(elements, options = {}) {
+  const {
+    observeChanges = false,
+    callback = null,
+    excludeSelectors = ['#info-drawer', '.live-feed-card']
+  } = options;
+
+  // Convert single element to array for consistent handling
+  const elementsArray = elements instanceof NodeList ? Array.from(elements) : 
+                       Array.isArray(elements) ? elements : [elements];
+
+  function calculatePositions() {
+    const header = document.querySelector("header");
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarContent = document.querySelector(".sidebar-content.visible");
+
+    let topPosition = CONFIG.DESKTOP.TOP;
+    let rightPosition = "0";
+    let bottomPosition = "0";
+    let leftPosition = "60px";
+
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 768) {
+      console.log('Mobile view');
+      // Mobile view
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0";
+      } else if (screenWidth <= 425) {
+        topPosition = "194px";
+      } else {
+        topPosition = "236px";
+      }
+
+      if (sidebar) {
+        if (sidebarContent && sidebarContent.classList.contains("visible")) {
+          leftPosition = "340px";
+        } else {
+          leftPosition = "60px";
+        }
+      }
+    } else if (screenWidth <= 1024) {
+      console.log('tablet view');
+      
+      // Tablet view
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0";
+      } else {
+        topPosition = "258px";
+      }
+
+      if (sidebar) {
+        if (sidebarContent && sidebarContent.classList.contains("visible")) {
+          leftPosition = "360px";
+        } else {
+          leftPosition = "60px";
+        }
+      }
+    } else {
+      // Desktop view
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0";
+      } else {
+        topPosition = CONFIG.DESKTOP.TOP;
+      }
+
+      if (sidebar) {
+        if (sidebarContent && sidebarContent.classList.contains("visible")) {
+          leftPosition = "360px";
+        } else {
+          leftPosition = "60px";
+        }
+      }
+    }
+
+    return { topPosition, rightPosition, bottomPosition, leftPosition };
+  }
+
+  function applyPositioning() {
+    const positions = calculatePositions();
+    
+    elementsArray.forEach(element => {
+      if (!element) return;
+
+      // Check if element should be excluded
+      const shouldExclude = excludeSelectors.some(selector => 
+        element.matches?.(selector) || element.id === selector.replace('#', '') ||
+        element.classList.contains(selector.replace('.', ''))
+      );
+
+      if (shouldExclude || element.hasAttribute("data-skip-positioning")) {
+        return;
+      }
+
+      // Apply positioning
+      element.style.top = positions.topPosition;
+      element.style.left = positions.leftPosition;
+      element.style.right = positions.rightPosition;
+      element.style.bottom = positions.bottomPosition;
+
+      // Ensure proper positioning properties
+      if (!element.style.position) {
+        element.style.position = "fixed";
+      }
+    });
+
+    // Execute callback if provided
+    if (callback && typeof callback === 'function') {
+      callback(positions);
+    }
+  }
+
+  // Apply initial positioning
+  applyPositioning();
+
+  // Set up observers if requested
+  if (observeChanges) {
+    const header = document.querySelector("header");
+    const sidebar = document.querySelector(".sidebar");
+
+    if (header) {
+      const headerObserver = new MutationObserver(applyPositioning);
+      headerObserver.observe(header, {
+        attributes: true,
+        attributeFilter: ["class"]
+      });
+    }
+
+    if (sidebar) {
+      const sidebarObserver = new MutationObserver(applyPositioning);
+      sidebarObserver.observe(sidebar, { attributes: true, subtree: true });
+
+      const sidebarContents = document.querySelectorAll(".sidebar-content");
+      sidebarContents.forEach(content => {
+        const contentObserver = new MutationObserver(applyPositioning);
+        contentObserver.observe(content, {
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+      });
+    }
+
+    // Window resize handler
+    let resizeTimeout;
+    window.addEventListener("resize", function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(applyPositioning, 250);
+    });
+  }
+
+  // Return object with utility methods
+  return {
+    reposition: applyPositioning,
+    getPositions: calculatePositions
+  };
+}

@@ -174,9 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Adjust sidebar position based on header state
-  setupHeaderObserver();
-
   // Close panel functionality
   const closeButtons = document.querySelectorAll(".close-panel");
   closeButtons.forEach((button) => {
@@ -461,66 +458,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleSiteDropdown: toggleSiteDropdown
   };
 });
-
-function setupHeaderObserver() {
-  const header = document.querySelector("header");
-  const sidebar = document.querySelector(".sidebar");
-  const sidebarContents = document.querySelectorAll(".sidebar-content");
-
-  if (!header || !sidebar) return;
-
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (
-        mutation.type === "attributes" &&
-        mutation.attributeName === "class"
-      ) {
-        const isCollapsed = header.classList.contains("collapsed");
-
-        if (isCollapsed) {
-          sidebar.style.top = "0";
-          sidebar.style.height = "100vh";
-          sidebarContents.forEach((content) => {
-            content.style.top = "0";
-            content.style.height = "100vh";
-          });
-        } else {
-          const screenWidth = window.innerWidth;
-          let topValue, heightValue;
-
-          if(screenWidth <= 425) {
-            topValue = "194px";
-            heightValue = "calc(100vh - 194px)";
-          } else if (screenWidth <= 768) {
-            // Mobile breakpoint
-            topValue = "236px";
-            heightValue = "calc(100vh - 236px)";
-          } else if (screenWidth <= 1024) {
-            // Tablet breakpoint
-            topValue = "258px";
-            heightValue = "calc(100vh - 258px)";
-          } else {
-            // Desktop (default)
-            topValue = CONFIG.DESKTOP.TOP;
-            heightValue = `calc(100vh - ${CONFIG.DESKTOP.TOP})`;
-          }
-
-          sidebar.style.top = topValue;
-          sidebar.style.height = heightValue;
-          sidebarContents.forEach((content) => {
-            content.style.top = topValue;
-            content.style.height = heightValue;
-          });
-        }
-      }
-    });
-  });
-
-  observer.observe(header, {
-    attributes: true,
-    attributeFilter: ["class"],
-  });
-}
 
 function refreshSiteDropdowns() {
   populateSiteDropdowns();

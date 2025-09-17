@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "#full-screen-locations-list",
       ".infrastructure-locations",
       "#list-all-infrastructure",
-      "#sites-modal", // Added sites modal to managed components
-      ".search-bar-container", // Added search bar container to managed components
+      "#sites-modal",
+      ".search-bar-container",
     ],
     componentTriggers: {
       "#addEquipmentBtn": "#full-screen-infrastructure-form",
@@ -44,8 +44,43 @@ document.addEventListener("DOMContentLoaded", function () {
     setupLiveFeedCard();
     setupInfoDrawerAccordion();
     setupInfrastructureCardsIntegration(); // New setup for infrastructure cards
-    observeHeaderAndSidebar();
-    setupWindowResizeHandler();
+    // observeHeaderAndSidebar();
+    // setupWindowResizeHandler();
+    initPanelPositioning();
+  }
+
+  function initPanelPositioning() {
+    // Set up global state change handler
+    const header = document.querySelector(SELECTORS.header);
+    const sidebar = document.querySelector(SELECTORS.sidebar);
+
+    if (header) {
+      const headerObserver = new MutationObserver(handleComponentStateChange);
+      headerObserver.observe(header, {
+        attributes: true,
+        attributeFilter: ["class"]
+      });
+    }
+
+    if (sidebar) {
+      const sidebarObserver = new MutationObserver(handleComponentStateChange);
+      sidebarObserver.observe(sidebar, { attributes: true, attributeFilter: ["class"] });
+
+      document.querySelectorAll(SELECTORS.sidebarContent).forEach(content => {
+        const contentObserver = new MutationObserver(handleComponentStateChange);
+        contentObserver.observe(content, {
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+      });
+    }
+
+    // Window resize handler
+    let resizeTimeout;
+    window.addEventListener("resize", function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleComponentStateChange, 250);
+    });
   }
 
   // New function to integrate infrastructure cards modal with panel manager
@@ -64,7 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const sitesModal = document.querySelector("#sites-modal");
           if (sitesModal && sitesModal.style.display === "block") {
             currentOpenComponent = "#sites-modal";
-            positionComponent(sitesModal);
+
+            // positionComponents(sitesModal);
             setupSitesModalCloseListener();
           }
         }, 100);
@@ -449,7 +485,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    positionComponent(component);
+
+    positionComponents(component);
 
     if (selector === "#info-drawer") {
       component.classList.add("open");
@@ -461,7 +498,6 @@ document.addEventListener("DOMContentLoaded", function () {
       component.classList.add("visible");
     } else if (selector === "#sites-modal") {
       component.style.display = "block";
-      // Sites modal positioning is handled by positionComponent
     } else {
       component.style.display = "block";
     }
@@ -566,107 +602,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function positionComponent(component) {
-    if (!component) return;
-
-    const header = document.querySelector(SELECTORS.header);
-    const sidebar = document.querySelector(SELECTORS.sidebar);
-    const sidebarContent = document.querySelector(
-      `${SELECTORS.sidebarContent}.visible`
-    );
-
-    let topPosition = CONFIG.DESKTOP.TOP;
-    let leftPosition = "360px";
-    let rightPosition = "0";
-    let bottomPosition = "0";
-
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      // Mobile view - take full screen
-      if (header && header.classList.contains("collapsed")) {
-        topPosition = "0";
-      } else {
-        topPosition = "126px";
-      }
-
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "340px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    } else if (
-      window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
-    ) {
-      if (header && header.classList.contains("collapsed")) {
-        topPosition = "0";
-      } else {
-        topPosition = "258px";
-      }
-
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    } else {
-      // Desktop view (above 1024px) - existing logic
-      if (header && header.classList.contains("collapsed")) {
-        topPosition = "0";
-      }
-
-      if (sidebar) {
-        if (sidebarContent && sidebarContent.classList.contains("visible")) {
-          leftPosition = "360px";
-        } else {
-          leftPosition = "60px";
-        }
-      }
-    }
-
-    // Skip positioning for info drawer and live feed card (they have their own positioning)
-    if (
-      component.id === "info-drawer" ||
-      component.classList.contains("live-feed-card")
-    ) {
-      return;
-    }
-
-    // Handle sites modal positioning - it should follow the same pattern as other managed components
-    if (component.id === "sites-modal") {
-      component.style.top = topPosition;
-      component.style.left = leftPosition;
-      component.style.right = rightPosition;
-      component.style.bottom = bottomPosition;
-      component.style.position = "fixed";
-      component.style.zIndex = "6";
-      return;
-    }
-
-    if (
-      component.classList.contains("infrastructure-locations") ||
-      component.id === "full-screen-locations-list" ||
-      component.id === "list-all-infrastructure"
-    ) {
-      component.style.top = topPosition;
-      component.style.left = leftPosition;
-      component.style.right = rightPosition;
-      component.style.bottom = bottomPosition;
-      return;
-    }
-
-    if (component.hasAttribute("data-skip-positioning")) {
-      return;
-    }
-
-    component.style.top = topPosition;
-    component.style.left = leftPosition;
-    component.style.right = rightPosition;
-    component.style.bottom = bottomPosition;
-  }
-
   function triggerComponentInit(selector) {
     switch (selector) {
       case "#full-screen-monitoring":
@@ -688,95 +623,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function observeHeaderAndSidebar() {
-    const header = document.querySelector(SELECTORS.header);
-    if (header) {
-      const headerObserver = new MutationObserver(handleStateChange);
-      headerObserver.observe(header, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-    }
-
-    const sidebar = document.querySelector(SELECTORS.sidebar);
-    if (sidebar) {
-      const sidebarObserver = new MutationObserver(handleStateChange);
-      sidebarObserver.observe(sidebar, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-
-      document.querySelectorAll(SELECTORS.sidebarContent).forEach((content) => {
-        const contentObserver = new MutationObserver(handleStateChange);
-        contentObserver.observe(content, {
-          attributes: true,
-          attributeFilter: ["class"],
-        });
-      });
-    }
-  }
-
-  function handleStateChange() {
+  function handleComponentStateChange() {
     if (currentOpenComponent) {
       const component = document.querySelector(currentOpenComponent);
       if (component) {
-        positionComponent(component);
+        positionComponents(component);
       }
     }
 
+    // Handle infrastructure locations
     const locationsList = document.querySelectorAll(
       ".infrastructure-locations, #full-screen-locations-list, #list-all-infrastructure"
     );
-    locationsList.forEach((list) => {
-      if (
-        list &&
-        (list.style.display === "block" || list.classList.contains("visible"))
-      ) {
-        positionComponent(list);
+    locationsList.forEach(list => {
+      if (list && (list.style.display === "block" || list.classList.contains("visible"))) {
+        positionComponents(list);
       }
     });
 
-    // Also handle sites modal repositioning
+    // Handle sites modal
     const sitesModal = document.querySelector("#sites-modal");
     if (sitesModal && sitesModal.style.display === "block") {
-      positionComponent(sitesModal);
+      positionComponents(sitesModal);
     }
-  }
-
-  function setupWindowResizeHandler() {
-    let resizeTimeout;
-
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimeout);
-
-      resizeTimeout = setTimeout(function () {
-        if (currentOpenComponent) {
-          const component = document.querySelector(currentOpenComponent);
-          if (component) {
-            positionComponent(component);
-          }
-        }
-
-        const locationsList = document.querySelectorAll(
-          ".infrastructure-locations, #full-screen-locations-list, #list-all-infrastructure"
-        );
-        locationsList.forEach((list) => {
-          if (
-            list &&
-            (list.style.display === "block" ||
-              list.classList.contains("visible"))
-          ) {
-            positionComponent(list);
-          }
-        });
-
-        // Handle sites modal resize
-        const sitesModal = document.querySelector("#sites-modal");
-        if (sitesModal && sitesModal.style.display === "block") {
-          positionComponent(sitesModal);
-        }
-      }, 250);
-    });
   }
 
   document.addEventListener("showLiveFeedCard", function (e) {

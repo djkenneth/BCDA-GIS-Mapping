@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.cssText = `
         position: fixed;
         background-color: #080f17;
-        z-index: 1000;
+        z-index: 9;
         color: white;
         display: none;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -549,7 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.padding = "0";
       modal.style.borderRadius = "0";
       modal.style.border = "none";
-      modal.style.zIndex = "1000";
+      modal.style.zIndex = "499";
       modal.classList.add("full-screen");
 
       // Prevent body scroll on mobile
@@ -563,17 +563,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
-    let topPosition = "284px";
+    let topPosition = "270px";
     let leftPosition = "60px";
 
     if (header && header.classList.contains("collapsed")) {
       topPosition = "0px";
     } else {
-      topPosition = "284px";
+      topPosition = "270px";
     }
 
     if (sidebarContent && sidebarContent.classList.contains("visible")) {
-      leftPosition = "380px";
+      leftPosition = "360px";
     } else {
       leftPosition = "60px";
     }
