@@ -681,13 +681,13 @@ header.collapsed ~ .map-container {
   }
 
   .sidebar-content {
-    top: 258px;
-    height: calc(100vh - 258px);
+    top: 236px;
+    height: calc(100vh - 236px);
   }
 
   .sidebar {
-    top: 258px;
-    height: calc(100vh - 258px);
+    top: 236px;
+    height: calc(100vh - 236px);
   }
 }
 

@@ -150,7 +150,7 @@ function positionComponents(elements, options = {}) {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {
-        topPosition = "258px";
+        topPosition = "236px";
       }
 
       if (sidebar) {
