@@ -245,29 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "all-sustainability-environment": "sustainability-environment",
     };
 
-    // if (checkboxId === "all") {
-    //   allCategories.forEach((categoryId) => {
-    //     Object.values(markersByCategory[categoryId]).forEach(
-    //       (subcategoryMarkers) => {
-    //         subcategoryMarkers.forEach((marker) => {
-    //           if (isChecked) {
-    //             markersLayer.push(marker);
-    //             marker.addTo(map);
-    //             visibleMarkers.add(marker);
-    //           } else {
-    //             const index = markersLayer.indexOf(marker);
-    //             if (index > -1) markersLayer.splice(index, 1);
-    //             marker.remove();
-    //             visibleMarkers.delete(marker);
-    //           }
-    //         });
-    //       }
-    //     );
-    //   });
-
-    //   return;
-    // }
-
     if (categoryMasterCheckboxes[checkboxId]) {
 
       const categoryId = categoryMasterCheckboxes[checkboxId];
