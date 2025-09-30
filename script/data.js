@@ -3663,7 +3663,7 @@ const mapMarkers = [
       {
         id: "clark_205",
         name: "Venture Corporation Philippines Clark",
-        location: [15.2175, 120.5925],
+        location: [15.179972, 120.525142],
         lotSize: "42.8 hectares",
         leaseExpiry: "November 2044",
         employees: "5,450",
@@ -4998,8 +4998,6 @@ const mapMarkers = [
         description:
           "Precision optics for medical and industrial applications.",
       },
-
-      // Precision Measuring Instruments
       {
         id: "clark_318",
         name: "Mitutoyo Philippines Clark Plant",
@@ -5634,7 +5632,1487 @@ const mapMarkers = [
         description: "Water heating and HVAC equipment manufacturing.",
       },
 
-      // Science Park of the Philippines Inc.
+      {
+        id: "clark_373",
+        name: "Toro Philippines Clark Manufacturing",
+        location: [15.3015, 120.6765],
+        lotSize: "22.8 hectares",
+        leaseExpiry: "May 2042",
+        employees: "1,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Lawn mowers and outdoor power equipment manufacturing.",
+      },
+
+      // Packaging Equipment & Systems
+      {
+        id: "clark_374",
+        name: "Tetra Pak Philippines Clark Plant",
+        location: [15.302, 120.677],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "December 2044",
+        employees: "3,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Packaging systems and processing equipment for food and beverage.",
+      },
+      {
+        id: "clark_375",
+        name: "Krones Philippines Clark Facility",
+        location: [15.3025, 120.6775],
+        lotSize: "42.2 hectares",
+        leaseExpiry: "August 2043",
+        employees: "3,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Bottling and packaging systems for beverage industry.",
+      },
+      {
+        id: "clark_376",
+        name: "Sidel Philippines Clark Operations",
+        location: [15.303, 120.678],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,750",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "PET bottle production and liquid packaging systems.",
+      },
+      {
+        id: "clark_377",
+        name: "KHS Philippines Clark Plant",
+        location: [15.3035, 120.6785],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "October 2043",
+        employees: "2,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Filling and packaging equipment for beverage industry.",
+      },
+      {
+        id: "clark_378",
+        name: "GEA Philippines Clark Facility",
+        location: [15.304, 120.679],
+        lotSize: "45.8 hectares",
+        leaseExpiry: "February 2044",
+        employees: "3,350",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Food processing and packaging technology manufacturing.",
+      },
+      {
+        id: "clark_379",
+        name: "Alfa Laval Philippines Clark",
+        location: [15.3045, 120.6795],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "September 2042",
+        employees: "2,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Heat transfer and separation technology for food processing.",
+      },
+
+      // Industrial Filtration & Separation
+      {
+        id: "clark_380",
+        name: "Pall Corporation Philippines Clark",
+        location: [15.305, 120.68],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "May 2042",
+        employees: "2,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Filtration and separation systems for industrial applications.",
+      },
+      {
+        id: "clark_381",
+        name: "Parker Hannifin Filtration Clark",
+        location: [15.3055, 120.6805],
+        lotSize: "25.8 hectares",
+        leaseExpiry: "November 2041",
+        employees: "1,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Industrial filtration systems and fluid control.",
+      },
+      {
+        id: "clark_382",
+        name: "Donaldson Philippines Clark Plant",
+        location: [15.306, 120.681],
+        lotSize: "32.8 hectares",
+        leaseExpiry: "March 2043",
+        employees: "2,350",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Air and liquid filtration systems for industrial use.",
+      },
+      {
+        id: "clark_383",
+        name: "MANN+HUMMEL Philippines Clark",
+        location: [15.3065, 120.6815],
+        lotSize: "28.5 hectares",
+        leaseExpiry: "July 2042",
+        employees: "2,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Filtration solutions for automotive and industrial applications.",
+      },
+
+      {
+        id: "clark_384",
+        name: "Clarcor Industrial Air Philippines",
+        location: [15.307, 120.682],
+        lotSize: "22.5 hectares",
+        leaseExpiry: "January 2042",
+        employees: "1,750",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Industrial air filtration and emissions control systems.",
+      },
+
+      // Bearings & Linear Motion Systems
+      {
+        id: "clark_385",
+        name: "SKF Philippines Clark Bearing Plant",
+        location: [15.3075, 120.6825],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "December 2044",
+        employees: "3,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Bearings, seals, and lubrication systems manufacturing.",
+      },
+      {
+        id: "clark_386",
+        name: "NSK Philippines Clark Factory",
+        location: [15.308, 120.683],
+        lotSize: "42.8 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Precision bearings and automotive components manufacturing.",
+      },
+      {
+        id: "clark_387",
+        name: "NTN Corporation Philippines Clark",
+        location: [15.3085, 120.6835],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Ball bearings and constant velocity joints manufacturing.",
+      },
+      {
+        id: "clark_388",
+        name: "Schaeffler Philippines Clark Operations",
+        location: [15.309, 120.684],
+        lotSize: "45.2 hectares",
+        leaseExpiry: "October 2044",
+        employees: "3,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Rolling bearings and automotive components.",
+      },
+      {
+        id: "clark_389",
+        name: "JTEKT Philippines Clark Plant",
+        location: [15.3095, 120.6845],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "February 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Bearings and steering systems for automotive applications.",
+      },
+      {
+        id: "clark_390",
+        name: "Timken Philippines Clark Facility",
+        location: [15.31, 120.685],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "September 2042",
+        employees: "2,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Tapered roller bearings and power transmission products.",
+      },
+      {
+        id: "clark_391",
+        name: "THK Philippines Clark Linear Motion",
+        location: [15.3105, 120.6855],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "May 2042",
+        employees: "2,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Linear motion systems and ball screws manufacturing.",
+      },
+
+      // Industrial Chains & Belts
+      {
+        id: "clark_392",
+        name: "Rexnord Philippines Clark Plant",
+        location: [15.311, 120.686],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "November 2043",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Industrial chains and power transmission products.",
+      },
+      {
+        id: "clark_393",
+        name: "Tsubaki Philippines Clark Operations",
+        location: [15.3115, 120.6865],
+        lotSize: "35.2 hectares",
+        leaseExpiry: "March 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Industrial chains and automotive timing chains.",
+      },
+      {
+        id: "clark_394",
+        name: "Gates Corporation Philippines Clark",
+        location: [15.312, 120.687],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "July 2044",
+        employees: "3,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Power transmission belts and hydraulic hoses.",
+      },
+      {
+        id: "clark_395",
+        name: "Continental ContiTech Philippines Clark",
+        location: [15.3125, 120.6875],
+        lotSize: "48.8 hectares",
+        leaseExpiry: "December 2044",
+        employees: "3,550",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Industrial belts and conveyor systems manufacturing.",
+      },
+      {
+        id: "clark_396",
+        name: "Habasit Philippines Clark Facility",
+        location: [15.313, 120.688],
+        lotSize: "25.8 hectares",
+        leaseExpiry: "August 2042",
+        employees: "1,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Conveyor belts and power transmission belts.",
+      },
+
+      // Material Handling Equipment
+      {
+        id: "clark_397",
+        name: "Toyota Material Handling Clark",
+        location: [15.3135, 120.6885],
+        lotSize: "55.5 hectares",
+        leaseExpiry: "December 2045",
+        employees: "4,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Forklifts and warehouse equipment manufacturing.",
+      },
+      {
+        id: "clark_398",
+        name: "Jungheinrich Philippines Clark",
+        location: [15.314, 120.689],
+        lotSize: "42.2 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Warehouse trucks and automated storage systems.",
+      },
+      {
+        id: "clark_399",
+        name: "Crown Equipment Philippines Clark",
+        location: [15.3145, 120.6895],
+        lotSize: "38.8 hectares",
+        leaseExpiry: "June 2044",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Electric forklifts and material handling equipment.",
+      },
+      {
+        id: "clark_400",
+        name: "Kion Group Philippines Clark",
+        location: [15.315, 120.69],
+        lotSize: "45.5 hectares",
+        leaseExpiry: "October 2044",
+        employees: "3,350",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Warehouse equipment and supply chain solutions.",
+      },
+
+      {
+        id: "clark_401",
+        name: "Hyster-Yale Clark Philippines",
+        location: [15.3155, 120.6905],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "February 2043",
+        employees: "2,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Lift trucks and material handling equipment manufacturing.",
+      },
+      {
+        id: "clark_402",
+        name: "Raymond Philippines Clark Plant",
+        location: [15.316, 120.691],
+        lotSize: "28.8 hectares",
+        leaseExpiry: "September 2042",
+        employees: "2,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Narrow-aisle forklifts and warehouse optimization solutions.",
+      },
+      {
+        id: "clark_403",
+        name: "Mitsubishi Logisnext Clark",
+        location: [15.3165, 120.6915],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "May 2044",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Forklifts and automated guided vehicles manufacturing.",
+      },
+
+      // Industrial Refrigeration & Cooling
+      {
+        id: "clark_404",
+        name: "Danfoss Philippines Clark Cooling",
+        location: [15.317, 120.692],
+        lotSize: "45.8 hectares",
+        leaseExpiry: "December 2044",
+        employees: "3,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Industrial refrigeration and cooling systems manufacturing.",
+      },
+      {
+        id: "clark_405",
+        name: "Emerson Climate Technologies Clark",
+        location: [15.3175, 120.6925],
+        lotSize: "42.2 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Compressors and controls for refrigeration applications.",
+      },
+      {
+        id: "clark_406",
+        name: "Johnson Controls Clark HVAC-R",
+        location: [15.318, 120.693],
+        lotSize: "52.5 hectares",
+        leaseExpiry: "November 2045",
+        employees: "3,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "HVAC and refrigeration equipment for commercial applications.",
+      },
+      {
+        id: "clark_407",
+        name: "Bitzer Philippines Clark Facility",
+        location: [15.3185, 120.6935],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Refrigeration compressors for industrial applications.",
+      },
+      {
+        id: "clark_408",
+        name: "Hussmann Philippines Clark Plant",
+        location: [15.319, 120.694],
+        lotSize: "28.5 hectares",
+        leaseExpiry: "October 2042",
+        employees: "2,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Commercial refrigeration systems for retail and food service.",
+      },
+
+      // Printing & Imaging Equipment
+      {
+        id: "clark_409",
+        name: "HP Inc Philippines Clark Imaging",
+        location: [15.3195, 120.6945],
+        lotSize: "58.5 hectares",
+        leaseExpiry: "December 2046",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Printers and imaging equipment manufacturing facility.",
+      },
+      {
+        id: "clark_410",
+        name: "Canon Philippines Clark Printer Plant",
+        location: [15.32, 120.695],
+        lotSize: "48.2 hectares",
+        leaseExpiry: "August 2045",
+        employees: "4,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Office printers and multifunction devices manufacturing.",
+      },
+      {
+        id: "clark_411",
+        name: "Epson Philippines Clark Factory",
+        location: [15.3205, 120.6955],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "June 2045",
+        employees: "3,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Inkjet printers and projectors manufacturing facility.",
+      },
+      {
+        id: "clark_412",
+        name: "Brother Industries Clark Plant",
+        location: [15.321, 120.696],
+        lotSize: "35.2 hectares",
+        leaseExpiry: "October 2044",
+        employees: "2,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Printers, multifunction devices, and industrial machines.",
+      },
+      {
+        id: "clark_413",
+        name: "Xerox Philippines Clark Operations",
+        location: [15.3215, 120.6965],
+        lotSize: "38.8 hectares",
+        leaseExpiry: "February 2045",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Document technology and business services equipment.",
+      },
+      {
+        id: "clark_414",
+        name: "Ricoh Philippines Clark Facility",
+        location: [15.322, 120.697],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "September 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Office imaging equipment and digital services solutions.",
+      },
+
+      // Laboratory & Scientific Equipment
+      {
+        id: "clark_415",
+        name: "Thermo Fisher Scientific Clark",
+        location: [15.3225, 120.6975],
+        lotSize: "45.8 hectares",
+        leaseExpiry: "December 2045",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Laboratory equipment and scientific instruments manufacturing.",
+      },
+      {
+        id: "clark_416",
+        name: "Agilent Technologies Philippines Clark",
+        location: [15.323, 120.698],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Life sciences and diagnostics equipment manufacturing.",
+      },
+      {
+        id: "clark_417",
+        name: "Waters Corporation Philippines Clark",
+        location: [15.3235, 120.6985],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,350",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Chromatography and mass spectrometry systems.",
+      },
+      {
+        id: "clark_418",
+        name: "PerkinElmer Philippines Clark Plant",
+        location: [15.324, 120.699],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "October 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Analytical instruments and diagnostic solutions.",
+      },
+      {
+        id: "clark_419",
+        name: "Bruker Philippines Clark Facility",
+        location: [15.3245, 120.6995],
+        lotSize: "25.8 hectares",
+        leaseExpiry: "February 2043",
+        employees: "2,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Scientific instruments for materials research and diagnostics.",
+      },
+
+      // Medical Equipment & Devices
+      {
+        id: "clark_420",
+        name: "Medtronic Philippines Clark Medical",
+        location: [15.325, 120.7],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "December 2046",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Medical devices and therapeutic solutions manufacturing.",
+      },
+      {
+        id: "clark_421",
+        name: "GE Healthcare Philippines Clark",
+        location: [15.3255, 120.7005],
+        lotSize: "52.8 hectares",
+        leaseExpiry: "August 2046",
+        employees: "4,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Medical imaging equipment and healthcare IT solutions.",
+      },
+      {
+        id: "clark_422",
+        name: "Siemens Healthineers Clark Plant",
+        location: [15.326, 120.701],
+        lotSize: "45.2 hectares",
+        leaseExpiry: "June 2045",
+        employees: "3,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Diagnostic imaging and laboratory diagnostics equipment.",
+      },
+      {
+        id: "clark_423",
+        name: "Philips Healthcare Philippines Clark",
+        location: [15.3265, 120.7015],
+        lotSize: "42.8 hectares",
+        leaseExpiry: "October 2045",
+        employees: "3,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Medical systems and patient monitoring equipment.",
+      },
+      {
+        id: "clark_424",
+        name: "Stryker Philippines Clark Facility",
+        location: [15.327, 120.702],
+        lotSize: "35.5 hectares",
+        leaseExpiry: "February 2045",
+        employees: "3,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Surgical equipment and orthopedic implants manufacturing.",
+      },
+      {
+        id: "clark_425",
+        name: "Boston Scientific Clark Plant",
+        location: [15.3275, 120.7025],
+        lotSize: "38.2 hectares",
+        leaseExpiry: "September 2044",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Medical devices for cardiovascular and endoscopy applications.",
+      },
+      {
+        id: "clark_426",
+        name: "Becton Dickinson Philippines Clark",
+        location: [15.328, 120.703],
+        lotSize: "32.8 hectares",
+        leaseExpiry: "May 2044",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Medical supplies and diagnostic products manufacturing.",
+      },
+
+      // Dental Equipment & Supplies
+      {
+        id: "clark_427",
+        name: "Dentsply Sirona Philippines Clark",
+        location: [15.3285, 120.7035],
+        lotSize: "28.5 hectares",
+        leaseExpiry: "November 2043",
+        employees: "2,350",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Dental equipment and consumables manufacturing.",
+      },
+      {
+        id: "clark_428",
+        name: "Ivoclar Vivadent Philippines Clark",
+        location: [15.329, 120.704],
+        lotSize: "22.8 hectares",
+        leaseExpiry: "March 2043",
+        employees: "1,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description:
+          "Dental materials and equipment for restorative dentistry.",
+      },
+
+      // Optical & Eyewear Manufacturing
+      {
+        id: "clark_429",
+        name: "Essilor Philippines Clark Lens Plant",
+        location: [15.3295, 120.7045],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "December 2044",
+        employees: "3,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Optical lenses and eyewear manufacturing facility.",
+      },
+      {
+        id: "clark_430",
+        name: "Luxottica Philippines Clark Factory",
+        location: [15.33, 120.705],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "August 2043",
+        employees: "2,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Eyewear frames and sunglasses manufacturing.",
+      },
+      {
+        id: "clark_431",
+        name: "Safilo Philippines Clark Operations",
+        location: [15.3305, 120.7055],
+        lotSize: "22.5 hectares",
+        leaseExpiry: "June 2042",
+        employees: "1,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Eyewear design and manufacturing for global brands.",
+      },
+
+      // Watch & Timepiece Manufacturing
+      {
+        id: "clark_432",
+        name: "Seiko Philippines Clark Watch Plant",
+        location: [15.331, 120.706],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "December 2044",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Watch movements and timepiece assembly facility.",
+      },
+      {
+        id: "clark_433",
+        name: "Citizen Watch Philippines Clark",
+        location: [15.3315, 120.7065],
+        lotSize: "28.8 hectares",
+        leaseExpiry: "August 2043",
+        employees: "2,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Watch manufacturing and precision timekeeping devices.",
+      },
+      {
+        id: "clark_434",
+        name: "Casio Philippines Clark Factory",
+        location: [15.332, 120.707],
+        lotSize: "35.2 hectares",
+        leaseExpiry: "October 2044",
+        employees: "3,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Digital watches and electronic timepieces manufacturing.",
+      },
+
+      // Jewelry & Precious Metals
+      {
+        id: "clark_435",
+        name: "Tanishq Philippines Clark Jewelry",
+        location: [15.3325, 120.7075],
+        lotSize: "18.5 hectares",
+        leaseExpiry: "June 2042",
+        employees: "1,550",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Gold and diamond jewelry manufacturing and finishing.",
+      },
+      {
+        id: "clark_436",
+        name: "Pandora Philippines Clark Plant",
+        location: [15.333, 120.708],
+        lotSize: "22.8 hectares",
+        leaseExpiry: "September 2043",
+        employees: "1,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Hand-finished jewelry manufacturing facility.",
+      },
+      {
+        id: "clark_437",
+        name: "Nike Philippines Clark Factory",
+        location: [15.3335, 120.7085],
+        lotSize: "65.5 hectares",
+        leaseExpiry: "December 2047",
+        employees: "8,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Athletic footwear and sports apparel manufacturing.",
+      },
+      {
+        id: "clark_438",
+        name: "Adidas Philippines Clark Plant",
+        location: [15.156, 120.526],
+        lotSize: "58.2 hectares",
+        leaseExpiry: "August 2046",
+        employees: "7,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Sports shoes and athletic gear manufacturing facility.",
+      },
+      {
+        id: "clark_439",
+        name: "Puma Philippines Clark Operations",
+        location: [15.1565, 120.5265],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "June 2045",
+        employees: "5,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Athletic footwear and sportswear manufacturing.",
+      },
+      {
+        id: "clark_440",
+        name: "Under Armour Philippines Clark",
+        location: [15.157, 120.527],
+        lotSize: "38.8 hectares",
+        leaseExpiry: "October 2044",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Performance apparel and footwear manufacturing.",
+      },
+      {
+        id: "clark_441",
+        name: "New Balance Philippines Clark Plant",
+        location: [15.1575, 120.5275],
+        lotSize: "35.2 hectares",
+        leaseExpiry: "February 2044",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Athletic shoes and sports apparel manufacturing.",
+      },
+      {
+        id: "clark_442",
+        name: "Mizuno Philippines Clark Factory",
+        location: [15.158, 120.528],
+        lotSize: "28.5 hectares",
+        leaseExpiry: "September 2043",
+        employees: "3,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Sports equipment and athletic footwear manufacturing.",
+      },
+      {
+        id: "clark_443",
+        name: "Asics Philippines Clark Operations",
+        location: [15.1585, 120.5285],
+        lotSize: "32.8 hectares",
+        leaseExpiry: "May 2044",
+        employees: "3,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Running shoes and sports performance gear manufacturing.",
+      },
+      
+      // Outdoor & Recreation Equipment
+      {
+        id: "clark_444",
+        name: "Decathlon Philippines Clark Plant",
+        location: [15.159, 120.529],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "December 2045",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Sports equipment and outdoor gear manufacturing.",
+      },
+      {
+        id: "clark_445",
+        name: "Columbia Sportswear Clark Factory",
+        location: [15.1595, 120.5295],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "August 2044",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Outdoor apparel and footwear manufacturing facility.",
+      },
+      {
+        id: "clark_446",
+        name: "The North Face Philippines Clark",
+        location: [15.16, 120.53],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "June 2044",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Outdoor clothing and equipment manufacturing.",
+      },
+      {
+        id: "clark_447",
+        name: "Patagonia Philippines Clark Plant",
+        location: [15.1605, 120.5305],
+        lotSize: "25.8 hectares",
+        leaseExpiry: "October 2043",
+        employees: "2,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Sustainable outdoor apparel manufacturing facility.",
+      },
+      
+      // Bicycle & Cycling Equipment
+      {
+        id: "clark_448",
+        name: "Giant Manufacturing Philippines Clark",
+        location: [15.161, 120.531],
+        lotSize: "58.5 hectares",
+        leaseExpiry: "December 2046",
+        employees: "6,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Bicycle frames and complete bikes manufacturing.",
+      },
+      {
+        id: "clark_449",
+        name: "Trek Bicycle Philippines Clark",
+        location: [15.1615, 120.5315],
+        lotSize: "45.2 hectares",
+        leaseExpiry: "August 2045",
+        employees: "5,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "High-performance bicycles and cycling equipment.",
+      },
+      {
+        id: "clark_450",
+        name: "Shimano Philippines Clark Factory",
+        location: [15.162, 120.532],
+        lotSize: "52.8 hectares",
+        leaseExpiry: "November 2045",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Bicycle components and cycling gear manufacturing.",
+      },
+      {
+        id: "clark_451",
+        name: "SRAM Philippines Clark Operations",
+        location: [15.1625, 120.5325],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "June 2044",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Bicycle drivetrains and braking systems manufacturing.",
+      },
+      
+      // Fitness Equipment Manufacturing
+      {
+        id: "clark_452",
+        name: "Life Fitness Philippines Clark Plant",
+        location: [15.163, 120.533],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "December 2044",
+        employees: "4,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Commercial fitness equipment manufacturing facility.",
+      },
+      {
+        id: "clark_453",
+        name: "Technogym Philippines Clark Factory",
+        location: [15.1635, 120.5335],
+        lotSize: "38.2 hectares",
+        leaseExpiry: "August 2044",
+        employees: "4,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Gym equipment and fitness solutions manufacturing.",
+      },
+      {
+        id: "clark_454",
+        name: "Precor Philippines Clark Operations",
+        location: [15.164, 120.534],
+        lotSize: "32.8 hectares",
+        leaseExpiry: "June 2043",
+        employees: "3,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Cardio and strength training equipment manufacturing.",
+      },
+      
+      // Musical Instruments Manufacturing
+      {
+        id: "clark_455",
+        name: "Yamaha Philippines Clark Music Plant",
+        location: [15.1645, 120.5345],
+        lotSize: "45.8 hectares",
+        leaseExpiry: "December 2045",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Musical instruments and audio equipment manufacturing.",
+      },
+      {
+        id: "clark_456",
+        name: "Roland Philippines Clark Factory",
+        location: [15.165, 120.535],
+        lotSize: "35.5 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Electronic musical instruments and pro audio gear.",
+      },
+      {
+        id: "clark_457",
+        name: "Fender Philippines Clark Plant",
+        location: [15.1655, 120.5355],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Electric guitars and amplifiers manufacturing facility.",
+      },
+      {
+        id: "clark_458",
+        name: "Kawai Philippines Clark Operations",
+        location: [15.166, 120.536],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "October 2043",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Pianos and digital musical instruments manufacturing.",
+      },
+      
+      // Toys & Games Manufacturing
+      {
+        id: "clark_459",
+        name: "Mattel Philippines Clark Factory",
+        location: [15.1665, 120.5365],
+        lotSize: "52.5 hectares",
+        leaseExpiry: "December 2046",
+        employees: "6,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Toys and children's products manufacturing facility.",
+      },
+      {
+        id: "clark_460",
+        name: "Hasbro Philippines Clark Plant",
+        location: [15.167, 120.537],
+        lotSize: "45.8 hectares",
+        leaseExpiry: "August 2045",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Toys, games, and entertainment products manufacturing.",
+      },
+      {
+        id: "clark_461",
+        name: "LEGO Philippines Clark Operations",
+        location: [15.1675, 120.5375],
+        lotSize: "58.2 hectares",
+        leaseExpiry: "November 2046",
+        employees: "7,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Construction toys and building sets manufacturing.",
+      },
+      {
+        id: "clark_462",
+        name: "Bandai Philippines Clark Factory",
+        location: [15.168, 120.538],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "June 2044",
+        employees: "4,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Action figures and character toys manufacturing.",
+      },
+      {
+        id: "clark_463",
+        name: "Ravensburger Philippines Clark Plant",
+        location: [15.1685, 120.5385],
+        lotSize: "28.8 hectares",
+        leaseExpiry: "October 2043",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Puzzles and educational games manufacturing facility.",
+      },
+      
+      // Office Furniture & Fixtures
+      {
+        id: "clark_464",
+        name: "Steelcase Philippines Clark Plant",
+        location: [15.169, 120.539],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "December 2045",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Office furniture and workspace solutions manufacturing.",
+      },
+      {
+        id: "clark_465",
+        name: "Herman Miller Philippines Clark",
+        location: [15.1695, 120.5395],
+        lotSize: "42.2 hectares",
+        leaseExpiry: "August 2044",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Ergonomic office furniture and seating systems.",
+      },
+      {
+        id: "clark_466",
+        name: "Haworth Philippines Clark Factory",
+        location: [15.17, 120.54],
+        lotSize: "38.8 hectares",
+        leaseExpiry: "June 2044",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Office furniture and architectural interiors manufacturing.",
+      },
+      {
+        id: "clark_467",
+        name: "Kimball International Clark Plant",
+        location: [15.1705, 120.5405],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "October 2043",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Commercial furniture and workspace solutions.",
+      },
+      {
+        id: "clark_468",
+        name: "Knoll Philippines Clark Operations",
+        location: [15.171, 120.541],
+        lotSize: "28.5 hectares",
+        leaseExpiry: "February 2043",
+        employees: "2,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Modern office furniture and interior design solutions.",
+      },
+      
+      // Home Furniture Manufacturing
+      {
+        id: "clark_469",
+        name: "IKEA Philippines Clark Production",
+        location: [15.1715, 120.5415],
+        lotSize: "85.5 hectares",
+        leaseExpiry: "December 2048",
+        employees: "9,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Ready-to-assemble furniture manufacturing facility.",
+      },
+      {
+        id: "clark_470",
+        name: "Ashley Furniture Clark Plant",
+        location: [15.172, 120.542],
+        lotSize: "65.2 hectares",
+        leaseExpiry: "August 2046",
+        employees: "7,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Home furniture and bedding products manufacturing.",
+      },
+      {
+        id: "clark_471",
+        name: "La-Z-Boy Philippines Clark Factory",
+        location: [15.1725, 120.5425],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "June 2045",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Upholstered furniture and reclining chairs manufacturing.",
+      },
+      {
+        id: "clark_472",
+        name: "Ethan Allen Philippines Clark",
+        location: [15.173, 120.543],
+        lotSize: "38.2 hectares",
+        leaseExpiry: "October 2044",
+        employees: "4,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Classic and contemporary furniture manufacturing.",
+      },
+      
+      // Mattress & Bedding Manufacturing
+      {
+        id: "clark_473",
+        name: "Tempur Sealy Philippines Clark",
+        location: [15.1735, 120.5435],
+        lotSize: "52.8 hectares",
+        leaseExpiry: "December 2046",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Mattresses and bedding products manufacturing facility.",
+      },
+      {
+        id: "clark_474",
+        name: "Serta Simmons Philippines Clark",
+        location: [15.174, 120.544],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "August 2045",
+        employees: "5,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Premium mattresses and sleep products manufacturing.",
+      },
+      {
+        id: "clark_475",
+        name: "Sleep Number Philippines Clark Plant",
+        location: [15.1745, 120.5445],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "June 2044",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Smart beds and sleep technology manufacturing.",
+      },
+      
+      // Kitchen & Cookware Manufacturing
+      {
+        id: "clark_476",
+        name: "Newell Brands Philippines Clark",
+        location: [15.175, 120.545],
+        lotSize: "45.2 hectares",
+        leaseExpiry: "December 2044",
+        employees: "4,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Kitchen appliances and cookware manufacturing facility.",
+      },
+      {
+        id: "clark_477",
+        name: "Meyer Corporation Clark Plant",
+        location: [15.1755, 120.5455],
+        lotSize: "38.5 hectares",
+        leaseExpiry: "August 2044",
+        employees: "3,950",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Cookware and bakeware manufacturing operations.",
+      },
+      {
+        id: "clark_478",
+        name: "Zwilling J.A. Henckels Clark",
+        location: [15.176, 120.546],
+        lotSize: "28.2 hectares",
+        leaseExpiry: "June 2043",
+        employees: "2,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Cutlery and kitchen tools manufacturing facility.",
+      },
+      {
+        id: "clark_479",
+        name: "Le Creuset Philippines Clark",
+        location: [15.1765, 120.5465],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "October 2043",
+        employees: "3,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Enameled cast iron cookware manufacturing.",
+      },
+      
+      // Lighting & Fixtures Manufacturing
+      {
+        id: "clark_480",
+        name: "Philips Lighting Philippines Clark",
+        location: [15.177, 120.547],
+        lotSize: "58.5 hectares",
+        leaseExpiry: "December 2046",
+        employees: "6,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "LED lighting and smart lighting systems manufacturing.",
+      },
+      {
+        id: "clark_481",
+        name: "Osram Philippines Clark Factory",
+        location: [15.1775, 120.5475],
+        lotSize: "48.2 hectares",
+        leaseExpiry: "August 2045",
+        employees: "5,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Lighting solutions and automotive lighting manufacturing.",
+      },
+      {
+        id: "clark_482",
+        name: "Cree Lighting Philippines Clark",
+        location: [15.178, 120.548],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "June 2045",
+        employees: "4,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "LED chips and lighting products manufacturing.",
+      },
+      {
+        id: "clark_483",
+        name: "Acuity Brands Philippines Clark",
+        location: [15.1785, 120.5485],
+        lotSize: "38.8 hectares",
+        leaseExpiry: "October 2044",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Commercial and industrial lighting solutions.",
+      },
+      {
+        id: "clark_484",
+        name: "Hubbell Lighting Clark Plant",
+        location: [15.179, 120.549],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "February 2044",
+        employees: "3,150",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Lighting fixtures and electrical products manufacturing.",
+      },
+      
+      // Glass & Ceramics Manufacturing
+      {
+        id: "clark_485",
+        name: "Corning Philippines Clark Glass Plant",
+        location: [15.1795, 120.5495],
+        lotSize: "65.5 hectares",
+        leaseExpiry: "December 2047",
+        employees: "6,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Specialty glass and ceramic materials manufacturing.",
+      },
+      {
+        id: "clark_486",
+        name: "Saint-Gobain Philippines Clark",
+        location: [15.18, 120.55],
+        lotSize: "58.2 hectares",
+        leaseExpiry: "August 2046",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Glass and ceramic products for construction and automotive.",
+      },
+      {
+        id: "clark_487",
+        name: "AGC Glass Philippines Clark Plant",
+        location: [15.1805, 120.5505],
+        lotSize: "72.8 hectares",
+        leaseExpiry: "November 2047",
+        employees: "7,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Architectural glass and automotive glazing manufacturing.",
+      },
+      {
+        id: "clark_488",
+        name: "Guardian Glass Philippines Clark",
+        location: [15.181, 120.551],
+        lotSize: "55.2 hectares",
+        leaseExpiry: "June 2046",
+        employees: "5,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Float glass and fabricated glass products manufacturing.",
+      },
+      {
+        id: "clark_489",
+        name: "NSG Group Philippines Clark Facility",
+        location: [15.1815, 120.5515],
+        lotSize: "48.5 hectares",
+        leaseExpiry: "October 2045",
+        employees: "4,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Architectural and automotive glass manufacturing.",
+      },
+      
+      // Textile & Fabric Manufacturing
+      {
+        id: "clark_490",
+        name: "Invista Philippines Clark Textile",
+        location: [15.182, 120.552],
+        lotSize: "85.5 hectares",
+        leaseExpiry: "December 2048",
+        employees: "9,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Synthetic fibers and textile materials manufacturing.",
+      },
+      {
+        id: "clark_491",
+        name: "Lenzing Philippines Clark Fiber Plant",
+        location: [15.1825, 120.5525],
+        lotSize: "78.2 hectares",
+        leaseExpiry: "August 2047",
+        employees: "8,050",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Specialty fibers and cellulosic fibers manufacturing.",
+      },
+      {
+        id: "clark_492",
+        name: "Milliken & Company Clark Facility",
+        location: [15.183, 120.553],
+        lotSize: "65.8 hectares",
+        leaseExpiry: "June 2047",
+        employees: "6,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Technical textiles and specialty chemicals manufacturing.",
+      },
+      {
+        id: "clark_493",
+        name: "Toray Industries Philippines Clark",
+        location: [15.1835, 120.5535],
+        lotSize: "95.2 hectares",
+        leaseExpiry: "November 2048",
+        employees: "10,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Advanced fibers and carbon fiber manufacturing.",
+      },
+      {
+        id: "clark_494",
+        name: "Teijin Philippines Clark Plant",
+        location: [15.184, 120.554],
+        lotSize: "72.5 hectares",
+        leaseExpiry: "March 2047",
+        employees: "7,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "High-performance fibers and composite materials.",
+      },
+      
+      // Leather Goods Manufacturing
+      {
+        id: "clark_495",
+        name: "Coach Philippines Clark Leather Plant",
+        location: [15.1845, 120.5545],
+        lotSize: "42.5 hectares",
+        leaseExpiry: "December 2045",
+        employees: "5,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Luxury leather goods and accessories manufacturing.",
+      },
+      {
+        id: "clark_496",
+        name: "Fossil Group Philippines Clark",
+        location: [15.185, 120.555],
+        lotSize: "35.8 hectares",
+        leaseExpiry: "August 2044",
+        employees: "4,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Leather accessories and fashion goods manufacturing.",
+      },
+      {
+        id: "clark_497",
+        name: "Samsonite Philippines Clark Factory",
+        location: [15.1855, 120.5555],
+        lotSize: "48.2 hectares",
+        leaseExpiry: "November 2045",
+        employees: "5,450",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Luggage and travel goods manufacturing facility.",
+      },
+      {
+        id: "clark_498",
+        name: "Tumi Philippines Clark Operations",
+        location: [15.186, 120.556],
+        lotSize: "32.5 hectares",
+        leaseExpiry: "June 2044",
+        employees: "3,850",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Premium luggage and business bags manufacturing.",
+      },
+      {
+        id: "clark_499",
+        name: "VF Corporation Philippines Clark",
+        location: [15.1865, 120.5565],
+        lotSize: "52.8 hectares",
+        leaseExpiry: "October 2045",
+        employees: "6,250",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Outdoor and lifestyle products manufacturing.",
+      },
+      {
+        id: "clark_500",
+        name: "Tapestry Inc Philippines Clark Plant",
+        location: [15.187, 120.557],
+        lotSize: "45.5 hectares",
+        leaseExpiry: "February 2045",
+        employees: "5,650",
+        status: "active_locators",
+        subcategory: "clark-freeport",
+        description: "Luxury fashion accessories and leather goods manufacturing.",
+      },
+
       {
         id: "ncc_01",
         name: "Science Park of the Philippines Inc.",
@@ -5647,8 +7125,6 @@ const mapMarkers = [
         description:
           "Research and development complex for science and technology innovation initiatives.",
       },
-
-      // Sojitz Corporation (Japan)
       {
         id: "ncc_02",
         name: "Sojitz Corporation Regional Office",
@@ -5661,8 +7137,6 @@ const mapMarkers = [
         description:
           "Japanese trading company regional headquarters for infrastructure development projects.",
       },
-
-      // Marubeni Corporation
       {
         id: "ncc_03",
         name: "Marubeni Corporation Philippines",
@@ -5675,8 +7149,6 @@ const mapMarkers = [
         description:
           "Japanese conglomerate focusing on power, infrastructure and urban development projects.",
       },
-
-      // Tokyo Electric Power Co.
       {
         id: "ncc_04",
         name: "Tokyo Electric Power Company (TEPCO)",
@@ -5689,8 +7161,6 @@ const mapMarkers = [
         description:
           "Power generation and smart grid technology development center for sustainable energy.",
       },
-
-      // Meralco (Power Infrastructure)
       {
         id: "ncc_05",
         name: "Meralco Power Infrastructure Hub",
@@ -5703,8 +7173,6 @@ const mapMarkers = [
         description:
           "National power distribution infrastructure and smart city electrical systems center.",
       },
-
-      // Aecom (Master Planning)
       {
         id: "ncc_06",
         name: "AECOM Master Planning Office",
@@ -5717,8 +7185,6 @@ const mapMarkers = [
         description:
           "Urban planning and infrastructure design consultancy for New Clark City development.",
       },
-
-      // Nikken Sekkei (Urban Design)
       {
         id: "ncc_07",
         name: "Nikken Sekkei Urban Design Center",
@@ -5731,8 +7197,6 @@ const mapMarkers = [
         description:
           "Japanese architectural firm specializing in sustainable urban design and smart city planning.",
       },
-
-      // NEDO (Japan)
       {
         id: "ncc_08",
         name: "NEDO Technology Development Office",
@@ -5745,8 +7209,6 @@ const mapMarkers = [
         description:
           "New Energy and Industrial Technology Development Organization research and innovation facility.",
       },
-
-      // Philippine Sports Commission (Athletes' Village)
       {
         id: "ncc_09",
         name: "Philippine Sports Commission Athletes' Village",
@@ -5759,8 +7221,6 @@ const mapMarkers = [
         description:
           "National sports training facility and athletes' residential complex for elite sports development.",
       },
-
-      // DPWH Regional Center
       {
         id: "ncc_10",
         name: "DPWH New Clark City Regional Center",
@@ -5773,7 +7233,6 @@ const mapMarkers = [
         description:
           "Department of Public Works and Highways regional headquarters for Central Luzon infrastructure projects.",
       },
-      // JP Morgan Chase & Co.
       {
         id: "bgc_01",
         name: "JP Morgan Chase & Co. Philippines",
@@ -5786,8 +7245,6 @@ const mapMarkers = [
         description:
           "Global financial services and investment banking operations center.",
       },
-
-      // Samsung Electronics Philippines
       {
         id: "bgc_02",
         name: "Samsung Electronics Philippines",
@@ -5800,8 +7257,6 @@ const mapMarkers = [
         description:
           "Southeast Asian headquarters for consumer electronics and mobile technology.",
       },
-
-      // Tesla Motors Philippines
       {
         id: "bgc_03",
         name: "Tesla Motors Philippines",
@@ -5814,8 +7269,6 @@ const mapMarkers = [
         description:
           "Electric vehicle sales, service center and charging infrastructure hub.",
       },
-
-      // Wells Fargo
       {
         id: "bgc_04",
         name: "Wells Fargo Philippines",
@@ -5828,8 +7281,6 @@ const mapMarkers = [
         description:
           "International banking operations and financial services center.",
       },
-
-      // Globe Telecom HQ
       {
         id: "bgc_05",
         name: "Globe Telecom Headquarters",
@@ -5842,8 +7293,6 @@ const mapMarkers = [
         description:
           "National telecommunications headquarters and network operations center.",
       },
-
-      // Unilever Philippines
       {
         id: "bgc_06",
         name: "Unilever Philippines",
@@ -5856,8 +7305,6 @@ const mapMarkers = [
         description:
           "Consumer goods manufacturing and distribution regional hub.",
       },
-
-      // Google Philippines
       {
         id: "bgc_07",
         name: "Google Philippines",
@@ -5870,8 +7317,6 @@ const mapMarkers = [
         description:
           "Technology innovation center and cloud services operations hub.",
       },
-
-      // Accenture
       {
         id: "bgc_08",
         name: "Accenture Philippines",
@@ -5884,8 +7329,6 @@ const mapMarkers = [
         description:
           "Business process outsourcing and digital transformation services center.",
       },
-
-      // Philippine Stock Exchange
       {
         id: "bgc_09",
         name: "Philippine Stock Exchange",
@@ -5898,8 +7341,6 @@ const mapMarkers = [
         description:
           "National stock exchange trading floor and financial market operations.",
       },
-
-      // Ayala Land / ALI Group
       {
         id: "bgc_10",
         name: "Ayala Land Inc. / ALI Group",
@@ -5912,7 +7353,6 @@ const mapMarkers = [
         description:
           "Real estate development headquarters and property management center.",
       },
-
       {
         id: "bgc_11",
         name: "Citibank Philippines Global Service Center",
@@ -5949,8 +7389,6 @@ const mapMarkers = [
         description:
           "Investment banking and corporate finance operations center.",
       },
-
-      // Technology & BPO Sector
       {
         id: "bgc_14",
         name: "IBM Philippines Innovation Center",
@@ -5999,8 +7437,6 @@ const mapMarkers = [
         description:
           "Cloud infrastructure services and technical support regional hub.",
       },
-
-      // Telecommunications & Media
       {
         id: "bgc_18",
         name: "Smart Communications Inc.",
@@ -6037,8 +7473,6 @@ const mapMarkers = [
         description:
           "Digital content creation and streaming services production facility.",
       },
-
-      // Real Estate & Development
       {
         id: "bgc_21",
         name: "Megaworld Corporation BGC Office",
@@ -6063,8 +7497,6 @@ const mapMarkers = [
         description:
           "Condominium development sales and after-sales services center.",
       },
-
-      // Healthcare & Pharmaceuticals
       {
         id: "bgc_23",
         name: "Pfizer Philippines Regional Office",
@@ -6089,8 +7521,6 @@ const mapMarkers = [
         description:
           "Healthcare products and medical devices distribution center.",
       },
-
-      // Consumer Goods & Retail
       {
         id: "bgc_25",
         name: "Procter & Gamble Philippines",
@@ -6115,8 +7545,6 @@ const mapMarkers = [
         description:
           "Food and beverage products distribution and marketing center.",
       },
-
-      // Retail & Fashion (from Annual Report mentions)
       {
         id: "bgc_27",
         name: "Atmos Flagship Store",
@@ -7079,8 +8507,6 @@ const mapMarkers = [
         subcategory: "bonifacio-global",
         description: "French cosmetics and beauty retailer with luxury brands.",
       },
-
-      // PART 4: Hotels & Hospitality (15 sites)
       {
         id: "bgc_109",
         name: "Shangri-La at The Fort Manila",
@@ -7253,8 +8679,6 @@ const mapMarkers = [
         subcategory: "bonifacio-global",
         description: "Intimate luxury hotel with personalized service.",
       },
-
-      // PART 5: Healthcare & Medical Centers (10 sites)
       {
         id: "bgc_124",
         name: "St. Luke's Medical Center BGC",
@@ -7322,7 +8746,7 @@ const mapMarkers = [
         leaseExpiry: "April 2035",
         employees: "120",
         status: "active_locators",
-        subtegory: "bonifacio-global",
+        subcategory: "bonifacio-global",
         description: "Comprehensive dental care center with modern equipment.",
       },
       {
@@ -7372,8 +8796,6 @@ const mapMarkers = [
         description:
           "Specialized sports injury treatment and rehabilitation center.",
       },
-
-      // PART 6: Educational & Training Institutions (10 sites)
       {
         id: "bgc_134",
         name: "British School Manila BGC Campus",
@@ -7490,8 +8912,6 @@ const mapMarkers = [
         description:
           "Technical and vocational training for various industries.",
       },
-
-      // PART 7: Financial Services & Fintech (15 sites)
       {
         id: "bgc_144",
         name: "GCash BGC Innovation Hub",
@@ -7667,8 +9087,6 @@ const mapMarkers = [
         subcategory: "bonifacio-global",
         description: "Private banking and wealth management services center.",
       },
-
-      // PART 8: Entertainment & Recreation (8 sites)
       {
         id: "bgc_159",
         name: "BGC Arts Center",
@@ -7763,8 +9181,6 @@ const mapMarkers = [
         subcategory: "bonifacio-global",
         description: "Family entertainment center with games and activities.",
       },
-
-      // PART 9: Government & Regulatory Offices (8 sites)
       {
         id: "bgc_167",
         name: "BSP BGC Financial Supervision",
@@ -7861,8 +9277,6 @@ const mapMarkers = [
         description:
           "Tourism Infrastructure and Enterprise Zone Authority promotion office.",
       },
-
-      // PART 10: Logistics & Transportation Services (8 sites)
       {
         id: "bgc_175",
         name: "LBC Express BGC Hub",
@@ -7954,8 +9368,6 @@ const mapMarkers = [
         description:
           "Same-day delivery and courier services for BGC businesses.",
       },
-
-      // PART 11: Professional Services (8 sites)
       {
         id: "bgc_183",
         name: "SGV & Co. BGC Office",
