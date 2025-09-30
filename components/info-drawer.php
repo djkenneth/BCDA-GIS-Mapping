@@ -10,7 +10,7 @@
         <div class="device-channel">
             <span>Device Channel:</span> <span id="device-channel"></span>
         </div>
-        <button class="action-btn primary portal-btn" id="view-portal-btn">View in Locator Portal</button>
+        <!-- <button class="action-btn primary portal-btn" id="view-portal-btn">View in Locator Portal</button> -->
     </div>
 
     <div id="drawer-content">

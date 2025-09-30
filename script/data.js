@@ -1183,7 +1183,7 @@ const mapMarkers = [
       {
         id: "clark_01",
         name: "Lufthansa Technik Philippines",
-        location: [15.1875, 120.5625],
+        location: [15.189423, 120.557812],
         lotSize: "12.5 hectares",
         leaseExpiry: "November 2035",
         employees: "2,400",
@@ -1197,7 +1197,7 @@ const mapMarkers = [
       {
         id: "clark_02",
         name: "UPS Philippines Distribution Center",
-        location: [15.188, 120.563],
+        location: [15.184567, 120.548934],
         lotSize: "8.2 hectares",
         leaseExpiry: "September 2032",
         employees: "1,200",
@@ -1211,7 +1211,7 @@ const mapMarkers = [
       {
         id: "clark_03",
         name: "FedEx Express Clark Hub",
-        location: [15.1835, 120.5575],
+        location: [15.192145, 120.561245],
         lotSize: "10.8 hectares",
         leaseExpiry: "March 2034",
         employees: "1,850",
@@ -1225,7 +1225,7 @@ const mapMarkers = [
       {
         id: "clark_04",
         name: "Yokohama Tire Philippines Manufacturing",
-        location: [15.185, 120.5585],
+        location: [15.186789, 120.552678],
         lotSize: "15.2 hectares",
         leaseExpiry: "July 2038",
         employees: "3,500",
@@ -1239,7 +1239,7 @@ const mapMarkers = [
       {
         id: "clark_05",
         name: "Texas Instruments Clark Facility",
-        location: [15.1865, 120.5605],
+        location: [15.190234, 120.545123],
         lotSize: "6.8 hectares",
         leaseExpiry: "December 2031",
         employees: "1,680",
@@ -1253,7 +1253,7 @@ const mapMarkers = [
       {
         id: "clark_06",
         name: "Samsung Electro-Mechanics Philippines",
-        location: [15.184, 120.557],
+        location: [15.183456, 120.559876],
         lotSize: "9.5 hectares",
         leaseExpiry: "August 2036",
         employees: "2,200",
@@ -1267,7 +1267,7 @@ const mapMarkers = [
       {
         id: "clark_07",
         name: "Nanox Philippines Manufacturing",
-        location: [15.1885, 120.5635],
+        location: [15.188901, 120.563421],
         lotSize: "4.2 hectares",
         leaseExpiry: "June 2029",
         employees: "890",
@@ -1281,7 +1281,7 @@ const mapMarkers = [
       {
         id: "clark_08",
         name: "SMC Infrastructure Development Hub",
-        location: [15.183, 120.5565],
+        location: [15.185678, 120.546789],
         lotSize: "7.8 hectares",
         leaseExpiry: "October 2033",
         employees: "1,450",
@@ -1295,7 +1295,7 @@ const mapMarkers = [
       {
         id: "clark_09",
         name: "Clark International Airport Corporation",
-        location: [15.1855, 120.561],
+        location: [15.191567, 120.554321],
         lotSize: "25.0 hectares",
         leaseExpiry: "Government Owned",
         employees: "3,800",
@@ -1309,7 +1309,7 @@ const mapMarkers = [
       {
         id: "clark_10",
         name: "Mitsubishi Motors Philippines Corporation",
-        location: [15.187, 120.5615],
+        location: [15.187234, 120.560987],
         lotSize: "18.5 hectares",
         leaseExpiry: "April 2037",
         employees: "2,950",
@@ -1321,7 +1321,7 @@ const mapMarkers = [
       {
         id: "clark_11",
         name: "Boeing Philippines Services",
-        location: [15.188, 120.563],
+        location: [15.18289, 120.549012],
         lotSize: "15.2 hectares",
         leaseExpiry: "December 2038",
         employees: "1,850",
@@ -1333,7 +1333,7 @@ const mapMarkers = [
       {
         id: "clark_12",
         name: "Airbus Asia Training Centre",
-        location: [15.1865, 120.5618],
+        location: [15.193456, 120.558765],
         lotSize: "8.7 hectares",
         leaseExpiry: "March 2035",
         employees: "650",
@@ -1345,7 +1345,7 @@ const mapMarkers = [
       {
         id: "clark_13",
         name: "Rolls-Royce Philippines",
-        location: [15.1885, 120.5635],
+        location: [15.184123, 120.551234],
         lotSize: "12.5 hectares",
         leaseExpiry: "November 2037",
         employees: "1,250",
@@ -1358,7 +1358,7 @@ const mapMarkers = [
       {
         id: "clark_14",
         name: "Intel Philippines Assembly Plant",
-        location: [15.1845, 120.5585],
+        location: [15.189678, 120.564098],
         lotSize: "18.9 hectares",
         leaseExpiry: "August 2040",
         employees: "3,200",
@@ -1370,7 +1370,7 @@ const mapMarkers = [
       {
         id: "clark_15",
         name: "Texas Instruments Clark Facility",
-        location: [15.185, 120.559],
+        location: [15.186345, 120.543567],
         lotSize: "14.5 hectares",
         leaseExpiry: "June 2036",
         employees: "2,850",
@@ -1384,7 +1384,7 @@ const mapMarkers = [
       {
         id: "clark_16",
         name: "Ford Philippines Manufacturing",
-        location: [15.184, 120.558],
+        location: [15.190789, 120.556432],
         lotSize: "22.8 hectares",
         leaseExpiry: "February 2039",
         employees: "2,950",
@@ -1396,7 +1396,7 @@ const mapMarkers = [
       {
         id: "clark_17",
         name: "Nissan Philippines Assembly",
-        location: [15.1835, 120.5575],
+        location: [15.185012, 120.562178],
         lotSize: "19.5 hectares",
         leaseExpiry: "September 2037",
         employees: "2,450",
@@ -1409,7 +1409,7 @@ const mapMarkers = [
       {
         id: "clark_18",
         name: "DHL Clark Gateway Hub",
-        location: [15.186, 120.561],
+        location: [15.191234, 120.54789],
         lotSize: "25.0 hectares",
         leaseExpiry: "January 2041",
         employees: "1,850",
@@ -1421,7 +1421,7 @@ const mapMarkers = [
       {
         id: "clark_19",
         name: "FedEx Clark Distribution Center",
-        location: [15.1865, 120.5615],
+        location: [15.188567, 120.555643],
         lotSize: "18.7 hectares",
         leaseExpiry: "April 2039",
         employees: "1,420",
@@ -1433,7 +1433,7 @@ const mapMarkers = [
       {
         id: "clark_20",
         name: "Maersk Clark Container Terminal",
-        location: [15.1875, 120.5625],
+        location: [15.183789, 120.559321],
         lotSize: "32.5 hectares",
         leaseExpiry: "October 2042",
         employees: "2,180",
@@ -1446,7 +1446,7 @@ const mapMarkers = [
       {
         id: "clark_21",
         name: "San Miguel Brewery Clark Plant",
-        location: [15.1825, 120.5565],
+        location: [15.192678, 120.550987],
         lotSize: "28.5 hectares",
         leaseExpiry: "July 2040",
         employees: "1,950",
@@ -1458,7 +1458,7 @@ const mapMarkers = [
       {
         id: "clark_22",
         name: "Nestlé Clark Manufacturing",
-        location: [15.182, 120.556],
+        location: [15.18789, 120.544765],
         lotSize: "15.8 hectares",
         leaseExpiry: "May 2038",
         employees: "1,680",
@@ -1471,7 +1471,7 @@ const mapMarkers = [
       {
         id: "clark_23",
         name: "Advanced Semiconductor Engineering",
-        location: [15.189, 120.564],
+        location: [15.184456, 120.558109],
         lotSize: "25.8 hectares",
         leaseExpiry: "December 2042",
         employees: "4,850",
@@ -1483,7 +1483,7 @@ const mapMarkers = [
       {
         id: "clark_24",
         name: "Amkor Technology Philippines",
-        location: [15.1895, 120.5645],
+        location: [15.189123, 120.561876],
         lotSize: "32.5 hectares",
         leaseExpiry: "March 2041",
         employees: "6,200",
@@ -1495,7 +1495,7 @@ const mapMarkers = [
       {
         id: "clark_25",
         name: "Freescale Semiconductor Philippines",
-        location: [15.19, 120.565],
+        location: [15.186678, 120.553421],
         lotSize: "18.5 hectares",
         leaseExpiry: "August 2039",
         employees: "3,650",
@@ -1507,7 +1507,7 @@ const mapMarkers = [
       {
         id: "clark_26",
         name: "STMicroelectronics Philippines",
-        location: [15.1905, 120.5655],
+        location: [15.19189, 120.546234],
         lotSize: "22.8 hectares",
         leaseExpiry: "November 2040",
         employees: "4,200",
@@ -1519,7 +1519,7 @@ const mapMarkers = [
       {
         id: "clark_27",
         name: "ON Semiconductor Philippines",
-        location: [15.191, 120.566],
+        location: [15.185345, 120.560543],
         lotSize: "15.2 hectares",
         leaseExpiry: "June 2038",
         employees: "2,850",
@@ -1531,7 +1531,7 @@ const mapMarkers = [
       {
         id: "clark_28",
         name: "Analog Devices Philippines",
-        location: [15.1915, 120.5665],
+        location: [15.190456, 120.548678],
         lotSize: "19.8 hectares",
         leaseExpiry: "February 2041",
         employees: "3,450",
@@ -1543,7 +1543,7 @@ const mapMarkers = [
       {
         id: "clark_29",
         name: "Maxim Integrated Philippines",
-        location: [15.192, 120.567],
+        location: [15.183234, 120.557098],
         lotSize: "12.5 hectares",
         leaseExpiry: "September 2037",
         employees: "2,200",
@@ -1555,7 +1555,7 @@ const mapMarkers = [
       {
         id: "clark_30",
         name: "Infineon Technologies Philippines",
-        location: [15.1925, 120.5675],
+        location: [15.188012, 120.564321],
         lotSize: "28.5 hectares",
         leaseExpiry: "January 2043",
         employees: "5,200",
@@ -1567,7 +1567,7 @@ const mapMarkers = [
       {
         id: "clark_31",
         name: "Broadcom Philippines Manufacturing",
-        location: [15.193, 120.568],
+        location: [15.192345, 120.551765],
         lotSize: "24.8 hectares",
         leaseExpiry: "July 2042",
         employees: "4,650",
@@ -1579,7 +1579,7 @@ const mapMarkers = [
       {
         id: "clark_32",
         name: "Qualcomm Philippines Test Center",
-        location: [15.1935, 120.5685],
+        location: [15.187567, 120.545987],
         lotSize: "16.5 hectares",
         leaseExpiry: "April 2040",
         employees: "3,150",
@@ -1588,12 +1588,10 @@ const mapMarkers = [
         description:
           "Mobile and wireless technology semiconductor testing and validation.",
       },
-
-      // Continue with more electronics companies...
       {
         id: "clark_33",
         name: "MediaTek Philippines R&D",
-        location: [15.194, 120.569],
+        location: [15.18489, 120.559654],
         lotSize: "14.2 hectares",
         leaseExpiry: "October 2039",
         employees: "2,850",
@@ -1605,7 +1603,7 @@ const mapMarkers = [
       {
         id: "clark_34",
         name: "Marvell Technology Philippines",
-        location: [15.1945, 120.5695],
+        location: [15.189789, 120.562987],
         lotSize: "18.8 hectares",
         leaseExpiry: "December 2040",
         employees: "3,650",
@@ -1617,7 +1615,7 @@ const mapMarkers = [
       {
         id: "clark_35",
         name: "Cypress Semiconductor Philippines",
-        location: [15.195, 120.57],
+        location: [15.186123, 120.55421],
         lotSize: "13.5 hectares",
         leaseExpiry: "May 2038",
         employees: "2,450",
@@ -1629,7 +1627,7 @@ const mapMarkers = [
       {
         id: "clark_36",
         name: "Microchip Technology Philippines",
-        location: [15.1955, 120.5705],
+        location: [15.191456, 120.547543],
         lotSize: "21.8 hectares",
         leaseExpiry: "August 2041",
         employees: "4,100",
@@ -1641,7 +1639,7 @@ const mapMarkers = [
       {
         id: "clark_37",
         name: "NXP Semiconductors Philippines",
-        location: [15.196, 120.571],
+        location: [15.185678, 120.561098],
         lotSize: "26.5 hectares",
         leaseExpiry: "November 2042",
         employees: "4,950",
@@ -1653,7 +1651,7 @@ const mapMarkers = [
       {
         id: "clark_38",
         name: "Renesas Electronics Philippines",
-        location: [15.1965, 120.5715],
+        location: [15.190123, 120.549876],
         lotSize: "19.2 hectares",
         leaseExpiry: "March 2041",
         employees: "3,550",
@@ -1665,7 +1663,7 @@ const mapMarkers = [
       {
         id: "clark_39",
         name: "Lattice Semiconductor Philippines",
-        location: [15.197, 120.572],
+        location: [15.183567, 120.558432],
         lotSize: "11.8 hectares",
         leaseExpiry: "July 2039",
         employees: "2,150",
@@ -1677,7 +1675,7 @@ const mapMarkers = [
       {
         id: "clark_40",
         name: "Silicon Laboratories Philippines",
-        location: [15.1975, 120.5725],
+        location: [15.188456, 120.563654],
         lotSize: "14.5 hectares",
         leaseExpiry: "September 2040",
         employees: "2,750",
@@ -1689,7 +1687,7 @@ const mapMarkers = [
       {
         id: "clark_41",
         name: "Vishay Intertechnology Philippines",
-        location: [15.198, 120.573],
+        location: [15.19289, 120.552109],
         lotSize: "16.8 hectares",
         leaseExpiry: "January 2041",
         employees: "3,250",
@@ -1701,7 +1699,7 @@ const mapMarkers = [
       {
         id: "clark_42",
         name: "Diodes Incorporated Philippines",
-        location: [15.1985, 120.5735],
+        location: [15.187123, 120.546321],
         lotSize: "12.2 hectares",
         leaseExpiry: "June 2038",
         employees: "2,350",
@@ -1710,12 +1708,10 @@ const mapMarkers = [
         description:
           "High-quality semiconductor products for automotive and consumer electronics.",
       },
-
-      // Additional semiconductor support companies (20 more to reach 50 total in this category)
       {
         id: "clark_43",
         name: "Semtech Philippines Manufacturing",
-        location: [15.199, 120.574],
+        location: [15.184234, 120.56021],
         lotSize: "13.8 hectares",
         leaseExpiry: "October 2039",
         employees: "2,650",
@@ -1727,7 +1723,7 @@ const mapMarkers = [
       {
         id: "clark_44",
         name: "Power Integrations Philippines",
-        location: [15.1995, 120.5745],
+        location: [15.189345, 120.564876],
         lotSize: "9.5 hectares",
         leaseExpiry: "February 2038",
         employees: "1,850",
@@ -1739,7 +1735,7 @@ const mapMarkers = [
       {
         id: "clark_45",
         name: "Linear Technology Philippines",
-        location: [15.2, 120.575],
+        location: [15.186567, 120.554987],
         lotSize: "15.2 hectares",
         leaseExpiry: "August 2040",
         employees: "2,950",
@@ -1751,7 +1747,7 @@ const mapMarkers = [
       {
         id: "clark_46",
         name: "Intersil Philippines Operations",
-        location: [15.2005, 120.5755],
+        location: [15.191678, 120.548098],
         lotSize: "11.8 hectares",
         leaseExpiry: "December 2038",
         employees: "2,250",
@@ -1763,7 +1759,7 @@ const mapMarkers = [
       {
         id: "clark_47",
         name: "Fairchild Semiconductor Philippines",
-        location: [15.201, 120.576],
+        location: [15.18589, 120.561765],
         lotSize: "17.5 hectares",
         leaseExpiry: "May 2041",
         employees: "3,350",
@@ -1775,7 +1771,7 @@ const mapMarkers = [
       {
         id: "clark_48",
         name: "International Rectifier Philippines",
-        location: [15.2015, 120.5765],
+        location: [15.190567, 120.550432],
         lotSize: "14.8 hectares",
         leaseExpiry: "September 2040",
         employees: "2,850",
@@ -1787,7 +1783,7 @@ const mapMarkers = [
       {
         id: "clark_49",
         name: "IXYS Philippines Corporation",
-        location: [15.202, 120.577],
+        location: [15.183901, 120.559098],
         lotSize: "10.5 hectares",
         leaseExpiry: "March 2039",
         employees: "2,050",
@@ -1799,7 +1795,7 @@ const mapMarkers = [
       {
         id: "clark_50",
         name: "Cree Philippines LED Manufacturing",
-        location: [15.2025, 120.5775],
+        location: [15.188789, 120.562321],
         lotSize: "18.2 hectares",
         leaseExpiry: "November 2041",
         employees: "3,450",
@@ -1811,7 +1807,7 @@ const mapMarkers = [
       {
         id: "clark_51",
         name: "Wolfspeed Philippines Operations",
-        location: [15.203, 120.578],
+        location: [15.192123, 120.553876],
         lotSize: "22.5 hectares",
         leaseExpiry: "July 2042",
         employees: "4,150",
@@ -1823,7 +1819,7 @@ const mapMarkers = [
       {
         id: "clark_52",
         name: "Monolithic Power Systems Philippines",
-        location: [15.2035, 120.5785],
+        location: [15.187456, 120.547654],
         lotSize: "12.8 hectares",
         leaseExpiry: "January 2040",
         employees: "2,450",
@@ -1835,7 +1831,7 @@ const mapMarkers = [
       {
         id: "clark_53",
         name: "Allegro MicroSystems Philippines",
-        location: [15.204, 120.579],
+        location: [15.184678, 120.560987],
         lotSize: "14.5 hectares",
         leaseExpiry: "June 2040",
         employees: "2,750",
@@ -1847,7 +1843,7 @@ const mapMarkers = [
       {
         id: "clark_54",
         name: "Melexis Philippines Semiconductor",
-        location: [15.2045, 120.5795],
+        location: [15.189567, 120.56321],
         lotSize: "16.2 hectares",
         leaseExpiry: "October 2040",
         employees: "3,050",
@@ -1859,7 +1855,7 @@ const mapMarkers = [
       {
         id: "clark_55",
         name: "Rohm Semiconductor Philippines",
-        location: [15.205, 120.58],
+        location: [15.186234, 120.555765],
         lotSize: "19.8 hectares",
         leaseExpiry: "February 2042",
         employees: "3,650",
@@ -1871,7 +1867,7 @@ const mapMarkers = [
       {
         id: "clark_56",
         name: "Toshiba Semiconductor Philippines",
-        location: [15.2055, 120.5805],
+        location: [15.191012, 120.548876],
         lotSize: "24.5 hectares",
         leaseExpiry: "August 2042",
         employees: "4,550",
@@ -1883,7 +1879,7 @@ const mapMarkers = [
       {
         id: "clark_57",
         name: "Panasonic Semiconductor Philippines",
-        location: [15.206, 120.581],
+        location: [15.185234, 120.562109],
         lotSize: "21.2 hectares",
         leaseExpiry: "December 2041",
         employees: "3,950",
@@ -1895,7 +1891,7 @@ const mapMarkers = [
       {
         id: "clark_58",
         name: "Sony Semiconductor Philippines",
-        location: [15.2065, 120.5815],
+        location: [15.19089, 120.551098],
         lotSize: "26.8 hectares",
         leaseExpiry: "April 2043",
         employees: "4,850",
@@ -1907,7 +1903,7 @@ const mapMarkers = [
       {
         id: "clark_59",
         name: "Murata Philippines Electronics",
-        location: [15.207, 120.582],
+        location: [15.183678, 120.559876],
         lotSize: "18.5 hectares",
         leaseExpiry: "September 2041",
         employees: "3,450",
@@ -1919,7 +1915,7 @@ const mapMarkers = [
       {
         id: "clark_60",
         name: "TDK Philippines Manufacturing",
-        location: [15.2075, 120.5825],
+        location: [15.188234, 120.564543],
         lotSize: "20.2 hectares",
         leaseExpiry: "January 2042",
         employees: "3,750",
@@ -1931,7 +1927,7 @@ const mapMarkers = [
       {
         id: "clark_61",
         name: "Kyocera Philippines Electronics",
-        location: [15.208, 120.583],
+        location: [15.192567, 120.554321],
         lotSize: "15.8 hectares",
         leaseExpiry: "July 2040",
         employees: "2,950",
@@ -1943,7 +1939,7 @@ const mapMarkers = [
       {
         id: "clark_62",
         name: "Epcos Philippines Components",
-        location: [15.2085, 120.5835],
+        location: [15.187678, 120.54821],
         lotSize: "13.5 hectares",
         leaseExpiry: "November 2039",
         employees: "2,550",
@@ -1955,7 +1951,7 @@ const mapMarkers = [
       {
         id: "clark_63",
         name: "Kemet Philippines Electronics",
-        location: [15.209, 120.584],
+        location: [15.184901, 120.561543],
         lotSize: "16.8 hectares",
         leaseExpiry: "March 2041",
         employees: "3,150",
@@ -1967,7 +1963,7 @@ const mapMarkers = [
       {
         id: "clark_64",
         name: "Nichicon Philippines Capacitors",
-        location: [15.2095, 120.5845],
+        location: [15.18989, 120.563987],
         lotSize: "14.2 hectares",
         leaseExpiry: "August 2040",
         employees: "2,650",
@@ -1979,7 +1975,7 @@ const mapMarkers = [
       {
         id: "clark_65",
         name: "Rubycon Philippines Electronics",
-        location: [15.21, 120.585],
+        location: [15.186456, 120.55621],
         lotSize: "12.5 hectares",
         leaseExpiry: "December 2039",
         employees: "2,350",
@@ -1991,7 +1987,7 @@ const mapMarkers = [
       {
         id: "clark_66",
         name: "United Chemi-Con Philippines",
-        location: [15.2105, 120.5855],
+        location: [15.191345, 120.549432],
         lotSize: "17.5 hectares",
         leaseExpiry: "June 2041",
         employees: "3,250",
@@ -2003,7 +1999,7 @@ const mapMarkers = [
       {
         id: "clark_67",
         name: "Nippon Chemi-Con Philippines",
-        location: [15.211, 120.586],
+        location: [15.185567, 120.562876],
         lotSize: "19.8 hectares",
         leaseExpiry: "October 2041",
         employees: "3,650",
@@ -2015,7 +2011,7 @@ const mapMarkers = [
       {
         id: "clark_68",
         name: "Elna Philippines Electronics",
-        location: [15.2115, 120.5865],
+        location: [15.190234, 120.551765],
         lotSize: "11.2 hectares",
         leaseExpiry: "February 2040",
         employees: "2,150",
@@ -2027,7 +2023,7 @@ const mapMarkers = [
       {
         id: "clark_69",
         name: "AVX Philippines Corporation",
-        location: [15.212, 120.587],
+        location: [15.183234, 120.560321],
         lotSize: "15.5 hectares",
         leaseExpiry: "September 2040",
         employees: "2,850",
@@ -2039,7 +2035,7 @@ const mapMarkers = [
       {
         id: "clark_70",
         name: "Vishay Dale Philippines",
-        location: [15.2125, 120.5875],
+        location: [15.188678, 120.563098],
         lotSize: "13.8 hectares",
         leaseExpiry: "January 2041",
         employees: "2,550",
@@ -2051,7 +2047,7 @@ const mapMarkers = [
       {
         id: "clark_71",
         name: "Bourns Philippines Electronics",
-        location: [15.213, 120.588],
+        location: [15.192901, 120.554987],
         lotSize: "16.2 hectares",
         leaseExpiry: "July 2041",
         employees: "3,050",
@@ -2063,7 +2059,7 @@ const mapMarkers = [
       {
         id: "clark_72",
         name: "Yageo Philippines Corporation",
-        location: [15.2135, 120.5885],
+        location: [15.187234, 120.548987],
         lotSize: "18.5 hectares",
         leaseExpiry: "November 2041",
         employees: "3,450",
@@ -2075,20 +2071,7 @@ const mapMarkers = [
       {
         id: "clark_73",
         name: "Toyota Motor Philippines Clark Plant 2",
-        location: [15.18, 120.55],
-        lotSize: "45.5 hectares",
-        leaseExpiry: "December 2045",
-        employees: "5,850",
-        status: "active_locators",
-        subcategory: "clark-freeport",
-        description:
-          "Second automotive assembly plant for Innova, Fortuner, and Hiace models.",
-      },
-
-      {
-        id: "clark_73",
-        name: "Toyota Motor Philippines Clark Plant 2",
-        location: [15.18, 120.55],
+        location: [15.184567, 120.56221],
         lotSize: "45.5 hectares",
         leaseExpiry: "December 2045",
         employees: "5,850",
@@ -2100,7 +2083,7 @@ const mapMarkers = [
       {
         id: "clark_74",
         name: "Honda Cars Philippines Clark Facility",
-        location: [15.1805, 120.5505],
+        location: [15.189234, 120.56421],
         lotSize: "38.2 hectares",
         leaseExpiry: "August 2044",
         employees: "4,650",
@@ -2112,7 +2095,7 @@ const mapMarkers = [
       {
         id: "clark_75",
         name: "Suzuki Philippines Clark Manufacturing",
-        location: [15.181, 120.551],
+        location: [15.18689, 120.556876],
         lotSize: "28.5 hectares",
         leaseExpiry: "June 2043",
         employees: "3,450",
@@ -2124,7 +2107,7 @@ const mapMarkers = [
       {
         id: "clark_76",
         name: "Isuzu Philippines Clark Plant",
-        location: [15.1815, 120.5515],
+        location: [15.191567, 120.550098],
         lotSize: "32.8 hectares",
         leaseExpiry: "October 2044",
         employees: "3,950",
@@ -2135,7 +2118,7 @@ const mapMarkers = [
       {
         id: "clark_77",
         name: "Hyundai Motors Philippines Clark",
-        location: [15.182, 120.552],
+        location: [15.185012, 120.563321],
         lotSize: "35.5 hectares",
         leaseExpiry: "February 2045",
         employees: "4,250",
@@ -2147,7 +2130,7 @@ const mapMarkers = [
       {
         id: "clark_78",
         name: "Kia Motors Philippines Clark",
-        location: [15.1825, 120.5525],
+        location: [15.190678, 120.552321],
         lotSize: "29.2 hectares",
         leaseExpiry: "December 2043",
         employees: "3,550",
@@ -2159,7 +2142,7 @@ const mapMarkers = [
       {
         id: "clark_79",
         name: "Mazda Philippines Clark Operations",
-        location: [15.183, 120.553],
+        location: [15.183789, 120.560987],
         lotSize: "24.8 hectares",
         leaseExpiry: "September 2042",
         employees: "2,950",
@@ -2170,7 +2153,7 @@ const mapMarkers = [
       {
         id: "clark_80",
         name: "Subaru Philippines Clark Assembly",
-        location: [15.1835, 120.5535],
+        location: [15.188901, 120.562654],
         lotSize: "18.5 hectares",
         leaseExpiry: "May 2041",
         employees: "2,250",
@@ -2181,7 +2164,7 @@ const mapMarkers = [
       {
         id: "clark_81",
         name: "Chevrolet Philippines Clark Plant",
-        location: [15.184, 120.554],
+        location: [15.192234, 120.555432],
         lotSize: "26.2 hectares",
         leaseExpiry: "November 2043",
         employees: "3,150",
@@ -2192,7 +2175,7 @@ const mapMarkers = [
       {
         id: "clark_82",
         name: "Peugeot Philippines Clark Manufacturing",
-        location: [15.1845, 120.5545],
+        location: [15.187567, 120.549654],
         lotSize: "22.5 hectares",
         leaseExpiry: "March 2042",
         employees: "2,750",
@@ -2200,12 +2183,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "European vehicle assembly for Southeast Asian markets.",
       },
-
-      // Automotive Parts Suppliers (Tier 1)
       {
         id: "clark_83",
         name: "Denso Philippines Clark Factory",
-        location: [15.175, 120.545],
+        location: [15.184123, 120.562987],
         lotSize: "35.8 hectares",
         leaseExpiry: "January 2045",
         employees: "4,850",
@@ -2217,7 +2198,7 @@ const mapMarkers = [
       {
         id: "clark_84",
         name: "Bosch Philippines Clark Plant",
-        location: [15.1755, 120.5455],
+        location: [15.189678, 120.563765],
         lotSize: "42.2 hectares",
         leaseExpiry: "July 2045",
         employees: "5,650",
@@ -2229,7 +2210,7 @@ const mapMarkers = [
       {
         id: "clark_85",
         name: "Continental Philippines Clark",
-        location: [15.176, 120.546],
+        location: [15.186123, 120.557321],
         lotSize: "28.5 hectares",
         leaseExpiry: "September 2044",
         employees: "3,750",
@@ -2241,7 +2222,7 @@ const mapMarkers = [
       {
         id: "clark_86",
         name: "Magna International Philippines",
-        location: [15.1765, 120.5465],
+        location: [15.19189, 120.550876],
         lotSize: "31.5 hectares",
         leaseExpiry: "December 2044",
         employees: "4,150",
@@ -2252,7 +2233,7 @@ const mapMarkers = [
       {
         id: "clark_87",
         name: "Delphi Technologies Philippines",
-        location: [15.177, 120.547],
+        location: [15.185456, 120.563876],
         lotSize: "24.8 hectares",
         leaseExpiry: "June 2043",
         employees: "3,250",
@@ -2264,7 +2245,7 @@ const mapMarkers = [
       {
         id: "clark_88",
         name: "Valeo Philippines Clark",
-        location: [15.1775, 120.5475],
+        location: [15.190012, 120.552987],
         lotSize: "26.2 hectares",
         leaseExpiry: "October 2043",
         employees: "3,450",
@@ -2276,7 +2257,7 @@ const mapMarkers = [
       {
         id: "clark_89",
         name: "ZF Friedrichshafen Philippines",
-        location: [15.178, 120.548],
+        location: [15.183456, 120.561654],
         lotSize: "29.5 hectares",
         leaseExpiry: "February 2044",
         employees: "3,850",
@@ -2288,7 +2269,7 @@ const mapMarkers = [
       {
         id: "clark_90",
         name: "Schaeffler Philippines Clark",
-        location: [15.1785, 120.5485],
+        location: [15.188345, 120.561987],
         lotSize: "22.8 hectares",
         leaseExpiry: "August 2043",
         employees: "2,950",
@@ -2300,7 +2281,7 @@ const mapMarkers = [
       {
         id: "clark_91",
         name: "Mahle Philippines Clark Plant",
-        location: [15.179, 120.549],
+        location: [15.192678, 120.556098],
         lotSize: "25.5 hectares",
         leaseExpiry: "April 2044",
         employees: "3,350",
@@ -2312,7 +2293,7 @@ const mapMarkers = [
       {
         id: "clark_92",
         name: "Behr Philippines Clark Factory",
-        location: [15.1795, 120.5495],
+        location: [15.18789, 120.550321],
         lotSize: "19.2 hectares",
         leaseExpiry: "November 2042",
         employees: "2,550",
@@ -2321,12 +2302,10 @@ const mapMarkers = [
         description:
           "Automotive air conditioning and engine cooling systems manufacturing.",
       },
-
-      // Automotive Parts Suppliers (Tier 2 & 3)
       {
         id: "clark_93",
         name: "Aisin Philippines Clark Manufacturing",
-        location: [15.17, 120.54],
+        location: [15.184678, 120.563543],
         lotSize: "27.5 hectares",
         leaseExpiry: "January 2044",
         employees: "3,650",
@@ -2338,7 +2317,7 @@ const mapMarkers = [
       {
         id: "clark_94",
         name: "NSK Philippines Clark Plant",
-        location: [15.1705, 120.5405],
+        location: [15.189012, 120.564987],
         lotSize: "18.8 hectares",
         leaseExpiry: "May 2043",
         employees: "2,450",
@@ -2349,7 +2328,7 @@ const mapMarkers = [
       {
         id: "clark_95",
         name: "NTN Philippines Clark Factory",
-        location: [15.171, 120.541],
+        location: [15.186567, 120.557987],
         lotSize: "21.5 hectares",
         leaseExpiry: "September 2043",
         employees: "2,850",
@@ -2361,7 +2340,7 @@ const mapMarkers = [
       {
         id: "clark_96",
         name: "Timken Philippines Clark",
-        location: [15.1715, 120.5415],
+        location: [15.191234, 120.551432],
         lotSize: "16.2 hectares",
         leaseExpiry: "March 2042",
         employees: "2,150",
@@ -2372,7 +2351,7 @@ const mapMarkers = [
       {
         id: "clark_97",
         name: "SKF Philippines Clark Operations",
-        location: [15.172, 120.542],
+        location: [15.185789, 120.564321],
         lotSize: "23.8 hectares",
         leaseExpiry: "July 2043",
         employees: "3,150",
@@ -2384,7 +2363,7 @@ const mapMarkers = [
       {
         id: "clark_98",
         name: "Gates Corporation Philippines",
-        location: [15.1725, 120.5425],
+        location: [15.190456, 120.553654],
         lotSize: "14.5 hectares",
         leaseExpiry: "December 2041",
         employees: "1,950",
@@ -2396,7 +2375,7 @@ const mapMarkers = [
       {
         id: "clark_99",
         name: "Dayco Philippines Clark Plant",
-        location: [15.173, 120.543],
+        location: [15.183901, 120.562321],
         lotSize: "17.8 hectares",
         leaseExpiry: "June 2042",
         employees: "2,350",
@@ -2407,7 +2386,7 @@ const mapMarkers = [
       {
         id: "clark_100",
         name: "Tenneco Philippines Clark",
-        location: [15.1735, 120.5435],
+        location: [15.188567, 120.561321],
         lotSize: "20.5 hectares",
         leaseExpiry: "October 2042",
         employees: "2,750",
@@ -2419,7 +2398,7 @@ const mapMarkers = [
       {
         id: "clark_101",
         name: "Monroe Philippines Clark Factory",
-        location: [15.174, 120.544],
+        location: [15.192012, 120.556765],
         lotSize: "15.2 hectares",
         leaseExpiry: "February 2042",
         employees: "2,050",
@@ -2431,7 +2410,7 @@ const mapMarkers = [
       {
         id: "clark_102",
         name: "Bilstein Philippines Clark",
-        location: [15.1745, 120.5445],
+        location: [15.187123, 120.551098],
         lotSize: "12.8 hectares",
         leaseExpiry: "August 2041",
         employees: "1,750",
@@ -2439,12 +2418,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "High-performance shock absorbers and suspension systems.",
       },
-
-      // Logistics & Warehousing Companies (Major Category)
       {
         id: "clark_103",
         name: "DHL Supply Chain Clark Mega Hub",
-        location: [15.165, 120.535],
+        location: [15.184234, 120.564098],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2045",
         employees: "3,850",
@@ -2456,7 +2433,7 @@ const mapMarkers = [
       {
         id: "clark_104",
         name: "FedEx Clark Distribution Center",
-        location: [15.1655, 120.5355],
+        location: [15.189456, 120.563432],
         lotSize: "65.2 hectares",
         leaseExpiry: "June 2044",
         employees: "2,950",
@@ -2468,7 +2445,7 @@ const mapMarkers = [
       {
         id: "clark_105",
         name: "UPS Clark Logistics Facility",
-        location: [15.166, 120.536],
+        location: [15.186234, 120.558654],
         lotSize: "58.8 hectares",
         leaseExpiry: "September 2044",
         employees: "2,650",
@@ -2479,7 +2456,7 @@ const mapMarkers = [
       {
         id: "clark_106",
         name: "Kuehne + Nagel Clark Warehouse",
-        location: [15.1665, 120.5365],
+        location: [15.191678, 120.552098],
         lotSize: "45.5 hectares",
         leaseExpiry: "March 2043",
         employees: "1,850",
@@ -2491,7 +2468,7 @@ const mapMarkers = [
       {
         id: "clark_107",
         name: "DB Schenker Clark Logistics Hub",
-        location: [15.167, 120.537],
+        location: [15.185123, 120.562765],
         lotSize: "52.2 hectares",
         leaseExpiry: "November 2043",
         employees: "2,250",
@@ -2502,7 +2479,7 @@ const mapMarkers = [
       {
         id: "clark_108",
         name: "CEVA Logistics Clark Facility",
-        location: [15.1675, 120.5375],
+        location: [15.190789, 120.554321],
         lotSize: "38.5 hectares",
         leaseExpiry: "July 2042",
         employees: "1,650",
@@ -2513,7 +2490,7 @@ const mapMarkers = [
       {
         id: "clark_109",
         name: "Panalpina Clark Distribution",
-        location: [15.168, 120.538],
+        location: [15.183567, 120.563098],
         lotSize: "42.8 hectares",
         leaseExpiry: "January 2044",
         employees: "1,950",
@@ -2525,7 +2502,7 @@ const mapMarkers = [
       {
         id: "clark_110",
         name: "Expeditors Clark Operations",
-        location: [15.1685, 120.5385],
+        location: [15.188012, 120.560654],
         lotSize: "35.2 hectares",
         leaseExpiry: "May 2043",
         employees: "1,450",
@@ -2536,7 +2513,7 @@ const mapMarkers = [
       {
         id: "clark_111",
         name: "Geodis Clark Logistics Center",
-        location: [15.169, 120.539],
+        location: [15.192456, 120.557321],
         lotSize: "48.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,050",
@@ -2547,7 +2524,7 @@ const mapMarkers = [
       {
         id: "clark_112",
         name: "XPO Logistics Clark Facility",
-        location: [15.1695, 120.5395],
+        location: [15.187456, 120.551876],
         lotSize: "55.8 hectares",
         leaseExpiry: "February 2044",
         employees: "2,350",
@@ -2556,12 +2533,10 @@ const mapMarkers = [
         description:
           "Transportation and logistics services for manufacturing industries.",
       },
-
-      // Food & Beverage Manufacturing
       {
         id: "clark_113",
         name: "Nestle Philippines Clark Factory 2",
-        location: [15.16, 120.53],
+        location: [15.18489, 120.564654],
         lotSize: "45.8 hectares",
         leaseExpiry: "December 2045",
         employees: "2,850",
@@ -2573,7 +2548,7 @@ const mapMarkers = [
       {
         id: "clark_114",
         name: "Unilever Philippines Clark Plant",
-        location: [15.1605, 120.5305],
+        location: [15.189789, 120.562987],
         lotSize: "38.2 hectares",
         leaseExpiry: "August 2044",
         employees: "2,450",
@@ -2584,7 +2559,7 @@ const mapMarkers = [
       {
         id: "clark_115",
         name: "Procter & Gamble Clark Manufacturing",
-        location: [15.161, 120.531],
+        location: [15.186678, 120.55921],
         lotSize: "32.5 hectares",
         leaseExpiry: "June 2043",
         employees: "2,150",
@@ -2595,7 +2570,7 @@ const mapMarkers = [
       {
         id: "clark_116",
         name: "Coca-Cola Philippines Clark Bottling",
-        location: [15.1615, 120.5315],
+        location: [15.191012, 120.552765],
         lotSize: "28.8 hectares",
         leaseExpiry: "November 2042",
         employees: "1,850",
@@ -2606,7 +2581,7 @@ const mapMarkers = [
       {
         id: "clark_117",
         name: "PepsiCo Philippines Clark Plant",
-        location: [15.162, 120.532],
+        location: [15.185567, 120.561432],
         lotSize: "25.5 hectares",
         leaseExpiry: "March 2043",
         employees: "1,650",
@@ -2618,7 +2593,7 @@ const mapMarkers = [
       {
         id: "clark_118",
         name: "San Miguel Corporation Clark Brewery 2",
-        location: [15.1625, 120.5325],
+        location: [15.190123, 120.555098],
         lotSize: "55.2 hectares",
         leaseExpiry: "September 2045",
         employees: "3,250",
@@ -2630,7 +2605,7 @@ const mapMarkers = [
       {
         id: "clark_119",
         name: "Universal Robina Clark Food Plant",
-        location: [15.163, 120.533],
+        location: [15.183234, 120.563876],
         lotSize: "42.8 hectares",
         leaseExpiry: "January 2044",
         employees: "2,650",
@@ -2642,7 +2617,7 @@ const mapMarkers = [
       {
         id: "clark_120",
         name: "Monde Nissin Clark Manufacturing",
-        location: [15.1635, 120.5335],
+        location: [15.188456, 120.559987],
         lotSize: "35.5 hectares",
         leaseExpiry: "July 2043",
         employees: "2,250",
@@ -2654,7 +2629,7 @@ const mapMarkers = [
       {
         id: "clark_121",
         name: "Del Monte Philippines Clark Plant",
-        location: [15.164, 120.534],
+        location: [15.192789, 120.557987],
         lotSize: "48.5 hectares",
         leaseExpiry: "May 2044",
         employees: "2,950",
@@ -2666,7 +2641,7 @@ const mapMarkers = [
       {
         id: "clark_122",
         name: "Century Pacific Clark Processing",
-        location: [15.1645, 120.5345],
+        location: [15.187678, 120.552543],
         lotSize: "38.8 hectares",
         leaseExpiry: "October 2043",
         employees: "2,450",
@@ -2675,12 +2650,10 @@ const mapMarkers = [
         description:
           "Canned goods, processed meats, and seafood products manufacturing.",
       },
-
-      // Textile & Garment Manufacturing
       {
         id: "clark_123",
         name: "Levi Strauss Philippines Clark",
-        location: [15.155, 120.525],
+        location: [15.184456, 120.56321],
         lotSize: "25.8 hectares",
         leaseExpiry: "December 2042",
         employees: "2,850",
@@ -2691,7 +2664,7 @@ const mapMarkers = [
       {
         id: "clark_124",
         name: "Nike Philippines Clark Factory",
-        location: [15.1555, 120.5255],
+        location: [15.189123, 120.562109],
         lotSize: "32.5 hectares",
         leaseExpiry: "June 2044",
         employees: "3,650",
@@ -2702,7 +2675,7 @@ const mapMarkers = [
       {
         id: "clark_125",
         name: "Adidas Philippines Clark Plant",
-        location: [15.156, 120.526],
+        location: [15.186012, 120.559876],
         lotSize: "28.2 hectares",
         leaseExpiry: "September 2043",
         employees: "3,250",
@@ -2714,7 +2687,7 @@ const mapMarkers = [
       {
         id: "clark_126",
         name: "Under Armour Philippines Clark",
-        location: [15.1565, 120.5265],
+        location: [15.191456, 120.553321],
         lotSize: "18.5 hectares",
         leaseExpiry: "March 2042",
         employees: "2,150",
@@ -2725,7 +2698,7 @@ const mapMarkers = [
       {
         id: "clark_127",
         name: "VF Corporation Philippines Clark",
-        location: [15.157, 120.527],
+        location: [15.18589, 120.560987],
         lotSize: "22.8 hectares",
         leaseExpiry: "November 2042",
         employees: "2,650",
@@ -2736,7 +2709,7 @@ const mapMarkers = [
       {
         id: "clark_128",
         name: "Gap Inc. Philippines Clark",
-        location: [15.1575, 120.5275],
+        location: [15.190567, 120.555876],
         lotSize: "26.2 hectares",
         leaseExpiry: "July 2043",
         employees: "2,950",
@@ -2748,7 +2721,7 @@ const mapMarkers = [
       {
         id: "clark_129",
         name: "H&M Philippines Clark Manufacturing",
-        location: [15.158, 120.528],
+        location: [15.183678, 120.564543],
         lotSize: "24.5 hectares",
         leaseExpiry: "January 2043",
         employees: "2,750",
@@ -2760,7 +2733,7 @@ const mapMarkers = [
       {
         id: "clark_130",
         name: "Zara Philippines Clark Production",
-        location: [15.1585, 120.5285],
+        location: [15.188789, 120.559321],
         lotSize: "21.8 hectares",
         leaseExpiry: "May 2042",
         employees: "2,450",
@@ -2771,7 +2744,7 @@ const mapMarkers = [
       {
         id: "clark_131",
         name: "Uniqlo Philippines Clark Factory",
-        location: [15.159, 120.529],
+        location: [15.192123, 120.558654],
         lotSize: "19.2 hectares",
         leaseExpiry: "October 2042",
         employees: "2,250",
@@ -2783,7 +2756,7 @@ const mapMarkers = [
       {
         id: "clark_132",
         name: "Gildan Philippines Clark Plant",
-        location: [15.1595, 120.5295],
+        location: [15.187234, 120.55321],
         lotSize: "35.5 hectares",
         leaseExpiry: "February 2044",
         employees: "3,850",
@@ -2792,11 +2765,10 @@ const mapMarkers = [
         description:
           "Basic apparel and socks manufacturing for global distribution.",
       },
-
       {
         id: "clark_133",
         name: "Johnson & Johnson Clark Pharmaceutical",
-        location: [15.15, 120.52],
+        location: [15.184678, 120.561876],
         lotSize: "35.8 hectares",
         leaseExpiry: "December 2044",
         employees: "2,850",
@@ -2808,7 +2780,7 @@ const mapMarkers = [
       {
         id: "clark_134",
         name: "Pfizer Philippines Clark Plant",
-        location: [15.1505, 120.5205],
+        location: [15.189567, 120.561543],
         lotSize: "28.5 hectares",
         leaseExpiry: "August 2043",
         employees: "2,450",
@@ -2820,7 +2792,7 @@ const mapMarkers = [
       {
         id: "clark_135",
         name: "GSK Philippines Clark Manufacturing",
-        location: [15.151, 120.521],
+        location: [15.186345, 120.560543],
         lotSize: "32.2 hectares",
         leaseExpiry: "June 2044",
         employees: "2,650",
@@ -2832,7 +2804,7 @@ const mapMarkers = [
       {
         id: "clark_136",
         name: "Novartis Philippines Clark Facility",
-        location: [15.1515, 120.5215],
+        location: [15.191789, 120.554098],
         lotSize: "24.8 hectares",
         leaseExpiry: "October 2043",
         employees: "2,150",
@@ -2844,7 +2816,7 @@ const mapMarkers = [
       {
         id: "clark_137",
         name: "Merck Philippines Clark Operations",
-        location: [15.152, 120.522],
+        location: [15.185234, 120.56021],
         lotSize: "26.5 hectares",
         leaseExpiry: "February 2044",
         employees: "2,350",
@@ -2856,7 +2828,7 @@ const mapMarkers = [
       {
         id: "clark_138",
         name: "Sanofi Philippines Clark Plant",
-        location: [15.1525, 120.5225],
+        location: [15.19089, 120.556543],
         lotSize: "22.8 hectares",
         leaseExpiry: "September 2043",
         employees: "1,950",
@@ -2868,7 +2840,7 @@ const mapMarkers = [
       {
         id: "clark_139",
         name: "Roche Philippines Clark Manufacturing",
-        location: [15.153, 120.523],
+        location: [15.183789, 120.562987],
         lotSize: "18.5 hectares",
         leaseExpiry: "May 2042",
         employees: "1,650",
@@ -2880,7 +2852,7 @@ const mapMarkers = [
       {
         id: "clark_140",
         name: "Abbott Laboratories Clark Facility",
-        location: [15.1535, 120.5235],
+        location: [15.188234, 120.558654],
         lotSize: "29.2 hectares",
         leaseExpiry: "November 2043",
         employees: "2,450",
@@ -2892,7 +2864,7 @@ const mapMarkers = [
       {
         id: "clark_141",
         name: "Bayer Philippines Clark Plant",
-        location: [15.154, 120.524],
+        location: [15.192567, 120.559321],
         lotSize: "25.5 hectares",
         leaseExpiry: "March 2044",
         employees: "2,250",
@@ -2904,7 +2876,7 @@ const mapMarkers = [
       {
         id: "clark_142",
         name: "BASF Philippines Clark Chemical Plant",
-        location: [15.1545, 120.5245],
+        location: [15.187567, 120.553987],
         lotSize: "45.8 hectares",
         leaseExpiry: "July 2045",
         employees: "3,650",
@@ -2916,7 +2888,7 @@ const mapMarkers = [
       {
         id: "clark_143",
         name: "Dow Chemical Philippines Clark",
-        location: [15.155, 120.525],
+        location: [15.184123, 120.560543],
         lotSize: "52.5 hectares",
         leaseExpiry: "January 2046",
         employees: "4,150",
@@ -2928,7 +2900,7 @@ const mapMarkers = [
       {
         id: "clark_144",
         name: "DuPont Philippines Clark Operations",
-        location: [15.1555, 120.5255],
+        location: [15.18989, 120.560876],
         lotSize: "38.2 hectares",
         leaseExpiry: "September 2044",
         employees: "3,050",
@@ -2940,7 +2912,7 @@ const mapMarkers = [
       {
         id: "clark_145",
         name: "3M Philippines Clark Manufacturing",
-        location: [15.156, 120.526],
+        location: [15.186678, 120.56121],
         lotSize: "34.5 hectares",
         leaseExpiry: "May 2044",
         employees: "2,850",
@@ -2952,7 +2924,7 @@ const mapMarkers = [
       {
         id: "clark_146",
         name: "Henkel Philippines Clark Facility",
-        location: [15.1565, 120.5265],
+        location: [15.191123, 120.554876],
         lotSize: "21.8 hectares",
         leaseExpiry: "December 2042",
         employees: "1,850",
@@ -2964,7 +2936,7 @@ const mapMarkers = [
       {
         id: "clark_147",
         name: "Akzo Nobel Philippines Clark Plant",
-        location: [15.157, 120.527],
+        location: [15.185678, 120.559543],
         lotSize: "28.5 hectares",
         leaseExpiry: "August 2043",
         employees: "2,350",
@@ -2973,12 +2945,10 @@ const mapMarkers = [
         description:
           "Paints, coatings, and specialty chemicals manufacturing facility.",
       },
-
-      // Metal Processing & Fabrication
       {
         id: "clark_148",
         name: "Nucor Steel Philippines Clark",
-        location: [15.145, 120.515],
+        location: [15.190234, 120.55721],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2050",
         employees: "4,850",
@@ -2990,7 +2960,7 @@ const mapMarkers = [
       {
         id: "clark_149",
         name: "ArcelorMittal Philippines Clark",
-        location: [15.1455, 120.5155],
+        location: [15.183234, 120.561321],
         lotSize: "95.2 hectares",
         leaseExpiry: "June 2051",
         employees: "5,650",
@@ -3002,7 +2972,7 @@ const mapMarkers = [
       {
         id: "clark_150",
         name: "Nippon Steel Philippines Clark",
-        location: [15.146, 120.516],
+        location: [15.188678, 120.557987],
         lotSize: "78.8 hectares",
         leaseExpiry: "March 2050",
         employees: "4,250",
@@ -3014,7 +2984,7 @@ const mapMarkers = [
       {
         id: "clark_151",
         name: "POSCO Philippines Clark Steel",
-        location: [15.1465, 120.5165],
+        location: [15.192901, 120.559987],
         lotSize: "65.5 hectares",
         leaseExpiry: "September 2049",
         employees: "3,650",
@@ -3026,7 +2996,7 @@ const mapMarkers = [
       {
         id: "clark_152",
         name: "JFE Steel Philippines Clark",
-        location: [15.147, 120.517],
+        location: [15.18789, 120.554654],
         lotSize: "58.2 hectares",
         leaseExpiry: "November 2048",
         employees: "3,250",
@@ -3038,7 +3008,7 @@ const mapMarkers = [
       {
         id: "clark_153",
         name: "Tata Steel Philippines Clark",
-        location: [15.1475, 120.5175],
+        location: [15.184567, 120.55921],
         lotSize: "72.5 hectares",
         leaseExpiry: "January 2050",
         employees: "4,050",
@@ -3050,7 +3020,7 @@ const mapMarkers = [
       {
         id: "clark_154",
         name: "Baosteel Philippines Clark Operations",
-        location: [15.148, 120.518],
+        location: [15.189234, 120.56021],
         lotSize: "68.8 hectares",
         leaseExpiry: "July 2049",
         employees: "3,850",
@@ -3062,7 +3032,7 @@ const mapMarkers = [
       {
         id: "clark_155",
         name: "Severstal Philippines Clark Plant",
-        location: [15.1485, 120.5185],
+        location: [15.186012, 120.561876],
         lotSize: "42.5 hectares",
         leaseExpiry: "May 2047",
         employees: "2,450",
@@ -3074,7 +3044,7 @@ const mapMarkers = [
       {
         id: "clark_156",
         name: "Gerdau Philippines Clark Facility",
-        location: [15.149, 120.519],
+        location: [15.191567, 120.555543],
         lotSize: "38.2 hectares",
         leaseExpiry: "October 2046",
         employees: "2,150",
@@ -3085,7 +3055,7 @@ const mapMarkers = [
       {
         id: "clark_157",
         name: "Nucor-Yamato Steel Clark",
-        location: [15.1495, 120.5195],
+        location: [15.185012, 120.558876],
         lotSize: "35.5 hectares",
         leaseExpiry: "February 2047",
         employees: "1,950",
@@ -3094,12 +3064,10 @@ const mapMarkers = [
         description:
           "Structural steel beams and specialty steel products manufacturing.",
       },
-
-      // Packaging & Container Manufacturing
       {
         id: "clark_158",
         name: "Crown Holdings Philippines Clark",
-        location: [15.14, 120.51],
+        location: [15.190678, 120.557876],
         lotSize: "28.5 hectares",
         leaseExpiry: "December 2043",
         employees: "2,350",
@@ -3111,7 +3079,7 @@ const mapMarkers = [
       {
         id: "clark_159",
         name: "Ball Corporation Philippines Clark",
-        location: [15.1405, 120.5105],
+        location: [15.183678, 120.560654],
         lotSize: "25.8 hectares",
         leaseExpiry: "August 2043",
         employees: "2,150",
@@ -3123,7 +3091,7 @@ const mapMarkers = [
       {
         id: "clark_160",
         name: "Silgan Holdings Philippines Clark",
-        location: [15.141, 120.511],
+        location: [15.188901, 120.557321],
         lotSize: "22.2 hectares",
         leaseExpiry: "June 2042",
         employees: "1,850",
@@ -3135,7 +3103,7 @@ const mapMarkers = [
       {
         id: "clark_161",
         name: "CCL Industries Philippines Clark",
-        location: [15.1415, 120.5115],
+        location: [15.192234, 120.560654],
         lotSize: "18.5 hectares",
         leaseExpiry: "October 2042",
         employees: "1,550",
@@ -3146,7 +3114,7 @@ const mapMarkers = [
       {
         id: "clark_162",
         name: "Amcor Philippines Clark Facility",
-        location: [15.142, 120.512],
+        location: [15.187123, 120.555321],
         lotSize: "32.5 hectares",
         leaseExpiry: "February 2044",
         employees: "2,650",
@@ -3157,7 +3125,7 @@ const mapMarkers = [
       {
         id: "clark_163",
         name: "Berry Global Philippines Clark",
-        location: [15.1425, 120.5125],
+        location: [15.18489, 120.558543],
         lotSize: "26.8 hectares",
         leaseExpiry: "September 2043",
         employees: "2,250",
@@ -3168,7 +3136,7 @@ const mapMarkers = [
       {
         id: "clark_164",
         name: "Sealed Air Philippines Clark",
-        location: [15.143, 120.513],
+        location: [15.189678, 120.559543],
         lotSize: "24.5 hectares",
         leaseExpiry: "May 2043",
         employees: "1,950",
@@ -3180,7 +3148,7 @@ const mapMarkers = [
       {
         id: "clark_165",
         name: "Sonoco Products Philippines Clark",
-        location: [15.1435, 120.5135],
+        location: [15.186456, 120.562543],
         lotSize: "21.8 hectares",
         leaseExpiry: "November 2042",
         employees: "1,750",
@@ -3192,7 +3160,7 @@ const mapMarkers = [
       {
         id: "clark_166",
         name: "Reynolds Group Philippines Clark",
-        location: [15.144, 120.514],
+        location: [15.19189, 120.55621],
         lotSize: "29.2 hectares",
         leaseExpiry: "March 2044",
         employees: "2,350",
@@ -3204,7 +3172,7 @@ const mapMarkers = [
       {
         id: "clark_167",
         name: "Orora Philippines Clark Plant",
-        location: [15.1445, 120.5145],
+        location: [15.185456, 120.55821],
         lotSize: "19.5 hectares",
         leaseExpiry: "July 2042",
         employees: "1,650",
@@ -3213,12 +3181,10 @@ const mapMarkers = [
         description:
           "Glass packaging and metal packaging solutions manufacturing.",
       },
-
-      // Plastic & Rubber Manufacturing
       {
         id: "clark_168",
         name: "Bridgestone Philippines Clark Plant 2",
-        location: [15.135, 120.505],
+        location: [15.190012, 120.558543],
         lotSize: "55.8 hectares",
         leaseExpiry: "December 2045",
         employees: "4,250",
@@ -3230,7 +3196,7 @@ const mapMarkers = [
       {
         id: "clark_169",
         name: "Michelin Philippines Clark Factory",
-        location: [15.1355, 120.5055],
+        location: [15.183456, 120.559987],
         lotSize: "48.5 hectares",
         leaseExpiry: "August 2044",
         employees: "3,650",
@@ -3242,7 +3208,7 @@ const mapMarkers = [
       {
         id: "clark_170",
         name: "Goodyear Philippines Clark Plant",
-        location: [15.136, 120.506],
+        location: [15.188345, 120.556654],
         lotSize: "42.2 hectares",
         leaseExpiry: "June 2044",
         employees: "3,250",
@@ -3254,7 +3220,7 @@ const mapMarkers = [
       {
         id: "clark_171",
         name: "Continental Tire Philippines Clark",
-        location: [15.1365, 120.5065],
+        location: [15.192678, 120.561321],
         lotSize: "38.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,950",
@@ -3266,7 +3232,7 @@ const mapMarkers = [
       {
         id: "clark_172",
         name: "Pirelli Philippines Clark Manufacturing",
-        location: [15.137, 120.507],
+        location: [15.187456, 120.555987],
         lotSize: "32.8 hectares",
         leaseExpiry: "February 2043",
         employees: "2,450",
@@ -3278,7 +3244,7 @@ const mapMarkers = [
       {
         id: "clark_173",
         name: "Yokohama Tire Philippines Clark",
-        location: [15.1375, 120.5075],
+        location: [15.184234, 120.557876],
         lotSize: "35.2 hectares",
         leaseExpiry: "September 2043",
         employees: "2,750",
@@ -3290,7 +3256,7 @@ const mapMarkers = [
       {
         id: "clark_174",
         name: "Hankook Tire Philippines Clark",
-        location: [15.138, 120.508],
+        location: [15.189012, 120.558876],
         lotSize: "28.5 hectares",
         leaseExpiry: "May 2042",
         employees: "2,250",
@@ -3301,7 +3267,7 @@ const mapMarkers = [
       {
         id: "clark_175",
         name: "Toyo Tire Philippines Clark Plant",
-        location: [15.1385, 120.5085],
+        location: [15.186789, 120.56321],
         lotSize: "25.8 hectares",
         leaseExpiry: "November 2042",
         employees: "1,950",
@@ -3313,7 +3279,7 @@ const mapMarkers = [
       {
         id: "clark_176",
         name: "Sumitomo Rubber Philippines Clark",
-        location: [15.139, 120.509],
+        location: [15.191234, 120.556876],
         lotSize: "31.5 hectares",
         leaseExpiry: "March 2043",
         employees: "2,450",
@@ -3325,7 +3291,7 @@ const mapMarkers = [
       {
         id: "clark_177",
         name: "Cooper Tire Philippines Clark",
-        location: [15.1395, 120.5095],
+        location: [15.185789, 120.557543],
         lotSize: "22.2 hectares",
         leaseExpiry: "July 2042",
         employees: "1,750",
@@ -3334,12 +3300,10 @@ const mapMarkers = [
         description:
           "Replacement tire manufacturing for passenger and light truck applications.",
       },
-
-      // Construction Materials Manufacturing
       {
         id: "clark_178",
         name: "Lafarge Philippines Clark Cement Plant",
-        location: [15.13, 120.5],
+        location: [15.190456, 120.55921],
         lotSize: "125.5 hectares",
         leaseExpiry: "December 2050",
         employees: "2,850",
@@ -3351,7 +3315,7 @@ const mapMarkers = [
       {
         id: "clark_179",
         name: "Holcim Philippines Clark Operations",
-        location: [15.1305, 120.5005],
+        location: [15.183901, 120.559321],
         lotSize: "98.2 hectares",
         leaseExpiry: "August 2049",
         employees: "2,450",
@@ -3363,7 +3327,7 @@ const mapMarkers = [
       {
         id: "clark_180",
         name: "Cemex Philippines Clark Plant",
-        location: [15.131, 120.501],
+        location: [15.188567, 120.555987],
         lotSize: "88.8 hectares",
         leaseExpiry: "June 2048",
         employees: "2,150",
@@ -3375,7 +3339,7 @@ const mapMarkers = [
       {
         id: "clark_181",
         name: "CRH Philippines Clark Facility",
-        location: [15.1315, 120.5015],
+        location: [15.192012, 120.561987],
         lotSize: "65.5 hectares",
         leaseExpiry: "October 2047",
         employees: "1,850",
@@ -3387,7 +3351,7 @@ const mapMarkers = [
       {
         id: "clark_182",
         name: "HeidelbergCement Philippines Clark",
-        location: [15.132, 120.502],
+        location: [15.187678, 120.556654],
         lotSize: "72.2 hectares",
         leaseExpiry: "February 2048",
         employees: "1,950",
@@ -3399,7 +3363,7 @@ const mapMarkers = [
       {
         id: "clark_183",
         name: "Buzzi Unicem Philippines Clark",
-        location: [15.1325, 120.5025],
+        location: [15.184678, 120.55721],
         lotSize: "55.8 hectares",
         leaseExpiry: "September 2046",
         employees: "1,650",
@@ -3410,7 +3374,7 @@ const mapMarkers = [
       {
         id: "clark_184",
         name: "Titan Cement Philippines Clark",
-        location: [15.133, 120.503],
+        location: [15.189456, 120.55821],
         lotSize: "48.5 hectares",
         leaseExpiry: "May 2046",
         employees: "1,450",
@@ -3421,7 +3385,7 @@ const mapMarkers = [
       {
         id: "clark_185",
         name: "Vicat Philippines Clark Operations",
-        location: [15.1335, 120.5035],
+        location: [15.186123, 120.563876],
         lotSize: "42.8 hectares",
         leaseExpiry: "November 2045",
         employees: "1,250",
@@ -3433,7 +3397,7 @@ const mapMarkers = [
       {
         id: "clark_186",
         name: "Sika Philippines Clark Manufacturing",
-        location: [15.134, 120.504],
+        location: [15.191678, 120.557543],
         lotSize: "25.5 hectares",
         leaseExpiry: "March 2044",
         employees: "1,150",
@@ -3445,7 +3409,7 @@ const mapMarkers = [
       {
         id: "clark_187",
         name: "MAPEI Philippines Clark Plant",
-        location: [15.1345, 120.5045],
+        location: [15.185123, 120.556876],
         lotSize: "18.2 hectares",
         leaseExpiry: "July 2043",
         employees: "850",
@@ -3454,12 +3418,10 @@ const mapMarkers = [
         description:
           "Construction adhesives and chemical products for building industry.",
       },
-
-      // Service Companies & Contractors (Major Support Sector)
       {
         id: "clark_188",
         name: "Aramark Philippines Clark Services",
-        location: [15.125, 120.495],
+        location: [15.190789, 120.559876],
         lotSize: "15.8 hectares",
         leaseExpiry: "December 2040",
         employees: "3,250",
@@ -3471,7 +3433,7 @@ const mapMarkers = [
       {
         id: "clark_189",
         name: "Sodexo Philippines Clark Operations",
-        location: [15.1255, 120.4955],
+        location: [15.183567, 120.558654],
         lotSize: "12.5 hectares",
         leaseExpiry: "August 2039",
         employees: "2,850",
@@ -3483,7 +3445,7 @@ const mapMarkers = [
       {
         id: "clark_190",
         name: "ISS Facility Services Philippines Clark",
-        location: [15.126, 120.496],
+        location: [15.188012, 120.555321],
         lotSize: "8.5 hectares",
         leaseExpiry: "June 2038",
         employees: "2,450",
@@ -3495,7 +3457,7 @@ const mapMarkers = [
       {
         id: "clark_191",
         name: "G4S Security Philippines Clark",
-        location: [15.1265, 120.4965],
+        location: [15.192456, 120.562654],
         lotSize: "6.2 hectares",
         leaseExpiry: "October 2037",
         employees: "1,850",
@@ -3507,7 +3469,7 @@ const mapMarkers = [
       {
         id: "clark_192",
         name: "Securitas Philippines Clark Services",
-        location: [15.127, 120.497],
+        location: [15.18789, 120.557321],
         lotSize: "5.8 hectares",
         leaseExpiry: "February 2038",
         employees: "1,650",
@@ -3516,11 +3478,10 @@ const mapMarkers = [
         description:
           "Security guarding, mobile security, and electronic security solutions.",
       },
-
       {
         id: "clark_193",
         name: "Cushman & Wakefield Philippines Clark",
-        location: [15.1275, 120.4975],
+        location: [15.184456, 120.556543],
         lotSize: "4.2 hectares",
         leaseExpiry: "September 2037",
         employees: "1,250",
@@ -3532,7 +3493,7 @@ const mapMarkers = [
       {
         id: "clark_194",
         name: "Jones Lang LaSalle Philippines Clark",
-        location: [15.128, 120.498],
+        location: [15.189789, 120.557543],
         lotSize: "3.8 hectares",
         leaseExpiry: "May 2037",
         employees: "1,150",
@@ -3544,7 +3505,7 @@ const mapMarkers = [
       {
         id: "clark_195",
         name: "CBRE Philippines Clark Services",
-        location: [15.1285, 120.4985],
+        location: [15.186567, 120.564543],
         lotSize: "3.5 hectares",
         leaseExpiry: "November 2036",
         employees: "950",
@@ -3555,7 +3516,7 @@ const mapMarkers = [
       {
         id: "clark_196",
         name: "Colliers International Philippines Clark",
-        location: [15.129, 120.499],
+        location: [15.191012, 120.55821],
         lotSize: "2.8 hectares",
         leaseExpiry: "March 2037",
         employees: "850",
@@ -3566,7 +3527,7 @@ const mapMarkers = [
       {
         id: "clark_197",
         name: "Compass Group Philippines Clark",
-        location: [15.1295, 120.4995],
+        location: [15.185567, 120.55621],
         lotSize: "8.5 hectares",
         leaseExpiry: "July 2039",
         employees: "2,450",
@@ -3575,12 +3536,10 @@ const mapMarkers = [
         description:
           "Food services and support services for industrial workforce.",
       },
-
-      // Electronics Assembly & Contract Manufacturing (Expanding this major sector)
       {
         id: "clark_198",
         name: "Foxconn Philippines Clark Plant",
-        location: [15.214, 120.589],
+        location: [15.190123, 120.560543],
         lotSize: "125.8 hectares",
         leaseExpiry: "December 2050",
         employees: "15,850",
@@ -3592,7 +3551,7 @@ const mapMarkers = [
       {
         id: "clark_199",
         name: "Flex Ltd Philippines Clark",
-        location: [15.2145, 120.5895],
+        location: [15.183234, 120.557987],
         lotSize: "98.5 hectares",
         leaseExpiry: "August 2048",
         employees: "12,650",
@@ -3604,7 +3563,7 @@ const mapMarkers = [
       {
         id: "clark_200",
         name: "Jabil Circuit Philippines Clark",
-        location: [15.215, 120.59],
+        location: [15.188456, 120.554654],
         lotSize: "85.2 hectares",
         leaseExpiry: "June 2047",
         employees: "10,850",
@@ -3616,7 +3575,7 @@ const mapMarkers = [
       {
         id: "clark_201",
         name: "Sanmina Corporation Philippines Clark",
-        location: [15.2155, 120.5905],
+        location: [15.192789, 120.563321],
         lotSize: "72.5 hectares",
         leaseExpiry: "October 2046",
         employees: "9,250",
@@ -3628,7 +3587,7 @@ const mapMarkers = [
       {
         id: "clark_202",
         name: "Celestica Philippines Clark Plant",
-        location: [15.216, 120.591],
+        location: [15.187234, 120.557987],
         lotSize: "68.8 hectares",
         leaseExpiry: "February 2047",
         employees: "8,650",
@@ -3639,7 +3598,7 @@ const mapMarkers = [
       {
         id: "clark_203",
         name: "Benchmark Electronics Philippines Clark",
-        location: [15.2165, 120.5915],
+        location: [15.18489, 120.555876],
         lotSize: "55.5 hectares",
         leaseExpiry: "September 2045",
         employees: "7,150",
@@ -3651,7 +3610,7 @@ const mapMarkers = [
       {
         id: "clark_204",
         name: "Plexus Corp Philippines Clark",
-        location: [15.217, 120.592],
+        location: [15.189123, 120.556876],
         lotSize: "48.2 hectares",
         leaseExpiry: "May 2045",
         employees: "6,250",
@@ -3663,7 +3622,7 @@ const mapMarkers = [
       {
         id: "clark_205",
         name: "Venture Corporation Philippines Clark",
-        location: [15.179972, 120.525142],
+        location: [15.186234, 120.562876],
         lotSize: "42.8 hectares",
         leaseExpiry: "November 2044",
         employees: "5,450",
@@ -3675,7 +3634,7 @@ const mapMarkers = [
       {
         id: "clark_206",
         name: "Fabrinet Philippines Clark Facility",
-        location: [15.218, 120.593],
+        location: [15.191456, 120.558876],
         lotSize: "38.5 hectares",
         leaseExpiry: "March 2044",
         employees: "4,850",
@@ -3687,7 +3646,7 @@ const mapMarkers = [
       {
         id: "clark_207",
         name: "Universal Scientific Industrial Clark",
-        location: [15.2185, 120.5935],
+        location: [15.18589, 120.555543],
         lotSize: "52.2 hectares",
         leaseExpiry: "July 2045",
         employees: "6,650",
@@ -3696,12 +3655,10 @@ const mapMarkers = [
         description:
           "Electronics manufacturing for automotive and communications industries.",
       },
-
-      // PCB (Printed Circuit Board) Manufacturing
       {
         id: "clark_208",
         name: "TTM Technologies Philippines Clark",
-        location: [15.219, 120.594],
+        location: [15.190567, 120.56121],
         lotSize: "45.8 hectares",
         leaseExpiry: "January 2046",
         employees: "5,850",
@@ -3713,7 +3670,7 @@ const mapMarkers = [
       {
         id: "clark_209",
         name: "Nippon Mektron Philippines Clark",
-        location: [15.2195, 120.5945],
+        location: [15.183678, 120.557321],
         lotSize: "38.2 hectares",
         leaseExpiry: "September 2044",
         employees: "4,950",
@@ -3725,7 +3682,7 @@ const mapMarkers = [
       {
         id: "clark_210",
         name: "Ibiden Philippines Clark Plant",
-        location: [15.22, 120.595],
+        location: [15.188789, 120.553987],
         lotSize: "42.5 hectares",
         leaseExpiry: "May 2045",
         employees: "5,450",
@@ -3736,7 +3693,7 @@ const mapMarkers = [
       {
         id: "clark_211",
         name: "Unimicron Philippines Clark",
-        location: [15.2205, 120.5955],
+        location: [15.192123, 120.563987],
         lotSize: "35.8 hectares",
         leaseExpiry: "December 2043",
         employees: "4,550",
@@ -3748,7 +3705,7 @@ const mapMarkers = [
       {
         id: "clark_212",
         name: "Tripod Technology Philippines Clark",
-        location: [15.221, 120.596],
+        location: [15.187567, 120.558654],
         lotSize: "32.2 hectares",
         leaseExpiry: "August 2043",
         employees: "4,150",
@@ -3760,7 +3717,7 @@ const mapMarkers = [
       {
         id: "clark_213",
         name: "Compeq Manufacturing Philippines Clark",
-        location: [15.2215, 120.5965],
+        location: [15.184123, 120.55521],
         lotSize: "28.5 hectares",
         leaseExpiry: "June 2042",
         employees: "3,650",
@@ -3772,7 +3729,7 @@ const mapMarkers = [
       {
         id: "clark_214",
         name: "Gold Circuit Electronics Philippines",
-        location: [15.222, 120.597],
+        location: [15.189567, 120.55621],
         lotSize: "25.8 hectares",
         leaseExpiry: "October 2042",
         employees: "3,250",
@@ -3784,7 +3741,7 @@ const mapMarkers = [
       {
         id: "clark_215",
         name: "Boardtek Electronics Philippines Clark",
-        location: [15.2225, 120.5975],
+        location: [15.186678, 120.561543],
         lotSize: "22.5 hectares",
         leaseExpiry: "February 2042",
         employees: "2,850",
@@ -3795,7 +3752,7 @@ const mapMarkers = [
       {
         id: "clark_216",
         name: "Elec & Eltek Philippines Clark",
-        location: [15.223, 120.598],
+        location: [15.191789, 120.559543],
         lotSize: "19.2 hectares",
         leaseExpiry: "September 2041",
         employees: "2,450",
@@ -3807,7 +3764,7 @@ const mapMarkers = [
       {
         id: "clark_217",
         name: "CMK Corporation Philippines Clark",
-        location: [15.2235, 120.5985],
+        location: [15.185234, 120.554876],
         lotSize: "24.8 hectares",
         leaseExpiry: "May 2042",
         employees: "3,050",
@@ -3816,12 +3773,10 @@ const mapMarkers = [
         description:
           "Multilayer PCBs and flexible circuit boards manufacturing.",
       },
-
-      // LED & Display Manufacturing
       {
         id: "clark_218",
         name: "Nichia Corporation Philippines Clark",
-        location: [15.224, 120.599],
+        location: [15.19089, 120.561876],
         lotSize: "35.5 hectares",
         leaseExpiry: "January 2045",
         employees: "4,550",
@@ -3832,7 +3787,7 @@ const mapMarkers = [
       {
         id: "clark_219",
         name: "Osram Opto Semiconductors Philippines",
-        location: [15.2245, 120.5995],
+        location: [15.183789, 120.556654],
         lotSize: "28.8 hectares",
         leaseExpiry: "July 2043",
         employees: "3,650",
@@ -3843,7 +3798,7 @@ const mapMarkers = [
       {
         id: "clark_220",
         name: "Lumileds Philippines Clark Plant",
-        location: [15.225, 120.6],
+        location: [15.188234, 120.553321],
         lotSize: "32.5 hectares",
         leaseExpiry: "November 2043",
         employees: "4,150",
@@ -3854,7 +3809,7 @@ const mapMarkers = [
       {
         id: "clark_221",
         name: "Seoul Semiconductor Philippines Clark",
-        location: [15.2255, 120.6005],
+        location: [15.192567, 120.564654],
         lotSize: "26.2 hectares",
         leaseExpiry: "March 2043",
         employees: "3,350",
@@ -3866,7 +3821,7 @@ const mapMarkers = [
       {
         id: "clark_222",
         name: "LG Display Philippines Clark",
-        location: [15.226, 120.601],
+        location: [15.18789, 120.559321],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2048",
         employees: "8,850",
@@ -3878,7 +3833,7 @@ const mapMarkers = [
       {
         id: "clark_223",
         name: "AU Optronics Philippines Clark",
-        location: [15.2265, 120.6015],
+        location: [15.184567, 120.554543],
         lotSize: "72.8 hectares",
         leaseExpiry: "August 2047",
         employees: "7,450",
@@ -3890,7 +3845,7 @@ const mapMarkers = [
       {
         id: "clark_224",
         name: "Innolux Corporation Philippines Clark",
-        location: [15.227, 120.602],
+        location: [15.18989, 120.555543],
         lotSize: "65.2 hectares",
         leaseExpiry: "June 2046",
         employees: "6,650",
@@ -3901,7 +3856,7 @@ const mapMarkers = [
       {
         id: "clark_225",
         name: "Sharp Display Technology Philippines",
-        location: [15.2275, 120.6025],
+        location: [15.186012, 120.560876],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2045",
         employees: "5,950",
@@ -3910,12 +3865,10 @@ const mapMarkers = [
         description:
           "LCD panels and advanced display technologies manufacturing.",
       },
-
-      // Battery & Energy Storage Manufacturing
       {
         id: "clark_226",
         name: "LG Energy Solution Philippines Clark",
-        location: [15.228, 120.603],
+        location: [15.191123, 120.56021],
         lotSize: "125.8 hectares",
         leaseExpiry: "December 2050",
         employees: "10,850",
@@ -3927,7 +3880,7 @@ const mapMarkers = [
       {
         id: "clark_227",
         name: "Samsung SDI Philippines Clark Plant",
-        location: [15.2285, 120.6035],
+        location: [15.185678, 120.55421],
         lotSize: "98.5 hectares",
         leaseExpiry: "August 2049",
         employees: "9,250",
@@ -3939,7 +3892,7 @@ const mapMarkers = [
       {
         id: "clark_228",
         name: "CATL Philippines Clark Factory",
-        location: [15.229, 120.604],
+        location: [15.190234, 120.562543],
         lotSize: "145.2 hectares",
         leaseExpiry: "June 2051",
         employees: "12,650",
@@ -3951,7 +3904,7 @@ const mapMarkers = [
       {
         id: "clark_229",
         name: "Panasonic Energy Philippines Clark",
-        location: [15.2295, 120.6045],
+        location: [15.183234, 120.555987],
         lotSize: "88.8 hectares",
         leaseExpiry: "October 2048",
         employees: "8,450",
@@ -3963,7 +3916,7 @@ const mapMarkers = [
       {
         id: "clark_230",
         name: "BYD Philippines Battery Clark Plant",
-        location: [15.23, 120.605],
+        location: [15.188678, 120.552654],
         lotSize: "78.5 hectares",
         leaseExpiry: "February 2048",
         employees: "7,650",
@@ -3975,7 +3928,7 @@ const mapMarkers = [
       {
         id: "clark_231",
         name: "SK Innovation Philippines Clark",
-        location: [15.2305, 120.6055],
+        location: [15.192901, 120.562876],
         lotSize: "95.2 hectares",
         leaseExpiry: "September 2049",
         employees: "9,050",
@@ -3986,7 +3939,7 @@ const mapMarkers = [
       {
         id: "clark_232",
         name: "GS Yuasa Philippines Clark Factory",
-        location: [15.231, 120.606],
+        location: [15.187123, 120.559987],
         lotSize: "42.5 hectares",
         leaseExpiry: "May 2045",
         employees: "4,250",
@@ -3998,7 +3951,7 @@ const mapMarkers = [
       {
         id: "clark_233",
         name: "A123 Systems Philippines Clark",
-        location: [15.2315, 120.6065],
+        location: [15.184678, 120.553876],
         lotSize: "35.8 hectares",
         leaseExpiry: "November 2044",
         employees: "3,650",
@@ -4010,7 +3963,7 @@ const mapMarkers = [
       {
         id: "clark_234",
         name: "Envision AESC Philippines Clark",
-        location: [15.232, 120.607],
+        location: [15.189234, 120.554876],
         lotSize: "52.8 hectares",
         leaseExpiry: "March 2046",
         employees: "5,450",
@@ -4022,7 +3975,7 @@ const mapMarkers = [
       {
         id: "clark_235",
         name: "Northvolt Philippines Clark Operations",
-        location: [15.2325, 120.6075],
+        location: [15.186456, 120.56021],
         lotSize: "68.5 hectares",
         leaseExpiry: "July 2047",
         employees: "6,850",
@@ -4031,12 +3984,10 @@ const mapMarkers = [
         description:
           "Sustainable battery manufacturing with recycling capabilities.",
       },
-
-      // Solar & Renewable Energy Manufacturing
       {
         id: "clark_236",
         name: "First Solar Philippines Clark Plant",
-        location: [15.233, 120.608],
+        location: [15.191567, 120.560876],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2048",
         employees: "5,850",
@@ -4048,7 +3999,7 @@ const mapMarkers = [
       {
         id: "clark_237",
         name: "JinkoSolar Philippines Clark Factory",
-        location: [15.2335, 120.6085],
+        location: [15.185012, 120.553543],
         lotSize: "72.8 hectares",
         leaseExpiry: "August 2047",
         employees: "5,250",
@@ -4060,7 +4011,7 @@ const mapMarkers = [
       {
         id: "clark_238",
         name: "Trina Solar Philippines Clark Plant",
-        location: [15.234, 120.609],
+        location: [15.190678, 120.56321],
         lotSize: "65.2 hectares",
         leaseExpiry: "June 2046",
         employees: "4,850",
@@ -4072,7 +4023,7 @@ const mapMarkers = [
       {
         id: "clark_239",
         name: "Canadian Solar Philippines Clark",
-        location: [15.2345, 120.6095],
+        location: [15.183678, 120.555321],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2045",
         employees: "4,450",
@@ -4083,7 +4034,7 @@ const mapMarkers = [
       {
         id: "clark_240",
         name: "LONGi Solar Philippines Clark",
-        location: [15.235, 120.61],
+        location: [15.188901, 120.551987],
         lotSize: "78.8 hectares",
         leaseExpiry: "February 2048",
         employees: "5,650",
@@ -4095,7 +4046,7 @@ const mapMarkers = [
       {
         id: "clark_241",
         name: "Hanwha Q CELLS Philippines Clark",
-        location: [15.2355, 120.6105],
+        location: [15.192234, 120.561654],
         lotSize: "52.2 hectares",
         leaseExpiry: "September 2045",
         employees: "4,050",
@@ -4107,7 +4058,7 @@ const mapMarkers = [
       {
         id: "clark_242",
         name: "SunPower Philippines Clark Facility",
-        location: [15.236, 120.611],
+        location: [15.187456, 120.560654],
         lotSize: "45.8 hectares",
         leaseExpiry: "May 2045",
         employees: "3,650",
@@ -4119,7 +4070,7 @@ const mapMarkers = [
       {
         id: "clark_243",
         name: "Vestas Philippines Clark Wind Plant",
-        location: [15.2365, 120.6115],
+        location: [15.184234, 120.55321],
         lotSize: "125.5 hectares",
         leaseExpiry: "January 2050",
         employees: "4,850",
@@ -4131,7 +4082,7 @@ const mapMarkers = [
       {
         id: "clark_244",
         name: "Siemens Gamesa Philippines Clark",
-        location: [15.237, 120.612],
+        location: [15.189678, 120.55421],
         lotSize: "98.2 hectares",
         leaseExpiry: "July 2048",
         employees: "4,250",
@@ -4143,7 +4094,7 @@ const mapMarkers = [
       {
         id: "clark_245",
         name: "GE Renewable Energy Philippines Clark",
-        location: [15.2375, 120.6125],
+        location: [15.186789, 120.559543],
         lotSize: "88.5 hectares",
         leaseExpiry: "November 2047",
         employees: "3,850",
@@ -4152,12 +4103,10 @@ const mapMarkers = [
         description:
           "Wind turbine blades and renewable energy systems manufacturing.",
       },
-
-      // Medical Devices & Equipment Manufacturing
       {
         id: "clark_246",
         name: "Medtronic Philippines Clark Plant",
-        location: [15.238, 120.613],
+        location: [15.19189, 120.561543],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,850",
@@ -4169,7 +4118,7 @@ const mapMarkers = [
       {
         id: "clark_247",
         name: "Becton Dickinson Philippines Clark",
-        location: [15.2385, 120.6135],
+        location: [15.185456, 120.552876],
         lotSize: "35.8 hectares",
         leaseExpiry: "August 2043",
         employees: "3,250",
@@ -4181,7 +4130,7 @@ const mapMarkers = [
       {
         id: "clark_248",
         name: "Baxter International Philippines Clark",
-        location: [15.239, 120.614],
+        location: [15.190012, 120.563876],
         lotSize: "32.2 hectares",
         leaseExpiry: "June 2043",
         employees: "2,950",
@@ -4193,7 +4142,7 @@ const mapMarkers = [
       {
         id: "clark_249",
         name: "Stryker Corporation Philippines Clark",
-        location: [15.2395, 120.6145],
+        location: [15.183456, 120.554654],
         lotSize: "28.5 hectares",
         leaseExpiry: "October 2042",
         employees: "2,650",
@@ -4204,7 +4153,7 @@ const mapMarkers = [
       {
         id: "clark_250",
         name: "Boston Scientific Philippines Clark",
-        location: [15.24, 120.615],
+        location: [15.188345, 120.551321],
         lotSize: "38.8 hectares",
         leaseExpiry: "February 2044",
         employees: "3,450",
@@ -4216,7 +4165,7 @@ const mapMarkers = [
       {
         id: "clark_251",
         name: "Zimmer Biomet Philippines Clark",
-        location: [15.2405, 120.6155],
+        location: [15.192678, 120.560987],
         lotSize: "25.5 hectares",
         leaseExpiry: "September 2042",
         employees: "2,350",
@@ -4228,7 +4177,7 @@ const mapMarkers = [
       {
         id: "clark_252",
         name: "Smith & Nephew Philippines Clark",
-        location: [15.241, 120.616],
+        location: [15.187678, 120.561321],
         lotSize: "22.8 hectares",
         leaseExpiry: "May 2042",
         employees: "2,050",
@@ -4240,7 +4189,7 @@ const mapMarkers = [
       {
         id: "clark_253",
         name: "Siemens Healthineers Philippines Clark",
-        location: [15.2415, 120.6165],
+        location: [15.18489, 120.552543],
         lotSize: "45.8 hectares",
         leaseExpiry: "January 2045",
         employees: "3,850",
@@ -4252,7 +4201,7 @@ const mapMarkers = [
       {
         id: "clark_254",
         name: "GE Healthcare Philippines Clark Plant",
-        location: [15.242, 120.617],
+        location: [15.189012, 120.553543],
         lotSize: "52.5 hectares",
         leaseExpiry: "July 2045",
         employees: "4,250",
@@ -4264,7 +4213,7 @@ const mapMarkers = [
       {
         id: "clark_255",
         name: "Philips Healthcare Philippines Clark",
-        location: [15.2425, 120.6175],
+        location: [15.186123, 120.558876],
         lotSize: "38.2 hectares",
         leaseExpiry: "November 2043",
         employees: "3,250",
@@ -4276,7 +4225,7 @@ const mapMarkers = [
       {
         id: "clark_256",
         name: "Canon Medical Systems Philippines",
-        location: [15.243, 120.618],
+        location: [15.191234, 120.56221],
         lotSize: "32.8 hectares",
         leaseExpiry: "May 2043",
         employees: "2,850",
@@ -4288,7 +4237,7 @@ const mapMarkers = [
       {
         id: "clark_257",
         name: "Olympus Medical Philippines Clark",
-        location: [15.2435, 120.6185],
+        location: [15.185789, 120.55221],
         lotSize: "28.5 hectares",
         leaseExpiry: "September 2042",
         employees: "2,450",
@@ -4296,12 +4245,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Medical endoscopes and surgical equipment manufacturing.",
       },
-
-      // Aerospace Components Manufacturing
       {
         id: "clark_258",
         name: "Spirit AeroSystems Philippines Clark",
-        location: [15.244, 120.619],
+        location: [15.190456, 120.564543],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2050",
         employees: "4,850",
@@ -4313,7 +4260,7 @@ const mapMarkers = [
       {
         id: "clark_259",
         name: "Collins Aerospace Philippines Clark",
-        location: [15.2445, 120.6195],
+        location: [15.183901, 120.553987],
         lotSize: "72.8 hectares",
         leaseExpiry: "August 2048",
         employees: "4,250",
@@ -4324,7 +4271,7 @@ const mapMarkers = [
       {
         id: "clark_260",
         name: "Safran Philippines Clark Operations",
-        location: [15.245, 120.62],
+        location: [15.188567, 120.550654],
         lotSize: "65.2 hectares",
         leaseExpiry: "June 2047",
         employees: "3,850",
@@ -4335,7 +4282,7 @@ const mapMarkers = [
       {
         id: "clark_261",
         name: "Honeywell Aerospace Philippines Clark",
-        location: [15.2455, 120.6205],
+        location: [15.192012, 120.560321],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2046",
         employees: "3,450",
@@ -4346,7 +4293,7 @@ const mapMarkers = [
       {
         id: "clark_262",
         name: "Parker Aerospace Philippines Clark",
-        location: [15.246, 120.621],
+        location: [15.18789, 120.561987],
         lotSize: "42.5 hectares",
         leaseExpiry: "February 2045",
         employees: "2,850",
@@ -4358,7 +4305,7 @@ const mapMarkers = [
       {
         id: "clark_263",
         name: "Eaton Aerospace Philippines Clark",
-        location: [15.2465, 120.6215],
+        location: [15.184456, 120.551876],
         lotSize: "38.2 hectares",
         leaseExpiry: "September 2044",
         employees: "2,550",
@@ -4369,7 +4316,7 @@ const mapMarkers = [
       {
         id: "clark_264",
         name: "Meggitt Philippines Clark Facility",
-        location: [15.247, 120.622],
+        location: [15.189456, 120.552876],
         lotSize: "32.8 hectares",
         leaseExpiry: "May 2044",
         employees: "2,250",
@@ -4380,7 +4327,7 @@ const mapMarkers = [
       {
         id: "clark_265",
         name: "Woodward Philippines Clark Plant",
-        location: [15.2475, 120.6225],
+        location: [15.186567, 120.55821],
         lotSize: "28.5 hectares",
         leaseExpiry: "November 2043",
         employees: "1,950",
@@ -4391,7 +4338,7 @@ const mapMarkers = [
       {
         id: "clark_266",
         name: "Triumph Group Philippines Clark",
-        location: [15.248, 120.623],
+        location: [15.191678, 120.562876],
         lotSize: "35.5 hectares",
         leaseExpiry: "March 2044",
         employees: "2,350",
@@ -4402,7 +4349,7 @@ const mapMarkers = [
       {
         id: "clark_267",
         name: "AAR Corp Philippines Clark Operations",
-        location: [15.2485, 120.6235],
+        location: [15.185123, 120.551543],
         lotSize: "45.8 hectares",
         leaseExpiry: "July 2045",
         employees: "2,850",
@@ -4411,12 +4358,10 @@ const mapMarkers = [
         description:
           "Aircraft maintenance and aerospace component manufacturing.",
       },
-
-      // Industrial Machinery & Equipment Manufacturing
       {
         id: "clark_268",
         name: "Caterpillar Philippines Clark Plant",
-        location: [15.249, 120.624],
+        location: [15.190789, 120.563543],
         lotSize: "125.5 hectares",
         leaseExpiry: "December 2050",
         employees: "5,850",
@@ -4428,7 +4373,7 @@ const mapMarkers = [
       {
         id: "clark_269",
         name: "Komatsu Philippines Clark Factory",
-        location: [15.2495, 120.6245],
+        location: [15.183567, 120.553321],
         lotSize: "98.2 hectares",
         leaseExpiry: "August 2048",
         employees: "4,850",
@@ -4439,7 +4384,7 @@ const mapMarkers = [
       {
         id: "clark_270",
         name: "Hitachi Construction Philippines Clark",
-        location: [15.25, 120.625],
+        location: [15.188012, 120.549987],
         lotSize: "85.5 hectares",
         leaseExpiry: "June 2047",
         employees: "4,250",
@@ -4451,7 +4396,7 @@ const mapMarkers = [
       {
         id: "clark_271",
         name: "Volvo Construction Equipment Clark",
-        location: [15.2505, 120.6255],
+        location: [15.192456, 120.559654],
         lotSize: "72.8 hectares",
         leaseExpiry: "October 2046",
         employees: "3,850",
@@ -4462,7 +4407,7 @@ const mapMarkers = [
       {
         id: "clark_272",
         name: "Doosan Infracore Philippines Clark",
-        location: [15.251, 120.626],
+        location: [15.187234, 120.562654],
         lotSize: "65.2 hectares",
         leaseExpiry: "February 2046",
         employees: "3,450",
@@ -4474,7 +4419,7 @@ const mapMarkers = [
       {
         id: "clark_273",
         name: "JCB Philippines Clark Manufacturing",
-        location: [15.2515, 120.6265],
+        location: [15.184678, 120.55121],
         lotSize: "52.5 hectares",
         leaseExpiry: "September 2045",
         employees: "2,950",
@@ -4486,7 +4431,7 @@ const mapMarkers = [
       {
         id: "clark_274",
         name: "Terex Corporation Philippines Clark",
-        location: [15.252, 120.627],
+        location: [15.189789, 120.55221],
         lotSize: "45.8 hectares",
         leaseExpiry: "May 2045",
         employees: "2,550",
@@ -4497,7 +4442,7 @@ const mapMarkers = [
       {
         id: "clark_275",
         name: "Manitowoc Philippines Clark Plant",
-        location: [15.2525, 120.6275],
+        location: [15.186234, 120.557543],
         lotSize: "58.5 hectares",
         leaseExpiry: "November 2045",
         employees: "3,150",
@@ -4508,7 +4453,7 @@ const mapMarkers = [
       {
         id: "clark_276",
         name: "Sandvik Philippines Clark Operations",
-        location: [15.253, 120.628],
+        location: [15.191012, 120.563543],
         lotSize: "38.2 hectares",
         leaseExpiry: "March 2044",
         employees: "2,250",
@@ -4519,7 +4464,7 @@ const mapMarkers = [
       {
         id: "clark_277",
         name: "Atlas Copco Philippines Clark",
-        location: [15.2535, 120.6285],
+        location: [15.185567, 120.550876],
         lotSize: "42.5 hectares",
         leaseExpiry: "July 2044",
         employees: "2,450",
@@ -4527,12 +4472,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Industrial compressors and construction equipment.",
       },
-
-      // Precision Tools & Cutting Equipment
       {
         id: "clark_278",
         name: "Kennametal Philippines Clark Plant",
-        location: [15.254, 120.629],
+        location: [15.190123, 120.562109],
         lotSize: "28.5 hectares",
         leaseExpiry: "January 2043",
         employees: "1,850",
@@ -4544,7 +4487,7 @@ const mapMarkers = [
       {
         id: "clark_279",
         name: "Sandvik Coromant Philippines Clark",
-        location: [15.2545, 120.6295],
+        location: [15.183234, 120.552654],
         lotSize: "32.8 hectares",
         leaseExpiry: "September 2043",
         employees: "2,150",
@@ -4556,7 +4499,7 @@ const mapMarkers = [
       {
         id: "clark_280",
         name: "Seco Tools Philippines Clark",
-        location: [15.255, 120.63],
+        location: [15.188456, 120.549321],
         lotSize: "22.5 hectares",
         leaseExpiry: "May 2042",
         employees: "1,550",
@@ -4567,7 +4510,7 @@ const mapMarkers = [
       {
         id: "clark_281",
         name: "Mitsubishi Materials Philippines Clark",
-        location: [15.2555, 120.6305],
+        location: [15.192789, 120.558987],
         lotSize: "25.8 hectares",
         leaseExpiry: "November 2042",
         employees: "1,750",
@@ -4578,7 +4521,7 @@ const mapMarkers = [
       {
         id: "clark_282",
         name: "OSG Corporation Philippines Clark",
-        location: [15.256, 120.631],
+        location: [15.187567, 120.563321],
         lotSize: "18.5 hectares",
         leaseExpiry: "March 2042",
         employees: "1,350",
@@ -4586,12 +4529,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Taps, drills, and precision cutting tools manufacturing.",
       },
-
-      // Bearings & Motion Control Components
       {
         id: "clark_283",
         name: "JTEKT Philippines Clark Bearing Plant",
-        location: [15.2565, 120.6315],
+        location: [15.184123, 120.550543],
         lotSize: "35.5 hectares",
         leaseExpiry: "December 2043",
         employees: "2,850",
@@ -4602,7 +4543,7 @@ const mapMarkers = [
       {
         id: "clark_284",
         name: "THK Philippines Clark Linear Motion",
-        location: [15.257, 120.632],
+        location: [15.189123, 120.551543],
         lotSize: "28.2 hectares",
         leaseExpiry: "August 2043",
         employees: "2,350",
@@ -4613,7 +4554,7 @@ const mapMarkers = [
       {
         id: "clark_285",
         name: "IKO International Philippines Clark",
-        location: [15.2575, 120.6325],
+        location: [15.186678, 120.556876],
         lotSize: "22.8 hectares",
         leaseExpiry: "June 2042",
         employees: "1,850",
@@ -4624,7 +4565,7 @@ const mapMarkers = [
       {
         id: "clark_286",
         name: "Minebea Mitsumi Philippines Clark",
-        location: [15.258, 120.633],
+        location: [15.191456, 120.56421],
         lotSize: "42.5 hectares",
         leaseExpiry: "October 2044",
         employees: "3,450",
@@ -4636,7 +4577,7 @@ const mapMarkers = [
       {
         id: "clark_287",
         name: "Nachi-Fujikoshi Philippines Clark",
-        location: [15.2585, 120.6335],
+        location: [15.18589, 120.55021],
         lotSize: "38.5 hectares",
         leaseExpiry: "February 2044",
         employees: "3,050",
@@ -4644,12 +4585,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Bearings, cutting tools, and hydraulic equipment.",
       },
-
-      // Hydraulic & Pneumatic Systems
       {
         id: "clark_288",
         name: "Bosch Rexroth Philippines Clark",
-        location: [15.259, 120.634],
+        location: [15.190567, 120.561432],
         lotSize: "52.5 hectares",
         leaseExpiry: "December 2045",
         employees: "3,850",
@@ -4661,7 +4600,7 @@ const mapMarkers = [
       {
         id: "clark_289",
         name: "Parker Hannifin Philippines Clark",
-        location: [15.2595, 120.6345],
+        location: [15.183678, 120.551987],
         lotSize: "45.8 hectares",
         leaseExpiry: "August 2044",
         employees: "3,350",
@@ -4673,7 +4612,7 @@ const mapMarkers = [
       {
         id: "clark_290",
         name: "SMC Corporation Philippines Clark",
-        location: [15.26, 120.635],
+        location: [15.188789, 120.548654],
         lotSize: "38.2 hectares",
         leaseExpiry: "June 2044",
         employees: "2,850",
@@ -4684,7 +4623,7 @@ const mapMarkers = [
       {
         id: "clark_291",
         name: "Festo Philippines Clark Plant",
-        location: [15.2605, 120.6355],
+        location: [15.192123, 120.558321],
         lotSize: "32.8 hectares",
         leaseExpiry: "October 2043",
         employees: "2,450",
@@ -4696,7 +4635,7 @@ const mapMarkers = [
       {
         id: "clark_292",
         name: "Norgren Philippines Clark Operations",
-        location: [15.261, 120.636],
+        location: [15.18789, 120.563987],
         lotSize: "28.5 hectares",
         leaseExpiry: "February 2043",
         employees: "2,050",
@@ -4704,12 +4643,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Pneumatic and fluid control solutions manufacturing.",
       },
-
-      // Fasteners & Hardware Manufacturing
       {
         id: "clark_293",
         name: "Stanley Black & Decker Philippines",
-        location: [15.2615, 120.6365],
+        location: [15.184567, 120.549876],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,250",
@@ -4721,7 +4658,7 @@ const mapMarkers = [
       {
         id: "clark_294",
         name: "Hilti Philippines Clark Plant",
-        location: [15.262, 120.637],
+        location: [15.189567, 120.550876],
         lotSize: "35.8 hectares",
         leaseExpiry: "August 2043",
         employees: "2,750",
@@ -4732,7 +4669,7 @@ const mapMarkers = [
       {
         id: "clark_295",
         name: "Illinois Tool Works Philippines Clark",
-        location: [15.2625, 120.6375],
+        location: [15.186012, 120.55621],
         lotSize: "48.5 hectares",
         leaseExpiry: "June 2044",
         employees: "3,650",
@@ -4744,7 +4681,7 @@ const mapMarkers = [
       {
         id: "clark_296",
         name: "Alcoa Fastening Systems Philippines",
-        location: [15.263, 120.638],
+        location: [15.191789, 120.564876],
         lotSize: "28.2 hectares",
         leaseExpiry: "October 2042",
         employees: "2,150",
@@ -4756,7 +4693,7 @@ const mapMarkers = [
       {
         id: "clark_297",
         name: "Newfrey Philippines Clark Facility",
-        location: [15.2635, 120.6385],
+        location: [15.185234, 120.549543],
         lotSize: "32.5 hectares",
         leaseExpiry: "February 2043",
         employees: "2,450",
@@ -4765,12 +4702,10 @@ const mapMarkers = [
         description:
           "Engineered fastening systems for automotive applications.",
       },
-
-      // Wire & Cable Manufacturing
       {
         id: "clark_298",
         name: "Prysmian Philippines Clark Cable Plant",
-        location: [15.264, 120.639],
+        location: [15.19089, 120.560765],
         lotSize: "58.5 hectares",
         leaseExpiry: "December 2045",
         employees: "3,850",
@@ -4782,7 +4717,7 @@ const mapMarkers = [
       {
         id: "clark_299",
         name: "Nexans Philippines Clark Factory",
-        location: [15.2645, 120.6395],
+        location: [15.183789, 120.551321],
         lotSize: "52.8 hectares",
         leaseExpiry: "August 2044",
         employees: "3,450",
@@ -4794,7 +4729,7 @@ const mapMarkers = [
       {
         id: "clark_300",
         name: "General Cable Philippines Clark",
-        location: [15.265, 120.64],
+        location: [15.188234, 120.547987],
         lotSize: "45.2 hectares",
         leaseExpiry: "June 2044",
         employees: "3,050",
@@ -4805,7 +4740,7 @@ const mapMarkers = [
       {
         id: "clark_301",
         name: "Southwire Philippines Clark Plant",
-        location: [15.2655, 120.6405],
+        location: [15.192567, 120.557654],
         lotSize: "38.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,650",
@@ -4816,7 +4751,7 @@ const mapMarkers = [
       {
         id: "clark_302",
         name: "LS Cable & System Philippines Clark",
-        location: [15.266, 120.641],
+        location: [15.187123, 120.564654],
         lotSize: "42.8 hectares",
         leaseExpiry: "February 2044",
         employees: "2,950",
@@ -4827,7 +4762,7 @@ const mapMarkers = [
       {
         id: "clark_303",
         name: "Furukawa Electric Philippines Clark",
-        location: [15.2665, 120.6415],
+        location: [15.18489, 120.54921],
         lotSize: "35.5 hectares",
         leaseExpiry: "September 2043",
         employees: "2,450",
@@ -4838,7 +4773,7 @@ const mapMarkers = [
       {
         id: "clark_304",
         name: "Sumitomo Electric Philippines Clark",
-        location: [15.267, 120.642],
+        location: [15.18989, 120.55021],
         lotSize: "48.2 hectares",
         leaseExpiry: "May 2044",
         employees: "3,250",
@@ -4849,7 +4784,7 @@ const mapMarkers = [
       {
         id: "clark_305",
         name: "Yazaki Corporation Philippines Clark",
-        location: [15.2675, 120.6425],
+        location: [15.186456, 120.555543],
         lotSize: "65.8 hectares",
         leaseExpiry: "November 2045",
         employees: "4,850",
@@ -4861,7 +4796,7 @@ const mapMarkers = [
       {
         id: "clark_306",
         name: "Lear Corporation Philippines Clark",
-        location: [15.268, 120.643],
+        location: [15.191123, 120.563098],
         lotSize: "52.5 hectares",
         leaseExpiry: "March 2045",
         employees: "3,850",
@@ -4872,7 +4807,7 @@ const mapMarkers = [
       {
         id: "clark_307",
         name: "Aptiv Philippines Clark Facility",
-        location: [15.2685, 120.6435],
+        location: [15.185678, 120.548876],
         lotSize: "58.2 hectares",
         leaseExpiry: "July 2045",
         employees: "4,250",
@@ -4881,12 +4816,10 @@ const mapMarkers = [
         description:
           "Vehicle architecture and electrical distribution systems.",
       },
-
-      // Electrical Components & Connectors
       {
         id: "clark_308",
         name: "TE Connectivity Philippines Clark",
-        location: [15.269, 120.644],
+        location: [15.190234, 120.560098],
         lotSize: "42.8 hectares",
         leaseExpiry: "December 2044",
         employees: "3,650",
@@ -4898,7 +4831,7 @@ const mapMarkers = [
       {
         id: "clark_309",
         name: "Molex Philippines Clark Plant",
-        location: [15.2695, 120.6445],
+        location: [15.183234, 120.550654],
         lotSize: "38.5 hectares",
         leaseExpiry: "August 2043",
         employees: "3,250",
@@ -4910,7 +4843,7 @@ const mapMarkers = [
       {
         id: "clark_310",
         name: "Amphenol Philippines Clark Factory",
-        location: [15.27, 120.645],
+        location: [15.188678, 120.547321],
         lotSize: "35.2 hectares",
         leaseExpiry: "June 2043",
         employees: "2,950",
@@ -4922,7 +4855,7 @@ const mapMarkers = [
       {
         id: "clark_311",
         name: "JAE Electronics Philippines Clark",
-        location: [15.2705, 120.6455],
+        location: [15.192901, 120.556987],
         lotSize: "28.5 hectares",
         leaseExpiry: "October 2042",
         employees: "2,450",
@@ -4933,7 +4866,7 @@ const mapMarkers = [
       {
         id: "clark_312",
         name: "Hirose Electric Philippines Clark",
-        location: [15.271, 120.646],
+        location: [15.187456, 120.562432],
         lotSize: "25.8 hectares",
         leaseExpiry: "February 2042",
         employees: "2,150",
@@ -4944,7 +4877,7 @@ const mapMarkers = [
       {
         id: "clark_313",
         name: "Nikon Philippines Clark Optical Plant",
-        location: [15.2715, 120.6465],
+        location: [15.184234, 120.548543],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,450",
@@ -4955,7 +4888,7 @@ const mapMarkers = [
       {
         id: "clark_314",
         name: "Olympus Optical Philippines Clark",
-        location: [15.272, 120.647],
+        location: [15.189234, 120.549543],
         lotSize: "35.8 hectares",
         leaseExpiry: "August 2043",
         employees: "2,850",
@@ -4966,7 +4899,7 @@ const mapMarkers = [
       {
         id: "clark_315",
         name: "Hoya Corporation Philippines Clark",
-        location: [15.2725, 120.6475],
+        location: [15.186789, 120.554876],
         lotSize: "38.2 hectares",
         leaseExpiry: "June 2044",
         employees: "3,050",
@@ -4978,7 +4911,7 @@ const mapMarkers = [
       {
         id: "clark_316",
         name: "Canon Optronics Philippines Clark",
-        location: [15.273, 120.648],
+        location: [15.191567, 120.561765],
         lotSize: "45.8 hectares",
         leaseExpiry: "October 2044",
         employees: "3,650",
@@ -4989,7 +4922,7 @@ const mapMarkers = [
       {
         id: "clark_317",
         name: "Zeiss Philippines Clark Facility",
-        location: [15.2735, 120.6485],
+        location: [15.185012, 120.54821],
         lotSize: "32.5 hectares",
         leaseExpiry: "February 2043",
         employees: "2,450",
@@ -5001,7 +4934,7 @@ const mapMarkers = [
       {
         id: "clark_318",
         name: "Mitutoyo Philippines Clark Plant",
-        location: [15.274, 120.649],
+        location: [15.190678, 120.559432],
         lotSize: "28.5 hectares",
         leaseExpiry: "December 2042",
         employees: "2,150",
@@ -5012,7 +4945,7 @@ const mapMarkers = [
       {
         id: "clark_319",
         name: "Keyence Philippines Clark Factory",
-        location: [15.2745, 120.6495],
+        location: [15.183678, 120.549987],
         lotSize: "25.8 hectares",
         leaseExpiry: "August 2042",
         employees: "1,850",
@@ -5024,7 +4957,7 @@ const mapMarkers = [
       {
         id: "clark_320",
         name: "Hexagon Metrology Philippines Clark",
-        location: [15.275, 120.65],
+        location: [15.188901, 120.546654],
         lotSize: "32.8 hectares",
         leaseExpiry: "June 2043",
         employees: "2,350",
@@ -5035,7 +4968,7 @@ const mapMarkers = [
       {
         id: "clark_321",
         name: "Renishaw Philippines Clark Operations",
-        location: [15.2755, 120.6505],
+        location: [15.192234, 120.556321],
         lotSize: "22.5 hectares",
         leaseExpiry: "October 2042",
         employees: "1,650",
@@ -5046,7 +4979,7 @@ const mapMarkers = [
       {
         id: "clark_322",
         name: "FARO Technologies Philippines Clark",
-        location: [15.276, 120.651],
+        location: [15.187678, 120.561098],
         lotSize: "18.5 hectares",
         leaseExpiry: "February 2042",
         employees: "1,350",
@@ -5054,12 +4987,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "3D measurement and imaging solutions manufacturing.",
       },
-
-      // Robotics & Automation Equipment
       {
         id: "clark_323",
         name: "FANUC Philippines Clark Robotics",
-        location: [15.2765, 120.6515],
+        location: [15.184678, 120.547876],
         lotSize: "65.5 hectares",
         leaseExpiry: "December 2046",
         employees: "4,850",
@@ -5071,7 +5002,7 @@ const mapMarkers = [
       {
         id: "clark_324",
         name: "ABB Robotics Philippines Clark",
-        location: [15.277, 120.652],
+        location: [15.189678, 120.548876],
         lotSize: "58.2 hectares",
         leaseExpiry: "August 2045",
         employees: "4,250",
@@ -5082,7 +5013,7 @@ const mapMarkers = [
       {
         id: "clark_325",
         name: "KUKA Robotics Philippines Clark",
-        location: [15.2775, 120.6525],
+        location: [15.186123, 120.55421],
         lotSize: "52.8 hectares",
         leaseExpiry: "June 2045",
         employees: "3,850",
@@ -5094,7 +5025,7 @@ const mapMarkers = [
       {
         id: "clark_326",
         name: "Yaskawa Electric Philippines Clark",
-        location: [15.278, 120.653],
+        location: [15.19189, 120.560432],
         lotSize: "45.5 hectares",
         leaseExpiry: "October 2044",
         employees: "3,450",
@@ -5105,7 +5036,7 @@ const mapMarkers = [
       {
         id: "clark_327",
         name: "Kawasaki Robotics Philippines Clark",
-        location: [15.2785, 120.6535],
+        location: [15.185456, 120.547543],
         lotSize: "38.8 hectares",
         leaseExpiry: "February 2044",
         employees: "2,950",
@@ -5116,7 +5047,7 @@ const mapMarkers = [
       {
         id: "clark_328",
         name: "Epson Robots Philippines Clark",
-        location: [15.279, 120.654],
+        location: [15.190012, 120.558765],
         lotSize: "32.5 hectares",
         leaseExpiry: "September 2043",
         employees: "2,550",
@@ -5127,7 +5058,7 @@ const mapMarkers = [
       {
         id: "clark_329",
         name: "Universal Robots Philippines Clark",
-        location: [15.2795, 120.6545],
+        location: [15.183456, 120.549321],
         lotSize: "25.8 hectares",
         leaseExpiry: "May 2043",
         employees: "1,950",
@@ -5138,7 +5069,7 @@ const mapMarkers = [
       {
         id: "clark_330",
         name: "Omron Philippines Clark Automation",
-        location: [15.28, 120.655],
+        location: [15.188345, 120.545987],
         lotSize: "42.5 hectares",
         leaseExpiry: "November 2044",
         employees: "3,250",
@@ -5146,12 +5077,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Industrial automation and control systems manufacturing.",
       },
-
-      // Industrial Valves & Flow Control
       {
         id: "clark_331",
         name: "Emerson Philippines Clark Valve Plant",
-        location: [15.2805, 120.6555],
+        location: [15.192678, 120.555654],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,650",
@@ -5162,7 +5091,7 @@ const mapMarkers = [
       {
         id: "clark_332",
         name: "Cameron Philippines Clark Operations",
-        location: [15.281, 120.656],
+        location: [15.18789, 120.559765],
         lotSize: "52.2 hectares",
         leaseExpiry: "August 2045",
         employees: "3,950",
@@ -5173,7 +5102,7 @@ const mapMarkers = [
       {
         id: "clark_333",
         name: "Flowserve Philippines Clark Plant",
-        location: [15.2815, 120.6565],
+        location: [15.184456, 120.54721],
         lotSize: "38.5 hectares",
         leaseExpiry: "June 2044",
         employees: "2,950",
@@ -5184,7 +5113,7 @@ const mapMarkers = [
       {
         id: "clark_334",
         name: "Spirax Sarco Philippines Clark",
-        location: [15.282, 120.657],
+        location: [15.189012, 120.54821],
         lotSize: "28.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,250",
@@ -5195,7 +5124,7 @@ const mapMarkers = [
       {
         id: "clark_335",
         name: "Swagelok Philippines Clark Facility",
-        location: [15.2825, 120.6575],
+        location: [15.186567, 120.553543],
         lotSize: "22.8 hectares",
         leaseExpiry: "February 2043",
         employees: "1,850",
@@ -5203,12 +5132,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Fluid system products and tube fittings manufacturing.",
       },
-
-      // Pumps & Compressors Manufacturing
       {
         id: "clark_336",
         name: "Grundfos Philippines Clark Pump Plant",
-        location: [15.283, 120.658],
+        location: [15.191234, 120.559098],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,250",
@@ -5219,7 +5146,7 @@ const mapMarkers = [
       {
         id: "clark_337",
         name: "KSB Philippines Clark Factory",
-        location: [15.2835, 120.6585],
+        location: [15.185789, 120.546876],
         lotSize: "38.2 hectares",
         leaseExpiry: "August 2043",
         employees: "2,850",
@@ -5230,7 +5157,7 @@ const mapMarkers = [
       {
         id: "clark_338",
         name: "Sulzer Philippines Clark Operations",
-        location: [15.284, 120.659],
+        location: [15.190456, 120.558098],
         lotSize: "35.5 hectares",
         leaseExpiry: "June 2043",
         employees: "2,650",
@@ -5241,7 +5168,7 @@ const mapMarkers = [
       {
         id: "clark_339",
         name: "Ingersoll Rand Philippines Clark",
-        location: [15.2845, 120.6595],
+        location: [15.183901, 120.548654],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2045",
         employees: "4,250",
@@ -5252,7 +5179,7 @@ const mapMarkers = [
       {
         id: "clark_340",
         name: "Gardner Denver Philippines Clark",
-        location: [15.285, 120.66],
+        location: [15.188567, 120.545321],
         lotSize: "45.8 hectares",
         leaseExpiry: "February 2045",
         employees: "3,450",
@@ -5260,12 +5187,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Industrial compressors and vacuum systems.",
       },
-
-      // Gears & Power Transmission
       {
         id: "clark_341",
         name: "SEW-Eurodrive Philippines Clark",
-        location: [15.2855, 120.6605],
+        location: [15.192012, 120.554987],
         lotSize: "32.5 hectares",
         leaseExpiry: "December 2043",
         employees: "2,550",
@@ -5276,7 +5201,7 @@ const mapMarkers = [
       {
         id: "clark_342",
         name: "Siemens Gear Systems Philippines",
-        location: [15.286, 120.661],
+        location: [15.187234, 120.558432],
         lotSize: "38.8 hectares",
         leaseExpiry: "August 2044",
         employees: "2,950",
@@ -5287,7 +5212,7 @@ const mapMarkers = [
       {
         id: "clark_343",
         name: "Brevini Power Transmission Clark",
-        location: [15.2865, 120.6615],
+        location: [15.18489, 120.546543],
         lotSize: "28.5 hectares",
         leaseExpiry: "June 2043",
         employees: "2,250",
@@ -5298,7 +5223,7 @@ const mapMarkers = [
       {
         id: "clark_344",
         name: "Bonfiglioli Philippines Clark Plant",
-        location: [15.287, 120.662],
+        location: [15.189456, 120.547543],
         lotSize: "25.2 hectares",
         leaseExpiry: "October 2042",
         employees: "1,950",
@@ -5309,7 +5234,7 @@ const mapMarkers = [
       {
         id: "clark_345",
         name: "Rexnord Philippines Clark Operations",
-        location: [15.2875, 120.6625],
+        location: [15.186234, 120.552876],
         lotSize: "35.5 hectares",
         leaseExpiry: "February 2044",
         employees: "2,650",
@@ -5317,12 +5242,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Chain, belting, and power transmission components.",
       },
-
-      // Electrical Motors & Generators
       {
         id: "clark_346",
         name: "Siemens Motors Philippines Clark",
-        location: [15.288, 120.663],
+        location: [15.191678, 120.557765],
         lotSize: "65.5 hectares",
         leaseExpiry: "December 2046",
         employees: "5,250",
@@ -5334,7 +5257,7 @@ const mapMarkers = [
       {
         id: "clark_347",
         name: "WEG Electric Philippines Clark Plant",
-        location: [15.2885, 120.6635],
+        location: [15.185123, 120.54621],
         lotSize: "52.8 hectares",
         leaseExpiry: "August 2045",
         employees: "4,150",
@@ -5346,7 +5269,7 @@ const mapMarkers = [
       {
         id: "clark_348",
         name: "Baldor Electric Philippines Clark",
-        location: [15.289, 120.664],
+        location: [15.190789, 120.557432],
         lotSize: "45.2 hectares",
         leaseExpiry: "June 2044",
         employees: "3,550",
@@ -5358,7 +5281,7 @@ const mapMarkers = [
       {
         id: "clark_349",
         name: "Nidec Corporation Philippines Clark",
-        location: [15.2895, 120.6645],
+        location: [15.183567, 120.547987],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2045",
         employees: "4,650",
@@ -5370,7 +5293,7 @@ const mapMarkers = [
       {
         id: "clark_350",
         name: "Regal Beloit Philippines Clark",
-        location: [15.29, 120.665],
+        location: [15.188012, 120.544654],
         lotSize: "38.5 hectares",
         leaseExpiry: "February 2044",
         employees: "2,950",
@@ -5378,12 +5301,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Electric motors and mechanical motion control products.",
       },
-
-      // Transformers & Power Equipment
       {
         id: "clark_351",
         name: "ABB Power Systems Philippines Clark",
-        location: [15.2905, 120.6655],
+        location: [15.192456, 120.554321],
         lotSize: "95.5 hectares",
         leaseExpiry: "December 2048",
         employees: "5,850",
@@ -5395,7 +5316,7 @@ const mapMarkers = [
       {
         id: "clark_352",
         name: "Siemens Energy Philippines Clark",
-        location: [15.291, 120.666],
+        location: [15.187567, 120.557098],
         lotSize: "85.2 hectares",
         leaseExpiry: "August 2047",
         employees: "5,250",
@@ -5406,7 +5327,7 @@ const mapMarkers = [
       {
         id: "clark_353",
         name: "Schneider Electric Philippines Clark",
-        location: [15.2915, 120.6665],
+        location: [15.184123, 120.545876],
         lotSize: "72.8 hectares",
         leaseExpiry: "June 2046",
         employees: "4,650",
@@ -5417,7 +5338,7 @@ const mapMarkers = [
       {
         id: "clark_354",
         name: "GE Grid Solutions Philippines Clark",
-        location: [15.292, 120.667],
+        location: [15.189789, 120.546876],
         lotSize: "68.5 hectares",
         leaseExpiry: "October 2046",
         employees: "4,250",
@@ -5428,7 +5349,7 @@ const mapMarkers = [
       {
         id: "clark_355",
         name: "Eaton Electrical Philippines Clark",
-        location: [15.2925, 120.6675],
+        location: [15.186678, 120.55221],
         lotSize: "55.2 hectares",
         leaseExpiry: "February 2045",
         employees: "3,650",
@@ -5437,12 +5358,10 @@ const mapMarkers = [
         description:
           "Electrical distribution and control systems manufacturing.",
       },
-
-      // Switchgear & Circuit Breakers
       {
         id: "clark_356",
         name: "Mitsubishi Electric Philippines Clark",
-        location: [15.293, 120.668],
+        location: [15.191012, 120.556432],
         lotSize: "62.5 hectares",
         leaseExpiry: "December 2045",
         employees: "4,850",
@@ -5453,7 +5372,7 @@ const mapMarkers = [
       {
         id: "clark_357",
         name: "Fuji Electric Philippines Clark Plant",
-        location: [15.2935, 120.6685],
+        location: [15.185567, 120.545543],
         lotSize: "48.5 hectares",
         leaseExpiry: "August 2044",
         employees: "3,650",
@@ -5464,7 +5383,7 @@ const mapMarkers = [
       {
         id: "clark_358",
         name: "LS Electric Philippines Clark",
-        location: [15.294, 120.669],
+        location: [15.190123, 120.556765],
         lotSize: "42.8 hectares",
         leaseExpiry: "June 2044",
         employees: "3,250",
@@ -5475,7 +5394,7 @@ const mapMarkers = [
       {
         id: "clark_359",
         name: "Hyundai Heavy Industries Clark",
-        location: [15.2945, 120.6695],
+        location: [15.183234, 120.547321],
         lotSize: "58.5 hectares",
         leaseExpiry: "October 2045",
         employees: "4,150",
@@ -5487,7 +5406,7 @@ const mapMarkers = [
       {
         id: "clark_360",
         name: "Toshiba Infrastructure Philippines",
-        location: [15.295, 120.67],
+        location: [15.188456, 120.543987],
         lotSize: "52.2 hectares",
         leaseExpiry: "February 2045",
         employees: "3,850",
@@ -5495,12 +5414,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Power systems and energy infrastructure equipment.",
       },
-
-      // HVAC Equipment Manufacturing
       {
         id: "clark_361",
         name: "Carrier Philippines Clark HVAC Plant",
-        location: [15.2955, 120.6705],
+        location: [15.192789, 120.553654],
         lotSize: "68.5 hectares",
         leaseExpiry: "December 2046",
         employees: "4,850",
@@ -5512,7 +5429,7 @@ const mapMarkers = [
       {
         id: "clark_362",
         name: "Daikin Philippines Clark Factory",
-        location: [15.296, 120.671],
+        location: [15.18789, 120.555765],
         lotSize: "58.2 hectares",
         leaseExpiry: "August 2045",
         employees: "4,250",
@@ -5523,7 +5440,7 @@ const mapMarkers = [
       {
         id: "clark_363",
         name: "Trane Philippines Clark Plant",
-        location: [15.2965, 120.6715],
+        location: [15.184567, 120.54521],
         lotSize: "52.5 hectares",
         leaseExpiry: "June 2045",
         employees: "3,850",
@@ -5534,7 +5451,7 @@ const mapMarkers = [
       {
         id: "clark_364",
         name: "York Philippines Clark Operations",
-        location: [15.297, 120.672],
+        location: [15.189123, 120.54621],
         lotSize: "45.8 hectares",
         leaseExpiry: "October 2044",
         employees: "3,350",
@@ -5545,7 +5462,7 @@ const mapMarkers = [
       {
         id: "clark_365",
         name: "Mitsubishi Heavy Industries HVAC Clark",
-        location: [15.2975, 120.6725],
+        location: [15.186012, 120.551543],
         lotSize: "62.5 hectares",
         leaseExpiry: "February 2046",
         employees: "4,650",
@@ -5556,7 +5473,7 @@ const mapMarkers = [
       {
         id: "clark_366",
         name: "LG Electronics HVAC Philippines Clark",
-        location: [15.298, 120.673],
+        location: [15.191456, 120.555098],
         lotSize: "55.2 hectares",
         leaseExpiry: "September 2045",
         employees: "4,150",
@@ -5567,7 +5484,7 @@ const mapMarkers = [
       {
         id: "clark_367",
         name: "Gree Electric Philippines Clark",
-        location: [15.2985, 120.6735],
+        location: [15.18589, 120.544876],
         lotSize: "48.5 hectares",
         leaseExpiry: "May 2044",
         employees: "3,650",
@@ -5578,7 +5495,7 @@ const mapMarkers = [
       {
         id: "clark_368",
         name: "Midea Philippines Clark HVAC Plant",
-        location: [15.299, 120.674],
+        location: [15.190567, 120.556098],
         lotSize: "42.8 hectares",
         leaseExpiry: "November 2043",
         employees: "3,250",
@@ -5590,7 +5507,7 @@ const mapMarkers = [
       {
         id: "clark_369",
         name: "Haier Philippines Clark Factory",
-        location: [15.2995, 120.6745],
+        location: [15.183678, 120.546654],
         lotSize: "38.5 hectares",
         leaseExpiry: "March 2043",
         employees: "2,850",
@@ -5601,7 +5518,7 @@ const mapMarkers = [
       {
         id: "clark_370",
         name: "Panasonic HVAC Philippines Clark",
-        location: [15.3, 120.675],
+        location: [15.188789, 120.543321],
         lotSize: "52.8 hectares",
         leaseExpiry: "July 2044",
         employees: "3,950",
@@ -5612,7 +5529,7 @@ const mapMarkers = [
       {
         id: "clark_371",
         name: "Lennox Philippines Clark Plant",
-        location: [15.3005, 120.6755],
+        location: [15.192123, 120.552987],
         lotSize: "35.5 hectares",
         leaseExpiry: "January 2043",
         employees: "2,650",
@@ -5623,7 +5540,7 @@ const mapMarkers = [
       {
         id: "clark_372",
         name: "Rheem Philippines Clark Manufacturing",
-        location: [15.301, 120.676],
+        location: [15.187123, 120.554432],
         lotSize: "28.2 hectares",
         leaseExpiry: "September 2042",
         employees: "2,150",
@@ -5631,11 +5548,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Water heating and HVAC equipment manufacturing.",
       },
-
       {
         id: "clark_373",
         name: "Toro Philippines Clark Manufacturing",
-        location: [15.3015, 120.6765],
+        location: [15.184678, 120.544543],
         lotSize: "22.8 hectares",
         leaseExpiry: "May 2042",
         employees: "1,850",
@@ -5643,12 +5559,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Lawn mowers and outdoor power equipment manufacturing.",
       },
-
-      // Packaging Equipment & Systems
       {
         id: "clark_374",
         name: "Tetra Pak Philippines Clark Plant",
-        location: [15.302, 120.677],
+        location: [15.189567, 120.545543],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,650",
@@ -5660,7 +5574,7 @@ const mapMarkers = [
       {
         id: "clark_375",
         name: "Krones Philippines Clark Facility",
-        location: [15.3025, 120.6775],
+        location: [15.186456, 120.550876],
         lotSize: "42.2 hectares",
         leaseExpiry: "August 2043",
         employees: "3,150",
@@ -5671,7 +5585,7 @@ const mapMarkers = [
       {
         id: "clark_376",
         name: "Sidel Philippines Clark Operations",
-        location: [15.303, 120.678],
+        location: [15.191789, 120.553765],
         lotSize: "35.8 hectares",
         leaseExpiry: "June 2043",
         employees: "2,750",
@@ -5682,7 +5596,7 @@ const mapMarkers = [
       {
         id: "clark_377",
         name: "KHS Philippines Clark Plant",
-        location: [15.3035, 120.6785],
+        location: [15.185234, 120.54421],
         lotSize: "38.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,950",
@@ -5693,7 +5607,7 @@ const mapMarkers = [
       {
         id: "clark_378",
         name: "GEA Philippines Clark Facility",
-        location: [15.304, 120.679],
+        location: [15.19089, 120.555432],
         lotSize: "45.8 hectares",
         leaseExpiry: "February 2044",
         employees: "3,350",
@@ -5704,7 +5618,7 @@ const mapMarkers = [
       {
         id: "clark_379",
         name: "Alfa Laval Philippines Clark",
-        location: [15.3045, 120.6795],
+        location: [15.183789, 120.545987],
         lotSize: "32.5 hectares",
         leaseExpiry: "September 2042",
         employees: "2,450",
@@ -5713,12 +5627,10 @@ const mapMarkers = [
         description:
           "Heat transfer and separation technology for food processing.",
       },
-
-      // Industrial Filtration & Separation
       {
         id: "clark_380",
         name: "Pall Corporation Philippines Clark",
-        location: [15.305, 120.68],
+        location: [15.188234, 120.542654],
         lotSize: "28.2 hectares",
         leaseExpiry: "May 2042",
         employees: "2,050",
@@ -5730,7 +5642,7 @@ const mapMarkers = [
       {
         id: "clark_381",
         name: "Parker Hannifin Filtration Clark",
-        location: [15.3055, 120.6805],
+        location: [15.192567, 120.552321],
         lotSize: "25.8 hectares",
         leaseExpiry: "November 2041",
         employees: "1,850",
@@ -5741,7 +5653,7 @@ const mapMarkers = [
       {
         id: "clark_382",
         name: "Donaldson Philippines Clark Plant",
-        location: [15.306, 120.681],
+        location: [15.187456, 120.553098],
         lotSize: "32.8 hectares",
         leaseExpiry: "March 2043",
         employees: "2,350",
@@ -5752,7 +5664,7 @@ const mapMarkers = [
       {
         id: "clark_383",
         name: "MANN+HUMMEL Philippines Clark",
-        location: [15.3065, 120.6815],
+        location: [15.184234, 120.543876],
         lotSize: "28.5 hectares",
         leaseExpiry: "July 2042",
         employees: "2,150",
@@ -5761,11 +5673,10 @@ const mapMarkers = [
         description:
           "Filtration solutions for automotive and industrial applications.",
       },
-
       {
         id: "clark_384",
         name: "Clarcor Industrial Air Philippines",
-        location: [15.307, 120.682],
+        location: [15.18989, 120.544876],
         lotSize: "22.5 hectares",
         leaseExpiry: "January 2042",
         employees: "1,750",
@@ -5773,12 +5684,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Industrial air filtration and emissions control systems.",
       },
-
-      // Bearings & Linear Motion Systems
       {
         id: "clark_385",
         name: "SKF Philippines Clark Bearing Plant",
-        location: [15.3075, 120.6825],
+        location: [15.186789, 120.55021],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2044",
         employees: "3,650",
@@ -5789,7 +5698,7 @@ const mapMarkers = [
       {
         id: "clark_386",
         name: "NSK Philippines Clark Factory",
-        location: [15.308, 120.683],
+        location: [15.191123, 120.552432],
         lotSize: "42.8 hectares",
         leaseExpiry: "August 2044",
         employees: "3,250",
@@ -5801,7 +5710,7 @@ const mapMarkers = [
       {
         id: "clark_387",
         name: "NTN Corporation Philippines Clark",
-        location: [15.3085, 120.6835],
+        location: [15.185678, 120.543543],
         lotSize: "38.5 hectares",
         leaseExpiry: "June 2043",
         employees: "2,950",
@@ -5813,7 +5722,7 @@ const mapMarkers = [
       {
         id: "clark_388",
         name: "Schaeffler Philippines Clark Operations",
-        location: [15.309, 120.684],
+        location: [15.190234, 120.554765],
         lotSize: "45.2 hectares",
         leaseExpiry: "October 2044",
         employees: "3,450",
@@ -5824,7 +5733,7 @@ const mapMarkers = [
       {
         id: "clark_389",
         name: "JTEKT Philippines Clark Plant",
-        location: [15.3095, 120.6845],
+        location: [15.183234, 120.545321],
         lotSize: "35.8 hectares",
         leaseExpiry: "February 2043",
         employees: "2,650",
@@ -5836,7 +5745,7 @@ const mapMarkers = [
       {
         id: "clark_390",
         name: "Timken Philippines Clark Facility",
-        location: [15.31, 120.685],
+        location: [15.188678, 120.541987],
         lotSize: "32.5 hectares",
         leaseExpiry: "September 2042",
         employees: "2,450",
@@ -5847,7 +5756,7 @@ const mapMarkers = [
       {
         id: "clark_391",
         name: "THK Philippines Clark Linear Motion",
-        location: [15.3105, 120.6855],
+        location: [15.192901, 120.551654],
         lotSize: "28.2 hectares",
         leaseExpiry: "May 2042",
         employees: "2,150",
@@ -5855,12 +5764,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Linear motion systems and ball screws manufacturing.",
       },
-
-      // Industrial Chains & Belts
       {
         id: "clark_392",
         name: "Rexnord Philippines Clark Plant",
-        location: [15.311, 120.686],
+        location: [15.187678, 120.551765],
         lotSize: "38.5 hectares",
         leaseExpiry: "November 2043",
         employees: "2,850",
@@ -5871,7 +5778,7 @@ const mapMarkers = [
       {
         id: "clark_393",
         name: "Tsubaki Philippines Clark Operations",
-        location: [15.3115, 120.6865],
+        location: [15.18489, 120.54321],
         lotSize: "35.2 hectares",
         leaseExpiry: "March 2043",
         employees: "2,650",
@@ -5882,7 +5789,7 @@ const mapMarkers = [
       {
         id: "clark_394",
         name: "Gates Corporation Philippines Clark",
-        location: [15.312, 120.687],
+        location: [15.189234, 120.54421],
         lotSize: "42.5 hectares",
         leaseExpiry: "July 2044",
         employees: "3,150",
@@ -5893,7 +5800,7 @@ const mapMarkers = [
       {
         id: "clark_395",
         name: "Continental ContiTech Philippines Clark",
-        location: [15.3125, 120.6875],
+        location: [15.186123, 120.549543],
         lotSize: "48.8 hectares",
         leaseExpiry: "December 2044",
         employees: "3,550",
@@ -5904,7 +5811,7 @@ const mapMarkers = [
       {
         id: "clark_396",
         name: "Habasit Philippines Clark Facility",
-        location: [15.313, 120.688],
+        location: [15.191567, 120.551098],
         lotSize: "25.8 hectares",
         leaseExpiry: "August 2042",
         employees: "1,950",
@@ -5912,12 +5819,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Conveyor belts and power transmission belts.",
       },
-
-      // Material Handling Equipment
       {
         id: "clark_397",
         name: "Toyota Material Handling Clark",
-        location: [15.3135, 120.6885],
+        location: [15.185012, 120.542876],
         lotSize: "55.5 hectares",
         leaseExpiry: "December 2045",
         employees: "4,050",
@@ -5928,7 +5833,7 @@ const mapMarkers = [
       {
         id: "clark_398",
         name: "Jungheinrich Philippines Clark",
-        location: [15.314, 120.689],
+        location: [15.190678, 120.554098],
         lotSize: "42.2 hectares",
         leaseExpiry: "August 2044",
         employees: "3,150",
@@ -5939,7 +5844,7 @@ const mapMarkers = [
       {
         id: "clark_399",
         name: "Crown Equipment Philippines Clark",
-        location: [15.3145, 120.6895],
+        location: [15.183678, 120.544654],
         lotSize: "38.8 hectares",
         leaseExpiry: "June 2044",
         employees: "2,850",
@@ -5950,7 +5855,7 @@ const mapMarkers = [
       {
         id: "clark_400",
         name: "Kion Group Philippines Clark",
-        location: [15.315, 120.69],
+        location: [15.188901, 120.541321],
         lotSize: "45.5 hectares",
         leaseExpiry: "October 2044",
         employees: "3,350",
@@ -5958,11 +5863,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Warehouse equipment and supply chain solutions.",
       },
-
       {
         id: "clark_401",
         name: "Hyster-Yale Clark Philippines",
-        location: [15.3155, 120.6905],
+        location: [15.192234, 120.550987],
         lotSize: "32.5 hectares",
         leaseExpiry: "February 2043",
         employees: "2,450",
@@ -5974,7 +5878,7 @@ const mapMarkers = [
       {
         id: "clark_402",
         name: "Raymond Philippines Clark Plant",
-        location: [15.316, 120.691],
+        location: [15.18789, 120.550432],
         lotSize: "28.8 hectares",
         leaseExpiry: "September 2042",
         employees: "2,150",
@@ -5986,7 +5890,7 @@ const mapMarkers = [
       {
         id: "clark_403",
         name: "Mitsubishi Logisnext Clark",
-        location: [15.3165, 120.6915],
+        location: [15.184456, 120.542543],
         lotSize: "38.5 hectares",
         leaseExpiry: "May 2044",
         employees: "2,850",
@@ -5994,12 +5898,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Forklifts and automated guided vehicles manufacturing.",
       },
-
-      // Industrial Refrigeration & Cooling
       {
         id: "clark_404",
         name: "Danfoss Philippines Clark Cooling",
-        location: [15.317, 120.692],
+        location: [15.189678, 120.543543],
         lotSize: "45.8 hectares",
         leaseExpiry: "December 2044",
         employees: "3,450",
@@ -6011,7 +5913,7 @@ const mapMarkers = [
       {
         id: "clark_405",
         name: "Emerson Climate Technologies Clark",
-        location: [15.3175, 120.6925],
+        location: [15.186567, 120.548876],
         lotSize: "42.2 hectares",
         leaseExpiry: "August 2044",
         employees: "3,150",
@@ -6022,7 +5924,7 @@ const mapMarkers = [
       {
         id: "clark_406",
         name: "Johnson Controls Clark HVAC-R",
-        location: [15.318, 120.693],
+        location: [15.19189, 120.549765],
         lotSize: "52.5 hectares",
         leaseExpiry: "November 2045",
         employees: "3,950",
@@ -6034,7 +5936,7 @@ const mapMarkers = [
       {
         id: "clark_407",
         name: "Bitzer Philippines Clark Facility",
-        location: [15.3185, 120.6935],
+        location: [15.185456, 120.54221],
         lotSize: "35.8 hectares",
         leaseExpiry: "June 2043",
         employees: "2,650",
@@ -6045,7 +5947,7 @@ const mapMarkers = [
       {
         id: "clark_408",
         name: "Hussmann Philippines Clark Plant",
-        location: [15.319, 120.694],
+        location: [15.190012, 120.553432],
         lotSize: "28.5 hectares",
         leaseExpiry: "October 2042",
         employees: "2,150",
@@ -6054,12 +5956,10 @@ const mapMarkers = [
         description:
           "Commercial refrigeration systems for retail and food service.",
       },
-
-      // Printing & Imaging Equipment
       {
         id: "clark_409",
         name: "HP Inc Philippines Clark Imaging",
-        location: [15.3195, 120.6945],
+        location: [15.183456, 120.543987],
         lotSize: "58.5 hectares",
         leaseExpiry: "December 2046",
         employees: "4,850",
@@ -6070,7 +5970,7 @@ const mapMarkers = [
       {
         id: "clark_410",
         name: "Canon Philippines Clark Printer Plant",
-        location: [15.32, 120.695],
+        location: [15.188345, 120.540654],
         lotSize: "48.2 hectares",
         leaseExpiry: "August 2045",
         employees: "4,050",
@@ -6081,7 +5981,7 @@ const mapMarkers = [
       {
         id: "clark_411",
         name: "Epson Philippines Clark Factory",
-        location: [15.3205, 120.6955],
+        location: [15.192678, 120.550321],
         lotSize: "42.5 hectares",
         leaseExpiry: "June 2045",
         employees: "3,650",
@@ -6092,7 +5992,7 @@ const mapMarkers = [
       {
         id: "clark_412",
         name: "Brother Industries Clark Plant",
-        location: [15.321, 120.696],
+        location: [15.187234, 120.549098],
         lotSize: "35.2 hectares",
         leaseExpiry: "October 2044",
         employees: "2,950",
@@ -6104,7 +6004,7 @@ const mapMarkers = [
       {
         id: "clark_413",
         name: "Xerox Philippines Clark Operations",
-        location: [15.3215, 120.6965],
+        location: [15.184678, 120.541876],
         lotSize: "38.8 hectares",
         leaseExpiry: "February 2045",
         employees: "3,250",
@@ -6115,7 +6015,7 @@ const mapMarkers = [
       {
         id: "clark_414",
         name: "Ricoh Philippines Clark Facility",
-        location: [15.322, 120.697],
+        location: [15.189012, 120.542876],
         lotSize: "32.5 hectares",
         leaseExpiry: "September 2043",
         employees: "2,650",
@@ -6123,12 +6023,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Office imaging equipment and digital services solutions.",
       },
-
-      // Laboratory & Scientific Equipment
       {
         id: "clark_415",
         name: "Thermo Fisher Scientific Clark",
-        location: [15.3225, 120.6975],
+        location: [15.186234, 120.54821],
         lotSize: "45.8 hectares",
         leaseExpiry: "December 2045",
         employees: "3,850",
@@ -6140,7 +6038,7 @@ const mapMarkers = [
       {
         id: "clark_416",
         name: "Agilent Technologies Philippines Clark",
-        location: [15.323, 120.698],
+        location: [15.191234, 120.548432],
         lotSize: "38.5 hectares",
         leaseExpiry: "August 2044",
         employees: "3,250",
@@ -6151,7 +6049,7 @@ const mapMarkers = [
       {
         id: "clark_417",
         name: "Waters Corporation Philippines Clark",
-        location: [15.3235, 120.6985],
+        location: [15.185789, 120.541543],
         lotSize: "28.2 hectares",
         leaseExpiry: "June 2043",
         employees: "2,350",
@@ -6162,7 +6060,7 @@ const mapMarkers = [
       {
         id: "clark_418",
         name: "PerkinElmer Philippines Clark Plant",
-        location: [15.324, 120.699],
+        location: [15.190456, 120.552765],
         lotSize: "32.5 hectares",
         leaseExpiry: "October 2043",
         employees: "2,650",
@@ -6173,7 +6071,7 @@ const mapMarkers = [
       {
         id: "clark_419",
         name: "Bruker Philippines Clark Facility",
-        location: [15.3245, 120.6995],
+        location: [15.183901, 120.543321],
         lotSize: "25.8 hectares",
         leaseExpiry: "February 2043",
         employees: "2,050",
@@ -6182,12 +6080,10 @@ const mapMarkers = [
         description:
           "Scientific instruments for materials research and diagnostics.",
       },
-
-      // Medical Equipment & Devices
       {
         id: "clark_420",
         name: "Medtronic Philippines Clark Medical",
-        location: [15.325, 120.7],
+        location: [15.188567, 120.540123],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2046",
         employees: "4,250",
@@ -6198,7 +6094,7 @@ const mapMarkers = [
       {
         id: "clark_421",
         name: "GE Healthcare Philippines Clark",
-        location: [15.3255, 120.7005],
+        location: [15.192012, 120.549654],
         lotSize: "52.8 hectares",
         leaseExpiry: "August 2046",
         employees: "4,650",
@@ -6209,7 +6105,7 @@ const mapMarkers = [
       {
         id: "clark_422",
         name: "Siemens Healthineers Clark Plant",
-        location: [15.326, 120.701],
+        location: [15.187567, 120.547765],
         lotSize: "45.2 hectares",
         leaseExpiry: "June 2045",
         employees: "3,950",
@@ -6220,7 +6116,7 @@ const mapMarkers = [
       {
         id: "clark_423",
         name: "Philips Healthcare Philippines Clark",
-        location: [15.3265, 120.7015],
+        location: [15.184123, 120.54121],
         lotSize: "42.8 hectares",
         leaseExpiry: "October 2045",
         employees: "3,650",
@@ -6231,7 +6127,7 @@ const mapMarkers = [
       {
         id: "clark_424",
         name: "Stryker Philippines Clark Facility",
-        location: [15.327, 120.702],
+        location: [15.189456, 120.54221],
         lotSize: "35.5 hectares",
         leaseExpiry: "February 2045",
         employees: "3,050",
@@ -6243,7 +6139,7 @@ const mapMarkers = [
       {
         id: "clark_425",
         name: "Boston Scientific Clark Plant",
-        location: [15.3275, 120.7025],
+        location: [15.186678, 120.547543],
         lotSize: "38.2 hectares",
         leaseExpiry: "September 2044",
         employees: "3,250",
@@ -6255,7 +6151,7 @@ const mapMarkers = [
       {
         id: "clark_426",
         name: "Becton Dickinson Philippines Clark",
-        location: [15.328, 120.703],
+        location: [15.191678, 120.547098],
         lotSize: "32.8 hectares",
         leaseExpiry: "May 2044",
         employees: "2,850",
@@ -6263,12 +6159,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Medical supplies and diagnostic products manufacturing.",
       },
-
-      // Dental Equipment & Supplies
       {
         id: "clark_427",
         name: "Dentsply Sirona Philippines Clark",
-        location: [15.3285, 120.7035],
+        location: [15.185123, 120.540876],
         lotSize: "28.5 hectares",
         leaseExpiry: "November 2043",
         employees: "2,350",
@@ -6279,7 +6173,7 @@ const mapMarkers = [
       {
         id: "clark_428",
         name: "Ivoclar Vivadent Philippines Clark",
-        location: [15.329, 120.704],
+        location: [15.190789, 120.552098],
         lotSize: "22.8 hectares",
         leaseExpiry: "March 2043",
         employees: "1,850",
@@ -6288,12 +6182,10 @@ const mapMarkers = [
         description:
           "Dental materials and equipment for restorative dentistry.",
       },
-
-      // Optical & Eyewear Manufacturing
       {
         id: "clark_429",
         name: "Essilor Philippines Clark Lens Plant",
-        location: [15.3295, 120.7045],
+        location: [15.183567, 120.542654],
         lotSize: "35.8 hectares",
         leaseExpiry: "December 2044",
         employees: "3,050",
@@ -6304,7 +6196,7 @@ const mapMarkers = [
       {
         id: "clark_430",
         name: "Luxottica Philippines Clark Factory",
-        location: [15.33, 120.705],
+        location: [15.188012, 120.540789],
         lotSize: "28.2 hectares",
         leaseExpiry: "August 2043",
         employees: "2,450",
@@ -6315,7 +6207,7 @@ const mapMarkers = [
       {
         id: "clark_431",
         name: "Safilo Philippines Clark Operations",
-        location: [15.3305, 120.7055],
+        location: [15.192456, 120.548987],
         lotSize: "22.5 hectares",
         leaseExpiry: "June 2042",
         employees: "1,950",
@@ -6323,12 +6215,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Eyewear design and manufacturing for global brands.",
       },
-
-      // Watch & Timepiece Manufacturing
       {
         id: "clark_432",
         name: "Seiko Philippines Clark Watch Plant",
-        location: [15.331, 120.706],
+        location: [15.18789, 120.546432],
         lotSize: "32.5 hectares",
         leaseExpiry: "December 2044",
         employees: "2,850",
@@ -6339,7 +6229,7 @@ const mapMarkers = [
       {
         id: "clark_433",
         name: "Citizen Watch Philippines Clark",
-        location: [15.3315, 120.7065],
+        location: [15.184567, 120.540543],
         lotSize: "28.8 hectares",
         leaseExpiry: "August 2043",
         employees: "2,450",
@@ -6350,7 +6240,7 @@ const mapMarkers = [
       {
         id: "clark_434",
         name: "Casio Philippines Clark Factory",
-        location: [15.332, 120.707],
+        location: [15.189789, 120.541543],
         lotSize: "35.2 hectares",
         leaseExpiry: "October 2044",
         employees: "3,050",
@@ -6358,12 +6248,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Digital watches and electronic timepieces manufacturing.",
       },
-
-      // Jewelry & Precious Metals
       {
         id: "clark_435",
         name: "Tanishq Philippines Clark Jewelry",
-        location: [15.3325, 120.7075],
+        location: [15.186012, 120.546876],
         lotSize: "18.5 hectares",
         leaseExpiry: "June 2042",
         employees: "1,550",
@@ -6374,7 +6262,7 @@ const mapMarkers = [
       {
         id: "clark_436",
         name: "Pandora Philippines Clark Plant",
-        location: [15.333, 120.708],
+        location: [15.191012, 120.545765],
         lotSize: "22.8 hectares",
         leaseExpiry: "September 2043",
         employees: "1,950",
@@ -6385,7 +6273,7 @@ const mapMarkers = [
       {
         id: "clark_437",
         name: "Nike Philippines Clark Factory",
-        location: [15.3335, 120.7085],
+        location: [15.185567, 120.54021],
         lotSize: "65.5 hectares",
         leaseExpiry: "December 2047",
         employees: "8,850",
@@ -6396,7 +6284,7 @@ const mapMarkers = [
       {
         id: "clark_438",
         name: "Adidas Philippines Clark Plant",
-        location: [15.156, 120.526],
+        location: [15.190123, 120.551432],
         lotSize: "58.2 hectares",
         leaseExpiry: "August 2046",
         employees: "7,650",
@@ -6407,7 +6295,7 @@ const mapMarkers = [
       {
         id: "clark_439",
         name: "Puma Philippines Clark Operations",
-        location: [15.1565, 120.5265],
+        location: [15.183234, 120.541987],
         lotSize: "42.5 hectares",
         leaseExpiry: "June 2045",
         employees: "5,450",
@@ -6418,7 +6306,7 @@ const mapMarkers = [
       {
         id: "clark_440",
         name: "Under Armour Philippines Clark",
-        location: [15.157, 120.527],
+        location: [15.188456, 120.540456],
         lotSize: "38.8 hectares",
         leaseExpiry: "October 2044",
         employees: "4,850",
@@ -6429,7 +6317,7 @@ const mapMarkers = [
       {
         id: "clark_441",
         name: "New Balance Philippines Clark Plant",
-        location: [15.1575, 120.5275],
+        location: [15.192789, 120.548321],
         lotSize: "35.2 hectares",
         leaseExpiry: "February 2044",
         employees: "4,250",
@@ -6440,7 +6328,7 @@ const mapMarkers = [
       {
         id: "clark_442",
         name: "Mizuno Philippines Clark Factory",
-        location: [15.158, 120.528],
+        location: [15.187123, 120.545098],
         lotSize: "28.5 hectares",
         leaseExpiry: "September 2043",
         employees: "3,450",
@@ -6451,7 +6339,7 @@ const mapMarkers = [
       {
         id: "clark_443",
         name: "Asics Philippines Clark Operations",
-        location: [15.1585, 120.5285],
+        location: [15.18489, 120.540876],
         lotSize: "32.8 hectares",
         leaseExpiry: "May 2044",
         employees: "3,950",
@@ -6459,12 +6347,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Running shoes and sports performance gear manufacturing.",
       },
-      
-      // Outdoor & Recreation Equipment
       {
         id: "clark_444",
         name: "Decathlon Philippines Clark Plant",
-        location: [15.159, 120.529],
+        location: [15.189123, 120.540876],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2045",
         employees: "5,850",
@@ -6475,7 +6361,7 @@ const mapMarkers = [
       {
         id: "clark_445",
         name: "Columbia Sportswear Clark Factory",
-        location: [15.1595, 120.5295],
+        location: [15.186456, 120.54621],
         lotSize: "35.8 hectares",
         leaseExpiry: "August 2044",
         employees: "4,250",
@@ -6486,7 +6372,7 @@ const mapMarkers = [
       {
         id: "clark_446",
         name: "The North Face Philippines Clark",
-        location: [15.16, 120.53],
+        location: [15.191456, 120.544432],
         lotSize: "32.5 hectares",
         leaseExpiry: "June 2044",
         employees: "3,850",
@@ -6497,7 +6383,7 @@ const mapMarkers = [
       {
         id: "clark_447",
         name: "Patagonia Philippines Clark Plant",
-        location: [15.1605, 120.5305],
+        location: [15.18589, 120.541123],
         lotSize: "25.8 hectares",
         leaseExpiry: "October 2043",
         employees: "2,950",
@@ -6505,12 +6391,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Sustainable outdoor apparel manufacturing facility.",
       },
-      
-      // Bicycle & Cycling Equipment
       {
         id: "clark_448",
         name: "Giant Manufacturing Philippines Clark",
-        location: [15.161, 120.531],
+        location: [15.190567, 120.550765],
         lotSize: "58.5 hectares",
         leaseExpiry: "December 2046",
         employees: "6,850",
@@ -6521,7 +6405,7 @@ const mapMarkers = [
       {
         id: "clark_449",
         name: "Trek Bicycle Philippines Clark",
-        location: [15.1615, 120.5315],
+        location: [15.183678, 120.541321],
         lotSize: "45.2 hectares",
         leaseExpiry: "August 2045",
         employees: "5,250",
@@ -6532,7 +6416,7 @@ const mapMarkers = [
       {
         id: "clark_450",
         name: "Shimano Philippines Clark Factory",
-        location: [15.162, 120.532],
+        location: [15.188789, 120.541234],
         lotSize: "52.8 hectares",
         leaseExpiry: "November 2045",
         employees: "5,850",
@@ -6543,7 +6427,7 @@ const mapMarkers = [
       {
         id: "clark_451",
         name: "SRAM Philippines Clark Operations",
-        location: [15.1625, 120.5325],
+        location: [15.192123, 120.547654],
         lotSize: "38.5 hectares",
         leaseExpiry: "June 2044",
         employees: "4,250",
@@ -6551,12 +6435,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Bicycle drivetrains and braking systems manufacturing.",
       },
-      
-      // Fitness Equipment Manufacturing
       {
         id: "clark_452",
         name: "Life Fitness Philippines Clark Plant",
-        location: [15.163, 120.533],
+        location: [15.187456, 120.543765],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2044",
         employees: "4,650",
@@ -6567,7 +6449,7 @@ const mapMarkers = [
       {
         id: "clark_453",
         name: "Technogym Philippines Clark Factory",
-        location: [15.1635, 120.5335],
+        location: [15.184234, 120.542109],
         lotSize: "38.2 hectares",
         leaseExpiry: "August 2044",
         employees: "4,050",
@@ -6578,7 +6460,7 @@ const mapMarkers = [
       {
         id: "clark_454",
         name: "Precor Philippines Clark Operations",
-        location: [15.164, 120.534],
+        location: [15.189567, 120.542109],
         lotSize: "32.8 hectares",
         leaseExpiry: "June 2043",
         employees: "3,450",
@@ -6586,12 +6468,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Cardio and strength training equipment manufacturing.",
       },
-      
-      // Musical Instruments Manufacturing
       {
         id: "clark_455",
         name: "Yamaha Philippines Clark Music Plant",
-        location: [15.1645, 120.5345],
+        location: [15.186789, 120.545543],
         lotSize: "45.8 hectares",
         leaseExpiry: "December 2045",
         employees: "4,850",
@@ -6602,7 +6482,7 @@ const mapMarkers = [
       {
         id: "clark_456",
         name: "Roland Philippines Clark Factory",
-        location: [15.165, 120.535],
+        location: [15.191789, 120.543098],
         lotSize: "35.5 hectares",
         leaseExpiry: "August 2044",
         employees: "3,650",
@@ -6613,7 +6493,7 @@ const mapMarkers = [
       {
         id: "clark_457",
         name: "Fender Philippines Clark Plant",
-        location: [15.1655, 120.5355],
+        location: [15.185234, 120.542456],
         lotSize: "28.2 hectares",
         leaseExpiry: "June 2043",
         employees: "2,850",
@@ -6624,7 +6504,7 @@ const mapMarkers = [
       {
         id: "clark_458",
         name: "Kawai Philippines Clark Operations",
-        location: [15.166, 120.536],
+        location: [15.19089, 120.550098],
         lotSize: "32.5 hectares",
         leaseExpiry: "October 2043",
         employees: "3,250",
@@ -6632,12 +6512,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Pianos and digital musical instruments manufacturing.",
       },
-      
-      // Toys & Games Manufacturing
       {
         id: "clark_459",
         name: "Mattel Philippines Clark Factory",
-        location: [15.1665, 120.5365],
+        location: [15.183789, 120.540654],
         lotSize: "52.5 hectares",
         leaseExpiry: "December 2046",
         employees: "6,850",
@@ -6648,7 +6526,7 @@ const mapMarkers = [
       {
         id: "clark_460",
         name: "Hasbro Philippines Clark Plant",
-        location: [15.167, 120.537],
+        location: [15.188234, 120.542012],
         lotSize: "45.8 hectares",
         leaseExpiry: "August 2045",
         employees: "5,850",
@@ -6659,7 +6537,7 @@ const mapMarkers = [
       {
         id: "clark_461",
         name: "LEGO Philippines Clark Operations",
-        location: [15.1675, 120.5375],
+        location: [15.192567, 120.546987],
         lotSize: "58.2 hectares",
         leaseExpiry: "November 2046",
         employees: "7,650",
@@ -6670,7 +6548,7 @@ const mapMarkers = [
       {
         id: "clark_462",
         name: "Bandai Philippines Clark Factory",
-        location: [15.168, 120.538],
+        location: [15.187678, 120.542432],
         lotSize: "38.5 hectares",
         leaseExpiry: "June 2044",
         employees: "4,450",
@@ -6681,7 +6559,7 @@ const mapMarkers = [
       {
         id: "clark_463",
         name: "Ravensburger Philippines Clark Plant",
-        location: [15.1685, 120.5385],
+        location: [15.184678, 120.543442],
         lotSize: "28.8 hectares",
         leaseExpiry: "October 2043",
         employees: "3,250",
@@ -6689,12 +6567,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Puzzles and educational games manufacturing facility.",
       },
-      
-      // Office Furniture & Fixtures
       {
         id: "clark_464",
         name: "Steelcase Philippines Clark Plant",
-        location: [15.169, 120.539],
+        location: [15.18989, 120.543442],
         lotSize: "48.5 hectares",
         leaseExpiry: "December 2045",
         employees: "4,850",
@@ -6705,7 +6581,7 @@ const mapMarkers = [
       {
         id: "clark_465",
         name: "Herman Miller Philippines Clark",
-        location: [15.1695, 120.5395],
+        location: [15.186123, 120.544876],
         lotSize: "42.2 hectares",
         leaseExpiry: "August 2044",
         employees: "4,250",
@@ -6716,18 +6592,19 @@ const mapMarkers = [
       {
         id: "clark_466",
         name: "Haworth Philippines Clark Factory",
-        location: [15.17, 120.54],
+        location: [15.191123, 120.541765],
         lotSize: "38.8 hectares",
         leaseExpiry: "June 2044",
         employees: "3,850",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Office furniture and architectural interiors manufacturing.",
+        description:
+          "Office furniture and architectural interiors manufacturing.",
       },
       {
         id: "clark_467",
         name: "Kimball International Clark Plant",
-        location: [15.1705, 120.5405],
+        location: [15.185678, 120.543789],
         lotSize: "32.5 hectares",
         leaseExpiry: "October 2043",
         employees: "3,250",
@@ -6738,7 +6615,7 @@ const mapMarkers = [
       {
         id: "clark_468",
         name: "Knoll Philippines Clark Operations",
-        location: [15.171, 120.541],
+        location: [15.190234, 120.549432],
         lotSize: "28.5 hectares",
         leaseExpiry: "February 2043",
         employees: "2,650",
@@ -6746,12 +6623,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Modern office furniture and interior design solutions.",
       },
-      
-      // Home Furniture Manufacturing
       {
         id: "clark_469",
         name: "IKEA Philippines Clark Production",
-        location: [15.1715, 120.5415],
+        location: [15.183234, 120.542987],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2048",
         employees: "9,850",
@@ -6762,7 +6637,7 @@ const mapMarkers = [
       {
         id: "clark_470",
         name: "Ashley Furniture Clark Plant",
-        location: [15.172, 120.542],
+        location: [15.188678, 120.542789],
         lotSize: "65.2 hectares",
         leaseExpiry: "August 2046",
         employees: "7,250",
@@ -6773,18 +6648,19 @@ const mapMarkers = [
       {
         id: "clark_471",
         name: "La-Z-Boy Philippines Clark Factory",
-        location: [15.1725, 120.5425],
+        location: [15.192901, 120.546321],
         lotSize: "42.5 hectares",
         leaseExpiry: "June 2045",
         employees: "4,850",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Upholstered furniture and reclining chairs manufacturing.",
+        description:
+          "Upholstered furniture and reclining chairs manufacturing.",
       },
       {
         id: "clark_472",
         name: "Ethan Allen Philippines Clark",
-        location: [15.173, 120.543],
+        location: [15.18789, 120.541098],
         lotSize: "38.2 hectares",
         leaseExpiry: "October 2044",
         employees: "4,250",
@@ -6792,12 +6668,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Classic and contemporary furniture manufacturing.",
       },
-      
-      // Mattress & Bedding Manufacturing
       {
         id: "clark_473",
         name: "Tempur Sealy Philippines Clark",
-        location: [15.1735, 120.5435],
+        location: [15.184456, 120.544775],
         lotSize: "52.8 hectares",
         leaseExpiry: "December 2046",
         employees: "5,850",
@@ -6808,7 +6682,7 @@ const mapMarkers = [
       {
         id: "clark_474",
         name: "Serta Simmons Philippines Clark",
-        location: [15.174, 120.544],
+        location: [15.189234, 120.544775],
         lotSize: "48.5 hectares",
         leaseExpiry: "August 2045",
         employees: "5,250",
@@ -6819,7 +6693,7 @@ const mapMarkers = [
       {
         id: "clark_475",
         name: "Sleep Number Philippines Clark Plant",
-        location: [15.1745, 120.5445],
+        location: [15.186567, 120.54421],
         lotSize: "35.8 hectares",
         leaseExpiry: "June 2044",
         employees: "3,850",
@@ -6827,12 +6701,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Smart beds and sleep technology manufacturing.",
       },
-      
-      // Kitchen & Cookware Manufacturing
       {
         id: "clark_476",
         name: "Newell Brands Philippines Clark",
-        location: [15.175, 120.545],
+        location: [15.191567, 120.540432],
         lotSize: "45.2 hectares",
         leaseExpiry: "December 2044",
         employees: "4,650",
@@ -6843,7 +6715,7 @@ const mapMarkers = [
       {
         id: "clark_477",
         name: "Meyer Corporation Clark Plant",
-        location: [15.1755, 120.5455],
+        location: [15.185012, 120.545122],
         lotSize: "38.5 hectares",
         leaseExpiry: "August 2044",
         employees: "3,950",
@@ -6854,7 +6726,7 @@ const mapMarkers = [
       {
         id: "clark_478",
         name: "Zwilling J.A. Henckels Clark",
-        location: [15.176, 120.546],
+        location: [15.190678, 120.548765],
         lotSize: "28.2 hectares",
         leaseExpiry: "June 2043",
         employees: "2,850",
@@ -6865,7 +6737,7 @@ const mapMarkers = [
       {
         id: "clark_479",
         name: "Le Creuset Philippines Clark",
-        location: [15.1765, 120.5465],
+        location: [15.183678, 120.54432],
         lotSize: "32.5 hectares",
         leaseExpiry: "October 2043",
         employees: "3,250",
@@ -6873,12 +6745,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Enameled cast iron cookware manufacturing.",
       },
-      
-      // Lighting & Fixtures Manufacturing
       {
         id: "clark_480",
         name: "Philips Lighting Philippines Clark",
-        location: [15.177, 120.547],
+        location: [15.188901, 120.543567],
         lotSize: "58.5 hectares",
         leaseExpiry: "December 2046",
         employees: "6,250",
@@ -6889,18 +6759,19 @@ const mapMarkers = [
       {
         id: "clark_481",
         name: "Osram Philippines Clark Factory",
-        location: [15.1775, 120.5475],
+        location: [15.192234, 120.545654],
         lotSize: "48.2 hectares",
         leaseExpiry: "August 2045",
         employees: "5,050",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Lighting solutions and automotive lighting manufacturing.",
+        description:
+          "Lighting solutions and automotive lighting manufacturing.",
       },
       {
         id: "clark_482",
         name: "Cree Lighting Philippines Clark",
-        location: [15.178, 120.548],
+        location: [15.187234, 120.543765],
         lotSize: "42.5 hectares",
         leaseExpiry: "June 2045",
         employees: "4,450",
@@ -6911,7 +6782,7 @@ const mapMarkers = [
       {
         id: "clark_483",
         name: "Acuity Brands Philippines Clark",
-        location: [15.1785, 120.5485],
+        location: [15.18489, 120.546108],
         lotSize: "38.8 hectares",
         leaseExpiry: "October 2044",
         employees: "3,850",
@@ -6922,7 +6793,7 @@ const mapMarkers = [
       {
         id: "clark_484",
         name: "Hubbell Lighting Clark Plant",
-        location: [15.179, 120.549],
+        location: [15.189678, 120.546108],
         lotSize: "32.5 hectares",
         leaseExpiry: "February 2044",
         employees: "3,150",
@@ -6930,12 +6801,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Lighting fixtures and electrical products manufacturing.",
       },
-      
-      // Glass & Ceramics Manufacturing
       {
         id: "clark_485",
         name: "Corning Philippines Clark Glass Plant",
-        location: [15.1795, 120.5495],
+        location: [15.186234, 120.543543],
         lotSize: "65.5 hectares",
         leaseExpiry: "December 2047",
         employees: "6,850",
@@ -6946,29 +6815,31 @@ const mapMarkers = [
       {
         id: "clark_486",
         name: "Saint-Gobain Philippines Clark",
-        location: [15.18, 120.55],
+        location: [15.19189, 120.542098],
         lotSize: "58.2 hectares",
         leaseExpiry: "August 2046",
         employees: "5,850",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Glass and ceramic products for construction and automotive.",
+        description:
+          "Glass and ceramic products for construction and automotive.",
       },
       {
         id: "clark_487",
         name: "AGC Glass Philippines Clark Plant",
-        location: [15.1805, 120.5505],
+        location: [15.185456, 120.546455],
         lotSize: "72.8 hectares",
         leaseExpiry: "November 2047",
         employees: "7,450",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Architectural glass and automotive glazing manufacturing.",
+        description:
+          "Architectural glass and automotive glazing manufacturing.",
       },
       {
         id: "clark_488",
         name: "Guardian Glass Philippines Clark",
-        location: [15.181, 120.551],
+        location: [15.190012, 120.548098],
         lotSize: "55.2 hectares",
         leaseExpiry: "June 2046",
         employees: "5,650",
@@ -6979,7 +6850,7 @@ const mapMarkers = [
       {
         id: "clark_489",
         name: "NSG Group Philippines Clark Facility",
-        location: [15.1815, 120.5515],
+        location: [15.183456, 120.545653],
         lotSize: "48.5 hectares",
         leaseExpiry: "October 2045",
         employees: "4,850",
@@ -6987,12 +6858,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "Architectural and automotive glass manufacturing.",
       },
-      
-      // Textile & Fabric Manufacturing
       {
         id: "clark_490",
         name: "Invista Philippines Clark Textile",
-        location: [15.182, 120.552],
+        location: [15.188345, 120.544345],
         lotSize: "85.5 hectares",
         leaseExpiry: "December 2048",
         employees: "9,250",
@@ -7003,7 +6872,7 @@ const mapMarkers = [
       {
         id: "clark_491",
         name: "Lenzing Philippines Clark Fiber Plant",
-        location: [15.1825, 120.5525],
+        location: [15.192678, 120.544987],
         lotSize: "78.2 hectares",
         leaseExpiry: "August 2047",
         employees: "8,050",
@@ -7014,18 +6883,19 @@ const mapMarkers = [
       {
         id: "clark_492",
         name: "Milliken & Company Clark Facility",
-        location: [15.183, 120.553],
+        location: [15.187567, 120.545432],
         lotSize: "65.8 hectares",
         leaseExpiry: "June 2047",
         employees: "6,850",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Technical textiles and specialty chemicals manufacturing.",
+        description:
+          "Technical textiles and specialty chemicals manufacturing.",
       },
       {
         id: "clark_493",
         name: "Toray Industries Philippines Clark",
-        location: [15.1835, 120.5535],
+        location: [15.184123, 120.547441],
         lotSize: "95.2 hectares",
         leaseExpiry: "November 2048",
         employees: "10,450",
@@ -7036,7 +6906,7 @@ const mapMarkers = [
       {
         id: "clark_494",
         name: "Teijin Philippines Clark Plant",
-        location: [15.184, 120.554],
+        location: [15.189012, 120.547441],
         lotSize: "72.5 hectares",
         leaseExpiry: "March 2047",
         employees: "7,650",
@@ -7044,12 +6914,10 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description: "High-performance fibers and composite materials.",
       },
-      
-      // Leather Goods Manufacturing
       {
         id: "clark_495",
         name: "Coach Philippines Clark Leather Plant",
-        location: [15.1845, 120.5545],
+        location: [15.186678, 120.542876],
         lotSize: "42.5 hectares",
         leaseExpiry: "December 2045",
         employees: "5,850",
@@ -7060,7 +6928,7 @@ const mapMarkers = [
       {
         id: "clark_496",
         name: "Fossil Group Philippines Clark",
-        location: [15.185, 120.555],
+        location: [15.191234, 120.543765],
         lotSize: "35.8 hectares",
         leaseExpiry: "August 2044",
         employees: "4,650",
@@ -7071,7 +6939,7 @@ const mapMarkers = [
       {
         id: "clark_497",
         name: "Samsonite Philippines Clark Factory",
-        location: [15.1855, 120.5555],
+        location: [15.185789, 120.547788],
         lotSize: "48.2 hectares",
         leaseExpiry: "November 2045",
         employees: "5,450",
@@ -7082,7 +6950,7 @@ const mapMarkers = [
       {
         id: "clark_498",
         name: "Tumi Philippines Clark Operations",
-        location: [15.186, 120.556],
+        location: [15.190456, 120.547432],
         lotSize: "32.5 hectares",
         leaseExpiry: "June 2044",
         employees: "3,850",
@@ -7093,7 +6961,7 @@ const mapMarkers = [
       {
         id: "clark_499",
         name: "VF Corporation Philippines Clark",
-        location: [15.1865, 120.5565],
+        location: [15.183901, 120.546986],
         lotSize: "52.8 hectares",
         leaseExpiry: "October 2045",
         employees: "6,250",
@@ -7104,13 +6972,14 @@ const mapMarkers = [
       {
         id: "clark_500",
         name: "Tapestry Inc Philippines Clark Plant",
-        location: [15.187, 120.557],
+        location: [15.188567, 120.545123],
         lotSize: "45.5 hectares",
         leaseExpiry: "February 2045",
         employees: "5,650",
         status: "active_locators",
         subcategory: "clark-freeport",
-        description: "Luxury fashion accessories and leather goods manufacturing.",
+        description:
+          "Luxury fashion accessories and leather goods manufacturing.",
       },
 
       {
@@ -7236,7 +7105,7 @@ const mapMarkers = [
       {
         id: "bgc_01",
         name: "JP Morgan Chase & Co. Philippines",
-        location: [14.5525, 121.049],
+        location: [14.558423, 121.052812],
         lotSize: "2.8 hectares",
         leaseExpiry: "December 2030",
         employees: "1,250",
@@ -7248,7 +7117,7 @@ const mapMarkers = [
       {
         id: "bgc_02",
         name: "Samsung Electronics Philippines",
-        location: [14.553, 121.0495],
+        location: [14.551567, 121.048934],
         lotSize: "3.5 hectares",
         leaseExpiry: "August 2029",
         employees: "980",
@@ -7260,7 +7129,7 @@ const mapMarkers = [
       {
         id: "bgc_03",
         name: "Tesla Motors Philippines",
-        location: [14.5505, 121.047],
+        location: [14.562145, 121.056245],
         lotSize: "4.2 hectares",
         leaseExpiry: "June 2032",
         employees: "420",
@@ -7272,7 +7141,7 @@ const mapMarkers = [
       {
         id: "bgc_04",
         name: "Wells Fargo Philippines",
-        location: [14.5535, 121.05],
+        location: [14.554789, 121.051678],
         lotSize: "2.1 hectares",
         leaseExpiry: "March 2031",
         employees: "750",
@@ -7284,7 +7153,7 @@ const mapMarkers = [
       {
         id: "bgc_05",
         name: "Globe Telecom Headquarters",
-        location: [14.554, 121.0505],
+        location: [14.559234, 121.047123],
         lotSize: "5.8 hectares",
         leaseExpiry: "December 2035",
         employees: "2,800",
@@ -7296,7 +7165,7 @@ const mapMarkers = [
       {
         id: "bgc_06",
         name: "Unilever Philippines",
-        location: [14.551, 121.0475],
+        location: [14.548456, 121.054876],
         lotSize: "3.2 hectares",
         leaseExpiry: "September 2028",
         employees: "680",
@@ -7308,7 +7177,7 @@ const mapMarkers = [
       {
         id: "bgc_07",
         name: "Google Philippines",
-        location: [14.5545, 121.051],
+        location: [14.561901, 121.058421],
         lotSize: "4.5 hectares",
         leaseExpiry: "November 2033",
         employees: "1,150",
@@ -7320,7 +7189,7 @@ const mapMarkers = [
       {
         id: "bgc_08",
         name: "Accenture Philippines",
-        location: [14.5515, 121.0485],
+        location: [14.552678, 121.046789],
         lotSize: "6.2 hectares",
         leaseExpiry: "April 2030",
         employees: "3,200",
@@ -7332,7 +7201,7 @@ const mapMarkers = [
       {
         id: "bgc_09",
         name: "Philippine Stock Exchange",
-        location: [14.552, 121.0488],
+        location: [14.560567, 121.053321],
         lotSize: "2.5 hectares",
         leaseExpiry: "February 2040",
         employees: "450",
@@ -7344,7 +7213,7 @@ const mapMarkers = [
       {
         id: "bgc_10",
         name: "Ayala Land Inc. / ALI Group",
-        location: [14.555, 121.0515],
+        location: [14.555234, 121.057987],
         lotSize: "8.5 hectares",
         leaseExpiry: "January 2045",
         employees: "1,850",
@@ -7356,7 +7225,7 @@ const mapMarkers = [
       {
         id: "bgc_11",
         name: "Citibank Philippines Global Service Center",
-        location: [14.5542, 121.0512],
+        location: [14.54989, 121.049012],
         lotSize: "3.8 hectares",
         leaseExpiry: "September 2034",
         employees: "1,650",
@@ -7368,7 +7237,7 @@ const mapMarkers = [
       {
         id: "bgc_12",
         name: "HSBC Philippines Operations Center",
-        location: [14.5538, 121.0508],
+        location: [14.563456, 121.055765],
         lotSize: "4.1 hectares",
         leaseExpiry: "November 2031",
         employees: "1,420",
@@ -7380,7 +7249,7 @@ const mapMarkers = [
       {
         id: "bgc_13",
         name: "Deutsche Bank Philippines",
-        location: [14.5528, 121.0502],
+        location: [14.553123, 121.050234],
         lotSize: "2.7 hectares",
         leaseExpiry: "June 2033",
         employees: "850",
@@ -7392,7 +7261,7 @@ const mapMarkers = [
       {
         id: "bgc_14",
         name: "IBM Philippines Innovation Center",
-        location: [14.5548, 121.0518],
+        location: [14.558678, 121.059098],
         lotSize: "5.2 hectares",
         leaseExpiry: "March 2036",
         employees: "2,150",
@@ -7404,7 +7273,7 @@ const mapMarkers = [
       {
         id: "bgc_15",
         name: "Oracle Philippines Development Center",
-        location: [14.5522, 121.0492],
+        location: [14.547345, 121.045567],
         lotSize: "4.5 hectares",
         leaseExpiry: "August 2032",
         employees: "1,850",
@@ -7416,7 +7285,7 @@ const mapMarkers = [
       {
         id: "bgc_16",
         name: "Salesforce Philippines",
-        location: [14.5535, 121.0505],
+        location: [14.559789, 121.054432],
         lotSize: "3.9 hectares",
         leaseExpiry: "December 2034",
         employees: "1,280",
@@ -7428,7 +7297,7 @@ const mapMarkers = [
       {
         id: "bgc_17",
         name: "Amazon Web Services Philippines",
-        location: [14.554, 121.0515],
+        location: [14.551012, 121.057178],
         lotSize: "6.8 hectares",
         leaseExpiry: "February 2038",
         employees: "1,950",
@@ -7440,7 +7309,7 @@ const mapMarkers = [
       {
         id: "bgc_18",
         name: "Smart Communications Inc.",
-        location: [14.5545, 121.052],
+        location: [14.562234, 121.04889],
         lotSize: "4.2 hectares",
         leaseExpiry: "July 2035",
         employees: "1,680",
@@ -7452,7 +7321,7 @@ const mapMarkers = [
       {
         id: "bgc_19",
         name: "PLDT Enterprise Center",
-        location: [14.5525, 121.0495],
+        location: [14.555567, 121.052643],
         lotSize: "5.5 hectares",
         leaseExpiry: "April 2037",
         employees: "2,200",
@@ -7464,7 +7333,7 @@ const mapMarkers = [
       {
         id: "bgc_20",
         name: "ABS-CBN Digital Media Center",
-        location: [14.5532, 121.0498],
+        location: [14.549789, 121.056321],
         lotSize: "3.6 hectares",
         leaseExpiry: "October 2030",
         employees: "950",
@@ -7476,7 +7345,7 @@ const mapMarkers = [
       {
         id: "bgc_21",
         name: "Megaworld Corporation BGC Office",
-        location: [14.5518, 121.0485],
+        location: [14.563678, 121.050987],
         lotSize: "4.8 hectares",
         leaseExpiry: "January 2040",
         employees: "1,350",
@@ -7488,7 +7357,7 @@ const mapMarkers = [
       {
         id: "bgc_22",
         name: "SMDC Sales & Marketing Center",
-        location: [14.5515, 121.0482],
+        location: [14.55689, 121.046765],
         lotSize: "2.9 hectares",
         leaseExpiry: "May 2032",
         employees: "680",
@@ -7500,7 +7369,7 @@ const mapMarkers = [
       {
         id: "bgc_23",
         name: "Pfizer Philippines Regional Office",
-        location: [14.555, 121.0525],
+        location: [14.550456, 121.055109],
         lotSize: "3.2 hectares",
         leaseExpiry: "September 2033",
         employees: "450",
@@ -7512,7 +7381,7 @@ const mapMarkers = [
       {
         id: "bgc_24",
         name: "Johnson & Johnson Philippines",
-        location: [14.5555, 121.053],
+        location: [14.559123, 121.058876],
         lotSize: "2.8 hectares",
         leaseExpiry: "November 2031",
         employees: "380",
@@ -7524,7 +7393,7 @@ const mapMarkers = [
       {
         id: "bgc_25",
         name: "Procter & Gamble Philippines",
-        location: [14.5512, 121.0478],
+        location: [14.554678, 121.051421],
         lotSize: "4.0 hectares",
         leaseExpiry: "March 2035",
         employees: "850",
@@ -7536,7 +7405,7 @@ const mapMarkers = [
       {
         id: "bgc_26",
         name: "Nestlé Philippines Corporate Office",
-        location: [14.5508, 121.0475],
+        location: [14.56189, 121.047234],
         lotSize: "3.5 hectares",
         leaseExpiry: "August 2033",
         employees: "720",
@@ -7548,7 +7417,7 @@ const mapMarkers = [
       {
         id: "bgc_27",
         name: "Atmos Flagship Store",
-        location: [14.5541, 121.0511],
+        location: [14.552345, 121.056543],
         lotSize: "0.8 hectares",
         leaseExpiry: "December 2029",
         employees: "85",
@@ -7560,7 +7429,7 @@ const mapMarkers = [
       {
         id: "bgc_28",
         name: "Tiong Bahru Bakery Philippines",
-        location: [14.5538, 121.0508],
+        location: [14.560456, 121.049678],
         lotSize: "0.5 hectares",
         leaseExpiry: "June 2028",
         employees: "45",
@@ -7572,7 +7441,7 @@ const mapMarkers = [
       {
         id: "bgc_29",
         name: "Goobne Chicken Philippines",
-        location: [14.5535, 121.0505],
+        location: [14.548234, 121.054098],
         lotSize: "0.6 hectares",
         leaseExpiry: "April 2030",
         employees: "65",
@@ -7581,12 +7450,10 @@ const mapMarkers = [
         description:
           "Korean oven-roasted chicken restaurant chain flagship location.",
       },
-
-      // Automotive & Transportation
       {
         id: "bgc_30",
         name: "BYD Philippines Showroom",
-        location: [14.552, 121.049],
+        location: [14.558012, 121.059321],
         lotSize: "1.2 hectares",
         leaseExpiry: "February 2032",
         employees: "120",
@@ -7598,7 +7465,7 @@ const mapMarkers = [
       {
         id: "bgc_31",
         name: "Toyota Motor Philippines BGC Office",
-        location: [14.5545, 121.0515],
+        location: [14.563345, 121.052765],
         lotSize: "2.5 hectares",
         leaseExpiry: "July 2034",
         employees: "480",
@@ -7607,12 +7474,10 @@ const mapMarkers = [
         description:
           "Automotive sales and after-sales services regional center.",
       },
-
-      // Energy & Utilities
       {
         id: "bgc_32",
         name: "Caltex Green Energy Station",
-        location: [14.5528, 121.05],
+        location: [14.555567, 121.046987],
         lotSize: "0.8 hectares",
         leaseExpiry: "October 2031",
         employees: "35",
@@ -7624,7 +7489,7 @@ const mapMarkers = [
       {
         id: "bgc_33",
         name: "Shell Philippines BGC Office",
-        location: [14.555, 121.0525],
+        location: [14.55089, 121.057654],
         lotSize: "2.2 hectares",
         leaseExpiry: "September 2033",
         employees: "320",
@@ -7633,11 +7498,10 @@ const mapMarkers = [
         description:
           "Petroleum products distribution and retail operations center.",
       },
-
       {
         id: "bgc_34",
         name: "Ayala Corporation Head Office",
-        location: [14.5556, 121.0532],
+        location: [14.559789, 121.053987],
         lotSize: "7.2 hectares",
         leaseExpiry: "December 2045",
         employees: "2,850",
@@ -7649,7 +7513,7 @@ const mapMarkers = [
       {
         id: "bgc_35",
         name: "BPI Tower Corporate Center",
-        location: [14.5548, 121.0522],
+        location: [14.554123, 121.05021],
         lotSize: "5.8 hectares",
         leaseExpiry: "November 2038",
         employees: "3,200",
@@ -7661,7 +7525,7 @@ const mapMarkers = [
       {
         id: "bgc_36",
         name: "Metrobank BGC Corporate Office",
-        location: [14.5552, 121.0528],
+        location: [14.561456, 121.048543],
         lotSize: "4.5 hectares",
         leaseExpiry: "September 2036",
         employees: "2,450",
@@ -7673,7 +7537,7 @@ const mapMarkers = [
       {
         id: "bgc_37",
         name: "Security Bank Centre",
-        location: [14.5544, 121.0518],
+        location: [14.552678, 121.055098],
         lotSize: "3.8 hectares",
         leaseExpiry: "August 2034",
         employees: "1,650",
@@ -7685,7 +7549,7 @@ const mapMarkers = [
       {
         id: "bgc_38",
         name: "Unionbank Plaza",
-        location: [14.5536, 121.051],
+        location: [14.560123, 121.051876],
         lotSize: "4.2 hectares",
         leaseExpiry: "June 2035",
         employees: "1,850",
@@ -7697,7 +7561,7 @@ const mapMarkers = [
       {
         id: "bgc_39",
         name: "BDO Corporate Center BGC",
-        location: [14.554, 121.0514],
+        location: [14.548567, 121.056432],
         lotSize: "6.5 hectares",
         leaseExpiry: "March 2040",
         employees: "2,950",
@@ -7709,7 +7573,7 @@ const mapMarkers = [
       {
         id: "bgc_40",
         name: "Robinsons Land Corporation",
-        location: [14.5524, 121.0496],
+        location: [14.558456, 121.058654],
         lotSize: "3.5 hectares",
         leaseExpiry: "July 2033",
         employees: "1,250",
@@ -7721,7 +7585,7 @@ const mapMarkers = [
       {
         id: "bgc_41",
         name: "SM Investments Corporation",
-        location: [14.5558, 121.0535],
+        location: [14.56289, 121.054109],
         lotSize: "5.2 hectares",
         leaseExpiry: "February 2042",
         employees: "1,950",
@@ -7733,7 +7597,7 @@ const mapMarkers = [
       {
         id: "bgc_42",
         name: "JG Summit Holdings Office",
-        location: [14.5532, 121.0504],
+        location: [14.555123, 121.047321],
         lotSize: "4.0 hectares",
         leaseExpiry: "October 2037",
         employees: "1,650",
@@ -7745,7 +7609,7 @@ const mapMarkers = [
       {
         id: "bgc_43",
         name: "PLDT Smart Tower",
-        location: [14.5546, 121.052],
+        location: [14.550234, 121.05921],
         lotSize: "8.8 hectares",
         leaseExpiry: "January 2041",
         employees: "3,850",
@@ -7757,7 +7621,7 @@ const mapMarkers = [
       {
         id: "bgc_44",
         name: "Manila Electric Company (Meralco)",
-        location: [14.5528, 121.05],
+        location: [14.559345, 121.055876],
         lotSize: "4.8 hectares",
         leaseExpiry: "May 2039",
         employees: "2,200",
@@ -7769,7 +7633,7 @@ const mapMarkers = [
       {
         id: "bgc_45",
         name: "DMCI Holdings Corporate Office",
-        location: [14.552, 121.0492],
+        location: [14.554567, 121.052987],
         lotSize: "3.2 hectares",
         leaseExpiry: "April 2035",
         employees: "950",
@@ -7780,7 +7644,7 @@ const mapMarkers = [
       {
         id: "bgc_46",
         name: "Aboitiz Equity Ventures BGC",
-        location: [14.5554, 121.053],
+        location: [14.561678, 121.049098],
         lotSize: "3.6 hectares",
         leaseExpiry: "September 2036",
         employees: "1,150",
@@ -7792,7 +7656,7 @@ const mapMarkers = [
       {
         id: "bgc_47",
         name: "Lopez Holdings Corporation",
-        location: [14.5516, 121.0484],
+        location: [14.55289, 121.056765],
         lotSize: "2.8 hectares",
         leaseExpiry: "November 2032",
         employees: "680",
@@ -7804,7 +7668,7 @@ const mapMarkers = [
       {
         id: "bgc_48",
         name: "First Gen Corporation Office",
-        location: [14.5542, 121.0516],
+        location: [14.560567, 121.052432],
         lotSize: "4.5 hectares",
         leaseExpiry: "December 2038",
         employees: "1,450",
@@ -7816,7 +7680,7 @@ const mapMarkers = [
       {
         id: "bgc_49",
         name: "Globe Fintech Innovations",
-        location: [14.5538, 121.0512],
+        location: [14.548901, 121.057098],
         lotSize: "2.5 hectares",
         leaseExpiry: "August 2033",
         employees: "850",
@@ -7828,7 +7692,7 @@ const mapMarkers = [
       {
         id: "bgc_50",
         name: "Converge ICT Solutions",
-        location: [14.5526, 121.0498],
+        location: [14.558789, 121.057321],
         lotSize: "3.8 hectares",
         leaseExpiry: "June 2034",
         employees: "1,250",
@@ -7840,7 +7704,7 @@ const mapMarkers = [
       {
         id: "bgc_51",
         name: "Vista Land & Lifescapes",
-        location: [14.553, 121.0502],
+        location: [14.563123, 121.053876],
         lotSize: "3.0 hectares",
         leaseExpiry: "March 2035",
         employees: "920",
@@ -7852,7 +7716,7 @@ const mapMarkers = [
       {
         id: "bgc_52",
         name: "Century Pacific Food Inc",
-        location: [14.5522, 121.0494],
+        location: [14.555456, 121.048654],
         lotSize: "2.2 hectares",
         leaseExpiry: "October 2031",
         employees: "450",
@@ -7864,7 +7728,7 @@ const mapMarkers = [
       {
         id: "bgc_53",
         name: "Jollibee Foods Corporation",
-        location: [14.5534, 121.0506],
+        location: [14.550678, 121.058987],
         lotSize: "4.8 hectares",
         leaseExpiry: "February 2040",
         employees: "1,850",
@@ -7873,12 +7737,10 @@ const mapMarkers = [
         description:
           "Fast food restaurant chain headquarters and franchise management center.",
       },
-
-      // PART 2: Business Process Outsourcing & IT Services (25 sites)
       {
         id: "bgc_54",
         name: "Concentrix BGC Campus",
-        location: [14.556, 121.0538],
+        location: [14.559567, 121.05421],
         lotSize: "6.8 hectares",
         leaseExpiry: "July 2037",
         employees: "4,250",
@@ -7890,7 +7752,7 @@ const mapMarkers = [
       {
         id: "bgc_55",
         name: "Teleperformance Philippines",
-        location: [14.5562, 121.054],
+        location: [14.554234, 121.051765],
         lotSize: "5.5 hectares",
         leaseExpiry: "September 2035",
         employees: "3,850",
@@ -7901,7 +7763,7 @@ const mapMarkers = [
       {
         id: "bgc_56",
         name: "Convergys BGC Operations",
-        location: [14.5564, 121.0542],
+        location: [14.561012, 121.049876],
         lotSize: "7.2 hectares",
         leaseExpiry: "November 2036",
         employees: "4,800",
@@ -7913,7 +7775,7 @@ const mapMarkers = [
       {
         id: "bgc_57",
         name: "Sykes Philippines BGC",
-        location: [14.555, 121.0526],
+        location: [14.552234, 121.057109],
         lotSize: "4.5 hectares",
         leaseExpiry: "March 2034",
         employees: "2,950",
@@ -7925,7 +7787,7 @@ const mapMarkers = [
       {
         id: "bgc_58",
         name: "TaskUs BGC Facility",
-        location: [14.5548, 121.0524],
+        location: [14.56089, 121.053098],
         lotSize: "3.8 hectares",
         leaseExpiry: "August 2033",
         employees: "2,450",
@@ -7936,7 +7798,7 @@ const mapMarkers = [
       {
         id: "bgc_59",
         name: "Sutherland Global Services",
-        location: [14.5566, 121.0544],
+        location: [14.548678, 121.056876],
         lotSize: "5.2 hectares",
         leaseExpiry: "December 2035",
         employees: "3,650",
@@ -7948,7 +7810,7 @@ const mapMarkers = [
       {
         id: "bgc_60",
         name: "VXI Global Solutions",
-        location: [14.5558, 121.0536],
+        location: [14.558234, 121.058543],
         lotSize: "4.0 hectares",
         leaseExpiry: "June 2034",
         employees: "2,850",
@@ -7960,7 +7822,7 @@ const mapMarkers = [
       {
         id: "bgc_61",
         name: "Hinduja Global Solutions",
-        location: [14.5556, 121.0534],
+        location: [14.562567, 121.054321],
         lotSize: "3.5 hectares",
         leaseExpiry: "October 2032",
         employees: "2,200",
@@ -7972,7 +7834,7 @@ const mapMarkers = [
       {
         id: "bgc_62",
         name: "WNS Philippines BGC",
-        location: [14.5554, 121.0532],
+        location: [14.555678, 121.04921],
         lotSize: "4.8 hectares",
         leaseExpiry: "February 2036",
         employees: "3,450",
@@ -7984,7 +7846,7 @@ const mapMarkers = [
       {
         id: "bgc_63",
         name: "Genpact Philippines BGC",
-        location: [14.5552, 121.053],
+        location: [14.550901, 121.058543],
         lotSize: "6.5 hectares",
         leaseExpiry: "April 2037",
         employees: "4,200",
@@ -7996,7 +7858,7 @@ const mapMarkers = [
       {
         id: "bgc_64",
         name: "TCS Philippines BGC Center",
-        location: [14.5568, 121.0546],
+        location: [14.55989, 121.053987],
         lotSize: "8.2 hectares",
         leaseExpiry: "January 2039",
         employees: "5,850",
@@ -8007,7 +7869,7 @@ const mapMarkers = [
       {
         id: "bgc_65",
         name: "Wipro Philippines BGC",
-        location: [14.557, 121.0548],
+        location: [14.554456, 121.05221],
         lotSize: "5.8 hectares",
         leaseExpiry: "May 2036",
         employees: "3,950",
@@ -8018,7 +7880,7 @@ const mapMarkers = [
       {
         id: "bgc_66",
         name: "Infosys BGC Development Center",
-        location: [14.5572, 121.055],
+        location: [14.561345, 121.050432],
         lotSize: "7.5 hectares",
         leaseExpiry: "September 2038",
         employees: "5,200",
@@ -8030,7 +7892,7 @@ const mapMarkers = [
       {
         id: "bgc_67",
         name: "HCL Technologies Philippines",
-        location: [14.5574, 121.0552],
+        location: [14.552567, 121.056876],
         lotSize: "4.2 hectares",
         leaseExpiry: "November 2035",
         employees: "2,850",
@@ -8041,7 +7903,7 @@ const mapMarkers = [
       {
         id: "bgc_68",
         name: "Tech Mahindra BGC Campus",
-        location: [14.5576, 121.0554],
+        location: [14.560234, 121.053765],
         lotSize: "3.8 hectares",
         leaseExpiry: "March 2034",
         employees: "2,450",
@@ -8053,7 +7915,7 @@ const mapMarkers = [
       {
         id: "bgc_69",
         name: "Capgemini Philippines BGC",
-        location: [14.5578, 121.0556],
+        location: [14.548234, 121.055321],
         lotSize: "5.0 hectares",
         leaseExpiry: "July 2036",
         employees: "3,650",
@@ -8064,7 +7926,7 @@ const mapMarkers = [
       {
         id: "bgc_70",
         name: "NTT Data Philippines BGC",
-        location: [14.558, 121.0558],
+        location: [14.558678, 121.059098],
         lotSize: "4.5 hectares",
         leaseExpiry: "December 2035",
         employees: "3,200",
@@ -8075,7 +7937,7 @@ const mapMarkers = [
       {
         id: "bgc_71",
         name: "Fujitsu Philippines BGC Office",
-        location: [14.5582, 121.056],
+        location: [14.562901, 121.054987],
         lotSize: "3.2 hectares",
         leaseExpiry: "August 2033",
         employees: "2,100",
@@ -8087,7 +7949,7 @@ const mapMarkers = [
       {
         id: "bgc_72",
         name: "Amdocs Philippines BGC",
-        location: [14.5584, 121.0562],
+        location: [14.555234, 121.049987],
         lotSize: "2.8 hectares",
         leaseExpiry: "June 2032",
         employees: "1,850",
@@ -8099,7 +7961,7 @@ const mapMarkers = [
       {
         id: "bgc_73",
         name: "Mphasis BGC Development Center",
-        location: [14.5586, 121.0564],
+        location: [14.550567, 121.05821],
         lotSize: "3.5 hectares",
         leaseExpiry: "October 2034",
         employees: "2,450",
@@ -8110,7 +7972,7 @@ const mapMarkers = [
       {
         id: "bgc_74",
         name: "Cognizant Technology Solutions",
-        location: [14.5588, 121.0566],
+        location: [14.559234, 121.05421],
         lotSize: "6.2 hectares",
         leaseExpiry: "February 2037",
         employees: "4,500",
@@ -8121,7 +7983,7 @@ const mapMarkers = [
       {
         id: "bgc_75",
         name: "EXL Philippines BGC Center",
-        location: [14.559, 121.0568],
+        location: [14.55489, 121.052876],
         lotSize: "2.5 hectares",
         leaseExpiry: "April 2033",
         employees: "1,650",
@@ -8133,7 +7995,7 @@ const mapMarkers = [
       {
         id: "bgc_76",
         name: "Mu Sigma Philippines BGC",
-        location: [14.5592, 121.057],
+        location: [14.561567, 121.051098],
         lotSize: "3.0 hectares",
         leaseExpiry: "September 2034",
         employees: "1,950",
@@ -8144,7 +8006,7 @@ const mapMarkers = [
       {
         id: "bgc_77",
         name: "Fractal Analytics BGC Office",
-        location: [14.5594, 121.0572],
+        location: [14.552012, 121.057321],
         lotSize: "2.2 hectares",
         leaseExpiry: "November 2032",
         employees: "1,450",
@@ -8156,7 +8018,7 @@ const mapMarkers = [
       {
         id: "bgc_78",
         name: "Quantiphi Philippines BGC",
-        location: [14.5596, 121.0574],
+        location: [14.560678, 121.054321],
         lotSize: "1.8 hectares",
         leaseExpiry: "May 2033",
         employees: "950",
@@ -8164,12 +8026,10 @@ const mapMarkers = [
         subcategory: "bonifacio-global",
         description: "Applied AI and data science solutions provider.",
       },
-
-      // PART 3: Retail & Commercial Establishments (30 sites)
       {
         id: "bgc_79",
         name: "BGC Central Square Mall",
-        location: [14.5518, 121.0488],
+        location: [14.548789, 121.054987],
         lotSize: "12.5 hectares",
         leaseExpiry: "December 2045",
         employees: "2,850",
@@ -8181,7 +8041,7 @@ const mapMarkers = [
       {
         id: "bgc_80",
         name: "Bonifacio High Street Complex",
-        location: [14.5526, 121.0498],
+        location: [14.558901, 121.057654],
         lotSize: "15.8 hectares",
         leaseExpiry: "January 2050",
         employees: "3,650",
@@ -8193,7 +8053,7 @@ const mapMarkers = [
       {
         id: "bgc_81",
         name: "Market! Market! BGC Extension",
-        location: [14.5512, 121.048],
+        location: [14.563234, 121.055432],
         lotSize: "8.5 hectares",
         leaseExpiry: "March 2040",
         employees: "1,950",
@@ -8205,7 +8065,7 @@ const mapMarkers = [
       {
         id: "bgc_82",
         name: "Park Triangle Mall",
-        location: [14.5542, 121.0516],
+        location: [14.555567, 121.050654],
         lotSize: "6.8 hectares",
         leaseExpiry: "September 2038",
         employees: "1,450",
@@ -8217,7 +8077,7 @@ const mapMarkers = [
       {
         id: "bgc_83",
         name: "One Bonifacio High Street",
-        location: [14.553, 121.0502],
+        location: [14.550123, 121.057987],
         lotSize: "4.2 hectares",
         leaseExpiry: "July 2036",
         employees: "850",
@@ -8228,7 +8088,7 @@ const mapMarkers = [
       {
         id: "bgc_84",
         name: "Zara BGC Flagship Store",
-        location: [14.5528, 121.05],
+        location: [14.559678, 121.053765],
         lotSize: "0.8 hectares",
         leaseExpiry: "November 2030",
         employees: "120",
@@ -8239,7 +8099,7 @@ const mapMarkers = [
       {
         id: "bgc_85",
         name: "H&M BGC Store",
-        location: [14.5532, 121.0504],
+        location: [14.554123, 121.053321],
         lotSize: "0.6 hectares",
         leaseExpiry: "August 2031",
         employees: "85",
@@ -8251,7 +8111,7 @@ const mapMarkers = [
       {
         id: "bgc_86",
         name: "Uniqlo BGC Global Store",
-        location: [14.5524, 121.0496],
+        location: [14.56189, 121.051876],
         lotSize: "0.7 hectares",
         leaseExpiry: "June 2032",
         employees: "95",
@@ -8262,7 +8122,7 @@ const mapMarkers = [
       {
         id: "bgc_87",
         name: "Nike BGC Flagship",
-        location: [14.5536, 121.0508],
+        location: [14.552456, 121.056876],
         lotSize: "0.9 hectares",
         leaseExpiry: "October 2033",
         employees: "110",
@@ -8273,7 +8133,7 @@ const mapMarkers = [
       {
         id: "bgc_88",
         name: "Adidas BGC Brand Center",
-        location: [14.554, 121.0512],
+        location: [14.560012, 121.054987],
         lotSize: "0.8 hectares",
         leaseExpiry: "December 2032",
         employees: "105",
@@ -8284,7 +8144,7 @@ const mapMarkers = [
       {
         id: "bgc_89",
         name: "Apple Store BGC",
-        location: [14.5544, 121.0516],
+        location: [14.548456, 121.054654],
         lotSize: "0.5 hectares",
         leaseExpiry: "February 2035",
         employees: "180",
@@ -8296,7 +8156,7 @@ const mapMarkers = [
       {
         id: "bgc_90",
         name: "Samsung Experience Store BGC",
-        location: [14.5548, 121.052],
+        location: [14.558345, 121.056987],
         lotSize: "0.6 hectares",
         leaseExpiry: "April 2034",
         employees: "145",
@@ -8308,7 +8168,7 @@ const mapMarkers = [
       {
         id: "bgc_91",
         name: "Huawei Flagship Store BGC",
-        location: [14.5552, 121.0524],
+        location: [14.562678, 121.056098],
         lotSize: "0.4 hectares",
         leaseExpiry: "September 2031",
         employees: "75",
@@ -8319,7 +8179,7 @@ const mapMarkers = [
       {
         id: "bgc_92",
         name: "Starbucks Reserve BGC",
-        location: [14.552, 121.049],
+        location: [14.55589, 121.051321],
         lotSize: "0.3 hectares",
         leaseExpiry: "November 2029",
         employees: "65",
@@ -8330,7 +8190,7 @@ const mapMarkers = [
       {
         id: "bgc_93",
         name: "Tim Hortons BGC Flagship",
-        location: [14.5516, 121.0486],
+        location: [14.550678, 121.057543],
         lotSize: "0.4 hectares",
         leaseExpiry: "May 2030",
         employees: "55",
@@ -8341,7 +8201,7 @@ const mapMarkers = [
       {
         id: "bgc_94",
         name: "Dean & DeLuca BGC Café",
-        location: [14.5534, 121.0506],
+        location: [14.559012, 121.053987],
         lotSize: "0.2 hectares",
         leaseExpiry: "March 2028",
         employees: "35",
@@ -8352,7 +8212,7 @@ const mapMarkers = [
       {
         id: "bgc_95",
         name: "Shake Shack BGC",
-        location: [14.5538, 121.051],
+        location: [14.554567, 121.053987],
         lotSize: "0.3 hectares",
         leaseExpiry: "July 2030",
         employees: "85",
@@ -8363,7 +8223,7 @@ const mapMarkers = [
       {
         id: "bgc_96",
         name: "Ramen Nagi BGC Branch",
-        location: [14.5542, 121.0514],
+        location: [14.561234, 121.052432],
         lotSize: "0.2 hectares",
         leaseExpiry: "January 2029",
         employees: "45",
@@ -8374,7 +8234,7 @@ const mapMarkers = [
       {
         id: "bgc_97",
         name: "Yabu House of Katsu BGC",
-        location: [14.5546, 121.0518],
+        location: [14.552789, 121.056321],
         lotSize: "0.3 hectares",
         leaseExpiry: "August 2030",
         employees: "65",
@@ -8386,7 +8246,7 @@ const mapMarkers = [
       {
         id: "bgc_98",
         name: "Wolfgang's Steakhouse BGC",
-        location: [14.555, 121.0522],
+        location: [14.560456, 121.055654],
         lotSize: "0.4 hectares",
         leaseExpiry: "December 2031",
         employees: "95",
@@ -8397,7 +8257,7 @@ const mapMarkers = [
       {
         id: "bgc_99",
         name: "Nobu BGC Restaurant",
-        location: [14.5554, 121.0526],
+        location: [14.548901, 121.054321],
         lotSize: "0.5 hectares",
         leaseExpiry: "June 2033",
         employees: "120",
@@ -8408,7 +8268,7 @@ const mapMarkers = [
       {
         id: "bgc_100",
         name: "Din Tai Fung BGC",
-        location: [14.5558, 121.053],
+        location: [14.558567, 121.056321],
         lotSize: "0.3 hectares",
         leaseExpiry: "October 2030",
         employees: "110",
@@ -8420,7 +8280,7 @@ const mapMarkers = [
       {
         id: "bgc_101",
         name: "P.F. Chang's BGC Branch",
-        location: [14.5562, 121.0534],
+        location: [14.563012, 121.056765],
         lotSize: "0.4 hectares",
         leaseExpiry: "February 2031",
         employees: "135",
@@ -8431,7 +8291,7 @@ const mapMarkers = [
       {
         id: "bgc_102",
         name: "Cheesecake Factory BGC",
-        location: [14.5566, 121.0538],
+        location: [14.555123, 121.052098],
         lotSize: "0.6 hectares",
         leaseExpiry: "September 2032",
         employees: "185",
@@ -8443,7 +8303,7 @@ const mapMarkers = [
       {
         id: "bgc_103",
         name: "Krispy Kreme BGC Doughnut Factory",
-        location: [14.5514, 121.0482],
+        location: [14.550234, 121.057098],
         lotSize: "0.3 hectares",
         leaseExpiry: "April 2029",
         employees: "75",
@@ -8454,7 +8314,7 @@ const mapMarkers = [
       {
         id: "bgc_104",
         name: "Baskin-Robbins BGC",
-        location: [14.5568, 121.054],
+        location: [14.559456, 121.053432],
         lotSize: "0.2 hectares",
         leaseExpiry: "November 2028",
         employees: "35",
@@ -8465,7 +8325,7 @@ const mapMarkers = [
       {
         id: "bgc_105",
         name: "Cold Stone Creamery BGC",
-        location: [14.5572, 121.0544],
+        location: [14.554234, 121.054654],
         lotSize: "0.2 hectares",
         leaseExpiry: "March 2029",
         employees: "40",
@@ -8477,7 +8337,7 @@ const mapMarkers = [
       {
         id: "bgc_106",
         name: "Victoria's Secret BGC Store",
-        location: [14.5576, 121.0548],
+        location: [14.561678, 121.053098],
         lotSize: "0.5 hectares",
         leaseExpiry: "July 2032",
         employees: "85",
@@ -8488,7 +8348,7 @@ const mapMarkers = [
       {
         id: "bgc_107",
         name: "Bath & Body Works BGC",
-        location: [14.558, 121.0552],
+        location: [14.552123, 121.055765],
         lotSize: "0.3 hectares",
         leaseExpiry: "December 2030",
         employees: "55",
@@ -8499,7 +8359,7 @@ const mapMarkers = [
       {
         id: "bgc_108",
         name: "Sephora BGC Beauty Store",
-        location: [14.5584, 121.0556],
+        location: [14.560789, 121.056321],
         lotSize: "0.4 hectares",
         leaseExpiry: "August 2031",
         employees: "95",
@@ -8510,7 +8370,7 @@ const mapMarkers = [
       {
         id: "bgc_109",
         name: "Shangri-La at The Fort Manila",
-        location: [14.5588, 121.056],
+        location: [14.548567, 121.053098],
         lotSize: "3.8 hectares",
         leaseExpiry: "January 2050",
         employees: "1,250",
@@ -8522,7 +8382,7 @@ const mapMarkers = [
       {
         id: "bgc_110",
         name: "Grand Hyatt Manila",
-        location: [14.5592, 121.0564],
+        location: [14.558012, 121.055654],
         lotSize: "2.5 hectares",
         leaseExpiry: "March 2048",
         employees: "950",
@@ -8533,7 +8393,7 @@ const mapMarkers = [
       {
         id: "bgc_111",
         name: "Raffles Makati Hotel BGC",
-        location: [14.5596, 121.0568],
+        location: [14.562456, 121.057321],
         lotSize: "1.8 hectares",
         leaseExpiry: "September 2045",
         employees: "680",
@@ -8545,7 +8405,7 @@ const mapMarkers = [
       {
         id: "bgc_112",
         name: "Marriott Manila BGC",
-        location: [14.56, 121.0572],
+        location: [14.555456, 121.052876],
         lotSize: "2.2 hectares",
         leaseExpiry: "November 2046",
         employees: "850",
@@ -8557,7 +8417,7 @@ const mapMarkers = [
       {
         id: "bgc_113",
         name: "Fairmont BGC Manila",
-        location: [14.5604, 121.0576],
+        location: [14.55089, 121.056654],
         lotSize: "3.2 hectares",
         leaseExpiry: "June 2047",
         employees: "1,150",
@@ -8569,7 +8429,7 @@ const mapMarkers = [
       {
         id: "bgc_114",
         name: "St. Regis BGC Manila",
-        location: [14.5608, 121.058],
+        location: [14.559789, 121.052987],
         lotSize: "2.8 hectares",
         leaseExpiry: "February 2049",
         employees: "980",
@@ -8580,7 +8440,7 @@ const mapMarkers = [
       {
         id: "bgc_115",
         name: "Westin Manila BGC",
-        location: [14.5612, 121.0584],
+        location: [14.554678, 121.05521],
         lotSize: "2.5 hectares",
         leaseExpiry: "August 2046",
         employees: "820",
@@ -8591,7 +8451,7 @@ const mapMarkers = [
       {
         id: "bgc_116",
         name: "InterContinental Manila BGC",
-        location: [14.5616, 121.0588],
+        location: [14.561012, 121.053765],
         lotSize: "3.0 hectares",
         leaseExpiry: "December 2047",
         employees: "1,050",
@@ -8602,7 +8462,7 @@ const mapMarkers = [
       {
         id: "bgc_117",
         name: "Hilton Manila BGC",
-        location: [14.562, 121.0592],
+        location: [14.552567, 121.055432],
         lotSize: "2.8 hectares",
         leaseExpiry: "April 2048",
         employees: "920",
@@ -8614,7 +8474,7 @@ const mapMarkers = [
       {
         id: "bgc_118",
         name: "Four Seasons Hotel Manila BGC",
-        location: [14.5624, 121.0596],
+        location: [14.560123, 121.057098],
         lotSize: "2.2 hectares",
         leaseExpiry: "October 2049",
         employees: "750",
@@ -8626,7 +8486,7 @@ const mapMarkers = [
       {
         id: "bgc_119",
         name: "Conrad Manila BGC",
-        location: [14.551, 121.0478],
+        location: [14.548234, 121.052876],
         lotSize: "2.6 hectares",
         leaseExpiry: "July 2047",
         employees: "880",
@@ -8637,7 +8497,7 @@ const mapMarkers = [
       {
         id: "bgc_120",
         name: "JW Marriott Manila BGC",
-        location: [14.5506, 121.0474],
+        location: [14.558456, 121.054987],
         lotSize: "3.5 hectares",
         leaseExpiry: "January 2048",
         employees: "1,200",
@@ -8649,7 +8509,7 @@ const mapMarkers = [
       {
         id: "bgc_121",
         name: "Ritz-Carlton Manila BGC",
-        location: [14.5502, 121.047],
+        location: [14.562789, 121.057987],
         lotSize: "2.8 hectares",
         leaseExpiry: "May 2050",
         employees: "950",
@@ -8660,7 +8520,7 @@ const mapMarkers = [
       {
         id: "bgc_122",
         name: "Mandarin Oriental Manila BGC",
-        location: [14.5498, 121.0466],
+        location: [14.555678, 121.053543],
         lotSize: "2.4 hectares",
         leaseExpiry: "September 2049",
         employees: "820",
@@ -8671,7 +8531,7 @@ const mapMarkers = [
       {
         id: "bgc_123",
         name: "Park Hyatt Manila BGC",
-        location: [14.5494, 121.0462],
+        location: [14.550456, 121.05621],
         lotSize: "2.0 hectares",
         leaseExpiry: "March 2048",
         employees: "650",
@@ -8682,7 +8542,7 @@ const mapMarkers = [
       {
         id: "bgc_124",
         name: "St. Luke's Medical Center BGC",
-        location: [14.549, 121.0458],
+        location: [14.559123, 121.052109],
         lotSize: "8.5 hectares",
         leaseExpiry: "December 2045",
         employees: "3,250",
@@ -8694,7 +8554,7 @@ const mapMarkers = [
       {
         id: "bgc_125",
         name: "Asian Hospital BGC Clinic",
-        location: [14.5486, 121.0454],
+        location: [14.554012, 121.055876],
         lotSize: "2.8 hectares",
         leaseExpiry: "June 2040",
         employees: "850",
@@ -8706,7 +8566,7 @@ const mapMarkers = [
       {
         id: "bgc_126",
         name: "Cardinal Santos Medical Center BGC",
-        location: [14.5482, 121.045],
+        location: [14.561456, 121.054321],
         lotSize: "3.5 hectares",
         leaseExpiry: "August 2042",
         employees: "1,150",
@@ -8718,7 +8578,7 @@ const mapMarkers = [
       {
         id: "bgc_127",
         name: "The Medical City BGC Clinic",
-        location: [14.5478, 121.0446],
+        location: [14.55289, 121.054987],
         lotSize: "4.2 hectares",
         leaseExpiry: "October 2043",
         employees: "1,450",
@@ -8730,7 +8590,7 @@ const mapMarkers = [
       {
         id: "bgc_128",
         name: "Makati Medical Center BGC",
-        location: [14.5474, 121.0442],
+        location: [14.560567, 121.057876],
         lotSize: "3.8 hectares",
         leaseExpiry: "February 2044",
         employees: "1,280",
@@ -8741,7 +8601,7 @@ const mapMarkers = [
       {
         id: "bgc_129",
         name: "BGC Dental Center",
-        location: [14.547, 121.0438],
+        location: [14.548678, 121.052543],
         lotSize: "0.8 hectares",
         leaseExpiry: "April 2035",
         employees: "120",
@@ -8752,7 +8612,7 @@ const mapMarkers = [
       {
         id: "bgc_130",
         name: "BGC Eye Center",
-        location: [14.5466, 121.0434],
+        location: [14.558789, 121.054321],
         lotSize: "0.6 hectares",
         leaseExpiry: "November 2034",
         employees: "85",
@@ -8763,7 +8623,7 @@ const mapMarkers = [
       {
         id: "bgc_131",
         name: "BGC Pediatric Clinic",
-        location: [14.5462, 121.043],
+        location: [14.563123, 121.058654],
         lotSize: "0.9 hectares",
         leaseExpiry: "July 2036",
         employees: "150",
@@ -8775,7 +8635,7 @@ const mapMarkers = [
       {
         id: "bgc_132",
         name: "BGC Women's Health Center",
-        location: [14.5458, 121.0426],
+        location: [14.555234, 121.05421],
         lotSize: "1.2 hectares",
         leaseExpiry: "September 2037",
         employees: "220",
@@ -8787,7 +8647,7 @@ const mapMarkers = [
       {
         id: "bgc_133",
         name: "BGC Sports Medicine Clinic",
-        location: [14.5454, 121.0422],
+        location: [14.550678, 121.055876],
         lotSize: "0.7 hectares",
         leaseExpiry: "January 2035",
         employees: "95",
@@ -8799,7 +8659,7 @@ const mapMarkers = [
       {
         id: "bgc_134",
         name: "British School Manila BGC Campus",
-        location: [14.545, 121.0418],
+        location: [14.559567, 121.051543],
         lotSize: "5.2 hectares",
         leaseExpiry: "June 2040",
         employees: "450",
@@ -8810,7 +8670,7 @@ const mapMarkers = [
       {
         id: "bgc_135",
         name: "International School Manila BGC",
-        location: [14.5446, 121.0414],
+        location: [14.554345, 121.056543],
         lotSize: "6.8 hectares",
         leaseExpiry: "August 2042",
         employees: "650",
@@ -8822,7 +8682,7 @@ const mapMarkers = [
       {
         id: "bgc_136",
         name: "Enderun Colleges BGC Extension",
-        location: [14.5442, 121.041],
+        location: [14.561789, 121.055098],
         lotSize: "3.5 hectares",
         leaseExpiry: "December 2038",
         employees: "320",
@@ -8834,7 +8694,7 @@ const mapMarkers = [
       {
         id: "bgc_137",
         name: "Ateneo Graduate School BGC Campus",
-        location: [14.5438, 121.0406],
+        location: [14.552234, 121.05421],
         lotSize: "4.2 hectares",
         leaseExpiry: "March 2045",
         employees: "280",
@@ -8846,7 +8706,7 @@ const mapMarkers = [
       {
         id: "bgc_138",
         name: "Asian Institute of Management BGC",
-        location: [14.5434, 121.0402],
+        location: [14.56089, 121.058543],
         lotSize: "3.8 hectares",
         leaseExpiry: "October 2043",
         employees: "350",
@@ -8858,7 +8718,7 @@ const mapMarkers = [
       {
         id: "bgc_139",
         name: "BGC Corporate Training Center",
-        location: [14.543, 121.0398],
+        location: [14.548789, 121.051987],
         lotSize: "2.5 hectares",
         leaseExpiry: "February 2037",
         employees: "180",
@@ -8870,7 +8730,7 @@ const mapMarkers = [
       {
         id: "bgc_140",
         name: "Kaplan Professional BGC Center",
-        location: [14.5426, 121.0394],
+        location: [14.558234, 121.053654],
         lotSize: "1.8 hectares",
         leaseExpiry: "July 2035",
         employees: "120",
@@ -8881,7 +8741,7 @@ const mapMarkers = [
       {
         id: "bgc_141",
         name: "Wall Street English BGC",
-        location: [14.5422, 121.039],
+        location: [14.562567, 121.059321],
         lotSize: "0.9 hectares",
         leaseExpiry: "November 2033",
         employees: "85",
@@ -8892,7 +8752,7 @@ const mapMarkers = [
       {
         id: "bgc_142",
         name: "Berlitz Language Center BGC",
-        location: [14.5418, 121.0386],
+        location: [14.555567, 121.054987],
         lotSize: "0.7 hectares",
         leaseExpiry: "April 2034",
         employees: "65",
@@ -8903,7 +8763,7 @@ const mapMarkers = [
       {
         id: "bgc_143",
         name: "BGC Skills Development Academy",
-        location: [14.5414, 121.0382],
+        location: [14.550123, 121.055543],
         lotSize: "2.2 hectares",
         leaseExpiry: "September 2036",
         employees: "250",
@@ -8915,7 +8775,7 @@ const mapMarkers = [
       {
         id: "bgc_144",
         name: "GCash BGC Innovation Hub",
-        location: [14.541, 121.0378],
+        location: [14.55989, 121.050876],
         lotSize: "3.2 hectares",
         leaseExpiry: "January 2038",
         employees: "1,850",
@@ -8927,7 +8787,7 @@ const mapMarkers = [
       {
         id: "bgc_145",
         name: "PayMaya BGC Office",
-        location: [14.5406, 121.0374],
+        location: [14.554678, 121.05721],
         lotSize: "2.8 hectares",
         leaseExpiry: "May 2036",
         employees: "1,250",
@@ -8939,7 +8799,7 @@ const mapMarkers = [
       {
         id: "bgc_146",
         name: "Coins.ph BGC Headquarters",
-        location: [14.5402, 121.037],
+        location: [14.561123, 121.055876],
         lotSize: "2.2 hectares",
         leaseExpiry: "August 2035",
         employees: "850",
@@ -8950,7 +8810,7 @@ const mapMarkers = [
       {
         id: "bgc_147",
         name: "Grab Financial BGC Office",
-        location: [14.5398, 121.0366],
+        location: [14.552678, 121.053543],
         lotSize: "3.5 hectares",
         leaseExpiry: "November 2037",
         employees: "1,450",
@@ -8962,7 +8822,7 @@ const mapMarkers = [
       {
         id: "bgc_148",
         name: "RCBC BGC Digital Banking Hub",
-        location: [14.5394, 121.0362],
+        location: [14.560234, 121.05921],
         lotSize: "2.5 hectares",
         leaseExpiry: "March 2036",
         employees: "950",
@@ -8974,7 +8834,7 @@ const mapMarkers = [
       {
         id: "bgc_149",
         name: "PNB BGC Innovation Center",
-        location: [14.539, 121.0358],
+        location: [14.548234, 121.051321],
         lotSize: "2.8 hectares",
         leaseExpiry: "July 2037",
         employees: "1,150",
@@ -8986,7 +8846,7 @@ const mapMarkers = [
       {
         id: "bgc_150",
         name: "China Bank BGC Corporate Office",
-        location: [14.5386, 121.0354],
+        location: [14.558678, 121.052987],
         lotSize: "3.0 hectares",
         leaseExpiry: "December 2038",
         employees: "1,320",
@@ -8998,7 +8858,7 @@ const mapMarkers = [
       {
         id: "bgc_151",
         name: "EastWest Bank BGC Tower",
-        location: [14.5382, 121.035],
+        location: [14.562901, 121.059987],
         lotSize: "2.2 hectares",
         leaseExpiry: "June 2035",
         employees: "780",
@@ -9010,7 +8870,7 @@ const mapMarkers = [
       {
         id: "bgc_152",
         name: "PSBank BGC Branch",
-        location: [14.5378, 121.0346],
+        location: [14.55589, 121.055654],
         lotSize: "1.8 hectares",
         leaseExpiry: "October 2034",
         employees: "620",
@@ -9022,7 +8882,7 @@ const mapMarkers = [
       {
         id: "bgc_153",
         name: "BPI Family Savings Bank BGC",
-        location: [14.5374, 121.0342],
+        location: [14.550567, 121.05521],
         lotSize: "1.5 hectares",
         leaseExpiry: "February 2033",
         employees: "450",
@@ -9033,7 +8893,7 @@ const mapMarkers = [
       {
         id: "bgc_154",
         name: "UCPB BGC Corporate Center",
-        location: [14.537, 121.0338],
+        location: [14.559234, 121.05021],
         lotSize: "2.0 hectares",
         leaseExpiry: "September 2035",
         employees: "680",
@@ -9045,7 +8905,7 @@ const mapMarkers = [
       {
         id: "bgc_155",
         name: "Philippine Veterans Bank BGC",
-        location: [14.5366, 121.0334],
+        location: [14.554012, 121.057876],
         lotSize: "1.2 hectares",
         leaseExpiry: "April 2034",
         employees: "320",
@@ -9056,7 +8916,7 @@ const mapMarkers = [
       {
         id: "bgc_156",
         name: "Maybank Philippines BGC",
-        location: [14.5362, 121.033],
+        location: [14.561567, 121.056543],
         lotSize: "1.8 hectares",
         leaseExpiry: "November 2035",
         employees: "550",
@@ -9068,7 +8928,7 @@ const mapMarkers = [
       {
         id: "bgc_157",
         name: "HSBC Premier Center BGC",
-        location: [14.5358, 121.0326],
+        location: [14.552012, 121.052876],
         lotSize: "1.5 hectares",
         leaseExpiry: "January 2036",
         employees: "420",
@@ -9079,7 +8939,7 @@ const mapMarkers = [
       {
         id: "bgc_158",
         name: "Standard Chartered BGC Wealth",
-        location: [14.5354, 121.0322],
+        location: [14.560678, 121.059876],
         lotSize: "1.3 hectares",
         leaseExpiry: "July 2035",
         employees: "380",
@@ -9090,7 +8950,7 @@ const mapMarkers = [
       {
         id: "bgc_159",
         name: "BGC Arts Center",
-        location: [14.535, 121.0318],
+        location: [14.548678, 121.050654],
         lotSize: "4.5 hectares",
         leaseExpiry: "December 2040",
         employees: "450",
@@ -9102,7 +8962,7 @@ const mapMarkers = [
       {
         id: "bgc_160",
         name: "Mind Museum BGC",
-        location: [14.5346, 121.0314],
+        location: [14.558901, 121.052321],
         lotSize: "3.8 hectares",
         leaseExpiry: "June 2038",
         employees: "280",
@@ -9114,7 +8974,7 @@ const mapMarkers = [
       {
         id: "bgc_161",
         name: "BGC Cineplex",
-        location: [14.5342, 121.031],
+        location: [14.563234, 121.058321],
         lotSize: "2.2 hectares",
         leaseExpiry: "March 2036",
         employees: "180",
@@ -9126,7 +8986,7 @@ const mapMarkers = [
       {
         id: "bgc_162",
         name: "Uptown BGC Mall",
-        location: [14.5338, 121.0306],
+        location: [14.555123, 121.056321],
         lotSize: "12.5 hectares",
         leaseExpiry: "September 2045",
         employees: "2,850",
@@ -9138,7 +8998,7 @@ const mapMarkers = [
       {
         id: "bgc_163",
         name: "BGC Fitness & Wellness Center",
-        location: [14.5334, 121.0302],
+        location: [14.55089, 121.054876],
         lotSize: "1.8 hectares",
         leaseExpiry: "November 2034",
         employees: "150",
@@ -9149,7 +9009,7 @@ const mapMarkers = [
       {
         id: "bgc_164",
         name: "Terra BGC Event Venue",
-        location: [14.533, 121.0298],
+        location: [14.559678, 121.049543],
         lotSize: "2.5 hectares",
         leaseExpiry: "August 2037",
         employees: "220",
@@ -9161,7 +9021,7 @@ const mapMarkers = [
       {
         id: "bgc_165",
         name: "BGC Sports Club",
-        location: [14.5326, 121.0294],
+        location: [14.554456, 121.058543],
         lotSize: "5.2 hectares",
         leaseExpiry: "May 2042",
         employees: "350",
@@ -9173,7 +9033,7 @@ const mapMarkers = [
       {
         id: "bgc_166",
         name: "The Playground BGC",
-        location: [14.5322, 121.029],
+        location: [14.56189, 121.05721],
         lotSize: "1.2 hectares",
         leaseExpiry: "February 2035",
         employees: "85",
@@ -9184,7 +9044,7 @@ const mapMarkers = [
       {
         id: "bgc_167",
         name: "BSP BGC Financial Supervision",
-        location: [14.5318, 121.0286],
+        location: [14.552456, 121.05221],
         lotSize: "2.8 hectares",
         leaseExpiry: "Government Owned",
         employees: "650",
@@ -9196,7 +9056,7 @@ const mapMarkers = [
       {
         id: "bgc_168",
         name: "SEC BGC Satellite Office",
-        location: [14.5314, 121.0282],
+        location: [14.560012, 121.058543],
         lotSize: "1.5 hectares",
         leaseExpiry: "Government Owned",
         employees: "320",
@@ -9208,7 +9068,7 @@ const mapMarkers = [
       {
         id: "bgc_169",
         name: "BIR BGC Revenue District Office",
-        location: [14.531, 121.0278],
+        location: [14.548456, 121.049987],
         lotSize: "2.2 hectares",
         leaseExpiry: "Government Owned",
         employees: "450",
@@ -9220,7 +9080,7 @@ const mapMarkers = [
       {
         id: "bgc_170",
         name: "BOC BGC Collection District",
-        location: [14.5306, 121.0274],
+        location: [14.558345, 121.051654],
         lotSize: "1.8 hectares",
         leaseExpiry: "Government Owned",
         employees: "380",
@@ -9232,7 +9092,7 @@ const mapMarkers = [
       {
         id: "bgc_171",
         name: "DTI BGC Trade Promotion Office",
-        location: [14.5302, 121.027],
+        location: [14.562678, 121.057654],
         lotSize: "1.2 hectares",
         leaseExpiry: "Government Owned",
         employees: "180",
@@ -9244,7 +9104,7 @@ const mapMarkers = [
       {
         id: "bgc_172",
         name: "DOL BGC Labor Standards Office",
-        location: [14.5298, 121.0266],
+        location: [14.555456, 121.056987],
         lotSize: "0.9 hectares",
         leaseExpiry: "Government Owned",
         employees: "120",
@@ -9256,7 +9116,7 @@ const mapMarkers = [
       {
         id: "bgc_173",
         name: "PEZA BGC Satellite Office",
-        location: [14.5294, 121.0262],
+        location: [14.550234, 121.054543],
         lotSize: "1.5 hectares",
         leaseExpiry: "Government Owned",
         employees: "250",
@@ -9268,7 +9128,7 @@ const mapMarkers = [
       {
         id: "bgc_174",
         name: "TIEZA BGC Tourism Office",
-        location: [14.529, 121.0258],
+        location: [14.559012, 121.048876],
         lotSize: "0.8 hectares",
         leaseExpiry: "Government Owned",
         employees: "95",
@@ -9280,7 +9140,7 @@ const mapMarkers = [
       {
         id: "bgc_175",
         name: "LBC Express BGC Hub",
-        location: [14.5286, 121.0254],
+        location: [14.554789, 121.05921],
         lotSize: "2.5 hectares",
         leaseExpiry: "March 2036",
         employees: "450",
@@ -9292,7 +9152,7 @@ const mapMarkers = [
       {
         id: "bgc_176",
         name: "J&T Express BGC Facility",
-        location: [14.5282, 121.025],
+        location: [14.561234, 121.057876],
         lotSize: "3.2 hectares",
         leaseExpiry: "July 2035",
         employees: "650",
@@ -9304,7 +9164,7 @@ const mapMarkers = [
       {
         id: "bgc_177",
         name: "2GO Express BGC Center",
-        location: [14.5278, 121.0246],
+        location: [14.552789, 121.051543],
         lotSize: "2.8 hectares",
         leaseExpiry: "November 2034",
         employees: "520",
@@ -9315,7 +9175,7 @@ const mapMarkers = [
       {
         id: "bgc_178",
         name: "Ninja Van BGC Sorting Hub",
-        location: [14.5274, 121.0242],
+        location: [14.560456, 121.05721],
         lotSize: "4.5 hectares",
         leaseExpiry: "September 2036",
         employees: "850",
@@ -9326,7 +9186,7 @@ const mapMarkers = [
       {
         id: "bgc_179",
         name: "Lalamove BGC Operations",
-        location: [14.527, 121.0238],
+        location: [14.548901, 121.049321],
         lotSize: "1.8 hectares",
         leaseExpiry: "May 2033",
         employees: "280",
@@ -9337,7 +9197,7 @@ const mapMarkers = [
       {
         id: "bgc_180",
         name: "Grab Logistics BGC Hub",
-        location: [14.5266, 121.0234],
+        location: [14.558567, 121.050987],
         lotSize: "3.5 hectares",
         leaseExpiry: "January 2037",
         employees: "720",
@@ -9348,7 +9208,7 @@ const mapMarkers = [
       {
         id: "bgc_181",
         name: "Move It BGC Warehouse",
-        location: [14.5262, 121.023],
+        location: [14.563012, 121.056987],
         lotSize: "2.2 hectares",
         leaseExpiry: "August 2034",
         employees: "320",
@@ -9359,7 +9219,7 @@ const mapMarkers = [
       {
         id: "bgc_182",
         name: "FastTrack BGC Delivery Center",
-        location: [14.5258, 121.0226],
+        location: [14.555678, 121.057654],
         lotSize: "1.5 hectares",
         leaseExpiry: "December 2033",
         employees: "180",
@@ -9371,7 +9231,7 @@ const mapMarkers = [
       {
         id: "bgc_183",
         name: "SGV & Co. BGC Office",
-        location: [14.5254, 121.0222],
+        location: [14.550678, 121.05421],
         lotSize: "4.2 hectares",
         leaseExpiry: "June 2040",
         employees: "1,850",
@@ -9383,7 +9243,7 @@ const mapMarkers = [
       {
         id: "bgc_184",
         name: "PwC Philippines BGC Tower",
-        location: [14.525, 121.0218],
+        location: [14.559456, 121.04821],
         lotSize: "3.8 hectares",
         leaseExpiry: "October 2039",
         employees: "1,650",
@@ -9395,7 +9255,7 @@ const mapMarkers = [
       {
         id: "bgc_185",
         name: "KPMG Philippines BGC",
-        location: [14.5246, 121.0214],
+        location: [14.554123, 121.059876],
         lotSize: "3.2 hectares",
         leaseExpiry: "February 2038",
         employees: "1,420",
@@ -9407,7 +9267,7 @@ const mapMarkers = [
       {
         id: "bgc_186",
         name: "Deloitte Philippines BGC",
-        location: [14.5242, 121.021],
+        location: [14.561678, 121.058543],
         lotSize: "3.5 hectares",
         leaseExpiry: "August 2039",
         employees: "1,580",
@@ -9419,7 +9279,7 @@ const mapMarkers = [
       {
         id: "bgc_187",
         name: "McKinsey & Company BGC",
-        location: [14.5238, 121.0206],
+        location: [14.552123, 121.050876],
         lotSize: "2.2 hectares",
         leaseExpiry: "April 2037",
         employees: "450",
@@ -9431,7 +9291,7 @@ const mapMarkers = [
       {
         id: "bgc_188",
         name: "Boston Consulting Group BGC",
-        location: [14.5234, 121.0202],
+        location: [14.560789, 121.056543],
         lotSize: "1.8 hectares",
         leaseExpiry: "December 2036",
         employees: "320",
@@ -9443,7 +9303,7 @@ const mapMarkers = [
       {
         id: "bgc_189",
         name: "Bain & Company BGC Office",
-        location: [14.523, 121.0198],
+        location: [14.548567, 121.048654],
         lotSize: "1.5 hectares",
         leaseExpiry: "June 2035",
         employees: "280",
@@ -9452,8 +9312,6 @@ const mapMarkers = [
         description:
           "Management consulting and private equity advisory services.",
       },
-
-      // McKinley Hill sites (around 14.5400° N, 121.0500° E)
       {
         id: "facility_05",
         name: "McKinley Hill Embassy Services Center",
@@ -9488,7 +9346,6 @@ const mapMarkers = [
         description:
           "International diplomatic meetings and conference facility.",
       },
-      // Resorts World Manila
       {
         id: "newport_01",
         name: "Resorts World Manila",
@@ -9501,8 +9358,6 @@ const mapMarkers = [
         description:
           "Integrated resort complex featuring gaming, entertainment, dining, and luxury accommodations.",
       },
-
-      // Marriott Hotel Manila
       {
         id: "newport_02",
         name: "Marriott Hotel Manila",
@@ -9515,8 +9370,6 @@ const mapMarkers = [
         description:
           "Premium international hotel serving business travelers and tourists near NAIA.",
       },
-
-      // Maxims Hotel
       {
         id: "newport_03",
         name: "Maxims Hotel",
@@ -9529,8 +9382,6 @@ const mapMarkers = [
         description:
           "Luxury hotel and casino resort within the Newport City entertainment complex.",
       },
-
-      // Belmont Hotel
       {
         id: "newport_04",
         name: "Belmont Hotel Manila",
@@ -9543,8 +9394,6 @@ const mapMarkers = [
         description:
           "Business hotel providing convenient accommodation near the international airport.",
       },
-
-      // AirAsia Philippines HQ
       {
         id: "newport_05",
         name: "AirAsia Philippines Headquarters",
@@ -9557,8 +9406,6 @@ const mapMarkers = [
         description:
           "Low-cost airline headquarters and operations center for Southeast Asian routes.",
       },
-
-      // Philippine Airlines Training Center
       {
         id: "newport_06",
         name: "Philippine Airlines Training Center",
@@ -9571,8 +9418,6 @@ const mapMarkers = [
         description:
           "Aviation training facility for pilots, cabin crew, and ground personnel education.",
       },
-
-      // Megaworld Corporation
       {
         id: "newport_07",
         name: "Megaworld Corporation Newport Office",
@@ -9585,8 +9430,6 @@ const mapMarkers = [
         description:
           "Real estate developer headquarters managing Newport City township development.",
       },
-
-      // NAIA Terminal 3 Adjacent Infrastructure
       {
         id: "newport_08",
         name: "NAIA Terminal 3 Support Infrastructure",
@@ -9599,8 +9442,6 @@ const mapMarkers = [
         description:
           "Airport support facilities and infrastructure services adjacent to Terminal 3.",
       },
-
-      // Department of Tourism Satellite Office
       {
         id: "newport_09",
         name: "Department of Tourism Newport Satellite Office",
@@ -9613,8 +9454,6 @@ const mapMarkers = [
         description:
           "Tourism promotion office providing visitor services and travel information.",
       },
-
-      // Pagcor Gaming Operations
       {
         id: "newport_10",
         name: "PAGCOR Newport Gaming Operations Center",
@@ -9639,8 +9478,6 @@ const mapMarkers = [
         description:
           "Semiconductor assembly and testing facility for analog and digital signal processing products.",
       },
-
-      // Moog Controls Corporation
       {
         id: "johnhay_02",
         name: "Moog Controls Corporation",
@@ -9653,8 +9490,6 @@ const mapMarkers = [
         description:
           "Precision control systems and components manufacturing for aerospace and defense applications.",
       },
-
-      // Sitel Philippines
       {
         id: "johnhay_03",
         name: "Sitel Philippines Baguio Center",
@@ -9667,8 +9502,6 @@ const mapMarkers = [
         description:
           "Customer experience management and business process outsourcing services center.",
       },
-
-      // Convergys (now Concentrix)
       {
         id: "johnhay_04",
         name: "Concentrix (formerly Convergys)",
@@ -9681,8 +9514,6 @@ const mapMarkers = [
         description:
           "Global business services and customer engagement technology solutions provider.",
       },
-
-      // Microchip Technology
       {
         id: "johnhay_05",
         name: "Microchip Technology Philippines",
@@ -9695,8 +9526,6 @@ const mapMarkers = [
         description:
           "Microcontroller and analog semiconductor manufacturing and assembly facility.",
       },
-
-      // Baguio Country Club
       {
         id: "johnhay_06",
         name: "Baguio Country Club",
@@ -9709,8 +9538,6 @@ const mapMarkers = [
         description:
           "Historic golf and country club providing recreational facilities and event hosting services.",
       },
-
-      // The Manor at Camp John Hay
       {
         id: "johnhay_07",
         name: "The Manor at Camp John Hay",
@@ -9723,8 +9550,6 @@ const mapMarkers = [
         description:
           "Luxury mountain resort hotel and conference center within the historic Camp John Hay grounds.",
       },
-
-      // Ayala Technohub
       {
         id: "johnhay_08",
         name: "Ayala Technohub Baguio",
@@ -9737,8 +9562,6 @@ const mapMarkers = [
         description:
           "Information technology park housing multiple BPO companies and tech startups.",
       },
-
-      // PEZA Satellite Office
       {
         id: "johnhay_09",
         name: "PEZA John Hay Satellite Office",
@@ -9751,8 +9574,6 @@ const mapMarkers = [
         description:
           "Philippine Economic Zone Authority regional office managing special economic zone operations.",
       },
-
-      // DENR Regional Office
       {
         id: "johnhay_10",
         name: "DENR Cordillera Regional Office",
@@ -9765,8 +9586,6 @@ const mapMarkers = [
         description:
           "Department of Environment and Natural Resources regional headquarters for environmental protection and management.",
       },
-
-      // Technology & BPO
       {
         id: "johnhay_11",
         name: "Convergys Philippines Baguio Center",
@@ -9790,8 +9609,6 @@ const mapMarkers = [
         subcategory: "john-hay-zone",
         description: "Multilingual customer experience outsourcing services.",
       },
-
-      // Tourism & Hospitality
       {
         id: "johnhay_13",
         name: "Grafik Hotel Collection",
@@ -9816,8 +9633,6 @@ const mapMarkers = [
         description:
           "Golf course and recreational facilities expansion project.",
       },
-
-      // Government & Regulatory
       {
         id: "johnhay_15",
         name: "BSP Baguio Currency Production",
@@ -9830,8 +9645,6 @@ const mapMarkers = [
         description:
           "Bangko Sentral ng Pilipinas currency printing and security facility.",
       },
-
-      // Healthcare & Education
       {
         id: "johnhay_16",
         name: "Baguio Medical Center Extension",
@@ -9843,8 +9656,6 @@ const mapMarkers = [
         subcategory: "john-hay-zone",
         description: "Specialized medical facility and diagnostic center.",
       },
-
-      // Poro Point Freeport Zone sites (around 16.5850° N, 120.3400° E)
       {
         id: "facility_13",
         name: "Poro Point Freeport Authority Office",
@@ -9867,8 +9678,6 @@ const mapMarkers = [
         subcategory: "poro-point",
         description: "Marine services and port operations facility.",
       },
-
-      // Bataan Technology Park sites (around 14.7000° N, 120.5400° E)
       {
         id: "facility_15",
         name: "Bataan Technology Park Innovation Center",
