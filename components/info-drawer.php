@@ -6,7 +6,7 @@
 
     <!-- Status Section (integrated from right-panel) -->
     <div class="info-section status-section">
-        <div class="status-indicator">🟢 <span id="site-status">Active</span> - <span id="site-company">Select a location</span></div>
+        <div class="status-indicator">🟢 <span id="site-status">Active</span></div>
         <div class="device-channel">
             <span>Device Channel:</span> <span id="device-channel"></span>
         </div>

@@ -255,6 +255,7 @@
   padding: 20px;
   border: var(--border-1);
   transition: all 0.3s ease;
+  max-width: 350px;
 }
 
 .zone-card:hover {

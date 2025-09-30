@@ -453,6 +453,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const allCheckbox = document.getElementById("all");
+  if (allCheckbox && !allCheckbox.checked) {
+    allCheckbox.checked = true;
+    // Trigger the change event to update markers
+    allCheckbox.dispatchEvent(new Event("change"));
+  }
+
   // Export for global access
   window.filterSidebar = {
     allCheckboxes: allCheckboxes,

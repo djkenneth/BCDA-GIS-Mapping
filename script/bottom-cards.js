@@ -15,33 +15,33 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (isInitialLoad) {
-      initializeDefaultBuildings();
-      isInitialLoad = false;
-    }
+    // if (isInitialLoad) {
+    //   initializeDefaultBuildings();
+    //   isInitialLoad = false;
+    // }
 
     calculateInfrastructureStats();
     renderInfrastructureCards();
   }
 
-  function initializeDefaultBuildings() {
-    try {
-      const buildingsCheckbox = document.getElementById("clark-freeport");
-      if (buildingsCheckbox) {
-        if (!buildingsCheckbox.checked) {
-          buildingsCheckbox.checked = true;
-          buildingsCheckbox.dispatchEvent(new Event("change"));
-        } else {
-          console.log("Buildings category already selected");
-        }
-      } else {
-        console.warn("Buildings checkbox not found, will try again later");
-        setTimeout(initializeDefaultBuildings, 500);
-      }
-    } catch (error) {
-      console.error("Error initializing default buildings:", error);
-    }
-  }
+  // function initializeDefaultBuildings() {
+  //   try {
+  //     const buildingsCheckbox = document.getElementById("clark-freeport");
+  //     if (buildingsCheckbox) {
+  //       if (!buildingsCheckbox.checked) {
+  //         buildingsCheckbox.checked = true;
+  //         buildingsCheckbox.dispatchEvent(new Event("change"));
+  //       } else {
+  //         console.log("Buildings category already selected");
+  //       }
+  //     } else {
+  //       console.warn("Buildings checkbox not found, will try again later");
+  //       setTimeout(initializeDefaultBuildings, 500);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error initializing default buildings:", error);
+  //   }
+  // }
 
   function calculateInfrastructureStats() {
     try {
