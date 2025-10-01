@@ -43,23 +43,19 @@ document.addEventListener("DOMContentLoaded", function () {
     setupFilterCheckboxes();
     setupLiveFeedCard();
     setupInfoDrawerAccordion();
-    setupInfrastructureCardsIntegration(); // New setup for infrastructure cards
+    setupInfrastructureCardsIntegration();
     observeHeaderAndSidebar();
     setupWindowResizeHandler();
   }
 
-  // New function to integrate infrastructure cards modal with panel manager
   function setupInfrastructureCardsIntegration() {
-    // Listen for infrastructure card clicks to manage the sites modal
     document.addEventListener("click", function (e) {
       const infrastructureCard = e.target.closest(".infra-card");
       if (infrastructureCard) {
-        // Close any existing components before opening sites modal
         if (currentOpenComponent && currentOpenComponent !== "#sites-modal") {
           closeComponent(currentOpenComponent);
         }
 
-        // Set up observer to detect when sites modal is created and opened
         setTimeout(() => {
           const sitesModal = document.querySelector("#sites-modal");
           if (sitesModal && sitesModal.style.display === "block") {
@@ -71,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Set up observer for sites modal creation
     const observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         mutation.addedNodes.forEach(function (node) {
@@ -91,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const closeBtn = sitesModal.querySelector("#sites-modal-close");
     if (closeBtn) {
-      // Remove existing listener to prevent duplicates
       closeBtn.removeEventListener("click", handleSitesModalClose);
       closeBtn.addEventListener("click", handleSitesModalClose);
     }
@@ -121,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           const drawer = document.querySelector("#info-drawer");
           if (drawer && drawer.classList.contains("open")) {
-            // Close sites modal if open when opening info drawer
             if (currentOpenComponent === "#sites-modal") {
               closeComponent("#sites-modal");
             }
@@ -242,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setupInfoDrawerAccordion() {
-    // Add mutation observer for the info drawer to detect when it's opened
     const infoDrawer = document.querySelector(SELECTORS.infoDrawer);
     if (!infoDrawer) return;
 
@@ -270,7 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setupInfoDrawerButtons() {
-    // Setup accordion behavior for info drawer sections
     const maintenanceHistoryBtn = document.querySelector(
       "#maintenance-history-btn"
     );
@@ -297,7 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Handle action buttons in expanded view
     const viewDetailsBtn = document.querySelector("#view-details");
     if (viewDetailsBtn) {
       viewDetailsBtn.addEventListener("click", function () {
@@ -312,12 +302,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Handle download report button
     const downloadReportBtn = document.querySelector("#download-report");
     if (downloadReportBtn) {
       downloadReportBtn.addEventListener("click", function () {
         if (typeof generateSiteReport === "function") {
-          // This function should be defined in filter-sidebar.js
           const siteId = infoDrawer.getAttribute("data-tower-id");
           if (siteId) {
             const site = findSiteById(siteId);
@@ -330,7 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Setup form action buttons
     const scheduleBtn = document.querySelector("#schedule-btn");
     if (scheduleBtn) {
       scheduleBtn.addEventListener("click", function () {
@@ -352,7 +339,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const section = document.querySelector(sectionSelector);
     if (!section) return;
 
-    // Close all other sections
     Object.values(SELECTORS.infoDrawerSections).forEach((selector) => {
       const otherSection = document.querySelector(selector);
       if (otherSection && otherSection !== section) {
@@ -375,7 +361,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     infoDrawer.classList.add("expanded");
 
-    // Close any open sections to reset the view
     Object.values(SELECTORS.infoDrawerSections).forEach((selector) => {
       const section = document.querySelector(selector);
       if (section) {
@@ -391,7 +376,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     infoDrawer.classList.remove("expanded");
 
-    // Close any open sections
     Object.values(SELECTORS.infoDrawerSections).forEach((selector) => {
       const section = document.querySelector(selector);
       if (section) {
@@ -480,7 +464,6 @@ document.addEventListener("DOMContentLoaded", function () {
       component.classList.remove("expanded");
       closeLiveFeedCard();
 
-      // Close all drawer sections
       Object.values(SELECTORS.infoDrawerSections).forEach((sectionSelector) => {
         const section = document.querySelector(sectionSelector);
         if (section) {
@@ -612,7 +595,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     } else {
-      // Desktop view (above 1024px) - existing logic
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       }
@@ -626,7 +608,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Skip positioning for info drawer and live feed card (they have their own positioning)
     if (
       component.id === "info-drawer" ||
       component.classList.contains("live-feed-card")
@@ -634,7 +615,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Handle sites modal positioning - it should follow the same pattern as other managed components
     if (component.id === "sites-modal") {
       component.style.top = topPosition;
       component.style.left = leftPosition;
@@ -682,7 +662,6 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
 
       case "#sites-modal":
-        // Ensure sites modal is properly set up when opened through panel manager
         setupSitesModalCloseListener();
         break;
     }
@@ -770,7 +749,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        // Handle sites modal resize
         const sitesModal = document.querySelector("#sites-modal");
         if (sitesModal && sitesModal.style.display === "block") {
           positionComponent(sitesModal);

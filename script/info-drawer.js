@@ -120,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
     drawer.classList.add("open");
     drawer.classList.add("style-1");
     
-    // Add event listener for direct PDF generation
     const directGenerateBtn = document.getElementById(
       "direct-generate-report-btn"
     );
@@ -207,17 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 function openLocatorPortal(siteId) {
-    // Option 1: Open in new tab/window (external portal)
-    // const portalUrl = `locator-portal.php?site=${siteId}`;
-    // window.open(portalUrl, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
-    
-    // Option 2: Navigate to portal page in same tab
-    // window.location.href = portalUrl;
-    
-    // Option 3: Show modal with portal content
     // showPortalModal(siteId);
-    
-    // showNotification(`Opening locator portal for site: ${siteId}`, 'success');
 }
 
   // Alternative modal approach

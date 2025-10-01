@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('[data-action="report-issue"]') ||
     document.querySelector(".issue-report-button");
 
-  const fullScreenForm = document.getElementById(
+  const issueReportFullScreenForm = document.getElementById(
     "full-screen-issue-report-form"
   );
   const closeBtn = document.getElementById("issue-form-close");
@@ -229,9 +229,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show the issue report form
   function showIssueForm() {
-    if (fullScreenForm) {
+    if (issueReportFullScreenForm) {
       adjustFormPosition();
-      fullScreenForm.style.display = "block";
+      issueReportFullScreenForm.style.display = "block";
       resetForm();
     } else {
       console.error("Form element not found!");
@@ -240,8 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Hide the issue report form
   function hideIssueForm() {
-    if (fullScreenForm) {
-      fullScreenForm.style.display = "none";
+    if (issueReportFullScreenForm) {
+      issueReportFullScreenForm.style.display = "none";
       resetForm();
     }
   }
@@ -259,8 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Reset text inputs
-    if (fullScreenForm) {
-      const formInputs = fullScreenForm.querySelectorAll(
+    if (issueReportFullScreenForm) {
+      const formInputs = issueReportFullScreenForm.querySelectorAll(
         'input[type="text"], input[type="email"], input[type="tel"], textarea'
       );
       formInputs.forEach((input) => {
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function adjustFormPosition() {
-    if (!fullScreenForm) return;
+    if (!issueReportFullScreenForm) return;
 
     // Position form based on header and sidebar state
     const header = document.querySelector("header");
@@ -383,10 +383,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Apply the calculated positions
-    fullScreenForm.style.top = topPosition;
-    fullScreenForm.style.left = leftPosition;
-    fullScreenForm.style.right = rightPosition;
-    fullScreenForm.style.bottom = bottomPosition;
+    issueReportFullScreenForm.style.top = topPosition;
+    issueReportFullScreenForm.style.left = leftPosition;
+    issueReportFullScreenForm.style.right = rightPosition;
+    issueReportFullScreenForm.style.bottom = bottomPosition;
   }
 
   // Handle form submission
@@ -650,7 +650,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initForm();
 
   // For testing/development - auto initialize if URL parameter is present
-  if (fullScreenForm && window.location.search.includes("showissueform=true")) {
+  if (issueReportFullScreenForm && window.location.search.includes("showissueform=true")) {
     showIssueForm();
   }
 

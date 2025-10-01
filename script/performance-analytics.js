@@ -10,16 +10,13 @@ if (closeAlertsBtn) {
 }
 
 function showAlertsInterface() {
-  // Make sure the interface is visible regardless of previous state
   if (alertsInterface) {
-    // Show the interface
     alertsInterface.style.display = "block";
   } else {
     console.error("");
   }
 }
 
-// Revenue Trends Chart
 const revenueCtx = document.getElementById("revenueChart").getContext("2d");
 new Chart(revenueCtx, {
   type: "line",
@@ -63,7 +60,6 @@ new Chart(revenueCtx, {
   },
 });
 
-// Occupancy Chart
 const occupancyCtx = document.getElementById("occupancyChart").getContext("2d");
 new Chart(occupancyCtx, {
   type: "bar",
@@ -96,7 +92,6 @@ new Chart(occupancyCtx, {
   },
 });
 
-// Growth Chart
 const growthCtx = document.getElementById("growthChart").getContext("2d");
 new Chart(growthCtx, {
   type: "radar",
@@ -134,7 +129,6 @@ new Chart(growthCtx, {
   },
 });
 
-// Portfolio Mix Chart
 const portfolioCtx = document.getElementById("portfolioChart").getContext("2d");
 new Chart(portfolioCtx, {
   type: "doughnut",
@@ -159,12 +153,10 @@ new Chart(portfolioCtx, {
   },
 });
 
-// Export functionality
 function exportData() {
   alert("Performance analytics data exported successfully!");
 }
 
-// Filter functionality
 document
   .getElementById("timePeriod")
   .addEventListener("change", updateAnalytics);
@@ -179,6 +171,5 @@ document
   .addEventListener("change", updateAnalytics);
 
 function updateAnalytics() {
-  // Simulate data refresh based on filters
   console.log("Analytics updated based on filter changes");
 }

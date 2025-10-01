@@ -10,15 +10,12 @@ if (closeMonitoringBtn) {
   });
 }
 
-// Show monitoring interface and initialize
 function showMonitoringInterface() {
-  // Make sure the interface exists before trying to show it
   if (!monitoringInterface) {
     console.error("Monitoring interface element not found");
     return;
   }
 
-  // Show the interface
   monitoringInterface.style.display = "block";
 }
 
@@ -93,11 +90,9 @@ function selectTemplate(templateType) {
   );
 }
 
-// Auto-update insights (simulate real-time data)
 setInterval(() => {
   const insights = document.querySelectorAll(".kpi-value");
   insights.forEach((insight) => {
-    // Add subtle animation to suggest live data
     insight.style.transform = "scale(1.02)";
     setTimeout(() => {
       insight.style.transform = "scale(1)";

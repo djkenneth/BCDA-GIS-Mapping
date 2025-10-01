@@ -1,8 +1,7 @@
-// script/strategic-dashboard.js
-
 const fullScreenForm = document.getElementById(
   "full-screen-infrastructure-form"
 );
+
 const closeBtn = document.getElementById('close');
 
 // Zone filtering functionality

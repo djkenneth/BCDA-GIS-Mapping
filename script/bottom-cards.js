@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   let infrastructureData = {};
-  let isInitialLoad = true;
 
   function initializeInfrastructureCards() {
     // Check if markers data is available
@@ -15,33 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // if (isInitialLoad) {
-    //   initializeDefaultBuildings();
-    //   isInitialLoad = false;
-    // }
-
     calculateInfrastructureStats();
     renderInfrastructureCards();
   }
-
-  // function initializeDefaultBuildings() {
-  //   try {
-  //     const buildingsCheckbox = document.getElementById("clark-freeport");
-  //     if (buildingsCheckbox) {
-  //       if (!buildingsCheckbox.checked) {
-  //         buildingsCheckbox.checked = true;
-  //         buildingsCheckbox.dispatchEvent(new Event("change"));
-  //       } else {
-  //         console.log("Buildings category already selected");
-  //       }
-  //     } else {
-  //       console.warn("Buildings checkbox not found, will try again later");
-  //       setTimeout(initializeDefaultBuildings, 500);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error initializing default buildings:", error);
-  //   }
-  // }
 
   function calculateInfrastructureStats() {
     try {
@@ -59,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mapMarkers.forEach((category) => {
         const categoryStats = {
-          // Remove old status properties and add new ones
           activeLocators: 0,
           pendingPermits: 0,
           criticalIssues: 0,
@@ -75,10 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (shouldIncludeCategory) {
           category.sites.forEach((site) => {
-            // Count sites based on NEW status values
             const status = site.status || "active_locators";
 
-            // Update counters based on new status values
             switch (status) {
               case "active_locators":
                 categoryStats.activeLocators++;
@@ -105,14 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 infrastructureData.occupancyRate++;
                 break;
               default:
-                // Default to active_locators for unknown status
                 categoryStats.activeLocators++;
                 infrastructureData.activeLocators++;
             }
 
             const subcategoryKey = getSubcategoryKey(site.subcategory);
 
-            // Update subcategory tracking with new status properties
             if (!categoryStats.subcategories[subcategoryKey]) {
               categoryStats.subcategories[subcategoryKey] = {
                 name: site.subcategory,
@@ -138,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
               };
             }
 
-            // Update subcategory counters
             switch (status) {
               case "active_locators":
                 categoryStats.subcategories[subcategoryKey].activeLocators++;
@@ -182,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
         infrastructureData.categories[category.id] = categoryStats;
       });
 
-      // Calculate occupancy rate as percentage
       const totalSites =
         infrastructureData.activeLocators +
         infrastructureData.pendingPermits +
@@ -191,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
         infrastructureData.availableLots;
 
       if (totalSites > 0) {
-        // Calculate occupancy rate (active locators / total sites * 100)
         infrastructureData.occupancyRate = Math.round(
           (infrastructureData.activeLocators / totalSites) * 100
         );
@@ -202,10 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getSubcategoryKey(subcategory) {
-    // Search through all categories in mapMarkers for matching subcategory
     for (const category of window.mapMarkers || []) {
       if (category.subcategoryConfigs) {
-        // Check if subcategory matches any display title
         for (const [key, config] of Object.entries(
           category.subcategoryConfigs
         )) {
@@ -317,7 +282,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getSubcategoryDisplayName(subcategoryKey) {
-    // Search all categories for the subcategory
     for (const category of mapMarkers || []) {
       const subcategoryConfig = category.subcategoryConfigs?.[subcategoryKey];
       if (subcategoryConfig) {
@@ -325,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Fallback to formatted key if not found
     return subcategoryKey
       .replace(/-/g, " ")
       .replace(/\b\w/g, (l) => l.toUpperCase());
@@ -335,7 +298,6 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const allCheckbox = document.getElementById("all");
 
-      // If all checkbox is checked, show all categories
       if (allCheckbox && allCheckbox.checked) {
         return {
           showAll: true,
@@ -345,15 +307,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const selectedCategories = [];
 
-      // Get categoryMasterCheckboxes from filter-sidebar.js
       const categoryMasterCheckboxes =
         window.filterSidebar?.categoryMasterCheckboxes || {};
 
-      // Check each master category checkbox dynamically
       Object.entries(categoryMasterCheckboxes).forEach(
         ([checkboxId, categoryId]) => {
           if (checkboxId !== "all") {
-            // Skip the "all" checkbox
             const checkbox = document.getElementById(checkboxId);
             if (checkbox && checkbox.checked) {
               selectedCategories.push(categoryId);
@@ -401,13 +360,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (mapMarkers) {
         initializeInfrastructureCards();
       } else {
-        // Set up a global event listener for marker data
         window.addEventListener(
           "cebuCityMarkersLoaded",
           initializeInfrastructureCards
         );
 
-        // Also set a timeout as a fallback
         setTimeout(() => {
           if (!mapMarkers) {
             console.warn(
@@ -425,7 +382,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   safeInitialization();
 
-  // Export the infrastructure cards API
   window.infrastructureCards = {
     update: function () {
       try {
@@ -436,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     },
     getData: () => infrastructureData,
-    initialize: safeInitialization, // Add explicit initialization method
+    initialize: safeInitialization,
   };
 
   function addCardClickListeners() {
@@ -501,7 +457,6 @@ document.addEventListener("DOMContentLoaded", function () {
       closeSitesModal(modal);
     });
 
-    // Close modal when clicking outside on desktop
     modal.addEventListener("click", function (e) {
       if (
         e.target === modal &&
@@ -511,7 +466,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Handle escape key
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && modal.style.display === "block") {
         closeSitesModal(modal);
@@ -536,7 +490,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ).matches;
 
     if (isMobile || isTablet) {
-      // Force full-screen positioning for mobile and tablet
       modal.style.top = "0px";
       modal.style.left = "0px";
       modal.style.right = "0px";
@@ -552,14 +505,12 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.zIndex = "1000";
       modal.classList.add("full-screen");
 
-      // Prevent body scroll on mobile
       if (isMobile) {
         document.body.classList.add("modal-open");
       }
       return;
     }
 
-    // Desktop positioning logic (existing code)
     const header = document.querySelector("header");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
@@ -878,14 +829,12 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     const modal = document.getElementById("sites-modal");
     if (modal && modal.style.display === "block") {
-      // Small delay to ensure resize has completed
       setTimeout(() => {
         updateModalPosition(modal);
       }, 100);
     }
   });
 
-  // Handle orientation change on mobile devices
   window.addEventListener("orientationchange", function () {
     const modal = document.getElementById("sites-modal");
     if (modal && modal.style.display === "block") {

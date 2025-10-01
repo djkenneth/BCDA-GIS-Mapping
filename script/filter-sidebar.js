@@ -355,7 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Use updateMarkersForCheckbox for individual sites  
       if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
-        console.log('e.target.id', e.target.id)
         window.filterMarkers.updateMarkersForCheckbox(e.target.id, isChecked);
       }
 

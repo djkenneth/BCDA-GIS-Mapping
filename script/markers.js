@@ -112,8 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const marker = new maplibregl.Marker({
           element: siteMarker,
         })
-          .setLngLat([site.location[1], site.location[0]])
-          .addTo(map);
+          .setLngLat([site.location[1], site.location[0]]);
 
         // Add click event
         siteMarker.addEventListener("click", function (e) {
@@ -128,23 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-  // function showLiveFeedCardForSite(site) {
-  //   if (typeof window.showLiveFeedCard !== "function") {
-  //     console.error("showLiveFeedCard function not available");
-  //     return;
-  //   }
-
-  //   const cardPosition = calculateLiveFeedPosition();
-
-  //   try {
-  //     window.showLiveFeedCard(cardPosition);
-
-  //     updateLiveFeedCardForSite(site);
-  //   } catch (error) {
-  //     console.error("Error showing live feed card:", error);
-  //   }
-  // }
 
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
@@ -166,50 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
       x: leftPosition,
       y: topPosition,
     };
-  }
-
-  function updateLiveFeedCardForSite(site) {
-    const liveFeedCard = document.querySelector(".live-feed-card");
-    if (liveFeedCard) {
-      const alertIndicator = liveFeedCard.querySelector(
-        ".alert-indicator span:last-child"
-      );
-      if (alertIndicator) {
-        alertIndicator.textContent = `Live Feed - ${site.name}`;
-      }
-
-      const deviceChannel = liveFeedCard.querySelector(".personnel-count");
-      if (deviceChannel) {
-        deviceChannel.textContent = site.id || "1000013";
-      }
-
-      const viewBtn = liveFeedCard.querySelector("#live-feed-view-btn");
-      if (viewBtn) {
-        viewBtn.setAttribute("data-site-id", site.id);
-        viewBtn.setAttribute("data-camera-code", site.id || "1000013");
-
-        const newViewBtn = viewBtn.cloneNode(true);
-        viewBtn.parentNode.replaceChild(newViewBtn, viewBtn);
-
-        newViewBtn.addEventListener("click", function () {
-          const cameraCode = this.getAttribute("data-camera-code") || "1000013";
-
-          const currentPath = window.location.pathname;
-          let streamsPath;
-
-          if (
-            currentPath.includes("/streams/") ||
-            currentPath.endsWith("streams.php")
-          ) {
-            streamsPath = `?camera=${cameraCode}`;
-          } else {
-            streamsPath = `streams/?camera=${cameraCode}`;
-          }
-
-          window.location.href = streamsPath;
-        });
-      }
-    }
   }
 
   function showSiteDetails(site, category) {
@@ -236,20 +174,23 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
     
-    const categoryMasterCheckboxes = {
-      "all-economic-zones": "economic-zones",
-      "all-locator-management": "locator-management",
-      "all-infrastructure-projects": "infrastructure-projects",
-      "all-afp-modernization": "afp-modernization",
-      "all-investment-tracking": "investment-tracking",
-      "all-sustainability-environment": "sustainability-environment",
-    };
+    const categoryMasterCheckboxes = {};
+    const layersContent = document.getElementById('layers-content');
+    if (layersContent) {
+      const categoryItems = layersContent.querySelectorAll('.category-content-section-item');
+      categoryItems.forEach(item => {
+        const input = item.querySelector('input[type="checkbox"]');
+        if (input && input.id) {
+          const categoryId = input.id.replace('all-', '');
+          categoryMasterCheckboxes[input.id] = categoryId;
+        }
+      });
+    }
 
     if (categoryMasterCheckboxes[checkboxId]) {
 
       const categoryId = categoryMasterCheckboxes[checkboxId];
       if (markersByCategory[categoryId]) {
-        console.log('markersByCategory[categoryId]', markersByCategory[categoryId])
         Object.values(markersByCategory[categoryId]).forEach(
           (subcategoryMarkers) => {
             subcategoryMarkers.forEach((marker) => {
@@ -271,11 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Handle individual site checkboxes (format: "site-{siteId}")
     if (checkboxId.startsWith("site-")) {
       const siteId = checkboxId.replace("site-", "");
       
-      // Find the marker in markersByCategory structure
       let foundMarker = null;
       
       allCategories.forEach(categoryId => {
@@ -305,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
       
-      return; // Exit early for individual site handling
+      return;
     }
 
     allCategories.forEach((categoryId) => {
@@ -367,14 +306,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.cebuMapDebug = {
-    // showLiveFeedCardForSite,
     calculateLiveFeedPosition,
-    updateLiveFeedCardForSite,
     findSiteById,
     zoomToSiteById,
   };
-
-  window.updateLiveFeedCardForSite = updateLiveFeedCardForSite;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {

@@ -60,10 +60,6 @@
     </div>
     <div class="layer-group">
         <div class="content-section">
-            <!-- <div class="content-section-title">
-                <span>Layer Groups</span>
-            </div> -->
-
             <div class="content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all">
@@ -71,14 +67,14 @@
                 </div>
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-economic-zones">
                     <label for="all-economic-zones">Economic Zones</label>
                 </div>
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-locator-management">
                     <label for="all-locator-management">Locator Management</label>
@@ -86,28 +82,28 @@
 
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-infrastructure-projects">
                     <label for="all-infrastructure-projects">Infrastructure Projects</label>
                 </div>
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-afp-modernization">
                     <label for="all-afp-modernization">AFP Modernization</label>
                 </div>
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-investment-tracking">
                     <label for="all-investment-tracking">Investment Tracking</label>
                 </div>
             </div>
 
-            <div class="content-section-item">
+            <div class="content-section-item category-content-section-item">
                 <div class="flex">
                     <input type="checkbox" id="all-sustainability-environment">
                     <label for="all-sustainability-environment">Sustainability & Environment</label>
@@ -124,10 +120,7 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Zone Areas</span>
-        </div> -->
-
+        
         <div class="content-section-item">
             <div class="checkbox-flex-container">
                 <label for="clark-freeport">Clark Freeport Zone</label>
@@ -217,9 +210,6 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Active Locators</span>
-        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -281,9 +271,6 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Major Projects</span>
-        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -354,9 +341,6 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Military Projects</span>
-        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -417,9 +401,6 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Investment Categories</span>
-        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
@@ -480,9 +461,6 @@
         <button class="close-panel"><i class="fas fa-times"></i></button>
     </div>
     <div class="content-section">
-        <!-- <div class="content-section-title">
-            <span>Environmental Categories</span>
-        </div> -->
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">

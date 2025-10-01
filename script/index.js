@@ -16,7 +16,6 @@ function initializeCardCloseButtons() {
           e.stopPropagation();
           sideWrapper.classList.remove("active");
 
-          // Clean up integrated live feed when closing
           const videoElement = document.getElementById(
             "live-feed-video-player"
           );

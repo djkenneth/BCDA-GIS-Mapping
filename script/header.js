@@ -15,26 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navBar.appendChild(toggleBtn);
 
-  const isStreamsPage =
-    window.location.pathname.includes("/streams") ||
-    window.location.href.includes("/streams.php") ||
-    window.location.href.includes("/streams/");
-
   // Initialize header state and adjust containers
   function initializeHeaderState() {
-    if (isStreamsPage) {
-      header.classList.remove("collapsed");
-      localStorage.removeItem("headerCollapsed");
-      adjustAllContainers(false); // false = header expanded
+    const isCollapsed = localStorage.getItem("headerCollapsed") === "true";
+    if (isCollapsed) {
+      header.classList.add("collapsed");
+      adjustAllContainers(true);
     } else {
-      const isCollapsed = localStorage.getItem("headerCollapsed") === "true";
-      if (isCollapsed) {
-        header.classList.add("collapsed");
-        adjustAllContainers(true); // true = header collapsed
-      } else {
-        header.classList.remove("collapsed");
-        adjustAllContainers(false); // false = header expanded
-      }
+      header.classList.remove("collapsed");
+      adjustAllContainers(false);
     }
   }
 
@@ -50,47 +39,25 @@ document.addEventListener("DOMContentLoaded", function () {
       filterSidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
     }
 
-    // Get page type
-    const isStreamsPage =
-      window.location.pathname.includes("/streams") ||
-      window.location.href.includes("/streams.php") ||
-      window.location.href.includes("/streams/");
-
-    // Adjust main containers WITHOUT changing position properties
     const container = document.querySelector(".container");
     const mainContent = document.querySelector(".main-content");
     const sidebar = document.querySelector(".sidebar");
 
-    if (isStreamsPage) {
-      // Special handling for streams page - but keep position stable
-      if (container) {
-        container.style.height = `calc(100vh - ${collapsedOffset}px)`;
-        container.style.width = "100%";
-        // Keep position relative to prevent jumping
-        container.style.position = "relative";
-        container.style.top = "auto";
-        container.style.left = "auto";
-        container.style.zIndex = "auto";
-      }
-      if (mainContent)
-        mainContent.style.height = `calc(100vh - ${collapsedOffset}px)`;
-      if (sidebar) sidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
-    } else {
-      // Regular pages - maintain consistent positioning
-      if (container) {
-        container.style.height = `calc(100vh - ${collapsedOffset}px)`;
-        container.style.position = "relative";
-        container.style.top = "auto";
-        container.style.left = "auto";
-        container.style.width = "100%";
-        container.style.zIndex = "auto";
-      }
-      if (mainContent) {
-        mainContent.style.height = `calc(100vh - ${collapsedOffset}px)`;
-      }
-      if (sidebar) {
-        sidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
-      }
+    if (container) {
+      container.style.height = `calc(100vh - ${collapsedOffset}px)`;
+      container.style.position = "relative";
+      container.style.top = "auto";
+      container.style.left = "auto";
+      container.style.width = "100%";
+      container.style.zIndex = "auto";
+    }
+
+    if (mainContent) {
+      mainContent.style.height = `calc(100vh - ${collapsedOffset}px)`;
+    }
+
+    if (sidebar) {
+      sidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
     }
 
     // Adjust map container with stable positioning
@@ -98,28 +65,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (mapContainer) {
       mapContainer.style.height = `calc(100vh - ${collapsedOffset}px)`;
       mapContainer.style.width = "100%";
-      mapContainer.style.position = "relative"; // Keep consistent
-      mapContainer.style.top = "auto"; // Prevent jumping
-      mapContainer.style.left = "auto"; // Prevent jumping
+      mapContainer.style.position = "relative";
+      mapContainer.style.top = "auto";
+      mapContainer.style.left = "auto";
       mapContainer.style.overflow = "hidden";
 
-      // Force map to stay in place during resize
       if (map && map.resize) {
-        // Get current center before resize
         const currentCenter = map.getCenter();
         const currentZoom = map.getZoom();
 
-        // Resize the map container
         setTimeout(() => {
           map.resize();
-
           map.setCenter(currentCenter);
           map.setZoom(currentZoom);
         }, 50);
       }
     }
 
-    // Adjust other map-related containers with stable positioning
     const mapWrapper = document.querySelector(".map-wrapper");
     if (mapWrapper) {
       mapWrapper.style.height = `calc(100vh - ${collapsedOffset}px)`;
@@ -135,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Get accurate header height
   function getHeaderHeight() {
     const navBar = header.querySelector(".nav-bar");
     const buttonsContainer = header.querySelector(".header-buttons-container");
@@ -149,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       totalHeight += searchContainer.offsetHeight;
     }
 
-    return totalHeight || 284; // fallback to default height
+    return totalHeight || 284;
   }
 
   function initializeResponsiveFeatures() {
@@ -499,12 +460,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const isCollapsed = header.classList.contains("collapsed");
         adjustAllContainers(isCollapsed);
 
-        // Trigger resize event for other components
         setTimeout(() => {
           window.dispatchEvent(new Event("resize"));
-          if (isStreamsPage) {
-            adjustStreamsLayout();
-          }
         }, 300);
       }
     });
@@ -530,10 +487,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Delayed adjustments for animations
     setTimeout(() => {
       window.dispatchEvent(new Event("resize"));
-      if (isStreamsPage) {
-        adjustStreamsLayout();
-      }
-
       // Additional map resize
       if (map && map.resize) {
         map.resize();
@@ -542,32 +495,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Scroll handler for non-streams pages
-  if (!isStreamsPage) {
-    let lastScrollTop = 0;
-    let scrollTimeout;
+  let lastScrollTop = 0;
+  let scrollTimeout;
 
-    window.addEventListener("scroll", function () {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        let scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
+  window.addEventListener("scroll", function () {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      let scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
 
-        if (
-          scrollTop > lastScrollTop &&
-          scrollTop > 50 &&
-          !header.classList.contains("collapsed")
-        ) {
-          header.classList.add("collapsed");
-          localStorage.setItem("headerCollapsed", "true");
-        } else if (scrollTop < 10 && header.classList.contains("collapsed")) {
-          header.classList.remove("collapsed");
-          localStorage.removeItem("headerCollapsed");
-        }
+      if (
+        scrollTop > lastScrollTop &&
+        scrollTop > 50 &&
+        !header.classList.contains("collapsed")
+      ) {
+        header.classList.add("collapsed");
+        localStorage.setItem("headerCollapsed", "true");
+      } else if (scrollTop < 10 && header.classList.contains("collapsed")) {
+        header.classList.remove("collapsed");
+        localStorage.removeItem("headerCollapsed");
+      }
 
-        lastScrollTop = scrollTop;
-      }, 10);
-    });
-  }
+      lastScrollTop = scrollTop;
+    }, 10);
+  });
 
   // Initialize other components
   initializeResponsiveFeatures();
@@ -1534,17 +1485,6 @@ function initializeSearchBar() {
           if (sideWrapper) {
             sideWrapper.classList.add("active");
           }
-
-          setTimeout(() => {
-            const position = calculateLiveFeedPosition();
-            if (window.showLiveFeedCard) {
-              window.showLiveFeedCard(position);
-
-              if (window.updateLiveFeedCardForSite) {
-                window.updateLiveFeedCardForSite(targetSite);
-              }
-            }
-          }, 500);
         }, 1000);
       }
     } else {
@@ -1679,50 +1619,19 @@ function adjustAllContainers(isCollapsed) {
   const mainContent = document.querySelector(".main-content");
   const sidebar = document.querySelector(".sidebar");
 
-  const isStreamsPage =
-    window.location.pathname.includes("/streams") ||
-    window.location.href.includes("/streams.php") ||
-    window.location.href.includes("/streams/");
+  // Regular pages
+  if (container) {
+    container.style.height = `calc(100vh - ${collapsedOffset}px)`;
+    container.style.paddingTop = isCollapsed ? "0" : "0";
+    container.style.marginTop = isCollapsed ? "0" : "0";
+  }
 
-  if (isStreamsPage) {
-    // Special handling for streams page
-    if (isCollapsed) {
-      if (container) {
-        container.style.height = "100vh";
-        container.style.width = "100vw";
-        container.style.position = "fixed";
-        container.style.top = "0";
-        container.style.left = "0";
-        container.style.zIndex = "5";
-      }
-      if (mainContent) mainContent.style.height = "100vh";
-      if (sidebar) sidebar.style.height = "100vh";
-    } else {
-      if (container) {
-        container.style.height = `calc(100vh - ${headerHeight}px)`;
-        container.style.width = "100%";
-        container.style.position = "relative";
-        container.style.top = "auto";
-        container.style.left = "auto";
-        container.style.zIndex = "auto";
-      }
-      if (mainContent)
-        mainContent.style.height = `calc(100vh - ${headerHeight}px)`;
-      if (sidebar) sidebar.style.height = `calc(100vh - ${headerHeight}px)`;
-    }
-  } else {
-    // Regular pages
-    if (container) {
-      container.style.height = `calc(100vh - ${collapsedOffset}px)`;
-      container.style.paddingTop = isCollapsed ? "0" : "0";
-      container.style.marginTop = isCollapsed ? "0" : "0";
-    }
-    if (mainContent) {
-      mainContent.style.height = `calc(100vh - ${collapsedOffset}px)`;
-    }
-    if (sidebar) {
-      sidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
-    }
+  if (mainContent) {
+    mainContent.style.height = `calc(100vh - ${collapsedOffset}px)`;
+  }
+
+  if (sidebar) {
+    sidebar.style.height = `calc(100vh - ${collapsedOffset}px)`;
   }
 
   // Adjust map container specifically - this is crucial for map functionality

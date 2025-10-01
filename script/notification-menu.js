@@ -1,21 +1,18 @@
 // script/notification-menu.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the bell icon element
     const bellIcon = document.getElementById('bell-icon');
     if (!bellIcon) {
         console.error('Bell icon not found!');
         return;
     }
 
-     // Get the img element inside the bell icon div
-     const bellImg = bellIcon.querySelector('img');
-     if (!bellImg) {
-         console.error('Bell icon image not found inside the bell-icon div!');
-         return;
-     }
+    const bellImg = bellIcon.querySelector('img');
+    if (!bellImg) {
+        console.error('Bell icon image not found inside the bell-icon div!');
+        return;
+    }
 
-    // Add notification badge if there are unread notifications
     const unreadCount = notifications.filter(n => !n.read).length;
     if (unreadCount > 0) {
         const badge = document.createElement('div');
@@ -24,11 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         bellIcon.appendChild(badge);
     }
 
-    // Create the notification menu
     const notificationMenu = document.createElement('div');
     notificationMenu.className = 'notification-menu';
 
-    // Add header
     const header = document.createElement('div');
     header.className = 'notification-header';
     header.innerHTML = `
@@ -39,12 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     notificationMenu.appendChild(header);
 
-    // Create notification body
     const notificationBody = document.createElement('div');
     notificationBody.className = 'notification-body';
     notificationBody.id = 'style-1';
 
-    // Add notifications
     if (notifications.length > 0) {
         notifications.forEach(notification => {
             const notificationItem = document.createElement('div');
@@ -80,9 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             
-            // Add click event to mark as read
             notificationItem.addEventListener('click', function() {
-                // Mark as read logic here
                 this.classList.add('read');
                 this.classList.remove('unread');
             });
@@ -90,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
             notificationBody.appendChild(notificationItem);
         });
     } else {
-        // No notifications
         const emptyState = document.createElement('div');
         emptyState.className = 'notification-empty';
         emptyState.textContent = 'No notifications at this time.';
@@ -99,10 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     notificationMenu.appendChild(notificationBody);
 
-    // Append menu to bell parent
     bellIcon.appendChild(notificationMenu);
 
-    // Toggle menu when clicking the bell icon
     bellIcon.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -110,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === bellIcon || e.target === bellImg) {
             notificationMenu.classList.toggle('show');
         
-            // Hide any other open menus (like app switcher)
             const appSwitcherMenu = document.querySelector('.app-switcher-menu');
             if (appSwitcherMenu) {
                 appSwitcherMenu.classList.remove('show');
@@ -118,25 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add "Mark all as read" functionality
     document.getElementById('mark-all-read').addEventListener('click', function(e) {
         e.stopPropagation();
         
-        // Mark all notifications as read
         const unreadItems = notificationBody.querySelectorAll('.notification-item.unread');
         unreadItems.forEach(item => {
             item.classList.remove('unread');
             item.classList.add('read');
         });
         
-        // Remove the badge
         const badge = bellIcon.querySelector('.notification-badge');
         if (badge) {
             badge.remove();
         }
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!bellIcon.contains(e.target)) {
             notificationMenu.classList.remove('show');

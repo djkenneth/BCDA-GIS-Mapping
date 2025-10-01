@@ -5,9 +5,7 @@
   top: var(--map-top);
   width: 60px;
   height: calc(100vh - var(--map-top));
-  /* background-color: #1f2e47; */
   color: #fff;
-  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
   transition: all 0.3s ease;
   z-index: 6;
   display: flex;
@@ -15,7 +13,6 @@
   overflow-y: auto;
   padding-right: 0;
   padding-left: 0;
-
   background: #062840;
   box-shadow: 0 0 10px 0 rgba(23, 32, 61, 0.75);
 }
@@ -28,7 +25,6 @@
   overflow-y: visible;
 }
 
-/* Individual tab styling */
 .sidebar-tab-v2 {
   display: flex;
   flex-direction: column;
@@ -46,10 +42,6 @@
 }
 
 .sidebar-tab-v2.active {
-  /* background-color: rgba(250, 215, 84, 0.2); */
-  /* border-left: 3px solid #fad754; */
-
-  /* border-radius: 50px; */
   background: rgba(57, 181, 74, 0.2);
 }
 
@@ -71,18 +63,11 @@
   color: #39B54A;
 }
 
-/* .sidebar-tab-v2:hover i {
-  transform: scale(1.1);
-} */
-
 .sidebar-tab-v2.active .icon {
   background: #39B54A;
 }
 
 .sidebar-tab-v2.active i {
-  /* color: #fad754; */
-
-  /* border-radius: 50px; */
   color: white;
 }
 
@@ -103,7 +88,6 @@
   font-weight: 500;
 }
 
-/* Sidebar content panels */
 .sidebar-content {
   position: fixed;
   left: 60px;
@@ -111,20 +95,14 @@
   width: 300px;
   height: calc(100vh - var(--map-top));
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  /* padding: 4px; */
   overflow-y: auto;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
   z-index: 2;
   scrollbar-width: thin;
   scrollbar-color: #548a98 #1f2e47;
-  /* border-right-style: inset;
-  border-right-color: #f0bd36;
-  border-right-width: 1px; */
-
   border-right: 1px inset #3197A3;
   background: var(--primary-2);
-  /* box-shadow: 7px 0 10px 0 rgba(0, 0, 0, 0.10); */
 }
 
 .sidebar-content::-webkit-scrollbar {
@@ -144,7 +122,6 @@
   transform: translateX(0);
 }
 
-/* Panel header */
 .content-header {
   display: flex;
   justify-content: space-between;
@@ -179,9 +156,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Content sections */
 .content-section {
-  /* margin-bottom: 20px; */
   background-color: rgba(31, 46, 71, 0.5);
   border-radius: 6px;
   padding: 12px;
@@ -212,7 +187,6 @@
   opacity: 0.8;
 }
 
-/* Checkbox items */
 .content-section-item {
   display: flex;
   flex-direction: column;
@@ -238,7 +212,6 @@
   transition: color 0.2s;
 }
 
-/* Custom checkbox styling */
 .content-section-item input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -311,7 +284,6 @@
   background-color: rgba(84, 138, 152, 0.1);
 }
 
-/* Left side: checkbox and label */
 .checkbox-flex-container input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -355,16 +327,13 @@
 
 /* Site count styling */
 .site-count {
-  /* background-color: rgba(250, 215, 84, 0.2); */
   color: white;
   padding: 2px 8px;
   border-radius: 12px;
-  /* font-size: 11px; */
   font-size: 14px;
   font-weight: 600;
   min-width: 20px;
   text-align: center;
-  /* border: 1px solid rgba(250, 215, 84, 0.3); */
   flex-shrink: 0;
 }
 
@@ -385,16 +354,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  /* background-color: rgba(15, 23, 42, 0.8); */
-  /* border-radius: 4px; */
-  /* margin-top: 8px; */
-  /* border-left: 2px solid rgba(250, 215, 84, 0.3); */
 }
 
 .search-input-item {
   padding: 8px 0;
-  /* border-bottom: 1px solid rgba(84, 138, 152, 0.2); */
-  /* background-color: rgba(15, 23, 42, 0.3); */
 }
 
 .search-input-container {
@@ -461,7 +424,6 @@
   border-radius: 2px;
 }
 
-/* Individual site item in dropdown */
 .site-dropdown-item {
   display: flex;
   align-items: center;
@@ -572,13 +534,6 @@
   text-align: right;
 }
 
-/* Layer groups */
-.layer-group {
-  /* margin-bottom: 15px; */
-  /* padding: 0 10px 10px 10px; */
-}
-
-/* Adjustments for when header is collapsed */
 header.collapsed ~ .sidebar {
   top: 0;
   height: 100vh;
@@ -589,7 +544,6 @@ header.collapsed ~ .sidebar-content {
   height: 100vh;
 }
 
-/* Adjustments for map container position */
 .map-container {
   position: absolute;
   left: 60px;
@@ -612,7 +566,6 @@ header.collapsed ~ .map-container {
   height: 100vh;
 }
 
-/* Badge for showing active filters count */
 .sidebar-tab-v2 .filter-badge {
   position: absolute;
   top: 8px;
@@ -629,12 +582,10 @@ header.collapsed ~ .map-container {
   justify-content: center;
 }
 
-/* Map cursor interactions */
 #map.drawing-mode {
   cursor: crosshair !important;
 }
 
-/* Pulsing effect for newly added markers */
 @keyframes markerPulse {
   0% {
     transform: scale(1);

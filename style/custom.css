@@ -434,14 +434,6 @@ p {
   left: 90px;
 }
 
-.live-feed-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  background: rgba(30, 32, 38, 0.95);
-}
-
 .alert-indicator {
   display: flex;
   align-items: center;
@@ -1072,9 +1064,7 @@ p {
   }
 }
 
-
 /* eassist */
-
 .assistant-info h2, .assistant-info p.text-body1, .q-dialog-plugin {
   color: #000000 !important;
 }

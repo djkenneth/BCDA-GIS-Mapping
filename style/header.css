@@ -1,11 +1,8 @@
-/* BCDA */
-
 header {
   position: relative;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
   background-color: transparent; 
-  /* background: url('../assets/header-bg.png') lightgray -19.842px -67.992px / 57.477% 201.971% no-repeat, #062840; */
   box-shadow: 7px 0 10px 0 rgba(0, 0, 0, 0.10);
 }
 
@@ -41,17 +38,14 @@ header {
 
 header .logo-wrapper {
   display: flex;
-  /* width: 280px; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* gap: 15px; */
 }
 
 header .logo {
   width: 150px;
   flex-shrink: 0;
-  /* aspect-ratio: 1/1; */
 }
 
 .alert-wrapper {
@@ -63,7 +57,6 @@ header .nav-bar {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  /* background: var(--bg-color); */
   background: url('../assets/header-bg.png') #062840 -19.842px -67.992px / 57.477% 201.971% no-repeat;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -304,43 +297,6 @@ header.collapsed .header-toggle {
   background: #123D4C;
 }
 
-/* .alert-item.alert-construction {
-  background: rgba(255, 152, 0, 0.2);
-  border: 1px solid rgba(255, 152, 0, 0.3);
-}
-
-.alert-item.alert-closure {
-  background: rgba(244, 67, 54, 0.2);
-  border: 1px solid rgba(244, 67, 54, 0.3);
-}
-
-.alert-item.alert-weather {
-  background: rgba(33, 150, 243, 0.2);
-  border: 1px solid rgba(33, 150, 243, 0.3);
-}
-
-.alert-item.alert-traffic {
-  background: rgba(255, 193, 7, 0.2);
-  border: 1px solid rgba(255, 193, 7, 0.3);
-}
-
-.alert-item.alert-accident {
-  background: rgba(233, 30, 99, 0.2);
-  border: 1px solid rgba(233, 30, 99, 0.3);
-}
-
-.alert-item.alert-event {
-  background: rgba(156, 39, 176, 0.2);
-  border: 1px solid rgba(156, 39, 176, 0.3);
-}
-
-.alert-item.alert-flooding {
-  background: rgba(0, 188, 212, 0.2);
-  border: 1px solid rgba(0, 188, 212, 0.3);
-} */
-
-
-
 .alert-item:hover {
   transform: translateX(5px);
   opacity: 0.9;
@@ -391,41 +347,6 @@ header.collapsed .header-toggle {
   border: 1px solid #0C6474;
   background: #123D4C;
 }
-
-/* .event-item.event-ongoing {
-  background: rgba(76, 175, 80, 0.2);
-  border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.event-item.event-upcoming {
-  background: rgba(33, 150, 243, 0.2);
-  border: 1px solid rgba(33, 150, 243, 0.3);
-}
-
-.event-item.event-festival {
-  background: rgba(156, 39, 176, 0.2);
-  border: 1px solid rgba(156, 39, 176, 0.3);
-}
-
-.event-item.event-meeting {
-  background: rgba(255, 193, 7, 0.2);
-  border: 1px solid rgba(255, 193, 7, 0.3);
-}
-
-.event-item.event-community {
-  background: rgba(0, 188, 212, 0.2);
-  border: 1px solid rgba(0, 188, 212, 0.3);
-}
-
-.event-item.event-health {
-  background: rgba(244, 67, 54, 0.2);
-  border: 1px solid rgba(244, 67, 54, 0.3);
-}
-
-.event-item.event-tech {
-  background: rgba(121, 134, 203, 0.2);
-  border: 1px solid rgba(121, 134, 203, 0.3);
-} */
 
 .event-item:hover {
   transform: translateX(5px);
@@ -799,7 +720,6 @@ header .flex.w-full {
   flex-shrink: 0;
 }
 
-/* Asset Value Icons */
 .item-icon.buildings {
   background: #3b82f6;
   color: white;
@@ -891,7 +811,6 @@ header .flex.w-full {
   content: "📋";
 }
 
-/* Document Icons */
 .item-icon.fully-doc {
   background: #10b981;
   color: white;
@@ -937,7 +856,6 @@ header .flex.w-full {
   content: "🛡️";
 }
 
-/* Alert Icons */
 .item-icon.emergency {
   background: #ef4444;
   color: white;
@@ -1633,10 +1551,6 @@ header .flex.w-full {
     gap: 15px;
   }
 
-  /* header .logo {
-    width: 150px;
-  } */
-
   .header-button {
     font-size: 12px;
     padding: 8px 12px;
@@ -1665,10 +1579,6 @@ header .flex.w-full {
     gap: 10px;
   }
 
-  /* .alert-wrapper {
-    display: none;
-  } */
-
   .emergency-contacts-section,
   .city-events-section,
   .public-alerts-section  {
@@ -1691,7 +1601,6 @@ header .flex.w-full {
 
   header .icons {
     margin-left: 10px;
-    /* flex-direction: row; */
   }
 
   .emergency-number {
@@ -1736,10 +1645,6 @@ header .flex.w-full {
   header .logo {
     width: 120px;
   }
-
-  /* header .logo-wrapper {
-    width: 75px;
-  } */
 
   header .icon {
     width: 45px;
@@ -1856,9 +1761,7 @@ header .flex.w-full {
     gap: 6px;
     padding: 8px 10px;
     background: rgba(30, 41, 59, 0.8);
-    /* border: 1px solid rgba(59, 130, 246, 0.3); */
     border-radius: 6px;
-    /* color: #64b5f6; */
     font-family: "Roboto";
     font-size: 10px;
     font-weight: 600;
