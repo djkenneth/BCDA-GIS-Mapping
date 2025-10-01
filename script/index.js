@@ -15,22 +15,6 @@ function initializeCardCloseButtons() {
         closeBtn.addEventListener("click", function (e) {
           e.stopPropagation();
           sideWrapper.classList.remove("active");
-
-          const videoElement = document.getElementById(
-            "live-feed-video-player"
-          );
-          if (videoElement) {
-            videoElement.pause();
-            if (window.integratedHlsPlayer) {
-              try {
-                window.integratedHlsPlayer.destroy();
-                window.integratedHlsPlayer = null;
-              } catch (error) {
-                console.warn("Error destroying integrated HLS player:", error);
-              }
-            }
-            videoElement.src = "";
-          }
         });
 
         card.appendChild(closeBtn);

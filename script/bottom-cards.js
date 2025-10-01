@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.addEventListener("click", function (e) {
       if (
         e.target === modal &&
-        !window.matchMedia("(max-width: 768px)").matches
+        !window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches
       ) {
         closeSitesModal(modal);
       }
@@ -484,9 +484,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateModalPosition(modal) {
     if (!modal) return;
 
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const isMobile = window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches;
     const isTablet = window.matchMedia(
-      "(max-width: 1024px) and (min-width: 769px)"
+      `(max-width: ${CONFIG.BREAKPOINTS.TABLET}px) and (min-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`
     ).matches;
 
     if (isMobile || isTablet) {
@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
-    let topPosition = "284px";
+    let topPosition = CONFIG.DESKTOP.TOP;
     let leftPosition = "60px";
 
     if (header && header.classList.contains("collapsed")) {
@@ -851,7 +851,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (
         modal &&
         modal.style.display === "block" &&
-        window.matchMedia("(max-width: 768px)").matches
+        window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches
       ) {
         const now = new Date().getTime();
         if (now - lastTouchEnd <= 300) {

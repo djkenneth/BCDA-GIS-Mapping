@@ -430,10 +430,6 @@ p {
   color: white !important;
 }
 
-.filter-sidebar.collapsed ~ .live-feed-card {
-  left: 90px;
-}
-
 .alert-indicator {
   display: flex;
   align-items: center;

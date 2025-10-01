@@ -1,7 +1,6 @@
 // script/issue-report-form.js
 
 document.addEventListener("DOMContentLoaded", function () {
-  // DOM Elements - Check for multiple possible button IDs
   const issueReportButton =
     document.getElementById("issueReportBtn") ||
     document.getElementById("reportIssueBtn") ||
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const removePhotoBtn = document.getElementById("removePhoto");
   const mobileCameraBtn = document.getElementById("mobileCameraBtn");
 
-  // Category data structure with subcategories
   const categories = {
     "Roads & Transportation": [
       "Highways",
@@ -59,11 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
   };
 
-  // Initialize form elements when DOM loads
   function initForm() {
-    // Populate category dropdown
     if (issueCategorySelect) {
-      // Clear existing options except the first one
       while (issueCategorySelect.options.length > 1) {
         issueCategorySelect.remove(1);
       }
@@ -76,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Set the current date as default for datepicker
     const dateReported = document.getElementById("issueDateReported");
     if (dateReported) {
       const today = new Date();
@@ -84,17 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
       dateReported.value = formattedDate;
     }
 
-    // Check if device can use camera
     checkCameraAvailability();
   }
 
-  // Check if the device can use camera
   function checkCameraAvailability() {
-    // Only show the camera button on mobile devices
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      // Check if the browser supports getUserMedia
+    if (window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches) {
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        // Show the camera button
         if (mobileCameraBtn) {
           mobileCameraBtn.style.display = "flex";
         }
@@ -102,37 +91,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to open camera
   function openCamera() {
-    // Check if device supports camera
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Create video element
       const videoElement = document.createElement("video");
       videoElement.id = "camera-preview";
       videoElement.autoplay = true;
       videoElement.style.width = "100%";
       videoElement.style.borderRadius = "4px";
 
-      // Create capture button
       const captureBtn = document.createElement("button");
       captureBtn.textContent = "Capture Photo";
       captureBtn.className = "camera-capture-btn";
       captureBtn.style.margin = "10px auto";
       captureBtn.style.display = "block";
 
-      // Create cancel button
       const cancelCaptureBtn = document.createElement("button");
       cancelCaptureBtn.textContent = "Cancel";
       cancelCaptureBtn.className = "camera-cancel-btn";
       cancelCaptureBtn.style.margin = "10px auto";
       cancelCaptureBtn.style.display = "block";
 
-      // Create container for camera UI
       const cameraContainer = document.createElement("div");
       cameraContainer.id = "camera-container";
       cameraContainer.className = "camera-overlay";
 
-      // Add elements to container
       cameraContainer.appendChild(videoElement);
 
       // Button container
@@ -318,20 +300,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function adjustFormPosition() {
     if (!issueReportFullScreenForm) return;
 
-    // Position form based on header and sidebar state
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
-    // Default positioning
-    let topPosition = CONFIG.DESKTOP.TOP; // Current default
-    let leftPosition = "60px"; // Current default
+    let topPosition = CONFIG.DESKTOP.TOP;
+    let leftPosition = "60px";
     let rightPosition = "0";
     let bottomPosition = "0";
 
-    // Check if we're in mobile view
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      // Mobile view - take full screen
+    if (window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches) {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {
@@ -346,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     } else if (
-      window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
+      window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.TABLET}px) and (min-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches
     ) {
       if (header) {
         if (header.classList.contains("collapsed")) {
@@ -364,13 +342,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     } else {
-      // Desktop view - adjust based on header and sidebar state
-      if (header) {
-        if (header.classList.contains("collapsed")) {
-          topPosition = "0px";
-        } else {
-          topPosition = CONFIG.DESKTOP.TOP;
-        }
+      if (header && header.classList.contains("collapsed")) {
+        topPosition = "0px";
       }
 
       if (sidebar) {
@@ -382,7 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Apply the calculated positions
     issueReportFullScreenForm.style.top = topPosition;
     issueReportFullScreenForm.style.left = leftPosition;
     issueReportFullScreenForm.style.right = rightPosition;
@@ -454,8 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (isValid) {
-      // Here you would send the formData to your server using fetch or XMLHttpRequest
-      // For now, just show a success message and close the form
       showSuccessMessage();
     }
   }

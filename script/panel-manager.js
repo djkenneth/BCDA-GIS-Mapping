@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebarContent: ".sidebar-content",
     headerToggle: ".header-toggle",
     filterCheckboxes: '.sidebar-content input[type="checkbox"]',
-    liveFeedCard: ".live-feed-card",
     contentComponents: [
       "#full-screen-infrastructure-form",
       "#full-screen-monitoring",
@@ -17,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "#full-screen-locations-list",
       ".infrastructure-locations",
       "#list-all-infrastructure",
-      "#sites-modal", // Added sites modal to managed components
-      ".search-bar-container", // Added search bar container to managed components
+      "#sites-modal",
+      ".search-bar-container",
     ],
     componentTriggers: {
       "#addEquipmentBtn": "#full-screen-infrastructure-form",
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setupTriggerListeners();
     setupComponentCloseButtons();
     setupFilterCheckboxes();
-    setupLiveFeedCard();
     setupInfoDrawerAccordion();
     setupInfrastructureCardsIntegration();
     observeHeaderAndSidebar();
@@ -120,11 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             currentOpenComponent = "#info-drawer";
-
-            const liveFeedCard = document.querySelector(SELECTORS.liveFeedCard);
-            if (liveFeedCard && liveFeedCard.style.display === "block") {
-              addSecondaryComponentListener(liveFeedCard);
-            }
           }
         }, 100);
       }
@@ -164,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
           closeComponent(currentOpenComponent);
         }
 
-        closeLiveFeedCard();
         closeInfrastructureLocations();
 
         if (typeof window.applyCebuFilter === "function") {
@@ -194,7 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       closeComponent(currentOpenComponent);
                     }
 
-                    closeLiveFeedCard();
                     closeInfrastructureLocations();
 
                     if (typeof window.applyCebuFilter === "function") {
@@ -209,28 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       observer.observe(sidebarContent, { childList: true, subtree: true });
-    }
-  }
-
-  function setupLiveFeedCard() {
-    const liveFeedCard = document.querySelector(SELECTORS.liveFeedCard);
-    if (!liveFeedCard) return;
-
-    const closeBtn = liveFeedCard.querySelector(".close-btn");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        closeLiveFeedCard();
-      });
-    }
-
-    const viewBtn = liveFeedCard.querySelector("#live-feed-view-btn");
-    if (viewBtn) {
-      viewBtn.addEventListener("click", function () {
-        if (currentOpenComponent) {
-          closeComponent(currentOpenComponent);
-        }
-        closeLiveFeedCard();
-      });
     }
   }
 
@@ -415,10 +384,6 @@ document.addEventListener("DOMContentLoaded", function () {
       closeComponent(currentOpenComponent);
     }
 
-    if (selector !== SELECTORS.liveFeedCard) {
-      closeLiveFeedCard();
-    }
-
     if (
       !selector.includes("infrastructure-locations") &&
       !selector.includes("list-all-infrastructure") &&
@@ -445,7 +410,6 @@ document.addEventListener("DOMContentLoaded", function () {
       component.classList.add("visible");
     } else if (selector === "#sites-modal") {
       component.style.display = "block";
-      // Sites modal positioning is handled by positionComponent
     } else {
       component.style.display = "block";
     }
@@ -462,7 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selector === "#info-drawer") {
       component.classList.remove("open");
       component.classList.remove("expanded");
-      closeLiveFeedCard();
 
       Object.values(SELECTORS.infoDrawerSections).forEach((sectionSelector) => {
         const section = document.querySelector(sectionSelector);
@@ -488,34 +451,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function closeLiveFeedCard() {
-    const liveFeedCard = document.querySelector(SELECTORS.liveFeedCard);
-    if (!liveFeedCard) return;
-
-    liveFeedCard.style.display = "none";
-
-    const videoElement = document.getElementById("live-feed-video-player");
-    if (videoElement) {
-      videoElement.pause();
-      if (videoElement.src) {
-        videoElement.src = "";
-      }
-    }
-
-    if (window.liveFeedHlsPlayer) {
-      try {
-        window.liveFeedHlsPlayer.destroy();
-        window.liveFeedHlsPlayer = null;
-      } catch (e) {
-        console.warn("Error destroying HLS player:", e);
-      }
-    }
-
-    if (typeof window.liveFeedCardVisible !== "undefined") {
-      window.liveFeedCardVisible = false;
-    }
-  }
-
   function closeInfrastructureLocations() {
     const locationsList = document.querySelectorAll(
       ".infrastructure-locations, #full-screen-locations-list, #list-all-infrastructure"
@@ -538,17 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function addSecondaryComponentListener(component) {
-    if (!component) return;
-
-    const closeButtons = component.querySelectorAll(".close-btn");
-
-    closeButtons.forEach((btn) => {
-      btn.removeEventListener("click", closeLiveFeedCard);
-      btn.addEventListener("click", closeLiveFeedCard);
-    });
-  }
-
   function positionComponent(component) {
     if (!component) return;
 
@@ -559,12 +483,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     let topPosition = CONFIG.DESKTOP.TOP;
-    let leftPosition = "360px";
+    let leftPosition = "60px";
     let rightPosition = "0";
     let bottomPosition = "0";
 
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      // Mobile view - take full screen
+    if (window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches) {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
       } else {
@@ -579,7 +502,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     } else if (
-      window.matchMedia("(max-width: 1024px) and (min-width: 769px)").matches
+      window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.TABLET}px) and (min-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches
     ) {
       if (header && header.classList.contains("collapsed")) {
         topPosition = "0";
@@ -606,39 +529,6 @@ document.addEventListener("DOMContentLoaded", function () {
           leftPosition = "60px";
         }
       }
-    }
-
-    if (
-      component.id === "info-drawer" ||
-      component.classList.contains("live-feed-card")
-    ) {
-      return;
-    }
-
-    if (component.id === "sites-modal") {
-      component.style.top = topPosition;
-      component.style.left = leftPosition;
-      component.style.right = rightPosition;
-      component.style.bottom = bottomPosition;
-      component.style.position = "fixed";
-      component.style.zIndex = "6";
-      return;
-    }
-
-    if (
-      component.classList.contains("infrastructure-locations") ||
-      component.id === "full-screen-locations-list" ||
-      component.id === "list-all-infrastructure"
-    ) {
-      component.style.top = topPosition;
-      component.style.left = leftPosition;
-      component.style.right = rightPosition;
-      component.style.bottom = bottomPosition;
-      return;
-    }
-
-    if (component.hasAttribute("data-skip-positioning")) {
-      return;
     }
 
     component.style.top = topPosition;
@@ -756,16 +646,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 250);
     });
   }
-
-  document.addEventListener("showLiveFeedCard", function (e) {
-    const liveFeedCard = document.querySelector(SELECTORS.liveFeedCard);
-    if (liveFeedCard) {
-      liveFeedCard.style.display = "block";
-      if (typeof window.liveFeedCardVisible !== "undefined") {
-        window.liveFeedCardVisible = true;
-      }
-    }
-  });
 
   init();
 });

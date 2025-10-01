@@ -4,7 +4,6 @@ const fullScreenForm = document.getElementById(
 
 const closeBtn = document.getElementById('close');
 
-// Zone filtering functionality
 let currentZoneFilter = "all";
 let currentCategoryFilter = "all";
 let currentPerformanceFilter = "all";
@@ -26,12 +25,10 @@ function showInfrastructureForm() {
 }
 
 function toggleZoneFilter(element, zone) {
-  // Remove active from all pills
   document.querySelectorAll(".zone-pill").forEach((pill) => {
     pill.classList.remove("active");
   });
 
-  // Add active to clicked pill
   element.classList.add("active");
   currentZoneFilter = zone;
 
@@ -42,7 +39,7 @@ function applyFilters() {
   const zoneCards = document.querySelectorAll(".zone-card");
   const noResults = document.getElementById("noResults");
   let visibleCount = 0;
-  let totalCount = zoneCards.length - 1; // Subtract 1 for no-results div
+  let totalCount = zoneCards.length - 1;
 
   zoneCards.forEach((card) => {
     if (card.id === "noResults") return;
@@ -54,17 +51,14 @@ function applyFilters() {
 
     let isVisible = true;
 
-    // Zone filter
     if (currentZoneFilter !== "all" && zoneId !== currentZoneFilter) {
       isVisible = false;
     }
 
-    // Category filter
     if (currentCategoryFilter !== "all" && category !== currentCategoryFilter) {
       isVisible = false;
     }
 
-    // Performance filter
     if (
       currentPerformanceFilter !== "all" &&
       performance !== currentPerformanceFilter
@@ -72,7 +66,6 @@ function applyFilters() {
       isVisible = false;
     }
 
-    // Search filter
     if (
       currentSearchFilter &&
       !name.includes(currentSearchFilter.toLowerCase())
@@ -80,7 +73,6 @@ function applyFilters() {
       isVisible = false;
     }
 
-    // Apply visibility
     if (isVisible) {
       card.classList.remove("hidden");
       visibleCount++;
@@ -89,14 +81,12 @@ function applyFilters() {
     }
   });
 
-  // Show/hide no results message
   if (visibleCount === 0) {
     noResults.classList.remove("hidden");
   } else {
     noResults.classList.add("hidden");
   }
 
-  // Update zone count
   updateZoneCount(visibleCount, totalCount);
 }
 
@@ -106,28 +96,23 @@ function updateZoneCount(visible, total) {
 }
 
 function clearAllFilters() {
-  // Reset all filters
   currentZoneFilter = "all";
   currentCategoryFilter = "all";
   currentPerformanceFilter = "all";
   currentSearchFilter = "";
 
-  // Reset UI elements
   document.getElementById("categoryFilter").value = "all";
   document.getElementById("performanceFilter").value = "all";
   document.getElementById("searchFilter").value = "";
 
-  // Reset zone pills
   document.querySelectorAll(".zone-pill").forEach((pill) => {
     pill.classList.remove("active");
   });
   document.querySelector('[data-zone="all"]').classList.add("active");
 
-  // Apply filters
   applyFilters();
 }
 
-// Event listeners
 document
   .getElementById("categoryFilter")
   .addEventListener("change", function () {
@@ -147,12 +132,10 @@ document.getElementById("searchFilter").addEventListener("input", function () {
   applyFilters();
 });
 
-// Initialize filters on page load
 document.addEventListener("DOMContentLoaded", function () {
   applyFilters();
 });
 
-// Add some sample animation for zone cards
 function animateZoneCards() {
   const visibleCards = document.querySelectorAll(".zone-card:not(.hidden)");
   visibleCards.forEach((card, index) => {
@@ -167,20 +150,18 @@ function animateZoneCards() {
   });
 }
 
-// Call animation after filters are applied
 const originalApplyFilters = applyFilters;
 applyFilters = function () {
   originalApplyFilters();
   setTimeout(animateZoneCards, 50);
 };
 
-// Add responsive filter toggle for mobile
 function toggleFiltersOnMobile() {
   const filtersSection = document.querySelector(".filters-section");
   const filtersGrid = document.querySelector(".filters-grid");
   const zonePills = document.querySelector(".zone-filter-pills");
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= CONFIG.BREAKPOINTS.MOBILE) {
     filtersGrid.style.gridTemplateColumns = "1fr";
     zonePills.style.justifyContent = "center";
   } else {
@@ -191,6 +172,5 @@ function toggleFiltersOnMobile() {
 
 window.showInfrastructureForm = showInfrastructureForm;
 
-// Call on load and resize
 window.addEventListener("load", toggleFiltersOnMobile);
 window.addEventListener("resize", toggleFiltersOnMobile);

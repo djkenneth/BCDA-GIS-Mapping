@@ -3,7 +3,6 @@
 const monitoringInterface = document.getElementById("full-screen-monitoring");
 const closeMonitoringBtn = document.getElementById("close-monitoring-btn");
 
-// Handle close button
 if (closeMonitoringBtn) {
   closeMonitoringBtn.addEventListener("click", function () {
     monitoringInterface.style.display = "none";

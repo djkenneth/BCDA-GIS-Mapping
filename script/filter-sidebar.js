@@ -1,5 +1,32 @@
 // script/filter-sidebar.js
 
+// ============================================================================
+// CONFIGURATION
+// ============================================================================
+
+const CATEGORY_MASTER_IDS = [
+  "all-economic-zones",
+  "all-locator-management", 
+  "all-infrastructure-projects",
+  "all-afp-modernization",
+  "all-investment-tracking",
+  "all-sustainability-environment"
+];
+
+// ============================================================================
+// STATE MANAGEMENT
+// ============================================================================
+
+const allCheckboxes = {
+  all: document.querySelectorAll(
+    '.content-section-item input[type="checkbox"]:not(#all)'
+  ),
+};
+
+// ============================================================================
+// FUNCTIONS
+// ============================================================================
+
 function populateSiteDropdowns() {
   if (typeof mapMarkers === 'undefined') {
     console.log('mapMarkers not available, retrying...');
@@ -8,12 +35,14 @@ function populateSiteDropdowns() {
   }
 
   // Iterate through each category in mapMarkers
-  mapMarkers.forEach(categoryData => {
-    const categoryId = categoryData.id;
+  mapMarkers.forEach(category => {
+    const categoryId = category.id;
+    const subcategories = category.subcategoryConfigs;
+    const categorySites = category.sites;
     
     // Iterate through subcategories
-    Object.keys(categoryData.subcategoryConfigs || {}).forEach(subcategoryId => {
-      const sites = categoryData.sites.filter(site => site.subcategory === subcategoryId);
+    Object.keys(subcategories || {}).forEach(subcategoryId => {
+      const sites = categorySites.filter(site => site.subcategory === subcategoryId);
       const dropdownId = `${subcategoryId}-dropdown`;
       const dropdown = document.getElementById(dropdownId);
       const countSpan = document.querySelector(`[data-count="${subcategoryId}"]`);
@@ -68,7 +97,6 @@ function populateSiteDropdowns() {
   });
 }
 
-// Function to toggle dropdown visibility
 function toggleSiteDropdown(subcategoryId) {
   const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
   if (dropdown) {
@@ -101,9 +129,7 @@ function updateSubcategoryCheckbox(subcategoryId) {
   }
 }
 
-// Function to handle subcategory checkbox changes
 function handleSubcategoryChange(subcategoryId, isChecked) {
-  
   const dropdown = document.getElementById(`${subcategoryId}-dropdown`);
   if (!dropdown) return;
   
@@ -117,7 +143,6 @@ function handleSubcategoryChange(subcategoryId, isChecked) {
   });
 }
 
-// Function to filter sites based on search input
 function filterSitesInDropdown(searchTerm, dropdown) {
   const siteItems = dropdown.querySelectorAll('.site-dropdown-item:not(.all-sites-item):not(.search-input-item)');
   const normalizedSearch = searchTerm.toLowerCase().trim();
@@ -134,17 +159,74 @@ function filterSitesInDropdown(searchTerm, dropdown) {
   });
 }
 
-// Function to handle search input events
 function handleSearchInput(event, dropdown) {
   const searchTerm = event.target.value;
   filterSitesInDropdown(searchTerm, dropdown);
 }
 
+function setupHeaderObserver() {
+  const header = document.querySelector("header");
+  const sidebar = document.querySelector(".sidebar");
+  const sidebarContents = document.querySelectorAll(".sidebar-content");
+
+  if (!header || !sidebar) return;
+
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        const isCollapsed = header.classList.contains("collapsed");
+
+        if (isCollapsed) {
+          sidebar.style.top = "0";
+          sidebar.style.height = "100vh";
+          sidebarContents.forEach((content) => {
+            content.style.top = "0";
+            content.style.height = "100vh";
+          });
+        } else {
+          const screenWidth = window.innerWidth;
+          let topValue, heightValue;
+
+          if(screenWidth <= CONFIG.BREAKPOINTS.MOBILE_SMALL) {
+            topValue = "194px";
+            heightValue = "calc(100vh - 194px)";
+          } else if (screenWidth <= CONFIG.BREAKPOINTS.MOBILE) {
+            // Mobile breakpoint
+            topValue = "236px";
+            heightValue = "calc(100vh - 236px)";
+          } else if (screenWidth <= CONFIG.BREAKPOINTS.TABLET) {
+            // Tablet breakpoint
+            topValue = "258px";
+            heightValue = "calc(100vh - 258px)";
+          } else {
+            // Desktop (default)
+            topValue = CONFIG.DESKTOP.TOP;
+            heightValue = `calc(100vh - ${CONFIG.DESKTOP.TOP})`;
+          }
+
+          sidebar.style.top = topValue;
+          sidebar.style.height = heightValue;
+          sidebarContents.forEach((content) => {
+            content.style.top = topValue;
+            content.style.height = heightValue;
+          });
+        }
+      }
+    });
+  });
+
+  observer.observe(header, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Wait for data to be loaded, then populate dropdowns
   setTimeout(populateSiteDropdowns, 1000);
 
-  // Tab switching functionality
   const tabs = document.querySelectorAll(".sidebar-tab-v2");
   const panels = document.querySelectorAll(".sidebar-content");
 
@@ -154,48 +236,34 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetPanel = document.getElementById(`${tabName}-content`);
       const isAlreadyActive = this.classList.contains("active");
 
-      // Remove active class from all tabs
       tabs.forEach((t) => t.classList.remove("active"));
 
-      // Hide all panels
       panels.forEach((panel) => panel.classList.remove("visible"));
 
       if (isAlreadyActive) {
         return;
       }
 
-      // Add active class to clicked tab
       this.classList.add("active");
 
-      // Show corresponding panel
       if (targetPanel) {
         targetPanel.classList.add("visible");
       }
     });
   });
 
-  // Adjust sidebar position based on header state
   setupHeaderObserver();
 
-  // Close panel functionality
   const closeButtons = document.querySelectorAll(".close-panel");
   closeButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const panel = this.closest(".sidebar-content");
       panel.classList.remove("visible");
 
-      // Also deactivate the corresponding tab
       tabs.forEach((tab) => tab.classList.remove("active"));
     });
   });
 
-  const allCheckboxes = {
-    all: document.querySelectorAll(
-      '.content-section-item input[type="checkbox"]:not(#all)'
-    ),
-  };
-
-  // Build allCheckboxes from mapMarkers data
   if (typeof mapMarkers !== 'undefined') {
     mapMarkers.forEach(category => {
       const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
@@ -207,35 +275,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Define categoryMasterIds for the "All" checkbox
-  const categoryMasterIds = [
-    "all-economic-zones",
-    "all-locator-management", 
-    "all-infrastructure-projects",
-    "all-afp-modernization",
-    "all-investment-tracking",
-    "all-sustainability-environment"
-  ];
-  
-  // Add event listeners for all master checkboxes
   Object.keys(allCheckboxes).forEach((id) => {
     const masterCheckbox = document.getElementById(id);
     if (masterCheckbox) {
       masterCheckbox.addEventListener("change", function () {
         const isChecked = this.checked;
 
-        // Handle the "All" checkbox specially
         if (id === "all") {
-          categoryMasterIds.forEach((categoryId) => {
+          CATEGORY_MASTER_IDS.forEach((categoryId) => {
             const categoryCheckbox = document.getElementById(categoryId);
             if (categoryCheckbox) {
               categoryCheckbox.checked = isChecked;
-              // Trigger change event for each category
               categoryCheckbox.dispatchEvent(new Event("change"));
             }
           });
         } else {
-          // Handle individual category checkboxes
           const checkboxIds = allCheckboxes[id];
           if (Array.isArray(checkboxIds)) {
             checkboxIds.forEach((checkboxId) => {
@@ -243,7 +297,6 @@ document.addEventListener("DOMContentLoaded", function () {
               if (checkbox) {
                 checkbox.checked = isChecked;
 
-                // Update map markers based on the checkbox state
                 if (
                   window.filterMarkers &&
                   window.filterMarkers.updateMarkersForCheckbox
@@ -258,7 +311,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
 
-        // Update map markers for master checkbox
         if (
           window.filterMarkers &&
           window.filterMarkers.updateMarkersForCheckbox
@@ -266,7 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
           window.filterMarkers.updateMarkersForCheckbox(id, isChecked);
         }
 
-        // Update the select all button text
         const selectAllButton =
           this.closest(".content-section")?.querySelector(".select-all");
         if (selectAllButton) {
@@ -275,7 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
             : "Select All";
         }
 
-        // Update infrastructure cards
         if (window.infrastructureCards && window.infrastructureCards.update) {
           setTimeout(() => window.infrastructureCards.update(), 100);
         }
@@ -283,14 +333,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Individual checkbox listeners - aligned with mapMarkers subcategories
   const individualCheckboxes = document.querySelectorAll(
     '.content-section-item input[type="checkbox"]:not([id^="all"])'
   );
 
   individualCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
-      // Update map markers based on the checkbox state
       if (
         window.filterMarkers &&
         window.filterMarkers.updateMarkersForCheckbox
@@ -298,7 +346,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.filterMarkers.updateMarkersForCheckbox(this.id, this.checked);
       }
 
-      // Update infrastructure cards
       if (window.infrastructureCards && window.infrastructureCards.update) {
         setTimeout(() => window.infrastructureCards.update(), 100);
       }
@@ -310,7 +357,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (label) {
       const subcategoryId = label.getAttribute('for');
       
-      // Add dropdown toggle button
       if (!container.querySelector('.dropdown-toggle-btn')) {
         const toggleButton = document.createElement('button');
         toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
@@ -320,7 +366,6 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(toggleButton);
       }
       
-      // Make entire container clickable for dropdown toggle
       container.style.cursor = 'pointer';
       container.addEventListener('click', function(e) {
         e.preventDefault();
@@ -336,7 +381,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
-  // Add event listeners for individual site checkboxes (delegated)
   document.addEventListener('change', function(e) {
     
     if (e.target.matches('.all-sites-item input[type="checkbox"]')) {
@@ -353,12 +397,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const isChecked = e.target.checked;
 
-      // Use updateMarkersForCheckbox for individual sites  
       if (window.filterMarkers && window.filterMarkers.updateMarkersForCheckbox) {
         window.filterMarkers.updateMarkersForCheckbox(e.target.id, isChecked);
       }
 
-      // Update parent subcategory checkbox state
       const dropdown = e.target.closest('.sites-dropdown');
       if (dropdown) {
         const subcategoryId = dropdown.id.replace('-dropdown', '');
@@ -367,7 +409,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Observer for dynamically added checkboxes
   const sidebarContent = document.querySelector(".sidebar-content");
   if (sidebarContent) {
     const observer = new MutationObserver(function (mutations) {
@@ -375,7 +416,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mutation.type === "childList") {
           mutation.addedNodes.forEach(function (node) {
             if (node.nodeType === 1) {
-              // Element node
               const checkboxes = node.querySelectorAll(
                 'input[type="checkbox"]'
               );
@@ -417,7 +457,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // "Select All" button functionality for each section
   const selectAllButtons = document.querySelectorAll(".select-all");
   selectAllButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -430,7 +469,6 @@ document.addEventListener("DOMContentLoaded", function () {
       checkboxes.forEach((checkbox) => {
         checkbox.checked = isSelectAll;
 
-        // Trigger change event for each checkbox
         if (
           window.filterMarkers &&
           window.filterMarkers.updateMarkersForCheckbox
@@ -442,92 +480,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Update button text
       this.textContent = isSelectAll ? "Deselect All" : "Select All";
 
-      // Update infrastructure cards
       if (window.infrastructureCards && window.infrastructureCards.update) {
         setTimeout(() => window.infrastructureCards.update(), 100);
       }
     });
   });
 
-  // const allCheckbox = document.getElementById("all");
-  // if (allCheckbox && !allCheckbox.checked) {
-  //   allCheckbox.checked = true;
-  //   // Trigger the change event to update markers
-  //   allCheckbox.dispatchEvent(new Event("change"));
-  // }
-
-  // Export for global access
   window.filterSidebar = {
     allCheckboxes: allCheckboxes,
-    categoryMasterCheckboxes: categoryMasterCheckboxes,
     populateSiteDropdowns: populateSiteDropdowns,
     toggleSiteDropdown: toggleSiteDropdown
   };
 });
 
-function setupHeaderObserver() {
-  const header = document.querySelector("header");
-  const sidebar = document.querySelector(".sidebar");
-  const sidebarContents = document.querySelectorAll(".sidebar-content");
-
-  if (!header || !sidebar) return;
-
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (
-        mutation.type === "attributes" &&
-        mutation.attributeName === "class"
-      ) {
-        const isCollapsed = header.classList.contains("collapsed");
-
-        if (isCollapsed) {
-          sidebar.style.top = "0";
-          sidebar.style.height = "100vh";
-          sidebarContents.forEach((content) => {
-            content.style.top = "0";
-            content.style.height = "100vh";
-          });
-        } else {
-          const screenWidth = window.innerWidth;
-          let topValue, heightValue;
-
-          if(screenWidth <= 425) {
-            topValue = "194px";
-            heightValue = "calc(100vh - 194px)";
-          } else if (screenWidth <= 768) {
-            // Mobile breakpoint
-            topValue = "236px";
-            heightValue = "calc(100vh - 236px)";
-          } else if (screenWidth <= 1024) {
-            // Tablet breakpoint
-            topValue = "258px";
-            heightValue = "calc(100vh - 258px)";
-          } else {
-            // Desktop (default)
-            topValue = CONFIG.DESKTOP.TOP;
-            heightValue = `calc(100vh - ${CONFIG.DESKTOP.TOP})`;
-          }
-
-          sidebar.style.top = topValue;
-          sidebar.style.height = heightValue;
-          sidebarContents.forEach((content) => {
-            content.style.top = topValue;
-            content.style.height = heightValue;
-          });
-        }
-      }
-    });
-  });
-
-  observer.observe(header, {
-    attributes: true,
-    attributeFilter: ["class"],
-  });
-}
-
-function refreshSiteDropdowns() {
-  populateSiteDropdowns();
-}

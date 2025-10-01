@@ -2,9 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   function updateLiveFeedCardPosition() {
-    const liveFeedCard = document.querySelector('.live-feed-card');
-    if (!liveFeedCard) return;
-    
     const header = document.querySelector('header');
     const headerCollapsed = header && header.classList.contains('collapsed');
     
@@ -14,45 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const windowWidth = window.innerWidth;
     
-    let topPosition = '248px';
+    let topPosition = CONFIG.DESKTOP.TOP;
     let leftPosition = '360px';
+
+    console.log('position manager', leftPosition);
     
     if (headerCollapsed) {
       topPosition = '20px';
     }
     
     if (sidebarExpanded) {
-      leftPosition = windowWidth <= 768 ? '20px' : '360px';
+      leftPosition = windowWidth <= CONFIG.BREAKPOINTS.MOBILE ? '20px' : '360px';
     } else {
-      leftPosition = windowWidth <= 768 ? '20px' : '80px';
-    }
-    
-    liveFeedCard.style.position = 'fixed';
-    liveFeedCard.style.top = topPosition;
-    liveFeedCard.style.left = leftPosition;
-    
-    if (windowWidth <= 768) {
-      liveFeedCard.style.left = '20px';
-      
-      if (headerCollapsed) {
-        liveFeedCard.style.top = '20px';
-      } else {
-        liveFeedCard.style.top = windowWidth <= 425 ? '230px' : '267px';
-      }
-      
-      if (windowWidth > 425 && windowWidth <= 768) {
-        liveFeedCard.style.width = '250px';
-        
-        if (sidebarExpanded) {
-          liveFeedCard.style.left = '510px';
-        } else {
-          liveFeedCard.style.left = '70px';
-        }
-      }
-    }
-    
-    if (window.liveFeedCardVisible) {
-      liveFeedCard.style.display = 'block';
+      leftPosition = windowWidth <= CONFIG.BREAKPOINTS.MOBILE ? '20px' : '80px';
     }
   }
   
