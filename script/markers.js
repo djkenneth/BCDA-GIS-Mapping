@@ -103,28 +103,28 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        const siteMarker = createSiteMarker(
-          site.location,
-          site.subcategory,
-          site.status
-        );
+        // const siteMarker = createSiteMarker(
+        //   site.location,
+        //   site.subcategory,
+        //   site.status
+        // );
 
         // Create MapLibre marker
-        const marker = new maplibregl.Marker({
-          element: '',
-        })
-          .setLngLat([site.location[1], site.location[0]]);
+        // const marker = new maplibregl.Marker({
+        //   element: siteMarker,
+        // })
+        //   .setLngLat([site.location[1], site.location[0]]);
 
         // Add click event for marker
-        siteMarker.addEventListener("click", function (e) {
-          showSiteDetails(site, category);
-          zoomToMarker(site.location);
-        });
+        // siteMarker.addEventListener("click", function (e) {
+        //   showSiteDetails(site, category);
+        //   zoomToMarker(site.location);
+        // });
 
         // Store marker reference
-        marker._siteData = { site, category };
-        markersByCategory[categoryId][subcategory].push(marker);
-        visibleMarkers.add(marker);
+        // marker._siteData = { site, category };
+        // markersByCategory[categoryId][subcategory].push(marker);
+        // visibleMarkers.add(marker);
         
         // Add polygon with click events (pass category parameter)
         if (site.polygon) {
@@ -300,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (index > -1) markersLayer.splice(index, 1);
                 marker.remove();
                 visibleMarkers.delete(marker);
+                console.log('another marker remove');
+                
               }
             });
           }
@@ -338,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (index > -1) markersLayer.splice(index, 1);
           foundMarker.remove();
           visibleMarkers.delete(foundMarker);
+          console.log('siteId ko to', siteId)
           removeSitePolygon(siteId);
         }
       }
@@ -357,6 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (index > -1) markersLayer.splice(index, 1);
             marker.remove();
             visibleMarkers.delete(marker);
+            console.log('marker ko to', marker)
           }
         });
       }
