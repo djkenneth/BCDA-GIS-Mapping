@@ -103,32 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        const siteMarker = createSiteMarker(
-          site.location,
-          site.subcategory,
-          site.status
-        );
-
-        // Create MapLibre marker
-        const marker = new maplibregl.Marker({
-          element: siteMarker,
-        })
-          .setLngLat([site.location[1], site.location[0]]);
+        const sitePolygon = addSitePolygon(site);
 
         // Add click event
-        siteMarker.addEventListener("click", function (e) {
+        sitePolygon.addEventListener("click", function (e) {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
         });
-
-        // Store marker reference
-        marker._siteData = { site, category };
-        markersByCategory[categoryId][subcategory].push(marker);
-        visibleMarkers.add(marker);
-
-        if (site.polygon) {
-          addSitePolygon(site);
-        }
       });
     });
   }
@@ -170,6 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       sitePolygons[site.id] = true;
+
+      return map;
     }
   }
 
