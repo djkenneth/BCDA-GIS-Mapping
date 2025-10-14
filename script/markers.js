@@ -103,69 +103,124 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        const sitePolygon = addSitePolygon(site);
+        const siteMarker = createSiteMarker(
+          site.location,
+          site.subcategory,
+          site.status
+        );
 
-        // Add click event
-        sitePolygon.addEventListener("click", function (e) {
+        // Create MapLibre marker
+        const marker = new maplibregl.Marker({
+          element: '',
+        })
+          .setLngLat([site.location[1], site.location[0]]);
+
+        // Add click event for marker
+        siteMarker.addEventListener("click", function (e) {
           showSiteDetails(site, category);
           zoomToMarker(site.location);
         });
+
+        // Store marker reference
+        marker._siteData = { site, category };
+        markersByCategory[categoryId][subcategory].push(marker);
+        visibleMarkers.add(marker);
+        
+        // Add polygon with click events (pass category parameter)
+        if (site.polygon) {
+          addSitePolygon(site, category);
+        }
       });
     });
   }
 
-  function addSitePolygon(site) {
-    if (!site.polygon || !map.getSource('polygon-' + site.id)) {
-      // Add GeoJSON source for this site's polygon
-      map.addSource('polygon-' + site.id, {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          geometry: {
-            type: 'Polygon',
-            coordinates: [site.polygon]
-          }
-        }
-      });
-
-      // Add fill layer
-      map.addLayer({
-        id: 'polygon-fill-' + site.id,
-        type: 'fill',
-        source: 'polygon-' + site.id,
-        paint: {
-          'fill-color': '#fa5454ff',
-          'fill-opacity': 0.3
-        }
-      });
-
-      // Add outline layer
-      map.addLayer({
-        id: 'polygon-outline-' + site.id,
-        type: 'line',
-        source: 'polygon-' + site.id,
-        paint: {
-          'line-color': '#ff0f0fff',
-          'line-width': 2
-        }
-      });
-
-      sitePolygons[site.id] = true;
-
-      return map;
+  function addSitePolygon(site, category) {
+    if (!site.polygon || map.getSource('polygon-' + site.id)) {
+      return; // Skip if no polygon or already exists
     }
+    
+    // Add GeoJSON source for this site's polygon
+    map.addSource('polygon-' + site.id, {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [site.polygon]
+        },
+        properties: {
+          siteId: site.id,
+          siteName: site.name
+        }
+      }
+    });
+
+    // Add fill layer with cursor pointer
+    map.addLayer({
+      id: 'polygon-fill-' + site.id,
+      type: 'fill',
+      source: 'polygon-' + site.id,
+      paint: {
+        'fill-color': '#fad754',
+        'fill-opacity': 0.3
+      }
+    });
+
+    // Add outline layer
+    map.addLayer({
+      id: 'polygon-outline-' + site.id,
+      type: 'line',
+      source: 'polygon-' + site.id,
+      paint: {
+        'line-color': '#fad754',
+        'line-width': 2
+      }
+    });
+
+    // ADD CLICK EVENT for polygon fill layer
+    map.on('click', 'polygon-fill-' + site.id, function(e) {
+      e.preventDefault();
+      showSiteDetails(site, category);
+      zoomToMarker(site.location);
+    });
+
+    // ADD CLICK EVENT for polygon outline layer
+    map.on('click', 'polygon-outline-' + site.id, function(e) {
+      e.preventDefault();
+      showSiteDetails(site, category);
+      zoomToMarker(site.location);
+    });
+
+    // Change cursor to pointer on hover
+    map.on('mouseenter', 'polygon-fill-' + site.id, function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'polygon-fill-' + site.id, function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    sitePolygons[site.id] = { site, category };
   }
 
   function removeSitePolygon(siteId) {
+    // Remove event listeners
     if (map.getLayer('polygon-fill-' + siteId)) {
+      map.off('click', 'polygon-fill-' + siteId);
+      map.off('mouseenter', 'polygon-fill-' + siteId);
+      map.off('mouseleave', 'polygon-fill-' + siteId);
       map.removeLayer('polygon-fill-' + siteId);
     }
+    
     if (map.getLayer('polygon-outline-' + siteId)) {
+      map.off('click', 'polygon-outline-' + siteId);
       map.removeLayer('polygon-outline-' + siteId);
     }
+    
     if (map.getSource('polygon-' + siteId)) {
       map.removeSource('polygon-' + siteId);
     }
+    
     delete sitePolygons[siteId];
   }
 
@@ -277,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           foundMarker.addTo(map);
           visibleMarkers.add(foundMarker);
-          addSitePolygon(foundMarker._siteData.site);
+          addSitePolygon(foundMarker._siteData.site, foundMarker._siteData.category);
         } else {
           const index = markersLayer.indexOf(foundMarker);
           if (index > -1) markersLayer.splice(index, 1);
