@@ -1191,6 +1191,16 @@ const mapMarkers = [
         subcategory: "clark-freeport",
         description:
           "Aircraft maintenance, repair, and overhaul (MRO) facility serving Asia-Pacific region.",
+        polygon: [
+          [120.555812, 15.191123],
+          [120.559812, 15.190823],
+          [120.560312, 15.189423],
+          [120.559812, 15.187723],
+          [120.557812, 15.186923],
+          [120.555312, 15.187523],
+          [120.555012, 15.189423],
+          [120.555812, 15.191123]
+        ],
       },
 
       // UPS Philippines

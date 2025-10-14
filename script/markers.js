@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let markersLayer = [];
   let markersByCategory = {};
   let visibleMarkers = new Set();
+  let sitePolygons = {};
   let mapSourcesAdded = false;
 
   async function initializeMap() {
@@ -124,8 +125,65 @@ document.addEventListener("DOMContentLoaded", function () {
         marker._siteData = { site, category };
         markersByCategory[categoryId][subcategory].push(marker);
         visibleMarkers.add(marker);
+
+        if (site.polygon) {
+          addSitePolygon(site);
+        }
       });
     });
+  }
+
+  function addSitePolygon(site) {
+    if (!site.polygon || !map.getSource('polygon-' + site.id)) {
+      // Add GeoJSON source for this site's polygon
+      map.addSource('polygon-' + site.id, {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          geometry: {
+            type: 'Polygon',
+            coordinates: [site.polygon]
+          }
+        }
+      });
+
+      // Add fill layer
+      map.addLayer({
+        id: 'polygon-fill-' + site.id,
+        type: 'fill',
+        source: 'polygon-' + site.id,
+        paint: {
+          'fill-color': '#fa5454ff',
+          'fill-opacity': 0.3
+        }
+      });
+
+      // Add outline layer
+      map.addLayer({
+        id: 'polygon-outline-' + site.id,
+        type: 'line',
+        source: 'polygon-' + site.id,
+        paint: {
+          'line-color': '#ff0f0fff',
+          'line-width': 2
+        }
+      });
+
+      sitePolygons[site.id] = true;
+    }
+  }
+
+  function removeSitePolygon(siteId) {
+    if (map.getLayer('polygon-fill-' + siteId)) {
+      map.removeLayer('polygon-fill-' + siteId);
+    }
+    if (map.getLayer('polygon-outline-' + siteId)) {
+      map.removeLayer('polygon-outline-' + siteId);
+    }
+    if (map.getSource('polygon-' + siteId)) {
+      map.removeSource('polygon-' + siteId);
+    }
+    delete sitePolygons[siteId];
   }
 
   function calculateLiveFeedPosition() {
@@ -236,11 +294,13 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           foundMarker.addTo(map);
           visibleMarkers.add(foundMarker);
+          addSitePolygon(foundMarker._siteData.site);
         } else {
           const index = markersLayer.indexOf(foundMarker);
           if (index > -1) markersLayer.splice(index, 1);
           foundMarker.remove();
           visibleMarkers.delete(foundMarker);
+          removeSitePolygon(siteId);
         }
       }
       
