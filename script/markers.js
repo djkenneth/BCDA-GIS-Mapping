@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let markersLayer = [];
   let markersByCategory = {};
   let visibleMarkers = new Set();
+  let polygonTooltip = null;
   let sitePolygons = {};
   let mapSourcesAdded = false;
 
@@ -174,24 +175,50 @@ document.addEventListener("DOMContentLoaded", function () {
       zoomToMarker(site.location);
     });
 
-    // Change cursor to pointer on hover
-    map.on('mouseenter', 'polygon-fill-' + site.id, function() {
+    // Polygon hover events - show tooltip and highlight
+    map.on('mouseenter', 'polygon-fill-' + site.id, function(e) {
       map.getCanvas().style.cursor = 'pointer';
+      
+      // Highlight polygon
+      map.setPaintProperty('polygon-fill-' + site.id, 'fill-color', '#0056d8ff');
+      map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.5);
+      map.setPaintProperty('polygon-outline-' + site.id, 'line-width', 3);
+      
+      // Show tooltip
+      showPolygonTooltip(e, site);
     });
 
     map.on('mouseleave', 'polygon-fill-' + site.id, function() {
       map.getCanvas().style.cursor = '';
+      
+      // Remove highlight
+      map.setPaintProperty('polygon-fill-' + site.id, 'fill-color', '#0d6efd');
+      map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.3);
+      map.setPaintProperty('polygon-outline-' + site.id, 'line-width', 2);
+      
+      // Hide tooltip
+      hidePolygonTooltip();
+    });
+
+    map.on('mousemove', 'polygon-fill-' + site.id, function(e) {
+      if (polygonTooltip) {
+        updatePolygonTooltipPosition(e);
+      }
     });
 
     sitePolygons[site.id] = { site, category };
   }
 
   function removeSitePolygon(siteId) {
+    // Hide tooltip if it's showing for this polygon
+    hidePolygonTooltip();
+    
     // Remove event listeners
     if (map.getLayer('polygon-fill-' + siteId)) {
       map.off('click', 'polygon-fill-' + siteId);
       map.off('mouseenter', 'polygon-fill-' + siteId);
       map.off('mouseleave', 'polygon-fill-' + siteId);
+      map.off('mousemove', 'polygon-fill-' + siteId); // ADD THIS LINE
       map.removeLayer('polygon-fill-' + siteId);
     }
     
@@ -355,6 +382,87 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return false;
+  }
+
+  function showPolygonTooltip(e, site) {
+    // Remove existing tooltip if any
+    hidePolygonTooltip();
+    
+    // Create tooltip element
+    polygonTooltip = document.createElement('div');
+    polygonTooltip.className = 'polygon-tooltip';
+    polygonTooltip.innerHTML = `
+      <div class="polygon-tooltip-header">${site.name}</div>
+      <div class="polygon-tooltip-description">${site.description || 'No description available'}</div>
+      <div class="polygon-tooltip-footer">
+        <span class="polygon-tooltip-lot">${site.lotSize}</span>
+        <span class="polygon-tooltip-employees">${site.employees} employees</span>
+      </div>
+    `;
+    
+    // Add to map container
+    map.getContainer().appendChild(polygonTooltip);
+    
+    // Position tooltip
+    updatePolygonTooltipPosition(e);
+    
+    // Fade in animation
+    setTimeout(() => {
+      polygonTooltip.classList.add('visible');
+    }, 10);
+  }
+
+  function hidePolygonTooltip() {
+    if (polygonTooltip) {
+      polygonTooltip.classList.remove('visible');
+      setTimeout(() => {
+        if (polygonTooltip && polygonTooltip.parentNode) {
+          polygonTooltip.parentNode.removeChild(polygonTooltip);
+        }
+        polygonTooltip = null;
+      }, 200);
+    }
+  }
+
+  function updatePolygonTooltipPosition(e) {
+    if (!polygonTooltip) return;
+    
+    const x = e.point.x;
+    const y = e.point.y;
+    
+    // Offset from cursor
+    const offsetX = 15;
+    const offsetY = 15;
+    
+    // Get map container dimensions
+    const mapContainer = map.getContainer();
+    const mapWidth = mapContainer.offsetWidth;
+    const mapHeight = mapContainer.offsetHeight;
+    
+    // Get tooltip dimensions
+    const tooltipWidth = polygonTooltip.offsetWidth;
+    const tooltipHeight = polygonTooltip.offsetHeight;
+    
+    // Calculate position
+    let left = x + offsetX;
+    let top = y + offsetY;
+    
+    // Adjust if tooltip goes off right edge
+    if (left + tooltipWidth > mapWidth - 20) {
+      left = x - tooltipWidth - offsetX;
+    }
+    
+    // Adjust if tooltip goes off bottom edge
+    if (top + tooltipHeight > mapHeight - 20) {
+      top = y - tooltipHeight - offsetY;
+    }
+    
+    // Ensure tooltip stays within bounds
+    left = Math.max(10, Math.min(left, mapWidth - tooltipWidth - 10));
+    top = Math.max(10, Math.min(top, mapHeight - tooltipHeight - 10));
+    
+    polygonTooltip.style.left = left + 'px';
+    polygonTooltip.style.top = top + 'px';
   }
 
   window.filterMarkers = {
