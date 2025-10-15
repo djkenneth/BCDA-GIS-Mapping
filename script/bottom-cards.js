@@ -664,8 +664,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const category = findCategoryBySiteId(siteId);
           window.showInfoDrawer(site, category);
 
-          if (window.cebuMapDebug && window.cebuMapDebug.zoomToSiteById) {
-            window.cebuMapDebug.zoomToSiteById(site.id);
+          if (window.mapDebug && window.mapDebug.zoomToSiteById) {
+            window.mapDebug.zoomToSiteById(site.id);
           }
 
           modal.style.display = "none";
