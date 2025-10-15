@@ -322,8 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
       categoryItems.forEach(item => {
         const input = item.querySelector('input[type="checkbox"]');
         if (input && input.id) {
-          const categoryId = input.id.replace('all-', '');
-          categoryMasterCheckboxes[input.id] = categoryId;
+          // ✅ No need to remove prefix, ID is already correct
+          categoryMasterCheckboxes[input.id] = input.id;
         }
       });
     }

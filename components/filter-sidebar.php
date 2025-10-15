@@ -69,44 +69,44 @@
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-economic-zones">
-                    <label for="all-economic-zones">Economic Zones</label>
+                    <input type="checkbox" id="economic-zones">
+                    <label for="economic-zones">Economic Zones</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-locator-management">
-                    <label for="all-locator-management">Locator Management</label>
+                    <input type="checkbox" id="locator-management">
+                    <label for="locator-management">Locator Management</label>
                 </div>
 
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-infrastructure-projects">
-                    <label for="all-infrastructure-projects">Infrastructure Projects</label>
+                    <input type="checkbox" id="infrastructure-projects">
+                    <label for="infrastructure-projects">Infrastructure Projects</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-afp-modernization">
-                    <label for="all-afp-modernization">AFP Modernization</label>
+                    <input type="checkbox" id="afp-modernization">
+                    <label for="afp-modernization">AFP Modernization</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-investment-tracking">
-                    <label for="all-investment-tracking">Investment Tracking</label>
+                    <input type="checkbox" id="investment-tracking">
+                    <label for="investment-tracking">Investment Tracking</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="all-sustainability-environment">
-                    <label for="all-sustainability-environment">Sustainability & Environment</label>
+                    <input type="checkbox" id="sustainability-environment">
+                    <label for="sustainability-environment">Sustainability & Environment</label>
                 </div>
             </div>
         </div>

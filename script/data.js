@@ -1119,9 +1119,6 @@ const mapMarkers = [
   {
     id: 'economic-zones',
     center: [14.5995, 120.9842],
-    checkboxConfig: {
-      masterCheckboxId: 'all-economic-zones',
-    },
     displayInfo: {
       title: 'Economic Zones',
       type: 'Offices, Warehouses, Facilities',
@@ -11205,9 +11202,6 @@ const mapMarkers = [
   {
     id: 'locator-management',
     center: [12.8797, 121.774],
-    checkboxConfig: {
-      masterCheckboxId: 'all-locator-management',
-    },
     displayInfo: {
       title: 'Locator Management',
       type: 'Lots, Parcels, Estates',
@@ -11544,9 +11538,6 @@ const mapMarkers = [
   {
     id: 'infrastructure-projects',
     center: [14.5995, 120.9842],
-    checkboxConfig: {
-      masterCheckboxId: 'all-infrastructure-projects',
-    },
     displayInfo: {
       title: 'Infrastructure Projects',
       type: 'Fleet Management',
@@ -11903,9 +11894,6 @@ const mapMarkers = [
   {
     id: 'afp-modernization',
     center: [14.5995, 120.9842],
-    checkboxConfig: {
-      masterCheckboxId: 'all-afp-modernization',
-    },
     displayInfo: {
       title: 'AFP Modernization',
       type: 'Servers, Network Equipment',
@@ -12297,9 +12285,6 @@ const mapMarkers = [
   {
     id: 'investment-tracking',
     center: [14.5995, 120.9842],
-    checkboxConfig: {
-      masterCheckboxId: 'all-investment-tracking',
-    },
     displayInfo: {
       title: 'Investment Tracking',
       type: 'Furniture, Fixtures',
@@ -12722,9 +12707,6 @@ const mapMarkers = [
   {
     id: 'sustainability-environment',
     center: [14.5995, 120.9842],
-    checkboxConfig: {
-      masterCheckboxId: 'all-sustainability-environment',
-    },
     displayInfo: {
       title: 'Sustainability & Environment',
       type: 'Specialized Equipment',
@@ -13087,15 +13069,13 @@ const mapMarkers = [
   },
 ];
 
-const categoryMasterIds = mapMarkers.map(
-  (category) => category.checkboxConfig.masterCheckboxId
-);
+const categoryMasterIds = mapMarkers.map((category) => category.id);
 
 const categoryMasterCheckboxes = {
   all: 'all_categories',
   ...Object.fromEntries(
     mapMarkers.map((category) => [
-      category.checkboxConfig.masterCheckboxId,
+      category.id,
       category.id,
     ])
   ),

@@ -5,12 +5,12 @@
 // ============================================================================
 
 const CATEGORY_MASTER_IDS = [
-  "all-economic-zones",
-  "all-locator-management", 
-  "all-infrastructure-projects",
-  "all-afp-modernization",
-  "all-investment-tracking",
-  "all-sustainability-environment"
+  "economic-zones",
+  "locator-management", 
+  "infrastructure-projects",
+  "afp-modernization",
+  "investment-tracking",
+  "sustainability-environment"
 ];
 
 // ============================================================================
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (typeof mapMarkers !== 'undefined') {
     mapMarkers.forEach(category => {
-      const masterCheckboxId = category.checkboxConfig.masterCheckboxId;
+      const masterCheckboxId = category.id;
       const subcategoryIds = Object.keys(category.subcategoryConfigs || {});
       
       if (masterCheckboxId && subcategoryIds.length > 0) {
