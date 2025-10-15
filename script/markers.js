@@ -103,34 +103,31 @@ document.addEventListener("DOMContentLoaded", function () {
           markersByCategory[categoryId][subcategory] = [];
         }
 
-        // const siteMarker = createSiteMarker(
-        //   site.location,
-        //   site.subcategory,
-        //   site.status
-        // );
+        const siteMarker = createSiteMarker(
+          site.location,
+          site.subcategory,
+          site.status
+        );
 
         // Create MapLibre marker
-        // const marker = new maplibregl.Marker({
-        //   element: siteMarker,
-        // })
-        //   .setLngLat([site.location[1], site.location[0]]);
+        const marker = new maplibregl.Marker({
+          element: siteMarker,
+        })
+          .setLngLat([site.location[1], site.location[0]]);
 
         // Add click event for marker
-        // siteMarker.addEventListener("click", function (e) {
-        //   showSiteDetails(site, category);
-        //   zoomToMarker(site.location);
-        // });
+        siteMarker.addEventListener("click", function (e) {
+          showSiteDetails(site, category);
+          zoomToMarker(site.location);
+        });
 
         // Store marker reference
-        // marker._siteData = { site, category };
-        // markersByCategory[categoryId][subcategory].push(marker);
-        // visibleMarkers.add(marker);
+        marker._siteData = { site, category };
+        markersByCategory[categoryId][subcategory].push(marker);
+        visibleMarkers.add(marker);
         
         // Add polygon with click events (pass category parameter)
-        // if (site.polygon) {
-        //   addSitePolygon(site, category);
-        // }
-
+        
         if (site.polygon) {
           addSitePolygon(site, category);
         }
@@ -305,6 +302,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     
+    console.log('checkboxId', checkboxId);
+    console.log('categoryMasterCheckboxes', categoryMasterCheckboxes);
+    console.log('categoryMasterCheckboxes[checkboxId]', categoryMasterCheckboxes[checkboxId]);
+
     const categoryId = categoryMasterCheckboxes[checkboxId];
 
     if (categoryMasterCheckboxes[checkboxId]) {
@@ -333,12 +334,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (checkboxId.startsWith("site-")) {
+      console.log('checkboxId', checkboxId);
       
       const siteId = checkboxId.replace("site-", "");
       
       let foundMarker = null;
 
-      console.log('categoryId', categoryId);
+      // console.log('categoryId', categoryId);
       
       
       allCategories.forEach(categoryId => {
@@ -353,8 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      console.log('asdlkaskjdkasd', foundMarker)
-      
       if (foundMarker) {
         if (isChecked) {
           if (!markersLayer.includes(foundMarker)) {
