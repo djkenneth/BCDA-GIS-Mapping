@@ -102,32 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!markersByCategory[categoryId][subcategory]) {
           markersByCategory[categoryId][subcategory] = [];
         }
-
-        const siteMarker = createSiteMarker(
-          site.location,
-          site.subcategory,
-          site.status
-        );
-
-        // Create MapLibre marker
-        const marker = new maplibregl.Marker({
-          element: siteMarker,
-        })
-          .setLngLat([site.location[1], site.location[0]]);
-
-        // Add click event for marker
-        siteMarker.addEventListener("click", function (e) {
-          showSiteDetails(site, category);
-          zoomToMarker(site.location);
-        });
-
-        // Store marker reference
-        marker._siteData = { site, category };
-        markersByCategory[categoryId][subcategory].push(marker);
-        visibleMarkers.add(marker);
         
         // Add polygon with click events (pass category parameter)
-        
         if (site.polygon) {
           addSitePolygon(site, category);
         }
@@ -165,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'visibility': 'none'  // ADD THIS LINE
       },
       paint: {
-        'fill-color': '#fad754',
+        'fill-color': '#0d6efd',
         'fill-opacity': 0.3
       }
     });
@@ -179,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'visibility': 'none'  // ADD THIS LINE
       },
       paint: {
-        'line-color': '#fad754',
+        'line-color': '#0d6efd',
         'line-width': 2
       }
     });
@@ -289,6 +265,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMarkersForCheckbox(checkboxId, isChecked) {
     const allCategories = Object.keys(markersByCategory);
     
+    // Handle site-specific checkboxes (for polygons only)
+    if (checkboxId.startsWith("site-")) {
+      const siteId = checkboxId.replace("site-", "");
+      setPolygonVisibility(siteId, isChecked);
+      return;
+    }
+
+    // Handle category master checkboxes - show/hide all site polygons in that category
     const categoryMasterCheckboxes = {};
     const layersContent = document.getElementById('layers-content');
     if (layersContent) {
@@ -301,93 +285,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
-    
-    console.log('checkboxId', checkboxId);
-    console.log('categoryMasterCheckboxes', categoryMasterCheckboxes);
-    console.log('categoryMasterCheckboxes[checkboxId]', categoryMasterCheckboxes[checkboxId]);
-
-    const categoryId = categoryMasterCheckboxes[checkboxId];
 
     if (categoryMasterCheckboxes[checkboxId]) {
-
-      if (markersByCategory[categoryId]) {
-        Object.values(markersByCategory[categoryId]).forEach(
-          (subcategoryMarkers) => {
-            subcategoryMarkers.forEach((marker) => {
-
-              if (isChecked) {
-                markersLayer.push(marker);
-                marker.addTo(map);
-                visibleMarkers.add(marker);
-              } else {
-                const index = markersLayer.indexOf(marker);
-                if (index > -1) markersLayer.splice(index, 1);
-                marker.remove();
-                visibleMarkers.delete(marker);
-                console.log('another marker remove');
+      const categoryId = categoryMasterCheckboxes[checkboxId];
+      
+      // Find all sites in this category and toggle their polygon visibility
+      if (window.mapMarkers) {
+        window.mapMarkers.forEach((category) => {
+          if (category.id === categoryId) {
+            category.sites.forEach((site) => {
+              if (site.polygon) {
+                setPolygonVisibility(site.id, isChecked);
               }
             });
           }
-        );
+        });
       }
       return;
     }
 
-    if (checkboxId.startsWith("site-")) {
-      console.log('checkboxId', checkboxId);
-      
-      const siteId = checkboxId.replace("site-", "");
-      
-      let foundMarker = null;
-
-      // console.log('categoryId', categoryId);
-      
-      
-      allCategories.forEach(categoryId => {
-        if (markersByCategory[categoryId] && !foundMarker) {
-          Object.values(markersByCategory[categoryId]).forEach(subcategoryMarkers => {
-            subcategoryMarkers.forEach(marker => {
-              if (marker._siteData && marker._siteData.site.id === siteId) {
-                foundMarker = marker;
-              }
-            });
-          });
-        }
-      });
-
-      if (foundMarker) {
-        if (isChecked) {
-          if (!markersLayer.includes(foundMarker)) {
-            markersLayer.push(foundMarker);
-          }
-          foundMarker.addTo(map);
-          visibleMarkers.add(foundMarker);
-          setPolygonVisibility(siteId, true);
-        } else {
-          const index = markersLayer.indexOf(foundMarker);
-          if (index > -1) markersLayer.splice(index, 1);
-          foundMarker.remove();
-          visibleMarkers.delete(foundMarker);
-          setPolygonVisibility(siteId, false);
-        }
-      }
-      
-      return;
-    }
-
+    // Handle subcategory checkboxes - show/hide all site polygons in that subcategory
     allCategories.forEach((categoryId) => {
-      if (markersByCategory[categoryId][checkboxId]) {
-        markersByCategory[categoryId][checkboxId].forEach((marker) => {
-          if (isChecked) {
-            markersLayer.push(marker);
-            marker.addTo(map);
-            visibleMarkers.add(marker);
-          } else {
-            const index = markersLayer.indexOf(marker);
-            if (index > -1) markersLayer.splice(index, 1);
-            marker.remove();
-            visibleMarkers.delete(marker);
-            console.log('marker ko to', marker)
+      if (window.mapMarkers) {
+        window.mapMarkers.forEach((category) => {
+          if (category.id === categoryId) {
+            category.sites.forEach((site) => {
+              const subcategory = window.getSubcategoryKey(site.subcategory);
+              if (subcategory === checkboxId && site.polygon) {
+                setPolygonVisibility(site.id, isChecked);
+              }
+            });
           }
         });
       }
