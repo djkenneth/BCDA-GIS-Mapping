@@ -240,21 +240,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function setPolygonVisibility(siteId, isVisible) {
     const visibility = isVisible ? 'visible' : 'none';
+
+    // Check if polygon exists in sitePolygons before trying to set visibility
+    if (!sitePolygons[siteId]) {
+      // Silently skip - this site doesn't have a polygon
+      return;
+    }
     
     // Check if layers exist before trying to set visibility
     const fillLayerId = 'polygon-fill-' + siteId;
     const outlineLayerId = 'polygon-outline-' + siteId;
     
     if (map.getLayer(fillLayerId)) {
+      map.setPaintProperty(fillLayerId, 'fill-opacity', isVisible ? 0.3 : 0);
       map.setLayoutProperty(fillLayerId, 'visibility', visibility);
-    } else {
-      console.warn(`Layer ${fillLayerId} not found`);
     }
     
     if (map.getLayer(outlineLayerId)) {
       map.setLayoutProperty(outlineLayerId, 'visibility', visibility);
-    } else {
-      console.warn(`Layer ${outlineLayerId} not found`);
     }
   }
 

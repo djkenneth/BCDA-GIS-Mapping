@@ -2315,6 +2315,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Silicon carbide and gallium nitride semiconductors for power and RF applications.',
+        polygon: [
+          [120.552376, 15.193123],
+          [120.555376, 15.192823],
+          [120.555876, 15.192123],
+          [120.555376, 15.190723],
+          [120.553876, 15.190423],
+          [120.552376, 15.191023],
+          [120.551876, 15.192123],
+          [120.552376, 15.193123],
+        ],
       },
       {
         id: 'clark_52',
@@ -2327,6 +2337,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'High-performance analog integrated circuits for power management.',
+        polygon: [
+          [120.546154, 15.188456],
+          [120.549154, 15.188156],
+          [120.549654, 15.187456],
+          [120.549154, 15.186456],
+          [120.547654, 15.186156],
+          [120.546154, 15.186656],
+          [120.545654, 15.187456],
+          [120.546154, 15.188456],
+        ],
       },
       {
         id: 'clark_53',
@@ -2339,6 +2359,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Magnetic sensor integrated circuits and power management solutions.',
+        polygon: [
+          [120.559487, 15.185678],
+          [120.562487, 15.185378],
+          [120.562987, 15.184678],
+          [120.562487, 15.183578],
+          [120.560987, 15.183278],
+          [120.559487, 15.183778],
+          [120.558987, 15.184678],
+          [120.559487, 15.185678],
+        ],
       },
       {
         id: 'clark_54',
@@ -2351,6 +2381,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Mixed-signal semiconductor solutions for automotive and industrial applications.',
+        polygon: [
+          [120.56171, 15.190567],
+          [120.56471, 15.190267],
+          [120.56521, 15.189567],
+          [120.56471, 15.188467],
+          [120.56321, 15.188167],
+          [120.56171, 15.188667],
+          [120.56121, 15.189567],
+          [120.56171, 15.190567],
+        ],
       },
       {
         id: 'clark_55',
@@ -2363,6 +2403,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components including power devices and analog ICs manufacturing.',
+        polygon: [
+          [120.554265, 15.187234],
+          [120.557265, 15.186934],
+          [120.557765, 15.186234],
+          [120.557265, 15.184834],
+          [120.555765, 15.184534],
+          [120.554265, 15.185134],
+          [120.553765, 15.186234],
+          [120.554265, 15.187234],
+        ],
       },
       {
         id: 'clark_56',
@@ -2375,6 +2425,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Discrete semiconductors and storage products manufacturing and testing.',
+        polygon: [
+          [120.547376, 15.192012],
+          [120.550376, 15.191712],
+          [120.550876, 15.191012],
+          [120.550376, 15.189412],
+          [120.548876, 15.189112],
+          [120.547376, 15.189812],
+          [120.546876, 15.191012],
+          [120.547376, 15.192012],
+        ],
       },
       {
         id: 'clark_57',
@@ -2387,6 +2447,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components and semiconductor devices manufacturing.',
+        polygon: [
+          [120.560609, 15.186234],
+          [120.563609, 15.185934],
+          [120.564109, 15.185234],
+          [120.563609, 15.183834],
+          [120.562109, 15.183534],
+          [120.560609, 15.184134],
+          [120.560109, 15.185234],
+          [120.560609, 15.186234],
+        ],
       },
       {
         id: 'clark_58',
@@ -2399,6 +2469,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Image sensors and semiconductor solutions for mobile and automotive applications.',
+        polygon: [
+          [120.549598, 15.19189],
+          [120.552598, 15.19159],
+          [120.553098, 15.19089],
+          [120.552598, 15.18929],
+          [120.551098, 15.18899],
+          [120.549598, 15.18969],
+          [120.549098, 15.19089],
+          [120.549598, 15.19189],
+        ],
       },
       {
         id: 'clark_59',
@@ -2411,6 +2491,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components including capacitors, inductors, and modules manufacturing.',
+        polygon: [
+          [120.558376, 15.184678],
+          [120.561376, 15.184378],
+          [120.561876, 15.183678],
+          [120.561376, 15.182378],
+          [120.559876, 15.182078],
+          [120.558376, 15.182678],
+          [120.557876, 15.183678],
+          [120.558376, 15.184678],
+        ],
       },
       {
         id: 'clark_60',
@@ -2423,6 +2513,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Magnetic application products and electronic materials manufacturing.',
+        polygon: [
+          [120.563043, 15.189234],
+          [120.566043, 15.188934],
+          [120.566543, 15.188234],
+          [120.566043, 15.186834],
+          [120.564543, 15.186534],
+          [120.563043, 15.187134],
+          [120.562543, 15.188234],
+          [120.563043, 15.189234],
+        ],
       },
       {
         id: 'clark_61',
@@ -2435,6 +2535,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components and semiconductor packaging materials manufacturing.',
+        polygon: [
+          [120.552821, 15.193567],
+          [120.555821, 15.193267],
+          [120.556321, 15.192567],
+          [120.555821, 15.191267],
+          [120.554321, 15.190967],
+          [120.552821, 15.191567],
+          [120.552321, 15.192567],
+          [120.552821, 15.193567],
+        ],
       },
       {
         id: 'clark_62',
@@ -2447,6 +2557,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components including capacitors, inductors, and SAW components.',
+        polygon: [
+          [120.54671, 15.188678],
+          [120.54971, 15.188378],
+          [120.55021, 15.187678],
+          [120.54971, 15.186678],
+          [120.54821, 15.186378],
+          [120.54671, 15.186878],
+          [120.54621, 15.187678],
+          [120.54671, 15.188678],
+        ],
       },
       {
         id: 'clark_63',
@@ -2459,6 +2579,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Capacitors and electromagnetic interference filters manufacturing.',
+        polygon: [
+          [120.560043, 15.185901],
+          [120.563043, 15.185601],
+          [120.563543, 15.184901],
+          [120.563043, 15.183601],
+          [120.561543, 15.183301],
+          [120.560043, 15.183901],
+          [120.559543, 15.184901],
+          [120.560043, 15.185901],
+        ],
       },
       {
         id: 'clark_64',
@@ -2471,6 +2601,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Aluminum electrolytic capacitors and power supply systems manufacturing.',
+        polygon: [
+          [120.562487, 15.19089],
+          [120.565487, 15.19059],
+          [120.565987, 15.18989],
+          [120.565487, 15.18869],
+          [120.563987, 15.18839],
+          [120.562487, 15.18899],
+          [120.561987, 15.18989],
+          [120.562487, 15.19089],
+        ],
       },
       {
         id: 'clark_65',
@@ -2483,6 +2623,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Aluminum electrolytic capacitors for automotive and industrial applications.',
+        polygon: [
+          [120.55471, 15.187456],
+          [120.55771, 15.187156],
+          [120.55821, 15.186456],
+          [120.55771, 15.185456],
+          [120.55621, 15.185156],
+          [120.55471, 15.185656],
+          [120.55421, 15.186456],
+          [120.55471, 15.187456],
+        ],
       },
       {
         id: 'clark_66',
@@ -2495,6 +2645,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Capacitors and electronic components for power electronics applications.',
+        polygon: [
+          [120.547932, 15.192345],
+          [120.550932, 15.192045],
+          [120.551432, 15.191345],
+          [120.550932, 15.190045],
+          [120.549432, 15.189745],
+          [120.547932, 15.190345],
+          [120.547432, 15.191345],
+          [120.547932, 15.192345],
+        ],
       },
       {
         id: 'clark_67',
@@ -2507,6 +2667,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Aluminum electrolytic capacitors and power supply equipment manufacturing.',
+        polygon: [
+          [120.561376, 15.186567],
+          [120.564376, 15.186267],
+          [120.564876, 15.185567],
+          [120.564376, 15.184167],
+          [120.562876, 15.183867],
+          [120.561376, 15.184467],
+          [120.560876, 15.185567],
+          [120.561376, 15.186567],
+        ],
       },
       {
         id: 'clark_68',
@@ -2519,6 +2689,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Tantalum and aluminum capacitors for telecommunications and automotive.',
+        polygon: [
+          [120.550265, 15.191234],
+          [120.553265, 15.190934],
+          [120.553765, 15.190234],
+          [120.553265, 15.189234],
+          [120.551765, 15.188934],
+          [120.550265, 15.189434],
+          [120.549765, 15.190234],
+          [120.550265, 15.191234],
+        ],
       },
       {
         id: 'clark_69',
@@ -2531,6 +2711,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Passive components and interconnect products manufacturing.',
+        polygon: [
+          [120.558821, 15.184234],
+          [120.561821, 15.183934],
+          [120.562321, 15.183234],
+          [120.561821, 15.181934],
+          [120.560321, 15.181634],
+          [120.558821, 15.182234],
+          [120.558321, 15.183234],
+          [120.558821, 15.184234],
+        ],
       },
       {
         id: 'clark_70',
@@ -2543,6 +2733,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Precision resistors and inductive components manufacturing.',
+        polygon: [
+          [120.561598, 15.189678],
+          [120.564598, 15.189378],
+          [120.565098, 15.188678],
+          [120.564598, 15.187578],
+          [120.563098, 15.187278],
+          [120.561598, 15.187778],
+          [120.561098, 15.188678],
+          [120.561598, 15.189678],
+        ],
       },
       {
         id: 'clark_71',
@@ -2555,6 +2755,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Electronic components including resistors, inductors, and circuit protection.',
+        polygon: [
+          [120.553487, 15.193901],
+          [120.556487, 15.193601],
+          [120.556987, 15.192901],
+          [120.556487, 15.191601],
+          [120.554987, 15.191301],
+          [120.553487, 15.191901],
+          [120.552987, 15.192901],
+          [120.553487, 15.193901],
+        ],
       },
       {
         id: 'clark_72',
@@ -2567,6 +2777,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Passive components including resistors, capacitors, and inductors manufacturing.',
+        polygon: [
+          [120.547487, 15.188234],
+          [120.550487, 15.187934],
+          [120.550987, 15.187234],
+          [120.550487, 15.185834],
+          [120.548987, 15.185534],
+          [120.547487, 15.186134],
+          [120.546987, 15.187234],
+          [120.547487, 15.188234],
+        ],
       },
       {
         id: 'clark_73',
@@ -2579,6 +2799,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Second automotive assembly plant for Innova, Fortuner, and Hiace models.',
+        polygon: [
+          [120.56071, 15.185567],
+          [120.56371, 15.185267],
+          [120.56421, 15.184567],
+          [120.56371, 15.182767],
+          [120.56221, 15.182467],
+          [120.56071, 15.183267],
+          [120.56021, 15.184567],
+          [120.56071, 15.185567],
+        ],
       },
       {
         id: 'clark_74',
@@ -2591,6 +2821,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive assembly plant for Civic, Accord, and CR-V models.',
+        polygon: [
+          [120.56271, 15.190234],
+          [120.56571, 15.189934],
+          [120.56621, 15.189234],
+          [120.56571, 15.187534],
+          [120.56421, 15.187234],
+          [120.56271, 15.187934],
+          [120.56221, 15.189234],
+          [120.56271, 15.190234],
+        ],
       },
       {
         id: 'clark_75',
@@ -2603,6 +2843,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive and motorcycle assembly and parts manufacturing.',
+        polygon: [
+          [120.555376, 15.18789],
+          [120.558376, 15.18759],
+          [120.558876, 15.18689],
+          [120.558376, 15.18549],
+          [120.556876, 15.18519],
+          [120.555376, 15.18579],
+          [120.554876, 15.18689],
+          [120.555376, 15.18789],
+        ],
       },
       {
         id: 'clark_76',
@@ -2614,6 +2864,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Commercial vehicle and truck assembly facility.',
+        polygon: [
+          [120.548598, 15.192567],
+          [120.551598, 15.192267],
+          [120.552098, 15.191567],
+          [120.551598, 15.189967],
+          [120.550098, 15.189667],
+          [120.548598, 15.190367],
+          [120.548098, 15.191567],
+          [120.548598, 15.192567],
+        ],
       },
       {
         id: 'clark_77',
@@ -2626,6 +2886,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Passenger vehicle assembly for domestic and export markets.',
+        polygon: [
+          [120.561821, 15.186012],
+          [120.564821, 15.185712],
+          [120.565321, 15.185012],
+          [120.564821, 15.183312],
+          [120.563321, 15.183012],
+          [120.561821, 15.183712],
+          [120.561321, 15.185012],
+          [120.561821, 15.186012],
+        ],
       },
       {
         id: 'clark_78',
@@ -2638,6 +2908,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive assembly plant for Picanto, Rio, and Sportage models.',
+        polygon: [
+          [120.550821, 15.191678],
+          [120.553821, 15.191378],
+          [120.554321, 15.190678],
+          [120.553821, 15.189178],
+          [120.552321, 15.188878],
+          [120.550821, 15.189578],
+          [120.550321, 15.190678],
+          [120.550821, 15.191678],
+        ],
       },
       {
         id: 'clark_79',
@@ -2649,6 +2929,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Vehicle assembly and parts distribution center.',
+        polygon: [
+          [120.559487, 15.184789],
+          [120.562487, 15.184489],
+          [120.562987, 15.183789],
+          [120.562487, 15.182389],
+          [120.560987, 15.182089],
+          [120.559487, 15.182689],
+          [120.558987, 15.183789],
+          [120.559487, 15.184789],
+        ],
       },
       {
         id: 'clark_80',
@@ -2660,6 +2950,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'AWD vehicle assembly and testing facility.',
+        polygon: [
+          [120.561154, 15.189901],
+          [120.564154, 15.189601],
+          [120.564654, 15.188901],
+          [120.564154, 15.187601],
+          [120.562654, 15.187301],
+          [120.561154, 15.187901],
+          [120.560654, 15.188901],
+          [120.561154, 15.189901],
+        ],
       },
       {
         id: 'clark_81',
@@ -2671,6 +2971,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Passenger and commercial vehicle assembly facility.',
+        polygon: [
+          [120.553932, 15.193234],
+          [120.556932, 15.192934],
+          [120.557432, 15.192234],
+          [120.556932, 15.190834],
+          [120.555432, 15.190534],
+          [120.553932, 15.191134],
+          [120.553432, 15.192234],
+          [120.553932, 15.193234],
+        ],
       },
       {
         id: 'clark_82',
@@ -2682,6 +2992,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'European vehicle assembly for Southeast Asian markets.',
+        polygon: [
+          [120.548154, 15.188567],
+          [120.551154, 15.188267],
+          [120.551654, 15.187567],
+          [120.551154, 15.186167],
+          [120.549654, 15.185867],
+          [120.548154, 15.186467],
+          [120.547654, 15.187567],
+          [120.548154, 15.188567],
+        ],
       },
       {
         id: 'clark_83',
@@ -2694,6 +3014,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive air conditioning systems and electronic components manufacturing.',
+        polygon: [
+          [120.561487, 15.185123],
+          [120.564487, 15.184823],
+          [120.564987, 15.184123],
+          [120.564487, 15.182423],
+          [120.562987, 15.182123],
+          [120.561487, 15.182823],
+          [120.560987, 15.184123],
+          [120.561487, 15.185123],
+        ],
       },
       {
         id: 'clark_84',
@@ -2706,6 +3036,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive parts including fuel injection systems and electrical components.',
+        polygon: [
+          [120.562265, 15.190678],
+          [120.565265, 15.190378],
+          [120.565765, 15.189678],
+          [120.565265, 15.187878],
+          [120.563765, 15.187578],
+          [120.562265, 15.188378],
+          [120.561765, 15.189678],
+          [120.562265, 15.190678],
+        ],
       },
       {
         id: 'clark_85',
@@ -2718,6 +3058,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Tire manufacturing and automotive safety systems production.',
+        polygon: [
+          [120.555821, 15.187123],
+          [120.558821, 15.186823],
+          [120.559321, 15.186123],
+          [120.558821, 15.184723],
+          [120.557321, 15.184423],
+          [120.555821, 15.185023],
+          [120.555321, 15.186123],
+          [120.555821, 15.187123],
+        ],
       },
       {
         id: 'clark_86',
@@ -2729,6 +3079,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Automotive seating systems and body parts manufacturing.',
+        polygon: [
+          [120.549376, 15.19289],
+          [120.552376, 15.19259],
+          [120.552876, 15.19189],
+          [120.552376, 15.19039],
+          [120.550876, 15.19009],
+          [120.549376, 15.19079],
+          [120.548876, 15.19189],
+          [120.549376, 15.19289],
+        ],
       },
       {
         id: 'clark_87',
@@ -2741,6 +3101,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive electronics and engine management systems manufacturing.',
+        polygon: [
+          [120.562376, 15.186456],
+          [120.565376, 15.186156],
+          [120.565876, 15.185456],
+          [120.565376, 15.184056],
+          [120.563876, 15.183756],
+          [120.562376, 15.184356],
+          [120.561876, 15.185456],
+          [120.562376, 15.186456],
+        ],
       },
       {
         id: 'clark_88',
@@ -2753,6 +3123,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive lighting systems and HVAC components manufacturing.',
+        polygon: [
+          [120.551487, 15.191012],
+          [120.554487, 15.190712],
+          [120.554987, 15.190012],
+          [120.554487, 15.188612],
+          [120.552987, 15.188312],
+          [120.551487, 15.188912],
+          [120.550987, 15.190012],
+          [120.551487, 15.191012],
+        ],
       },
       {
         id: 'clark_89',
@@ -2765,6 +3145,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Transmission systems and chassis components manufacturing.',
+        polygon: [
+          [120.560154, 15.184456],
+          [120.563154, 15.184156],
+          [120.563654, 15.183456],
+          [120.563154, 15.181956],
+          [120.561654, 15.181656],
+          [120.560154, 15.182356],
+          [120.559654, 15.183456],
+          [120.560154, 15.184456],
+        ],
       },
       {
         id: 'clark_90',
@@ -2777,6 +3167,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive and industrial bearings and components manufacturing.',
+        polygon: [
+          [120.560487, 15.189345],
+          [120.563487, 15.189045],
+          [120.563987, 15.188345],
+          [120.563487, 15.186945],
+          [120.561987, 15.186645],
+          [120.560487, 15.187245],
+          [120.559987, 15.188345],
+          [120.560487, 15.189345],
+        ],
       },
       {
         id: 'clark_91',
@@ -2789,6 +3189,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Engine components and thermal management systems manufacturing.',
+        polygon: [
+          [120.554598, 15.193678],
+          [120.557598, 15.193378],
+          [120.558098, 15.192678],
+          [120.557598, 15.191278],
+          [120.556098, 15.190978],
+          [120.554598, 15.191578],
+          [120.554098, 15.192678],
+          [120.554598, 15.193678],
+        ],
       },
       {
         id: 'clark_92',
@@ -2801,6 +3211,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive air conditioning and engine cooling systems manufacturing.',
+        polygon: [
+          [120.548821, 15.18889],
+          [120.551821, 15.18859],
+          [120.552321, 15.18789],
+          [120.551821, 15.18659],
+          [120.550321, 15.18629],
+          [120.548821, 15.18689],
+          [120.548321, 15.18789],
+          [120.548821, 15.18889],
+        ],
       },
       {
         id: 'clark_93',
@@ -2813,6 +3233,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive transmission parts and brake systems manufacturing.',
+        polygon: [
+          [120.562043, 15.185678],
+          [120.565043, 15.185378],
+          [120.565543, 15.184678],
+          [120.565043, 15.183278],
+          [120.563543, 15.182978],
+          [120.562043, 15.183578],
+          [120.561543, 15.184678],
+          [120.562043, 15.185678],
+        ],
       },
       {
         id: 'clark_94',
@@ -2824,6 +3254,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Automotive bearings and steering systems manufacturing.',
+        polygon: [
+          [120.563487, 15.190012],
+          [120.566487, 15.189712],
+          [120.566987, 15.189012],
+          [120.566487, 15.187712],
+          [120.564987, 15.187412],
+          [120.563487, 15.187912],
+          [120.562987, 15.189012],
+          [120.563487, 15.190012],
+        ],
       },
       {
         id: 'clark_95',
@@ -2836,6 +3276,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive and industrial bearings manufacturing and assembly.',
+        polygon: [
+          [120.556487, 15.187567],
+          [120.559487, 15.187267],
+          [120.559987, 15.186567],
+          [120.559487, 15.185167],
+          [120.557987, 15.184867],
+          [120.556487, 15.185467],
+          [120.555987, 15.186567],
+          [120.556487, 15.187567],
+        ],
       },
       {
         id: 'clark_96',
@@ -2847,6 +3297,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Tapered roller bearings and power transmission products.',
+        polygon: [
+          [120.549932, 15.192234],
+          [120.552932, 15.191934],
+          [120.553432, 15.191234],
+          [120.552932, 15.190034],
+          [120.551432, 15.189734],
+          [120.549932, 15.190334],
+          [120.549432, 15.191234],
+          [120.549932, 15.192234],
+        ],
       },
       {
         id: 'clark_97',
@@ -2859,6 +3319,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive and industrial bearings and sealing solutions.',
+        polygon: [
+          [120.562821, 15.186789],
+          [120.565821, 15.186489],
+          [120.566321, 15.185789],
+          [120.565821, 15.184389],
+          [120.564321, 15.184089],
+          [120.562821, 15.184689],
+          [120.562321, 15.185789],
+          [120.562821, 15.186789],
+        ],
       },
       {
         id: 'clark_98',
@@ -2871,6 +3341,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive belts, hoses, and fluid power products manufacturing.',
+        polygon: [
+          [120.552154, 15.191456],
+          [120.555154, 15.191156],
+          [120.555654, 15.190456],
+          [120.555154, 15.189256],
+          [120.553654, 15.188956],
+          [120.552154, 15.189556],
+          [120.551654, 15.190456],
+          [120.552154, 15.191456],
+        ],
       },
       {
         id: 'clark_99',
@@ -2882,6 +3362,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Automotive belt and tensioner systems manufacturing.',
+        polygon: [
+          [120.560821, 15.184901],
+          [120.563821, 15.184601],
+          [120.564321, 15.183901],
+          [120.563821, 15.182601],
+          [120.562321, 15.182301],
+          [120.560821, 15.182901],
+          [120.560321, 15.183901],
+          [120.560821, 15.184901],
+        ],
       },
       {
         id: 'clark_100',
@@ -2894,6 +3384,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive exhaust systems and shock absorbers manufacturing.',
+        polygon: [
+          [120.559821, 15.189567],
+          [120.562821, 15.189267],
+          [120.563321, 15.188567],
+          [120.562821, 15.187167],
+          [120.561321, 15.186867],
+          [120.559821, 15.187467],
+          [120.559321, 15.188567],
+          [120.559821, 15.189567],
+        ],
       },
       {
         id: 'clark_101',
@@ -2906,6 +3406,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Automotive suspension systems and components manufacturing.',
+        polygon: [
+          [120.555265, 15.193012],
+          [120.558265, 15.192712],
+          [120.558765, 15.192012],
+          [120.558265, 15.190812],
+          [120.556765, 15.190512],
+          [120.555265, 15.191112],
+          [120.554765, 15.192012],
+          [120.555265, 15.193012],
+        ],
       },
       {
         id: 'clark_102',
@@ -2917,6 +3427,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'High-performance shock absorbers and suspension systems.',
+        polygon: [
+          [120.549598, 15.188123],
+          [120.552598, 15.187823],
+          [120.553098, 15.187123],
+          [120.552598, 15.186023],
+          [120.551098, 15.185723],
+          [120.549598, 15.186323],
+          [120.549098, 15.187123],
+          [120.549598, 15.188123],
+        ],
       },
       {
         id: 'clark_103',
@@ -2929,6 +3449,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Regional distribution center and logistics hub for Southeast Asia.',
+        polygon: [
+          [120.562598, 15.185234],
+          [120.565598, 15.184934],
+          [120.566098, 15.184234],
+          [120.565598, 15.181834],
+          [120.564098, 15.181534],
+          [120.562598, 15.182434],
+          [120.562098, 15.184234],
+          [120.562598, 15.185234],
+        ],
       },
       {
         id: 'clark_104',
@@ -2941,6 +3471,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'International express delivery and logistics operations hub.',
+        polygon: [
+          [120.561932, 15.190456],
+          [120.564932, 15.190156],
+          [120.565432, 15.189456],
+          [120.564932, 15.187256],
+          [120.563432, 15.186956],
+          [120.561932, 15.187756],
+          [120.561432, 15.189456],
+          [120.561932, 15.190456],
+        ],
       },
       {
         id: 'clark_105',
@@ -2952,6 +3492,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Package delivery and supply chain management services.',
+        polygon: [
+          [120.557154, 15.187234],
+          [120.560154, 15.186934],
+          [120.560654, 15.186234],
+          [120.560154, 15.184234],
+          [120.558654, 15.183934],
+          [120.557154, 15.184734],
+          [120.556654, 15.186234],
+          [120.557154, 15.187234],
+        ],
       },
       {
         id: 'clark_106',
@@ -2964,6 +3514,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'International freight forwarding and contract logistics services.',
+        polygon: [
+          [120.550598, 15.192678],
+          [120.553598, 15.192378],
+          [120.554098, 15.191678],
+          [120.553598, 15.189878],
+          [120.552098, 15.189578],
+          [120.550598, 15.190378],
+          [120.550098, 15.191678],
+          [120.550598, 15.192678],
+        ],
       },
       {
         id: 'clark_107',
@@ -2975,6 +3535,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Global logistics and supply chain management services.',
+        polygon: [
+          [120.561265, 15.186123],
+          [120.564265, 15.185823],
+          [120.564765, 15.185123],
+          [120.564265, 15.183323],
+          [120.562765, 15.183023],
+          [120.561265, 15.183823],
+          [120.560765, 15.185123],
+          [120.561265, 15.186123],
+        ],
       },
       {
         id: 'clark_108',
@@ -2986,6 +3556,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Contract logistics and freight management services.',
+        polygon: [
+          [120.552821, 15.191789],
+          [120.555821, 15.191489],
+          [120.556321, 15.190789],
+          [120.555821, 15.189189],
+          [120.554321, 15.188889],
+          [120.552821, 15.189589],
+          [120.552321, 15.190789],
+          [120.552821, 15.191789],
+        ],
       },
       {
         id: 'clark_109',
@@ -2998,6 +3578,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Air and ocean freight forwarding and logistics solutions.',
+        polygon: [
+          [120.561598, 15.184567],
+          [120.564598, 15.184267],
+          [120.565098, 15.183567],
+          [120.564598, 15.181767],
+          [120.563098, 15.181467],
+          [120.561598, 15.182267],
+          [120.561098, 15.183567],
+          [120.561598, 15.184567],
+        ],
       },
       {
         id: 'clark_110',
@@ -3009,6 +3599,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Global logistics and customs brokerage services.',
+        polygon: [
+          [120.559154, 15.189012],
+          [120.562154, 15.188712],
+          [120.562654, 15.188012],
+          [120.562154, 15.186512],
+          [120.560654, 15.186212],
+          [120.559154, 15.186912],
+          [120.558654, 15.188012],
+          [120.559154, 15.189012],
+        ],
       },
       {
         id: 'clark_111',
@@ -3020,6 +3620,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Supply chain optimization and logistics services.',
+        polygon: [
+          [120.555821, 15.193456],
+          [120.558821, 15.193156],
+          [120.559321, 15.192456],
+          [120.558821, 15.190656],
+          [120.557321, 15.190356],
+          [120.555821, 15.191156],
+          [120.555321, 15.192456],
+          [120.555821, 15.193456],
+        ],
       },
       {
         id: 'clark_112',
@@ -3032,6 +3642,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Transportation and logistics services for manufacturing industries.',
+        polygon: [
+          [120.550376, 15.188456],
+          [120.553376, 15.188156],
+          [120.553876, 15.187456],
+          [120.553376, 15.185556],
+          [120.551876, 15.185256],
+          [120.550376, 15.186156],
+          [120.549876, 15.187456],
+          [120.550376, 15.188456],
+        ],
       },
       {
         id: 'clark_113',
@@ -3044,6 +3664,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Coffee, dairy products, and infant nutrition manufacturing facility.',
+        polygon: [
+          [120.563154, 15.18589],
+          [120.566154, 15.18559],
+          [120.566654, 15.18489],
+          [120.566154, 15.18309],
+          [120.564654, 15.18279],
+          [120.563154, 15.18359],
+          [120.562654, 15.18489],
+          [120.563154, 15.18589],
+        ],
       },
       {
         id: 'clark_114',
@@ -3055,6 +3685,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Personal care products and food manufacturing facility.',
+        polygon: [
+          [120.561487, 15.190789],
+          [120.564487, 15.190489],
+          [120.564987, 15.189789],
+          [120.564487, 15.188189],
+          [120.562987, 15.187889],
+          [120.561487, 15.188589],
+          [120.560987, 15.189789],
+          [120.561487, 15.190789],
+        ],
       },
       {
         id: 'clark_115',
@@ -3066,6 +3706,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Consumer goods and personal care products manufacturing.',
+        polygon: [
+          [120.55771, 15.187678],
+          [120.56071, 15.187378],
+          [120.56121, 15.186678],
+          [120.56071, 15.185178],
+          [120.55921, 15.184878],
+          [120.55771, 15.185578],
+          [120.55721, 15.186678],
+          [120.55771, 15.187678],
+        ],
       },
       {
         id: 'clark_116',
@@ -3077,6 +3727,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Soft drinks bottling and distribution center.',
+        polygon: [
+          [120.551265, 15.192012],
+          [120.554265, 15.191712],
+          [120.554765, 15.191012],
+          [120.554265, 15.189512],
+          [120.552765, 15.189212],
+          [120.551265, 15.189912],
+          [120.550765, 15.191012],
+          [120.551265, 15.192012],
+        ],
       },
       {
         id: 'clark_117',
@@ -3089,6 +3749,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Beverage manufacturing and snack food production facility.',
+        polygon: [
+          [120.559932, 15.186567],
+          [120.562932, 15.186267],
+          [120.563432, 15.185567],
+          [120.562932, 15.184167],
+          [120.561432, 15.183867],
+          [120.559932, 15.184467],
+          [120.559432, 15.185567],
+          [120.559932, 15.186567],
+        ],
       },
       {
         id: 'clark_118',
@@ -3101,6 +3771,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Beer production and packaging facility serving Northern Luzon.',
+        polygon: [
+          [120.553598, 15.191123],
+          [120.556598, 15.190823],
+          [120.557098, 15.190123],
+          [120.556598, 15.188223],
+          [120.555098, 15.187923],
+          [120.553598, 15.188723],
+          [120.553098, 15.190123],
+          [120.553598, 15.191123],
+        ],
       },
       {
         id: 'clark_119',
@@ -3113,6 +3793,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Snack foods, instant noodles, and beverage manufacturing.',
+        polygon: [
+          [120.562376, 15.184234],
+          [120.565376, 15.183934],
+          [120.565876, 15.183234],
+          [120.565376, 15.181434],
+          [120.563876, 15.181134],
+          [120.562376, 15.181934],
+          [120.561876, 15.183234],
+          [120.562376, 15.184234],
+        ],
       },
       {
         id: 'clark_120',
@@ -3125,6 +3815,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Instant noodles, biscuits, and food products manufacturing.',
+        polygon: [
+          [120.558487, 15.188456],
+          [120.561487, 15.188156],
+          [120.561987, 15.187456],
+          [120.561487, 15.185956],
+          [120.559987, 15.185656],
+          [120.558487, 15.186356],
+          [120.557987, 15.187456],
+          [120.558487, 15.188456],
+        ],
       },
       {
         id: 'clark_121',
@@ -3137,6 +3837,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Fruit processing, canning, and packaged food manufacturing.',
+        polygon: [
+          [120.556487, 15.193789],
+          [120.559487, 15.193489],
+          [120.559987, 15.192789],
+          [120.559487, 15.191089],
+          [120.557987, 15.190789],
+          [120.556487, 15.191589],
+          [120.555987, 15.192789],
+          [120.556487, 15.193789],
+        ],
       },
       {
         id: 'clark_122',
@@ -3149,6 +3859,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Canned goods, processed meats, and seafood products manufacturing.',
+        polygon: [
+          [120.551043, 15.188678],
+          [120.554043, 15.188378],
+          [120.554543, 15.187678],
+          [120.554043, 15.186078],
+          [120.552543, 15.185778],
+          [120.551043, 15.186478],
+          [120.550543, 15.187678],
+          [120.551043, 15.188678],
+        ],
       },
       {
         id: 'clark_123',
@@ -3160,6 +3880,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Denim and casual wear manufacturing for global markets.',
+        polygon: [
+          [120.56171, 15.185456],
+          [120.56471, 15.185156],
+          [120.56521, 15.184456],
+          [120.56471, 15.183056],
+          [120.56321, 15.182756],
+          [120.56171, 15.183356],
+          [120.56121, 15.184456],
+          [120.56171, 15.185456],
+        ],
       },
       {
         id: 'clark_124',
@@ -3171,6 +3901,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Athletic footwear and apparel manufacturing facility.',
+        polygon: [
+          [120.560609, 15.190123],
+          [120.563609, 15.189823],
+          [120.564109, 15.189123],
+          [120.563609, 15.187623],
+          [120.562109, 15.187323],
+          [120.560609, 15.187923],
+          [120.560109, 15.189123],
+          [120.560609, 15.190123],
+        ],
       },
       {
         id: 'clark_125',
@@ -3183,6 +3923,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Sports apparel and footwear manufacturing for Asian markets.',
+        polygon: [
+          [120.558376, 15.187012],
+          [120.561376, 15.186712],
+          [120.561876, 15.186012],
+          [120.561376, 15.184612],
+          [120.559876, 15.184312],
+          [120.558376, 15.184912],
+          [120.557876, 15.186012],
+          [120.558376, 15.187012],
+        ],
       },
       {
         id: 'clark_126',
@@ -3194,6 +3944,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Performance apparel and athletic gear manufacturing.',
+        polygon: [
+          [120.551821, 15.192456],
+          [120.554821, 15.192156],
+          [120.555321, 15.191456],
+          [120.554821, 15.190156],
+          [120.553321, 15.189856],
+          [120.551821, 15.190456],
+          [120.551321, 15.191456],
+          [120.551821, 15.192456],
+        ],
       },
       {
         id: 'clark_127',
@@ -3205,6 +3965,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Outdoor and workwear apparel manufacturing facility.',
+        polygon: [
+          [120.559487, 15.18689],
+          [120.562487, 15.18659],
+          [120.562987, 15.18589],
+          [120.562487, 15.18449],
+          [120.560987, 15.18419],
+          [120.559487, 15.18479],
+          [120.558987, 15.18589],
+          [120.559487, 15.18689],
+        ],
       },
       {
         id: 'clark_128',
@@ -3217,6 +3987,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Casual clothing and denim manufacturing for global retail.',
+        polygon: [
+          [120.554376, 15.191567],
+          [120.557376, 15.191267],
+          [120.557876, 15.190567],
+          [120.557376, 15.189167],
+          [120.555876, 15.188867],
+          [120.554376, 15.189467],
+          [120.553876, 15.190567],
+          [120.554376, 15.191567],
+        ],
       },
       {
         id: 'clark_129',
@@ -3229,6 +4009,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Fast fashion apparel manufacturing and quality control center.',
+        polygon: [
+          [120.563043, 15.184678],
+          [120.566043, 15.184378],
+          [120.566543, 15.183678],
+          [120.566043, 15.182278],
+          [120.564543, 15.181978],
+          [120.563043, 15.182578],
+          [120.562543, 15.183678],
+          [120.563043, 15.184678],
+        ],
       },
       {
         id: 'clark_130',
@@ -3240,6 +4030,16 @@ const mapMarkers = [
         status: 'active_locators',
         subcategory: 'clark-freeport',
         description: 'Fashion apparel manufacturing and distribution facility.',
+        polygon: [
+          [120.557821, 15.189789],
+          [120.560821, 15.189489],
+          [120.561321, 15.188789],
+          [120.560821, 15.187489],
+          [120.559321, 15.187189],
+          [120.557821, 15.187789],
+          [120.557321, 15.188789],
+          [120.557821, 15.189789],
+        ],
       },
       {
         id: 'clark_131',
@@ -3252,6 +4052,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Casual wear and functional clothing manufacturing facility.',
+        polygon: [
+          [120.557154, 15.193123],
+          [120.560154, 15.192823],
+          [120.560654, 15.192123],
+          [120.560154, 15.190823],
+          [120.558654, 15.190523],
+          [120.557154, 15.191123],
+          [120.556654, 15.192123],
+          [120.557154, 15.193123],
+        ],
       },
       {
         id: 'clark_132',
@@ -3264,6 +4074,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Basic apparel and socks manufacturing for global distribution.',
+        polygon: [
+          [120.55171, 15.188234],
+          [120.55471, 15.187934],
+          [120.55521, 15.187234],
+          [120.55471, 15.185734],
+          [120.55321, 15.185434],
+          [120.55171, 15.186134],
+          [120.55121, 15.187234],
+          [120.55171, 15.188234],
+        ],
       },
       {
         id: 'clark_133',
@@ -3276,6 +4096,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Pharmaceutical manufacturing and medical device production facility.',
+        polygon: [
+          [120.560376, 15.185678],
+          [120.563376, 15.185378],
+          [120.563876, 15.184678],
+          [120.563376, 15.183078],
+          [120.561876, 15.182778],
+          [120.560376, 15.183478],
+          [120.559876, 15.184678],
+          [120.560376, 15.185678],
+        ],
       },
       {
         id: 'clark_134',
@@ -3288,6 +4118,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Pharmaceutical drug manufacturing and packaging facility.',
+        polygon: [
+          [120.560043, 15.190567],
+          [120.563043, 15.190267],
+          [120.563543, 15.189567],
+          [120.563043, 15.188167],
+          [120.561543, 15.187867],
+          [120.560043, 15.188467],
+          [120.559543, 15.189567],
+          [120.560043, 15.190567],
+        ],
       },
       {
         id: 'clark_135',
@@ -3300,6 +4140,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Vaccines, pharmaceuticals, and consumer healthcare products manufacturing.',
+        polygon: [
+          [120.559043, 15.187345],
+          [120.562043, 15.187045],
+          [120.562543, 15.186345],
+          [120.562043, 15.184845],
+          [120.560543, 15.184545],
+          [120.559043, 15.185245],
+          [120.558543, 15.186345],
+          [120.559043, 15.187345],
+        ],
       },
       {
         id: 'clark_136',
@@ -3312,6 +4162,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Pharmaceutical research, development, and manufacturing center.',
+        polygon: [
+          [120.552789, 15.192789],
+          [120.555789, 15.192489],
+          [120.556289, 15.191789],
+          [120.555789, 15.190489],
+          [120.554098, 15.190189],
+          [120.552789, 15.190889],
+          [120.552289, 15.191789],
+          [120.552789, 15.192789],
+        ],
       },
       {
         id: 'clark_137',
@@ -3324,6 +4184,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Healthcare and life science products manufacturing facility.',
+        polygon: [
+          [120.55871, 15.186234],
+          [120.56171, 15.185934],
+          [120.56221, 15.185234],
+          [120.56171, 15.183834],
+          [120.56021, 15.183534],
+          [120.55871, 15.184134],
+          [120.55821, 15.185234],
+          [120.55871, 15.186234],
+        ],
       },
       {
         id: 'clark_138',
@@ -3336,6 +4206,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Pharmaceutical manufacturing and diabetes care products facility.',
+        polygon: [
+          [120.555043, 15.19189],
+          [120.558043, 15.19159],
+          [120.558543, 15.19089],
+          [120.558043, 15.18959],
+          [120.556543, 15.18929],
+          [120.555043, 15.18989],
+          [120.554543, 15.19089],
+          [120.555043, 15.19189],
+        ],
       },
       {
         id: 'clark_139',
@@ -3348,6 +4228,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Diagnostic equipment and pharmaceutical products manufacturing.',
+        polygon: [
+          [120.561487, 15.184789],
+          [120.564487, 15.184489],
+          [120.564987, 15.183789],
+          [120.564487, 15.182589],
+          [120.562987, 15.182289],
+          [120.561487, 15.182889],
+          [120.560987, 15.183789],
+          [120.561487, 15.184789],
+        ],
       },
       {
         id: 'clark_140',
@@ -3360,6 +4250,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Medical devices, diagnostics, and nutritional products manufacturing.',
+        polygon: [
+          [120.557154, 15.189234],
+          [120.560154, 15.188934],
+          [120.560654, 15.188234],
+          [120.560154, 15.186834],
+          [120.558654, 15.186534],
+          [120.557154, 15.187134],
+          [120.556654, 15.188234],
+          [120.557154, 15.189234],
+        ],
       },
       {
         id: 'clark_141',
@@ -3372,6 +4272,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Pharmaceutical and crop science products manufacturing facility.',
+        polygon: [
+          [120.557821, 15.193567],
+          [120.560821, 15.193267],
+          [120.561321, 15.192567],
+          [120.560821, 15.191167],
+          [120.559321, 15.190867],
+          [120.557821, 15.191467],
+          [120.557321, 15.192567],
+          [120.557821, 15.193567],
+        ],
       },
       {
         id: 'clark_142',
@@ -3384,6 +4294,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Specialty chemicals and materials manufacturing for various industries.',
+        polygon: [
+          [120.552487, 15.188567],
+          [120.555487, 15.188267],
+          [120.555987, 15.187567],
+          [120.555487, 15.185767],
+          [120.553987, 15.185467],
+          [120.552487, 15.186267],
+          [120.551987, 15.187567],
+          [120.552487, 15.188567],
+        ],
       },
       {
         id: 'clark_143',
@@ -3396,6 +4316,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Industrial chemicals and advanced materials manufacturing facility.',
+        polygon: [
+          [120.559043, 15.185123],
+          [120.562043, 15.184823],
+          [120.562543, 15.184123],
+          [120.562043, 15.182223],
+          [120.560543, 15.181923],
+          [120.559043, 15.182723],
+          [120.558543, 15.184123],
+          [120.559043, 15.185123],
+        ],
       },
       {
         id: 'clark_144',
@@ -3408,6 +4338,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Specialty chemicals and advanced materials production center.',
+        polygon: [
+          [120.559376, 15.19189],
+          [120.562376, 15.19159],
+          [120.562876, 15.19089],
+          [120.562376, 15.18939],
+          [120.560876, 15.18909],
+          [120.559376, 15.18979],
+          [120.558876, 15.19089],
+          [120.559376, 15.19189],
+        ],
       },
       {
         id: 'clark_145',
@@ -3420,6 +4360,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Industrial adhesives, abrasives, and specialty materials manufacturing.',
+        polygon: [
+          [120.55971, 15.187678],
+          [120.56271, 15.187378],
+          [120.56321, 15.186678],
+          [120.56271, 15.185178],
+          [120.56121, 15.184878],
+          [120.55971, 15.185578],
+          [120.55921, 15.186678],
+          [120.55971, 15.187678],
+        ],
       },
       {
         id: 'clark_146',
@@ -3432,6 +4382,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Adhesives, sealants, and surface treatments manufacturing.',
+        polygon: [
+          [120.553376, 15.192123],
+          [120.556376, 15.191823],
+          [120.556876, 15.191123],
+          [120.556376, 15.189823],
+          [120.554876, 15.189523],
+          [120.553376, 15.190123],
+          [120.552876, 15.191123],
+          [120.553376, 15.192123],
+        ],
       },
       {
         id: 'clark_147',
@@ -3444,6 +4404,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Paints, coatings, and specialty chemicals manufacturing facility.',
+        polygon: [
+          [120.558043, 15.186678],
+          [120.561043, 15.186378],
+          [120.561543, 15.185678],
+          [120.561043, 15.184278],
+          [120.559543, 15.183978],
+          [120.558043, 15.184578],
+          [120.557543, 15.185678],
+          [120.558043, 15.186678],
+        ],
       },
       {
         id: 'clark_148',
@@ -3456,6 +4426,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Steel production and metal fabrication for construction and automotive industries.',
+        polygon: [
+          [120.55571, 15.191234],
+          [120.55871, 15.190934],
+          [120.55921, 15.190234],
+          [120.55871, 15.187634],
+          [120.55721, 15.187334],
+          [120.55571, 15.188534],
+          [120.55521, 15.190234],
+          [120.55571, 15.191234],
+        ],
       },
       {
         id: 'clark_149',
@@ -3468,6 +4448,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'Steel manufacturing and processing for automotive and construction sectors.',
+        polygon: [
+          [120.559821, 15.184234],
+          [120.562821, 15.183934],
+          [120.563321, 15.183234],
+          [120.562821, 15.180434],
+          [120.561321, 15.180134],
+          [120.559821, 15.181434],
+          [120.559321, 15.183234],
+          [120.559821, 15.184234],
+        ],
       },
       {
         id: 'clark_150',
@@ -3480,6 +4470,16 @@ const mapMarkers = [
         subcategory: 'clark-freeport',
         description:
           'High-quality steel products manufacturing for automotive applications.',
+        polygon: [
+          [120.556487, 15.189678],
+          [120.559487, 15.189378],
+          [120.559987, 15.188678],
+          [120.559487, 15.186378],
+          [120.557987, 15.186078],
+          [120.556487, 15.187178],
+          [120.555987, 15.188678],
+          [120.556487, 15.189678],
+        ],
       },
       {
         id: 'clark_151',
