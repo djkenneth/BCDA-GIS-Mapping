@@ -215,31 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
     sitePolygons[site.id] = { site, category };
   }
 
-  function removeSitePolygon(siteId) {
-    // Hide tooltip if it's showing for this polygon
-    hidePolygonTooltip();
-    
-    // Remove event listeners
-    if (map.getLayer('polygon-fill-' + siteId)) {
-      map.off('click', 'polygon-fill-' + siteId);
-      map.off('mouseenter', 'polygon-fill-' + siteId);
-      map.off('mouseleave', 'polygon-fill-' + siteId);
-      map.off('mousemove', 'polygon-fill-' + siteId); // ADD THIS LINE
-      map.removeLayer('polygon-fill-' + siteId);
-    }
-    
-    if (map.getLayer('polygon-outline-' + siteId)) {
-      map.off('click', 'polygon-outline-' + siteId);
-      map.removeLayer('polygon-outline-' + siteId);
-    }
-    
-    if (map.getSource('polygon-' + siteId)) {
-      map.removeSource('polygon-' + siteId);
-    }
-    
-    delete sitePolygons[siteId];
-  }
-
   function setPolygonVisibility(siteId, isVisible) {
     const visibility = isVisible ? 'visible' : 'none';
 
@@ -269,7 +244,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = 248;
@@ -290,8 +264,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMarkersForCheckbox(checkboxId, isChecked) {
-    console.log('updateMarkersForCheckbox:', checkboxId, isChecked);
-
     // Handle "All" checkbox
     if (checkboxId === 'all') {
       sites.forEach(site => {
@@ -374,7 +346,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
-    const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content.visible");
 
     let topPosition = 248;

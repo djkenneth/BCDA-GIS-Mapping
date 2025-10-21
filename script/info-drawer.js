@@ -142,43 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function generateTabButtons(categoryName) {
-    const allTabs = [
-      {
-        id: "technical-details",
-        label: "Technical Details",
-        categories: ["all"],
-      },
-      {
-        id: "performance-analytics",
-        label: getPerformanceLabel(categoryName),
-        categories: ["all"],
-      },
-      {
-        id: "schedule-inspection",
-        label: "Schedule Inspection",
-        categories: ["all"],
-      },
-      {
-        id: "download-report-main",
-        label: "Generate Report",
-        categories: ["all"],
-      },
-    ];
-
-    return allTabs
-      .map((tab) => {
-        if (
-          tab.categories.includes("all") ||
-          tab.categories.includes(categoryName)
-        ) {
-          return `<button class="tab-btn" data-tab="${tab.id}">${tab.label}</button>`;
-        }
-        return "";
-      })
-      .join("");
-  }
-
   function hideAllSections() {
     const sections = document.querySelectorAll(".tab-section");
     sections.forEach((section) => {

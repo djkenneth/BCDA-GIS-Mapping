@@ -274,8 +274,6 @@ function handleSiteCheckbox(siteId, isChecked) {
 
 function handleAllCheckbox(isChecked) {
 
-  console.log('handleAllCheckbox');
-  
   // Update all categories
   categories.forEach(category => {
     category.isCheck = isChecked;
@@ -372,9 +370,6 @@ function updateSubcategoryCheckbox(subcategoryId) {
 
 function handleSubcategoryChange(subcategoryId, isChecked) {
   const dropdown = document.getElementById(`subcategory-${subcategoryId}-dropdown`);
-
-  console.log('dropdown', dropdown);
-  
 
   if (!dropdown) return;
   
@@ -562,9 +557,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!checkbox.hasAttribute("data-listener-added")) {
                   checkbox.addEventListener("change", function () {
 
-                    console.log('.sidebar-content');
-                    
-
                     if (
                       window.filterMarkers &&
                       window.updateMarkersForCheckbox
@@ -612,8 +604,6 @@ document.addEventListener("DOMContentLoaded", function () {
       checkboxes.forEach((checkbox) => {
         checkbox.checked = isSelectAll;
 
-        console.log('selectAllButtons');
-        
         if (
           window.filterMarkers &&
           window.updateMarkersForCheckbox

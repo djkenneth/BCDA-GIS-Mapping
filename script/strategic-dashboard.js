@@ -17,13 +17,6 @@ function hideInfrastructureForm() {
     }
 }
 
-function showInfrastructureForm() {
-  if (fullScreenForm) {
-    adjustFormPosition();
-    fullScreenForm.style.display = "block";
-  }
-}
-
 function toggleZoneFilter(element, zone) {
   document.querySelectorAll(".zone-pill").forEach((pill) => {
     pill.classList.remove("active");
@@ -157,7 +150,6 @@ applyFilters = function () {
 };
 
 function toggleFiltersOnMobile() {
-  const filtersSection = document.querySelector(".filters-section");
   const filtersGrid = document.querySelector(".filters-grid");
   const zonePills = document.querySelector(".zone-filter-pills");
 
@@ -169,8 +161,6 @@ function toggleFiltersOnMobile() {
     zonePills.style.justifyContent = "flex-start";
   }
 }
-
-window.showInfrastructureForm = showInfrastructureForm;
 
 window.addEventListener("load", toggleFiltersOnMobile);
 window.addEventListener("resize", toggleFiltersOnMobile);

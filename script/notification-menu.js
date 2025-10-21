@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    const unreadCount = notifications.filter(n => !n.read).length;
+    const unreadCount = window.notificationsData.filter(n => !n.read).length;
     if (unreadCount > 0) {
         const badge = document.createElement('div');
         badge.className = 'notification-badge';
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     notificationBody.className = 'notification-body';
     notificationBody.id = 'style-1';
 
-    if (notifications.length > 0) {
-        notifications.forEach(notification => {
+    if (window.notificationsData.length > 0) {
+        window.notificationsData.forEach(notification => {
             const notificationItem = document.createElement('div');
             notificationItem.className = `notification-item ${notification.read ? 'read' : 'unread'}`;
             

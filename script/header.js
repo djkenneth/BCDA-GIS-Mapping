@@ -113,221 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
     return totalHeight || 284;
   }
 
-  function initializeResponsiveFeatures() {
-    initializeMobileAlerts();
-    initializeMobileEvents();
-    initializeMobileEmergencyContacts();
-  }
-
-  function initializeMobileAlerts() {
-    const mobileAlertsContainer = document.querySelector(
-      "#mobile-alerts-container"
-    );
-    if (!mobileAlertsContainer) return;
-
-    const alerts = [
-      {
-        text: "Road closure: IT Park area",
-        class: "alert-closure",
-        icon: "🚧",
-      },
-      {
-        text: "Weather alert: Heavy rainfall",
-        class: "alert-weather",
-        icon: "🌧️",
-      },
-      {
-        text: "Traffic advisory: Osmeña Blvd",
-        class: "alert-traffic",
-        icon: "🚗",
-      },
-      {
-        text: "Construction: Escario Street",
-        class: "alert-construction",
-        icon: "🔨",
-      },
-      { text: "Accident: Fuente Circle", class: "alert-accident", icon: "⚠️" },
-      { text: "Event traffic: SM City Cebu", class: "alert-event", icon: "🎪" },
-      {
-        text: "Flooding alert: Mabolo area",
-        class: "alert-flooding",
-        icon: "🌊",
-      },
-    ];
-
-    let currentAlertIndex = 0;
-
-    function updateMobileAlerts() {
-      mobileAlertsContainer.innerHTML = "";
-
-      for (let i = 0; i < 3; i++) {
-        const alertIndex = (currentAlertIndex + i) % alerts.length;
-        const alert = alerts[alertIndex];
-
-        const alertItem = document.createElement("div");
-        alertItem.className = `mobile-alert-item ${alert.class}`;
-        alertItem.innerHTML = `
-        <span class="mobile-alert-icon">${alert.icon}</span>
-        <span class="mobile-alert-text">${alert.text}</span>
-      `;
-
-        mobileAlertsContainer.appendChild(alertItem);
-      }
-
-      currentAlertIndex = (currentAlertIndex + 3) % alerts.length;
-    }
-
-    updateMobileAlerts();
-    setInterval(updateMobileAlerts, 5000);
-  }
-
-  function initializeMobileEvents() {
-    const mobileEventsContainer = document.querySelector(
-      ".mobile-events-container"
-    );
-    if (!mobileEventsContainer) return;
-
-    const events = [
-      { text: "Sinulog Festival 2025", date: "Jan 19", icon: "🎉" },
-      { text: "Public Meeting: Budget 2025", date: "Feb 15", icon: "🏛️" },
-      { text: "Community Cleanup Drive", date: "Feb 20", icon: "🧹" },
-      { text: "Health & Wellness Fair", date: "Mar 1-3", icon: "🏥" },
-      { text: "Food Festival at Plaza", date: "Mar 14-16", icon: "🍽️" },
-      { text: "Tech Summit 2025", date: "Apr 5", icon: "💻" },
-      { text: "Environmental Fair", date: "Apr 22", icon: "🌱" },
-      { text: "Barangay Sports Festival", date: "May 1-3", icon: "⚽" },
-    ];
-
-    let currentEventIndex = 0;
-
-    function updateMobileEvents() {
-      mobileEventsContainer.innerHTML = "";
-
-      for (let i = 0; i < 3; i++) {
-        const eventIndex = (currentEventIndex + i) % events.length;
-        const event = events[eventIndex];
-
-        const eventItem = document.createElement("div");
-        eventItem.className = "mobile-event-item";
-        eventItem.innerHTML = `
-        <span class="mobile-event-icon"></span>
-        <div class="mobile-event-content">
-          <span class="mobile-event-text">${event.text}</span>
-          <span class="mobile-event-date">${event.date}</span>
-        </div>
-      `;
-
-        mobileEventsContainer.appendChild(eventItem);
-      }
-
-      currentEventIndex = (currentEventIndex + 3) % events.length;
-    }
-
-    updateMobileEvents();
-    setInterval(updateMobileEvents, 5000);
-  }
-
-  function initializeMobileEmergencyContacts() {
-    const mobileEmergencyGrid = document.querySelector(
-      ".mobile-emergency-grid"
-    );
-    if (!mobileEmergencyGrid) return;
-
-    mobileEmergencyGrid.addEventListener("click", function (e) {
-      const contact = e.target.closest(".mobile-emergency-contact");
-      if (contact) {
-        const number = contact.querySelector(
-          ".mobile-emergency-number"
-        ).textContent;
-        const service = contact.querySelector(
-          ".mobile-emergency-label"
-        ).textContent;
-
-        console.log(`Emergency contact clicked: ${service} - ${number}`);
-
-        contact.style.transform = "scale(0.95)";
-        setTimeout(() => {
-          contact.style.transform = "scale(1)";
-        }, 150);
-      }
-    });
-  }
-
   function initializePublicInformation() {
-    const alerts = [
-      { text: "Construction: Escario Street", class: "alert-construction" },
-      { text: "Road closure: IT Park area", class: "alert-closure" },
-      { text: "Weather alert: Heavy rainfall", class: "alert-weather" },
-      { text: "Traffic advisory: Osmeña Blvd", class: "alert-traffic" },
-      { text: "Accident: Fuente Circle", class: "alert-accident" },
-      { text: "Event traffic: SM City Cebu", class: "alert-event" },
-      { text: "Flooding alert: Mabolo area", class: "alert-flooding" },
-    ];
-
-    const events = [
-      {
-        icon: "S",
-        text: "Sinulog Festival 2025",
-        date: "Jan 19",
-        class: "event-festival",
-        status: "upcoming",
-      },
-      {
-        icon: "M",
-        text: "Public Meeting: Budget 2025",
-        date: "Feb 15",
-        class: "event-meeting",
-        status: "upcoming",
-      },
-      {
-        icon: "C",
-        text: "Community Cleanup Drive",
-        date: "Feb 20",
-        class: "event-community",
-        status: "upcoming",
-      },
-      {
-        icon: "H",
-        text: "Health & Wellness Fair",
-        date: "Mar 1-3",
-        class: "event-health",
-        status: "upcoming",
-      },
-      {
-        icon: "F",
-        text: "Food Festival at Plaza",
-        date: "Mar 14-16",
-        class: "event-ongoing",
-        status: "ongoing",
-      },
-      {
-        icon: "T",
-        text: "Tech Summit 2025",
-        date: "Apr 5",
-        class: "event-tech",
-        status: "upcoming",
-      },
-      {
-        icon: "E",
-        text: "Environmental Fair",
-        date: "Apr 22",
-        class: "event-community",
-        status: "upcoming",
-      },
-      {
-        icon: "B",
-        text: "Barangay Sports Festival",
-        date: "May 1-3",
-        class: "event-ongoing",
-        status: "ongoing",
-      },
-    ];
 
     const alertsContainer = document.querySelector("#alerts-container");
     const eventsContainer = document.querySelector(
       ".city-events-section .events-container"
     );
     const noEventsMessage = document.querySelector(".no-events-message");
+
+    console.log('alertsContainer', alertsContainer);
+    console.log('eventsContainer', eventsContainer);
+    console.log('noEventsMessage', noEventsMessage);
+    
 
     if (!alertsContainer) return;
 
@@ -373,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         alertsContainer.innerHTML = "";
         for (let i = 0; i < 3; i++) {
-          const alertIndex = (currentAlertIndex + i) % alerts.length;
+          const alertIndex = (currentAlertIndex + i) % window.alertsData.length;
           const alert = alerts[alertIndex];
 
           const alertItem = document.createElement("div");
@@ -393,20 +190,20 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 100 * i);
         }
 
-        currentEventIndex = (currentEventIndex + 3) % events.length;
+        currentEventIndex = (currentEventIndex + 3) % window.eventsData.length;
         displayEvents(currentEventIndex);
 
-        currentAlertIndex = (currentAlertIndex + 3) % alerts.length;
+        currentAlertIndex = (currentAlertIndex + 3) % window.alertsData.length;
       }, 300);
     }, 5000);
 
     function displayEvents(startIndex) {
       finalEventsContainer.innerHTML = "";
 
-      const eventsToShow = Math.min(3, events.length);
+      const eventsToShow = Math.min(3, window.eventsData.length);
 
       for (let i = 0; i < eventsToShow; i++) {
-        const eventIndex = (startIndex + i) % events.length;
+        const eventIndex = (startIndex + i) % window.eventsData.length;
         const event = events[eventIndex];
 
         const eventItem = document.createElement("div");
@@ -521,7 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Initialize other components
-  initializeResponsiveFeatures();
   initializePublicInformation();
   initializeEmergencyContacts();
   initializeAppSwitcher();
@@ -615,28 +411,6 @@ function getHeaderHeight() {
 }
 
 function initializeAppSwitcher() {
-  const apps = [
-    {
-      name: "Guardian (UAC)",
-      icon: "guardian-icon.png",
-      url: "https://dict.itbsstudio.com/GUARDIAN/login",
-    },
-    {
-      name: "NERVE",
-      icon: "nerve-icon.png",
-      url: "https://dict.itbsstudio.com/NERVE/MainDashboard",
-    },
-    {
-      name: "LEDGER",
-      icon: "ledger-icon.png",
-      url: "https://dict.itbsstudio.com/LEDGER/login",
-    },
-    {
-      name: "Pulse",
-      icon: "pulse-icon.png",
-      url: "https://dict.itbsstudio.com/PULSE/login",
-    },
-  ];
 
   const switcherIcon = document.getElementById("app-switcher-icon");
   const switcherImg = switcherIcon ? switcherIcon.querySelector("img") : null;
@@ -677,7 +451,7 @@ function initializeAppSwitcher() {
     const list = document.createElement("ul");
     list.className = "app-switcher-list";
 
-    apps.forEach((app) => {
+    window.apps.forEach((app) => {
       const item = document.createElement("li");
       item.className = "app-item";
 
@@ -735,41 +509,6 @@ function initializeAppSwitcher() {
 }
 
 function initializeNotificationMenu() {
-  const notifications = [
-    {
-      id: 1,
-      type: "alert",
-      title: "Traffic Update",
-      message: "Heavy traffic on Osmeña Boulevard due to road construction.",
-      time: "10 minutes ago",
-      read: false,
-    },
-    {
-      id: 2,
-      type: "warning",
-      title: "Weather Advisory",
-      message: "Thunderstorm warning in effect until 6:00 PM today.",
-      time: "30 minutes ago",
-      read: false,
-    },
-    {
-      id: 3,
-      type: "info",
-      title: "Event Reminder",
-      message: "Sinulog Festival parade starts at 9:00 AM tomorrow.",
-      time: "1 hour ago",
-      read: true,
-    },
-    {
-      id: 4,
-      type: "success",
-      title: "Service Update",
-      message: "Water service restored in Lahug area.",
-      time: "2 hours ago",
-      read: true,
-    },
-  ];
-
   const bellIcon = document.getElementById("bell-icon");
   if (!bellIcon) {
     console.error("Bell icon not found!");
@@ -786,7 +525,7 @@ function initializeNotificationMenu() {
     return;
   }
 
-  const unreadCount = notifications.filter((n) => !n.read).length;
+  const unreadCount = window.notificationsData.filter((n) => !n.read).length;
   if (unreadCount > 0) {
     let badge = bellIcon.querySelector(".notification-badge");
     if (!badge) {
@@ -821,8 +560,8 @@ function initializeNotificationMenu() {
   notificationBody.className = "notification-body";
   notificationBody.id = "style-1";
 
-  if (notifications.length > 0) {
-    notifications.forEach((notification) => {
+  if (window.notificationsData.length > 0) {
+    window.notificationsData.forEach((notification) => {
       const notificationItem = document.createElement("div");
       notificationItem.className = `notification-item ${
         notification.read ? "read" : "unread"
@@ -981,26 +720,6 @@ function initializePanelManager() {
   }
 }
 
-// Initialize for streams page specifically
-document.addEventListener("DOMContentLoaded", function () {
-  if (
-    window.location.pathname.includes("/streams") ||
-    window.location.href.includes("/streams.php") ||
-    window.location.href.includes("/streams/")
-  ) {
-    const header = document.querySelector("header");
-    if (header) {
-      header.classList.remove("collapsed");
-      localStorage.removeItem("headerCollapsed");
-
-      setTimeout(() => {
-        window.dispatchEvent(new Event("resize"));
-        adjustStreamsLayout();
-      }, 100);
-    }
-  }
-});
-
 function initializeSearchBar() {
   const searchIcon = document.getElementById("search-icon");
   const searchImg = searchIcon ? searchIcon.querySelector("img") : null;
@@ -1013,6 +732,7 @@ function initializeSearchBar() {
   const headerButtonsContainer = document.querySelector(
     ".header-buttons-container"
   );
+  
   if (!headerButtonsContainer) {
     console.error("Header buttons container not found!");
     return;

@@ -27,42 +27,6 @@ const apps = [
   },
 ];
 
-const notifications = [
-  {
-    id: 1,
-    type: 'alert',
-    title: 'Maintenance Alert',
-    message: 'Scheduled maintenance for Infrastractrue 1 tomorrow at 10:00 AM.',
-    time: '1 hour ago',
-    read: false,
-  },
-  {
-    id: 2,
-    type: 'critical_issues',
-    title: 'Power Fluctuation',
-    message: 'Minor power fluctuations detected at Cebu Infrastractrue 2.',
-    time: '3 hours ago',
-    read: false,
-  },
-  {
-    id: 3,
-    type: 'info',
-    title: 'System Update',
-    message: 'Infrastractrue monitoring system updated to version 2.4.1',
-    time: '1 day ago',
-    read: true,
-  },
-  {
-    id: 4,
-    type: 'success',
-    title: 'Maintenance Complete',
-    message:
-      'Routine maintenance for Cebu Infrastractrue 3 completed successfully.',
-    time: '2 days ago',
-    read: true,
-  },
-];
-
 const siteTechnicalDetails = {
   // Infrastructure
   infrastructure_01: {
@@ -14977,6 +14941,110 @@ const categoryMaintenance = {
   ],
 };
 
+const alertsData = [
+  { text: "Construction: Escario Street", class: "alert-construction" },
+  { text: "Road closure: IT Park area", class: "alert-closure" },
+  { text: "Weather alert: Heavy rainfall", class: "alert-weather" },
+  { text: "Traffic advisory: Osmeña Blvd", class: "alert-traffic" },
+  { text: "Accident: Fuente Circle", class: "alert-accident" },
+  { text: "Event traffic: SM City Cebu", class: "alert-event" },
+  { text: "Flooding alert: Mabolo area", class: "alert-flooding" },
+];
+
+const eventsData = [
+  {
+    icon: "S",
+    text: "Sinulog Festival 2025",
+    date: "Jan 19",
+    class: "event-festival",
+    status: "upcoming",
+  },
+  {
+    icon: "M",
+    text: "Public Meeting: Budget 2025",
+    date: "Feb 15",
+    class: "event-meeting",
+    status: "upcoming",
+  },
+  {
+    icon: "C",
+    text: "Community Cleanup Drive",
+    date: "Feb 20",
+    class: "event-community",
+    status: "upcoming",
+  },
+  {
+    icon: "H",
+    text: "Health & Wellness Fair",
+    date: "Mar 1-3",
+    class: "event-health",
+    status: "upcoming",
+  },
+  {
+    icon: "F",
+    text: "Food Festival at Plaza",
+    date: "Mar 14-16",
+    class: "event-ongoing",
+    status: "ongoing",
+  },
+  {
+    icon: "T",
+    text: "Tech Summit 2025",
+    date: "Apr 5",
+    class: "event-tech",
+    status: "upcoming",
+  },
+  {
+    icon: "E",
+    text: "Environmental Fair",
+    date: "Apr 22",
+    class: "event-community",
+    status: "upcoming",
+  },
+  {
+    icon: "B",
+    text: "Barangay Sports Festival",
+    date: "May 1-3",
+    class: "event-ongoing",
+    status: "ongoing",
+  },
+];
+
+const notificationsData = [
+  {
+    id: 1,
+    type: "alert",
+    title: "Traffic Update",
+    message: "Heavy traffic on Osmeña Boulevard due to road construction.",
+    time: "10 minutes ago",
+    read: false,
+  },
+  {
+    id: 2,
+    type: "warning",
+    title: "Weather Advisory",
+    message: "Thunderstorm warning in effect until 6:00 PM today.",
+    time: "30 minutes ago",
+    read: false,
+  },
+  {
+    id: 3,
+    type: "info",
+    title: "Event Reminder",
+    message: "Sinulog Festival parade starts at 9:00 AM tomorrow.",
+    time: "1 hour ago",
+    read: true,
+  },
+  {
+    id: 4,
+    type: "success",
+    title: "Service Update",
+    message: "Water service restored in Lahug area.",
+    time: "2 hours ago",
+    read: true,
+  },
+];
+
 // ============================================================================
 // WINDOW EXPORTS
 // ============================================================================
@@ -14990,3 +15058,7 @@ window.searchData = searchData;
 window.getCategoryIds = getCategoryIds;
 window.getCategoryMasterCheckboxes = getCategoryMasterCheckboxes;
 window.categoryMaintenance = categoryMaintenance;
+window.apps = apps;
+window.alertsData = alertsData;
+window.eventsData = eventsData;
+window.notificationsData = notificationsData;

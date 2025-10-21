@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const list = document.createElement("ul");
   list.className = "app-switcher-list";
 
-  apps.forEach((app) => {
+  window.apps.forEach((app) => {
     const item = document.createElement("li");
     item.className = "app-item";
 

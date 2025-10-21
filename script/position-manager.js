@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     const headerCollapsed = header && header.classList.contains('collapsed');
     
-    const sidebar = document.querySelector('.sidebar');
     const sidebarContent = document.querySelector('.sidebar-content.visible');
     const sidebarExpanded = sidebarContent !== null;
     
@@ -14,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let topPosition = CONFIG.DESKTOP.TOP;
     let leftPosition = '360px';
 
-    console.log('position manager', leftPosition);
-    
     if (headerCollapsed) {
       topPosition = '20px';
     }
