@@ -1522,9 +1522,9 @@ function initializeSearchBar() {
     if (searchTerm.includes("hospital")) {
       if (
         window.filterMarkers &&
-        window.filterMarkers.updateMarkersForCheckbox
+        window.updateMarkersForCheckbox
       ) {
-        window.filterMarkers.updateMarkersForCheckbox("hospitals", true);
+        window.updateMarkersForCheckbox("hospitals", true);
       }
     } else if (
       searchTerm.includes("transport") ||
@@ -1532,9 +1532,9 @@ function initializeSearchBar() {
     ) {
       if (
         window.filterMarkers &&
-        window.filterMarkers.updateMarkersForCheckbox
+        window.updateMarkersForCheckbox
       ) {
-        window.filterMarkers.updateMarkersForCheckbox("public-transport", true);
+        window.updateMarkersForCheckbox("public-transport", true);
       }
     } else if (
       searchTerm.includes("government") ||
@@ -1542,16 +1542,16 @@ function initializeSearchBar() {
     ) {
       if (
         window.filterMarkers &&
-        window.filterMarkers.updateMarkersForCheckbox
+        window.updateMarkersForCheckbox
       ) {
-        window.filterMarkers.updateMarkersForCheckbox("govt", true);
+        window.updateMarkersForCheckbox("govt", true);
       }
     } else if (searchTerm.includes("wifi") || searchTerm.includes("internet")) {
       if (
         window.filterMarkers &&
-        window.filterMarkers.updateMarkersForCheckbox
+        window.updateMarkersForCheckbox
       ) {
-        window.filterMarkers.updateMarkersForCheckbox("wifi-hotspots", true);
+        window.updateMarkersForCheckbox("wifi-hotspots", true);
       }
     } else if (
       searchTerm.includes("school") ||
@@ -1559,9 +1559,9 @@ function initializeSearchBar() {
     ) {
       if (
         window.filterMarkers &&
-        window.filterMarkers.updateMarkersForCheckbox
+        window.updateMarkersForCheckbox
       ) {
-        window.filterMarkers.updateMarkersForCheckbox("schools", true);
+        window.updateMarkersForCheckbox("schools", true);
       }
     }
   }

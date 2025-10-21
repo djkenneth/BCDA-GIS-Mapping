@@ -1,6 +1,11 @@
 // script/markers.js
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  // ============================================================================
+  // GLOBAL VARIABLES
+  // ============================================================================
+
   let map;
   let markersLayer = [];
   let markersByCategory = {};
@@ -9,7 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let sitePolygons = {};
   let mapSourcesAdded = false;
 
+  // ============================================================================
+  // MAP INITIALIZATION
+  // ============================================================================
+
   async function initializeMap() {
+    const defaultCenter = [120.9842, 14.5995]; // Philippines center
+    const defaultZoom = 6;
+
     // Initialize MapLibre GL map with interaction handlers enabled
     map = await new maplibregl.Map({
       container: "map",
@@ -33,26 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         sky: {},
       },
-      zoom: 7,
-      center: [123.8854, 10.3157], // coordinates [lng, lat]
-      pitch: 0,
-      maxZoom: 18,
-      maxPitch: 85,
-      bearing: 0,
-      interactive: true,
-      scrollZoom: true,
-      boxZoom: true,
-      dragRotate: true,
-      dragPan: true,
-      keyboard: true,
-      doubleClickZoom: true,
-      touchZoomRotate: true,
-      touchPitch: true,
-      cooperativeGestures: false,
-      fadeDuration: 300,
-      preserveDrawingBuffer: false,
-      antialias: false,
-      failIfMajorPerformanceCaveat: false,
+      zoom: defaultZoom,
+      center: defaultCenter,
     });
 
     // Add navigation controls
@@ -73,9 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "bottom-left"
     );
 
-    // Store map globally
-    window.map = map;
-
     map.on("load", function () {
       console.log("MapLibre map loaded successfully");
       mapSourcesAdded = true;
@@ -88,38 +79,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // ============================================================================
+  // MARKER CREATION
+  // ============================================================================
+
   function createMarkers() {
-    if (!mapMarkers || !mapSourcesAdded) {
-      console.warn('createMarkers: mapMarkers or map not ready');
+    if (!categories || !subcategories || !sites || !mapSourcesAdded) {
+      console.warn('createMarkers: Data or map not ready');
       return;
     }
 
-    console.log("Creating markers and polygons with MapLibre GL JS");
-
-    mapMarkers.forEach((category) => {
-      const categoryId = category.id;
-      markersByCategory[categoryId] = {};
-
-      category.sites.forEach((site) => {
-        const subcategory = window.getSubcategoryKey(site.subcategory);
-
-        if (!markersByCategory[categoryId][subcategory]) {
-          markersByCategory[categoryId][subcategory] = [];
-        }
-        
-        // Add polygon if it exists
-        if (site.polygon) {
-          addSitePolygon(site, category);
-        }
-      });
+    // Initialize marker storage by category
+    categories.forEach(category => {
+      markersByCategory[category.id] = {};
     });
-    
+
+    // Create polygons for all sites that have polygon data
+    sites.forEach(site => {
+      if (site.polygon) {
+        addSitePolygon(site);
+      }
+    });
   }
+
+  // ============================================================================
+  // POLYGON MANAGEMENT
+  // ============================================================================
 
   function addSitePolygon(site, category) {
     if (!site.polygon || map.getSource('polygon-' + site.id)) {
       return; // Skip if no polygon or already exists
     }
+
+    const _category = getCategoryById(site.category);
+    const subcategory = getSubcategoryById(site.subcategory);
     
     // Add GeoJSON source for this site's polygon
     map.addSource('polygon-' + site.id, {
@@ -132,10 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         properties: {
           siteId: site.id,
-          siteName: site.name
+          siteName: site.name,
+          category: _category?.name || '',
+          subcategory: subcategory?.title || ''
         }
       }
     });
+
+    const fillColor = subcategory?.color || _category?.displayInfo?.color || '#0d6efd';
 
     // Add fill layer with cursor pointer
     map.addLayer({
@@ -143,10 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
       type: 'fill',
       source: 'polygon-' + site.id,
       layout: {
-        'visibility': 'none'  // ADD THIS LINE
+        'visibility': 'none'
       },
       paint: {
-        'fill-color': '#0d6efd',
+        'fill-color': fillColor,
         'fill-opacity': 0.3
       }
     });
@@ -157,26 +154,31 @@ document.addEventListener("DOMContentLoaded", function () {
       type: 'line',
       source: 'polygon-' + site.id,
       layout: {
-        'visibility': 'none'  // ADD THIS LINE
+        'visibility': 'none'
       },
       paint: {
-        'line-color': '#0d6efd',
+        'line-color': fillColor,
         'line-width': 2
       }
     });
 
-    // ADD CLICK EVENT for polygon fill layer
+    // Add click event for polygon
     map.on('click', 'polygon-fill-' + site.id, function(e) {
-      e.preventDefault();
-      showSiteDetails(site, category);
-      zoomToMarker(site.location);
-    });
-
-    // ADD CLICK EVENT for polygon outline layer
-    map.on('click', 'polygon-outline-' + site.id, function(e) {
-      e.preventDefault();
-      showSiteDetails(site, category);
-      zoomToMarker(site.location);
+      // Zoom to site
+      zoomToSite(site.id);
+      
+      // Show site details
+      showSiteDetails(site, _category, subcategory);
+      
+      // Highlight clicked polygon
+      map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.6);
+      
+      // Reset other polygons
+      Object.keys(sitePolygons).forEach(siteId => {
+        if (siteId !== site.id.toString()) {
+          map.setPaintProperty('polygon-fill-' + siteId, 'fill-opacity', 0.3);
+        }
+      });
     });
 
     // Polygon hover events - show tooltip and highlight
@@ -261,6 +263,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // ============================================================================
+  // CHECKBOX HANDLING
+  // ============================================================================
+
   function calculateLiveFeedPosition() {
     const header = document.querySelector("header");
     const sidebar = document.querySelector(".sidebar");
@@ -283,9 +289,60 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  function showSiteDetails(site, category) {
+  function updateMarkersForCheckbox(checkboxId, isChecked) {
+    console.log('updateMarkersForCheckbox:', checkboxId, isChecked);
+
+    // Handle "All" checkbox
+    if (checkboxId === 'all') {
+      sites.forEach(site => {
+        if (site.polygon) {
+          setPolygonVisibility(site.id, isChecked);
+        }
+      });
+      return;
+    }
+
+    // Handle category checkboxes
+    if (checkboxId.startsWith('category-')) {
+      const categoryId = parseInt(checkboxId.replace('category-', ''));
+      const categorySites = getSitesByCategoryId(categoryId);
+      
+      categorySites.forEach(site => {
+        if (site.polygon) {
+          setPolygonVisibility(site.id, isChecked);
+        }
+      });
+      return;
+    }
+
+    // Handle subcategory checkboxes
+    if (checkboxId.startsWith('subcategory-')) {
+      const subcategoryId = parseInt(checkboxId.replace('subcategory-', ''));
+      const subcategorySites = getSitesBySubcategoryId(subcategoryId);
+      
+      subcategorySites.forEach(site => {
+        if (site.polygon) {
+          setPolygonVisibility(site.id, isChecked);
+        }
+      });
+      return;
+    }
+
+    // Handle individual site checkboxes
+    if (checkboxId.startsWith('site-')) {
+      const siteId = parseInt(checkboxId.replace('site-', ''));
+      setPolygonVisibility(siteId, isChecked);
+      return;
+    }
+  }
+
+  // ============================================================================
+  // SITE DETAILS
+  // ============================================================================
+
+  function showSiteDetails(site, category, subcategory) {
     if (window.showInfoDrawer) {
-      window.showInfoDrawer(site, category);
+      window.showInfoDrawer(site, category, subcategory);
     }
 
     const sideWrapper = document.querySelector(".side-wrapper");
@@ -294,116 +351,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function zoomToMarker(location) {
+  function zoomToSite(siteId) {
+    const site = getSiteById(siteId);
+    if (!site || !site.location) return;
+
     // Convert to [lng, lat] format for MapLibre
-    const lngLat = [location[1], location[0]];
+    const lngLat = [site.location[1], site.location[0]];
     map.easeTo({
       center: lngLat,
       zoom: 15,
       duration: 3000,
     });
+
+    // Show site details
+    const category = getCategoryById(site.category);
+    showSiteDetails(site, category);
   }
 
-  function updateMarkersForCheckbox(checkboxId, isChecked) {
-    const allCategories = Object.keys(markersByCategory);
-    
-    // Handle site-specific checkboxes (individual sites)
-    if (checkboxId.startsWith("site-")) {
-      const siteId = checkboxId.replace("site-", "");
-      setPolygonVisibility(siteId, isChecked);
-      return;
+  // ============================================================================
+  // UTILITY FUNCTIONS
+  // ============================================================================
+
+  function calculateLiveFeedPosition() {
+    const header = document.querySelector("header");
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarContent = document.querySelector(".sidebar-content.visible");
+
+    let topPosition = 248;
+    let leftPosition = 80;
+
+    if (header && header.classList.contains("collapsed")) {
+      topPosition = 20;
     }
 
-    // Build category master checkboxes mapping
-    const categoryMasterCheckboxes = {};
-    const layersContent = document.getElementById('layers-content');
-    if (layersContent) {
-      const categoryItems = layersContent.querySelectorAll('.category-content-section-item');
-      categoryItems.forEach(item => {
-        const input = item.querySelector('input[type="checkbox"]');
-        if (input && input.id) {
-          // ✅ No need to remove prefix, ID is already correct
-          categoryMasterCheckboxes[input.id] = input.id;
-        }
-      });
+    if (sidebarContent) {
+      leftPosition = 380;
     }
 
-    // Handle category master checkboxes (e.g., "all-economic-zone")
-    if (categoryMasterCheckboxes[checkboxId]) {
-      const categoryId = categoryMasterCheckboxes[checkboxId];
-      
-      // Find all sites in this category and toggle their polygon visibility
-      if (window.mapMarkers) {
-        window.mapMarkers.forEach((category) => {
-          if (category.id === categoryId) {
-            category.sites.forEach((site) => {
-              if (site.polygon) {
-                setPolygonVisibility(site.id, isChecked);
-              }
-            });
-          }
-        });
-      }
-      return;
-    }
-
-    // Handle subcategory checkboxes (e.g., "clark-freeport", "bgc-corporate")
-    // This handles both the direct subcategory checkboxes AND checkboxes from dropdowns
-    if (window.mapMarkers) {
-      let foundMatch = false;
-      
-      window.mapMarkers.forEach((category) => {
-        category.sites.forEach((site) => {
-          const subcategory = window.getSubcategoryKey(site.subcategory);
-          
-          // Check if this checkbox matches the site's subcategory
-          if (subcategory === checkboxId && site.polygon) {
-            setPolygonVisibility(site.id, isChecked);
-            foundMatch = true;
-          }
-        });
-      });
-      
-      if (foundMatch) {
-        return;
-      }
-    }
-  }
-
-  function findSiteById(siteId) {
-    let foundSite = null;
-    let foundCategory = null;
-
-    if (mapMarkers) {
-      mapMarkers.forEach((category) => {
-        const site = category.sites.find((s) => s.id === siteId);
-        if (site) {
-          foundSite = site;
-          foundCategory = category;
-        }
-      });
-    }
-
-    return { site: foundSite, category: foundCategory };
-  }
-
-  function zoomToSiteById(siteId) {
-    const { site, category } = findSiteById(siteId);
-
-    if (site && category) {
-      const location = site.location;
-      const lngLat = [location[1], location[0]];
-
-      map.easeTo({
-        center: lngLat,
-        zoom: 15,
-        duration: 2000,
-      });
-
-      return true;
-    }
-
-    return false;
+    return {
+      x: leftPosition,
+      y: topPosition,
+    };
   }
 
   function showPolygonTooltip(e, site) {
@@ -487,15 +475,17 @@ document.addEventListener("DOMContentLoaded", function () {
     polygonTooltip.style.top = top + 'px';
   }
 
-  window.filterMarkers = {
-    updateMarkersForCheckbox,
-  };
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
 
-  window.mapDebug = {
-    calculateLiveFeedPosition,
-    findSiteById,
-    zoomToSiteById,
-  };
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeMap();
+  });
+
+  // ============================================================================
+  // WINDOW EXPORTS
+  // ============================================================================
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
@@ -504,4 +494,16 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     initializeMap();
   }
+
+  window.map = map;
+  window.initializeMap = initializeMap;
+  window.createMarkers = createMarkers;
+  window.updateMarkersForCheckbox = updateMarkersForCheckbox;
+  window.zoomToSite = zoomToSite;
+  window.showSiteDetails = showSiteDetails;
+  window.setPolygonVisibility = setPolygonVisibility;
+  window.mapDebug = {
+    calculateLiveFeedPosition,
+    findSiteById,
+  };
 });

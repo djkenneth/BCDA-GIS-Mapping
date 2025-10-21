@@ -1,5 +1,9 @@
 // script/data.js
 
+// ============================================================================
+// MAIN DATA ARRAYS - NEW STRUCTURE
+// ============================================================================
+
 const apps = [
   {
     name: 'Guardian (UAC)',
@@ -304,7 +308,6 @@ const siteTechnicalDetails = {
     lastInspection: '2025-02-20',
   },
 
-  // Keep existing entries that match mapMarkers
   hospital_01: {
     installationDate: '2015-08-22',
     lastMaintenance: '2025-01-20',
@@ -857,8 +860,6 @@ const siteNetworkInfo = {
     connectedDevices: 65,
     lastUpdate: '2025-05-08 22:45:30',
   },
-
-  // Keep existing entries that match mapMarkers
   hospital_01: {
     status: 'active_locators',
     uptime: '99.98%',
@@ -1006,8 +1007,6 @@ const sitesMaintenanceLogs = {
       followUpRequired: false,
     },
   ],
-
-  // Keep existing entries that match mapMarkers
   hospital_01: [
     {
       date: '2025-01-20',
@@ -14722,34 +14721,25 @@ const sites = [
   },
 ];
 
-const categoryMasterIds = mapMarkers.map((category) => category.id);
-
-const categoryMasterCheckboxes = {
-  all: 'all_categories',
-  ...Object.fromEntries(
-    mapMarkers.map((category) => [category.id, category.id])
-  ),
-};
+// ============================================================================
+// SEARCH DATA
+// ============================================================================
 
 const searchData = {
   quickActions: [],
   categories: {},
 };
 
-// Dynamically generate searchData from mapMarkers
 function generateSearchData() {
-  // Clear existing categories
   searchData.categories = {};
 
-  if (!mapMarkers || mapMarkers.length === 0) {
-    console.warn('mapMarkers not available for searchData generation');
+  if (!categories || categories.length === 0) {
+    console.warn('Categories not available for searchData generation');
     return;
   }
 
-  mapMarkers.forEach((category) => {
-    const categoryKey = category.displayInfo?.title;
-
-    // Convert Font Awesome icon class to SVG (simplified version)
+  categories.forEach((category) => {
+    const categoryKey = category.displayInfo?.title || category.name;
     const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
 
     searchData.categories[categoryKey] = {
@@ -14757,55 +14747,49 @@ function generateSearchData() {
       items: [],
     };
 
-    if (category.sites && category.sites.length > 0) {
-      category.sites.forEach((site) => {
-        searchData.categories[categoryKey].items.push({
-          title: site.name,
-          description:
-            site.description ||
-            `${site.subcategory} - ${category.displayInfo.title}`,
-          distance: '0.5km',
-          siteId: site.id,
-          category: categoryKey,
-          subcategory: site.subcategory.toLowerCase(),
-        });
+    const categorySites = window.getSitesByCategoryId(category.id);
+    
+    categorySites.forEach((site) => {
+      const subcategory = window.getSubcategoryById(site.subcategory);
+      searchData.categories[categoryKey].items.push({
+        title: site.name,
+        description: site.description || `${subcategory?.title || ''} - ${categoryKey}`,
+        distance: '0.5km',
+        siteId: site.id,
+        category: categoryKey,
+        subcategory: subcategory?.title || '',
       });
-    }
+    });
   });
 }
 
-// Helper function to convert subcategory to key (matches infrastructure-cards.js)
-function getSubcategoryKey(subcategory) {
-  // Search through all categories in mapMarkers for matching subcategory
-  for (const category of mapMarkers || []) {
-    if (category.subcategoryConfigs) {
-      // Check if subcategory matches any display title
-      for (const [key, config] of Object.entries(category.subcategoryConfigs)) {
-        if (config.title === subcategory) {
-          return key;
-        }
-      }
-    }
+// Initialize searchData when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  if (categories.length > 0) {
+    generateSearchData();
   }
+});
 
-  // Fallback: convert subcategory to kebab-case
-  return subcategory.toLowerCase().replace(/\s+/g, '-');
+// ============================================================================
+// CATEGORY MASTER DATA
+// ============================================================================
+
+// Get all category IDs
+function getCategoryIds() {
+  return categories.map(cat => cat.id);
 }
 
-// Initialize searchData when mapMarkers is available
-if (typeof mapMarkers !== 'undefined' && mapMarkers.length > 0) {
-  generateSearchData();
-} else {
-  // Wait for mapMarkers to be loaded
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof mapMarkers !== 'undefined' && mapMarkers.length > 0) {
-      generateSearchData();
-    } else {
-      // Set up a listener for when markers are loaded
-      window.addEventListener('cebuCityMarkersLoaded', generateSearchData);
-    }
-  });
+// Category master checkboxes mapping
+function getCategoryMasterCheckboxes() {
+  return {
+    all: 'all_categories',
+    ...Object.fromEntries(categories.map(cat => [cat.id, cat.id]))
+  };
 }
+
+// ============================================================================
+// MAINTENANCE DATA (Category-specific)
+// ============================================================================
 
 // Generate category-specific maintenance examples
 const categoryMaintenance = {
@@ -14992,3 +14976,17 @@ const categoryMaintenance = {
     },
   ],
 };
+
+// ============================================================================
+// WINDOW EXPORTS
+// ============================================================================
+
+// Export to window for global access
+window.categories = categories;
+window.subcategories = subcategories;
+window.sites = sites;
+window.generateSearchData = generateSearchData;
+window.searchData = searchData;
+window.getCategoryIds = getCategoryIds;
+window.getCategoryMasterCheckboxes = getCategoryMasterCheckboxes;
+window.categoryMaintenance = categoryMaintenance;

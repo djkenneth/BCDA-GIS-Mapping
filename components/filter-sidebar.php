@@ -69,44 +69,43 @@
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="economic-zones">
-                    <label for="economic-zones">Economic Zones</label>
+                    <input type="checkbox" id="category-1">
+                    <label for="category-1">Economic Zones</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="locator-management">
-                    <label for="locator-management">Locator Management</label>
-                </div>
-
-            </div>
-
-            <div class="content-section-item category-content-section-item">
-                <div class="flex">
-                    <input type="checkbox" id="infrastructure-projects">
-                    <label for="infrastructure-projects">Infrastructure Projects</label>
+                    <input type="checkbox" id="category-2">
+                    <label for="category-2">Locator Management</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="afp-modernization">
-                    <label for="afp-modernization">AFP Modernization</label>
+                    <input type="checkbox" id="category-3">
+                    <label for="category-3">Infrastructure Projects</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="investment-tracking">
-                    <label for="investment-tracking">Investment Tracking</label>
+                    <input type="checkbox" id="category-4">
+                    <label for="category-4">AFP Modernization</label>
                 </div>
             </div>
 
             <div class="content-section-item category-content-section-item">
                 <div class="flex">
-                    <input type="checkbox" id="sustainability-environment">
-                    <label for="sustainability-environment">Sustainability & Environment</label>
+                    <input type="checkbox" id="category-5">
+                    <label for="category-5">Investment Tracking</label>
+                </div>
+            </div>
+
+            <div class="content-section-item category-content-section-item">
+                <div class="flex">
+                    <input type="checkbox" id="category-6">
+                    <label for="category-6">Sustainability & Environment</label>
                 </div>
             </div>
         </div>
@@ -123,80 +122,80 @@
         
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="clark-freeport">Clark Freeport Zone</label>
-                <span class="site-count" data-count="clark-freeport">0</span>
+                <label for="subcategory-1">Clark Freeport Zone</label>
+                <span class="site-count" data-count="subcategory-1">0</span>
             </div>
-            <div class="sites-dropdown" id="clark-freeport-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="1" id="subcategory-1-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="new-clark-city">New Clark City</label>
-                <span class="site-count" data-count="new-clark-city">0</span>
+                <label for="subcategory-2">New Clark City</label>
+                <span class="site-count" data-count="subcategory-2">0</span>
             </div>
-            <div class="sites-dropdown" id="new-clark-city-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="2" id="subcategory-2-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="bonifacio-global">Bonifacio Global City</label>
-                <span class="site-count" data-count="bonifacio-global">0</span>
+                <label for="subcategory-3">Bonifacio Global City</label>
+                <span class="site-count" data-count="subcategory-3">0</span>
             </div>
-            <div class="sites-dropdown" id="bonifacio-global-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="3" id="subcategory-3-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="mckinley-hill">McKinley Hill</label>
-                <span class="site-count" data-count="mckinley-hill">0</span>
+                <label for="subcategory-4">McKinley Hill</label>
+                <span class="site-count" data-count="subcategory-4">0</span>
             </div>
-            <div class="sites-dropdown" id="mckinley-hill-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="4" id="subcategory-4-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="newport-city">Newport City</label>
-                <span class="site-count" data-count="newport-city">0</span>
+                <label for="subcategory-5">Newport City</label>
+                <span class="site-count" data-count="subcategory-5">0</span>
             </div>
-            <div class="sites-dropdown" id="newport-city-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="5" id="subcategory-5-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="john-hay-zone">John Hay Special Economic Zone</label>
-                <span class="site-count" data-count="john-hay-zone">0</span>
+                <label for="subcategory-6">John Hay Special Economic Zone</label>
+                <span class="site-count" data-count="subcategory-6">0</span>
             </div>
-            <div class="sites-dropdown" id="john-hay-zone-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="6" id="subcategory-6-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="poro-point">Poro Point Freeport Zone</label>
-                <span class="site-count" data-count="poro-point">0</span>
+                <label for="subcategory-7">Poro Point Freeport Zone</label>
+                <span class="site-count" data-count="subcategory-7">0</span>
             </div>
-            <div class="sites-dropdown" id="poro-point-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="7" id="subcategory-7-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="bataan-tech">Bataan Technology Park</label>
-                <span class="site-count" data-count="bataan-tech">0</span>
+                <label for="subcategory-8">Bataan Technology Park</label>
+                <span class="site-count" data-count="subcategory-8">0</span>
             </div>
-            <div class="sites-dropdown" id="bataan-tech-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="8" id="subcategory-8-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
@@ -213,40 +212,40 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="bpo-it-services">BPO & IT Services</label>
-                <span class="site-count" data-count="bpo-it-services">0</span>
+                <label for="subcategory-9">BPO & IT Services</label>
+                <span class="site-count" data-count="subcategory-9">0</span>
             </div>
-            <div class="sites-dropdown" id="bpo-it-services-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="9" id="subcategory-9-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="manufacturing-logistics">Manufacturing & Logistics</label>
-                <span class="site-count" data-count="manufacturing-logistics">0</span>
+                <label for="subcategory-10">Manufacturing & Logistics</label>
+                <span class="site-count" data-count="subcategory-10">0</span>
             </div>
-            <div class="sites-dropdown" id="manufacturing-logistics-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="10" id="subcategory-10-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="government-facilities">Government Facilities</label>
-                <span class="site-count" data-count="government-facilities">0</span>
+                <label for="subcategory-11">Government Facilities</label>
+                <span class="site-count" data-count="subcategory-11">0</span>
             </div>
-            <div class="sites-dropdown" id="government-facilities-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="11" id="subcategory-11-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="tourism-entertainment">Tourism & Entertainment</label>
-                <span class="site-count" data-count="tourism-entertainment">0</span>
+                <label for="subcategory-12">Tourism & Entertainment</label>
+                <span class="site-count" data-count="subcategory-12">0</span>
             </div>
-            <div class="sites-dropdown" id="tourism-entertainment-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="12" id="subcategory-12-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
 
@@ -254,10 +253,10 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="aviation-aerospace">Aviation & Aerospace</label>
-                <span class="site-count" data-count="aviation-aerospace">0</span>
+                <label for="subcategory-13">Aviation & Aerospace</label>
+                <span class="site-count" data-count="subcategory-13">0</span>
             </div>
-            <div class="sites-dropdown" id="aviation-aerospace-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="13" id="subcategory-13-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
@@ -274,60 +273,60 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="sctex-corridor">SCTEX Corridor</label>
-                <span class="site-count" data-count="sctex-corridor">0</span>
+                <label for="subcategory-14">SCTEX Corridor</label>
+                <span class="site-count" data-count="subcategory-14">0</span>
             </div>
-            <div class="sites-dropdown" id="sctex-corridor-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="14" id="subcategory-14-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="clark-airport">Clark International Airport</label>
-                <span class="site-count" data-count="clark-airport">0</span>
+                <label for="subcategory-15">Clark International Airport</label>
+                <span class="site-count" data-count="subcategory-15">0</span>
             </div>
-            <div class="sites-dropdown" id="clark-airport-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="15" id="subcategory-15-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="ns-commuter-railway">North-South Commuter Railway</label>
-                <span class="site-count" data-count="ns-commuter-railway">0</span>
+                <label for="subcategory-16">North-South Commuter Railway</label>
+                <span class="site-count" data-count="subcategory-16">0</span>
             </div>
-            <div class="sites-dropdown" id="ns-commuter-railway-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="16" id="subcategory-16-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="metro-subway">Metro Manila Subway</label>
-                <span class="site-count" data-count="metro-subway">0</span>
+                <label for="subcategory-17">Metro Manila Subway</label>
+                <span class="site-count" data-count="subcategory-17">0</span>
             </div>
-            <div class="sites-dropdown" id="metro-subway-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="17" id="subcategory-17-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="bgc-ortigas-bridge">BGC-Ortigas Link Bridge</label>
-                <span class="site-count" data-count="bgc-ortigas-bridge">0</span>
+                <label for="subcategory-18">BGC-Ortigas Link Bridge</label>
+                <span class="site-count" data-count="subcategory-18">0</span>
             </div>
-            <div class="sites-dropdown" id="bgc-ortigas-bridge-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="18" id="subcategory-18-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="fiber-backbone">National Fiber Backbone</label>
-                <span class="site-count" data-count="fiber-backbone">0</span>
+                <label for="subcategory-19">National Fiber Backbone</label>
+                <span class="site-count" data-count="subcategory-19">0</span>
             </div>
-            <div class="sites-dropdown" id="fiber-backbone-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="19" id="subcategory-19-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
@@ -344,50 +343,50 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="paf-housing">Philippine Air Force Housing</label>
-                <span class="site-count" data-count="paf-housing">0</span>
+                <label for="subcategory-20">Philippine Air Force Housing</label>
+                <span class="site-count" data-count="subcategory-20">0</span>
             </div>
-            <div class="sites-dropdown" id="paf-housing-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="20" id="subcategory-20-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="pmc-hq">Philippine Marine Corps HQ</label>
-                <span class="site-count" data-count="pmc-hq">0</span>
+                <label for="subcategory-21">Philippine Marine Corps HQ</label>
+                <span class="site-count" data-count="subcategory-21">0</span>
             </div>
-            <div class="sites-dropdown" id="pmc-hq-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="21" id="subcategory-21-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="army-support">Army Support Command</label>
-                <span class="site-count" data-count="army-support">0</span>
+                <label for="subcategory-22">Army Support Command</label>
+                <span class="site-count" data-count="subcategory-22">0</span>
             </div>
-            <div class="sites-dropdown" id="army-support-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="22" id="subcategory-22-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="special-service">Special Service Center</label>
-                <span class="site-count" data-count="special-service">0</span>
+                <label for="subcategory-23">Special Service Center</label>
+                <span class="site-count" data-count="subcategory-23">0</span>
             </div>
-            <div class="sites-dropdown" id="special-service-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="23" id="subcategory-23-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="military-replication">Military Replication Projects</label>
-                <span class="site-count" data-count="military-replication">0</span>
+                <label for="subcategory-24">Military Replication Projects</label>
+                <span class="site-count" data-count="subcategory-24">0</span>
             </div>
-            <div class="sites-dropdown" id="military-replication-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="24" id="subcategory-24-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
@@ -404,50 +403,50 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="joint-venture">Joint Venture Projects</label>
-                <span class="site-count" data-count="joint-venture">0</span>
+                <label for="subcategory-25">Joint Venture Projects</label>
+                <span class="site-count" data-count="subcategory-25">0</span>
             </div>
-            <div class="sites-dropdown" id="joint-venture-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="25" id="subcategory-25-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="asset-disposition">Asset Disposition</label>
-                <span class="site-count" data-count="asset-disposition">0</span>
+                <label for="subcategory-26">Asset Disposition</label>
+                <span class="site-count" data-count="subcategory-26">0</span>
             </div>
-            <div class="sites-dropdown" id="asset-disposition-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="26" id="subcategory-26-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="revenue-monitoring">Revenue Monitoring</label>
-                <span class="site-count" data-count="revenue-monitoring">0</span>
+                <label for="subcategory-27">Revenue Monitoring</label>
+                <span class="site-count" data-count="subcategory-27">0</span>
             </div>
-            <div class="sites-dropdown" id="revenue-monitoring-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="27" id="subcategory-27-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="foreign-investments">Foreign Investments</label>
-                <span class="site-count" data-count="foreign-investments">0</span>
+                <label for="subcategory-28">Foreign Investments</label>
+                <span class="site-count" data-count="subcategory-28">0</span>
             </div>
-            <div class="sites-dropdown" id="foreign-investments-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="28" id="subcategory-28-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="ppp-projects">PPP Projects</label>
-                <span class="site-count" data-count="ppp-projects">0</span>
+                <label for="subcategory-29">PPP Projects</label>
+                <span class="site-count" data-count="subcategory-29">0</span>
             </div>
-            <div class="sites-dropdown" id="ppp-projects-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="29" id="subcategory-29-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
@@ -464,60 +463,60 @@
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="environmental-compliance">Environmental Compliance</label>
-                <span class="site-count" data-count="environmental-compliance">0</span>
+                <label for="subcategory-30">Environmental Compliance</label>
+                <span class="site-count" data-count="subcategory-30">0</span>
             </div>
-            <div class="sites-dropdown" id="environmental-compliance-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="30" id="subcategory-30-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="green-building">Green Building Standards</label>
-                <span class="site-count" data-count="green-building">0</span>
+                <label for="subcategory-31">Green Building Standards</label>
+                <span class="site-count" data-count="subcategory-31">0</span>
             </div>
-            <div class="sites-dropdown" id="green-building-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="31" id="subcategory-31-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="waste-management">Waste Management</label>
-                <span class="site-count" data-count="waste-management">0</span>
+                <label for="subcategory-32">Waste Management</label>
+                <span class="site-count" data-count="subcategory-32">0</span>
             </div>
-            <div class="sites-dropdown" id="waste-management-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="32" id="subcategory-32-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="renewable-energy">Renewable Energy</label>
-                <span class="site-count" data-count="renewable-energy">0</span>
+                <label for="subcategory-33">Renewable Energy</label>
+                <span class="site-count" data-count="subcategory-33">0</span>
             </div>
-            <div class="sites-dropdown" id="renewable-energy-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="33" id="subcategory-33-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="carbon-footprint">Carbon Footprint</label>
-                <span class="site-count" data-count="carbon-footprint">0</span>
+                <label for="subcategory-34">Carbon Footprint</label>
+                <span class="site-count" data-count="subcategory-34">0</span>
             </div>
-            <div class="sites-dropdown" id="carbon-footprint-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="34" id="subcategory-34-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="content-section-item">
             <div class="checkbox-flex-container">
-                <label for="biodiversity-protection">Biodiversity Protection</label>
-                <span class="site-count" data-count="biodiversity-protection">0</span>
+                <label for="subcategory-35">Biodiversity Protection</label>
+                <span class="site-count" data-count="subcategory-35">0</span>
             </div>
-            <div class="sites-dropdown" id="biodiversity-protection-dropdown">
+            <div class="sites-dropdown" data-subcategory-id="35" id="subcategory-35-dropdown">
                 <!-- Sites will be populated by JavaScript -->
             </div>
         </div>

@@ -3,11 +3,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   let infrastructureData = {};
 
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
+
   function initializeInfrastructureCards() {
-    // Check if markers data is available
-    if (!mapMarkers) {
-      console.error("markers data not loaded");
-      // Create a retry mechanism
+    if (!window.categories || !window.subcategories || !window.sites) {
+      console.error("Data not loaded");
       setTimeout(() => {
         initializeInfrastructureCards();
       }, 1000);
@@ -17,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     calculateInfrastructureStats();
     renderInfrastructureCards();
   }
+
+  // ============================================================================
+  // STATISTICS CALCULATION
+  // ============================================================================
 
   function calculateInfrastructureStats() {
     try {
@@ -32,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         subcategories: {},
       };
 
-      mapMarkers.forEach((category) => {
+      window.categories.forEach((category) => {
         const categoryStats = {
           activeLocators: 0,
           pendingPermits: 0,
@@ -48,102 +54,78 @@ document.addEventListener("DOMContentLoaded", function () {
           selectedCategories.categories.includes(category.id);
 
         if (shouldIncludeCategory) {
-          category.sites.forEach((site) => {
+          const categorySites = getSitesByCategoryId(category.id);
+          
+          categorySites.forEach((site) => {
+            const subcategoryId = site.subcategory;
             const status = site.status || "active_locators";
 
+            // Initialize subcategory stats if needed
+            if (!categoryStats.subcategories[subcategoryId]) {
+              categoryStats.subcategories[subcategoryId] = {
+                activeLocators: 0,
+                pendingPermits: 0,
+                criticalIssues: 0,
+                infrastructureAssets: 0,
+                availableLots: 0,
+                occupancyRate: 0,
+              };
+            }
+
+            if (!infrastructureData.subcategories[subcategoryId]) {
+              infrastructureData.subcategories[subcategoryId] = {
+                activeLocators: 0,
+                pendingPermits: 0,
+                criticalIssues: 0,
+                infrastructureAssets: 0,
+                availableLots: 0,
+                occupancyRate: 0,
+              };
+            }
+
+            // Update stats based on status
             switch (status) {
               case "active_locators":
                 categoryStats.activeLocators++;
+                categoryStats.subcategories[subcategoryId].activeLocators++;
                 infrastructureData.activeLocators++;
+                infrastructureData.subcategories[subcategoryId].activeLocators++;
                 break;
               case "pending_permits":
                 categoryStats.pendingPermits++;
+                categoryStats.subcategories[subcategoryId].pendingPermits++;
                 infrastructureData.pendingPermits++;
+                infrastructureData.subcategories[subcategoryId].pendingPermits++;
                 break;
               case "critical_issues":
                 categoryStats.criticalIssues++;
+                categoryStats.subcategories[subcategoryId].criticalIssues++;
                 infrastructureData.criticalIssues++;
+                infrastructureData.subcategories[subcategoryId].criticalIssues++;
                 break;
               case "infrastructure_assets":
                 categoryStats.infrastructureAssets++;
+                categoryStats.subcategories[subcategoryId].infrastructureAssets++;
                 infrastructureData.infrastructureAssets++;
+                infrastructureData.subcategories[subcategoryId].infrastructureAssets++;
                 break;
               case "available_lots":
                 categoryStats.availableLots++;
+                categoryStats.subcategories[subcategoryId].availableLots++;
                 infrastructureData.availableLots++;
+                infrastructureData.subcategories[subcategoryId].availableLots++;
                 break;
               case "occupancy_rate":
                 categoryStats.occupancyRate++;
+                categoryStats.subcategories[subcategoryId].occupancyRate++;
                 infrastructureData.occupancyRate++;
+                infrastructureData.subcategories[subcategoryId].occupancyRate++;
                 break;
               default:
                 categoryStats.activeLocators++;
+                categoryStats.subcategories[subcategoryId].activeLocators++;
                 infrastructureData.activeLocators++;
-            }
-
-            const subcategoryKey = getSubcategoryKey(site.subcategory);
-
-            if (!categoryStats.subcategories[subcategoryKey]) {
-              categoryStats.subcategories[subcategoryKey] = {
-                name: site.subcategory,
-                activeLocators: 0,
-                pendingPermits: 0,
-                criticalIssues: 0,
-                infrastructureAssets: 0,
-                availableLots: 0,
-                occupancyRate: 0,
-              };
-            }
-
-            if (!infrastructureData.subcategories[subcategoryKey]) {
-              infrastructureData.subcategories[subcategoryKey] = {
-                name: site.subcategory,
-                activeLocators: 0,
-                pendingPermits: 0,
-                criticalIssues: 0,
-                infrastructureAssets: 0,
-                availableLots: 0,
-                occupancyRate: 0,
-                categoryId: category.id,
-              };
-            }
-
-            switch (status) {
-              case "active_locators":
-                categoryStats.subcategories[subcategoryKey].activeLocators++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .activeLocators++;
-                break;
-              case "pending_permits":
-                categoryStats.subcategories[subcategoryKey].pendingPermits++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .pendingPermits++;
-                break;
-              case "critical_issues":
-                categoryStats.subcategories[subcategoryKey].criticalIssues++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .criticalIssues++;
-                break;
-              case "infrastructure_assets":
-                categoryStats.subcategories[subcategoryKey]
-                  .infrastructureAssets++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .infrastructureAssets++;
-                break;
-              case "available_lots":
-                categoryStats.subcategories[subcategoryKey].availableLots++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .availableLots++;
-                break;
-              case "occupancy_rate":
-                categoryStats.subcategories[subcategoryKey].occupancyRate++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .occupancyRate++;
-                break;
-              default:
-                categoryStats.subcategories[subcategoryKey].activeLocators++;
-                infrastructureData.subcategories[subcategoryKey]
-                  .activeLocators++;
+                infrastructureData.subcategories[subcategoryId].activeLocators++;
             }
           });
         }
@@ -151,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         infrastructureData.categories[category.id] = categoryStats;
       });
 
+      // Calculate occupancy rate
       const totalSites =
         infrastructureData.activeLocators +
         infrastructureData.pendingPermits +
@@ -168,21 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function getSubcategoryKey(subcategory) {
-    for (const category of window.mapMarkers || []) {
-      if (category.subcategoryConfigs) {
-        for (const [key, config] of Object.entries(
-          category.subcategoryConfigs
-        )) {
-          if (config.title === subcategory) {
-            return key;
-          }
-        }
-      }
-    }
-
-    return subcategory.toLowerCase().replace(/\s+/g, "-");
-  }
+  // ============================================================================
+  // RENDERING
+  // ============================================================================
 
   function renderInfrastructureCards() {
     const cardsWrapper = document.getElementById("infra-cards-wrapper");
@@ -272,27 +243,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
   }
 
-  function findCategoryById(categoryId) {
-    return mapMarkers?.find((cat) => cat.id === categoryId) || null;
-  }
-
-  function getCategoryDisplayName(categoryId) {
-    const category = findCategoryById(categoryId);
-    return category?.displayInfo?.title || categoryId;
-  }
-
-  function getSubcategoryDisplayName(subcategoryKey) {
-    for (const category of mapMarkers || []) {
-      const subcategoryConfig = category.subcategoryConfigs?.[subcategoryKey];
-      if (subcategoryConfig) {
-        return subcategoryConfig.title;
-      }
-    }
-
-    return subcategoryKey
-      .replace(/-/g, " ")
-      .replace(/\b\w/g, (l) => l.toUpperCase());
-  }
+  // ============================================================================
+  // MODAL FUNCTIONS
+  // ============================================================================
 
   function getSelectedCategories() {
     try {
@@ -307,37 +260,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const selectedCategories = [];
 
-      const categoryMasterCheckboxes =
-        window.filterSidebar?.categoryMasterCheckboxes || {};
-
-      Object.entries(categoryMasterCheckboxes).forEach(
-        ([checkboxId, categoryId]) => {
-          if (checkboxId !== "all") {
-            const checkbox = document.getElementById(checkboxId);
-            if (checkbox && checkbox.checked) {
-              selectedCategories.push(categoryId);
-            }
-          }
+      window.categories.forEach(category => {
+        const checkbox = document.getElementById(`category-${category.id}`);
+        if (checkbox && checkbox.checked) {
+          selectedCategories.push(category.id);
         }
-      );
+      });
 
-      if (selectedCategories.length === 0 && window.mapMarkers) {
-        const hasAnyChecked = window.mapMarkers.some((category) => {
-          if (category.subcategoryConfigs) {
-            return Object.keys(category.subcategoryConfigs).some(
-              (subcategoryKey) => {
-                const checkbox = document.getElementById(subcategoryKey);
-                return checkbox && checkbox.checked;
-              }
-            );
-          }
-          return false;
+      // If no categories selected but some subcategories are checked
+      if (selectedCategories.length === 0) {
+        const hasAnyChecked = window.subcategories.some(subcategory => {
+          const checkbox = document.getElementById(`subcategory-${subcategory.id}`);
+          return checkbox && checkbox.checked;
         });
 
         if (hasAnyChecked) {
           return {
             showAll: false,
-            categories: window.mapMarkers.map((cat) => cat.id),
+            categories: window.categories.map(cat => cat.id),
           };
         }
       }
@@ -354,33 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     }
   }
-
-  function safeInitialization() {
-    try {
-      if (mapMarkers) {
-        initializeInfrastructureCards();
-      } else {
-        window.addEventListener(
-          "cebuCityMarkersLoaded",
-          initializeInfrastructureCards
-        );
-
-        setTimeout(() => {
-          if (!mapMarkers) {
-            console.warn(
-              "Timeout waiting for markers data, attempting initialization anyway"
-            );
-            mapMarkers = mapMarkers || [];
-            initializeInfrastructureCards();
-          }
-        }, 2000); // 5 second timeout
-      }
-    } catch (error) {
-      console.error("Error during initialization:", error);
-    }
-  }
-
-  safeInitialization();
 
   window.infrastructureCards = {
     update: function () {
@@ -557,20 +470,20 @@ document.addEventListener("DOMContentLoaded", function () {
       if (categoryFilter) {
         modalTitle = `${
           filter.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase())
-        } Sites in ${getCategoryDisplayName(categoryFilter)}`;
-        sites = getSitesByStatusAndCategory(filter, categoryFilter);
+        } Sites in ${window.getCategoryDisplayName(categoryFilter)}`;
+        sites = window.getSitesByStatusAndCategory(filter, categoryFilter);
       } else {
         modalTitle = `${
           filter.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase())
         } Sites`;
-        sites = getAllSitesByStatus(filter);
+        sites = window.getAllSitesByStatus(filter);
       }
     } else if (subcategory) {
-      modalTitle = getSubcategoryDisplayName(subcategory);
-      sites = getSitesBySubcategory(subcategory);
+      modalTitle = window.getSubcategoryDisplayName(subcategory);
+      sites = window.utils.getSitesBySubcategory(subcategory);
     } else {
-      modalTitle = getCategoryDisplayName(category);
-      sites = getSitesByCategory(category);
+      modalTitle = window.getCategoryDisplayName(category);
+      sites = window.getSitesByCategoryId(category);
     }
 
     title.textContent = modalTitle;
@@ -583,8 +496,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const sitesBySubcategory = {};
     sites.forEach((site) => {
-      const subcategoryKey = getSubcategoryKey(site.subcategory);
-      const subcategoryName = site.subcategory;
+      const subcategoryKey = site.subcategory;
+      const subcategory = window.getSubcategoryById(site.subcategory);
+      const subcategoryName = subcategory?.title || 'Unknown';
       
       if (!sitesBySubcategory[subcategoryKey]) {
         sitesBySubcategory[subcategoryKey] = {
@@ -606,12 +520,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sitesBySubcategory[b].name
       );
     });
+    
+    sortedSubcategories.forEach(_subcategoryKey => {
+      const subcategoryData = sitesBySubcategory[_subcategoryKey];
+      const collapseId = `collapse-${_subcategoryKey}`;
+      
 
-    sortedSubcategories.forEach((subcategoryKey) => {
-      const subcategoryData = sitesBySubcategory[subcategoryKey];
-      const collapseId = `collapse-${subcategoryKey}`;
-
-      const subcategoryDisplayName = getSubcategoryDisplayName(subcategoryKey);
+      const subcategoryDisplayName = window.utils.getSubcategoryDisplayName(_subcategoryKey);
 
       sitesHTML += `
         <div class="subcategory-section">
@@ -622,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <span class="subcategory-count">(${subcategoryData.count})</span>
             </h4>
           </div>
-          <div class="sites-grid collapsible-content" id="${collapseId}">
+        <div class="sites-grid collapsible-content" id="${collapseId}">
       `;
 
       subcategoryData.sites.forEach((site) => {
@@ -631,9 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="site-item ${statusClass}" data-site-id="${site.id}">
             <div class="site-header">
               <div class="site-name">${site.name}</div>
-              <div class="site-status ${statusClass}">${
-          site.status || "active"
-        }</div>
+              <div class="site-status ${statusClass}">${site.status || "active"}</div>
             </div>
             <div class="site-details">
               <div class="site-subcategory">${subcategoryDisplayName}</div>
@@ -658,16 +571,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const siteItems = content.querySelectorAll(".site-item");
     siteItems.forEach((item) => {
       item.addEventListener("click", function () {
-        const siteId = this.getAttribute("data-site-id");
-        const site = findSiteById(siteId);
-        if (site && window.showInfoDrawer) {
-          const category = findCategoryBySiteId(siteId);
-          window.showInfoDrawer(site, category);
+        const siteId = parseInt(this.getAttribute("data-site-id"));
+        const site = window.findSiteById(siteId);
 
-          if (window.mapDebug && window.mapDebug.zoomToSiteById) {
-            window.mapDebug.zoomToSiteById(site.id);
+        if (site) {
+          const category = window.findCategoryBySiteId(siteId);
+          const subcategory = getSubcategoryById(site.subcategory);
+          
+          // Show info drawer
+          if (window.showInfoDrawer) {
+            window.showInfoDrawer(site, category, subcategory);
           }
-
+          
+          // Zoom to site location
+          if (window.zoomToSite) {
+            window.zoomToSite(siteId);
+          }
+          
+          // Show polygon if site has polygon data
+          if (site.polygon && window.setPolygonVisibility) {
+            window.setPolygonVisibility(siteId, true);
+          }
+          
+          // Close modal
           modal.style.display = "none";
         }
       });
@@ -691,45 +617,6 @@ document.addEventListener("DOMContentLoaded", function () {
     addOrganizedSitesModalStyles();
   }
 
-  function getSitesByStatusAndCategory(status, categoryId) {
-    let sites = [];
-
-    if (!mapMarkers) return sites;
-
-    const category = mapMarkers.find((cat) => cat.id === categoryId);
-    if (!category) return sites;
-
-    category.sites.forEach((site) => {
-      if (status === "total" || site.status === status) {
-        sites.push({
-          ...site,
-          categoryName: category.category,
-        });
-      }
-    });
-
-    return sites;
-  }
-
-  function getSitesBySubcategory(subcategoryKey) {
-    let sites = [];
-
-    if (!mapMarkers) return sites;
-
-    mapMarkers.forEach((category) => {
-      category.sites.forEach((site) => {
-        if (getSubcategoryKey(site.subcategory) === subcategoryKey) {
-          sites.push({
-            ...site,
-            categoryName: category.category,
-          });
-        }
-      });
-    });
-
-    return sites;
-  }
-
   function addOrganizedSitesModalStyles() {
     if (!document.getElementById("organized-sites-modal-styles")) {
       const style = document.createElement("style");
@@ -739,60 +626,55 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function getAllSitesByStatus(status) {
-    let sites = [];
-
-    if (!mapMarkers) return sites;
-
-    mapMarkers.forEach((category) => {
-      category.sites.forEach((site) => {
-        if (status === "total" || site.status === status) {
-          sites.push({
-            ...site,
-            categoryName: category.category,
-          });
-        }
-      });
-    });
-
-    return sites;
-  }
-
-  function getSitesByCategory(categoryId) {
-    if (!mapMarkers) return [];
-
-    const category = mapMarkers.find((cat) => cat.id === categoryId);
-    return category ? category.sites : [];
-  }
-
-  function findSiteById(siteId) {
-    if (!mapMarkers) return null;
-
-    for (const category of mapMarkers) {
-      for (const site of category.sites) {
-        if (site.id === siteId) {
-          return site;
-        }
-      }
-    }
-    return null;
-  }
-
-  function findCategoryBySiteId(siteId) {
-    if (!mapMarkers) return null;
-
-    for (const category of mapMarkers) {
-      if (category.sites.some((site) => site.id === siteId)) {
-        return category;
-      }
-    }
-    return null;
-  }
+  // ============================================================================
+  // HELPER FUNCTIONS
+  // ============================================================================
 
   function updateInfrastructureCards() {
     calculateInfrastructureStats();
     renderInfrastructureCards();
   }
+
+  // ============================================================================
+  // EVENT LISTENERS
+  // ============================================================================
+
+  // Listen for checkbox changes
+  document.addEventListener("change", function (e) {
+    if (e.target.type === "checkbox" && e.target.closest(".sidebar-content")) {
+      setTimeout(updateInfrastructureCards, 100);
+    }
+  });
+
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
+
+  function safeInitialization() {
+    try {
+      if (window.categories || window.subcategories || window.sites) {
+        initializeInfrastructureCards();
+      } else {
+        window.addEventListener(
+          "markersLoaded",
+          initializeInfrastructureCards
+        );
+
+        setTimeout(() => {
+          if (!window.categories || !window.subcategories || !window.sites) {
+            console.warn(
+              "Timeout waiting for markers data, attempting initialization anyway"
+            );
+            initializeInfrastructureCards();
+          }
+        }, 2000); // 5 second timeout
+      }
+    } catch (error) {
+      console.error("Error during initialization:", error);
+    }
+  }
+
+  safeInitialization();
 
   const observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
@@ -887,16 +769,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (mapMarkers) {
+  if (window.categories || window.subcategories || window.sites) {
     initializeInfrastructureCards();
   } else {
     window.addEventListener("load", initializeInfrastructureCards);
   }
 
+  // ============================================================================
+  // WINDOW EXPORTS
+  // ============================================================================
+
   window.infrastructureCards = {
-    update: updateInfrastructureCards,
     getData: () => infrastructureData,
   };
 
-  window.getSubcategoryKey = getSubcategoryKey;
+  window.updateInfrastructureCards = updateInfrastructureCards;
 });

@@ -1,7 +1,7 @@
 // script/info-drawer.js
 
 document.addEventListener("DOMContentLoaded", function () {
-  function showInfoDrawer(site, category) {
+  function showInfoDrawer(site, category, subcategory) {
     const drawer = document.getElementById("info-drawer");
     const drawerContent = document.getElementById("drawer-content");
     const sideWrapper = document.querySelector(".side-wrapper");
@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    const subCategoryTitle = category.subcategoryConfigs[site.subcategory].title;
-
     drawerContent.innerHTML = `
       <div class="site-details-section">
         <div class="site-details-header">${site.name}</div>
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="site-details-grid">
           <div class="site-detail-row">
             <span class="site-detail-label">Category:</span>
-            <span class="site-detail-value">${category.displayInfo.title}</span>
+            <span class="site-detail-value">${category.title}</span>
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Zone Type:</span>
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Subcategory:</span>
-            <span class="site-detail-value">${subCategoryTitle}</span>
+            <span class="site-detail-value">${subcategory?.title}</span>
           </div>
           <div class="site-detail-row">
             <span class="site-detail-label">Status:</span>

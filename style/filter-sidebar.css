@@ -480,6 +480,10 @@
   margin-bottom: 0 !important;
 }
 
+.sites-dropdown .dropdown-item {
+  background-color: transparent;
+} 
+
 .content-section-item:hover {
   background-color: transparent;
 }
