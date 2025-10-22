@@ -232,33 +232,6 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(10);
     doc.setTextColor(20, 20, 20);
 
-    // const maintenanceData = getCategoryMaintenanceData(category.displayInfo.title, site);
-
-    // maintenanceData.forEach((item, index) => {
-    //   if (yPosition > 250) {
-    //     doc.addPage();
-    //     yPosition = 20;
-    //   }
-
-    //   doc.setFont("helvetica", "bold");
-    //   doc.text(`${item.date} - ${item.type}`, 20, yPosition + index * 20);
-    //   doc.setFont("helvetica", "normal");
-    //   doc.text(
-    //     `Technician: ${item.technician}`,
-    //     20,
-    //     yPosition + index * 20 + 5
-    //   );
-    //   doc.text(`Duration: ${item.duration}`, 20, yPosition + index * 20 + 10);
-
-    //   const findingsLines = doc.splitTextToSize(
-    //     `Findings: ${item.findings}`,
-    //     160
-    //   );
-    //   doc.text(findingsLines, 20, yPosition + index * 20 + 15);
-    // });
-
-    // yPosition += maintenanceData.length * 20 + 20;
-
     // Strategic Recommendations Section
     if (yPosition > 180) {
       doc.addPage();

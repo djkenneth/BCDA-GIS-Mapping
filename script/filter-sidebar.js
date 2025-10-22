@@ -427,7 +427,6 @@ function handleSubcategoryChange(subcategoryId, isChecked) {
   const dropdown = document.getElementById(`subcategory-${subcategoryId}-dropdown`);
   if (!dropdown) return;
   
-  console.log('handleSubcategoryChange', subcategoryId, isChecked);
   
   const siteCheckboxes = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]');
   siteCheckboxes.forEach(checkbox => {
@@ -702,16 +701,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================================
 
   document.addEventListener('DOMContentLoaded', function() {
-    // Wait for data to be available
+    // Wait for data to be available from database or static source
     function initializeSidebar() {
-      if (typeof categories === 'undefined' || typeof subcategories === 'undefined' || typeof sites === 'undefined') {
-        setTimeout(initializeSidebar, 100);
-        return;
+      if (window.BCDADatabase && window.BCDADatabase.isInitialized()) {
+        // Data is ready from database
+        if (window.categories && window.subcategories && window.sites) {
+          setupDropdownToggles();
+          setupCheckboxListeners();
+          populateSiteDropdowns();
+        } else {
+          // Wait for dataReady event
+          window.addEventListener('dataReady', function() {
+            setupDropdownToggles();
+            setupCheckboxListeners();
+            populateSiteDropdowns();
+          }, { once: true });
+        }
+      } else {
+        // Fallback to polling if database not initialized
+        if (typeof categories === 'undefined' || typeof subcategories === 'undefined' || typeof sites === 'undefined') {
+          setTimeout(initializeSidebar, 100);
+          return;
+        }
+        setupDropdownToggles();
+        setupCheckboxListeners();
+        populateSiteDropdowns();
       }
-
-      setupDropdownToggles();
-      setupCheckboxListeners();
-      populateSiteDropdowns();
     }
 
     initializeSidebar();

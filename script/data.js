@@ -15800,6 +15800,63 @@ const notificationsData = [
 ];
 
 // ============================================================================
+// DATABASE INTEGRATION
+// ============================================================================
+
+// Initialize database and load/save data
+(async function initializeDatabase() {
+  try {
+    // Initialize database
+    await window.BCDADatabase.initDB();
+    console.log('Database initialized successfully');
+
+    // Check if data exists in IndexedDB
+    const hasExistingData = await window.BCDADatabase.hasData();
+
+    if (hasExistingData) {
+      // Load data from IndexedDB
+      console.log('Loading data from IndexedDB...');
+      const loadedData = await window.BCDADatabase.loadAllData();
+
+      // Update window objects with loaded data
+      window.categories = loadedData.categories;
+      window.subcategories = loadedData.subcategories;
+      window.sites = loadedData.sites;
+      window.polygons = loadedData.polygons;
+      window.searchData = loadedData.searchData;
+      window.apps = loadedData.apps;
+      window.alertsData = loadedData.alerts;
+      window.eventsData = loadedData.events;
+      window.notificationsData = loadedData.notifications;
+
+      console.log('Data loaded from IndexedDB successfully');
+    } else {
+      // First time - save current static data to IndexedDB
+      console.log('No existing data found. Saving static data to IndexedDB...');
+      await window.BCDADatabase.saveAllStaticData({
+        categories,
+        subcategories,
+        sites,
+        polygons,
+        searchData,
+        apps,
+        alertsData,
+        eventsData,
+        notificationsData,
+      });
+      console.log('Static data saved to IndexedDB');
+    }
+
+    // Dispatch event to signal data is ready
+    window.dispatchEvent(new CustomEvent('dataReady'));
+  } catch (error) {
+    console.error('Database initialization error:', error);
+    // Continue with static data if database fails
+    window.dispatchEvent(new CustomEvent('dataReady'));
+  }
+})();
+
+// ============================================================================
 // WINDOW EXPORTS
 // ============================================================================
 

@@ -421,6 +421,57 @@ function validateAllData() {
 }
 
 // ============================================================================
+// DATABASE HELPERS
+// ============================================================================
+
+async function saveCurrentStateToDatabase() {
+  if (!window.BCDADatabase) return;
+  
+  try {
+    await window.BCDADatabase.saveAllStaticData({
+      categories: window.categories,
+      subcategories: window.subcategories,
+      sites: window.sites,
+      polygons: window.polygons,
+      searchData: window.searchData,
+      apps: window.apps,
+      alertsData: window.alertsData,
+      eventsData: window.eventsData,
+      notificationsData: window.notificationsData,
+    });
+    console.log('Current state saved to database');
+    return true;
+  } catch (error) {
+    console.error('Error saving to database:', error);
+    return false;
+  }
+}
+
+async function refreshDataFromDatabase() {
+  if (!window.BCDADatabase) return false;
+  
+  try {
+    const loadedData = await window.BCDADatabase.loadAllData();
+    
+    window.categories = loadedData.categories;
+    window.subcategories = loadedData.subcategories;
+    window.sites = loadedData.sites;
+    window.polygons = loadedData.polygons;
+    window.searchData = loadedData.searchData;
+    window.apps = loadedData.apps;
+    window.alertsData = loadedData.alerts;
+    window.eventsData = loadedData.events;
+    window.notificationsData = loadedData.notifications;
+    
+    console.log('Data refreshed from database');
+    return true;
+  } catch (error) {
+    console.error('Error refreshing from database:', error);
+    return false;
+  }
+}
+
+// ============================================================================
 // WINDOW EXPORTS
 // ============================================================================
 
@@ -477,6 +528,10 @@ window.utils = {
   
   // Debugging
   logDataSummary,
+
+  // Database helpers
+  saveCurrentStateToDatabase,
+  refreshDataFromDatabase,
 };
 
 window.getAllSitesByStatus = getAllSitesByStatus;

@@ -433,21 +433,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // INITIALIZATION
   // ============================================================================
 
-  document.addEventListener("DOMContentLoaded", function () {
-    initializeMap();
-  });
+  function initializeMapWhenReady() {
+    // Wait for data to be ready from database or static source
+    if (window.BCDADatabase && window.BCDADatabase.isInitialized()) {
+      initializeMap();
+    } else {
+      // Listen for dataReady event from data.js
+      window.addEventListener('dataReady', function() {
+        console.log('Data ready event received, initializing map...');
+        initializeMap();
+      }, { once: true });
+    }
+  }
+
+  // Start initialization
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeMapWhenReady);
+  } else {
+    initializeMapWhenReady();
+  }
 
   // ============================================================================
   // WINDOW EXPORTS
   // ============================================================================
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      initializeMap();
-    });
-  } else {
-    initializeMap();
-  }
 
   window.map = map;
   window.initializeMap = initializeMap;

@@ -55,9 +55,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js?t=<?php echo time(); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>]
 
-    <script src="script/config.js"></script>
+    <script src="script/db.js"></script>
+    <script src="script/data.js"></script>
     <script src="script/utils.js"></script>
-    <script src="script/data.js?t=<?php echo time(); ?>"></script>
+    <script src="script/config.js"></script>
     <script src="script/marker-manager.js?t=<?php echo time(); ?>"></script>
     <script src="script/markers.js?t=<?php echo time(); ?>"></script>
     <script src="script/charts.js?t=<?php echo time(); ?>"></script>

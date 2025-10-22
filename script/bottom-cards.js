@@ -653,25 +653,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function safeInitialization() {
     try {
-      if (window.categories || window.subcategories || window.sites) {
+      if (window.BCDADatabase && window.BCDADatabase.isInitialized()) {
+        // Wait for dataReady event from database
+        window.addEventListener('dataReady', function() {
+          console.log('Data ready for infrastructure cards');
+          initializeInfrastructureCards();
+        }, { once: true });
+      } else if (window.categories || window.subcategories || window.sites) {
+        // Data already available
         initializeInfrastructureCards();
       } else {
-        window.addEventListener(
-          "markersLoaded",
-          initializeInfrastructureCards
-        );
+        // Fallback listener
+        window.addEventListener('markersLoaded', initializeInfrastructureCards);
 
         setTimeout(() => {
           if (!window.categories || !window.subcategories || !window.sites) {
-            console.warn(
-              "Timeout waiting for markers data, attempting initialization anyway"
-            );
+            console.warn('Timeout waiting for markers data, attempting initialization anyway');
             initializeInfrastructureCards();
           }
-        }, 2000); // 5 second timeout
+        }, 2000);
       }
     } catch (error) {
-      console.error("Error during initialization:", error);
+      console.error('Error during initialization:', error);
     }
   }
 
