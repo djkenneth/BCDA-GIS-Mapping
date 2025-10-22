@@ -100,6 +100,11 @@ function getFullSiteData(siteId) {
   };
 }
 
+// Get polygon by site ID
+function getPolygonBySiteId(siteId) {
+  return window.polygons?.find(p => p.site === siteId) || null;
+}
+
 // ============================================================================
 // CHECKBOX STATE MANAGEMENT
 // ============================================================================
@@ -428,6 +433,7 @@ window.utils = {
   getSitesByCategoryId,
   getSitesBySubcategoryId,
   getSiteById,
+  getPolygonBySiteId,
   getCategoryForSite,
   getSubcategoryForSite,
   getFullSiteData,
@@ -477,3 +483,4 @@ window.getAllSitesByStatus = getAllSitesByStatus;
 window.getSitesByStatusAndCategory = getSitesByStatusAndCategory;
 window.findCategoryBySiteId = findCategoryBySiteId;
 window.findSiteById = findSiteById;
+window.getPolygonBySiteId = getPolygonBySiteId;

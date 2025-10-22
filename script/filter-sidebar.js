@@ -10,6 +10,48 @@ const CATEGORY_MASTER_IDS = [1, 2, 3, 4, 5, 6];
 // FUNCTIONS
 // ============================================================================
 
+/**
+ * Create and setup "All" checkbox with event listener
+ * @param {string} containerId - ID of the parent container
+ * @param {string} checkboxId - ID for the checkbox
+ * @param {number} targetId - Category or Subcategory ID
+ * @param {Function} changeHandler - Handler function when checkbox changes
+ * @returns {HTMLElement} - The created allItem element
+ */
+function createAllCheckbox(containerId, checkboxId, targetId, changeHandler) {
+  const allItem = document.createElement('div');
+  allItem.className = 'dropdown-item all-sites-item';
+  allItem.innerHTML = `
+    <input type="checkbox" id="${checkboxId}" data-target="${targetId}">
+    <label for="${checkboxId}">All</label>
+  `;
+
+  const allCheckbox = allItem.querySelector(`#${checkboxId}`);
+  if (allCheckbox && changeHandler) {
+    allCheckbox.addEventListener('change', function() {
+      changeHandler(targetId, this.checked);
+    });
+  }
+
+  return allItem;
+}
+
+/**
+ * Update the state of an "All" checkbox based on children
+ * @param {HTMLElement} allCheckbox - The "All" checkbox element
+ * @param {NodeList} childCheckboxes - Array of child checkboxes
+ */
+function updateAllCheckboxState(allCheckbox, childCheckboxes) {
+  if (!allCheckbox || !childCheckboxes.length) return;
+
+  const checkboxArray = Array.from(childCheckboxes);
+  const allChecked = checkboxArray.every(cb => cb.checked);
+  const someChecked = checkboxArray.some(cb => cb.checked);
+
+  allCheckbox.checked = allChecked;
+  allCheckbox.indeterminate = someChecked && !allChecked;
+}
+
 function populateSiteDropdowns() {
   if (typeof subcategories === 'undefined' || typeof sites === 'undefined') {
     console.log('Data not available, retrying...');
@@ -32,12 +74,18 @@ function populateSiteDropdowns() {
       dropdown.innerHTML = '';
 
       // Add "All" option
-      const allItem = document.createElement('div');
-      allItem.className = 'dropdown-item all-sites-item';
-      allItem.innerHTML = `
-        <input type="checkbox" id="subcategory-${subcategoryId}-all" data-subcategory="${subcategoryId}">
-        <label for="subcategory-${subcategoryId}-all">All</label>
-      `;
+      // const allItem = document.createElement('div');
+      // allItem.className = 'dropdown-item all-sites-item';
+      // allItem.innerHTML = `
+      //   <input type="checkbox" id="subcategory-${subcategoryId}-all" data-subcategory="${subcategoryId}">
+      //   <label for="subcategory-${subcategoryId}-all">All</label>
+      // `;
+      const allItem = createAllCheckbox(
+        dropdownId,
+        `subcategory-${subcategoryId}-all`,
+        subcategoryId,
+        handleSubcategoryChange
+      );
       dropdown.appendChild(allItem);
 
       // Add search input
@@ -109,14 +157,9 @@ function populateSiteDropdowns() {
             updateCategoryCheckboxState(subcategory.categoryId);
           }
 
-          // Update "All" checkbox state in dropdown
-          const allChecked = Array.from(siteCheckboxes).every(checkbox => checkbox.checked);
-          const someChecked = Array.from(siteCheckboxes).some(checkbox => checkbox.checked);
-
-          if (allCheckbox) {
-            allCheckbox.checked = allChecked;
-            allCheckbox.indeterminate = someChecked && !allChecked;
-          }
+          // ✅ Update "All" checkbox state in dropdown using reusable function
+          const allCheckbox = dropdown.querySelector(`#subcategory-${subcategoryId}-all`);
+          updateAllCheckboxState(allCheckbox, siteCheckboxes);
         });
       });
     }
@@ -153,7 +196,7 @@ function handleCategoryCheckbox(categoryId, isChecked) {
   const category = getCategoryById(categoryId);
   if (!category) return;
 
-  console.log('handleCategoryCheckbox');
+  console.log('handleCategoryCheckbox', categoryId, isChecked);
 
   // Update category state
   category.isCheck = isChecked;
@@ -169,23 +212,30 @@ function handleCategoryCheckbox(categoryId, isChecked) {
       subcategoryCheckbox.checked = isChecked;
     }
 
+    // ✅ Update dropdown "All" checkbox
+    const dropdownAllCheckbox = document.getElementById(`subcategory-${subcategory.id}-all`);
+    if (dropdownAllCheckbox) {
+      dropdownAllCheckbox.checked = isChecked;
+      dropdownAllCheckbox.indeterminate = false;
+    }
+
     // Update all sites in this subcategory
     const subcategorySites = getSitesBySubcategoryId(subcategory.id);
     subcategorySites.forEach(site => {
       site.isCheck = isChecked;
       
-      // Update site checkbox
+      // Update site checkbox in dropdown
       const siteCheckbox = document.getElementById(`site-${site.id}`);
       if (siteCheckbox) {
         siteCheckbox.checked = isChecked;
       }
+
+      // ✅ CRITICAL: Update each site's polygon visibility individually
+      if (window.updateMarkersForCheckbox) {
+        window.updateMarkersForCheckbox(`site-${site.id}`, isChecked);
+      }
     });
   });
-
-  // Trigger marker update
-  if (window.updateMarkersForCheckbox) {
-    window.updateMarkersForCheckbox(`category-${categoryId}`, isChecked);
-  }
 }
 
 function updateCategoryCheckboxState(categoryId) {
@@ -209,6 +259,8 @@ function handleSubcategoryCheckbox(subcategoryId, isChecked) {
   const subcategory = getSubcategoryById(subcategoryId);
   if (!subcategory) return;
 
+  console.log('handleSubcategoryCheckbox', subcategoryId, isChecked);
+
   // Update subcategory state
   subcategory.isCheck = isChecked;
 
@@ -222,15 +274,17 @@ function handleSubcategoryCheckbox(subcategoryId, isChecked) {
     if (siteCheckbox) {
       siteCheckbox.checked = isChecked;
     }
+
+    // ✅ CRITICAL: Update each site's polygon visibility individually
+    if (window.updateMarkersForCheckbox) {
+      window.updateMarkersForCheckbox(`site-${site.id}`, isChecked);
+    }
   });
 
   // Update parent category checkbox state
   updateCategoryCheckboxState(subcategory.categoryId);
 
-  // Trigger marker update
-  if (window.updateMarkersForCheckbox) {
-    window.updateMarkersForCheckbox(`subcategory-${subcategoryId}`, isChecked);
-  }
+  // ✅ No need for subcategory-level marker update since we updated each site individually
 }
 
 function updateSubcategoryCheckboxState(subcategoryId) {
@@ -273,6 +327,7 @@ function handleSiteCheckbox(siteId, isChecked) {
 }
 
 function handleAllCheckbox(isChecked) {
+  console.log('handleAllCheckbox', handleAllCheckbox);
 
   // Update all categories
   categories.forEach(category => {
@@ -370,14 +425,33 @@ function updateSubcategoryCheckbox(subcategoryId) {
 
 function handleSubcategoryChange(subcategoryId, isChecked) {
   const dropdown = document.getElementById(`subcategory-${subcategoryId}-dropdown`);
-
   if (!dropdown) return;
   
-  const siteCheckboxes = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]:not(.all-sites-item input[type="checkbox"])');
+  console.log('handleSubcategoryChange', subcategoryId, isChecked);
+  
+  const siteCheckboxes = dropdown.querySelectorAll('.site-dropdown-item input[type="checkbox"]');
   siteCheckboxes.forEach(checkbox => {
     checkbox.checked = isChecked;
-    window.updateMarkersForCheckbox(checkbox.id, isChecked);
+    
+    // Update site state in data
+    const siteId = parseInt(checkbox.dataset.siteId);
+    const site = getSiteById(siteId);
+    if (site) {
+      site.isCheck = isChecked;
+    }
+    
+    // ✅ CRITICAL: Update each site's polygon visibility individually
+    if (window.updateMarkersForCheckbox) {
+      window.updateMarkersForCheckbox(`site-${siteId}`, isChecked);
+    }
   });
+
+  // Update parent subcategory state
+  const subcategory = getSubcategoryById(subcategoryId);
+  if (subcategory) {
+    subcategory.isCheck = isChecked;
+    updateCategoryCheckboxState(subcategory.categoryId);
+  }
 }
 
 function filterSitesInDropdown(searchTerm, dropdown) {

@@ -83,21 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // MARKER CREATION
   // ============================================================================
 
-  function createMarkers() {
-    if (!categories || !subcategories || !sites || !mapSourcesAdded) {
+  function createMarkers() {    
+    if (!window.categories || !window.subcategories || !window.sites || !window.polygons || !mapSourcesAdded) {
       console.warn('createMarkers: Data or map not ready');
       return;
     }
 
     // Initialize marker storage by category
-    categories.forEach(category => {
+    window.categories.forEach(category => {
       markersByCategory[category.id] = {};
     });
 
     // Create polygons for all sites that have polygon data
-    sites.forEach(site => {
-      if (site.polygon) {
-        addSitePolygon(site);
+    window.polygons.forEach(polygonData => {
+      const site = getSiteById(polygonData.site);
+      if (site && polygonData.polygon) {
+        addSitePolygon(site, polygonData.polygon);
       }
     });
   }
@@ -106,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // POLYGON MANAGEMENT
   // ============================================================================
 
-  function addSitePolygon(site, category) {
-    if (!site.polygon || map.getSource('polygon-' + site.id)) {
+  function addSitePolygon(site, polygonCoordinates) {
+    if (!polygonCoordinates || map.getSource('polygon-' + site.id)) {
       return; // Skip if no polygon or already exists
     }
 
@@ -121,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         type: 'Feature',
         geometry: {
           type: 'Polygon',
-          coordinates: [site.polygon]
+          coordinates: [polygonCoordinates]
         },
         properties: {
           siteId: site.id,
@@ -164,13 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event for polygon
     map.on('click', 'polygon-fill-' + site.id, function(e) {
-      // Zoom to site
       zoomToSite(site.id);
-      
-      // Show site details
       showSiteDetails(site, _category, subcategory);
-      
-      // Highlight clicked polygon
       map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.6);
       
       // Reset other polygons
@@ -181,28 +177,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Polygon hover events - show tooltip and highlight
+    // Polygon hover events
     map.on('mouseenter', 'polygon-fill-' + site.id, function(e) {
       map.getCanvas().style.cursor = 'pointer';
-      
-      // Highlight polygon
       map.setPaintProperty('polygon-fill-' + site.id, 'fill-color', '#0056d8ff');
       map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.5);
       map.setPaintProperty('polygon-outline-' + site.id, 'line-width', 3);
-      
-      // Show tooltip
       showPolygonTooltip(e, site);
     });
 
     map.on('mouseleave', 'polygon-fill-' + site.id, function() {
       map.getCanvas().style.cursor = '';
-      
-      // Remove highlight
       map.setPaintProperty('polygon-fill-' + site.id, 'fill-color', '#0d6efd');
       map.setPaintProperty('polygon-fill-' + site.id, 'fill-opacity', 0.3);
       map.setPaintProperty('polygon-outline-' + site.id, 'line-width', 2);
-      
-      // Hide tooltip
       hidePolygonTooltip();
     });
 
@@ -212,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    sitePolygons[site.id] = { site, category };
+    sitePolygons[site.id] = { site, _category };
   }
 
   function setPolygonVisibility(siteId, isVisible) {
@@ -264,12 +252,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMarkersForCheckbox(checkboxId, isChecked) {
+
     // Handle "All" checkbox
     if (checkboxId === 'all') {
-      sites.forEach(site => {
-        if (site.polygon) {
-          setPolygonVisibility(site.id, isChecked);
-        }
+      window.polygons.forEach(polygonData => {
+        setPolygonVisibility(polygonData.site, isChecked);
       });
       return;
     }
@@ -277,12 +264,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle category checkboxes
     if (checkboxId.startsWith('category-')) {
       const categoryId = parseInt(checkboxId.replace('category-', ''));
-      const categorySites = getSitesByCategoryId(categoryId);
+      const categoryPolygons = window.polygons.filter(p => p.category === categoryId);
       
-      categorySites.forEach(site => {
-        if (site.polygon) {
-          setPolygonVisibility(site.id, isChecked);
-        }
+      categoryPolygons.forEach(polygonData => {
+        setPolygonVisibility(polygonData.site, isChecked);
       });
       return;
     }
@@ -290,12 +275,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle subcategory checkboxes
     if (checkboxId.startsWith('subcategory-')) {
       const subcategoryId = parseInt(checkboxId.replace('subcategory-', ''));
-      const subcategorySites = getSitesBySubcategoryId(subcategoryId);
+      const subcategoryPolygons = window.polygons.filter(p => p.subcategory === subcategoryId);
       
-      subcategorySites.forEach(site => {
-        if (site.polygon) {
-          setPolygonVisibility(site.id, isChecked);
-        }
+      subcategoryPolygons.forEach(polygonData => {
+        setPolygonVisibility(polygonData.site, isChecked);
       });
       return;
     }

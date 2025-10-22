@@ -589,7 +589,8 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           
           // Show polygon if site has polygon data
-          if (site.polygon && window.setPolygonVisibility) {
+          const polygonData = getPolygonBySiteId(siteId);
+          if (polygonData && window.setPolygonVisibility) {
             window.setPolygonVisibility(siteId, true);
           }
           

@@ -121,11 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const noEventsMessage = document.querySelector(".no-events-message");
 
-    console.log('alertsContainer', alertsContainer);
-    console.log('eventsContainer', eventsContainer);
-    console.log('noEventsMessage', noEventsMessage);
-    
-
     if (!alertsContainer) return;
 
     if (!eventsContainer) {
@@ -171,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alertsContainer.innerHTML = "";
         for (let i = 0; i < 3; i++) {
           const alertIndex = (currentAlertIndex + i) % window.alertsData.length;
-          const alert = alerts[alertIndex];
+          const alert = window.alertsData[alertIndex];
 
           const alertItem = document.createElement("div");
           alertItem.className = `alert-item ${alert.class}`;
@@ -204,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       for (let i = 0; i < eventsToShow; i++) {
         const eventIndex = (startIndex + i) % window.eventsData.length;
-        const event = events[eventIndex];
+        const event = window.eventsData[eventIndex];
 
         const eventItem = document.createElement("div");
         eventItem.className = `event-item ${event.class}`;
