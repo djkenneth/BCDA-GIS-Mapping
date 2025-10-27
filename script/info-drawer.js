@@ -84,34 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
 
-      <div class="detail-section">
-        <div id="download-report-content">
-          <h4>Generate Comprehensive Report</h4>
-          <p>Generate a detailed  executive report for <strong>${
-            site.name
-          }</strong> including all technical specifications, performance analytics, maintenance history, and strategic recommendations.</p>
-          
-          <div class="report-preview-section" style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
-            <h5>Report Contents:</h5>
-            <ul style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
-              <li>Site Information & Classification</li>
-              <li>${getCategorySpecificReportSections(
-                category.category
-              ).join("</li><li>")}</li>
-              <li>Strategic Recommendations</li>
-            </ul>
-          </div>
-          
-          <div class="site-actions">
-            <div class="site-actions-row">
-              <button class="btn-primary" id="direct-generate-report-btn">
-                <span style="margin-right: 8px;"></span>Generate Executive Report
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      ${showGenerateReportTab(category, site)}
     `;
+
+    setupTabEventListeners();
 
     deviceChannel.innerHTML = site.id
 

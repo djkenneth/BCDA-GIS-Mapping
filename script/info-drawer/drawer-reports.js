@@ -21,14 +21,14 @@ function downloadPDFReport(site, category) {
     // Set document properties
     doc.setProperties({
       title: `${site.name} - Infrastructure Report`,
-      subject: `${category.displayInfo.title} Executive Report`,
+      subject: `${category.title} Executive Report`,
       author: "Department of Finance Management System",
-      keywords: `infrastructure, ${category.displayInfo.title}, site report`,
+      keywords: `infrastructure, ${category.title}, site report`,
       creator: "Dashboard System",
     });
 
     // Category-specific colors
-    let headerColor = getCategoryColor(category.displayInfo.title);
+    let headerColor = getCategoryColor(category.title);
 
     // Header Section
     doc.setFillColor(headerColor[0], headerColor[1], headerColor[2]);
@@ -40,7 +40,7 @@ function downloadPDFReport(site, category) {
     doc.text("EXECUTIVE REPORT", 105, 20, { align: "center" });
 
     doc.setFontSize(12);
-    doc.text(`${category.displayInfo.title} Analysis`, 105, 26, { align: "center" });
+    doc.text(`${category.title} Analysis`, 105, 26, { align: "center" });
 
     let yPosition = 45;
 
@@ -60,19 +60,13 @@ function downloadPDFReport(site, category) {
 
     // Basic site information with enhanced formatting
     const basicInfo = [
-      [`Site Name:`, site.name],
-      [`Category:`, category.displayInfo.title],
-      [`Subcategory:`, site.subcategory],
-      [
-        `Current Status:`,
-        site.status.charAt(0).toUpperCase() + site.status.slice(1),
-      ],
-      [
-        `Geographic Location:`,
-        `${site.location[0].toFixed(6)}, ${site.location[1].toFixed(6)}`,
-      ],
-      [`Site Identifier:`, site.id],
-      [`Report Generated:`, `${dateStr} at ${timeStr}`],
+      [`Site Name:`, site.name || 'N/A'],
+      [`Category:`, category.title || 'N/A'],
+      [`Subcategory:`, site.subcategory.toString() || 'N/A'],
+      [`Current Status:`, site.status ? site.status.charAt(0).toUpperCase() + site.status.slice(1) : 'N/A'],
+      [`Geographic Location:`, `${site.location[0].toFixed(6)}, ${site.location[1].toFixed(6)}`],
+      [`Site Identifier:`, site.id.toString() || 'N/A'],
+      [`Report Generated:`, `${dateStr} at ${timeStr}`]
     ];
 
     basicInfo.forEach(([label, value], index) => {
@@ -114,7 +108,7 @@ function downloadPDFReport(site, category) {
     }
 
     const categorySpecificData = getCategorySpecificPDFData(
-      category.displayInfo.title,
+      category.title,
       site
     );
 
@@ -149,6 +143,7 @@ function downloadPDFReport(site, category) {
     });
 
     let rightYPosition = yPosition;
+
     rightColumn.forEach(([label, value], index) => {
       if (rightYPosition + index * 7 > 270) {
         doc.addPage();
@@ -178,7 +173,7 @@ function downloadPDFReport(site, category) {
     doc.setTextColor(20, 20, 20);
 
     const performanceMetrics = getCategoryPerformanceMetrics(
-      category.displayInfo.title,
+      category.title,
       site
     );
 
@@ -247,7 +242,7 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(10);
     doc.setTextColor(20, 20, 20);
 
-    const recommendations = getCategoryRecommendations(category.displayInfo.title, site);
+    const recommendations = getCategoryRecommendations(category.title, site);
 
     recommendations.forEach((rec, index) => {
       if (yPosition > 270) {
@@ -275,7 +270,7 @@ function downloadPDFReport(site, category) {
     doc.setFontSize(11);
     doc.setTextColor(20, 20, 20);
 
-    const executiveSummary = getExecutiveSummary(category.displayInfo.title, site);
+    const executiveSummary = getExecutiveSummary(category.title, site);
     const summaryLines = doc.splitTextToSize(executiveSummary, 175);
     doc.text(summaryLines, 20, yPosition);
 
@@ -295,7 +290,7 @@ function downloadPDFReport(site, category) {
       // Add classification footer
       doc.setFontSize(7);
       doc.text(
-        `OFFICIAL USE - ${category.displayInfo.title.toUpperCase()} INFRASTRUCTURE REPORT`,
+        `OFFICIAL USE - ${category.title.toUpperCase()} INFRASTRUCTURE REPORT`,
         105,
         292,
         { align: "center" }
@@ -304,7 +299,7 @@ function downloadPDFReport(site, category) {
 
     // Save the PDF with enhanced filename
     const sanitizedSiteName = site.name.replace(/[^a-zA-Z0-9]/g, "_");
-    const sanitizedCategory = category.displayInfo.title.replace(/[^a-zA-Z0-9]/g, "_");
+    const sanitizedCategory = category.title.replace(/[^a-zA-Z0-9]/g, "_");
     const filename = `${
       site.id
     }_${sanitizedSiteName}_${sanitizedCategory}_Executive_Report_${
@@ -791,7 +786,7 @@ function getCategorySpecificPDFData(categoryName, site) {
         technicalTitle: "TECHNICAL SPECIFICATIONS",
         technicalDetails: [
           ["Installation Date:", technicalDetails.installationDate || "N/A"],
-          ["System Type:", site.subcategory || "General Infrastructure"],
+          ["System Type:", site.subcategory.toString() || "General Infrastructure"],
           ["Last Maintenance:", technicalDetails.lastMaintenance || "N/A"],
           ["Coverage Area:", technicalDetails.coverageArea || "N/A"],
           ["Operating Schedule:", technicalDetails.operatingHours || "N/A"],
@@ -1058,5 +1053,183 @@ function loadDownloadReportContent(site, category) {
         }, 800);
       });
     }
+  }
+}
+
+// Add report tab content
+function showGenerateReportTab(category, site) {
+  return `
+    <div class="report-tabs-container">
+      <div class="report-tab-buttons">
+        <button class="report-tab-btn active" data-report-tab="comprehensive">Comprehensive Report</button>
+        <button class="report-tab-btn" data-report-tab="financial">SIOE Financial Summary</button>
+        <button class="report-tab-btn" data-report-tab="lease">Land Lease Information</button>
+        <button class="report-tab-btn" data-report-tab="appraisal">Appraisal of Land/Property</button>
+        <button class="report-tab-btn" data-report-tab="reports">Generate Report</button>
+      </div>
+
+      <div class="report-tab-content">
+        <!-- Comprehensive Report Tab -->
+        <div class="report-tab-section active" data-report-content="comprehensive">
+          <div class="report-section">
+            <h3 style="margin-bottom: 15px;">Generate Comprehensive Report</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">
+              Generate a detailed executive report for <strong>${site.name}</strong> including all technical specifications,
+              performance analytics, maintenance history, and strategic recommendations.
+            </p>
+
+            <div class="report-contents" style="margin-bottom: 20px;">
+              <h4 style="font-size: 14px; margin-bottom: 12px;">Report Contents:</h4>
+              <ul style="color: rgba(255, 255, 255, 0.8); padding-left: 20px; line-height: 1.8;">
+                <li>Site Information & Classification</li>
+                <li>Structural Engineering Specifications</li>
+                <li>Infrastructure Performance Metrics</li>
+                <li>System Status & Connectivity</li>
+                <li>Maintenance & Inspection Records</li>
+                <li>Strategic Recommendations</li>
+              </ul>
+            </div>
+
+            <button class="generate-executive-report-btn" id="generate-comprehensive-report" 
+                    style="background-color: #39B54A; width: 100%;">
+              <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>
+              Generate Executive Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Financial Summary Tab -->
+        <div class="report-tab-section" data-report-content="financial">
+          <div class="report-section">
+            <h3 style="margin-bottom: 15px;">SIOE Financial Summary</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px !important;">
+              Generate financial summary report for <strong>${site.name}</strong>.
+            </p>
+            <button class="generate-executive-report-btn" style="background-color: #39B54A; width: 100%;">
+              <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>
+              Generate Financial Summary
+            </button>
+          </div>
+        </div>
+
+        <!-- Land Lease Tab -->
+        <div class="report-tab-section" data-report-content="lease">
+          <div class="report-section">
+            <h3 style="margin-bottom: 15px;">Land Lease Information</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px !important;">
+              Generate land lease information report for <strong>${site.name}</strong>.
+            </p>
+            <button class="generate-executive-report-btn" style="background-color: #39B54A; width: 100%;">
+              <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>
+              Generate Lease Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Appraisal Tab -->
+        <div class="report-tab-section" data-report-content="appraisal">
+          <div class="report-section">
+            <h3 style="margin-bottom: 15px;">Appraisal of Land/Property</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px !important;">
+              Generate property appraisal report for <strong>${site.name}</strong>.
+            </p>
+            <button class="generate-executive-report-btn" style="background-color: #39B54A; width: 100%;">
+              <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>
+              Generate Appraisal Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Generate Report Tab -->
+        <div class="report-tab-section" data-report-content="reports">
+          <div id="download-report-content">
+            <h4>Generate Comprehensive Report</h4>
+            <p>Generate a detailed  executive report for <strong>${
+              site.name
+            }</strong> including all technical specifications, performance analytics, maintenance history, and strategic recommendations.</p>
+            
+            <div class="report-preview-section" style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+              <h5>Report Contents:</h5>
+              <ul style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
+                <li>Site Information & Classification</li>
+                <li>${getCategorySpecificReportSections(
+                  category.category
+                ).join("</li><li>")}</li>
+                <li>Strategic Recommendations</li>
+              </ul>
+            </div>
+            
+            <div class="site-actions">
+              <div class="site-actions-row">
+                <button class="btn-primary" id="direct-generate-report-btn">
+                  <span style="margin-right: 8px;"></span>Generate Executive Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Setup tab event listeners
+function setupTabEventListeners() {
+  // Main drawer tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const tabName = this.getAttribute('data-tab');
+      
+      // Remove active from all tabs
+      tabBtns.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Add active to clicked tab
+      this.classList.add('active');
+      const targetSection = document.querySelector(`[data-tab-content="${tabName}"]`);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+    });
+  });
+
+  // Report sub-tabs
+  const reportTabBtns = document.querySelectorAll('.report-tab-btn');
+  reportTabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const reportTab = this.getAttribute('data-report-tab');
+      
+      // Remove active from all report tabs
+      reportTabBtns.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.report-tab-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Add active to clicked report tab
+      this.classList.add('active');
+      const targetSection = document.querySelector(`[data-report-content="${reportTab}"]`);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+    });
+  });
+
+  // Comprehensive report button
+  const comprehensiveReportBtn = document.getElementById('generate-comprehensive-report');
+  if (comprehensiveReportBtn) {
+    comprehensiveReportBtn.addEventListener('click', function() {
+      const drawer = document.getElementById('info-drawer');
+      const siteId = drawer.getAttribute('data-site-id');
+      if (siteId && typeof generateSiteReport === 'function') {
+        const site = window.getSiteById(siteId);
+        const category = window.getCategoryForSite(site);
+        if (site && category) {
+          generateSiteReport(site, category);
+        }
+      }
+    });
   }
 }

@@ -52,7 +52,7 @@
     
     <!-- MapLibre GL JS JavaScript -->
     <script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js?t=<?php echo time(); ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>]
 
     <script src="script/db.js"></script>
@@ -83,9 +83,8 @@
     <script src="script/bottom-cards.js?t=<?php echo time(); ?>"></script>
     <script src="script/index.js?t=<?php echo time(); ?>"></script>
 
-    <script 
-src="https://eassist.aitbs.com.ph/plugins/eassist.js?apiKey=sk_avKlYy9jCXtSpomWAA4GJkWd">
-</script>
+    <script src="https://eassist.aitbs.com.ph/plugins/eassist.js?apiKey=sk_avKlYy9jCXtSpomWAA4GJkWd">
+    </script>
 </body>
 
 </html>
