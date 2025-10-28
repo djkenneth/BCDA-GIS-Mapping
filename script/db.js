@@ -235,26 +235,58 @@
                 return;
             }
 
+            // Validate input
+            if (!Array.isArray(dataArray)) {
+                console.warn(`bulkPutData: dataArray is not an array for ${storeName}`);
+                resolve(0);
+                return;
+            }
+
+            if (dataArray.length === 0) {
+                console.log(`bulkPutData: Empty array for ${storeName}`);
+                resolve(0);
+                return;
+            }
+
             const transaction = db.transaction([storeName], 'readwrite');
             const store = transaction.objectStore(storeName);
             let count = 0;
+            let errorCount = 0;
 
             transaction.oncomplete = () => {
-                console.log(`Successfully saved ${count} items to ${storeName}`);
+                console.log(`✓ Successfully saved ${count} items to ${storeName}${errorCount > 0 ? ` (${errorCount} errors)` : ''}`);
                 resolve(count);
             };
 
             transaction.onerror = () => {
-                console.error(
-                    `Bulk insert failed for ${storeName}:`,
-                    transaction.error
-                );
+                console.error(`✗ Bulk insert failed for ${storeName}:`, transaction.error);
                 reject(transaction.error);
             };
 
-            Array.isArray(dataArray) ?? dataArray.forEach((item) => {
-                const request = store.put(item);
-                request.onsuccess = () => count++;
+            transaction.onabort = () => {
+                console.error(`✗ Transaction aborted for ${storeName}`);
+                reject(new Error('Transaction aborted'));
+            };
+
+            // Process each item - THIS IS THE FIX!
+            dataArray.forEach((item, index) => {
+                try {
+                    const request = store.put(item);
+                    
+                    request.onsuccess = () => {
+                        count++;
+                    };
+                    
+                    request.onerror = (event) => {
+                        errorCount++;
+                        console.error(`Error saving item ${index} to ${storeName}:`, event.target.error, item);
+                        // Prevent propagation to allow transaction to continue
+                        event.preventDefault();
+                    };
+                } catch (error) {
+                    errorCount++;
+                    console.error(`Exception processing item ${index} for ${storeName}:`, error, item);
+                }
             });
         });
     }
@@ -279,25 +311,25 @@
         return bulkPutData(STORES.POLYGONS, polygons);
     }
 
-    function saveSearchData(searchData) {
-        return bulkPutData(STORES.SEARCH_DATA, searchData);
-    }
+    // function saveSearchData(searchData) {
+    //     return bulkPutData(STORES.SEARCH_DATA, searchData);
+    // }
 
-    function saveApps(apps) {
-        return bulkPutData(STORES.APPS, apps);
-    }
+    // function saveApps(apps) {
+    //     return bulkPutData(STORES.APPS, apps);
+    // }
 
-    function saveAlerts(alerts) {
-        return bulkPutData(STORES.ALERTS, alerts);
-    }
+    // function saveAlerts(alerts) {
+    //     return bulkPutData(STORES.ALERTS, alerts);
+    // }
 
-    function saveEvents(events) {
-        return bulkPutData(STORES.EVENTS, events);
-    }
+    // function saveEvents(events) {
+    //     return bulkPutData(STORES.EVENTS, events);
+    // }
 
-    function saveNotifications(notifications) {
-        return bulkPutData(STORES.NOTIFICATIONS, notifications);
-    }
+    // function saveNotifications(notifications) {
+    //     return bulkPutData(STORES.NOTIFICATIONS, notifications);
+    // }
 
     // ============================================================================
     // LOAD ALL DATA FROM INDEXEDDB
@@ -365,19 +397,19 @@
                 staticData.polygons
                     ? savePolygons(staticData.polygons)
                     : Promise.resolve(0),
-                staticData.searchData
-                    ? saveSearchData(staticData.searchData)
-                    : Promise.resolve(0),
-                staticData.apps ? saveApps(staticData.apps) : Promise.resolve(0),
-                staticData.alertsData
-                    ? saveAlerts(staticData.alertsData)
-                    : Promise.resolve(0),
-                staticData.eventsData
-                    ? saveEvents(staticData.eventsData)
-                    : Promise.resolve(0),
-                staticData.notificationsData
-                    ? saveNotifications(staticData.notificationsData)
-                    : Promise.resolve(0),
+                // staticData.searchData
+                //     ? saveSearchData(staticData.searchData)
+                //     : Promise.resolve(0),
+                // staticData.apps ? saveApps(staticData.apps) : Promise.resolve(0),
+                // staticData.alertsData
+                //     ? saveAlerts(staticData.alertsData)
+                //     : Promise.resolve(0),
+                // staticData.eventsData
+                //     ? saveEvents(staticData.eventsData)
+                //     : Promise.resolve(0),
+                // staticData.notificationsData
+                //     ? saveNotifications(staticData.notificationsData)
+                //     : Promise.resolve(0),
             ]);
 
             // Save metadata about last update
@@ -544,11 +576,11 @@
         saveSubcategories,
         saveSites,
         savePolygons,
-        saveSearchData,
-        saveApps,
-        saveAlerts,
-        saveEvents,
-        saveNotifications,
+        // saveSearchData,
+        // saveApps,
+        // saveAlerts,
+        // saveEvents,
+        // saveNotifications,
 
         // Load operations
         loadAllData,

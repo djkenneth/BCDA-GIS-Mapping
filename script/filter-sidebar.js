@@ -73,13 +73,6 @@ function populateSiteDropdowns() {
       // Populate dropdown
       dropdown.innerHTML = '';
 
-      // Add "All" option
-      // const allItem = document.createElement('div');
-      // allItem.className = 'dropdown-item all-sites-item';
-      // allItem.innerHTML = `
-      //   <input type="checkbox" id="subcategory-${subcategoryId}-all" data-subcategory="${subcategoryId}">
-      //   <label for="subcategory-${subcategoryId}-all">All</label>
-      // `;
       const allItem = createAllCheckbox(
         dropdownId,
         `subcategory-${subcategoryId}-all`,
@@ -196,8 +189,6 @@ function handleCategoryCheckbox(categoryId, isChecked) {
   const category = getCategoryById(categoryId);
   if (!category) return;
 
-  console.log('handleCategoryCheckbox', categoryId, isChecked);
-
   // Update category state
   category.isCheck = isChecked;
 
@@ -259,8 +250,6 @@ function handleSubcategoryCheckbox(subcategoryId, isChecked) {
   const subcategory = getSubcategoryById(subcategoryId);
   if (!subcategory) return;
 
-  console.log('handleSubcategoryCheckbox', subcategoryId, isChecked);
-
   // Update subcategory state
   subcategory.isCheck = isChecked;
 
@@ -308,9 +297,6 @@ function handleSiteCheckbox(siteId, isChecked) {
   const site = getSiteById(siteId);
   if (!site) return;
 
-  console.log('handleSiteCheckbox');
-  
-
   // Update site state
   site.isCheck = isChecked;
 
@@ -327,8 +313,6 @@ function handleSiteCheckbox(siteId, isChecked) {
 }
 
 function handleAllCheckbox(isChecked) {
-  console.log('handleAllCheckbox', handleAllCheckbox);
-
   // Update all categories
   categories.forEach(category => {
     category.isCheck = isChecked;
@@ -700,37 +684,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // INITIALIZATION
   // ============================================================================
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Wait for data to be available from database or static source
-    function initializeSidebar() {
-      if (window.BCDADatabase && window.BCDADatabase.isInitialized()) {
-        // Data is ready from database
-        if (window.categories && window.subcategories && window.sites) {
-          setupDropdownToggles();
-          setupCheckboxListeners();
-          populateSiteDropdowns();
-        } else {
-          // Wait for dataReady event
-          window.addEventListener('dataReady', function() {
-            setupDropdownToggles();
-            setupCheckboxListeners();
-            populateSiteDropdowns();
-          }, { once: true });
-        }
-      } else {
-        // Fallback to polling if database not initialized
-        if (typeof categories === 'undefined' || typeof subcategories === 'undefined' || typeof sites === 'undefined') {
-          setTimeout(initializeSidebar, 100);
-          return;
-        }
+    
+  // Wait for data to be available from database or static source
+  function initializeSidebar() {
+    if (window.BCDADatabase && window.BCDADatabase.isInitialized()) {
+      // Data is ready from database
+      if (window.categories && window.subcategories && window.sites) {
         setupDropdownToggles();
         setupCheckboxListeners();
         populateSiteDropdowns();
+      } else {
+        // Wait for dataReady event
+        window.addEventListener('dataReady', function() {
+          setupDropdownToggles();
+          setupCheckboxListeners();
+          populateSiteDropdowns();
+        }, { once: true });
       }
+    } else {
+      // Fallback to polling if database not initialized
+      if (typeof categories === 'undefined' || typeof subcategories === 'undefined' || typeof sites === 'undefined') {
+        setTimeout(initializeSidebar, 100);
+        return;
+      }
+      setupDropdownToggles();
+      setupCheckboxListeners();
+      populateSiteDropdowns();
     }
+  }
 
-    initializeSidebar();
-  });
+  
+  initializeSidebar();
 
   // ============================================================================
   // WINDOW EXPORTS
