@@ -95,13 +95,13 @@
                     polygonsStore.createIndex('category', 'category', { unique: false });
                 }
 
-                if (!database.objectStoreNames.contains(STORES.SEARCH_DATA)) {
-                    database.createObjectStore(STORES.SEARCH_DATA, { keyPath: 'id' });
-                }
+                // if (!database.objectStoreNames.contains(STORES.SEARCH_DATA)) {
+                //     database.createObjectStore(STORES.SEARCH_DATA, { keyPath: 'id' });
+                // }
 
-                if (!database.objectStoreNames.contains(STORES.APPS)) {
-                    database.createObjectStore(STORES.APPS, { keyPath: 'id' });
-                }
+                // if (!database.objectStoreNames.contains(STORES.APPS)) {
+                //     database.createObjectStore(STORES.APPS, { keyPath: 'id' });
+                // }
 
                 if (!database.objectStoreNames.contains(STORES.ALERTS)) {
                     database.createObjectStore(STORES.ALERTS, { keyPath: 'id' });
@@ -319,17 +319,18 @@
     //     return bulkPutData(STORES.APPS, apps);
     // }
 
-    // function saveAlerts(alerts) {
-    //     return bulkPutData(STORES.ALERTS, alerts);
-    // }
+    function saveAlerts(alerts) {
+        // console.log('saveAlerts', alerts);
+        return bulkPutData(STORES.ALERTS, alerts);
+    }
 
-    // function saveEvents(events) {
-    //     return bulkPutData(STORES.EVENTS, events);
-    // }
+    function saveEvents(events) {
+        return bulkPutData(STORES.EVENTS, events);
+    }
 
-    // function saveNotifications(notifications) {
-    //     return bulkPutData(STORES.NOTIFICATIONS, notifications);
-    // }
+    function saveNotifications(notifications) {
+        return bulkPutData(STORES.NOTIFICATIONS, notifications);
+    }
 
     // ============================================================================
     // LOAD ALL DATA FROM INDEXEDDB
@@ -344,8 +345,8 @@
                 subcategories,
                 sites,
                 polygons,
-                searchData,
-                apps,
+                // searchData,
+                // apps,
                 alerts,
                 events,
                 notifications,
@@ -354,8 +355,8 @@
                 getAllData(STORES.SUBCATEGORIES),
                 getAllData(STORES.SITES),
                 getAllData(STORES.POLYGONS),
-                getAllData(STORES.SEARCH_DATA),
-                getAllData(STORES.APPS),
+                // getAllData(STORES.SEARCH_DATA),
+                // getAllData(STORES.APPS),
                 getAllData(STORES.ALERTS),
                 getAllData(STORES.EVENTS),
                 getAllData(STORES.NOTIFICATIONS),
@@ -366,8 +367,8 @@
                 subcategories,
                 sites,
                 polygons,
-                searchData,
-                apps,
+                // searchData,
+                // apps,
                 alerts,
                 events,
                 notifications,
@@ -383,6 +384,9 @@
     // ============================================================================
 
     async function saveAllStaticData(staticData) {
+
+        // console.log('staticData', staticData);
+
         try {
             console.log('Saving all static data to IndexedDB...');
 
@@ -401,15 +405,15 @@
                 //     ? saveSearchData(staticData.searchData)
                 //     : Promise.resolve(0),
                 // staticData.apps ? saveApps(staticData.apps) : Promise.resolve(0),
-                // staticData.alertsData
-                //     ? saveAlerts(staticData.alertsData)
-                //     : Promise.resolve(0),
-                // staticData.eventsData
-                //     ? saveEvents(staticData.eventsData)
-                //     : Promise.resolve(0),
-                // staticData.notificationsData
-                //     ? saveNotifications(staticData.notificationsData)
-                //     : Promise.resolve(0),
+                staticData.alertsData
+                    ? saveAlerts(staticData.alertsData)
+                    : Promise.resolve(0),
+                staticData.eventsData
+                    ? saveEvents(staticData.eventsData)
+                    : Promise.resolve(0),
+                staticData.notificationsData
+                    ? saveNotifications(staticData.notificationsData)
+                    : Promise.resolve(0),
             ]);
 
             // Save metadata about last update
@@ -578,9 +582,9 @@
         savePolygons,
         // saveSearchData,
         // saveApps,
-        // saveAlerts,
-        // saveEvents,
-        // saveNotifications,
+        saveAlerts,
+        saveEvents,
+        saveNotifications,
 
         // Load operations
         loadAllData,

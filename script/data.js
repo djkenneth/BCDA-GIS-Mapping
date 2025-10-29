@@ -15705,17 +15705,18 @@ const categoryMaintenance = {
 };
 
 const alertsData = [
-  { text: 'Construction: Escario Street', class: 'alert-construction' },
-  { text: 'Road closure: IT Park area', class: 'alert-closure' },
-  { text: 'Weather alert: Heavy rainfall', class: 'alert-weather' },
-  { text: 'Traffic advisory: Osmeña Blvd', class: 'alert-traffic' },
-  { text: 'Accident: Fuente Circle', class: 'alert-accident' },
-  { text: 'Event traffic: SM City Cebu', class: 'alert-event' },
-  { text: 'Flooding alert: Mabolo area', class: 'alert-flooding' },
+  { id: 1, text: 'Construction: Escario Street', class: 'alert-construction' },
+  { id: 2, text: 'Road closure: IT Park area', class: 'alert-closure' },
+  { id: 3, text: 'Weather alert: Heavy rainfall', class: 'alert-weather' },
+  { id: 4, text: 'Traffic advisory: Osmeña Blvd', class: 'alert-traffic' },
+  { id: 5, text: 'Accident: Fuente Circle', class: 'alert-accident' },
+  { id: 6, text: 'Event traffic: SM City Cebu', class: 'alert-event' },
+  { id: 7, text: 'Flooding alert: Mabolo area', class: 'alert-flooding' },
 ];
 
 const eventsData = [
   {
+    id: 1,
     icon: 'S',
     text: 'Sinulog Festival 2025',
     date: 'Jan 19',
@@ -15723,6 +15724,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 2,
     icon: 'M',
     text: 'Public Meeting: Budget 2025',
     date: 'Feb 15',
@@ -15730,6 +15732,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 3,
     icon: 'C',
     text: 'Community Cleanup Drive',
     date: 'Feb 20',
@@ -15737,6 +15740,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 4,
     icon: 'H',
     text: 'Health & Wellness Fair',
     date: 'Mar 1-3',
@@ -15744,6 +15748,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 5,
     icon: 'F',
     text: 'Food Festival at Plaza',
     date: 'Mar 14-16',
@@ -15751,6 +15756,7 @@ const eventsData = [
     status: 'ongoing',
   },
   {
+    id: 6,
     icon: 'T',
     text: 'Tech Summit 2025',
     date: 'Apr 5',
@@ -15758,6 +15764,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 7,
     icon: 'E',
     text: 'Environmental Fair',
     date: 'Apr 22',
@@ -15765,6 +15772,7 @@ const eventsData = [
     status: 'upcoming',
   },
   {
+    id: 8,
     icon: 'B',
     text: 'Barangay Sports Festival',
     date: 'May 1-3',
@@ -15842,12 +15850,13 @@ const notificationsData = [
     } else {
       // First time - save current static data to IndexedDB
       console.log('No existing data found. Saving static data to IndexedDB...');
+
       await window.BCDADatabase.saveAllStaticData({
         categories,
         subcategories,
         sites,
         polygons,
-        searchData,
+        // searchData,
         apps,
         alertsData,
         eventsData,
