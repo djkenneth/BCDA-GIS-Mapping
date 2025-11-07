@@ -67,6 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
       "bottom-left"
     );
 
+    // const draw = new MaplibreTerradrawControl.MaplibreTerradrawControl({
+    //     modes: [
+    //         'polygon',
+    //         'select',
+    //         'delete-selection',
+    //         'delete',
+    //     ],
+    //     open: true,
+    // });
+
+    // map.addControl(draw, 'top-right');
+
     map.on("load", function () {
       console.log("MapLibre map loaded successfully");
       mapSourcesAdded = true;
